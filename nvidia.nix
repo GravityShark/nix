@@ -1,7 +1,12 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
-  hardware.opengl.enable = true;
+  # opengl -> graphics in unstable, beware of that
+  hardware.opengl = {
+    enable = true;
+    extraPackages = [ pkgs.nvidia-vaapi-driver ];
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -13,11 +18,9 @@
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = false;
-
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
-
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.production;
     prime = {

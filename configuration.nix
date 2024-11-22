@@ -24,14 +24,16 @@
   programs = {
     firefox.enable = true;
     xwayland.enable = true;
+    steam.enable = true;
   };
 
   environment.systemPackages = [
     pkgs.lshw
-    pkgs.steam
     pkgs.git
     pkgs.krita
     pkgs.nixfmt-rfc-style
+    pkgs.libreoffice-fresh
+    pkgs.vial
     unstable.mcontrolcenter
     unstable.neovim
     inputs.zen-browser.packages.x86_64-linux.specific
