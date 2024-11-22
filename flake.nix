@@ -5,27 +5,37 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-  };
+  }; 
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           modules = [ ./configuration.nix ];
-          specialArgs = {
-            inherit inputs;
-          };
+	  specialArgs = { inherit inputs; };
+        };
+      };
+      homeConfigurations = {
+        gravity = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home.nix ];
         };
       };
     };
-  # outputs = { self, nixpkgs }: {
-  #
-  #   packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-  #
-  #   packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-  #
-  # };
 }

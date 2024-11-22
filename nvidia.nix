@@ -4,7 +4,7 @@
   # opengl -> graphics in unstable, beware of that
   hardware.opengl = {
     enable = true;
-    extraPackages = [ pkgs.nvidia-vaapi-driver ];
+    extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
