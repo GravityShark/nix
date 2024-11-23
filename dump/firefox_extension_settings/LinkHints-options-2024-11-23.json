@@ -1,0 +1,10 @@
+{
+  "normal.alt-I": "EnterHintsMode_Select",
+  "useKeyTranslations": true,
+  "normal.alt-n": "EnterHintsMode_Click",
+  "normal.alt-e": "EnterHintsMode_BackgroundTab",
+  "normal.alt-i": "EnterHintsMode_ForegroundTab",
+  "normal.alt-N": "EnterHintsMode_ManyClick",
+  "normal.alt-E": "EnterHintsMode_ManyTab",
+  "chars": "tnseriaoplfuwydhvmck"
+}

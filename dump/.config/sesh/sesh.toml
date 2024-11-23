@@ -7,7 +7,7 @@ path = "~/Code"
 
 [[session]]
 name = "NEovim config  "
-path = "~/.config/nvim"
+path = "~/.nix/dump/.config/nvim"
 startup_command = "git status"
 
 [[session]]
@@ -15,18 +15,18 @@ name = "POrtage config 🧴"
 path = "~/.pumpfiles/root/etc/portage/"
 
 [[session]]
-name = "PUmpndump 🧴"
-path = "~/.pumpfiles"
+name = "NIx 󱄅 "
+path = "~/.nix"
 startup_command = "git status"
 
 [[session]]
 name = "SCripts 📜 "
-path = "~/.scripts"
+path = "~/.nix/dump/.scripts"
 
 [[session]]
 name = "SEsh config  "
-path = "~/.config/sesh"
-startup_command = "nvim sesh.toml"
+path = "~/.nix/dump/.config/sesh"
+startup_command = "$EDITOR sesh.toml"
 
 [[session]]
 name = "SOosh 󰣀 "
@@ -34,11 +34,7 @@ startup_command = "ssh gravity@clr"
 
 [[session]]
 name = "TMux config  "
-startup_command = "nvim ~/.tmux.conf"
-
-[[session]]
-name = "UPdate 󰚰 " 
-startup_command = "updatescript"
+startup_command = "$EDITOR ~/.nix/dump/.tmux.conf"
 
 [[session]]
 name = "LIttle cool website" 
