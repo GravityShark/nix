@@ -10,7 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    dump.url = "github:GravityShark0/dump";
   };
 
   outputs =
@@ -39,13 +38,7 @@
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ dump ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        modules = [ ./home.nix ];
       };
     };
 }

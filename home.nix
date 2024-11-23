@@ -45,7 +45,7 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     # ".gitconfig".source = "home/.gitconfig";
-    # ".doom.d".source = .doom.d;
+    ".doom.d".source = dump/.doom.d;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
