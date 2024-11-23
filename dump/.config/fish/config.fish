@@ -4,7 +4,7 @@ if status is-interactive
     set --export FZF_DEFAULT_OPTS \x0a\x2d\x2dcolor\x3dfg\x3a\x23797593\x2cbg\x3a\x23faf4ed\x2chl\x3a\x23d7827e\x0a\x2d\x2dcolor\x3dfg\x2b\x3a\x23575279\x2cbg\x2b\x3a\x23f2e9e1\x2chl\x2b\x3a\x23d7827e\x0a\x2d\x2dcolor\x3dborder\x3a\x23dfdad9\x2cheader\x3a\x23286983\x2cgutter\x3a\x23faf4ed\x0a\x2d\x2dcolor\x3dspinner\x3a\x23ea9d34\x2cinfo\x3a\x2356949f\x2cseparator\x3a\x23dfdad9\x0a\x2d\x2dcolor\x3dpointer\x3a\x23907aa9\x2cmarker\x3a\x23b4637a\x2cprompt\x3a\x23797593\x0a\x2d\x2dborder\x3drounded\x0a
     set FZF_TMUX_HEIGHT 80\x25
     set --path GOPATH /home/gravity/Other/go
-    set --export PAGER less\x1e\x2d\x2dRAW\x2dCONTROL\x2dCHARS
+    set --export PAGER less \x2d\x2dRAW\x2dCONTROL\x2dCHARS
     set --export SYNCTHING_GROUP wheel
     set --export SYNCTHING_USER gravity
     set ZO_CMD zo
@@ -43,8 +43,8 @@ if status is-interactive
     set fish_color_param 4319CC
     set fish_color_quote 4C3499
     set fish_color_redirection 248E8E
-    set fish_color_search_match bryellow\x1e\x2d\x2dbackground\x3dbrblack
-    set fish_color_selection white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+    set fish_color_search_match bryellow \x2d\x2dbackground\x3dbrblack
+    set fish_color_selection white \x2d\x2dbold \x2d\x2dbackground\x3dbrblack
     set fish_color_status f38ba8
     set fish_color_user brgreen
     set fish_color_valid_path \x2d\x2dunderline
@@ -52,8 +52,8 @@ if status is-interactive
     set fish_pager_color_background \x1d
     set fish_pager_color_completion normal
     set fish_pager_color_description B3A06D
-    set fish_pager_color_prefix normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
-    set fish_pager_color_progress brwhite\x1e\x2d\x2dbackground\x3dcyan
+    set fish_pager_color_prefix normal \x2d\x2dbold \x2d\x2dunderline
+    set fish_pager_color_progress brwhite \x2d\x2dbackground\x3dcyan
     set fish_pager_color_secondary_background \x1d
     set fish_pager_color_secondary_completion \x1d
     set fish_pager_color_secondary_description \x1d
@@ -62,7 +62,7 @@ if status is-interactive
     set fish_pager_color_selected_completion \x1d
     set fish_pager_color_selected_description \x1d
     set fish_pager_color_selected_prefix \x1d
-    set --export plugins https\x3a//github\x2ecom/kidonng/plug\x2efish\x1ehttps\x3a//github\x2ecom/franciscolourenco/done\x1ehttps\x3a//github\x2ecom/nickeb96/puffer\x2dfish\x1ehttps\x3a//github\x2ecom/fishingline/safe\x2drm
+    set --export plugins https\x3a//github\x2ecom/kidonng/plug\x2efish https\x3a//github\x2ecom/franciscolourenco/done https\x3a//github\x2ecom/nickeb96/puffer\x2dfish https\x3a//github\x2ecom/fishingline/safe-rm
 
     if not source $__fish_user_data_dir/plugins/plug.fish/conf.d/plugin_load.fish
         echo -e "plug.fish doesn't seem to exist, trying to install"

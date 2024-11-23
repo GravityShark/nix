@@ -53,6 +53,9 @@
 
     pkgs.gnumake
     pkgs.clang
+    pkgs.nodejs
+    pkgs.python3
+    pkgs.unzip
 
     pkgs.wineWowPackages.staging
     pkgs.home-manager
