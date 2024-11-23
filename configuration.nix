@@ -41,6 +41,7 @@
     pkgs.gamemode
     pkgs.yt-dlp
     pkgs.ytfzf
+    pkgs.fzf
     # pkgs.qbittorrent
     pkgs.deluge
     pkgs.syncthing
@@ -49,6 +50,9 @@
     pkgs.ripgrep
     pkgs.htop
     pkgs.screenkey
+
+    pkgs.gnumake
+    pkgs.clang
 
     pkgs.wineWowPackages.staging
     pkgs.home-manager

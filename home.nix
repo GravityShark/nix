@@ -47,10 +47,12 @@
     # ".gitconfig".source = "home/.gitconfig";
     ".doom.d".source = dump/.doom.d;
     ".mkshrc".source = dump/.mkshrc;
-    ".tmux".source = dump/.tmux;
+    ".tmux.conf".source = dump/.tmux.conf;
     ".config/sesh".source = dump/.config/sesh;
-    ".config/fish".source = dump/.config/fish;
     ".config/nvim".source = dump/.config/nvim;
+    ".config/fish/conf.d".source = dump/.config/fish/conf.d;
+    ".config/fish/functions".source = dump/.config/fish/functions;
+    ".config/fish/config.fish".source = dump/.config/fish/config.fish;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -81,4 +83,20 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.fish = {
+    shellAliases = {
+      nre = "$EDITOR ~/.nix && nixfmt ~/.nix/*";
+      nrs = "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix";
+      hme = "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*";
+      hms = "home-manager switch --flake ~/.nix?submodules=1";
+    };
+  };
+  programs.bash = {
+    shellAliases = {
+      nre = "$EDITOR ~/.nix && nixfmt ~/.nix/*";
+      nrs = "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix";
+      hme = "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*";
+      hms = "home-manager switch --flake ~/.nix?submodules=1";
+    };
+  };
 }
