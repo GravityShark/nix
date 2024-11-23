@@ -56,6 +56,7 @@
     pkgs.nodejs
     pkgs.python3
     pkgs.unzip
+    pkgs.go
 
     pkgs.wineWowPackages.staging
     pkgs.home-manager

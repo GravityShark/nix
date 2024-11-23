@@ -1,22 +1,38 @@
 { config, pkgs, ... }:
 
 {
+  # Enable if using non nixos
+  # targets.genericLinux.enable = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "gravity";
   home.homeDirectory = "/home/gravity";
 
-  # Enable if using non nixos
-  # targets.genericLinux.enable = true;
+  # Environment Variables
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  # Paths
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.scripts"
+  ];
+
+  # Gnome settings
+  dconf.settings = {
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      # `gnome-extensions list` for a list
+      enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "dash-to-dock@micxgx.gmail.com "
+        "light-style@gnome-shell-extensions.gcampax.github.com"
+        "pop-shell@system76.com"
+      ];
+    };
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -38,6 +54,15 @@
     # '')
   ];
 
+  programs.bash = {
+    shellAliases = {
+      nre = "$EDITOR ~/.nix && nixfmt ~/.nix/*";
+      nrs = "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix";
+      hme = "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*";
+      hms = "home-manager switch --flake ~/.nix?submodules=1";
+    };
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -47,11 +72,15 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     # ".gitconfig".source = "home/.gitconfig";
+    ".scripts".source = dump/.scripts;
     ".doom.d".source = dump/.doom.d;
     ".mkshrc".source = dump/.mkshrc;
     ".tmux.conf".source = dump/.tmux.conf;
     ".config/sesh".source = dump/.config/sesh;
-    ".config/nvim".source = dump/.config/nvim;
+    ".config/nvim/init.lua".source = dump/.config/nvim/init.lua;
+    ".config/nvim/after".source = dump/.config/nvim/after;
+    ".config/nvim/lua".source = dump/.config/nvim/lua;
+    ".config/nvim/snippets".source = dump/.config/nvim/snippets;
     ".config/fish/conf.d".source = dump/.config/fish/conf.d;
     ".config/fish/functions".source = dump/.config/fish/functions;
     ".config/fish/config.fish".source = dump/.config/fish/config.fish;
@@ -79,18 +108,16 @@
   #
   #  /etc/profiles/per-user/gravity/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+
+  # This value determines the Home Manager release that your configuration is
+  # compatible with. This helps avoid breakage when a new Home Manager release
+  # introduces backwards incompatible changes.
+  #
+  # You should not change this value, even if you update Home Manager. If you do
+  # want to update the value, then make sure to first check the Home Manager
+  # release notes.
+  home.stateVersion = "24.05"; # Please read the comment before changing.
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.bash = {
-    shellAliases = {
-      nre = "$EDITOR ~/.nix && nixfmt ~/.nix/*";
-      nrs = "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix";
-      hme = "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*";
-      hms = "home-manager switch --flake ~/.nix?submodules=1";
-    };
-  };
 }
