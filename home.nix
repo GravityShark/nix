@@ -22,6 +22,8 @@
   # environment.
   home.packages = [
     pkgs.sesh
+    pkgs.nerdfonts
+    pkgs.iosevka-comfy.comfy
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -83,14 +85,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.fish = {
-    shellAliases = {
-      nre = "$EDITOR ~/.nix && nixfmt ~/.nix/*";
-      nrs = "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix";
-      hme = "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*";
-      hms = "home-manager switch --flake ~/.nix?submodules=1";
-    };
-  };
   programs.bash = {
     shellAliases = {
       nre = "$EDITOR ~/.nix && nixfmt ~/.nix/*";

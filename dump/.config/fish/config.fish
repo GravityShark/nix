@@ -1,4 +1,5 @@
 if status is-interactive
+    # variables tbh
     set --export EDITOR nvim
     set --export FZF_DEFAULT_COMMAND \x1d
     set --export FZF_DEFAULT_OPTS \x0a\x2d\x2dcolor\x3dfg\x3a\x23797593\x2cbg\x3a\x23faf4ed\x2chl\x3a\x23d7827e\x0a\x2d\x2dcolor\x3dfg\x2b\x3a\x23575279\x2cbg\x2b\x3a\x23f2e9e1\x2chl\x2b\x3a\x23d7827e\x0a\x2d\x2dcolor\x3dborder\x3a\x23dfdad9\x2cheader\x3a\x23286983\x2cgutter\x3a\x23faf4ed\x0a\x2d\x2dcolor\x3dspinner\x3a\x23ea9d34\x2cinfo\x3a\x2356949f\x2cseparator\x3a\x23dfdad9\x0a\x2d\x2dcolor\x3dpointer\x3a\x23907aa9\x2cmarker\x3a\x23b4637a\x2cprompt\x3a\x23797593\x0a\x2d\x2dborder\x3drounded\x0a
@@ -63,6 +64,14 @@ if status is-interactive
     set fish_pager_color_selected_description \x1d
     set fish_pager_color_selected_prefix \x1d
     set --export plugins https\x3a//github\x2ecom/kidonng/plug\x2efish https\x3a//github\x2ecom/franciscolourenco/done https\x3a//github\x2ecom/nickeb96/puffer\x2dfish https\x3a//github\x2ecom/fishingline/safe-rm
+
+    # abbreviations
+    # abbr hme "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*"
+    # abbr hms "home-manager switch --flake ~/.nix\?submodules=1"
+    # abbr nre "$EDITOR ~/.nix && nixfmt ~/.nix/*"
+    # abbr nrs "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix"
+    # abbr l "eza --icons --long --all --sort=time --time=accessed"
+    # abbr la "ls -a"
 
     if not source $__fish_user_data_dir/plugins/plug.fish/conf.d/plugin_load.fish
         echo -e "plug.fish doesn't seem to exist, trying to install"

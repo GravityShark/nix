@@ -78,7 +78,12 @@
   environment.variables = {
     EDITOR = "nvim";
   };
-  environment.shells = with pkgs; [ bash dash mksh fish ];
+  environment.shells = with pkgs; [
+    bash
+    dash
+    mksh
+    fish
+  ];
   users.defaultUserShell = pkgs.mksh;
 
   # enable doas, disable sudo
@@ -107,6 +112,7 @@
     enable = true;
     package = pkgs.emacs-gtk;
   };
+  services.flatpak.enable = true;
 
   # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
