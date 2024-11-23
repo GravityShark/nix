@@ -10,9 +10,6 @@
   ...
 }:
 
-let
-  system = "x86_64-linux";
-in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -30,6 +27,31 @@ in
   };
 
   environment.systemPackages = [
+    pkgs.emacs-gtk
+    pkgs.fastfetch
+    pkgs.joshuto
+    pkgs.tmux
+    pkgs.dash
+    pkgs.fish
+    pkgs.mksh
+    pkgs.zoxide
+    pkgs.aspell
+    pkgs.languagetool
+    pkgs.poppler
+    pkgs.gamemode
+    pkgs.yt-dlp
+    pkgs.ytfzf
+    # pkgs.qbittorrent
+    pkgs.deluge
+    pkgs.syncthing
+    pkgs.eza
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.htop
+    pkgs.screenkey
+
+    pkgs.wineWowPackages.staging
+    pkgs.home-manager
     pkgs.lshw
     pkgs.git
     pkgs.krita
@@ -43,7 +65,8 @@ in
     pkgs.gnomeExtensions.run-or-raise
     unstable.mcontrolcenter
     unstable.neovim
-    inputs.zen-browser.packages.${system}.specific
+    inputs.zen-browser.packages.x86_64-linux.specific
+    # inputs.zen-browser.packages.${system}.specific
   ];
   environment.variables = {
     EDITOR = "nvim";
@@ -71,6 +94,10 @@ in
     GROUP="100", 
     TAG+="uaccess", 
     TAG+="udev-acl"'';
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs-gtk;
+  };
 
   # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
@@ -86,8 +113,8 @@ in
   system.stateVersion = "24.05"; # Did you read the comment?
 
   # https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
-  # this allows you to access `pkgsUnstable` anywhere in your config
-  _module.args.pkgsUnstable = import inputs.unstable {
+  # this allows you to access `unstable` anywhere in your config
+  _module.args.unstable = import inputs.unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };

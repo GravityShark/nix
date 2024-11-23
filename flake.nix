@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-  }; 
+  };
 
   outputs =
     {
@@ -19,6 +19,7 @@
       home-manager,
       ...
     }@inputs:
+
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -28,14 +29,22 @@
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./configuration.nix ];
-	  specialArgs = { inherit inputs; };
+
+          specialArgs = {
+            inherit inputs;
+            inherit system;
+          };
         };
       };
-      homeConfigurations = {
-        gravity = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home.nix ];
-        };
+      homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [ ./dump/home.nix ];
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
       };
     };
 }
