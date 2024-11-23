@@ -67,10 +67,6 @@
     pkgs.libreoffice-fresh
     pkgs.vial
     pkgs.wl-clipboard
-    pkgs.gnomeExtensions.pop-shell
-    pkgs.gnomeExtensions.dash-to-dock
-    pkgs.gnomeExtensions.appindicator
-    pkgs.gnomeExtensions.run-or-raise
     unstable.mcontrolcenter
     unstable.neovim
     inputs.zen-browser.packages.x86_64-linux.specific
