@@ -22,16 +22,45 @@
 
   # Gnome settings
   dconf.settings = {
+    "org/gnome/desktop/session".idle-delay = 300;
+    "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
+    "org/gnome/desktop/wm/keybindings" {
+      close = "<Super>w";
+      toggle-maximized = "<Super>f";
+    }
+
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-saver-profile-on-low-battery = true;
+      sleep-inactive-battery-type = "suspend";
+      sleep-inactive-battery-timeout = 900;
+      sleep-inactive-ac-type = "suspend";
+      sleep-inactive-ac-timeout = 900;
+    };
+    "org/gnome/desktop/interface" = {
+      enable-hot-corners = true;
+      color-scheme = "default";
+    }
+    "org/gnome/mutter" = {
+      edge-tiling = true;
+      dynamic-workspaces = true;
+      workspaces-only-on-primary = false;
+    }
     "org/gnome/shell" = {
+      "app-switcher".current-workspace-only = false;
       disable-user-extensions = false;
       # `gnome-extensions list` for a list
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "dash-to-dock@micxgx.gmail.com "
+        "dash-to-dock@micxgx.gmail.com"
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "pop-shell@system76.com"
+        "run-or-raise@edvard.cz"
       ];
+      "extensions" = {
+        "dash-to-dock".show-trash = false;
+      }
     };
+
   };
 
   # The home.packages option allows you to install Nix packages into your
