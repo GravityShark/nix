@@ -13,5 +13,15 @@
 > probably where my entire dotfiles is gonna reside from now on
 
 ```bash
-git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0/nix.git ~/.nix
+<!--git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0/nix.git ~/.nix-->
+git clone git@github.com:GravityShark0/nix.git ~/.nix
+doas nixos-rebuild switch --flake ~/.nix
+home-manager switch --flake ~/.nix
 ```
+
+there are still some shits that needs to be installed non declarativel
+more in [dump/README.md](dump/README.md)
+
+
+## things i might look out for 
+- in gentoo they have [etckeeper](https://wiki.gentoo.org/wiki/Etckeeper)
