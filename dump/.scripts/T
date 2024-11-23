@@ -1,0 +1,13 @@
+#!/bin/sh
+# t is just this script without the kill-session
+[ ! -n "$TMUX" ] && {
+	t
+	return
+}
+prev_session=$(tmux display-message -p '#S')
+out=$(tmenu "sesh relinquish")
+
+sesh connect "$out" || return
+if [ "$out" != "" ]; then
+	tmux kill-session -t "$prev_session"
+fi

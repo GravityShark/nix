@@ -1,0 +1,26 @@
+#!/bin/sh
+# This script runs everytime awesomewm starts and reloads
+
+# Setup monitors again
+~/.scripts/monitor/auto.sh
+
+#background="~/Media/Wallpapers/minimalistic/minimalistic/unicat.png"
+#background="~/Pictures/Wallpapers/purp1.jpg"
+# feh --bg-scale $background
+# Randomized wallpapers
+# backgrounds="$HOME/Media/Pictures/Wallpapers/main"
+# backgrounds="$HOME/Media/Pictures/Wallpapers/rose-pine"
+backgrounds="$HOME/Media/Pictures/Wallpapers/carniverous"
+feh --bg-scale $(find "$backgrounds" -type f | shuf -n 1) && echo "$backgrounds" >~/.recent_wallpapers.txt
+
+# Replace picom if its open
+if pidof picom; then
+        pkill picom
+fi
+picom --animations -b
+
+# Ibus daemon for typing in other languages
+#ibus-daemon -d -r
+
+# setting xrdb
+settheme rose-pine/dawn &

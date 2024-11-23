@@ -1,0 +1,46 @@
+[default_session]
+startup_command = "l"
+
+[[session]]
+name = "COde 💻"
+path = "~/Code"
+
+[[session]]
+name = "NEovim config  "
+path = "~/.config/nvim"
+startup_command = "git status"
+
+[[session]]
+name = "POrtage config 🧴"
+path = "~/.pumpfiles/root/etc/portage/"
+
+[[session]]
+name = "PUmpndump 🧴"
+path = "~/.pumpfiles"
+startup_command = "git status"
+
+[[session]]
+name = "SCripts 📜 "
+path = "~/.scripts"
+
+[[session]]
+name = "SEsh config  "
+path = "~/.config/sesh"
+startup_command = "nvim sesh.toml"
+
+[[session]]
+name = "SOosh 󰣀 "
+startup_command = "ssh gravity@clr"
+
+[[session]]
+name = "TMux config  "
+startup_command = "nvim ~/.tmux.conf"
+
+[[session]]
+name = "UPdate 󰚰 " 
+startup_command = "updatescript"
+
+[[session]]
+name = "LIttle cool website" 
+path = "~/Code/coollittlewebsite"
+startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"

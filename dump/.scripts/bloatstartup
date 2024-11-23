@@ -1,0 +1,11 @@
+#!/bin/sh
+st -c float -e syncclock
+
+org &
+st -c float -e update &
+librewolf &
+# gimp &
+# flatpak run net.ankiweb.Anki &
+flatpak run io.github.spacingbat3.webcord &
+
+disown

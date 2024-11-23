@@ -1,0 +1,26 @@
+#!/bin/sh
+wallpapers="/home/gravity/Media/Pictures/Wallpapers/main"
+rofi_command="rofi -theme $HOME/.config/rofi/config/powermenu.rasi"
+
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+# if [ "$DIR" = "powermenus" ]; then
+shutdown="󰐥"
+reboot="󰜉"
+logout="󰍃"
+ddir="$HOME/.config/rofi/config"
+
+# Variable passed to rofi
+options="$logout\n$reboot\n$shutdown"
+
+chosen="$(echo "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
+case $chosen in
+	$shutdown)
+		loginctl poweroff ;;
+	$reboot)
+		loginctl reboot ;;
+	$logout)
+		awesome-client awesome.quit\(\) ;;
+esac
+
