@@ -71,6 +71,8 @@
   environment.variables = {
     EDITOR = "nvim";
   };
+  environment.shells = with pkgs; [ bash dash mksh fish ];
+  users.defaultUserShell = pkgs.mksh;
 
   # enable doas, disable sudo
   # https://www.reddit.com/r/NixOS/comments/rts8gm/sudo_or_doas/

@@ -46,6 +46,11 @@
 
     # ".gitconfig".source = "home/.gitconfig";
     ".doom.d".source = dump/.doom.d;
+    ".mkshrc".source = dump/.mkshrc;
+    ".tmux".source = dump/.tmux;
+    ".config/sesh".source = dump/.config/sesh;
+    ".config/fish".source = dump/.config/fish;
+    ".config/nvim".source = dump/.config/nvim;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
