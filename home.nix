@@ -36,6 +36,13 @@
           autoAcceptFolders = true;
         };
       };
+      folders = {
+        "/home/gravity/Notes" = {
+          id = "syncme";
+          devices = [ "clear" "phone" ];
+          label = "Notes";
+        };
+      };
     };
   };
 
