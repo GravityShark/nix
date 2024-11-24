@@ -126,6 +126,7 @@
     ".mkshrc".source = dump/.mkshrc;
     ".tmux.conf".source = dump/.tmux.conf;
     ".config/sesh".source = dump/.config/sesh;
+    ".config/run-or-raise".source = dump/.config/run-or-raise;
     ".config/nvim/init.lua".source = dump/.config/nvim/init.lua;
     ".config/nvim/after".source = dump/.config/nvim/after;
     ".config/nvim/lua".source = dump/.config/nvim/lua;
@@ -140,7 +141,10 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-
+  systemd.user.services.emacs.Unit = {
+    After = [ "graphical-session-pre.target" ];
+    PartOf = [ "graphical-session.target" ];
+  };
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
