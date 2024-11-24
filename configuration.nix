@@ -44,7 +44,6 @@
     pkgs.fzf
     # pkgs.qbittorrent
     pkgs.deluge
-    pkgs.syncthing
     pkgs.eza
     pkgs.fd
     pkgs.ripgrep
@@ -111,9 +110,8 @@
     package = pkgs.emacs-gtk;
   };
   services.flatpak.enable = true;
-  services.syncthing.enable = true
 
-  ; # allow it to work with windows time tbh
+  # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
 
   # enable support for ntfs
