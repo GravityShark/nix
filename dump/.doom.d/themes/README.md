@@ -1,5 +1,5 @@
-[comment]: <> (https://github.com/donniebreve/rose-pine-doom-emacs)
-# Rosé Pine for DOOM Emacs
+
+# [Rosé Pine for DOOM Emacs](https://github.com/donniebreve/rose-pine-doom-emacs)
 All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
 
 # How to install
