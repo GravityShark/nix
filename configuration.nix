@@ -35,7 +35,6 @@
     pkgs.fish
     pkgs.mksh
     pkgs.zoxide
-    pkgs.aspell
     pkgs.languagetool
     pkgs.poppler
     pkgs.gamemode
@@ -64,11 +63,7 @@
     pkgs.lshw
     pkgs.git
     pkgs.krita
-    pkgs.nixfmt-rfc-style
-    pkgs.libreoffice-fresh
-    pkgs.vial
     pkgs.wl-clipboard
-    unstable.mcontrolcenter
     unstable.neovim
     inputs.zen-browser.packages.x86_64-linux.specific
     # inputs.zen-browser.packages.${system}.specific

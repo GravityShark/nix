@@ -84,7 +84,10 @@
     pkgs.webcord
     pkgs.sesh
     pkgs.nerdfonts
-    pkgs.iosevka-comfy.comfy
+    pkgs.vial
+    pkgs.nixfmt-rfc-style
+    pkgs.libreoffice-fresh
+    pkgs.mcontrolcenter
     pkgs.gnomeExtensions.pop-shell
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.appindicator
