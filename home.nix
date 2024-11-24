@@ -86,8 +86,7 @@
     pkgs.nerdfonts
     pkgs.vial
     pkgs.nixfmt-rfc-style
-    pkgs.libreoffice-fresh
-    pkgs.mcontrolcenter
+    pkgs.iosevka-comfy.comfy
     pkgs.gnomeExtensions.pop-shell
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.appindicator

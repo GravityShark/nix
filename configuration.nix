@@ -63,7 +63,9 @@
     pkgs.lshw
     pkgs.git
     pkgs.krita
+    pkgs.libreoffice-fresh
     pkgs.wl-clipboard
+    unstable.mcontrolcenter
     unstable.neovim
     inputs.zen-browser.packages.x86_64-linux.specific
     # inputs.zen-browser.packages.${system}.specific
