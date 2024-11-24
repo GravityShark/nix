@@ -121,19 +121,20 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     # ".gitconfig".source = "home/.gitconfig";
-    ".scripts".source = dump/.scripts;
-    ".doom.d".source = dump/.doom.d;
-    ".mkshrc".source = dump/.mkshrc;
     ".tmux.conf".source = dump/.tmux.conf;
+    ".scripts".source = dump/.scripts;
+    ".mkshrc".source = dump/.mkshrc;
+    ".doom.d".source = dump/.doom.d;
+    ".config/foot".source = dump/.config/foot;
     ".config/sesh".source = dump/.config/sesh;
     ".config/run-or-raise".source = dump/.config/run-or-raise;
+    ".config/nvim/snippets".source = dump/.config/nvim/snippets;
+    ".config/nvim/lua".source = dump/.config/nvim/lua;
     ".config/nvim/init.lua".source = dump/.config/nvim/init.lua;
     ".config/nvim/after".source = dump/.config/nvim/after;
-    ".config/nvim/lua".source = dump/.config/nvim/lua;
-    ".config/nvim/snippets".source = dump/.config/nvim/snippets;
-    ".config/fish/conf.d".source = dump/.config/fish/conf.d;
     ".config/fish/functions".source = dump/.config/fish/functions;
     ".config/fish/config.fish".source = dump/.config/fish/config.fish;
+    ".config/fish/conf.d".source = dump/.config/fish/conf.d;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
