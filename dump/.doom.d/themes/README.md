@@ -15,6 +15,6 @@ All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
 
 # Thanks
 [mvllan, Rosé Pine](https://github.com/rose-pine/rose-pine-theme)  
-[hlissner, DOOM Emacs](https://github.com/doomemacs/doomemacs)
-[donniebreve, rose-pine-doom-emacs](https://github.com/donniebreve/rose-pine-doom-emacs)
-[marisa image](http://xahlee.info/emacs/misc/Marisa_Kirisame_emacs.html)
+[hlissner, DOOM Emacs](https://github.com/doomemacs/doomemacs)   
+[donniebreve, rose-pine-doom-emacs](https://github.com/donniebreve/rose-pine-doom-emacs)  
+[marisa image](http://xahlee.info/emacs/misc/Marisa_Kirisame_emacs.html)  
