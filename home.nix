@@ -24,15 +24,15 @@
     settings = {
       devices = {
         phone = {
-          id = "7CFNTQM-IMTJBHJ-3UWRDIU-ZGQJFR6-VCXZ3NB-XUH3KZO-N52ITXR-LAIYUAU";
+          id = "U2WXU7A-PJ7IO6X-H6YCEXI-SIBCKKW-M7XAOBK-EW5IIIL-3CGARBS-G2LOJA2";
         };
         clear = {
-          id = "7CFNTQM-IMTJBHJ-3UWRDIU-ZGQJFR6-VCXZ3NB-XUH3KZO-N52ITXR-LAIYUAU";
+          id = "4L66SSN-RBMZE3X-IOJNHJD-UT26UQV-K4HENC2-GQ3QARP-JHQTKWX-EQZZSA3";
         };
       };
       folders = {
         "/home/gravity/Notes" = {
-          id = "syncme";
+          id = "i2ekx-2lgrg";
           devices = [
             "phone"
             "clear"

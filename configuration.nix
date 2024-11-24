@@ -118,6 +118,11 @@
 
   # enable support for ntfs
   boot.supportedFilesystems = [ "ntfs" ];
+
+  networking.hosts = {
+    "192.168.0.3" = [ "clr" ];
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
