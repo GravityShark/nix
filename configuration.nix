@@ -106,10 +106,10 @@
     GROUP="100", 
     TAG+="uaccess", 
     TAG+="udev-acl"'';
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs-gtk;
-  };
+  # services.emacs = {
+  #   enable = true;
+  #   package = pkgs.emacs-gtk;
+  # };
   services.flatpak.enable = true;
 
   # allow it to work with windows time tbh

@@ -33,7 +33,7 @@ path = "~/.nix/dump/.config/sesh"
 startup_command = "$EDITOR sesh.toml"
 
 [[session]]
-name = "SOosh 󰣀 "
+name = "SSh 󰣀 "
 startup_command = "ssh gravity@clr"
 
 [[session]]
