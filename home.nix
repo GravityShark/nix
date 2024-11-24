@@ -52,6 +52,7 @@
   dconf.settings = {
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
+    "org/gnome/desktop/wm/preferences".focus-mode = "sloppy";
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>w" ];
       toggle-maximized = [ "<Super>f" ];

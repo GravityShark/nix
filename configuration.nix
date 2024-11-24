@@ -27,6 +27,28 @@
   };
 
   environment.systemPackages = [
+    pkgs.franz
+    pkgs.ungoogled-chromium
+    pkgs.foot
+    pkgs.wineWowPackages.staging
+    pkgs.home-manager
+    pkgs.lshw
+    pkgs.git
+    pkgs.krita
+    pkgs.libreoffice-fresh
+    pkgs.wl-clipboard
+    unstable.mcontrolcenter
+    unstable.neovim
+    inputs.zen-browser.packages.x86_64-linux.specific
+    # inputs.zen-browser.packages.${system}.specific
+
+    pkgs.gnumake
+    pkgs.clang
+    pkgs.nodejs
+    pkgs.python3
+    pkgs.unzip
+    pkgs.go
+
     pkgs.emacs-gtk
     pkgs.fastfetch
     pkgs.joshuto
@@ -49,27 +71,6 @@
     pkgs.htop
     pkgs.screenkey
     pkgs.hunspell
-
-    pkgs.gnumake
-    pkgs.clang
-    pkgs.nodejs
-    pkgs.python3
-    pkgs.unzip
-    pkgs.go
-
-    pkgs.ungoogled-chromium
-    pkgs.foot
-    pkgs.wineWowPackages.staging
-    pkgs.home-manager
-    pkgs.lshw
-    pkgs.git
-    pkgs.krita
-    pkgs.libreoffice-fresh
-    pkgs.wl-clipboard
-    unstable.mcontrolcenter
-    unstable.neovim
-    inputs.zen-browser.packages.x86_64-linux.specific
-    # inputs.zen-browser.packages.${system}.specific
   ];
   environment.variables = {
     EDITOR = "nvim";
