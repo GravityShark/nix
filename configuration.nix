@@ -50,6 +50,7 @@
     pkgs.ripgrep
     pkgs.htop
     pkgs.screenkey
+    pkgs.hunspell
 
     pkgs.gnumake
     pkgs.clang
@@ -110,8 +111,9 @@
     package = pkgs.emacs-gtk;
   };
   services.flatpak.enable = true;
+  services.syncthing.enable = true
 
-  # allow it to work with windows time tbh
+  ; # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
 
   # enable support for ntfs

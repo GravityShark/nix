@@ -20,6 +20,12 @@
     "$HOME/.scripts"
   ];
 
+  services.syncthing = {
+    user = "gravity";
+    dataDir = "/home/gravity/Notes"; # Default folder for new synced folders
+    configDir = "/home/gravity/Notes/.config/syncthing"; # Folder for Syncthing's settings and keys
+  };
+
   # Gnome settings
   dconf.settings = {
     "org/gnome/desktop/session".idle-delay = 300;

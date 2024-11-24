@@ -6,6 +6,10 @@ name = "COde 💻"
 path = "~/Code"
 
 [[session]]
+name = "DOom emacs config  "
+path = "~/.nix/dump/.doom.d/"
+
+[[session]]
 name = "NEovim config  "
 path = "~/.nix/dump/.config/nvim"
 startup_command = "git status"
