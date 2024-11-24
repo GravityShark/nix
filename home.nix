@@ -10,9 +10,9 @@
   home.homeDirectory = "/home/gravity";
 
   # Environment Variables
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  # home.sessionVariables = {
+  #   EDITOR = "nvim";
+  # };
 
   # Paths
   home.sessionPath = [
@@ -21,9 +21,25 @@
   ];
 
   services.syncthing = {
-    user = "gravity";
-    dataDir = "/home/gravity/Notes"; # Default folder for new synced folders
-    configDir = "/home/gravity/Notes/.config/syncthing"; # Folder for Syncthing's settings and keys
+    settings = {
+      devices = {
+        phone = {
+          id = "7CFNTQM-IMTJBHJ-3UWRDIU-ZGQJFR6-VCXZ3NB-XUH3KZO-N52ITXR-LAIYUAU";
+        };
+        clear = {
+          id = "7CFNTQM-IMTJBHJ-3UWRDIU-ZGQJFR6-VCXZ3NB-XUH3KZO-N52ITXR-LAIYUAU";
+        };
+      };
+      folders = {
+        "/home/gravity/Notes" = {
+          id = "syncme";
+          devices = [
+            "phone"
+            "clear"
+          ];
+        };
+      };
+    };
   };
 
   # Gnome settings
@@ -31,8 +47,8 @@
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
     "org/gnome/desktop/wm/keybindings" = {
-      close = "<Super>w";
-      toggle-maximized = "<Super>f";
+      close = [ "<Super>w" ];
+      toggle-maximized = [ "<Super>f" ];
     };
     "org/gnome/desktop/interface" = {
       enable-hot-corners = true;
@@ -153,6 +169,7 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.enableNixpkgsReleaseCheck = false;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
