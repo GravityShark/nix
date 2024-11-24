@@ -57,6 +57,7 @@
     pkgs.unzip
     pkgs.go
 
+    pkgs.ungoogled-chromium
     pkgs.foot
     pkgs.wineWowPackages.staging
     pkgs.home-manager

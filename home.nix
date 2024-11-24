@@ -55,6 +55,8 @@
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>w" ];
       toggle-maximized = [ "<Super>f" ];
+      maximize = [ "" ];
+      unmaximize = [ "" ];
     };
     "org/gnome/desktop/interface" = {
       enable-hot-corners = true;
@@ -71,6 +73,10 @@
       edge-tiling = true;
       dynamic-workspaces = true;
       workspaces-only-on-primary = false;
+    };
+    "org/gnome/mutter/wm/keybindings" = {
+      toggle-tiled-right = [ "" ];
+      toggle-tiled-left = [ "" ];
     };
     "org/gnome/shell" = {
       # "app-switcher".current-workspace-only = false;

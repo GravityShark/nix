@@ -11,12 +11,30 @@ command="yt-dlp -f 'bv*[ext=mp4]+ba*[ext=m4a]' -N 8"
 
 while getopts "hqvo:s:e:" opt; do
         case "$opt" in
-        h)      echo $help; exit ;;
-        q)      command="$command -q"; shift ;;
-        v)      command="$command -v"; shift ;;
-        o)      command="$command -o '$OPTARG'"; shift 2 ;;
-        s)      start=$OPTARG; shift 2 ;;
-        e)      end=$OPTARG; shift 2 ;;
+        h)
+                echo $help
+                exit
+                ;;
+        q)
+                command="$command -q"
+                shift
+                ;;
+        v)
+                command="$command -v"
+                shift
+                ;;
+        o)
+                command="$command -o '$OPTARG'"
+                shift 2
+                ;;
+        s)
+                start=$OPTARG
+                shift 2
+                ;;
+        e)
+                end=$OPTARG
+                shift 2
+                ;;
         esac
 done
 

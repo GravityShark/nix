@@ -1,0 +1,4 @@
+#!/bin/sh
+# https://www.reddit.com/r/youtubedl/comments/11qkpwj/how_to_download_best_audio_quality_for_selfusage/?rdt=44500
+
+yt-dlp -f "bestaudio[ext=m4a]","bestaudio[ext=webm]" -x $*
