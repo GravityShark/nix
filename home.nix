@@ -23,21 +23,17 @@
   services.syncthing = {
     enable = true;
     settings = {
+      options = {
+        globalAnnounceEnabled = false;
+      };
       devices = {
         phone = {
           id = "U2WXU7A-PJ7IO6X-H6YCEXI-SIBCKKW-M7XAOBK-EW5IIIL-3CGARBS-G2LOJA2";
+          autoAcceptFolders = true;
         };
         clear = {
           id = "4L66SSN-RBMZE3X-IOJNHJD-UT26UQV-K4HENC2-GQ3QARP-JHQTKWX-EQZZSA3";
-        };
-      };
-      folders = {
-        "/home/gravity/Notes" = {
-          id = "i2ekx-2lgrg";
-          devices = [
-            "phone"
-            "clear"
-          ];
+          autoAcceptFolders = true;
         };
       };
     };
