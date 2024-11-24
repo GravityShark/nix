@@ -129,7 +129,7 @@ function fzf_key_bindings
   end
 
   #bind \cf fzf-file-widget
-  bind \ca fzf-file-widget-all
+  bind \cf fzf-file-widget-all
   bind \cr fzf-history-widget
   #bind \cz fzf-cd-widget
 

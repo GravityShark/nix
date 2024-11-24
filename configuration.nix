@@ -58,6 +58,7 @@
     pkgs.unzip
     pkgs.go
 
+    pkgs.foot
     pkgs.wineWowPackages.staging
     pkgs.home-manager
     pkgs.lshw
