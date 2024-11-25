@@ -27,8 +27,7 @@
   };
 
   environment.systemPackages = [
-    pkgs.franz
-    pkgs.ungoogled-chromium
+    pkgs.tangram
     pkgs.foot
     pkgs.wineWowPackages.staging
     pkgs.home-manager
