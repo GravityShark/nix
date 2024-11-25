@@ -53,6 +53,7 @@
     pkgs.fish
     pkgs.fzf
     pkgs.gamemode
+    pkgs.gnupg
     pkgs.htop
     pkgs.hunspell
     pkgs.joshuto

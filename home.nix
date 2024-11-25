@@ -93,6 +93,8 @@
       toggle-maximized = [ "<Super>f" ];
       maximize = [ "" ];
       unmaximize = [ "" ];
+      switch-group = [ "" ];
+      switch-group-backward = [ "" ];
     };
     "org/gnome/desktop/interface" = {
       enable-hot-corners = true;
@@ -126,7 +128,11 @@
         "run-or-raise@edvard.cz"
       ];
     };
-    "org/gnome/shell/extensions/dash-to-dock".show-trash = false;
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      show-trash = false;
+      hot-keys = true;
+      shortcut = [ "<Super>`" ];
+    };
   };
 
   # Emacs systemd service
