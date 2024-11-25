@@ -20,52 +20,24 @@
     "$HOME/.scripts"
   ];
 
-  # Syncthing setup
-  services.syncthing = {
-    enable = true;
-    settings = {
-      devices = {
-        phone = {
-          allowedNetworks = "192.168.0.0/24";
-          id = "U2WXU7A-PJ7IO6X-H6YCEXI-SIBCKKW-M7XAOBK-EW5IIIL-3CGARBS-G2LOJA2";
-          introducer = true;
-        };
-        clear = {
-          allowedNetworks = "192.168.0.0/24";
-          id = "4L66SSN-RBMZE3X-IOJNHJD-UT26UQV-K4HENC2-GQ3QARP-JHQTKWX-EQZZSA3";
-          introducer = true;
-        };
-      };
-      folders = {
-        "/home/gravity/Notes" = {
-          id = "i2ekx-2lgrg";
-          devices = [
-            "clear"
-            "phone"
-          ];
-          label = "Notes";
-        };
-      };
-    };
-  };
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    zen-browser.specific
-    pkgs.mcontrolcenter
     pkgs.authenticator
-    pkgs.ungoogled-chromium
-    pkgs.webcord
-    pkgs.sesh
-    pkgs.nerdfonts
-    pkgs.vial
-    pkgs.nixfmt-rfc-style
-    pkgs.iosevka-comfy.comfy
-    pkgs.gnomeExtensions.pop-shell
-    pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.appindicator
+    pkgs.gnomeExtensions.dash-to-dock
+    pkgs.gnomeExtensions.pop-shell
     pkgs.gnomeExtensions.run-or-raise
+    pkgs.iosevka-comfy.comfy
+    pkgs.iosevka-comfy.comfy-wide-motion
+    pkgs.mcontrolcenter
+    pkgs.nerdfonts
+    pkgs.nixfmt-rfc-style
+    pkgs.sesh
+    pkgs.ungoogled-chromium
+    pkgs.vial
+    pkgs.webcord
+    zen-browser.specific
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -109,12 +81,6 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  };
-
-  # Emacs systemd service
-  systemd.user.services.emacs.Unit = {
-    After = [ "graphical-session-pre.target" ];
-    PartOf = [ "graphical-session.target" ];
   };
 
   # Gnome settings
@@ -161,6 +127,41 @@
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock".show-trash = false;
+  };
+
+  # Emacs systemd service
+  systemd.user.services.emacs.Unit = {
+    After = [ "graphical-session-pre.target" ];
+    PartOf = [ "graphical-session.target" ];
+  };
+
+  # Syncthing setup
+  services.syncthing = {
+    enable = true;
+    settings = {
+      devices = {
+        phone = {
+          allowedNetworks = "192.168.0.0/24";
+          id = "U2WXU7A-PJ7IO6X-H6YCEXI-SIBCKKW-M7XAOBK-EW5IIIL-3CGARBS-G2LOJA2";
+          introducer = true;
+        };
+        clear = {
+          allowedNetworks = "192.168.0.0/24";
+          id = "4L66SSN-RBMZE3X-IOJNHJD-UT26UQV-K4HENC2-GQ3QARP-JHQTKWX-EQZZSA3";
+          introducer = true;
+        };
+      };
+      folders = {
+        "/home/gravity/Notes" = {
+          id = "i2ekx-2lgrg";
+          devices = [
+            "clear"
+            "phone"
+          ];
+          label = "Notes";
+        };
+      };
+    };
   };
 
   # programs.bash = {

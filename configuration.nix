@@ -24,49 +24,49 @@
   programs.steam.enable = true;
   environment.systemPackages = [
     # Unique packages
-    pkgs.racket
     pkgs.foot
-    pkgs.wineWowPackages.staging
-    pkgs.home-manager
-    pkgs.lshw
     pkgs.git
+    pkgs.home-manager
     pkgs.krita
     pkgs.libreoffice-fresh
-    pkgs.wl-clipboard
+    pkgs.lshw
+    pkgs.racket
     pkgs-unstable.neovim
+    pkgs.wineWowPackages.staging
+    pkgs.wl-clipboard
 
     # Neovim dependencies
-    pkgs.gnumake
     pkgs.clang
+    pkgs.gnumake
+    pkgs.go
     pkgs.nodejs
     pkgs.python3
     pkgs.unzip
-    pkgs.go
 
     # Packages from gentoo
-    pkgs.pass
-    pkgs.emacs-gtk
-    pkgs.fastfetch
-    pkgs.joshuto
-    pkgs.tmux
     pkgs.dash
+    pkgs.deluge
+    pkgs.emacs-gtk
+    pkgs.eza
+    pkgs.fastfetch
+    pkgs.fd
     pkgs.fish
-    pkgs.mksh
-    pkgs.zoxide
-    pkgs.languagetool
-    pkgs.poppler
+    pkgs.fzf
     pkgs.gamemode
+    pkgs.htop
+    pkgs.hunspell
+    pkgs.joshuto
+    pkgs.languagetool
+    pkgs.mksh
+    pkgs.pass
+    pkgs.poppler
+    # pkgs.qbittorrent
+    pkgs.ripgrep
+    pkgs.screenkey
+    pkgs.tmux
     pkgs.yt-dlp
     pkgs.ytfzf
-    pkgs.fzf
-    # pkgs.qbittorrent
-    pkgs.deluge
-    pkgs.eza
-    pkgs.fd
-    pkgs.ripgrep
-    pkgs.htop
-    pkgs.screenkey
-    pkgs.hunspell
+    pkgs.zoxide
   ];
   environment.variables = {
     EDITOR = "nvim";
