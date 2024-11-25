@@ -21,18 +21,20 @@
   nixpkgs.config.allowUnfree = true;
 
   # Packages
-  programs.steam.enable = true;
+  # GnuPG
+  programs = {
+    steam.enable = true;
+    # gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
+  };
+  # services.pcscd.enable = true;
   environment.systemPackages = [
-    # Unique packages
+    # New packages
     pkgs.foot
-    pkgs.git
     pkgs.home-manager
-    pkgs.krita
-    pkgs.libreoffice-fresh
-    pkgs.lshw
     pkgs.racket
-    pkgs-unstable.neovim
-    pkgs.wineWowPackages.staging
     pkgs.wl-clipboard
 
     # Neovim dependencies
@@ -43,7 +45,7 @@
     pkgs.python3
     pkgs.unzip
 
-    # Packages from gentoo
+    # Packages from the past
     pkgs.dash
     pkgs.deluge
     pkgs.emacs-gtk
@@ -53,11 +55,14 @@
     pkgs.fish
     pkgs.fzf
     pkgs.gamemode
+    pkgs.git
     pkgs.gnupg
     pkgs.htop
     pkgs.hunspell
     pkgs.joshuto
+    pkgs.krita
     pkgs.languagetool
+    pkgs.libreoffice-fresh
     pkgs.mksh
     pkgs.pass
     pkgs.poppler
@@ -65,6 +70,8 @@
     pkgs.ripgrep
     pkgs.screenkey
     pkgs.tmux
+    pkgs-unstable.neovim
+    pkgs.wineWowPackages.staging
     pkgs.yt-dlp
     pkgs.ytfzf
     pkgs.zoxide
