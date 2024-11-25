@@ -4,9 +4,8 @@
 
 {
   config,
-  inputs,
   pkgs,
-  unstable,
+  pkgs-unstable,
   ...
 }:
 
@@ -21,13 +20,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs = {
-    # firefox.enable = true;
-    steam.enable = true;
-  };
-
+  # Packages
+  programs.steam.enable = true;
   environment.systemPackages = [
-    pkgs.tangram
+    # Unique packages
+    pkgs.racket
     pkgs.foot
     pkgs.wineWowPackages.staging
     pkgs.home-manager
@@ -36,11 +33,9 @@
     pkgs.krita
     pkgs.libreoffice-fresh
     pkgs.wl-clipboard
-    unstable.mcontrolcenter
-    unstable.neovim
-    inputs.zen-browser.packages.x86_64-linux.specific
-    # inputs.zen-browser.packages.${system}.specific
+    pkgs-unstable.neovim
 
+    # Neovim dependencies
     pkgs.gnumake
     pkgs.clang
     pkgs.nodejs
@@ -48,6 +43,8 @@
     pkgs.unzip
     pkgs.go
 
+    # Packages from gentoo
+    pkgs.pass
     pkgs.emacs-gtk
     pkgs.fastfetch
     pkgs.joshuto
@@ -82,20 +79,23 @@
   ];
   users.defaultUserShell = pkgs.mksh;
 
-  # enable doas, disable sudo
+  # Use doas instead of sudo
   # https://www.reddit.com/r/NixOS/comments/rts8gm/sudo_or_doas/
-  security.sudo.enable = false;
-  security.doas.enable = true;
-  # Configure doas
-  security.doas.extraRules = [
-    {
-      users = [ "gravity" ];
-      keepEnv = true;
-      persist = true;
-    }
-  ];
+  security = {
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          users = [ "gravity" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
+  };
 
-  # vial udev rule
+  # Vial udev rule
   services.udev.extraRules = ''
     "KERNEL=="hidraw*", 
     SUBSYSTEM=="hidraw", 
@@ -104,10 +104,7 @@
     GROUP="100", 
     TAG+="uaccess", 
     TAG+="udev-acl"'';
-  # services.emacs = {
-  #   enable = true;
-  #   package = pkgs.emacs-gtk;
-  # };
+
   services.flatpak.enable = true;
 
   # allow it to work with windows time tbh
@@ -116,8 +113,18 @@
   # enable support for ntfs
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hosts = {
-    "192.168.0.3" = [ "clr" ];
+  # Hosts file
+  networking = {
+    hosts = {
+      "192.168.0.3" = [ "clr" ];
+    };
+    stevenblack = {
+      enable = true;
+      block = [
+        "gambling"
+        "porn"
+      ];
+    };
   };
 
   # This value determines the NixOS release from which the default
@@ -128,12 +135,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  # https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
-  # this allows you to access `unstable` anywhere in your config
-  _module.args.unstable = import inputs.unstable {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
   # gettin flakey
   nix.settings.experimental-features = [
     "nix-command"
