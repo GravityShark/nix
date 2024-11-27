@@ -32,6 +32,7 @@
   # services.pcscd.enable = true;
   environment.systemPackages = [
     # New packages
+    pkgs.obs-studio
     pkgs.foot
     pkgs.home-manager
     pkgs.racket
@@ -46,6 +47,7 @@
     pkgs.unzip
 
     # Packages from the past
+    pkgs.anki
     pkgs.dash
     pkgs.deluge
     pkgs.emacs-gtk
