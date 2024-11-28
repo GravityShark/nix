@@ -23,6 +23,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.switcheroo
     pkgs.authenticator
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.dash-to-dock
