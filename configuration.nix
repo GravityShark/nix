@@ -64,7 +64,7 @@
     pkgs.joshuto
     pkgs.krita
     pkgs.languagetool
-    pkgs.libreoffice-bin
+    # pkgs.libreoffice-bin
     pkgs.mksh
     pkgs.pass
     pkgs.poppler
