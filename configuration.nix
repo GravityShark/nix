@@ -22,16 +22,18 @@
 
   # Packages
   # GnuPG
-  programs = {
-    steam.enable = true;
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-  };
+  # programs = {
+  #   steam.enable = true;
+  # gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+  # };
   # services.pcscd.enable = true;
   environment.systemPackages = [
     # New packages
+    pkgs-unstable.mcontrolcenter
+    pkgs.evince
     pkgs.obs-studio
     pkgs.foot
     pkgs.home-manager

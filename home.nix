@@ -23,7 +23,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.switcheroo
     pkgs.authenticator
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.dash-to-dock
@@ -31,7 +30,6 @@
     pkgs.gnomeExtensions.run-or-raise
     pkgs.iosevka-comfy.comfy
     pkgs.iosevka-comfy.comfy-wide-motion
-    pkgs.mcontrolcenter
     pkgs.nerdfonts
     pkgs.nixfmt-rfc-style
     pkgs.sesh
