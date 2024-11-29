@@ -139,6 +139,8 @@
     };
   };
 
+  environment.binsh = "${pkgs.dash}/bin/dash";
+
   nix.optimise.automatic = true;
   nix.gc = {
     automatic = true;
