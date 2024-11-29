@@ -81,15 +81,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1732785687,
-        "narHash": "sha256-dkh/Ff2nxZvMdRnkUq+mo8I1IOk/ASjBM7HEanKV290=",
-        "owner": "0xc000022070",
+        "lastModified": 1732806316,
+        "narHash": "sha256-qcI6PxnYuBLwst4oqtf5DSJ5npu14qYhVaR0DqsBUA0=",
+        "owner": "omarcresp",
         "repo": "zen-browser-flake",
-        "rev": "a1c38bb83c32339b1b0ee6a3f740c0dd677d43be",
+        "rev": "76118b8cf617bde117c9cf44cfdb3156018c6d80",
         "type": "github"
       },
       "original": {
-        "owner": "0xc000022070",
+        "owner": "omarcresp",
         "repo": "zen-browser-flake",
         "type": "github"
       }

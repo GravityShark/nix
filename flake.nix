@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    zen-browser-flake.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser-flake.url = "github:omarcresp/zen-browser-flake";
   };
 
   outputs =
