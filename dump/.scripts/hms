@@ -1,2 +1,2 @@
 #!/bin/sh
-home-manager switch --flake ~/.nix\?submodules=1
+ng && home-manager switch --flake ~/.nix\?submodules=1
