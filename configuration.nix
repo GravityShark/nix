@@ -129,6 +129,8 @@
 
   # enable support for ntfs
   boot.supportedFilesystems = [ "ntfs" ];
+  # use zen kernel kuh
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Hosts file
   networking = {
