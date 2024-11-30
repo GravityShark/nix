@@ -1,0 +1,2 @@
+#!/bin/sh
+git remote set-url --add --push origin gravity@clr:Git/nix.git
