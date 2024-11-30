@@ -24,6 +24,7 @@
   environment = {
     systemPackages = [
       # New packages
+      pkgs.texliveBasic
       pkgs.evince
       pkgs.foot
       pkgs.home-manager
