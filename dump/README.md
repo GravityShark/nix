@@ -20,3 +20,8 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
    git clone gravity@clr:Git/ssh.git ~/.config
    git clone gravity@clr:Git/gnupg.git ~/.gnupg
    ```
+3. fonts for somereason need some little bit of shittery to fix every time you update it
+
+```bash
+fc-cache -f
+```

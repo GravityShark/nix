@@ -128,6 +128,7 @@
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
+        "smart-auto-move@khimaros.com"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
