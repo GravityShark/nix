@@ -17,6 +17,7 @@ let
         ulem
         hyperref
         capt-of
+        etoolbox
         ;
       #(setq org-latex-compiler "lualatex")
       #(setq org-preview-latex-default-process 'dvisvgm)
