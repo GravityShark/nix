@@ -1,0 +1,2 @@
+#!/bin/sh
+nix flake update ~/.nix && ng && doas chmod 777 /dev/null && doas nixos-rebuild boot --flake ~/.nix
