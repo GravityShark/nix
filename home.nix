@@ -28,7 +28,6 @@
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.pop-shell
     pkgs.gnomeExtensions.run-or-raise
-    pkgs.gnomeExtensions.gnome-bedtime
     pkgs.iosevka-comfy.comfy
     pkgs.iosevka-comfy.comfy-wide-motion
     pkgs.nerdfonts
