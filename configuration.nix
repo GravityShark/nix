@@ -85,12 +85,15 @@
     SYSTEMD_EDITOR = "nvim";
     VISUAL = "nvim";
   };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.shells = with pkgs; [
     bash
     dash
     mksh
     fish
   ];
+  environment.binsh = "${pkgs.dash}/bin/dash";
+
   users.defaultUserShell = pkgs.mksh;
 
   # Use doas instead of sudo
@@ -140,8 +143,6 @@
       ];
     };
   };
-
-  environment.binsh = "${pkgs.dash}/bin/dash";
 
   nix.optimise.automatic = true;
   nix.gc = {
