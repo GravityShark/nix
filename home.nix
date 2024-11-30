@@ -28,6 +28,7 @@
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.pop-shell
     pkgs.gnomeExtensions.run-or-raise
+    pkgs.gnomeExtensions.smart-auto-move
     pkgs.gnome-frog
     pkgs.iosevka-comfy.comfy
     pkgs.iosevka-comfy.comfy-wide-motion
