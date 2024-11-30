@@ -9,7 +9,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     modesetting.enable = true;
     # Use the NVidia open source kernel module (not to be confused with the
