@@ -29,6 +29,12 @@ doas nixos-rebuild switch --flake ~/.nix
 home-manager switch --flake ~/.nix
 ```
 
+stuff with git
+
+```bash
+git config --local include.path ../.gitconfig
+```
+
 there are still some shits that needs to be installed non declarativel
 more in [dump/README.md](dump/README.md)
 
