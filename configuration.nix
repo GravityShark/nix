@@ -21,78 +21,71 @@
   nixpkgs.config.allowUnfree = true;
 
   # Packages
-  # GnuPG
-  # programs = {
-  #   steam.enable = true;
-  # gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-  # };
-  # services.pcscd.enable = true;
-  environment.systemPackages = [
-    # New packages
-    pkgs-unstable.mcontrolcenter
-    pkgs.evince
-    pkgs.obs-studio
-    pkgs.foot
-    pkgs.home-manager
-    pkgs.racket
-    pkgs.wl-clipboard
+  environment = {
+    systemPackages = [
+      # New packages
+      pkgs.evince
+      pkgs.foot
+      pkgs.home-manager
+      pkgs.obs-studio
+      pkgs.racket
+      pkgs-unstable.mcontrolcenter
+      pkgs.wl-clipboard
 
-    # Neovim dependencies
-    pkgs.clang
-    pkgs.gnumake
-    pkgs.go
-    pkgs.nodejs
-    pkgs.python3
-    pkgs.unzip
+      # Neovim dependencies
+      pkgs.clang
+      pkgs.gnumake
+      pkgs.go
+      pkgs.nodejs
+      pkgs.python3
+      pkgs.unzip
 
-    # Packages from the past
-    pkgs.anki
-    pkgs.dash
-    pkgs.deluge
-    pkgs.emacs-gtk
-    pkgs.eza
-    pkgs.fastfetch
-    pkgs.fd
-    pkgs.fish
-    pkgs.fzf
-    pkgs.gamemode
-    pkgs.git
-    pkgs.gnupg
-    pkgs.htop
-    pkgs.hunspell
-    pkgs.joshuto
-    pkgs.krita
-    pkgs.languagetool
-    # pkgs.libreoffice-bin
-    pkgs.mksh
-    pkgs.pass
-    pkgs.poppler
-    # pkgs.qbittorrent
-    pkgs.ripgrep
-    pkgs.screenkey
-    pkgs.tmux
-    pkgs-unstable.neovim
-    pkgs.wineWowPackages.staging
-    pkgs.yt-dlp
-    pkgs.ytfzf
-    pkgs.zoxide
-  ];
-  environment.variables = {
-    EDITOR = "nvim";
-    SYSTEMD_EDITOR = "nvim";
-    VISUAL = "nvim";
+      # Packages from the past
+      pkgs.anki
+      pkgs.dash
+      pkgs.deluge
+      pkgs.emacs-gtk
+      pkgs.eza
+      pkgs.fastfetch
+      pkgs.fd
+      pkgs.fish
+      pkgs.fzf
+      pkgs.gamemode
+      pkgs.git
+      pkgs.gnupg
+      pkgs.htop
+      pkgs.hunspell
+      pkgs.joshuto
+      pkgs.krita
+      pkgs.languagetool
+      # pkgs.libreoffice-bin
+      pkgs.mksh
+      pkgs.pass
+      pkgs.poppler
+      # pkgs.qbittorrent
+      pkgs.ripgrep
+      pkgs.screenkey
+      pkgs.tmux
+      pkgs-unstable.neovim
+      pkgs.wineWowPackages.staging
+      pkgs.yt-dlp
+      pkgs.ytfzf
+      pkgs.zoxide
+    ];
+    variables = {
+      EDITOR = "nvim";
+      SYSTEMD_EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    shells = with pkgs; [
+      bash
+      dash
+      mksh
+      fish
+    ];
+    binsh = "${pkgs.dash}/bin/dash";
   };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.shells = with pkgs; [
-    bash
-    dash
-    mksh
-    fish
-  ];
-  environment.binsh = "${pkgs.dash}/bin/dash";
 
   users.defaultUserShell = pkgs.mksh;
 

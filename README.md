@@ -29,7 +29,11 @@ doas nixos-rebuild switch --flake ~/.nix
 home-manager switch --flake ~/.nix
 ```
 
-stuff with git
+2. gentoo
+   follow this one
+   [https://wiki.gentoo.org/wiki/User:Alxhr0/Nix_on_openrc](https://wiki.gentoo.org/wiki/User:Alxhr0/Nix_on_openrc)
+
+- note: some git configurations you might wanna enable
 
 ```bash
 git config --local include.path ../.gitconfig
