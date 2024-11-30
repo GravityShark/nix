@@ -5,6 +5,24 @@
   ...
 }:
 
+let
+  tex = (
+    pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-basic
+        dvisvgm
+        dvipng # for preview and export as html
+        wrapfig
+        amsmath
+        ulem
+        hyperref
+        capt-of
+        ;
+      #(setq org-latex-compiler "lualatex")
+      #(setq org-preview-latex-default-process 'dvisvgm)
+    }
+  );
+in
 {
   # ENABLE IF NOT NIXOS
   # targets.genericLinux.enable = false;
@@ -35,6 +53,7 @@
     pkgs.nerd-fonts.iosevka
     pkgs.nixfmt-rfc-style
     pkgs.sesh
+    pkgs.tex
     pkgs.ungoogled-chromium
     pkgs.vial
     pkgs.webcord

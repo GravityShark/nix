@@ -24,7 +24,6 @@
   environment = {
     systemPackages = [
       # New packages
-      pkgs.texlive.combined.scheme-small
       pkgs.evince
       pkgs.foot
       pkgs.home-manager
