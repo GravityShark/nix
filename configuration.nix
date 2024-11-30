@@ -24,6 +24,7 @@
   environment = {
     systemPackages = [
       # New packages
+      pkgs.texlivePackages.wrapfig
       pkgs.texliveBasic
       pkgs.evince
       pkgs.foot

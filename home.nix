@@ -138,10 +138,10 @@
   };
 
   # Emacs systemd service
-  systemd.user.services.emacs.Unit = {
-    After = [ "graphical-session-pre.target" ];
-    PartOf = [ "graphical-session.target" ];
-  };
+  # systemd.user.services.emacs.Unit = {
+  #   After = [ "graphical-session-pre.target" ];
+  #   PartOf = [ "graphical-session.target" ];
+  # };
 
   # Syncthing setup
   services.syncthing = {
