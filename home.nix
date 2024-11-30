@@ -32,7 +32,8 @@
     pkgs.gnome-frog
     pkgs.iosevka-comfy.comfy
     pkgs.iosevka-comfy.comfy-wide-motion
-    pkgs.nerdfonts
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.iosevka
     pkgs.nixfmt-rfc-style
     pkgs.sesh
     pkgs.ungoogled-chromium
