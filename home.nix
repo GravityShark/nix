@@ -53,7 +53,7 @@ in
     pkgs.nerd-fonts.iosevka
     pkgs.nixfmt-rfc-style
     pkgs.sesh
-    pkgs.tex
+    tex
     pkgs.ungoogled-chromium
     pkgs.vial
     pkgs.webcord
