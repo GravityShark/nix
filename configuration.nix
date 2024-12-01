@@ -50,21 +50,21 @@
       pkgs.fd
       pkgs.fish
       pkgs.fzf
-      pkgs.gamemode
+      # pkgs.gamemode
       pkgs.git
-      pkgs.gnupg
+      # pkgs.gnupg
       pkgs.htop
       pkgs.hunspell
       pkgs.joshuto
       pkgs.krita
-      pkgs.languagetool
+      # pkgs.languagetool
       # pkgs.libreoffice-bin
       pkgs.mksh
       pkgs.pass
-      pkgs.poppler
+      # pkgs.poppler
       # pkgs.qbittorrent
       pkgs.ripgrep
-      pkgs.screenkey
+      # pkgs.screenkey
       pkgs.tmux
       pkgs-unstable.neovim
       pkgs-unstable.wineWowPackages.waylandFull
