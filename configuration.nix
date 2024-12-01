@@ -67,7 +67,7 @@
       pkgs.screenkey
       pkgs.tmux
       pkgs-unstable.neovim
-      pkgs.wineWowPackages.staging
+      pkgs-unstable.wineWowPackages.waylandFull
       pkgs.yt-dlp
       pkgs.ytfzf
       pkgs.zoxide

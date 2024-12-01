@@ -19,6 +19,8 @@ let
         capt-of
         etoolbox
         nopageno
+        mlmodern
+        metafont
         ;
       #(setq org-latex-compiler "lualatex")
       #(setq org-preview-latex-default-process 'dvisvgm)
