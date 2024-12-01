@@ -149,11 +149,13 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
-  system.activationScripts.chmod.text = ''
-    # Needed by some programs.
-    chmod 777 /dev/null
-
-  '';
+  # For somereason /dev/null is NOT being properly permissionisezed
+  system.activationScripts.chmod = {
+    text = ''
+      #!/bin/sh
+      chmod 777 /dev/null
+    '';
+  };
 
   # gettin flakey
   nix.settings.experimental-features = [
