@@ -1,2 +1,0 @@
-#!/bin/sh
-doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix

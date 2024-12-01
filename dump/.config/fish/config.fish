@@ -65,14 +65,6 @@ if status is-interactive
     set fish_pager_color_selected_prefix \x1d
     set --export plugins https\x3a//github\x2ecom/kidonng/plug\x2efish https\x3a//github\x2ecom/franciscolourenco/done https\x3a//github\x2ecom/nickeb96/puffer\x2dfish https\x3a//github\x2ecom/GravityShark0/safe-rm
 
-    # abbreviations
-    # abbr hme "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*"
-    # abbr hms "home-manager switch --flake ~/.nix\?submodules=1"
-    # abbr nre "$EDITOR ~/.nix && nixfmt ~/.nix/*"
-    # abbr nrs "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix"
-    # abbr l "eza --icons --long --all --sort=time --time=accessed"
-    # abbr la "ls -a"
-
     if not source $__fish_user_data_dir/plugins/plug.fish/conf.d/plugin_load.fish
         echo -e "plug.fish doesn't seem to exist, trying to install"
         curl -L https://github.com/kidonng/plug.fish/raw/v3/conf.d/plugin_load.fish | source
@@ -81,8 +73,4 @@ if status is-interactive
     end
     fzf_key_bindings        
     zoxide init fish | source
-
-
-
-
 end

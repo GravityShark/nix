@@ -25,7 +25,7 @@ preferrably you wanna do this
 ```bash
 git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0/nix.git ~/.nix
 nix flake update ~/.nix
-doas nixos-rebuild switch --flake ~/.nix
+sudo nixos-rebuild switch --flake ~/.nix
 home-manager switch --flake ~/.nix
 ```
 
@@ -37,6 +37,7 @@ home-manager switch --flake ~/.nix
 
 ```bash
 git config --local include.path ../.gitconfig
+
 ```
 
 there are still some shits that needs to be installed non declarativel

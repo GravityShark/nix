@@ -7,7 +7,7 @@ audio_default = [
 
 image_default = [
   { command = "feh", fork = true, silent = true },
-  { command = "flatpak run org.kde.krita", args = [
+  { command = "krita", args = [
     "--",
   ], fork = true, silent = true },
   { command = "gimp", args = [
@@ -58,11 +58,11 @@ ppm.inherit = "image_default"
 webp.inherit = "image_default"
 
 svg.app_list = [
-  { command = "flatpak run org.inkscape.Inkscape", fork = true, silent = true },
+  { command = "inkscape", fork = true, silent = true },
 ]
 tiff.app_list = [
   { command = "gimp", fork = true, silent = true },
-  { command = "flatpak run org.kde.krita", fork = true, silent = true },
+  { command = "krita", fork = true, silent = true },
 ]
 
 ## audio formats
@@ -209,8 +209,8 @@ pptx.inherit = "libreoffice_default"
 
 pdf.inherit = "reader_default"
 
-kra.app_list = [{ command = "flatpak run org.kde.krita", fork = true, silent = true }]
-kdenlive.app_list = [{ command = "flatpak run org.kde.kdenlive", fork = true, silent = true }]
+kra.app_list = [{ command = "krita", fork = true, silent = true }]
+kdenlive.app_list = [{ command = "kdenlive", fork = true, silent = true }]
 
 torrent.app_list = [{ command = "qbittorrent" }]
 

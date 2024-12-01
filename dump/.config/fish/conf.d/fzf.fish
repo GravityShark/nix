@@ -13,6 +13,10 @@
 
 status is-interactive; or exit 0
 
+# Disabled version of the original key-bindings.fish for fzf.
+# These are the only enabled keybindings
+# bind \cf fzf-file-widget-all
+# bind \cr fzf-history-widget
 
 # Key bindings
 # ------------
@@ -135,7 +139,7 @@ function fzf_key_bindings
 
   if bind -M insert > /dev/null 2>&1
     #bind -M insert \cf fzf-file-widget
-    bind -M insert \ca fzf-file-widget-all
+    bind -M insert \cf fzf-file-widget-all
     bind -M insert \cr fzf-history-widget
     #bind -M insert \cz fzf-cd-widget
   end
