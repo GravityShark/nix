@@ -40,7 +40,6 @@ in
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/.scripts"
-    "$HOME/.scripts/aliases/"
   ];
 
   # The home.packages option allows you to install Nix packages into your
