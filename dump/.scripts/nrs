@@ -1,2 +1,2 @@
 #!/bin/sh
-nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix
+doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix
