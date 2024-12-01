@@ -187,7 +187,7 @@
   (setq org-caldav-files nil)
 
   ;; Usually a good idea to set the timezone manually
-  (setq org-icalendar-timezone "Asia/Manilla"))
+  (setq org-icalendar-timezone "Asia/Manila"))
 
 
 ;;; Key maps
