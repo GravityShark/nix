@@ -9,6 +9,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
+    # Use the stable version cause idek if the beta version even exists
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     modesetting.enable = true;
@@ -29,4 +30,5 @@
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:2:0:0";
     };
+  };
 }
