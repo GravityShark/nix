@@ -36,12 +36,12 @@ in
   home.username = "gravity";
   home.homeDirectory = "/home/gravity";
 
-  # Paths
-  home.sessionPath = [
-    "$HOME/.local/bin"
-    "$HOME/.scripts"
-    "$HOME/.emacs.d/bin"
-  ];
+  # Paths doesnt work!!
+  # home.sessionPath = [
+  #   "$HOME/.local/bin"
+  #   "$HOME/.scripts"
+  #   "$HOME/.emacs.d/bin"
+  # ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -199,11 +199,11 @@ in
   #   exec = "chromium --app=https://messenger.com";
   # };
 
-  home.sessionVariables = {
-    GOPATH = "$HOME/.go";
-    GOPROXY = "https://proxy.golang.org";
-    GOSUMDB = "sum.golang.org";
-  };
+  # home.sessionVariables = {
+  #   GOPATH = "$HOME/.go";
+  #   GOPROXY = "https://proxy.golang.org";
+  #   GOSUMDB = "sum.golang.org";
+  # };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'.
