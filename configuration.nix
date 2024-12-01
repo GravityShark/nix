@@ -26,7 +26,8 @@
       # New packages
       pkgs.evince
       pkgs.foot
-      pkgs.home-manager
+      pkgs.fragments # Bittorrent client
+      pkgs-unstable.home-manager
       pkgs.obs-studio
       pkgs.racket
       pkgs-unstable.mcontrolcenter
@@ -43,28 +44,20 @@
       # Packages from the past
       pkgs.anki
       pkgs.dash
-      pkgs.deluge
       pkgs.emacs-gtk
       pkgs.eza
       pkgs.fastfetch
       pkgs.fd
       pkgs.fish
       pkgs.fzf
-      # pkgs.gamemode
       pkgs.git
-      # pkgs.gnupg
-      pkgs.htop
       pkgs.hunspell
       pkgs.joshuto
       pkgs.krita
-      # pkgs.languagetool
-      # pkgs.libreoffice-bin
+      # pkgs.libreoffice-fresh
       pkgs.mksh
       pkgs.pass
-      # pkgs.poppler
-      # pkgs.qbittorrent
       pkgs.ripgrep
-      # pkgs.screenkey
       pkgs.tmux
       pkgs-unstable.neovim
       pkgs-unstable.wineWowPackages.waylandFull
@@ -87,6 +80,7 @@
     binsh = "${pkgs.dash}/bin/dash";
   };
 
+  # Long live the better posix shell
   users.defaultUserShell = pkgs.mksh;
 
   # Use doas instead of sudo
@@ -120,8 +114,6 @@
   # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
 
-  # enable support for ntfs
-  boot.supportedFilesystems = [ "ntfs" ];
   # use zen kernel kuh
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -139,7 +131,9 @@
     };
   };
 
+  # Optimise package sizes
   nix.optimise.automatic = true;
+  # Garbage collection
   nix.gc = {
     automatic = true;
     dates = "daily";

@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # opengl -> graphics in unstable, beware of that
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
