@@ -24,7 +24,7 @@
   environment = {
     systemPackages = [
       # New packages
-      pkgs.evolution
+      pkgs.temurin-jre-bin
       pkgs.doas-sudo-shim
       pkgs.efibootmgr
       pkgs.evince

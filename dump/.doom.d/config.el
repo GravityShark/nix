@@ -1,5 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(setq doom-user-dir "~/.nix/dump/.doom.d/")
+
 ;; Resolve bad $SHELL
 (setq shell-file-name (executable-find "bash"))
 
@@ -159,21 +161,7 @@
                              (?D . (:foreground "#907aa9"))
                              (?E . (:foreground "#56949f")))))
 
-(use-package! lsp-ltex
-  :hook ((org-mode . (lambda ()
-                       (require 'lsp-ltex))))
-  (markdown-mode . (lambda ()
-                     (require 'lsp-ltex)))
-  :init
-  (setq lsp-ltex-version "16.0.0")
-  (setq lsp-ltex-additional-rules-enable-picky-rules "true")
-  (setq lsp-ltex-language "en")
-  (setq lsp-ltex-mother-tongue "tl-PH" ))
-
-(use-package! org-caldav
-  :hook ((org-mode . (lambda ()
-                       (require 'org-caldav))))
-  :init
+(after! org-caldav
   ;; URL of the caldav server
   (setq org-caldav-url "http://192.168.0.3:3002/dav.php/calendars/gravity")
 
@@ -189,11 +177,25 @@
   ;; Usually a good idea to set the timezone manually
   (setq org-icalendar-timezone "Asia/Manila"))
 
+(use-package! lsp-ltex
+  :hook (org-mode . (lambda ()
+                      (require 'lsp-ltex)
+                      (lsp-deferred)))
+  (markdown-mode . (lambda ()
+                     (require 'lsp-ltex)
+                     (lsp-deferred)))
+  :init
+  (setq lsp-ltex-version "16.0.0")
+  (setq lsp-ltex-additional-rules-enable-picky-rules "true")
+  (setq lsp-ltex-language "en")
+  (setq lsp-ltex-mother-tongue "tl-PH" ))
+
+
 
 ;;; Key maps
 ;; Allow for C-y to accept company selection
 (map! :after corfu
-      :map corfu-map
+      ;; :map corfu-map
       "C-y" #'corfu-insert
       "C-e" #'corfu-quit)
 
