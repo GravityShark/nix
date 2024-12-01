@@ -57,10 +57,10 @@ in
     pkgs.nerd-fonts.iosevka
     pkgs.nixfmt-rfc-style
     pkgs.sesh
-    tex
     pkgs.ungoogled-chromium
     pkgs.vial
     pkgs.webcord
+    tex
     zen-browser.specific
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -160,12 +160,6 @@ in
     };
   };
 
-  # Emacs systemd service
-  # systemd.user.services.emacs.Unit = {
-  #   After = [ "graphical-session-pre.target" ];
-  #   PartOf = [ "graphical-session.target" ];
-  # };
-
   # Syncthing setup
   services.syncthing = {
     enable = true;
@@ -195,16 +189,6 @@ in
     };
   };
 
-  # programs.bash = {
-  #   shellAliases = {
-  #     nre = "$EDITOR ~/.nix && nixfmt ~/.nix/*";
-  #     nrs = "nix flake update ~/.nix && doas chmod 777 /dev/null && doas nixos-rebuild switch --flake ~/.nix";
-  #     hme = "$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*";
-  #     hms = "home-manager switch --flake ~/.nix?submodules=1";
-  #     fe = "$EDITOR ~/.nix/flake.nix && nixfmt ~/.nix/*";
-  #   };
-  # };
-
   # xdg.desktopEntries.discord = {
   #   name = "Messenger";
   #   exec = "chromium --app=https://messenger.com";
@@ -232,7 +216,7 @@ in
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
   home.enableNixpkgsReleaseCheck = false;
 
   # Let Home Manager install and manage itself.

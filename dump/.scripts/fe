@@ -1,2 +1,2 @@
 #!/bin/sh
-$EDITOR ~/.nix/flake.nix && nixfmt ~/.nix
+$EDITOR ~/.nix/flake.nix && nixfmt ~/.nix/*.nix
