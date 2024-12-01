@@ -70,6 +70,7 @@
       EDITOR = "nvim";
       SYSTEMD_EDITOR = "nvim";
       VISUAL = "nvim";
+      GSK_RENDERER = "ngl";
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
     shells = with pkgs; [
@@ -111,6 +112,11 @@
     TAG+="udev-acl"'';
 
   services.flatpak.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
@@ -150,12 +156,9 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # For somereason /dev/null is NOT being properly permissionisezed
-  system.activationScripts.chmod = {
-    text = ''
-      #!/bin/sh
-      chmod 777 /dev/null
-    '';
-  };
+  system.activationScripts.chmod-dev-null.text = ''
+    chmod 777 /dev/null
+  '';
 
   # gettin flakey
   nix.settings.experimental-features = [

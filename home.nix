@@ -46,7 +46,9 @@ in
   # environment.
   home.packages = [
     pkgs.authenticator
+    pkgs.foliate
     pkgs.fragments # Bittorrent client
+    pkgs.gnome-epub-thumbnailer
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.pop-shell
