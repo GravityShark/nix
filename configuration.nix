@@ -35,8 +35,28 @@
       pkgs-unstable.mcontrolcenter
       pkgs.wl-clipboard
 
-      # Neovim dependencies
+      # Mason
       pkgs.clang-tools
+      pkgs.lua-language-server
+      pkgs.stylua
+      pkgs.gopls
+      pkgs.golangci-lint
+      pkgs.gofumpt
+      pkgs.golines
+      pkgs.goimports-reviser
+      pkgs.html-lsp
+      pkgs.prettierd
+      pkgs.emmet-language-server
+      pkgs.tailwindcss-language-server
+      pkgs.typescript-language-server
+      pkgs.quick-lint-js
+      pkgs.clangd
+      pkgs.clang-format
+      pkgs.pyright
+      pkgs.ruff
+      pkgs.shfmt
+      pkgs.json-lsp
+      # Neovim dependencies
       pkgs.clang
       pkgs.gnumake
       pkgs.go
