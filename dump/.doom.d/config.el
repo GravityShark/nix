@@ -164,6 +164,7 @@
 (after! org-caldav
   ;; URL of the caldav server
   (setq org-caldav-url "http://192.168.0.3:3002/dav.php/calendars/gravity")
+  ;; (setq org-caldav-url "http://192.168.0.3:3002/dav.php")
 
   ;; calendar ID on server
   (setq org-caldav-calendar-id "default")

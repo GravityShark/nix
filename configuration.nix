@@ -21,16 +21,17 @@
   nixpkgs.config.allowUnfree = true;
 
   # Packages
+
   environment = {
     systemPackages = [
       # New packages
-      pkgs.temurin-jre-bin
       pkgs.doas-sudo-shim
       pkgs.efibootmgr
       pkgs.evince
       pkgs.foot
       pkgs.obs-studio
       pkgs.racket
+      pkgs.temurin-jre-bin
       pkgs-unstable.home-manager
       pkgs-unstable.mcontrolcenter
       pkgs.wl-clipboard
@@ -72,10 +73,13 @@
       pkgs.fzf
       pkgs.git
       pkgs.hunspell
+      pkgs.hunspellDicts.en_US
+      # pkgs.hunspellDicts.tl
       pkgs.joshuto
       pkgs.krita
       # pkgs.libreoffice-fresh
       pkgs.mksh
+      pkgs.mpv
       pkgs.pass
       pkgs.ripgrep
       pkgs.tmux
@@ -99,6 +103,24 @@
       fish
     ];
     binsh = "${pkgs.dash}/bin/dash";
+    # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
+    gnome.excludePackages = with pkgs; [
+      epiphany
+      geary
+      gnome-connections
+      gnome-console
+      gnome-contacts
+      gnome-logs
+      gnome-music
+      gnome-text-editor
+      gnome-tour # GNOME Shell detects the .desktop file on first log-in.
+      gnome-weather
+      seahorse # Passwords and Keys
+      # simple-scan
+      # snapshot
+      # sysprof
+      totem # Videos
+    ];
   };
 
   # Long live the better posix shell
@@ -118,6 +140,14 @@
         }
       ];
     };
+  };
+
+  # GnuPG
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "gtk2";
+    enableSSHSupport = true;
   };
 
   # Vial udev rule
