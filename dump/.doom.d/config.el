@@ -159,8 +159,7 @@
                              (?D . (:foreground "#907aa9"))
                              (?E . (:foreground "#56949f")))))
 
-;; (lsp-deferred)))
-(use-package lsp-ltex
+(use-package! lsp-ltex
   :hook ((org-mode . (lambda ()
                        (require 'lsp-ltex))))
   (markdown-mode . (lambda ()
@@ -170,6 +169,26 @@
   (setq lsp-ltex-additional-rules-enable-picky-rules "true")
   (setq lsp-ltex-language "en")
   (setq lsp-ltex-mother-tongue "tl-PH" ))
+
+(use-package! org-caldav
+  :hook ((org-mode . (lambda ()
+                       (require 'org-caldav))))
+  :init
+  ;; URL of the caldav server
+  (setq org-caldav-url "http://192.168.0.3:3002/dav.php")
+
+  ;; calendar ID on server
+  (setq org-caldav-calendar-id "default")
+
+  ;; Org filename where new entries from calendar stored
+  (setq org-caldav-inbox (concat org-directory "inbox.org"))
+
+  ;; Additional Org files to check for calendar events
+  (setq org-caldav-files nil)
+
+  ;; Usually a good idea to set the timezone manually
+  (setq org-icalendar-timezone "Asia/Manilla"))
+
 
 ;;; Key maps
 ;; Allow for C-y to accept company selection

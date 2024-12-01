@@ -24,6 +24,7 @@
   environment = {
     systemPackages = [
       # New packages
+      pkgs.evolution
       pkgs.doas-sudo-shim
       pkgs.efibootmgr
       pkgs.evince
