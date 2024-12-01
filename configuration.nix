@@ -35,6 +35,7 @@
       pkgs.wl-clipboard
 
       # Neovim dependencies
+      pkgs.clang-tools
       pkgs.clang
       pkgs.gnumake
       pkgs.go

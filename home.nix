@@ -192,6 +192,7 @@ in
       };
     };
   };
+  services.emacs.enable = true;
 
   # xdg.desktopEntries.discord = {
   #   name = "Messenger";
