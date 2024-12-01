@@ -40,6 +40,7 @@ in
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/.scripts"
+    "$HOME/.emacs.d/bin"
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -198,6 +199,12 @@ in
   #   name = "Messenger";
   #   exec = "chromium --app=https://messenger.com";
   # };
+
+  home.sessionVariables = {
+    GOPATH = "$HOME/.go";
+    GOPROXY = "https://proxy.golang.org";
+    GOSUMDB = "sum.golang.org";
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'.

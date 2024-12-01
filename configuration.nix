@@ -110,6 +110,7 @@
       gnome-connections
       gnome-console
       gnome-contacts
+      gnome-software
       gnome-logs
       gnome-music
       gnome-text-editor
