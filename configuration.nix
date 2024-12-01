@@ -24,12 +24,12 @@
   environment = {
     systemPackages = [
       # New packages
+      pkgs.efibootmgr
       pkgs.evince
       pkgs.foot
-      pkgs.fragments # Bittorrent client
-      pkgs-unstable.home-manager
       pkgs.obs-studio
       pkgs.racket
+      pkgs-unstable.home-manager
       pkgs-unstable.mcontrolcenter
       pkgs.wl-clipboard
 

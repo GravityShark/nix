@@ -46,6 +46,7 @@ in
   # environment.
   home.packages = [
     pkgs.authenticator
+    pkgs.fragments # Bittorrent client
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.pop-shell
