@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo nixos-rebuild switch --use-remote-sude --flake ~/.nix
+sudo nixos-rebuild switch --flake ~/.nix
