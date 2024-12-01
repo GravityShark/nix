@@ -37,25 +37,22 @@
 
       # Mason
       pkgs.clang-tools
-      pkgs.lua-language-server
-      pkgs.stylua
-      pkgs.gopls
-      pkgs.golangci-lint
-      pkgs.gofumpt
-      pkgs.golines
-      pkgs.goimports-reviser
-      pkgs.html-lsp
-      pkgs.prettierd
       pkgs.emmet-language-server
-      pkgs.tailwindcss-language-server
-      pkgs.typescript-language-server
-      pkgs.quick-lint-js
-      pkgs.clangd
-      pkgs.clang-format
+      pkgs.gofumpt
+      pkgs.goimports-reviser
+      pkgs.golangci-lint
+      pkgs.golines
+      pkgs.gopls
+      pkgs.lua-language-server
+      pkgs.prettierd
       pkgs.pyright
+      pkgs.quick-lint-js
       pkgs.ruff
       pkgs.shfmt
-      pkgs.json-lsp
+      pkgs.stylua
+      pkgs.tailwindcss-language-server
+      pkgs.typescript-language-server
+      pkgs.vscode-langservers-extracted # contains html-lsp and json-lsp
       # Neovim dependencies
       pkgs.clang
       pkgs.gnumake
