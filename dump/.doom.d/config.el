@@ -162,6 +162,7 @@
                              (?E . (:foreground "#56949f")))))
 
 (after! org-caldav
+  ;; https://github.com/sabre-io/Baikal/issues/648#issuecomment-493679540
   ;; URL of the caldav server
   (setq org-caldav-url "http://192.168.0.3:3002/dav.php/calendars/gravity")
   ;; (setq org-caldav-url "http://192.168.0.3:3002/dav.php")
