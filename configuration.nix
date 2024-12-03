@@ -35,6 +35,7 @@
       pkgs-unstable.home-manager
       pkgs-unstable.mcontrolcenter
       pkgs.wl-clipboard
+      pkgs.dotnet-sdk
 
       # Mason
       pkgs.clang-tools
