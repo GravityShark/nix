@@ -35,8 +35,11 @@
       pkgs-unstable.home-manager
       pkgs-unstable.mcontrolcenter
       pkgs.wl-clipboard
-      pkgs.dotnet-sdk
 
+      # 25 day AOC challenge
+      pkgs.dotnet-sdk
+      pkgs.csharp-ls
+      pkgs.R
       # Mason
       pkgs.clang-tools
       pkgs.emmet-language-server
