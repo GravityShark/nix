@@ -35,6 +35,7 @@
       pkgs-unstable.home-manager
       pkgs-unstable.mcontrolcenter
       pkgs.wl-clipboard
+      pkgs.nil
 
       # 25 day AOC challenge
       pkgs.dotnet-sdk

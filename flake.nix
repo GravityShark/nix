@@ -20,7 +20,6 @@
       home-manager,
       ...
     }:
-
     let
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
