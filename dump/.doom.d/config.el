@@ -130,11 +130,13 @@
 ;; Configure to allow both english and tagalog in spell checking
 (after! ispell
   (setq ispell-program-name "hunspell")
-  (setq ispell-dictionary "en_US,tl")
+  (setq ispell-dictionary "en_US")
+  ;; (setq ispell-dictionary "en_US,tl")
   ;; mkdir -p ~/.emacs.d/.local/etc/ispell && touch ~/.emacs.d/.local/etc/ispell/.pws && chmod 660 ~/.emacs.d/.local/etc/ispell/.pws
   (setq ispell-personal-dictionary "~/.emacs.d/.local/etc/ispell/.pws")
   (ispell-set-spellchecker-params)
-  (ispell-hunspell-add-multi-dic "en_US,tl"))
+  (ispell-hunspell-add-multi-dic "en_US"))
+;; (ispell-hunspell-add-multi-dic "en_US,tl"))
 (add-hook 'spell-fu-mode-hook
           (lambda ()
             (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US"))
