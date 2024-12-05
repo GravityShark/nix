@@ -36,6 +36,7 @@
       pkgs-unstable.mcontrolcenter
       pkgs.wl-clipboard
       pkgs.nil
+      pkgs.pharo
 
       # 25 day AOC challenge
       pkgs.dotnet-sdk
@@ -211,9 +212,7 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # For somereason /dev/null is NOT being properly permissionisezed
-  system.activationScripts.chmod-dev-null.text = ''
-    chmod 777 /dev/null
-  '';
+  system.activationScripts.chmod-dev-null.text = "chmod 777 /dev/null";
 
   # gettin flakey
   nix.settings.experimental-features = [
