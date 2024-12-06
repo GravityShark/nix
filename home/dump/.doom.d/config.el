@@ -1,6 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(setq doom-user-dir "~/.nix/dump/.doom.d/")
+(setq doom-user-dir "~/.nix/home/dump/.doom.d/")
 
 ;; Resolve bad $SHELL
 (setq shell-file-name (executable-find "bash"))
