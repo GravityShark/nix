@@ -176,7 +176,7 @@
   (setq org-caldav-inbox (concat org-directory "inbox.org"))
 
   ;; Additional Org files to check for calendar events
-  (setq org-caldav-files nil)
+  (setq org-caldav-files (concat org-directory "reminders.org"))
 
   ;; Usually a good idea to set the timezone manually
   (setq org-icalendar-timezone "Asia/Manila"))
