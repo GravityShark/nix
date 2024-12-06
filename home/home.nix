@@ -16,6 +16,15 @@
   home.username = "gravity";
   home.homeDirectory = "/home/gravity";
 
+  # Emacs service
+  services.emacs.enable = true;
+
+  # Auto update
+  services.home-manager.autoUpgrade = {
+    enable = true;
+    frequency = "02:00";
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -46,7 +55,4 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-
-  # Emacs service
-  services.emacs.enable = true;
 }

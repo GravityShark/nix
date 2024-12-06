@@ -39,8 +39,9 @@
       fish
     ];
     binsh = "${pkgs.dash}/bin/dash";
-    # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
   };
+  # Long live the better posix shell
+  users.defaultUserShell = pkgs.mksh;
 
   system.autoUpgrade = {
     enable = true;
@@ -53,9 +54,6 @@
     dates = "02:00";
     randomizedDelaySec = "45min";
   };
-
-  # Long live the better posix shell
-  users.defaultUserShell = pkgs.mksh;
 
   # Optimise package sizes
   nix.optimise.automatic = true;

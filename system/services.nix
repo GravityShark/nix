@@ -1,4 +1,5 @@
 { ... }:
+
 {
   # GnuPG
   services.pcscd.enable = true;

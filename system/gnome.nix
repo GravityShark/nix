@@ -15,6 +15,11 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  programs.gnupg.agent = {
+    pinentryPackage = lib.mkDefault pkgs.pinentry-gnome3;
+  };
+
+  # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
   environment.gnome.excludePackages = with pkgs; [
     epiphany
     geary
@@ -34,7 +39,4 @@
     totem # Videos that doesnt even work
   ];
 
-  programs.gnupg.agent = {
-    pinentryPackage = lib.mkDefault pkgs.pinentry-gnome3;
-  };
 }
