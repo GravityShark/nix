@@ -23,22 +23,23 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
-      pkgs-unstable = pkgs;
+      unstable = pkgs;
       zen-browser = zen-browser-flake.packages.${system};
+      home = import ./home;
     in
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
+          modules = [ ./system ];
           specialArgs = {
-            inherit pkgs-unstable;
+            inherit unstable;
           };
         };
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ home.home.nix ];
         extraSpecialArgs = {
           inherit zen-browser;
         };

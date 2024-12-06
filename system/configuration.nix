@@ -3,9 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  config,
+  # config,
   pkgs,
-  pkgs-unstable,
+  unstable,
   ...
 }:
 
@@ -23,77 +23,77 @@
   # Packages
 
   environment = {
-    systemPackages = [
+    systemPackages = with pkgs; [
       # New packages
-      pkgs.doas-sudo-shim
-      pkgs.efibootmgr
-      pkgs.evince
-      pkgs.foot
-      pkgs.obs-studio
-      pkgs.racket
-      pkgs.temurin-jre-bin
-      pkgs-unstable.home-manager
-      pkgs-unstable.mcontrolcenter
-      pkgs.wl-clipboard
-      pkgs.nil
-      pkgs.pharo
+      doas-sudo-shim
+      efibootmgr
+      evince
+      foot
+      obs-studio
+      racket
+      temurin-jre-bin
+      unstable.home-manager
+      unstable.mcontrolcenter
+      wl-clipboard
+      pharo
 
       # 25 day AOC challenge
-      pkgs.dotnet-sdk
-      pkgs.csharp-ls
-      pkgs.R
+      dotnet-sdk
+      csharp-ls
+      R
       # Mason
-      pkgs.clang-tools
-      pkgs.emmet-language-server
-      pkgs.gofumpt
-      pkgs.goimports-reviser
-      pkgs.golangci-lint
-      pkgs.golines
-      pkgs.gopls
-      pkgs.lua-language-server
-      pkgs.prettierd
-      pkgs.pyright
-      pkgs.quick-lint-js
-      pkgs.ruff
-      pkgs.shfmt
-      pkgs.stylua
-      pkgs.tailwindcss-language-server
-      pkgs.typescript-language-server
-      pkgs.vscode-langservers-extracted # contains html-lsp and json-lsp
+      clang-tools
+      emmet-language-server
+      gofumpt
+      goimports-reviser
+      golangci-lint
+      golines
+      gopls
+      nil
+      lua-language-server
+      prettierd
+      pyright
+      quick-lint-js
+      ruff
+      shfmt
+      stylua
+      tailwindcss-language-server
+      typescript-language-server
+      vscode-langservers-extracted # contains html-lsp and json-lsp
       # Neovim dependencies
-      pkgs.clang
-      pkgs.gnumake
-      pkgs.go
-      pkgs.nodejs
-      pkgs.python3
-      pkgs.unzip
+      clang
+      gnumake
+      go
+      nodejs
+      python3
+      unzip
 
       # Packages from the past
-      pkgs.anki
-      pkgs.dash
-      pkgs.emacs-gtk
-      pkgs.eza
-      pkgs.fastfetch
-      pkgs.fd
-      pkgs.fish
-      pkgs.fzf
-      pkgs.git
-      pkgs.hunspell
-      pkgs.hunspellDicts.en_US
-      # pkgs.hunspellDicts.tl
-      pkgs.joshuto
-      pkgs.krita
-      # pkgs.libreoffice-fresh
-      pkgs.mksh
-      pkgs.mpv
-      pkgs.pass
-      pkgs.ripgrep
-      pkgs.tmux
-      pkgs-unstable.neovim
-      pkgs-unstable.wineWowPackages.waylandFull
-      pkgs.yt-dlp
-      pkgs.ytfzf
-      pkgs.zoxide
+      anki
+      dash
+      emacs-gtk
+      eza
+      fastfetch
+      fd
+      fish
+      fzf
+      git
+      hunspell
+      hunspellDicts.en_US
+      # hunspellDicts.tl
+      joshuto
+      krita
+      # libreoffice-fresh
+      mksh
+      mpv
+      pass
+      ripgrep
+      tmux
+      unstable.neovim
+      unstable.wineWowPackages.waylandFull
+      yt-dlp
+      ytfzf
+      zoxide
     ];
     variables = {
       EDITOR = "nvim";

@@ -1,2 +1,2 @@
 #!/bin/sh
-$EDITOR ~/.nix/home.nix && nixfmt ~/.nix/*.nix
+$EDITOR ~/.nix/user/home.nix && nixfmt ~/.nix/*.nix
