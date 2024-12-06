@@ -10,6 +10,9 @@
 }:
 
 {
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./gnome.nix
     ./hardware-configuration.nix
@@ -19,9 +22,6 @@
     ./system.nix
     ./services.nix
   ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Environment
   environment = {

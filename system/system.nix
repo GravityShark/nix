@@ -1,4 +1,4 @@
-{ unstable, ... }:
+{ pkgs, ... }:
 
 {
   # Bootloader.
@@ -69,7 +69,7 @@
   time.hardwareClockInLocalTime = true;
 
   # use zen kernel kuh
-  boot.kernelPackages = unstable.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   # Hosts file
   networking = {
