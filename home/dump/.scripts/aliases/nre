@@ -1,2 +1,2 @@
 #!/bin/sh
-$EDITOR ~/.nix/system/configuration.nix && nixfmt ~/.nix/*.nix
+cd ~/.nix/system/ && $EDITOR ~/.nix/system/configuration.nix

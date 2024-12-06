@@ -1,22 +1,15 @@
-# {
-#   config,
-#   pkgs,
-#   zen-browser,
-#   ...
-# }:
-
 { ... }:
 
 {
+  # ENABLE IF NOT NIXOS
+  # targets.genericLinux.enable = false;
+
   imports = [
     ./default.nix
     ./packages.nix
     ./gnome.nix
     ./syncthing.nix
   ];
-
-  # ENABLE IF NOT NIXOS
-  # targets.genericLinux.enable = false;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -54,5 +47,6 @@
     # '';
   };
 
+  # Emacs service
   services.emacs.enable = true;
 }

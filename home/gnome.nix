@@ -1,16 +1,13 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
-  home.packages =
-    with pkgs;
-    [
-      gnome-epub-thumbnailer
-      gnomeExtensions.appindicator
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.pop-shell
-      gnomeExtensions.run-or-raise
-    ]
-    ++ home.packages;
+  home.packages = with pkgs; [
+    gnome-epub-thumbnailer
+    gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.pop-shell
+    gnomeExtensions.run-or-raise
+  ];
   # Gnome settings
   dconf.settings = {
     "org/gnome/desktop/session".idle-delay = 300;
