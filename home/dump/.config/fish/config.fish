@@ -73,4 +73,8 @@ if status is-interactive
     end
     fzf_key_bindings        
     zoxide init fish | source
+
+    if command -q nix-your-shell
+      nix-your-shell fish | source
+    end
 end

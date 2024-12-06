@@ -67,6 +67,7 @@ in
     zen-browser.specific
 
     # CLIs
+    nix-your-shell
     sesh
     tex
 
