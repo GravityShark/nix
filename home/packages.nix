@@ -33,11 +33,6 @@ in
     authenticator
     foliate
     fragments # Bittorrent client
-    gnome-epub-thumbnailer
-    gnomeExtensions.appindicator
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.pop-shell
-    gnomeExtensions.run-or-raise
     gnome-frog
     iosevka-comfy.comfy
     iosevka-comfy.comfy-wide-motion

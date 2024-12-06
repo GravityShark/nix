@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./defaults.nix
+    ./ld.nix
   ];
 
   # Allow unfree packages
