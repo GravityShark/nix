@@ -31,10 +31,10 @@ in
   # environment.
   home.packages = with pkgs; [
     # 25 day AOC challenge
-    dotnet-sdk
     csharp-ls
-    R
+    dotnet-sdk
     pharo
+    R
     # Mason
     clang-tools
     emmet-language-server
@@ -56,20 +56,25 @@ in
     typescript-language-server
     vscode-langservers-extracted # contains html-lsp and json-lsp
 
+    # Apps
     authenticator
     foliate
     fragments # Bittorrent client
     gnome-frog
+    ungoogled-chromium
+    webcord
+    zen-browser.specific
+
+    # CLIs
+    sesh
+    tex
+
+    # Fonts
     iosevka-comfy.comfy
     iosevka-comfy.comfy-wide-motion
     nerd-fonts.fira-code
     nerd-fonts.iosevka
-    sesh
-    ungoogled-chromium
-    vial
-    webcord
-    tex
-    zen-browser.specific
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
