@@ -163,24 +163,6 @@
                              (?D . (:foreground "#907aa9"))
                              (?E . (:foreground "#56949f")))))
 
-(after! org-caldav
-  ;; https://github.com/sabre-io/Baikal/issues/648#issuecomment-493679540
-  ;; URL of the caldav server
-  (setq org-caldav-url "http://192.168.0.3:3002/dav.php/calendars/gravity")
-  ;; (setq org-caldav-url "http://192.168.0.3:3002/dav.php")
-
-  ;; calendar ID on server
-  (setq org-caldav-calendar-id "default")
-
-  ;; Org filename where new entries from calendar stored
-  (setq org-caldav-inbox (concat org-directory "inbox.org"))
-
-  ;; Additional Org files to check for calendar events
-  (setq org-caldav-files (concat org-directory "reminders.org"))
-
-  ;; Usually a good idea to set the timezone manually
-  (setq org-icalendar-timezone "Asia/Manila"))
-
 (use-package! lsp-ltex
   :hook (org-mode . (lambda ()
                       (require 'lsp-ltex)
@@ -194,14 +176,12 @@
   (setq lsp-ltex-language "en")
   (setq lsp-ltex-mother-tongue "tl-PH" ))
 
-
-
 ;;; Key maps
 ;; Allow for C-y to accept company selection
-(map! :after corfu
-      ;; :map corfu-map
-      "C-y" #'corfu-insert
-      "C-e" #'corfu-quit)
+;; (map! :after corfu
+;;       :map corfu-map
+;;       "C-y" #'corfu-insert
+;;       "C-e" #'corfu-quit)
 
 ;; (map! :after treemacs
 ;;       :leader

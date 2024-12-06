@@ -53,7 +53,8 @@
 (package! xkcd)
 (package! el-fetch)
 (package! org-preview-html)
-(package! org-caldav)
+(package! org-calfw)
+(package! org-icalendar)
 
 ;; the ubuntu emacs package is not compiled with tree-sitter
 ;; (package! typst-ts-mode
