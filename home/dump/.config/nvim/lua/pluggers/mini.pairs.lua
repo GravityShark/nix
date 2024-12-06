@@ -1,1 +1,0 @@
-editor/mini.pairs.lua

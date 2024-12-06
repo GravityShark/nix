@@ -1,1 +1,0 @@
-colors/rose-pine.lua
