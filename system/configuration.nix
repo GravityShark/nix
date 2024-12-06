@@ -10,19 +10,18 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
+    ./gnome.nix
     ./hardware-configuration.nix
-    ./packages.nix
-    ./nvidia.nix
-    ./defaults.nix
     ./ld.nix
+    ./nvidia.nix
+    ./packages.nix
+    ./system.nix
   ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Packages
-
+  # Environment
   environment = {
     variables = {
       EDITOR = "nvim";
@@ -30,7 +29,7 @@
       VISUAL = "nvim";
       GSK_RENDERER = "ngl";
     };
-    sessionVariables.NIXOS_OZONE_WL = "1";
+    sessionVariables.NIXOS_OZONE_WL = "1"; # Make chromium run on wayland
     shells = with pkgs; [
       bash
       dash
@@ -39,44 +38,10 @@
     ];
     binsh = "${pkgs.dash}/bin/dash";
     # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
-    gnome.excludePackages = with pkgs; [
-      epiphany
-      geary
-      gnome-connections
-      gnome-console
-      gnome-contacts
-      gnome-software
-      gnome-logs
-      gnome-music
-      gnome-text-editor
-      gnome-tour # GNOME Shell detects the .desktop file on first log-in.
-      gnome-weather
-      # seahorse # Passwords and Keys
-      # simple-scan
-      # snapshot
-      # sysprof
-      totem # Videos
-    ];
   };
 
   # Long live the better posix shell
   users.defaultUserShell = pkgs.mksh;
-
-  # Use doas instead of sudo
-  # https://www.reddit.com/r/NixOS/comments/rts8gm/sudo_or_doas/
-  security = {
-    sudo.enable = false;
-    doas = {
-      enable = true;
-      extraRules = [
-        {
-          users = [ "gravity" ];
-          keepEnv = true;
-          persist = true;
-        }
-      ];
-    };
-  };
 
   # GnuPG
   services.pcscd.enable = true;
@@ -85,16 +50,6 @@
     pinentryPackage = pkgs.pinentry-gnome3;
     enableSSHSupport = true;
   };
-
-  # Vial udev rule
-  services.udev.extraRules = ''
-    "KERNEL=="hidraw*", 
-    SUBSYSTEM=="hidraw", 
-    ATTRS{serial}=="*vial:f64c2b3c*", 
-    MODE="0660", 
-    GROUP="100", 
-    TAG+="uaccess", 
-    TAG+="udev-acl"'';
 
   services.flatpak.enable = true;
   services.avahi = {

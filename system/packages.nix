@@ -1,6 +1,6 @@
 { pkgs, unstable, ... }:
-{
 
+{
   environment.packages = with pkgs; [
     # Apps
     anki

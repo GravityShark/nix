@@ -9,6 +9,7 @@
     ./packages.nix
     ./gnome.nix
     ./syncthing.nix
+    ./vial.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
