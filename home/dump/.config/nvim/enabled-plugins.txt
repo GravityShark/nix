@@ -1,0 +1,41 @@
+# Used by relink.go to know what to set as enabled plugins
+# run `relink.out` or `go run relink.go`
+# the names are assumed to be relative to ./lua/pluggers/ from now own
+# read about the available plugins in their respective .org documentation
+# plugins that are emphasized (surrounded with *) are recommended
+# ex. lua/pluggers/main/main.org
+
+colors/rose-pine.lua
+
+main/conform.lua
+main/cmp.lua
+main/lint.lua
+main/lsp.lua
+#main/mason.lua
+main/telescope.lua
+main/treesitter.lua
+
+editor/guess-indent.lua
+editor/mini.ai.lua
+editor/mini.jump.lua
+editor/mini.pairs.lua
+editor/mini.surround.lua
+
+extra/fugitive.lua
+extra/gitsigns.lua
+extra/hardtime.lua
+extra/harpoon.lua
+extra/inc-rename.lua
+extra/lazydev.lua
+extra/neogen.lua
+extra/trouble.lua
+extra/ts-comments.lua
+extra/undotree.lua
+extra/which-key.lua
+
+ui/colorizer.lua
+ui/mini.indentscope.lua
+ui/mini.statusline.lua
+ui/todo-comments.lua
+
+# vim:commentstring=#%s:

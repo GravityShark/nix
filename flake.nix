@@ -25,13 +25,12 @@
       pkgs = nixpkgs-unstable.legacyPackages.${system};
       unstable = pkgs;
       zen-browser = zen-browser-flake.packages.${system};
-      home = import ./home;
     in
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./system ];
+          modules = [ ./system/configuration.nix ];
           specialArgs = {
             inherit unstable;
           };
@@ -39,7 +38,7 @@
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ home.home.nix ];
+        modules = [ ./home/home.nix ];
         extraSpecialArgs = {
           inherit zen-browser;
         };

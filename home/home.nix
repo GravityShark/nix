@@ -45,25 +45,25 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.authenticator
-    pkgs.foliate
-    pkgs.fragments # Bittorrent client
-    pkgs.gnome-epub-thumbnailer
-    pkgs.gnomeExtensions.appindicator
-    pkgs.gnomeExtensions.dash-to-dock
-    pkgs.gnomeExtensions.pop-shell
-    pkgs.gnomeExtensions.run-or-raise
-    pkgs.gnome-frog
-    pkgs.iosevka-comfy.comfy
-    pkgs.iosevka-comfy.comfy-wide-motion
-    pkgs.nerd-fonts.fira-code
-    pkgs.nerd-fonts.iosevka
-    pkgs.nixfmt-rfc-style
-    pkgs.sesh
-    pkgs.ungoogled-chromium
-    pkgs.vial
-    pkgs.webcord
+  home.packages = with pkgs; [
+    authenticator
+    foliate
+    fragments # Bittorrent client
+    gnome-epub-thumbnailer
+    gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.pop-shell
+    gnomeExtensions.run-or-raise
+    gnome-frog
+    iosevka-comfy.comfy
+    iosevka-comfy.comfy-wide-motion
+    nerd-fonts.fira-code
+    nerd-fonts.iosevka
+    nixfmt-rfc-style
+    sesh
+    ungoogled-chromium
+    vial
+    webcord
     tex
     zen-browser.specific
     # # It is sometimes useful to fine-tune packages, for example, by applying
