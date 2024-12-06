@@ -35,7 +35,7 @@
     ".config/fish/functions".source = dump/.config/fish/functions;
     ".config/foot".source = dump/.config/foot;
     ".config/joshuto".source = dump/.config/joshuto;
-    ".config/modprobed-db.conf;".source = dump/.config/modprobed-db.conf;
+    ".config/modprobed-db.conf".source = dump/.config/modprobed-db.conf;
     ".config/nvim/after".source = dump/.config/nvim/after;
     ".config/nvim/init.lua".source = dump/.config/nvim/init.lua;
     ".config/nvim/lua".source = dump/.config/nvim/lua;
