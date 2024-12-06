@@ -7,11 +7,11 @@ path = "~/Code"
 
 [[session]]
 name = "DOom emacs config  "
-path = "~/.nix/dump/.doom.d/"
+path = "~/.nix/home/dump/.doom.d/"
 
 [[session]]
 name = "NEovim config  "
-path = "~/.nix/dump/.config/nvim"
+path = "~/.nix/home/dump/.config/nvim"
 startup_command = "git status"
 
 [[session]]
@@ -25,11 +25,11 @@ startup_command = "git status"
 
 [[session]]
 name = "SCripts 📜 "
-path = "~/.nix/dump/.scripts"
+path = "~/.nix/home/dump/.scripts"
 
 [[session]]
 name = "SEsh config  "
-path = "~/.nix/dump/.config/sesh"
+path = "~/.nix/home/dump/.config/sesh"
 startup_command = "$EDITOR sesh.toml"
 
 [[session]]
@@ -38,7 +38,7 @@ startup_command = "ssh gravity@clr"
 
 [[session]]
 name = "TMux config  "
-startup_command = "$EDITOR ~/.nix/dump/.tmux.conf"
+startup_command = "$EDITOR ~/.nix/home/dump/.tmux.conf"
 
 [[session]]
 name = "LIttle cool website" 
