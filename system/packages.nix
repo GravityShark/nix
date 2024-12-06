@@ -1,6 +1,8 @@
 { pkgs, unstable, ... }:
 
 {
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
   environment.packages = with pkgs; [
     # Apps
     anki

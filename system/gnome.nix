@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -33,4 +33,8 @@
     # sysprof
     totem # Videos that doesnt even work
   ];
+
+  programs.gnupg.agent = {
+    pinentryPackage = lib.mkDefault pkgs.pinentry-gnome;
+  };
 }

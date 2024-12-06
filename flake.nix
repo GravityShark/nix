@@ -19,7 +19,7 @@
       zen-browser-flake,
       home-manager,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
@@ -33,6 +33,7 @@
           modules = [ ./system/configuration.nix ];
           specialArgs = {
             inherit unstable;
+            inherit inputs;
           };
         };
       };

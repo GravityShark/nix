@@ -5,6 +5,7 @@
 {
   # config,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -16,6 +17,7 @@
     ./nvidia.nix
     ./packages.nix
     ./system.nix
+    ./services.nix
   ];
 
   # Allow unfree packages
@@ -40,43 +42,20 @@
     # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L" # print build logs
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
+
   # Long live the better posix shell
   users.defaultUserShell = pkgs.mksh;
-
-  # GnuPG
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
-    enableSSHSupport = true;
-  };
-
-  services.flatpak.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-
-  # allow it to work with windows time tbh
-  time.hardwareClockInLocalTime = true;
-
-  # use zen kernel kuh
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
-  # Hosts file
-  networking = {
-    hosts = {
-      "192.168.0.3" = [ "clr" ];
-    };
-    stevenblack = {
-      enable = true;
-      block = [
-        "gambling"
-        "porn"
-      ];
-    };
-  };
 
   # Optimise package sizes
   nix.optimise.automatic = true;
