@@ -3,7 +3,7 @@
 {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     # Apps
     anki
     emacs-gtk

@@ -35,6 +35,6 @@
   ];
 
   programs.gnupg.agent = {
-    pinentryPackage = lib.mkDefault pkgs.pinentry-gnome;
+    pinentryPackage = lib.mkDefault pkgs.pinentry-gnome3;
   };
 }
