@@ -5,7 +5,6 @@
 {
   # config,
   pkgs,
-  unstable,
   ...
 }:
 
@@ -13,6 +12,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./packages.nix
     ./nvidia.nix
     ./defaults.nix
     ./ld.nix
@@ -24,78 +24,6 @@
   # Packages
 
   environment = {
-    systemPackages = with pkgs; [
-      # New packages
-      doas-sudo-shim
-      efibootmgr
-      evince
-      foot
-      obs-studio
-      racket
-      temurin-jre-bin
-      unstable.home-manager
-      unstable.mcontrolcenter
-      wl-clipboard
-      pharo
-
-      # 25 day AOC challenge
-      dotnet-sdk
-      csharp-ls
-      R
-      # Mason
-      clang-tools
-      emmet-language-server
-      gofumpt
-      goimports-reviser
-      golangci-lint
-      golines
-      gopls
-      nil
-      lua-language-server
-      prettierd
-      pyright
-      quick-lint-js
-      ruff
-      shfmt
-      stylua
-      tailwindcss-language-server
-      typescript-language-server
-      vscode-langservers-extracted # contains html-lsp and json-lsp
-      # Neovim dependencies
-      clang
-      gnumake
-      go
-      nodejs
-      python3
-      unzip
-
-      # Packages from the past
-      anki
-      dash
-      emacs-gtk
-      eza
-      fastfetch
-      fd
-      fish
-      fzf
-      git
-      hunspell
-      hunspellDicts.en_US
-      # hunspellDicts.tl
-      joshuto
-      krita
-      # libreoffice-fresh
-      mksh
-      mpv
-      pass
-      ripgrep
-      tmux
-      unstable.neovim
-      unstable.wineWowPackages.waylandFull
-      yt-dlp
-      ytfzf
-      zoxide
-    ];
     variables = {
       EDITOR = "nvim";
       SYSTEMD_EDITOR = "nvim";

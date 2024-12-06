@@ -1,5 +1,5 @@
 {
-  config,
+  # config,
   pkgs,
   zen-browser,
   ...
@@ -30,6 +30,32 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # 25 day AOC challenge
+    dotnet-sdk
+    csharp-ls
+    R
+    pharo
+    # Mason
+    clang-tools
+    emmet-language-server
+    gofumpt
+    goimports-reviser
+    golangci-lint
+    golines
+    gopls
+    lua-language-server
+    nil
+    nixfmt-rfc-style
+    prettierd
+    pyright
+    quick-lint-js
+    ruff
+    shfmt
+    stylua
+    tailwindcss-language-server
+    typescript-language-server
+    vscode-langservers-extracted # contains html-lsp and json-lsp
+
     authenticator
     foliate
     fragments # Bittorrent client
@@ -38,7 +64,6 @@ in
     iosevka-comfy.comfy-wide-motion
     nerd-fonts.fira-code
     nerd-fonts.iosevka
-    nixfmt-rfc-style
     sesh
     ungoogled-chromium
     vial
