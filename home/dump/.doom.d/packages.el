@@ -53,8 +53,8 @@
 (package! xkcd)
 (package! el-fetch)
 (package! org-preview-html)
-(package! org-calfw)
-(package! org-icalendar)
+(package! calfw)
+(package! org-hyperscheduler)
 
 ;; the ubuntu emacs package is not compiled with tree-sitter
 ;; (package! typst-ts-mode

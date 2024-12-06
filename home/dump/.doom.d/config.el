@@ -202,6 +202,10 @@
       "n p" #'(lambda () (interactive) (find-file "~/Notes/assets/Grade11Schedule.jpg")))
 
 (map! :leader
+      :desc "Open calendar"
+      "n A" #'cfw:open-org-calendar)
+
+(map! :leader
       :desc "Export to pdf"
       "n e" #'org-latex-export-to-pdf)
 
