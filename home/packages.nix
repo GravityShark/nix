@@ -62,6 +62,7 @@ in
     fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium
+    vial
     webcord
     zen-browser.specific
 
