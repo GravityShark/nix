@@ -1,5 +1,5 @@
 #!/bin/sh
 # this is probably bad practice
-git add .
-git commit -S
-git push
+git add . &&
+        git commit -S &&
+        git push
