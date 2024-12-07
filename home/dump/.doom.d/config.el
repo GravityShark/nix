@@ -209,6 +209,10 @@
       :desc "Export to pdf"
       "n e" #'org-latex-export-to-pdf)
 
+(map! :leader
+      :desc "Close window"
+      "x" #'evil-window-delete)
+
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
