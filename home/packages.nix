@@ -33,7 +33,7 @@ in
     # 25 day AOC challenge
     csharp-ls
     dotnet-sdk
-    pharo
+    gnu-smalltalk
     R
     # Mason
     clang-tools
