@@ -35,14 +35,13 @@ home-manager switch --flake ~/.nix
 
 - note: some git configurations you might wanna enable
 
-```bash
-git config --local include.path ../.gitconfig
-
-```
-
-there are still some shits that needs to be installed non declarativel
+there are still some shits that needs to be installed non declaratively (which sucks)
 more in [dump/README.md](dump/README.md)
 
 ## things i might look out for
 
 - in gentoo they have [etckeeper](https://wiki.gentoo.org/wiki/Etckeeper)
+
+```
+
+```
