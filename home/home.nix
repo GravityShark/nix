@@ -39,7 +39,6 @@
     ".config/nvim/after".source = dump/.config/nvim/after;
     ".config/nvim/init.lua".source = dump/.config/nvim/init.lua;
     ".config/nvim/lua".source = dump/.config/nvim/lua;
-    ".config/nvim/snippets".source = dump/.config/nvim/snippets;
     ".config/run-or-raise".source = dump/.config/run-or-raise;
     ".config/sesh".source = dump/.config/sesh;
     ".doom.d".source = dump/.doom.d;
