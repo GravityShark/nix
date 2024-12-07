@@ -34,6 +34,7 @@
     unzip
 
     # CLIs
+    pandoc
     efibootmgr
     eza
     fastfetch
