@@ -10,7 +10,7 @@
     evince # Document viewer
     foot
     krita
-    # libreoffice-fresh
+    libreoffice-fresh
     mpv
     obs-studio
     unstable.mcontrolcenter
