@@ -35,6 +35,7 @@ in
     dotnet-sdk
     pharo
     R
+    fpc
     # Mason
     clang-tools
     emmet-language-server
