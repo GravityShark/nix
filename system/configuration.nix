@@ -21,7 +21,7 @@
     ./packages.nix
     ./system.nix
     ./services.nix
-    ./virt-manager.nix
+    # ./virt-manager.nix
   ];
 
   # Environment
