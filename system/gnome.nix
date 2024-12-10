@@ -6,6 +6,8 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  # Remove xterm
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
