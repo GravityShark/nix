@@ -10,6 +10,7 @@
     ./gnome.nix
     ./syncthing.nix
     ./desktop.nix
+    ./mime.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
