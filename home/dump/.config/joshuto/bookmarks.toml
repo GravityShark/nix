@@ -2,4 +2,5 @@ bookmark = [
   { key = "r", path = "/" },
   { key = "h", path = "~/" },
   { key = "n", path = "~/Notes" },
+  { key = "b", path = "~/Notes/resources/Books" },
 ]

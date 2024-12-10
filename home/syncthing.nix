@@ -25,6 +25,7 @@
             "phone"
           ];
           label = "Notes";
+          versioning.type = "simple";
         };
       };
     };
