@@ -213,6 +213,10 @@
       :desc "Close window"
       "x" #'evil-window-delete)
 
+(map! :leader
+      :desc "Close window"
+      "w" #'save-buffer)
+
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
