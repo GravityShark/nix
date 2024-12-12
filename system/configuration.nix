@@ -59,10 +59,11 @@
 
   # Optimise package sizes
   nix.optimise.automatic = true;
+  nix.optimise.dates = [ "01:30" ];
   # Garbage collection
   nix.gc = {
     automatic = true;
-    dates = "daily";
+    dates = "01:00";
     options = "--delete-older-than +7";
   };
 
