@@ -63,7 +63,7 @@
   nix.gc = {
     automatic = true;
     dates = "daily";
-    options = "--delete-older-than 7d";
+    options = "--delete-older-than +7";
   };
 
   # This value determines the NixOS release from which the default
