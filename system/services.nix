@@ -18,7 +18,7 @@
     TAG+="uaccess", 
     TAG+="udev-acl"'';
 
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
   services.avahi = {
     enable = true;
     nssmdns4 = true;
