@@ -1,3 +1,2 @@
 #!/bin/sh
-efibootmgr --bootnext 0000
-reboot
+efibootmgr --bootnext 0000 && reboot

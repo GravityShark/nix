@@ -21,6 +21,7 @@
     ./packages.nix
     ./system.nix
     ./services.nix
+    ./lanzaboote.nix
     # ./virt-manager.nix
   ];
 

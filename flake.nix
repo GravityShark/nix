@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser-flake.url = "github:omarcresp/zen-browser-flake";
   };
 
@@ -16,8 +20,9 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      zen-browser-flake,
       home-manager,
+      lanzaboote,
+      zen-browser-flake,
       ...
     }@inputs:
     let
@@ -30,7 +35,10 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./system/configuration.nix ];
+          modules = [
+            ./system/configuration.nix
+            lanzaboote.nixosModules.lanzaboote
+          ];
           specialArgs = {
             inherit unstable;
             inherit inputs;
