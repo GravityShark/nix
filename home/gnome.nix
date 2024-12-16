@@ -49,7 +49,8 @@
         "appindicatorsupport@rgcjonas.gmail.com"
         "dash-to-dock@micxgx.gmail.com"
         "light-style@gnome-shell-extensions.gcampax.github.com"
-        "pop-shell@system76.com"
+        # "pop-shell@system76.com"
+        "forge@jmmaranan.com"
         "run-or-raise@edvard.cz"
       ];
     };
@@ -59,5 +60,11 @@
       shortcut = [ "<Super>grave" ];
       shortcut-text = "<Super>grave";
     };
+
+    # "org/gnome/shell/extensions/pop-shell" = {
+    #   tile-by-default = true;
+    #   active-hint = true;
+    #   gap-inner = 1;
+    # };
   };
 }
