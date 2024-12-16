@@ -60,9 +60,11 @@
       shortcut = [ "<Super>grave" ];
       shortcut-text = "<Super>grave";
     };
-    "org/gnome/shell/extensions/forge/move-pointer-focus-enabled" = true;
-    "org/gnome/shell/extensions/forge/window-gap-size" = 2;
-    "org/gnome/shell/extensions/forge/keybindings/" = {
+    "org/gnome/shell/extensions/forge" = {
+      move-pointer-focus-enabled = true;
+      window-gap-size = 2;
+    };
+    "org/gnome/shell/extensions/forge/keybindings" = {
       window-focus-down = [ "<Super>Down" ];
       window-move-down = [ "<Shift><Super>Down" ];
       window-focus-up = [ "<Super>Up" ];
