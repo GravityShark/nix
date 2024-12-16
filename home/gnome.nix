@@ -5,6 +5,7 @@
     gnome-epub-thumbnailer
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.forge
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
   ];
@@ -48,9 +49,8 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "dash-to-dock@micxgx.gmail.com"
-        "light-style@gnome-shell-extensions.gcampax.github.com"
-        # "pop-shell@system76.com"
         "forge@jmmaranan.com"
+        "light-style@gnome-shell-extensions.gcampax.github.com"
         "run-or-raise@edvard.cz"
       ];
     };
@@ -61,7 +61,7 @@
       shortcut-text = "<Super>grave";
     };
     "org/gnome/shell/extensions/forge" = {
-      move-pointer-focus-enabled = true;
+      move-pointer-focus-enabled = false;
       window-gap-size = 2;
     };
     "org/gnome/shell/extensions/forge/keybindings" = {
