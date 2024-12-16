@@ -21,6 +21,17 @@ preferrably you wanna do this
 ### installation
 
 1. nixos
+   install nixos from the gui setting up the partitions n reboot.
+
+when inside nixos sign the images for [secure boot](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md)
+
+```bash
+nix-shell -p sbctl
+sudo sbctl create-keys
+
+```
+
+then actually install it after getting yo .ssh
 
 ```bash
 git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0/nix.git ~/.nix
@@ -28,6 +39,8 @@ nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
 home-manager boot --flake ~/.nix\?submodules=1
 ```
+
+then reboot
 
 2. gentoo
    follow this one
