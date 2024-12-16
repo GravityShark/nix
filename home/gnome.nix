@@ -79,8 +79,7 @@
     "org/gnome/shell/extensions/pop-shell" = {
       tile-by-default = true;
       active-hint = true;
-      hint-color-rgba = "rgba(255, 255, 255, 255)";
-      # gap-inner = 1;
+      hint-color-rgba = "rgba(196, 167, 231, 255)";
     };
   };
 }
