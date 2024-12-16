@@ -6,7 +6,6 @@
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
     gnomeExtensions.forge
-    gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
   ];
   # Gnome settings
@@ -74,11 +73,5 @@
       window-focus-left = [ "<Super>Left" ];
       window-move-left = [ "<Shift><Super>Left" ];
     };
-
-    # "org/gnome/shell/extensions/pop-shell" = {
-    #   tile-by-default = true;
-    #   active-hint = true;
-    #   gap-inner = 1;
-    # };
   };
 }
