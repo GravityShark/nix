@@ -4,7 +4,6 @@
   # Syncthing setup
   services.syncthing = {
     enable = true;
-    openDefaultPorts = true;
     settings = {
       # devices = {
       #   phone = {
