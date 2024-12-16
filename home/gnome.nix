@@ -5,7 +5,8 @@
     gnome-epub-thumbnailer
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
-    gnomeExtensions.forge
+    # gnomeExtensions.forge
+    gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
   ];
   # Gnome settings
@@ -48,7 +49,8 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "dash-to-dock@micxgx.gmail.com"
-        "forge@jmmaranan.com"
+        # "forge@jmmaranan.com"
+        "pop-shell@system76.com"
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "run-or-raise@edvard.cz"
       ];
@@ -63,15 +65,21 @@
       move-pointer-focus-enabled = false;
       window-gap-size = 2;
     };
-    "org/gnome/shell/extensions/forge/keybindings" = {
-      window-focus-down = [ "<Super>Down" ];
-      window-move-down = [ "<Shift><Super>Down" ];
-      window-focus-up = [ "<Super>Up" ];
-      window-move-up = [ "<Shift><Super>Up" ];
-      window-focus-right = [ "<Super>Right" ];
-      window-move-right = [ "<Shift><Super>Right" ];
-      window-focus-left = [ "<Super>Left" ];
-      window-move-left = [ "<Shift><Super>Left" ];
+    # "org/gnome/shell/extensions/forge/keybindings" = {
+    #   window-focus-down = [ "<Super>Down" ];
+    #   window-move-down = [ "<Shift><Super>Down" ];
+    #   window-focus-up = [ "<Super>Up" ];
+    #   window-move-up = [ "<Shift><Super>Up" ];
+    #   window-focus-right = [ "<Super>Right" ];
+    #   window-move-right = [ "<Shift><Super>Right" ];
+    #   window-focus-left = [ "<Super>Left" ];
+    #   window-move-left = [ "<Shift><Super>Left" ];
+    # };
+
+    "org/gnome/shell/extensions/pop-shell" = {
+      tile-by-default = true;
+      active-hint = true;
+      gap-inner = 1;
     };
   };
 }
