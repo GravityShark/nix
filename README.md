@@ -24,9 +24,9 @@ preferrably you wanna do this
 
 ```bash
 git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0/nix.git ~/.nix
-nix flake update ~/.nix
-sudo nixos-rebuild switch --flake ~/.nix
-home-manager switch --flake ~/.nix
+nix flake update --flake ~/.nix
+sudo nixos-rebuild boot --flake ~/.nix
+home-manager boot --flake ~/.nix\?submodules=1
 ```
 
 2. gentoo
