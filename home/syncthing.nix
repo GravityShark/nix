@@ -20,10 +20,10 @@
       folders = {
         "/home/gravity/Notes" = {
           id = "i2ekx-2lgrg";
-          devices = [
-            "clear"
-            "phone"
-          ];
+          # devices = [
+          #   "clear"
+          #   "phone"
+          # ];
           label = "Notes";
           versioning.type = "simple";
         };
