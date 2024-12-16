@@ -61,10 +61,10 @@
       shortcut = [ "<Super>grave" ];
       shortcut-text = "<Super>grave";
     };
-    "org/gnome/shell/extensions/forge" = {
-      move-pointer-focus-enabled = false;
-      window-gap-size = 2;
-    };
+    # "org/gnome/shell/extensions/forge" = {
+    #   move-pointer-focus-enabled = false;
+    #   window-gap-size = 2;
+    # };
     # "org/gnome/shell/extensions/forge/keybindings" = {
     #   window-focus-down = [ "<Super>Down" ];
     #   window-move-down = [ "<Shift><Super>Down" ];
@@ -79,7 +79,8 @@
     "org/gnome/shell/extensions/pop-shell" = {
       tile-by-default = true;
       active-hint = true;
-      gap-inner = 1;
+      active-hint-color = "#FFFFFF";
+      # gap-inner = 1;
     };
   };
 }
