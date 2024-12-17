@@ -220,3 +220,4 @@
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
+(setq default-frame-alist '((undecorated . t)))
