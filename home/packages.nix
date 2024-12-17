@@ -53,7 +53,8 @@ in
     ruff
     shfmt
     stylua
-    tailwindcss-language-server
+    # tailwindcss-language-server
+    nodePackages."@tailwindcss/language-server"
     typescript-language-server
     vscode-langservers-extracted # contains html-lsp and json-lsp
 

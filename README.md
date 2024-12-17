@@ -49,7 +49,7 @@ then reboot
 - note: some git configurations you might wanna enable
 
 there are still some shits that needs to be installed non declaratively (which sucks)
-more in [dump/README.md](dump/README.md)
+more in [home/dump/README.md](home/dump/README.md)
 
 ## things i might look out for
 

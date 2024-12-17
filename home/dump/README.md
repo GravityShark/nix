@@ -25,3 +25,9 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ```bash
 fc-cache -f
 ```
+
+4. browsers firefox and chromium
+   you gotta reinstall the extension setttings from [./home/dump/firefox_extension_settings/]
+   and add chromium webapps
+
+5. syncthing a lil funky tbh
