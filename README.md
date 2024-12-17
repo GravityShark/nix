@@ -25,12 +25,6 @@ preferrably you wanna do this
 
 when inside nixos sign the images for [secure boot](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md)
 
-```bash
-nix-shell -p sbctl
-sudo sbctl create-keys
-
-```
-
 then actually install it after getting yo .ssh
 
 ```bash
@@ -41,6 +35,13 @@ home-manager boot --flake ~/.nix\?submodules=1
 ```
 
 then reboot
+
+setup git
+```bash
+cd ~/.nix
+git config --local include.path ../.gitconfig
+```
+n ur done
 
 2. gentoo
    follow this one
