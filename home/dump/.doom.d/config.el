@@ -199,7 +199,7 @@
 
 (map! :leader
       :desc "Open plan/schedule"
-      "n p" #'(lambda () (interactive) (find-file "~/Notes/assets/Grade11Schedule.jpg")))
+      "n p" #'(lambda () (interactive) (find-file "~/Notes/assets/schedule.*")))
 
 (map! :leader
       :desc "Open calendar"
