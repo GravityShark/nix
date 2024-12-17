@@ -17,8 +17,11 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
    - duh i dont want my passwords be open to the public
    ```sh
    git clone gravity@clr:Git/password-store.git ~/.password-store
-   git clone gravity@clr:Git/ssh.git ~/.config
+   git clone gravity@clr:Git/ssh.git ~/.shitssh
    git clone gravity@clr:Git/gnupg.git ~/.gnupg
+
+   mv ~/.ssh ~/.shitssh2
+   mv ~/.shitssh ~/.ssh
    ```
 3. fonts for somereason need some little bit of shittery to fix every time you update it
 
