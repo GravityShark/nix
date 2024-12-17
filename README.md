@@ -55,7 +55,3 @@ more in [home/dump/README.md](home/dump/README.md)
 ## things i might look out for
 
 - in gentoo they have [etckeeper](https://wiki.gentoo.org/wiki/Etckeeper)
-
-```
-
-```
