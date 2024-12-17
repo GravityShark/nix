@@ -214,7 +214,7 @@
       "x" #'evil-window-delete)
 
 (map! :leader
-      :desc "Close window"
+      :desc "Save buffer"
       "w" #'save-buffer)
 
 ;;; Various silly things
