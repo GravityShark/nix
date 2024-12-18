@@ -10,6 +10,7 @@
     evince # Document viewer
     foot
     krita
+    kdePackages.kdenlive
     libreoffice-fresh
     mpv
     obs-studio
