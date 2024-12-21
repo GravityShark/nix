@@ -34,6 +34,7 @@
       GSK_RENDERER = "ngl";
     };
     sessionVariables.NIXOS_OZONE_WL = "1"; # Make chromium run on wayland
+    sessionVariables.QT_QPA_PLATFORM = "wayland";
     shells = with pkgs; [
       bash
       dash

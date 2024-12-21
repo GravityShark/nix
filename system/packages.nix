@@ -26,6 +26,8 @@
     temurin-jre-bin
 
     # Systems
+    ffmpeg
+    bc
     dash
     doas-sudo-shim
     hunspell
