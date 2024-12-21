@@ -36,6 +36,7 @@ in
     pharo
     R
     fpc
+    odin
     # Mason
     clang-tools
     emmet-language-server
