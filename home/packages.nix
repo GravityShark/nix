@@ -55,7 +55,7 @@ in
     shfmt
     stylua
     ols
-    # tailwindcss-language-server
+    tailwindcss-language-server
     typescript-language-server
     vscode-langservers-extracted # contains html-lsp and json-lsp
 
