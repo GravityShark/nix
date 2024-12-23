@@ -18,15 +18,13 @@
     TAG+="uaccess", 
     TAG+="udev-acl"'';
 
-  # services.flatpak.enable = true;
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -44,12 +42,12 @@
     #media-session.enable = true;
   };
 
-  systemd.services.foo = {
-    script = ''
-      chmod 777 /dev/null
-    '';
-    wantedBy = [ "multi-user.target" ];
-  };
+  # systemd.services.foo = {
+  #   script = ''
+  #     chmod 777 /dev/null
+  #   '';
+  #   wantedBy = [ "multi-user.target" ];
+  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

@@ -16,7 +16,7 @@
   imports = [
     ./gnome.nix
     ./hardware-configuration.nix
-    ./ld.nix
+    # ./ld.nix
     ./nvidia.nix
     ./packages.nix
     ./system.nix
@@ -34,7 +34,7 @@
       GSK_RENDERER = "ngl";
     };
     sessionVariables.NIXOS_OZONE_WL = "1"; # Make chromium run on wayland
-    sessionVariables.QT_QPA_PLATFORM = "wayland";
+    # sessionVariables.QT_QPA_PLATFORM = "wayland";
     shells = with pkgs; [
       bash
       dash
