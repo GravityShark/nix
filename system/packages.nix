@@ -10,7 +10,7 @@
     evince # Document viewer
     foot
     krita
-    kdePackages.kdenlive
+    unstable.kdePackages.kdenlive
     libreoffice-fresh
     mpv
     obs-studio
@@ -26,18 +26,17 @@
     temurin-jre-bin
 
     # Systems
-    ffmpeg
     bc
     dash
     doas-sudo-shim
+    ffmpeg
     hunspell
     hunspellDicts.en_US
-    unstable.home-manager
-    unstable.wineWowPackages.waylandFull
+    # unstable.home-manager
+    # unstable.wineWowPackages.waylandFull
     unzip
 
     # CLIs
-    pandoc
     efibootmgr
     eza
     fastfetch
@@ -47,6 +46,7 @@
     git
     joshuto
     mksh
+    pandoc
     pass
     ripgrep
     tmux

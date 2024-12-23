@@ -38,7 +38,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "libvirtd"
     ];
   };
 
@@ -71,8 +70,8 @@
 
   # use zen kernel kuh
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelModules = [ "v4l2loopback" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages_xanmod_latest.v4l2loopback ];
+  # boot.kernelModules = [ "v4l2loopback" ];
+  # boot.extraModulePackages = [ pkgs.linuxPackages_xanmod_latest.v4l2loopback ];
 
   # Hosts file
   networking = {

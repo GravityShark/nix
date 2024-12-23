@@ -31,14 +31,15 @@ in
   # environment.
   home.packages = with pkgs; [
     # 25 day AOC challenge
-    csharp-ls
-    dotnet-sdk
-    pharo
-    R
-    fpc
-    odin
+    # dotnet-sdk
+    # pharo
+    # R
+    # fpc
+    # odin
+    zig
     # Mason
     clang-tools
+    # csharp-ls
     emmet-language-server
     gofumpt
     goimports-reviser
@@ -48,16 +49,17 @@ in
     lua-language-server
     nil
     nixfmt-rfc-style
+    # ols
     prettierd
     pyright
     quick-lint-js
     ruff
     shfmt
     stylua
-    ols
     tailwindcss-language-server
     typescript-language-server
     vscode-langservers-extracted # contains html-lsp and json-lsp
+    zls
 
     # Apps
     authenticator
@@ -65,7 +67,7 @@ in
     fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium
-    vial
+    # vial
     webcord
     zen-browser.specific
 
