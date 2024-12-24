@@ -12,7 +12,7 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser-flake.url = "github:omarcresp/zen-browser-flake";
+    zen-browser-flake.url = "github:fufexan/zen-browser-flake";
   };
 
   outputs =

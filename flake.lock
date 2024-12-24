@@ -195,11 +195,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1734424634,
-        "narHash": "sha256-cHar1vqHOOyC7f1+tVycPoWTfKIaqkoe1Q6TnKzuti4=",
+        "lastModified": 1725634671,
+        "narHash": "sha256-v3rIhsJBOMLR8e/RNWxr828tB+WywYIoajrZKFM+0Gg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d3c42f187194c26d9f0309a8ecc469d6c878ce33",
+        "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
         "type": "github"
       },
       "original": {
@@ -290,15 +290,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1734658317,
-        "narHash": "sha256-NWMl/xtLFqvn+jdbDyfdak0SU+fzBIn2MG6CXSI7ZTg=",
-        "owner": "omarcresp",
+        "lastModified": 1735003005,
+        "narHash": "sha256-i6hqlBh2urvUntV3CpydJqYVbIJ281Jg+V5qFKzqB4c=",
+        "owner": "fufexan",
         "repo": "zen-browser-flake",
-        "rev": "1f51977acb50a11d7352fa16417b7eb085e4ad3a",
+        "rev": "090e038936d7661b36587b30da6333081651eefe",
         "type": "github"
       },
       "original": {
-        "owner": "omarcresp",
+        "owner": "fufexan",
         "repo": "zen-browser-flake",
         "type": "github"
       }
