@@ -42,12 +42,12 @@
     #media-session.enable = true;
   };
 
-  # systemd.services.foo = {
-  #   script = ''
-  #     chmod 777 /dev/null
-  #   '';
-  #   wantedBy = [ "multi-user.target" ];
-  # };
+  systemd.services.foo = {
+    script = ''
+      chmod 777 /dev/null
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
