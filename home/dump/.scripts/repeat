@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$#" -eq 0 ]; then
+  echo "Usage: $0 <command>"
+  exit 1
+fi
+
+COMMAND="$@"
+
+while :; do
+  echo "Press Enter to execute: $COMMAND"
+  read -r
+  eval "$COMMAND"
+done
