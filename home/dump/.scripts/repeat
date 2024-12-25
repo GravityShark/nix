@@ -2,14 +2,14 @@
 
 # made by shit gippity
 
-if [ "$#" -eq 0 ]; then
+if [ "$#" -ne 1 ]; then
   echo "Usage: $0 <command>"
   exit 1
 fi
 
-COMMAND="$@"
+COMMAND="$*"
 
-eval "$COMMAND"
+/bin/sh -c "$COMMAND"
 
 while :; do
   echo "Press Enter to repeat: $COMMAND"
