@@ -36,7 +36,9 @@ in
     # R
     # fpc
     # odin
-    zig
+    # zig
+    opam
+    ocamlPackages.ocaml-lsp
     # Mason
     clang-tools
     # csharp-ls
