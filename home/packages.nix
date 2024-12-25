@@ -39,6 +39,9 @@ in
     # zig
     opam
     ocamlPackages.ocaml-lsp
+    ocamlPackages.utop
+    ocamlPackages.dune
+    ocamlPackages.ocamlformat
     # Mason
     clang-tools
     # csharp-ls
