@@ -10,6 +10,7 @@ fi
 COMMAND="$*"
 
 while :; do
+  clear
   eval "$COMMAND"
   echo -n $(tput bold)Press Enter to repeat: $(tput setaf 3)$COMMAND $(tput sgr0)
   read a
