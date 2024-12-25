@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# made by shit gippity
+
 if [ "$#" -eq 0 ]; then
   echo "Usage: $0 <command>"
   exit 1
@@ -7,8 +9,10 @@ fi
 
 COMMAND="$@"
 
+eval "$COMMAND"
+
 while :; do
-  echo "Press Enter to execute: $COMMAND"
+  echo "Press Enter to repeat: $COMMAND"
   read a
   eval "$COMMAND"
 done
