@@ -41,7 +41,7 @@ in
     ocamlPackages.ocaml-lsp
     ocamlPackages.utop
     ocamlPackages.dune
-    ocamlPackages.ocamlformat
+    dune-release
     # Mason
     clang-tools
     # csharp-ls
