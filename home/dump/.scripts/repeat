@@ -9,6 +9,6 @@ COMMAND="$@"
 
 while :; do
   echo "Press Enter to execute: $COMMAND"
-  read -r
+  read a
   eval "$COMMAND"
 done
