@@ -290,11 +290,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1735002629,
-        "narHash": "sha256-OP/x9do+L+u+S+pvu+h45FL1RZvHxx9AIiEF9xe02hs=",
+        "lastModified": 1735186123,
+        "narHash": "sha256-GcjlN8OGj7EiAAhDSHUmAPqScLtGbowwpXw/Ej3UcEI=",
         "owner": "jayden-chan",
         "repo": "zen-browser-flake",
-        "rev": "5cf24d2ccf44ebed422a279c8e432ec54270b7d3",
+        "rev": "896e3946305012af5a0fa53c287595871c301262",
         "type": "github"
       },
       "original": {
