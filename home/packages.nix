@@ -37,38 +37,40 @@ in
     # fpc
     # odin
     # zig
-    opam
-    ocamlPackages.ocaml-lsp
-    ocamlPackages.utop
-    ocamlPackages.ocamlformat
+    # opam
+    # ocamlPackages.ocaml-lsp
+    # ocamlPackages.utop
+    # ocamlPackages.ocamlformat
+    crystal
     # Mason
-    clang-tools
+    # clang-tools
+    crystaline
     # csharp-ls
-    emmet-language-server
-    gofumpt
-    goimports-reviser
-    golangci-lint
-    golines
-    gopls
+    # emmet-language-server
+    # gofumpt
+    # goimports-reviser
+    # golangci-lint
+    # golines
+    # gopls
     lua-language-server
     nil
     nixfmt-rfc-style
     # ols
-    prettierd
-    pyright
-    quick-lint-js
-    ruff
+    # prettierd
+    # pyright
+    # quick-lint-js
+    # ruff
     shfmt
     stylua
-    tailwindcss-language-server
-    typescript-language-server
-    vscode-langservers-extracted # contains html-lsp and json-lsp
-    zls
+    # tailwindcss-language-server
+    # typescript-language-server
+    # vscode-langservers-extracted # contains html-lsp and json-lsp
+    # zls
 
     # Apps
     authenticator
     foliate
-    fragments # Bittorrent client
+    # fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium
     # vial
