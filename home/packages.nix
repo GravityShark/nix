@@ -44,7 +44,6 @@ in
     crystal
     # Mason
     # clang-tools
-    crystalline
     # csharp-ls
     # emmet-language-server
     # gofumpt
