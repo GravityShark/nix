@@ -55,6 +55,7 @@ in
     nil
     nixfmt-rfc-style
     # ols
+    perlPackages.PLS
     # prettierd
     # pyright
     # quick-lint-js
