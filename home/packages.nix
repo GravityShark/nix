@@ -41,7 +41,8 @@ in
     # ocamlPackages.ocaml-lsp
     # ocamlPackages.utop
     # ocamlPackages.ocamlformat
-    crystal
+    # crystal
+    gleam
     # Mason
     # clang-tools
     # csharp-ls
@@ -55,7 +56,7 @@ in
     nil
     nixfmt-rfc-style
     # ols
-    perlPackages.PLS
+    # perlPackages.PLS
     # prettierd
     # pyright
     # quick-lint-js
