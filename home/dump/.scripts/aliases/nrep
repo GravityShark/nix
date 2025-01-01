@@ -1,0 +1,2 @@
+#!/bin/sh
+cd ~/.nix/system/ && $EDITOR ~/.nix/system/packages.nix
