@@ -66,7 +66,7 @@
   nix.gc = {
     automatic = true;
     dates = "01:00";
-    options = "--delete-older-than 3d";
+    options = "--delete-older-than 5d";
   };
 
   # This value determines the NixOS release from which the default

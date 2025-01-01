@@ -68,7 +68,7 @@
   # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
 
-  # use zen kernel kuh
+  # use xanmod kernel kuh
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   # boot.kernelModules = [ "v4l2loopback" ];
   # boot.extraModulePackages = [ pkgs.linuxPackages_xanmod_latest.v4l2loopback ];
