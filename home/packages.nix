@@ -43,6 +43,7 @@ in
     # ocamlPackages.ocamlformat
     # crystal
     gleam
+    erlang
     # Mason
     # clang-tools
     # csharp-ls
