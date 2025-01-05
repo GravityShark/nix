@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
+    gnomeExtensions.freon
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
     # gnomeExtensions.forge
@@ -53,6 +54,7 @@
         "pop-shell@system76.com"
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "run-or-raise@edvard.cz"
+        "freon@UshakovVasilii_Github.yahoo.com"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
