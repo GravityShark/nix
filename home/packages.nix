@@ -46,7 +46,6 @@ in
     # erlang
     swift
     swift-format
-    swiftlint
     sourcekit-lsp
     # Mason
     # clang-tools
