@@ -39,7 +39,7 @@
       dynamic-workspaces = true;
       workspaces-only-on-primary = false;
     };
-    "org/gnome/mutter/wm/keybindings" = {
+    "org/gnome/mutter/keybindings" = {
       toggle-tiled-right = [ "" ];
       toggle-tiled-left = [ "" ];
     };
@@ -50,11 +50,10 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "dash-to-dock@micxgx.gmail.com"
-        # "forge@jmmaranan.com"
-        "pop-shell@system76.com"
-        "light-style@gnome-shell-extensions.gcampax.github.com"
-        "run-or-raise@edvard.cz"
         "freon@UshakovVasilii_Github.yahoo.com"
+        "light-style@gnome-shell-extensions.gcampax.github.com"
+        "pop-shell@system76.com"
+        "run-or-raise@edvard.cz"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
