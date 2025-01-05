@@ -8,12 +8,13 @@
     anki
     emacs-gtk
     evince # Document viewer
-    foot
+    # foot
+    ghostty
     krita
-    unstable.kdePackages.kdenlive
     libreoffice-fresh
     mpv
     obs-studio
+    unstable.kdePackages.kdenlive
     unstable.mcontrolcenter
 
     # Dev stuff

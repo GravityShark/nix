@@ -78,7 +78,6 @@ in
     # vial
     webcord
     zen-browser.default
-    ghostty
 
     # CLIs
     nix-your-shell
