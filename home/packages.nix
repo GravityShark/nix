@@ -42,8 +42,12 @@ in
     # ocamlPackages.utop
     # ocamlPackages.ocamlformat
     # crystal
-    gleam
-    erlang
+    # gleam
+    # erlang
+    swift
+    swift-format
+    swiftlint
+    sourcekit-lsp
     # Mason
     # clang-tools
     # csharp-ls
