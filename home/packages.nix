@@ -47,6 +47,7 @@ in
     swift
     swift-format
     sourcekit-lsp
+    swiftPackages.swiftpm
     # Mason
     # clang-tools
     # csharp-ls
