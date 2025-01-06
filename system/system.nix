@@ -69,7 +69,7 @@
   time.hardwareClockInLocalTime = true;
 
   # use xanmod kernel kuh
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
   # boot.kernelModules = [ "v4l2loopback" ];
   # boot.extraModulePackages = [ pkgs.linuxPackages_xanmod_latest.v4l2loopback ];
 
