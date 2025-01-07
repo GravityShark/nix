@@ -48,7 +48,7 @@ in
     swift-format
     sourcekit-lsp
     swiftPackages.swiftpm
-    # Mason
+    ## Mason
     # clang-tools
     # csharp-ls
     # emmet-language-server
@@ -69,6 +69,7 @@ in
     shfmt
     stylua
     # tailwindcss-language-server
+    tree-sitter
     # typescript-language-server
     # vscode-langservers-extracted # contains html-lsp and json-lsp
     # zls
