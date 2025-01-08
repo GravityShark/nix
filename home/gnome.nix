@@ -35,14 +35,16 @@
       sleep-inactive-ac-timeout = 900;
     };
     "org/gnome/mutter" = {
-      edge-tiling = true;
       dynamic-workspaces = true;
+      edge-tiling = true;
+      experimental-features = [ "scale-monitor-framebuffer" ];
       workspaces-only-on-primary = false;
     };
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-right = [ "" ];
       toggle-tiled-left = [ "" ];
     };
+
     "org/gnome/shell" = {
       # "app-switcher".current-workspace-only = false;
       disable-user-extensions = false;
