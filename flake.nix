@@ -12,6 +12,7 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     zen-browser-flake.url = "github:jayden-chan/zen-browser-flake";
   };
 

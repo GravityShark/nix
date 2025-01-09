@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    emacs-gtk
+    emacs-pgtknativecomp
     evince # Document viewer
     # foot
     ghostty
