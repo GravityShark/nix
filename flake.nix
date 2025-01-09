@@ -31,7 +31,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
       unstable = pkgs;
-      emacs = emacs-overlay.legacyPackages.${system};
+      emacs = emacs-overlay.packages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
