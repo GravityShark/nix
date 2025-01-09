@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ~/.nix && git add . && git commit --message 'Update configuration' -S
+return 0
