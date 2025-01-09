@@ -8,11 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
     zen-browser-flake.url = "github:jayden-chan/zen-browser-flake";
   };
 
