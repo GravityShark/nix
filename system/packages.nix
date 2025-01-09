@@ -1,5 +1,5 @@
 {
-  self,
+  emacs,
   pkgs,
   unstable,
   ...
@@ -8,11 +8,10 @@
 {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  nixpkgs.overlays = [ (import self.inputs.emacs-overlay) ];
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    emacs-pgtk
+    emacs.emacs-pgtk
     evince # Document viewer
     # foot
     ghostty

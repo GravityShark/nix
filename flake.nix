@@ -21,6 +21,7 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
+      emacs-overlay,
       home-manager,
       lanzaboote,
       zen-browser-flake,
@@ -30,6 +31,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
       unstable = pkgs;
+      emacs = emacs-overlay.legacyPackages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
@@ -41,6 +43,7 @@
             lanzaboote.nixosModules.lanzaboote
           ];
           specialArgs = {
+            inherit emacs;
             inherit unstable;
             inherit inputs;
           };
