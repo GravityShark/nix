@@ -37,7 +37,10 @@
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       edge-tiling = true;
-      experimental-features = [ "scale-monitor-framebuffer" ];
+      experimental-features = [
+        "scale-monitor-framebuffer"
+        "xwayland-native-scaling"
+      ];
       workspaces-only-on-primary = false;
     };
     "org/gnome/mutter/keybindings" = {
