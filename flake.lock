@@ -245,11 +245,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1725634671,
-        "narHash": "sha256-v3rIhsJBOMLR8e/RNWxr828tB+WywYIoajrZKFM+0Gg=",
+        "lastModified": 1736344531,
+        "narHash": "sha256-8YVQ9ZbSfuUk2bUf2KRj60NRraLPKPS0Q4QFTbc+c2c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+        "rev": "bffc22eb12172e6db3c5dde9e3e5628f8e3e7912",
         "type": "github"
       },
       "original": {
@@ -341,15 +341,15 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1735186123,
-        "narHash": "sha256-GcjlN8OGj7EiAAhDSHUmAPqScLtGbowwpXw/Ej3UcEI=",
-        "owner": "jayden-chan",
+        "lastModified": 1736496372,
+        "narHash": "sha256-/rFQL+/sgNKw+NSCnLdwzNYI9AEIv3Xc45Bu1ATGQBc=",
+        "owner": "omarcresp",
         "repo": "zen-browser-flake",
-        "rev": "896e3946305012af5a0fa53c287595871c301262",
+        "rev": "e51913e312a92e47fe90cc3381202b6c9bcaa1ec",
         "type": "github"
       },
       "original": {
-        "owner": "jayden-chan",
+        "owner": "omarcresp",
         "repo": "zen-browser-flake",
         "type": "github"
       }
