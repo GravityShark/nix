@@ -1,5 +1,4 @@
 {
-  emacs,
   pkgs,
   unstable,
   ...
@@ -11,7 +10,7 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    emacs.emacs-pgtk
+    emacs
     evince # Document viewer
     # foot
     ghostty

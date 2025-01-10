@@ -8,7 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +30,6 @@
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
       unstable = pkgs;
-      emacs = emacs-overlay.packages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
@@ -43,7 +41,6 @@
             lanzaboote.nixosModules.lanzaboote
           ];
           specialArgs = {
-            inherit emacs;
             inherit unstable;
             inherit inputs;
           };
