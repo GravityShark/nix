@@ -1,0 +1,308 @@
+{
+  "Gestures": [
+    {
+      "pattern": [
+        [
+          -37,
+          -25
+        ],
+        [
+          -88,
+          -11
+        ],
+        [
+          -50,
+          17
+        ],
+        [
+          -63,
+          62
+        ],
+        [
+          -22,
+          68
+        ],
+        [
+          4,
+          50
+        ],
+        [
+          33,
+          49
+        ],
+        [
+          84,
+          43
+        ],
+        [
+          105,
+          -4
+        ],
+        [
+          46,
+          -24
+        ],
+        [
+          22,
+          -27
+        ],
+        [
+          8,
+          -23
+        ],
+        [
+          -4,
+          -44
+        ],
+        [
+          -16,
+          -17
+        ],
+        [
+          -56,
+          -17
+        ],
+        [
+          -77,
+          8
+        ]
+      ],
+      "command": {
+        "name": "OpenAddonSettings"
+      }
+    },
+    {
+      "pattern": [
+        [
+          -26,
+          -299
+        ],
+        [
+          -236,
+          -4
+        ]
+      ],
+      "command": {
+        "name": "FocusLeftTab",
+        "settings": {
+          "cycling": true,
+          "excludeDiscarded": false
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          -16,
+          -146
+        ],
+        [
+          10,
+          -131
+        ],
+        [
+          5,
+          -9
+        ],
+        [
+          264,
+          9
+        ]
+      ],
+      "command": {
+        "name": "FocusRightTab",
+        "settings": {
+          "cycling": true,
+          "excludeDiscarded": false
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          0,
+          1
+        ]
+      ],
+      "command": {
+        "name": "ScrollPageDown",
+        "settings": {
+          "duration": 100,
+          "scrollProportion": 50
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "command": {
+        "name": "ScrollPageUp",
+        "settings": {
+          "duration": 100,
+          "scrollProportion": 50
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          1,
+          0
+        ]
+      ],
+      "command": {
+        "name": "PageForth"
+      }
+    },
+    {
+      "pattern": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "command": {
+        "name": "PageBack"
+      }
+    },
+    {
+      "pattern": [
+        [
+          -11,
+          171
+        ],
+        [
+          20,
+          6
+        ],
+        [
+          154,
+          8
+        ]
+      ],
+      "command": {
+        "name": "CloseTab",
+        "settings": {
+          "nextFocus": "default",
+          "closePinned": true
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          260,
+          -24
+        ],
+        [
+          2,
+          -278
+        ]
+      ],
+      "command": {
+        "name": "NewTab",
+        "settings": {
+          "position": "default",
+          "focus": true
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          -261,
+          14
+        ],
+        [
+          -9,
+          -19
+        ],
+        [
+          -2,
+          -221
+        ]
+      ],
+      "command": {
+        "name": "RestoreTab",
+        "settings": {
+          "currentWindowOnly": false
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          224,
+          8
+        ],
+        [
+          14,
+          211
+        ]
+      ],
+      "command": {
+        "name": "ReloadTab",
+        "settings": {
+          "cache": false
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          -17,
+          401
+        ],
+        [
+          -3,
+          -388
+        ]
+      ],
+      "command": {
+        "name": "ScrollTop",
+        "settings": {
+          "duration": 100
+        }
+      }
+    },
+    {
+      "pattern": [
+        [
+          3,
+          -163
+        ],
+        [
+          24,
+          -135
+        ],
+        [
+          15,
+          288
+        ]
+      ],
+      "command": {
+        "name": "ScrollBottom",
+        "settings": {
+          "duration": 100
+        }
+      }
+    }
+  ],
+  "Settings": {
+    "Gesture": {
+      "Trace": {
+        "Style": {
+          "lineWidth": 10,
+          "lineGrowth": false
+        }
+      }
+    },
+    "General": {
+      "theme": "light"
+    }
+  }
+}

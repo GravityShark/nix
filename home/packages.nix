@@ -76,12 +76,16 @@ in
 
     # Apps
     authenticator
+    (discord.override {
+      withOpenASAR = true; # can do this here too
+      withVencord = true;
+    })
     foliate
     # fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium
     # vial
-    webcord
+    # webcord
     zen-browser.default
 
     # CLIs
