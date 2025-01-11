@@ -76,7 +76,7 @@ in
 
     # Apps
     authenticator
-    foliate
+    # foliate # because 3.2.1 is brokey
     # fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium

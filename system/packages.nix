@@ -11,14 +11,14 @@
     anki
     emacs
     evince # Document viewer
-    # foot
+    foliate # epub
     ghostty
+    kdePackages.kdenlive
     krita
     libreoffice-fresh
+    mcontrolcenter
     mpv
     obs-studio
-    kdePackages.kdenlive
-    mcontrolcenter
 
     # Dev stuff
     clang
