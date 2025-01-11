@@ -4,6 +4,7 @@
 
 {
   # config,
+  lib,
   pkgs,
   inputs,
   ...
@@ -12,6 +13,12 @@
 {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "discord"
+    ];
 
   imports = [
     ./gnome.nix
