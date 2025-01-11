@@ -27,7 +27,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      unstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgs = nixpkgs-unstable.legacyPackages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
@@ -44,8 +44,8 @@
         };
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         modules = [ ./home/home.nix ];
-        inherit unstable;
         extraSpecialArgs = {
           inherit zen-browser;
         };
