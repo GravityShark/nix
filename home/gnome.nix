@@ -8,7 +8,6 @@
     gnomeExtensions.freon
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
-    gnomeExtensions.wiggle
   ];
   # Gnome settings
   dconf.settings = {
