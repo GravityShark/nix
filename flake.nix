@@ -44,8 +44,8 @@
         };
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
-        inherit unstable;
         modules = [ ./home/home.nix ];
+        inherit unstable;
         extraSpecialArgs = {
           inherit zen-browser;
         };
