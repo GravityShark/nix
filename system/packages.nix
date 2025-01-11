@@ -1,6 +1,5 @@
 {
   pkgs,
-  unstable,
   ...
 }:
 
@@ -18,8 +17,8 @@
     libreoffice-fresh
     mpv
     obs-studio
-    unstable.kdePackages.kdenlive
-    unstable.mcontrolcenter
+    kdePackages.kdenlive
+    mcontrolcenter
 
     # Dev stuff
     clang
@@ -37,8 +36,6 @@
     ffmpeg
     hunspell
     hunspellDicts.en_US
-    # unstable.home-manager
-    # unstable.wineWowPackages.waylandFull
     unzip
 
     # CLIs
@@ -55,7 +52,7 @@
     pass
     ripgrep
     tmux
-    unstable.neovim
+    neovim
     wl-clipboard
     yt-dlp
     ytfzf

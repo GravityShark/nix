@@ -1,12 +1,11 @@
 {
-  description = "A very basic flake";
+  description = "This is MY flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs-24.11";
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
@@ -19,7 +18,6 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       lanzaboote,
       zen-browser-flake,
@@ -27,8 +25,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs-unstable.legacyPackages.${system};
-      unstable = pkgs;
+      pkgs = nixpkgs.legacyPackages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
@@ -40,7 +37,6 @@
             lanzaboote.nixosModules.lanzaboote
           ];
           specialArgs = {
-            inherit unstable;
             inherit inputs;
           };
         };
