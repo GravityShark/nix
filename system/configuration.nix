@@ -34,7 +34,8 @@
       VISUAL = "nvim";
       GSK_RENDERER = "ngl";
     };
-    sessionVariables.NIXOS_OZONE_WL = "1"; # Make chromium run on wayland
+    # currengly making chromium run on wayland makes it load much slower
+    # sessionVariables.NIXOS_OZONE_WL = "1"; # Make chromium run on wayland
     # sessionVariables.QT_QPA_PLATFORM = "wayland";
     shells = with pkgs; [
       bash
