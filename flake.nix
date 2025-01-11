@@ -20,7 +20,6 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      emacs-overlay,
       home-manager,
       lanzaboote,
       zen-browser-flake,
