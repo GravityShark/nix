@@ -42,5 +42,5 @@ if [ start != "0:00" ] || [ end != "inf" ]; then
         command="$command --download-sections "*$start-$end" -S proto:https"
 fi
 
-command="$command '$@'"
+command="$command $@"
 eval $command
