@@ -9,10 +9,6 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
     emacs
     evince # Document viewer
     # foot
