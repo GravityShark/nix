@@ -1,2 +1,2 @@
 #!/bin/sh
-fu && ng && nrs && hms
+ngc && fu && ng && nrs && hms
