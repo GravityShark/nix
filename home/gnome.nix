@@ -40,7 +40,7 @@
         "scale-monitor-framebuffer"
         "xwayland-native-scaling"
       ];
-      workspaces-only-on-primary = false;
+      workspaces-only-on-primary = true;
     };
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-right = [ "" ];
