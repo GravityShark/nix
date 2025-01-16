@@ -12,7 +12,7 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser = {
+    zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
@@ -31,7 +31,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
-      zen-browser = zen-browser.packages.${system};
+      zen-browser = zen-browser-flake.packages.${system};
     in
     {
       nixosConfigurations = {
