@@ -31,7 +31,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
-      zen-browser = zen-browser-flake.packages.${system};
+      zen-browser = zen-browser.packages.${system};
     in
     {
       nixosConfigurations = {
