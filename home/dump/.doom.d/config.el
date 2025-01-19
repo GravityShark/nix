@@ -152,7 +152,7 @@
   (setq +corfu-want-ret-to-confirm nil))
 
 (after! org-fancy-priorities
-  (setq org-fancy-priorities-list '((?A . "🚩")
+  (setq org-fancy-priorities-list '((?A . "⚑")
                                     (?B . "⬆")
                                     (?C . "■")
                                     (?D . "⬇")
