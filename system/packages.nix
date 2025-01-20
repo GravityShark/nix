@@ -14,7 +14,7 @@
     foliate # epub
     ghostty
     kdePackages.kdenlive
-    krita
+    # krita
     libreoffice-fresh
     mcontrolcenter
     mpv
