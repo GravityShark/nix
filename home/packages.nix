@@ -50,7 +50,7 @@ in
     swiftPackages.swiftpm
 
     ## Mason
-    # clang-tools
+    clang-tools
     # csharp-ls
     # emmet-language-server
     # gofumpt
