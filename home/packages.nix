@@ -48,6 +48,7 @@ in
     swift-format
     sourcekit-lsp
     swiftPackages.swiftpm
+
     ## Mason
     # clang-tools
     # csharp-ls
@@ -57,6 +58,7 @@ in
     # golangci-lint
     # golines
     # gopls
+    lldb
     lua-language-server
     nil
     nixfmt-rfc-style

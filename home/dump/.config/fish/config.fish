@@ -64,6 +64,7 @@ if status is-interactive
     set fish_pager_color_selected_description \x1d
     set fish_pager_color_selected_prefix \x1d
     set --export plugins https\x3a//github\x2ecom/kidonng/plug\x2efish https\x3a//github\x2ecom/franciscolourenco/done https\x3a//github\x2ecom/nickeb96/puffer\x2dfish https\x3a//github\x2ecom/GravityShark0/safe-rm
+    set CFLAGS '-std=c99 -Wall -Werror'
 
     if not source $__fish_user_data_dir/plugins/plug.fish/conf.d/plugin_load.fish
         echo -e "plug.fish doesn't seem to exist, trying to install"
