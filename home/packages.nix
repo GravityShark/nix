@@ -44,9 +44,13 @@ in
     # crystal
     # gleam
     # erlang
+    swift
+    swift-format
+    sourcekit-lsp
+    swiftPackages.swiftpm
 
     ## Mason
-    clang-tools
+    # clang-tools
     # csharp-ls
     # emmet-language-server
     # gofumpt

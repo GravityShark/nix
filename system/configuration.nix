@@ -17,7 +17,7 @@
   imports = [
     ./gnome.nix
     ./hardware-configuration.nix
-    # ./ld.nix
+    ./ld.nix
     ./nvidia.nix
     ./packages.nix
     ./system.nix
