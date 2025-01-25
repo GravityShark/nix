@@ -44,10 +44,6 @@ in
     # crystal
     # gleam
     # erlang
-    swift
-    swift-format
-    sourcekit-lsp
-    swiftPackages.swiftpm
 
     ## Mason
     clang-tools
