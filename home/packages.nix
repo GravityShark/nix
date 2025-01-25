@@ -44,10 +44,13 @@ in
     # crystal
     # gleam
     # erlang
-    swift
-    swift-format
-    sourcekit-lsp
-    swiftPackages.swiftpm
+    # swift
+    # swift-format
+    # sourcekit-lsp
+    # swiftPackages.swiftpm
+    ruby
+    ruby-lsp
+    rubyfmt
 
     ## Mason
     # clang-tools
