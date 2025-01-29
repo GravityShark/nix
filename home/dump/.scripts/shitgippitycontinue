@@ -1,0 +1,7 @@
+#!/bin/sh
+if ! pidof -x "ollama" >/dev/null; then
+        nohup ollama serve &
+        mods --api ollama --model deepseek-r1:1.5b -C
+else
+        mods --api ollama --model deepseek-r1:1.5b -C
+fi
