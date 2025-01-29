@@ -89,6 +89,9 @@ in
     webcord
     zen-browser.default
 
+    ollama
+    mods
+
     # CLIs
     nix-your-shell
     sesh
