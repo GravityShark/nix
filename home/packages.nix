@@ -49,7 +49,7 @@ in
     # sourcekit-lsp
     # swiftPackages.swiftpm
     ruby
-    ruby-lsp
+    # ruby-lsp
     rubyfmt
 
     ## Mason
