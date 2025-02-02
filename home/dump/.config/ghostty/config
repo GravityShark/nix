@@ -1,5 +1,5 @@
 theme = rose-pine-dawn
-window-decoration = false
+window-decoration = none
 font-family = "Iosevka Comfy"
 font-size = 13
 shell-integration-features = no-cursor
