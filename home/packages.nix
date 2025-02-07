@@ -61,7 +61,8 @@ in
     # golangci-lint
     # golines
     # gopls
-    lldb
+    # lldb
+    gdb
     lua-language-server
     nil
     nixfmt-rfc-style
