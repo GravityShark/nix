@@ -53,7 +53,7 @@ in
     rubyfmt
 
     ## Mason
-    # clang-tools
+    clang-tools
     # csharp-ls
     # emmet-language-server
     # gofumpt
