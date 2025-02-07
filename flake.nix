@@ -14,7 +14,7 @@
     };
     zen-browser-flake = {
       # url = "github:youwen5/zen-browser-flake";
-      url = "github:omarcresp/zen-browser-flake";
+      url = "github.com/myamusashi/zen-twilight-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
