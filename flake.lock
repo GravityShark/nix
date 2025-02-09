@@ -276,16 +276,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1738986728,
-        "narHash": "sha256-lqzpDC638E4fHYWUizk3c+gh5L9Yk5OfG05lSS2xEr4=",
-        "owner": "myamusashi",
-        "repo": "zen-twilight-flake",
-        "rev": "b4eea425804476410f181ad8cdca2882dd400052",
+        "lastModified": 1736225627,
+        "narHash": "sha256-YAizWP4bC299ZGh5lfIh9d4E4NDXNRndSNfPtratWds=",
+        "owner": "quantum9innovation",
+        "repo": "zen-browser-twilight-flake",
+        "rev": "aa811d3cd0687008c1aa4dab12c9f3b8be3ac56b",
         "type": "github"
       },
       "original": {
-        "owner": "myamusashi",
-        "repo": "zen-twilight-flake",
+        "owner": "quantum9innovation",
+        "repo": "zen-browser-twilight-flake",
         "type": "github"
       }
     }
