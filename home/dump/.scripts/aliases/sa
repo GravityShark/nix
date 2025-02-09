@@ -5,7 +5,6 @@
         return
 }
 prev_session=$(tmux display-message -p '#S')
-out=$(tmenu "sesh relinquish")
 
 sesh connect ${@:-.} || return
 if [ "$out" != "" ]; then
