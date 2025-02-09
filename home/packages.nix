@@ -48,9 +48,9 @@ in
     # swift-format
     # sourcekit-lsp
     # swiftPackages.swiftpm
-    ruby
+    # ruby
     # ruby-lsp
-    rubyfmt
+    # rubyfmt
 
     ## Mason
     clang-tools
@@ -69,9 +69,9 @@ in
     # ols
     # perlPackages.PLS
     # prettierd
-    # pyright
+    pyright
     # quick-lint-js
-    # ruff
+    ruff
     shfmt
     stylua
     # tailwindcss-language-server
