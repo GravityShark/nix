@@ -89,7 +89,6 @@ in
     # vial
     webcord
     zen-browser.default
-    arduino-ide
 
     # CLIs
     nix-your-shell
