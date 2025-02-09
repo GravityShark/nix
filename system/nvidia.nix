@@ -32,11 +32,14 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
 
     prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
+      # offload = {
+      #   enable = true;
+      #   enableOffloadCmd = true;
+      # };
       # sync.enable = true;
+      reverseSync.enable = true;
+      # Enable if using an external GPU
+      allowExternalGpu = false;
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:2:0:0";
     };
