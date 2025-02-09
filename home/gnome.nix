@@ -59,7 +59,7 @@
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
-        # "blur-my-shell@edvard.cz"
+        "blur-my-shell@aunetx"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
