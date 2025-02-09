@@ -81,6 +81,7 @@ in
     # zls
 
     # Apps
+    arduino-ide
     authenticator
     # foliate # because 3.2.1 is brokey
     # fragments # Bittorrent client

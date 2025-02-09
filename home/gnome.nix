@@ -75,6 +75,8 @@
       active-hint = true;
       hint-color-rgba = "rgba(196, 167, 231, 255)";
     };
-    "org/gnome/shell/extensions/caffeine/toggle-shortcut" = [ "" ];
+    "org/gnome/shell/extensions/caffeine" = {
+      toggle-shortcut = [ "" ];
+    };
   };
 }
