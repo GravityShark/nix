@@ -8,6 +8,7 @@
     gnomeExtensions.freon
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
+    gnomeExtensions.blur-my-shell
   ];
   # Gnome settings
   dconf.settings = {
@@ -58,6 +59,7 @@
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
+        # "blur-my-shell@edvard.cz"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
