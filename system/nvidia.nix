@@ -9,7 +9,8 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     # Use the stable version cause idek if the beta version even exists
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     modesetting.enable = true;
 
@@ -24,7 +25,10 @@
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = true;
+    powerManagement = {
+      enable = true;
+      finegrained = true;
+    };
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
@@ -32,14 +36,14 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
 
     prime = {
-      # offload = {
-      #   enable = true;
-      #   enableOffloadCmd = true;
-      # };
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
       # sync.enable = true;
-      reverseSync.enable = true;
+      # reverseSync.enable = true;
       # Enable if using an external GPU
-      allowExternalGpu = false;
+      # allowExternalGpu = false;
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:2:0:0";
     };
