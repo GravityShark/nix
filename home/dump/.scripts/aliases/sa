@@ -2,7 +2,7 @@
 # t is just this script without the kill-session
 DIRECTORY=$1
 
-if [ ! -n "$var" ]; then
+if [ ! -n "$DIRECTORY" ]; then
         exit 1
 fi
 
