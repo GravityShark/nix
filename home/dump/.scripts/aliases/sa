@@ -1,12 +1,22 @@
 #!/bin/sh
 # t is just this script without the kill-session
+DIRECTORY=$1
+
+if [ ! -n "$var" ]; then
+        exit 1
+fi
+
+if [ ! -d "$DIRECTORY" ]; then
+        mkdir $DIRECTORY
+fi
+
 [ ! -n "$TMUX" ] && {
         t
         return
 }
 prev_session=$(tmux display-message -p '#S')
 
-sesh connect ${@:-.} || return
+sesh connect $DIRECTORY || return
 if [ "$out" != "" ]; then
         tmux kill-session -t "$prev_session"
 fi
