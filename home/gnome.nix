@@ -77,6 +77,7 @@
     };
     "org/gnome/shell/extensions/caffeine" = {
       toggle-shortcut = [ "" ];
+      show-notifications = false;
     };
   };
 }
