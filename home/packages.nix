@@ -89,9 +89,7 @@ in
     ungoogled-chromium
     # vial
     webcord
-    # zen-browser.default
-    zen-browser.twilight
-    zen-browser.twilight-official
+    zen-browser.default
 
     # CLIs
     nix-your-shell
