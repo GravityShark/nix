@@ -91,6 +91,7 @@ in
     webcord
     # zen-browser.default
     zen-browser.twilight
+    zen-browser.twilight-official
 
     # CLIs
     nix-your-shell
