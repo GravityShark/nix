@@ -3,7 +3,7 @@
 # made by shit gippity
 
 if [ "$#" -eq 0 ]; then
-  echo "Usage: $0 <command>"
+  echo "Usage: repeat <command>"
   exit 1
 fi
 
