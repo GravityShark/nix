@@ -1,7 +1,7 @@
 #!/bin/sh
 sesh list -i -H | fzf-tmux -e --ansi -p 80%,80% \
         --no-sort --border-label " ${1:-sesh} " --prompt '⚡ ' \
-        --header '  ^a all ^t sessions ^f find ^k kill selected session ^r last' \
+        --header '  ^a all ^t sessions ^f find ^k kill selected session ^l last' \
         --bind 'tab:down,btab:up' \
         --bind 'ctrl-a:change-prompt(⚡ )+reload(sesh list -iH)' \
         --bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
