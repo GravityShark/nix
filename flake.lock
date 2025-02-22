@@ -105,11 +105,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740183880,
-        "narHash": "sha256-bvX0BguY9gHVBg+Dlaa4L8Vj0P/zqO0ZoOrHeCjnO4w=",
+        "lastModified": 1740188029,
+        "narHash": "sha256-pnPs+XSpR633G/q0gj+SDyL4RaDfiKlom86zEBPtq+M=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "62d038f499b94d406df790dec04e201d222e5098",
+        "rev": "765cb91e9d5ab06ed8c92c25fc0e51d6c11d43cb",
         "type": "github"
       },
       "original": {
@@ -276,16 +276,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1740147441,
-        "narHash": "sha256-yZS/g+KKXBI5dFJz2lRQvHGgixL7jCA6Yw4S4IoixN0=",
-        "owner": "myamusashi",
-        "repo": "zen-twilight-flake",
-        "rev": "5b2845236d8c3135bbbce0e7fa21ce87f2ed73f6",
+        "lastModified": 1739222645,
+        "narHash": "sha256-6FsTAjrO0TN5+gVxx3hmWqEJWs1sJ1p3E8DKWHdlN6M=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "7e60ade066a54797b376ebaf554bc2efa255ff8a",
         "type": "github"
       },
       "original": {
-        "owner": "myamusashi",
-        "repo": "zen-twilight-flake",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
