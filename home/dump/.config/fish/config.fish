@@ -67,6 +67,7 @@ if status is-interactive
     set CFLAGS '-std=c99 -Wall -Werror'
 
     alias s sesh
+    alias x xdg-open
     if not source $__fish_user_data_dir/plugins/plug.fish/conf.d/plugin_load.fish
         echo -e "plug.fish doesn't seem to exist, trying to install"
         curl -L https://github.com/kidonng/plug.fish/raw/v3/conf.d/plugin_load.fish | source
