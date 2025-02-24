@@ -1,5 +1,5 @@
 #!/bin/sh
-help="$0 [-h] [-o output_name] [-s start_time] [-e end_time] URL [URL...]"
+help="$0 [-h] [-o output_name] [-s start_time] [-e end_time] <URL> [URL...]"
 if [ "$#" = 0 ]; then
         echo $help
         exit
@@ -39,7 +39,7 @@ while getopts "hqvo:s:e:" opt; do
 done
 
 if [ start != "0:00" ] || [ end != "inf" ]; then
-        command="$command --download-sections "*$start-$end" -S proto:https"
+        command="$command --download-sections '*$start-$end' --force-keyframes-at-cuts"
 fi
 
 command="$command $@"

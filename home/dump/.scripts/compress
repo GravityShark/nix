@@ -4,7 +4,7 @@
 
 # Check if correct number of arguments are passed
 if [ "$#" -ne 3 ]; then
-    echo "Usage: $0 [input_video] [target_size_in_MB] [output_video]"
+    echo "Usage: $0 <input> <target_size_in_MB> <output>"
     exit 1
 fi
 
@@ -19,4 +19,4 @@ duration=$(ffprobe -i "$input_file" -show_entries format=duration -v quiet -of c
 target_bitrate=$(echo "scale=0; ($target_size_MB * 8 * 1024 * 1024) / $duration" | bc)
 
 # Compress video using ffmpeg
-ffmpeg -i "$input_file" -b:v "$target_bitrate" -minrate "$target_bitrate" -maxrate "$target_bitrate" -bufsize "$((target_bitrate/2))" "$output_file"
+ffmpeg -i "$input_file" -b:v "$target_bitrate" -minrate "$target_bitrate" -maxrate "$target_bitrate" -bufsize "$((target_bitrate / 2))" "$output_file"
