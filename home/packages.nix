@@ -86,6 +86,7 @@ in
     # foliate # because 3.2.1 is brokey
     # fragments # Bittorrent client
     gnome-frog
+    umu-launcher
     ungoogled-chromium
     # vial
     webcord
