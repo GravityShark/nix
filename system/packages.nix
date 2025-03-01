@@ -13,6 +13,7 @@
     evince # Document viewer
     foliate # epub
     ghostty
+    gnome-sound-recorder
     kdePackages.kdenlive
     krita
     libreoffice-fresh
