@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
+    audacity
     emacs
     evince # Document viewer
     foliate # epub
