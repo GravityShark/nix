@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
     gnomeExtensions.appindicator
-    gnomeExtensions.auto-move-windows
     # gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
@@ -56,13 +55,13 @@
       # `gnome-extensions list` for a list
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
+        # "blur-my-shell@aunetx"
+        "caffeine@patapon.info"
         "dash-to-dock@micxgx.gmail.com"
         "freon@UshakovVasilii_Github.yahoo.com"
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
-        "caffeine@patapon.info"
-        # "blur-my-shell@aunetx"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
