@@ -8,6 +8,7 @@
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.freon
+    gnomeExtensions.maximize-to-empty-workspace
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
   ];
@@ -60,6 +61,7 @@
         "dash-to-dock@micxgx.gmail.com"
         "freon@UshakovVasilii_Github.yahoo.com"
         "light-style@gnome-shell-extensions.gcampax.github.com"
+        "MaximizeToEmptyWorkspace-extension@kaisersite.de"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
       ];
