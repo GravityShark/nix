@@ -4,12 +4,13 @@
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
     gnomeExtensions.appindicator
+    gnomeExtensions.auto-move-windows
+    # gnomeExtensions.blur-my-shell
+    gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.freon
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
-    gnomeExtensions.caffeine
-    # gnomeExtensions.blur-my-shell
   ];
   # Gnome settings
   dconf.settings = {
