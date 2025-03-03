@@ -1,5 +1,12 @@
 { lib, pkgs, ... }:
 
+let
+  customGnomeExtensions = pkgs.buildGnomeShellExtension {
+    name = "new-window-new-workspace";
+    uuid = "new-window-new-workspace@custom-extension";
+    src = "~/.nix/home/gnome-extension/new-window-new-workspace@custom-extension";
+  };
+in
 {
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
@@ -62,6 +69,7 @@
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
+        "new-window-new-workspace@custom-extension"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {

@@ -1,0 +1,7 @@
+
+  {
+      "uuid": "new-window-new-workspace@custom-extension",
+      "name": "New Window New Workspace",
+      "description": "Opens each new window in a new workspace.",
+      "shell-version": ["47"]
+  }
