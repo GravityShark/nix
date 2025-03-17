@@ -40,7 +40,7 @@
     hunspell
     hunspellDicts.en_US
     unzip
-    wineWowPackages.waylandFull
+    wineWowPackages.stable
 
     # CLIs
     efibootmgr
