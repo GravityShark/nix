@@ -40,6 +40,7 @@
     hunspell
     hunspellDicts.en_US
     unzip
+    winetricks
     wineWowPackages.stable
 
     # CLIs
