@@ -40,8 +40,8 @@
     hunspell
     hunspellDicts.en_US
     unzip
-    winetricks
-    wineWowPackages.stable
+    # winetricks
+    # wineWowPackages.stable
 
     # CLIs
     efibootmgr
