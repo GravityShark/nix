@@ -88,7 +88,7 @@ in
     gnome-frog
     ungoogled-chromium
     # vial
-    webcord
+    # webcord
     zen-browser.default
 
     # CLIs
