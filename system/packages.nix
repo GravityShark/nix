@@ -59,8 +59,8 @@
     tmux
     neovim
     wl-clipboard
-    yt-dlp
-    ytfzf
+    # yt-dlp
+    # ytfzf
     zoxide
   ];
 }
