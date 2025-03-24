@@ -53,7 +53,7 @@ in
     # rubyfmt
 
     ## Mason
-    clang-tools
+    # clang-tools
     # csharp-ls
     # emmet-language-server
     # gofumpt
@@ -62,26 +62,26 @@ in
     # golines
     # gopls
     # lldb
-    gdb
-    lua-language-server
+    # gdb
+    # lua-language-server
     nil
     nixfmt-rfc-style
     # ols
     # perlPackages.PLS
     # prettierd
-    pyright
+    # pyright
     # quick-lint-js
-    ruff
+    # ruff
     shfmt
-    stylua
+    # stylua
     # tailwindcss-language-server
-    tree-sitter
+    # tree-sitter
     # typescript-language-server
     # vscode-langservers-extracted # contains html-lsp and json-lsp
     # zls
 
     # Apps
-    arduino-ide
+    # arduino-ide
     authenticator
     # foliate # because 3.2.1 is brokey
     # fragments # Bittorrent client
@@ -94,7 +94,7 @@ in
     # CLIs
     nix-your-shell
     sesh
-    tex
+    # tex
 
     # Fonts
     iosevka-comfy.comfy

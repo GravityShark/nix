@@ -9,28 +9,28 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    audacity
+    # audacity
     emacs
     evince # Document viewer
     foliate # epub
     ghostty
     gnome-sound-recorder
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
     krita
     libreoffice-fresh
     mcontrolcenter
     mpv
     obs-studio
-    putty
+    # putty
 
     # Dev stuff
-    clang
-    gnumake
-    go
-    nodejs
-    python3
+    # clang
+    # gnumake
+    # go
+    # nodejs
+    # python3
     racket
-    temurin-jre-bin
+    # temurin-jre-bin
 
     # Systems
     bc
@@ -53,7 +53,7 @@
     git
     joshuto
     mksh
-    pandoc
+    # pandoc
     pass
     ripgrep
     tmux
