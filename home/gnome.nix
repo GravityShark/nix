@@ -74,9 +74,9 @@ in
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
       show-trash = false;
-      hot-keys = true;
-      shortcut = [ "<Super>grave" ];
-      shortcut-text = "<Super>grave";
+      hot-keys = false;
+      # shortcut = [ "<Super>grave" ];
+      # shortcut-text = "<Super>grave";
     };
     "org/gnome/shell/extensions/pop-shell" = {
       tile-by-default = true;
