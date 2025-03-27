@@ -23,10 +23,6 @@ in
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
     "org/gnome/desktop/wm/preferences".focus-mode = "sloppy";
-    # /org/gnome/desktop/wm/keybindings/switch-to-workspace-4
-    #   ['<Super>4']
-    # /org/gnome/shell/keybindings/switch-to-application-4
-    #   @as []
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Super>1" ];
       switch-to-workspace-2 = [ "<Super>2" ];
@@ -37,6 +33,15 @@ in
       switch-to-workspace-7 = [ "<Super>7" ];
       switch-to-workspace-8 = [ "<Super>8" ];
       switch-to-workspace-9 = [ "<Super>9" ];
+      move-to-workspace-1 = [ "<Shift><Super>1" ];
+      move-to-workspace-2 = [ "<Shift><Super>2" ];
+      move-to-workspace-3 = [ "<Shift><Super>3" ];
+      move-to-workspace-4 = [ "<Shift><Super>4" ];
+      move-to-workspace-5 = [ "<Shift><Super>5" ];
+      move-to-workspace-6 = [ "<Shift><Super>6" ];
+      move-to-workspace-7 = [ "<Shift><Super>7" ];
+      move-to-workspace-8 = [ "<Shift><Super>8" ];
+      move-to-workspace-9 = [ "<Shift><Super>9" ];
       close = [ "<Super>w" ];
       toggle-maximized = [ "<Super>f" ];
       maximize = [ "" ];
