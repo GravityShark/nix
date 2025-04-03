@@ -83,7 +83,6 @@ in
     # Apps
     # arduino-ide
     authenticator
-    discord-canary
     # foliate # because 3.2.1 is brokey
     # fragments # Bittorrent client
     gnome-frog
