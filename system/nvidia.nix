@@ -27,8 +27,8 @@
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
     powerManagement = {
-      enable = true;
-      finegrained = true;
+      enable = false;
+      finegrained = false;
     };
 
     # Enable the Nvidia settings menu,
