@@ -1,6 +1,18 @@
-{ config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      # Add additional package names here
+      "nvidia-x11"
+    ];
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ nvidia-vaapi-driver ];
@@ -13,7 +25,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     # package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-    modesetting.enable = true;
+    modesetting.enable = false;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
@@ -21,20 +33,18 @@
     # supported GPUs is at:
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
+    open = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
     powerManagement = {
-      enable = false;
-      finegrained = false;
+      enable = true;
+      finegrained = true;
     };
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    nvidiaSettings = false;
 
     prime = {
       intelBusId = "PCI:0:2:0";

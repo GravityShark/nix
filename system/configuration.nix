@@ -12,7 +12,7 @@
 
 {
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./gnome.nix
