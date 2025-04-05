@@ -276,16 +276,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1743739551,
-        "narHash": "sha256-38tiroIuRMsMUytpqcrLClfeJrxLkLZzxAR1rSq52wM=",
-        "owner": "youwen5",
-        "repo": "zen-browser-flake",
-        "rev": "287c1385da165c2737a70d8275237144aae9c3ac",
+        "lastModified": 1742706074,
+        "narHash": "sha256-+rlTxWwinPhphDeU/OYwCV//pnSw7SjU9PHAUDt8/kw=",
+        "owner": "myamusashi",
+        "repo": "zen-twilight-flake",
+        "rev": "fd7bf1f7f83ca2de8f5e4526788c9a812b95fde3",
         "type": "github"
       },
       "original": {
-        "owner": "youwen5",
-        "repo": "zen-browser-flake",
+        "owner": "myamusashi",
+        "repo": "zen-twilight-flake",
         "type": "github"
       }
     }
