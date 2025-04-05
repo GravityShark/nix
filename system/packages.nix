@@ -1,15 +1,10 @@
 {
-  lib,
+  # lib,
   pkgs,
   ...
 }:
 
 {
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "discord"
-    ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
