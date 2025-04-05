@@ -21,6 +21,9 @@
   # Emacs service
   services.emacs.enable = true;
 
+  # auto clean or smthn
+  # services.home-manager.autoExpire.enable = true;
+
   # Auto update
   # services.home-manager.autoUpgrade = {
   #   enable = true;
