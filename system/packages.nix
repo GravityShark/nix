@@ -10,7 +10,7 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    discord
+    discord-canary
     # audacity
     emacs
     evince # Document viewer
