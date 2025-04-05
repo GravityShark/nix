@@ -7,6 +7,7 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
+
   hardware.nvidia = {
     # Use the stable version cause idek if the beta version even exists
     package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -36,6 +37,9 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
 
     prime = {
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:2:0:0";
+
       offload = {
         enable = true;
         enableOffloadCmd = true;
@@ -44,8 +48,6 @@
       # reverseSync.enable = true;
       # Enable if using an external GPU
       # allowExternalGpu = false;
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:2:0:0";
     };
   };
 }

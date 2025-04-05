@@ -18,7 +18,7 @@
     ./gnome.nix
     ./hardware-configuration.nix
     # ./ld.nix
-    # ./nvidia.nix
+    ./nvidia.nix
     ./packages.nix
     ./system.nix
     ./services.nix
