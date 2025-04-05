@@ -17,14 +17,14 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "discord"
-      "nvidia-x11"
+      # "nvidia-x11"
     ];
 
   imports = [
     ./gnome.nix
     ./hardware-configuration.nix
     # ./ld.nix
-    ./nvidia.nix
+    # ./nvidia.nix
     ./packages.nix
     ./system.nix
     ./services.nix
@@ -70,6 +70,7 @@
   # Optimise package sizes
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "01:30" ];
+
   # Garbage collection
   nix.gc = {
     automatic = true;
