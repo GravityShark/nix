@@ -17,6 +17,7 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "discord"
+      "nvidia-x11"
     ];
 
   imports = [

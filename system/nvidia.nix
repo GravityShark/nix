@@ -1,18 +1,10 @@
 {
-  lib,
   config,
   pkgs,
   ...
 }:
 
 {
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      # Add additional package names here
-      "nvidia-x11"
-    ];
-
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ nvidia-vaapi-driver ];
