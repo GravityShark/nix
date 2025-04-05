@@ -10,7 +10,7 @@
 
   hardware.nvidia = {
     # Use the stable version cause idek if the beta version even exists
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
     # package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     modesetting.enable = true;
