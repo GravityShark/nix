@@ -29,7 +29,6 @@
     # clang
     # gnumake
     # go
-    graalvm-ce
     # nodejs
     # python3
     racket

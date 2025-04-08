@@ -56,13 +56,14 @@ in
     # clang-tools
     # csharp-ls
     # emmet-language-server
+    # gdb
     # gofumpt
     # goimports-reviser
     # golangci-lint
     # golines
     # gopls
+    graalvm-ce
     # lldb
-    # gdb
     # lua-language-server
     nil
     nixfmt-rfc-style
