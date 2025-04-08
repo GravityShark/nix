@@ -169,11 +169,11 @@
   ;;                                   (?D . "⬇")
   ;;                                   (?E . "❄"))))
 
-  (setq org-modern-priority-faces '((?A . (:inverse-video t :background "#b4637a"))
-                                    (?B . (:inverse-video t :background "#d7827e"))
-                                    (?C . (:inverse-video t :background "#ea9d34"))
-                                    (?D . (:inverse-video t :background "#907aa9"))
-                                    (?E . (:inverse-video t :background "#56949f")))))
+  (setq org-modern-priority-faces '((?A . (:inverse-video t :foreground "#b4637a"))
+                                    (?B . (:inverse-video t :foreground "#d7827e"))
+                                    (?C . (:inverse-video t :foreground "#ea9d34"))
+                                    (?D . (:inverse-video t :foreground "#907aa9"))
+                                    (?E . (:inverse-video t :foreground "#56949f")))))
 
 (use-package! lsp-ltex-plus
   :hook (org-mode . (lambda ()
