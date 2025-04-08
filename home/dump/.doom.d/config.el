@@ -151,18 +151,23 @@
 (after! corfu
   (setq +corfu-want-ret-to-confirm nil))
 
-(after! org-fancy-priorities
-  (setq org-fancy-priorities-list '((?A . "⚑")
+;; (after! org-fancy-priorities
+;;   (setq org-fancy-priorities-list '((?A . "⚑")
+;;                                     (?B . "⬆")
+;;                                     (?C . "■")
+;;                                     (?D . "⬇")
+;;                                     (?E . "❄")))
+;;   (setq org-priority-faces '((?A . (:foreground "#b4637a"))
+;;                              (?B . (:foreground "#d7827e"))
+;;                              (?C . (:foreground "#ea9d34"))
+;;                              (?D . (:foreground "#907aa9"))
+;;                              (?E . (:foreground "#56949f")))))
+(after! org-modern
+  (setq org-modern-priority (quote ((?A . "⚑")
                                     (?B . "⬆")
                                     (?C . "■")
                                     (?D . "⬇")
-                                    (?E . "❄")))
-  (setq org-priority-faces '((?A . (:foreground "#b4637a"))
-                             (?B . (:foreground "#d7827e"))
-                             (?C . (:foreground "#ea9d34"))
-                             (?D . (:foreground "#907aa9"))
-                             (?E . (:foreground "#56949f")))))
-
+                                    (?E . "❄")))))
 (use-package! lsp-ltex-plus
   :hook (org-mode . (lambda ()
                       (require 'lsp-ltex-plus)
@@ -171,10 +176,10 @@
                      (require 'lsp-ltex-plus)
                      (lsp-deferred)))
   :init
-  (setq lsp-ltex-plus-version "18.2.0")
+  (setq lsp-ltex-plus-version "18.5.0")
   (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
   (setq lsp-ltex-plus-language "en")
-  (setq lsp-ltex-plus-mother-tongue "tl-PH" ))
+  (setq lsp-ltex-plus-mother-tongue "tl-PH"))
 
 ;;; Key maps
 ;; Allow for C-y to accept company selection
