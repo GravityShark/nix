@@ -48,8 +48,12 @@
 
 ;; (package! lsp-grammarly)
 
+
+;; (package! lsp-ltex)
+(package! lsp-ltex-plus
+  :recipe (:host github :repo "emacs-languagetool/lsp-ltex-plus"))
+
 (package! with-editor)
-(package! lsp-ltex)
 (package! xkcd)
 (package! el-fetch)
 (package! org-preview-html)

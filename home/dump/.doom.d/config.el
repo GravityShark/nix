@@ -163,18 +163,18 @@
                              (?D . (:foreground "#907aa9"))
                              (?E . (:foreground "#56949f")))))
 
-(use-package! lsp-ltex
-  :hook (org-mode . (lambda ()
-                      (require 'lsp-ltex)
-                      (lsp-deferred)))
-  (markdown-mode . (lambda ()
-                     (require 'lsp-ltex)
-                     (lsp-deferred)))
-  :init
-  (setq lsp-ltex-version "16.0.0")
-  (setq lsp-ltex-additional-rules-enable-picky-rules "true")
-  (setq lsp-ltex-language "en")
-  (setq lsp-ltex-mother-tongue "tl-PH" ))
+;; (use-package! lsp-ltex-plus
+;;   :hook (org-mode . (lambda ()
+;;                       (require 'lsp-ltex-plus)
+;;                       (lsp-deferred)))
+;;   (markdown-mode . (lambda ()
+;;                      (require 'lsp-ltex-plus)
+;;                      (lsp-deferred)))
+;;   :init
+;;   (setq lsp-ltex-plus-version "18.2.0")
+;;   (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
+;;   (setq lsp-ltex-plus-language "en")
+;;   (setq lsp-ltex-plus-mother-tongue "tl-PH" ))
 
 ;;; Key maps
 ;; Allow for C-y to accept company selection
