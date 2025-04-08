@@ -169,11 +169,11 @@
   ;;                                   (?D . "⬇")
   ;;                                   (?E . "❄"))))
 
-  (setq org-modern-priority-faces '((?A . (:background "#b4637a"))
-                                    (?B . (:background "#d7827e"))
-                                    (?C . (:background "#ea9d34"))
-                                    (?D . (:background "#907aa9"))
-                                    (?E . (:background "#56949f")))))
+  (setq org-modern-priority-faces '((?A . (:foreground "#e0def4" :background "#b4637a"))
+                                    (?B . (:foreground "#e0def4" :background "#d7827e"))
+                                    (?C . (:foreground "#e0def4" :background "#ea9d34"))
+                                    (?D . (:foreground "#e0def4" :background "#907aa9"))
+                                    (?E . (:foreground "#e0def4" :background "#56949f")))))
 
 (use-package! lsp-ltex-plus
   :hook (org-mode . (lambda ()
