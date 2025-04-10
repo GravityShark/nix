@@ -10,10 +10,11 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    discord-canary
     # audacity
+    discord-canary
     emacs
     evince # Document viewer
+    flatpak
     foliate # epub
     ghostty
     gnome-sound-recorder
