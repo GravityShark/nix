@@ -8,9 +8,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Apps
     anki
+    # Apps
     # audacity
+    deluge
     discord-canary
     emacs
     evince # Document viewer
