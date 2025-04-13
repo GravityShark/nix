@@ -91,7 +91,6 @@ in
     # vial
     # webcord
     zen-browser.default
-    zerotierone
 
     # CLIs
     nix-your-shell

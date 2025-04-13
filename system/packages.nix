@@ -8,10 +8,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    anki
     # Apps
+    anki
     # audacity
+    # clang
     deluge
+    # Dev stuff
     discord-canary
     emacs
     evince # Document viewer
@@ -19,19 +21,16 @@
     foliate # epub
     ghostty
     gnome-sound-recorder
+    # gnumake
+    # go
     # kdePackages.kdenlive
     krita
     libreoffice-fresh
     mcontrolcenter
     mpv
+    # nodejs
     obs-studio
     # putty
-
-    # Dev stuff
-    # clang
-    # gnumake
-    # go
-    # nodejs
     # python3
     racket
     # temurin-jre-bin
@@ -46,6 +45,7 @@
     unzip
     # winetricks
     # wineWowPackages.stable
+    zerotierone
 
     # CLIs
     efibootmgr
