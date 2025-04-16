@@ -4,13 +4,13 @@
 
 # Check if correct number of arguments are passed
 if [ "$#" -ne 3 ]; then
-    echo "Usage: $0 <input> <target_size_in_MB> <output>"
+    echo "Usage: $0 <input> <target_size_in_MB> [output]"
     exit 1
 fi
 
 input_file="$1"
 target_size_MB="$2"
-output_file="$3"
+output_file=${3:-"$input_file"_"$target_size_in_MB"mb}
 
 # Calculate duration of the input video
 duration=$(ffprobe -i "$input_file" -show_entries format=duration -v quiet -of csv="p=0")
