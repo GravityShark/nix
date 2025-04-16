@@ -45,7 +45,7 @@
     unzip
     # winetricks
     # wineWowPackages.stable
-    zerotierone
+    # zerotierone
 
     # CLIs
     efibootmgr
