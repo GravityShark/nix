@@ -63,7 +63,7 @@
     tmux
     neovim
     wl-clipboard
-    # yt-dlp
+    yt-dlp
     # ytfzf
     zoxide
   ];
