@@ -55,13 +55,13 @@ in
     ## Mason
     # clang-tools
     # csharp-ls
-    # emmet-language-server
+    emmet-language-server
     # gdb
-    # gofumpt
-    # goimports-reviser
-    # golangci-lint
-    # golines
-    # gopls
+    gofumpt
+    goimports-reviser
+    golangci-lint
+    golines
+    gopls
     graalvm-ce
     # lldb
     # lua-language-server
@@ -69,16 +69,16 @@ in
     nixfmt-rfc-style
     # ols
     # perlPackages.PLS
-    # prettierd
-    # pyright
-    # quick-lint-js
+    prettierd
+    pyright
+    quick-lint-js
     # ruff
     shfmt
     # stylua
-    # tailwindcss-language-server
+    tailwindcss-language-server
     # tree-sitter
-    # typescript-language-server
-    # vscode-langservers-extracted # contains html-lsp and json-lsp
+    typescript-language-server
+    vscode-langservers-extracted # contains html-lsp and json-lsp
     # zls
 
     # Apps
@@ -88,8 +88,7 @@ in
     # fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium
-    # vial
-    # webcord
+    vial
     zen-browser.default
 
     # CLIs
