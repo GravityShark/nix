@@ -63,7 +63,11 @@ cd ~/.nix/home/dump/.config/nvim/
 git switch master
 ```
 
-n ur done
+n ur done, jus complete this checklist
+
+- [ ] change the scaling to 150%
+- [ ] sync the browser
+- [ ] add youtubemusic and messenger as web apps
 
 2. gentoo
    follow this one
