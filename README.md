@@ -2,10 +2,6 @@
 
 ![default nixos gnome screenshot i just took](https://github.com/GravityShark0/nix/blob/83b2c1b262985569411d3a4c544031521a2099d3/assets/Screenshot%20from%202024-11-22%2018-46-39.png)
 
-preferrably you wanna do this
-
-> git config --local include.path ../.gitconfig
-
 ## resources im using
 
 - looking stuff up
@@ -21,9 +17,17 @@ preferrably you wanna do this
 ### installation
 
 1. nixos
-   install nixos from the gui setting up the partitions n reboot.
 
-when inside nixos sign the images for [secure boot](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md)
+install nixos from the gui setting up the partitions n reboot.
+
+get yo .ssh and .gnupg up then install it
+
+````bash
+```bash
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_*
+chmod 644 ~/.ssh/id_*.pub
+chmod 600 ~/.ssh/config
 
 then actually install it after getting yo .ssh
 
@@ -32,15 +36,17 @@ git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0
 nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
 home-manager boot --flake ~/.nix\?submodules=1
-```
+````
 
 then reboot
 
 setup git
+
 ```bash
 cd ~/.nix
 git config --local include.path ../.gitconfig
 ```
+
 n ur done
 
 2. gentoo
