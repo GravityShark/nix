@@ -1,12 +1,5 @@
 { lib, pkgs, ... }:
 
-let
-  customGnomeExtensions = pkgs.buildGnomeShellExtension {
-    name = "new-window-new-workspace";
-    uuid = "new-window-new-workspace@custom-extension";
-    src = "~/.nix/home/gnome-extension/new-window-new-workspace@custom-extension";
-  };
-in
 {
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
@@ -101,7 +94,9 @@ in
       "switch-to-application-7" = [ "" ];
       "switch-to-application-8" = [ "" ];
       "switch-to-application-9" = [ "" ];
+      "toggle-application-view" = [ "" ];
     };
+
     "org/gnome/shell/extensions/dash-to-dock" = {
       show-trash = false;
       hot-keys = false;

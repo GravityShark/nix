@@ -29,7 +29,7 @@
     ./packages.nix
     ./system.nix
     ./services.nix
-    ./lanzaboote.nix
+    # ./lanzaboote.nix
     # ./virt-manager.nix
   ];
 
