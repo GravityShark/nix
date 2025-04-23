@@ -2,7 +2,7 @@
   description = "This is MY flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,7 +10,7 @@
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
@@ -23,7 +23,7 @@
   outputs =
     {
       self,
-      nixpkgs,
+      # nixpkgs,
       nixpkgs-unstable,
       home-manager,
       lanzaboote,
@@ -37,7 +37,7 @@
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        nixos = nixpkgs-unstable.lib.nixosSystem {
           inherit system;
           modules = [
             ./system/configuration.nix
