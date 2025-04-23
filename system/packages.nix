@@ -10,27 +10,24 @@
   environment.systemPackages = with pkgs; [
     # Apps
     anki
-    # audacity
     clang
-    deluge
-    # Dev stuff
+    # deluge # Torrenting
     discord-canary
     emacs
     evince # Document viewer
-    flatpak
-    foliate # epub
-    ghostty
+    foliate # Epub viewer
+    ghostty # Terminal
     gnome-sound-recorder
-    # gnumake
-    # go
     # kdePackages.kdenlive
     krita
     libreoffice-fresh
-    mcontrolcenter
+    mcontrolcenter # MSI
     mpv
-    # nodejs
-    obs-studio
-    # putty
+
+    # Dev stuff
+    gnumake
+    go
+    nodejs
     # python3
     racket
     # temurin-jre-bin
@@ -45,7 +42,6 @@
     unzip
     # winetricks
     # wineWowPackages.stable
-    # zerotierone
 
     # CLIs
     efibootmgr

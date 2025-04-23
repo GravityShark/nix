@@ -4,28 +4,28 @@
   zen-browser,
   ...
 }:
-let
-  tex = (
-    pkgs.texlive.combine {
-      inherit (pkgs.texlive)
-        scheme-basic
-        dvisvgm
-        dvipng # for preview and export as html
-        wrapfig
-        amsmath
-        ulem
-        hyperref
-        capt-of
-        etoolbox
-        nopageno
-        mlmodern
-        metafont
-        ;
-      #(setq org-latex-compiler "lualatex")
-      #(setq org-preview-latex-default-process 'dvisvgm)
-    }
-  );
-in
+# let
+#   tex = (
+#     pkgs.texlive.combine {
+#       inherit (pkgs.texlive)
+#         scheme-basic
+#         dvisvgm
+#         dvipng # for preview and export as html
+#         wrapfig
+#         amsmath
+#         ulem
+#         hyperref
+#         capt-of
+#         etoolbox
+#         nopageno
+#         mlmodern
+#         metafont
+#         ;
+#       #(setq org-latex-compiler "lualatex")
+#       #(setq org-preview-latex-default-process 'dvisvgm)
+#     }
+#   );
+# in
 {
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -64,17 +64,17 @@ in
     gopls
     graalvm-ce
     # lldb
-    # lua-language-server
+    lua-language-server
     nil
     nixfmt-rfc-style
     # ols
     # perlPackages.PLS
     prettierd
-    pyright
+    # pyright
     quick-lint-js
     # ruff
     shfmt
-    # stylua
+    stylua
     tailwindcss-language-server
     # tree-sitter
     typescript-language-server
@@ -84,8 +84,7 @@ in
     # Apps
     # arduino-ide
     authenticator
-    # foliate # because 3.2.1 is brokey
-    # fragments # Bittorrent client
+    fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium
     vial
