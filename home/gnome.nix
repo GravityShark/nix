@@ -15,6 +15,7 @@
   dconf.settings = {
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
+    "org/gnome/desktop/peripherals/mouse".speed = -0.6;
     "org/gnome/desktop/wm/preferences".focus-mode = "sloppy";
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Super>1" ];
