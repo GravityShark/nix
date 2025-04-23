@@ -20,31 +20,47 @@
 
 install nixos from the gui setting up the partitions n reboot.
 
+also add flake capabilities lol
+
+```nix
+#/etc/nixos/configuration.nix
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+```
+
+```bash
+
+sudo nixos-rebuild switch
+```
+
 get yo .ssh and .gnupg up then install it
 
-````bash
 ```bash
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/id_*
 chmod 644 ~/.ssh/id_*.pub
 chmod 600 ~/.ssh/config
+```
 
-then actually install it after getting yo .ssh
+then install it dimwit
+also enable
 
 ```bash
 git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0/nix.git ~/.nix
 nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
-home-manager boot --flake ~/.nix\?submodules=1
-````
-
-then reboot
+home-manager switch --flake ~/.nix\?submodules=1
+```
 
 setup git
 
 ```bash
 cd ~/.nix
 git config --local include.path ../.gitconfig
+
+# also setup neovim
+
+cd ~/.nix/home/dump/.config/nvim/
+git switch master
 ```
 
 n ur done
@@ -61,3 +77,7 @@ more in [home/dump/README.md](home/dump/README.md)
 ## things i might look out for
 
 - in gentoo they have [etckeeper](https://wiki.gentoo.org/wiki/Etckeeper)
+
+```
+
+```
