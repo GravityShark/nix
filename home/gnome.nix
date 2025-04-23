@@ -55,6 +55,7 @@
       sleep-inactive-ac-timeout = 900;
     };
     "org/gnome/mutter" = {
+      focus-change-on-pointer-rest = false;
       dynamic-workspaces = true;
       edge-tiling = true;
       experimental-features = [
