@@ -114,5 +114,9 @@
       toggle-shortcut = [ "" ];
       show-notifications = false;
     };
+    "org/gnome/shell/extensions/freon" = {
+      hot-sensors = [ "__max__" ];
+      use-gpu-nvidia = false;
+    };
   };
 }
