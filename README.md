@@ -69,6 +69,17 @@ n ur done, jus complete this checklist
 - [ ] sync the browser
   - unduck
 - [ ] add youtubemusic and messenger as web apps
+- [ ] reinstall doomemacs
+
+```bash
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+```
+
+- [ ] re sync anki
+- [ ] re sync syncthing
+- [ ] setup authenticator
+- [ ] login back to disc and other
 
 2. gentoo
    follow this one
