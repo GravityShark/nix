@@ -1,0 +1,12 @@
+#!/bin/sh
+# https://travcap.ca/2022/06/11/set-the-gnome-desktop-background-to-randomly-change/
+
+USER=$(id -un)
+UID=$(id -u)
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$UID/bus
+GNOME_SHELL=$(ps --user=$USER | grep gnome-shell)
+if [ ! -z "$GNOME_SHELL" ]; then
+  PICDIR="/home/$USER/Pictures/Wallpapers"
+  CURPIC=$(ls $PICDIR | egrep -i "(png|jpg|jpeg)$" | shuf -n 1)
+  gsettings set org.gnome.desktop.background picture-uri $PICDIR/$CURPIC
+fi
