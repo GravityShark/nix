@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, options, ... }:
 
 {
   # Bootloader.
@@ -67,6 +67,7 @@
 
   # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
+  networking.timeServers = options.networking.timeServers.default ++ [ "asia.pool.ntp.org" ];
 
   # use xanmod kernel kuh
   # boot.kernelPackages = pkgs.linuxPackages_xanmod;
