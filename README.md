@@ -67,6 +67,7 @@ n ur done, jus complete this checklist
 
 - [ ] change the scaling to 150%
 - [ ] sync the browser
+  - unduck
 - [ ] add youtubemusic and messenger as web apps
 
 2. gentoo
