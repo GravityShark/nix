@@ -68,6 +68,12 @@
   # allow it to work with windows time tbh
   time.hardwareClockInLocalTime = true;
   # networking.timeServers = options.networking.timeServers.default ++ [ "asia.pool.ntp.org" ];
+  networking.timeServers = [
+    "0.asia.pool.ntp.org"
+    "1.asia.pool.ntp.org"
+    "2.asia.pool.ntp.org"
+    "3.asia.pool.ntp.org"
+  ];
 
   # use xanmod kernel kuh
   # boot.kernelPackages = pkgs.linuxPackages_xanmod;
