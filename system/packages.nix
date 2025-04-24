@@ -11,7 +11,7 @@
     # Apps
     anki
     # audacity
-    # clang
+    clang
     deluge
     # Dev stuff
     discord-canary
