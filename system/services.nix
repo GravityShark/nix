@@ -49,23 +49,23 @@
   #   wantedBy = [ "multi-user.target" ];
   # };
 
-  systemd.timers."background" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "10m";
-      OnUnitActiveSec = "100m";
-      User = "gravity";
-      Unit = "hello-world.service";
-    };
-  };
+  # systemd.timers."background" = {
+  #   wantedBy = [ "timers.target" ];
+  #   timerConfig = {
+  #     OnBootSec = "10m";
+  #     OnUnitActiveSec = "100m";
+  #     User = "gravity";
+  #     Unit = "hello-world.service";
+  #   };
+  # };
 
-  systemd.services."background" = {
-    script = ''$HOME/.scripts/random_background'';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "gravity";
-    };
-  };
+  # systemd.services."background" = {
+  #   script = ''$HOME/.scripts/random_background'';
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     User = "gravity";
+  #   };
+  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
