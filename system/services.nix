@@ -42,12 +42,12 @@
     #media-session.enable = true;
   };
 
-  # systemd.services."chmod" = {
-  #   script = ''
-  #     chmod 777 /dev/null
-  #   '';
-  #   wantedBy = [ "multi-user.target" ];
-  # };
+  systemd.services."chmod" = {
+    script = ''
+      chmod 777 /dev/null
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
 
   # systemd.timers."background" = {
   #   wantedBy = [ "timers.target" ];
