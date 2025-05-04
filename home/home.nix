@@ -1,4 +1,4 @@
-{ ... }:
+{ lib }:
 
 {
   # ENABLE IF NOT NIXOS
@@ -12,6 +12,12 @@
     ./mime.nix
   ];
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "zerotierone"
+    ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "gravity";
@@ -19,6 +25,7 @@
 
   # Emacs service
   services.emacs.enable = true;
+  services.zerotierone.enable = true;
 
   # auto clean or smthn
   # services.home-manager.autoExpire.enable = true;
