@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
+    gnomeExtensions.alttab-mod
     gnomeExtensions.appindicator
     # gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
