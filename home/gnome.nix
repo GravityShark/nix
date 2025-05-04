@@ -13,11 +13,15 @@
     gnomeExtensions.run-or-raise
   ];
   # Gnome settings
+
   dconf.settings = {
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
     "org/gnome/desktop/peripherals/mouse".speed = -0.6;
-    "org/gnome/desktop/wm/preferences".focus-mode = "sloppy";
+    "org/gnome/desktop/wm/preferences" = {
+      focus-mode = "sloppy";
+      num-workspaces = 9;
+    };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Super>1" ];
       switch-to-workspace-2 = [ "<Super>2" ];
@@ -57,7 +61,8 @@
     };
     "org/gnome/mutter" = {
       focus-change-on-pointer-rest = false;
-      dynamic-workspaces = true;
+      dynamic-workspaces = false;
+
       edge-tiling = true;
       experimental-features = [
         "scale-monitor-framebuffer"
