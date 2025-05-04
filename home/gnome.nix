@@ -76,15 +76,16 @@
       # `gnome-extensions list` for a list
       favorite-apps = [ "" ];
       enabled-extensions = [
+        "alttab-mod@leleat-on-github"
         "appindicatorsupport@rgcjonas.gmail.com"
         # "blur-my-shell@aunetx"
         "caffeine@patapon.info"
         "dash-to-dock@micxgx.gmail.com"
         "freon@UshakovVasilii_Github.yahoo.com"
         "light-style@gnome-shell-extensions.gcampax.github.com"
+        "new-window-new-workspace@custom-extension"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
-        "new-window-new-workspace@custom-extension"
       ];
     };
 
@@ -119,6 +120,11 @@
     "org/gnome/shell/extensions/freon" = {
       hot-sensors = [ "__max__" ];
       use-gpu-nvidia = false;
+    };
+    "org/gnome/shell/extensions/altTab-mod" = {
+      remove-delay = true;
+      current-workspace-only-window = false;
+      raise-first-instance-only = false;
     };
   };
 }
