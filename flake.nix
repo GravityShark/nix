@@ -18,6 +18,10 @@
       # url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    PrismLauncher-Cracked = {
+      url = "github:Diegiwg/PrismLauncher-Cracked";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -28,12 +32,14 @@
       home-manager,
       lanzaboote,
       zen-browser-flake,
+      PrismLauncher-Cracked,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs-unstable.legacyPackages.${system};
       zen-browser = zen-browser-flake.packages.${system};
+      prism-launcher = PrismLauncher-Cracked.packages.${system};
     in
     {
       nixosConfigurations = {
@@ -53,6 +59,7 @@
         modules = [ ./home/home.nix ];
         extraSpecialArgs = {
           inherit zen-browser;
+          inherit prism-launcher;
         };
       };
     };

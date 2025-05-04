@@ -2,6 +2,7 @@
   # config,
   pkgs,
   zen-browser,
+  prism-launcher,
   ...
 }:
 # let
@@ -86,6 +87,7 @@
     authenticator
     fragments # Bittorrent client
     gnome-frog
+    prism-launcher.prismlauncher
     ungoogled-chromium
     vial
     zen-browser.default
