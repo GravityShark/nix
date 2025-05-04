@@ -59,7 +59,7 @@
         modules = [ ./home/home.nix ];
         extraSpecialArgs = {
           inherit zen-browser;
-          inherit prism-launcher;
+          # inherit prism-launcher;
         };
       };
     };
