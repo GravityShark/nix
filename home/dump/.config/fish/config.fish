@@ -80,4 +80,10 @@ if status is-interactive
     if command -q nix-your-shell
       nix-your-shell fish | source
     end
+
+    if command -v tmux > /dev/null and test -n "$PS1" and not echo $TERM | grep -q 'tmux'
+        and test -z "$TMUX"
+        exec tmux
+    end
+
 end
