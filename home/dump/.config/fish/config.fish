@@ -82,7 +82,7 @@ if status is-interactive
     end
 
     # if command -v tmux > /dev/null and test -n "$PS1" and not echo $TERM | grep -q 'tmux' and test -z "$TMUX"
-    if command -v tmux > /dev/null 'tmux' and test -z "$TMUX"
+    if command -v tmux > /dev/null 'tmux' and set -q "$TMUX"
         exec tmux
     end
 
