@@ -91,7 +91,6 @@
     ungoogled-chromium
     vial
     zen-browser.default
-    zerotierone
 
     # CLIs
     nix-your-shell

@@ -23,6 +23,7 @@
     libreoffice-fresh
     mcontrolcenter # MSI
     mpv
+    zerotierone
 
     # Dev stuff
     gnumake

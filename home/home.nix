@@ -1,4 +1,4 @@
-{ lib }:
+{ ... }:
 
 {
   # ENABLE IF NOT NIXOS
@@ -11,12 +11,6 @@
     ./desktop.nix
     ./mime.nix
   ];
-
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "zerotierone"
-    ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
