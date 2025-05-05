@@ -22,6 +22,7 @@
     krita
     libreoffice-fresh
     mcontrolcenter # MSI
+    zoom-us
     mpv
     # zerotierone
 
