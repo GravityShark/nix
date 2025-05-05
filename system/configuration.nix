@@ -17,6 +17,7 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "discord-canary"
+      "zoom-us"
       # "zerotierone"
       # "nvidia-x11"
     ];
