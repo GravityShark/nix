@@ -24,7 +24,7 @@
     mcontrolcenter # MSI
     zoom-us
     mpv
-    # zerotierone
+    zerotierone
 
     # Dev stuff
     gnumake
