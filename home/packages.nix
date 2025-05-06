@@ -5,28 +5,28 @@
   # prism-launcher,
   ...
 }:
-# let
-#   tex = (
-#     pkgs.texlive.combine {
-#       inherit (pkgs.texlive)
-#         scheme-basic
-#         dvisvgm
-#         dvipng # for preview and export as html
-#         wrapfig
-#         amsmath
-#         ulem
-#         hyperref
-#         capt-of
-#         etoolbox
-#         nopageno
-#         mlmodern
-#         metafont
-#         ;
-#       #(setq org-latex-compiler "lualatex")
-#       #(setq org-preview-latex-default-process 'dvisvgm)
-#     }
-#   );
-# in
+let
+  tex = (
+    pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-basic
+        dvisvgm
+        dvipng # for preview and export as html
+        wrapfig
+        amsmath
+        ulem
+        hyperref
+        capt-of
+        etoolbox
+        nopageno
+        mlmodern
+        metafont
+        ;
+      #(setq org-latex-compiler "lualatex")
+      #(setq org-preview-latex-default-process 'dvisvgm)
+    }
+  );
+in
 {
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -95,7 +95,7 @@
     # CLIs
     nix-your-shell
     sesh
-    # tex
+    tex
 
     # Fonts
     iosevka-comfy.comfy
