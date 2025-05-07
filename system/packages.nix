@@ -22,9 +22,10 @@
     krita
     libreoffice-fresh
     mcontrolcenter # MSI
-    zoom-us
     mpv
+    telegram-desktop
     # zerotierone
+    zoom-us
 
     # Dev stuff
     gnumake
