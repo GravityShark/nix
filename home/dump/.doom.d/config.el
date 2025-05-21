@@ -115,8 +115,9 @@
   (setq org-export-with-date t)
   (setq org-latex-packages-alist '(("margin=1.5in" "geometry" nil)(" " "nopageno" t)))
   (setq org-startup-with-latex-preview t)
+  (setq org-startup-with-overview t)
   (setq org-format-latex-options
-        (plist-put org-format-latex-options :scale 2.0))
+        (plist-put org-format-latex-options :scale 3.0 :html-scale 3.0))
   ;; Set closed timestamp when closing
   (setq org-log-done 'time
         )
