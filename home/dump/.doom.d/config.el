@@ -117,8 +117,8 @@
   (setq org-startup-with-latex-preview t)
   (setq org-startup-with-overview t)
   (setq org-format-latex-options
-        (plist-put (plist-put org-format-latex-options :scale 5.0)
-                   :html-scale 5.0))
+        (plist-put (plist-put org-format-latex-options :scale 3.5)
+                   :html-scale 3.5))
   ;; Set closed timestamp when closing
   (setq org-log-done 'time)
   )
