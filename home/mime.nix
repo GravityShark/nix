@@ -11,9 +11,9 @@
       "application/x-extension-xhtml" = [ "zen.desktop" ];
       "application/x-extension-xht" = [ "zen.desktop" ];
       "application/xhtml+xml" = [ "zen.desktop" ];
-      "image/*" = [ "org.gnome.Loupe.desktop" ];
       "image/gif" = [ "org.gnome.Loupe.desktop" ];
       "image/jpeg" = [ "org.gnome.Loupe.desktop;" ];
+      "image/*" = [ "org.gnome.Loupe.desktop" ];
       "image/png" = [ "org.gnome.Loupe.desktop" ];
       "text/html" = [ "zen.desktop" ];
       "text/org" = [ "emacsclient.desktop" ];
@@ -24,7 +24,8 @@
       "x-scheme-handler/chrome" = [ "zen.desktop" ];
       "x-scheme-handler/https" = [ "zen.desktop" ];
       "x-scheme-handler/http" = [ "zen.desktop" ];
-
+      "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
+      "x-scheme-handler/tonsite" = [ "org.telegram.desktop.desktop" ];
     };
   };
 }
