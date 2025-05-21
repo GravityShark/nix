@@ -114,8 +114,12 @@
   (setq org-export-with-toc nil)
   (setq org-export-with-date t)
   (setq org-latex-packages-alist '(("margin=1.5in" "geometry" nil)(" " "nopageno" t)))
+  (setq org-startup-with-latex-preview t)
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :scale 2.0))
   ;; Set closed timestamp when closing
-  (setq org-log-done 'time)
+  (setq org-log-done 'time
+        )
   )
 
 ;; Org capture templates
