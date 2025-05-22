@@ -111,6 +111,7 @@
       "toggle-application-view" = [ "" ];
     };
 
+    # Extensions
     "org/gnome/shell/extensions/dash-to-dock" = {
       show-trash = false;
       hot-keys = false;
@@ -131,7 +132,6 @@
       hot-sensors = [ "__max__" ];
       use-gpu-nvidia = false;
     };
-
     "org/gnome/shell/extensions/alttab-mod" = {
       current-workspace-only-window = false;
       raise-first-instance-only = false;
@@ -141,9 +141,11 @@
       border-width = -2;
       global-rounded-corner-settings = "{'padding': <{'left': uint32 1, 'right': 2, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 12>, 'smoothing': <0.0>, 'borderColor': <(0.98039215686274506, 0.95686274509803920, 0.92941176470588238,, 1.0)>, 'enabled': <true>}";
     };
-
     "org/gnome/shell/extensions/switchWorkSpace/switch-workspace-backward" = [ "<Super>Tab" ];
-
+    "org/gnome/shell/extensions/switchWorkSpace" = {
+      switch-workspace = [ "<Super>Tab" ];
+      switch-workspace-backward = [ "<Shift><Super>Tab" ];
+    };
     "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
       indicator-color = "rgb(206,202,205)";
       indicator-show-indexes = false;
