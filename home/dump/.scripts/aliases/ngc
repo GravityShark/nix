@@ -2,3 +2,4 @@
 sudo nix-collect-garbage -d
 sudo nix-store --optimise
 sudo nix-store --gc
+home-manager expire-generations 1
