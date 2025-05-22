@@ -159,6 +159,8 @@
       indicator-color = "rgb(87,82,121)";
       indicator-show-indexes = true;
       size-app-icon = 24;
+      spacing-app-left = 1;
+      spacing-app-right = 1;
     };
   };
 }
