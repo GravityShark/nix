@@ -148,7 +148,6 @@
     "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
       indicator-color = "rgb(87 82 121)";
       indicator-show-indexes = false;
-
     };
   };
 }
