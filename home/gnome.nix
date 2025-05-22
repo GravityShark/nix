@@ -5,10 +5,10 @@
     gnome-epub-thumbnailer
     gnomeExtensions.alttab-mod
     gnomeExtensions.appindicator
-    # gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.freon
+    gnomeExtensions.luminus-desktop
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
   ];
@@ -83,12 +83,10 @@
       enabled-extensions = [
         "alttab-mod@leleat-on-github"
         "appindicatorsupport@rgcjonas.gmail.com"
-        # "blur-my-shell@aunetx"
         "caffeine@patapon.info"
         "dash-to-dock@micxgx.gmail.com"
         "freon@UshakovVasilii_Github.yahoo.com"
-        "light-style@gnome-shell-extensions.gcampax.github.com"
-        "new-window-new-workspace@custom-extension"
+        # "light-style@gnome-shell-extensions.gcampax.github.com"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
       ];
