@@ -89,6 +89,7 @@ in
     gnome-frog
     # prism-launcher.prismlauncher
     proton-pass
+    protonmail-desktop
     ungoogled-chromium
     vial
     zen-browser.default
