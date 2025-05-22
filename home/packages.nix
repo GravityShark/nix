@@ -90,7 +90,7 @@ in
     # prism-launcher.prismlauncher
     ungoogled-chromium
     vial
-    zen-browser.default
+    # zen-browser.default
 
     # CLIs
     nix-your-shell
