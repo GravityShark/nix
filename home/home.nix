@@ -33,20 +33,22 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".clang-format".source = dump/.clang-format;
     ".config/fastfetch".source = dump/.config/fastfetch;
+    ".config/fish/completions".source = dump/.config/fish/completions;
     ".config/fish/conf.d".source = dump/.config/fish/conf.d;
     ".config/fish/config.fish".source = dump/.config/fish/config.fish;
     ".config/fish/functions".source = dump/.config/fish/functions;
-    ".config/fish/completions".source = dump/.config/fish/completions;
     ".config/ghostty".source = dump/.config/ghostty;
     ".config/joshuto".source = dump/.config/joshuto;
     ".config/modprobed-db.conf".source = dump/.config/modprobed-db.conf;
+    ".config/monitors.xml".source = dump/.config/monitors.xml;
     ".config/nvim/after".source = dump/.config/nvim/after;
     ".config/nvim/init.lua".source = dump/.config/nvim/init.lua;
     ".config/nvim/lua".source = dump/.config/nvim/lua;
     ".config/run-or-raise".source = dump/.config/run-or-raise;
     ".config/sesh".source = dump/.config/sesh;
+    ".config/zoomus.config ".source = dump/.config/zoomus.conf;
+    ".clang-format".source = dump/.clang-format;
     ".doom.d".source = dump/.doom.d;
     ".gitconfig".source = dump/.gitconfig;
     ".mkshrc".source = dump/.mkshrc;
