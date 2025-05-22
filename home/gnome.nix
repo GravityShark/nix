@@ -91,6 +91,7 @@
         "freon@UshakovVasilii_Github.yahoo.com"
         "luminus-desktop@dikasp.gitlab"
         "pop-shell@system76.com"
+        "rounded-window-corners@fxgn"
         "run-or-raise@edvard.cz"
         "switchWorkSpace@sun.wxg@gmail.com"
         "workspaces-by-open-apps@favo02.github.com"
@@ -110,29 +111,59 @@
       "toggle-application-view" = [ "" ];
     };
 
-    "org/gnome/shell/extensions/dash-to-dock" = {
-      show-trash = false;
-      hot-keys = false;
-      # shortcut = [ "<Super>grave" ];
-      # shortcut-text = "<Super>grave";
-    };
-    "org/gnome/shell/extensions/pop-shell" = {
-      tile-by-default = true;
-      active-hint = false;
-      hint-color-rgba = "rgba(196, 167, 231, 255)";
-    };
-    "org/gnome/shell/extensions/caffeine" = {
-      toggle-shortcut = [ "" ];
-      show-notifications = false;
-    };
-    "org/gnome/shell/extensions/freon" = {
-      hot-sensors = [ "__max__" ];
-      use-gpu-nvidia = false;
-    };
-    "org/gnome/shell/extensions/altTab-mod" = {
-      remove-delay = true;
-      current-workspace-only-window = false;
-      raise-first-instance-only = false;
+    "org/gnome/shelel/extensions" = {
+
+      "dash-to-dock" = {
+        show-trash = false;
+        hot-keys = false;
+        # shortcut = [ "<Super>grave" ];
+        # shortcut-text = "<Super>grave";
+      };
+      "pop-shell" = {
+        active-hint-border-radius = 14;
+        active-hint = true;
+        hint-color-rgba = "rgba(196, 167, 231, 255)";
+        tile-by-default = true;
+      };
+      "caffeine" = {
+        toggle-shortcut = [ "" ];
+        show-notifications = false;
+      };
+      "freon" = {
+        hot-sensors = [ "__max__" ];
+        use-gpu-nvidia = false;
+      };
+      "altTab-mod" = {
+        remove-delay = true;
+        current-workspace-only-window = false;
+        raise-first-instance-only = false;
+      };
+      "rounded-window-corners-reborn" = {
+        border-width = -2;
+        "global-rounded-corner-settings" = {
+          padding = {
+            left = 1;
+            right = 2;
+            top = 1;
+            bottom = 1;
+          };
+          keepRoundedCorners = {
+            maximized = false;
+            fullscreen = false;
+          };
+          borderRadius = 12;
+          smoothing = 0.0;
+          borderColor = [
+            0.95686275
+            0.92941176
+            0.74901962280273438
+            1.0
+          ];
+          enabled = true;
+        };
+      };
+
+      "switchWorkSpace/switch-workspace-backward" = [ "<Shift><Super>Tab" ];
     };
   };
 }
