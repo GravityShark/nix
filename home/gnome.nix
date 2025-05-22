@@ -111,63 +111,43 @@
       "toggle-application-view" = [ "" ];
     };
 
-    "org/gnome/shell/extensions" = {
 
-      "dash-to-dock" = {
+      "org/gnome/shell/extensions/dash-to-dock" = {
         show-trash = false;
         hot-keys = false;
         # shortcut = [ "<Super>grave" ];
         # shortcut-text = "<Super>grave";
       };
-      "pop-shell" = {
+      "org/gnome/shell/extensions/pop-shell" = {
         active-hint-border-radius = 12;
         active-hint = true;
         hint-color-rgba = "rgba(87, 82, 121, 255)";
         tile-by-default = true;
       };
-      "caffeine" = {
+      "org/gnome/shell/extensions/caffeine" = {
         toggle-shortcut = [ "" ];
         show-notifications = false;
       };
-      "freon" = {
+      "org/gnome/shell/extensions/freon" = {
         hot-sensors = [ "__max__" ];
         use-gpu-nvidia = false;
       };
-      "altTab-mod" = {
-        remove-delay = true;
+
+      "org/gnome/shell/extensions/alttab-mod" = {
         current-workspace-only-window = false;
         raise-first-instance-only = false;
+        remove-delay = true;
       };
-      "rounded-window-corners-reborn" = {
+      "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
         border-width = -2;
-        "global-rounded-corner-settings" = {
-          padding = {
-            left = 1;
-            right = 2;
-            top = 1;
-            bottom = 1;
-          };
-          keepRoundedCorners = {
-            maximized = false;
-            fullscreen = false;
-          };
-          borderRadius = 12;
-          smoothing = 0.0;
-          borderColor = [
-            0.95686275
-            0.92941176
-            0.74901962280273438
-            1.0
-          ];
-          enabled = true;
-        };
-      };
+        global-rounded-corner-settings = "{'padding': <{'left': uint32 1, 'right': 2, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 12>, 'smoothing': <0.0>, 'borderColor': <(0.95686274509803920, 0.92941176470588238, 0.90980392156862744, 1.0)>, 'enabled': <true>}";
 
-      "switchWorkSpace/switch-workspace-backward" = [ "<Shift><Super>Tab" ];
-      "workspaces-indicator-by-open-apps" = {
+        };
+
+      "org/gnome/shell/extensions/switchWorkSpace/switch-workspace-backward" = "<Shift><Super>Tab";
+      "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
         indicator-color = "rgb(206,202,205)";
         indicator-show-indexes = false;
       };
-    };
   };
 }
