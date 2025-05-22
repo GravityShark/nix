@@ -135,7 +135,7 @@
     };
     "org/gnome/shell/extensions/pop-shell" = {
       active-hint = true;
-      active-hint-border-radius = "uint 16";
+      # active-hint-border-radius = "uint 16";
       hint-color-rgba = "rgba(87, 82, 121, 255)";
       tile-by-default = true;
     };
