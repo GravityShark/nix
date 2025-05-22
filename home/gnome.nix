@@ -8,10 +8,8 @@
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.freon
-    gnomeExtensions.highlight-focus
     gnomeExtensions.luminus-desktop
-    gnomeExtensions.paperwm
-    # gnomeExtensions.pop-shell
+    gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
     gnomeExtensions.workspaces-indicator-by-open-apps
@@ -90,9 +88,11 @@
         "caffeine@patapon.info"
         "dash-to-dock@micxgx.gmail.com"
         "freon@UshakovVasilii_Github.yahoo.com"
-        # "light-style@gnome-shell-extensions.gcampax.github.com"
+        "luminus-desktop@dikasp.gitlab"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
+        "switchWorkSpace@sun.wxg@gmail.com"
+        "workspaces-by-open-apps@favo02.github.com"
       ];
     };
 
