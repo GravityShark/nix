@@ -10,6 +10,7 @@
     gnomeExtensions.freon
     gnomeExtensions.luminus-desktop
     gnomeExtensions.pop-shell
+    gnomeExtensions.rounded-window-corners-reborn
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
     gnomeExtensions.workspaces-indicator-by-open-apps
