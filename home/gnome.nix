@@ -163,8 +163,8 @@
     };
     "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
       indicator-color = "rgb(87,82,121)";
-      indicator-show-indexes = false;
-      size-app-icon = 48;
+      indicator-show-indexes = true;
+      size-app-icon = 24;
     };
   };
 }

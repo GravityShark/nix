@@ -88,6 +88,7 @@ in
     fragments # Bittorrent client
     gnome-frog
     # prism-launcher.prismlauncher
+    proton-pass
     ungoogled-chromium
     vial
     zen-browser.default
