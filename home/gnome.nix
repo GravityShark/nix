@@ -64,8 +64,8 @@
       toggle-maximized = [ "<Super>f" ];
       maximize = [ "" ];
       unmaximize = [ "" ];
-      switch-applications = [ "" ];
-      switch-applications-backward = [ "" ];
+      switch-applications = [ "<Alt>Tab" ];
+      switch-applications-backward = [ "<Shift><Alt>Tab" ];
       switch-group = [ "" ];
       switch-group-backward = [ "" ];
       switch-windows = [ "" ];
