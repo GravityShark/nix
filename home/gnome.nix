@@ -147,8 +147,9 @@
       switch-workspace-backward = [ "<Shift><Super>Tab" ];
     };
     "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
-      indicator-color = "rgb(206,202,205)";
+      indicator-color = "rgb(87 82 121)";
       indicator-show-indexes = false;
+
     };
   };
 }
