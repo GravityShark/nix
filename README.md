@@ -39,6 +39,9 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/id_*
 chmod 644 ~/.ssh/id_*.pub
 chmod 600 ~/.ssh/config
+# chown -R $(whoami) ~/.gnupg/
+# chmod 600 ~/.gnupg/*
+# chmod 700 ~/.gnupg
 ```
 
 then install it dimwit
