@@ -164,6 +164,10 @@
       };
 
       "switchWorkSpace/switch-workspace-backward" = [ "<Shift><Super>Tab" ];
+      "workspaces-indicator-by-open-apps" = {
+        indicator-color = "rgb(206,202,205)";
+        indicator-show-indexes = false;
+      };
     };
   };
 }
