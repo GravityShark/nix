@@ -8,9 +8,13 @@
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.freon
+    gnomeExtensions.highlight-focus
     gnomeExtensions.luminus-desktop
-    gnomeExtensions.pop-shell
+    gnomeExtensions.paperwm
+    # gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
+    gnomeExtensions.switch-workspace
+    gnomeExtensions.workspaces-indicator-by-open-apps
   ];
   # Gnome settings
 
@@ -50,7 +54,7 @@
     };
     "org/gnome/desktop/interface" = {
       enable-hot-corners = true;
-      color-scheme = "default";
+      color-scheme = "prefer-light";
     };
     "org/gnome/settings-daemon/plugins/power" = {
       power-saver-profile-on-low-battery = true;
@@ -61,7 +65,7 @@
     };
     "org/gnome/mutter" = {
       focus-change-on-pointer-rest = false;
-      dynamic-workspaces = false;
+      dynamic-workspaces = true;
 
       edge-tiling = true;
       experimental-features = [
@@ -113,7 +117,7 @@
     };
     "org/gnome/shell/extensions/pop-shell" = {
       tile-by-default = true;
-      active-hint = true;
+      active-hint = false;
       hint-color-rgba = "rgba(196, 167, 231, 255)";
     };
     "org/gnome/shell/extensions/caffeine" = {
