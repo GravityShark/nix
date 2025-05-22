@@ -15,6 +15,7 @@
     gnomeExtensions.switch-workspace
     gnomeExtensions.workspaces-indicator-by-open-apps
   ];
+
   # Gnome settings
 
   dconf.settings = {
@@ -24,6 +25,10 @@
     "org/gnome/desktop/wm/preferences" = {
       focus-mode = "sloppy";
       num-workspaces = 9;
+    };
+    "org/gnome/desktop/interface" = {
+      enable-hot-corners = true;
+      color-scheme = "prefer-light";
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Super>1" ];
@@ -51,10 +56,7 @@
       switch-group = [ "" ];
       switch-group-backward = [ "" ];
     };
-    "org/gnome/desktop/interface" = {
-      enable-hot-corners = true;
-      color-scheme = "prefer-light";
-    };
+
     "org/gnome/settings-daemon/plugins/power" = {
       power-saver-profile-on-low-battery = true;
       sleep-inactive-battery-type = "suspend";
@@ -79,9 +81,8 @@
     };
 
     "org/gnome/shell" = {
-      # "app-switcher".current-workspace-only = false;
-      disable-user-extensions = false;
       # `gnome-extensions list` for a list
+      disable-user-extensions = false;
       favorite-apps = [ "" ];
       enabled-extensions = [
         "alttab-mod@leleat-on-github"
@@ -119,8 +120,8 @@
       # shortcut-text = "<Super>grave";
     };
     "org/gnome/shell/extensions/pop-shell" = {
-      active-hint-border-radius = 16;
       active-hint = true;
+      active-hint-border-radius = 18;
       hint-color-rgba = "rgba(87, 82, 121, 255)";
       tile-by-default = true;
     };
@@ -140,13 +141,14 @@
     "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
       border-width = -2;
       global-rounded-corner-settings = "{'padding': <{'left': uint32 1, 'right': 2, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 12>, 'smoothing': <0.0>, 'borderColor': <(0.98039215686274506, 0.95686274509803920, 0.92941176470588238,, 1.0)>, 'enabled': <true>}";
+      skip-libadwaita-app = false;
     };
     "org/gnome/shell/extensions/switchWorkSpace" = {
       switch-workspace = [ "<Super>Tab" ];
       switch-workspace-backward = [ "<Shift><Super>Tab" ];
     };
     "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
-      indicator-color = "rgb(87 82 121)";
+      indicator-color = "rgb(87,82,121)";
       indicator-show-indexes = false;
     };
   };
