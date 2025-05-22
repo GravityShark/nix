@@ -120,9 +120,9 @@
         # shortcut-text = "<Super>grave";
       };
       "pop-shell" = {
-        active-hint-border-radius = 14;
+        active-hint-border-radius = 12;
         active-hint = true;
-        hint-color-rgba = "rgba(196, 167, 231, 255)";
+        hint-color-rgba = "rgba(87, 82, 121, 255)";
         tile-by-default = true;
       };
       "caffeine" = {
