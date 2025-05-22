@@ -19,8 +19,18 @@
   # Gnome settings
 
   dconf.settings = {
-    "org/gnome/desktop/screensaver/picture-uri" =
-      "file:///home/gravity/.local/share/backgrounds/2025-05-22-11-27-14-blockwavedawn.png";
+    "org/gnome/desktop/background" = {
+      picture-uri = "file:///home/gravity/.local/share/backgrounds/2025-05-22-11-27-14-blockwavedawn.png";
+      picture-uri-dark = "file:///home/gravity/.local/share/backgrounds/2025-05-22-11-27-14-blockwavedawn.png";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
+    };
+    "org/gnome/desktop/screensaver" = {
+      picture-uri = "file:///home/gravity/.local/share/backgrounds/2025-05-22-11-27-14-blockwavedawn.png";
+      picture-uri-dark = "file:///home/gravity/.local/share/backgrounds/2025-05-22-11-27-14-blockwavedawn.png";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
+    };
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
     "org/gnome/desktop/peripherals/mouse".speed = -0.6;
