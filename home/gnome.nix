@@ -10,9 +10,9 @@
     gnomeExtensions.freon
     gnomeExtensions.luminus-desktop
     gnomeExtensions.pop-shell
-    # gnomeExtensions.rounded-window-corners-reborn
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
+    gnomeExtensions.undecorate
     gnomeExtensions.workspaces-indicator-by-open-apps
   ];
 
@@ -105,7 +105,6 @@
         "freon@UshakovVasilii_Github.yahoo.com"
         "luminus-desktop@dikasp.gitlab"
         "pop-shell@system76.com"
-        # "rounded-window-corners@fxgn"
         "run-or-raise@edvard.cz"
         "switchWorkSpace@sun.wxg@gmail.com"
         "workspaces-by-open-apps@favo02.github.com"
@@ -152,11 +151,6 @@
       raise-first-instance-only = false;
       remove-delay = true;
     };
-    # "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
-    #   border-width = -2;
-    #   global-rounded-corner-settings = "{'padding': <{'left': uint32 1, 'right': 2, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 12>, 'smoothing': <0.0>, 'borderColor': <(0.98039215686274506, 0.95686274509803920, 0.92941176470588238,, 1.0)>, 'enabled': <true>}";
-    #   skip-libadwaita-app = false;
-    # };
     "org/gnome/shell/extensions/switchWorkSpace" = {
       switch-workspace = [ "<Super>Tab" ];
       switch-workspace-backward = [ "<Shift><Super>Tab" ];
