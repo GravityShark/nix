@@ -12,7 +12,6 @@
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
-    gnomeExtensions.undecorate
     gnomeExtensions.workspaces-indicator-by-open-apps
   ];
 
@@ -65,8 +64,12 @@
       toggle-maximized = [ "<Super>f" ];
       maximize = [ "" ];
       unmaximize = [ "" ];
+      switch-applications = [ "" ];
+      switch-applications-backward = [ "" ];
       switch-group = [ "" ];
       switch-group-backward = [ "" ];
+      switch-windows = [ "" ];
+      switch-windows-backward = [ "" ];
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
@@ -76,6 +79,7 @@
       sleep-inactive-ac-type = "suspend";
       sleep-inactive-ac-timeout = 900;
     };
+
     "org/gnome/mutter" = {
       focus-change-on-pointer-rest = false;
       dynamic-workspaces = true;
