@@ -87,6 +87,7 @@ in
     authenticator
     fragments # Bittorrent client
     gnome-frog
+    gnome-secrets
     # prism-launcher.prismlauncher
     proton-pass
     protonmail-desktop
