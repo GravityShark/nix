@@ -54,6 +54,7 @@ in
     # rubyfmt
 
     ## Mason
+
     # clang-tools
     # csharp-ls
     emmet-language-server
@@ -83,14 +84,11 @@ in
     # zls
 
     # Apps
+
     # arduino-ide
     authenticator
     fragments # Bittorrent client
     gnome-frog
-    gnome-secrets
-    # prism-launcher.prismlauncher
-    proton-pass
-    protonmail-desktop
     ungoogled-chromium
     vial
     zen-browser.default

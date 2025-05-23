@@ -13,32 +13,33 @@
     # Apps
 
     anki
-    clang
     # deluge # Torrenting
     discord-canary
-    duplicati
     emacs
     evince # Document viewer
     foliate # Epub viewer
     ghostty # Terminal
     gnome-sound-recorder
     # kdePackages.kdenlive
+    keepassxc
     krita
     libreoffice-fresh
     mcontrolcenter # MSI
     mpv
     telegram-desktop
-    # zerotierone
     zoom-us
+
     # Dev stuff
+
+    clang
     gnumake
     go
     nodejs
     # python3
     racket
-    # temurin-jre-bin
 
     # Systems
+
     bc
     dash
     doas-sudo-shim
@@ -50,6 +51,7 @@
     # wineWowPackages.stable
 
     # CLIs
+
     efibootmgr
     eza
     fastfetch
@@ -59,11 +61,12 @@
     git
     joshuto
     mksh
+    neovim
     # pandoc
     pass
+    restic
     ripgrep
     tmux
-    neovim
     wl-clipboard
     yt-dlp
     # ytfzf
