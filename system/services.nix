@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
+  services.duplicati.enable = true;
+
   # GnuPG
   services.pcscd.enable = true;
   programs.gnupg.agent = {
