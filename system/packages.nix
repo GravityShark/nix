@@ -9,11 +9,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # home-manager
+
     # Apps
+
     anki
     clang
     # deluge # Torrenting
     discord-canary
+    duplicati
     emacs
     evince # Document viewer
     foliate # Epub viewer
@@ -27,7 +30,6 @@
     telegram-desktop
     # zerotierone
     zoom-us
-
     # Dev stuff
     gnumake
     go
