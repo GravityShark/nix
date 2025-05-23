@@ -1,11 +1,6 @@
 { ... }:
 
 {
-  services.duplicati = {
-    enable = true;
-    user = "gravity";
-  };
-
   # GnuPG
   services.pcscd.enable = true;
   programs.gnupg.agent = {
