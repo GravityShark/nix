@@ -59,7 +59,7 @@
       comment = "Edit text files";
       icon = "nvim";
       # tryExec = "nvim";
-      exec = "ghostty -e nvim %F";
+      exec = "ghostty -e nvim \"%F\"";
       terminal = false;
       categories = [
         "Utility"
