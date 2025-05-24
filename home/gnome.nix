@@ -13,6 +13,7 @@
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
     gnomeExtensions.workspaces-indicator-by-open-apps
+    gnome-pomodoro
   ];
 
   # Gnome settings
