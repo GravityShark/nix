@@ -6,6 +6,7 @@
     gnomeExtensions.alttab-mod
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
+    gnomeExtensions.cronomix
     gnomeExtensions.dash-to-dock
     gnomeExtensions.freon
     gnomeExtensions.luminus-desktop
