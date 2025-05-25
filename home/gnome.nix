@@ -100,6 +100,7 @@
 
     "org/gnome/shell" = {
       # `gnome-extensions list` for a list
+      disable-extension-version-validation = true;
       disable-user-extensions = false;
       favorite-apps = [ "" ];
       enabled-extensions = [
@@ -131,7 +132,6 @@
     };
 
     # Extensions
-    "org/gnome/shell/extensions".disable-version-validation = true;
     "org/gnome/shell/extensions/dash-to-dock" = {
       hot-keys = false;
       show-dock-urgent-notify = false;

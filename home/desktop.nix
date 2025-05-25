@@ -60,7 +60,7 @@
       icon = "nvim";
       # tryExec = "nvim";
       # exec = "ghostty -e nvim \"%F\"";
-      exec = "nvim \"%F\"";
+      exec = "tmux new-session -d 'exec nvim \"%F\"'";
       terminal = true;
       categories = [
         "Utility"
@@ -89,10 +89,10 @@
       name = "Tomato.C";
       genericName = "Timer";
       comment = "Edit text files";
-      icon = "tomato";
+      icon = "tools-timer";
       # tryExec = "nvim";
       # exec = "ghostty -e nvim \"%F\"";
-      exec = "tomato";
+      exec = "tmux new-session -s 'TOmato 🍅' 'exec tomato'";
       terminal = true;
       categories = [
         "Utility"

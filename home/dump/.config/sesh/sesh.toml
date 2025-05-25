@@ -49,3 +49,7 @@ startup_command = "$EDITOR ~/.nix/home/dump/.tmux.conf"
 name = "LIttle cool website" 
 path = "~/Code/coollittlewebsite"
 startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"
+
+[[session]]
+name = "TOmato 🍅" 
+startup_command = "tomato"
