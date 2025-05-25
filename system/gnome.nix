@@ -41,4 +41,7 @@
     totem # Videos that doesnt even work
   ];
 
+  xdg.terminal-exec.settings = {
+    default = [ "ghostty.desktop" ];
+  };
 }

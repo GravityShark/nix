@@ -31,7 +31,6 @@
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
-    "org/gnome/desktop/default-applications".terminal = "exec 'ghostty'";
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
     "org/gnome/desktop/peripherals/mouse".speed = -0.6;
@@ -132,6 +131,7 @@
     };
 
     # Extensions
+    "org/gnome/shell/extensions".disable-version-validation = true;
     "org/gnome/shell/extensions/dash-to-dock" = {
       hot-keys = false;
       show-dock-urgent-notify = false;
