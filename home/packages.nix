@@ -98,6 +98,7 @@ in
     sesh
     tex
     tomato-c
+    xdg-terminal-exec
 
     # Fonts
     iosevka-comfy.comfy
