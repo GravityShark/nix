@@ -35,15 +35,15 @@ path = "~/.nix/home/dump/.scripts"
 [[session]]
 name = "SEsh config  "
 path = "~/.nix/home/dump/.config/sesh"
-startup_command = "$EDITOR sesh.toml"
+startup_command = "exec $EDITOR sesh.toml"
 
 [[session]]
 name = "SSh 󰣀 "
-startup_command = "ssh gravity@clr"
+startup_command = "exec ssh gravity@clr"
 
 [[session]]
 name = "TMux config  "
-startup_command = "$EDITOR ~/.nix/home/dump/.tmux.conf"
+startup_command = "exec $EDITOR ~/.nix/home/dump/.tmux.conf"
 
 [[session]]
 name = "LIttle cool website" 
@@ -52,4 +52,4 @@ startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"
 
 [[session]]
 name = "TOmato 🍅" 
-startup_command = "tomato"
+startup_command = "exec tomato"

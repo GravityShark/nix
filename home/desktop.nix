@@ -60,7 +60,8 @@
       icon = "nvim";
       # tryExec = "nvim";
       # exec = "ghostty -e nvim \"%F\"";
-      exec = "tmux new-session \"exec nvim '%F' \"";
+      # exec = "tmux new-session \"exec nvim \"%F\" \"";
+      exec = "nvim \"%F\"";
       terminal = true;
       categories = [
         "Utility"
@@ -92,7 +93,7 @@
       icon = "tools-timer";
       # tryExec = "nvim";
       # exec = "ghostty -e nvim \"%F\"";
-      exec = ''tmux new-session -s "TOmato 🍅" "exec tomato"'';
+      exec = "sesh connect \"TOmato 🍅\"";
       terminal = true;
       categories = [
         "Utility"
