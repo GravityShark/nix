@@ -93,7 +93,7 @@
       icon = "tools-timer";
       # tryExec = "nvim";
       # exec = "ghostty -e nvim \"%F\"";
-      exec = "sesh connect \"TOmato 🍅\"";
+      exec = "sesh connect \" TOmato 🍅\"";
       terminal = true;
       categories = [
         "Utility"
