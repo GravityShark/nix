@@ -113,6 +113,7 @@
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
         "switchWorkSpace@sun.wxg@gmail.com"
+        "tomato-c-to-panel@thomas-philippot.dev"
         "workspaces-by-open-apps@favo02.github.com"
       ];
     };
