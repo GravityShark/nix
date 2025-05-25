@@ -97,6 +97,7 @@ in
     nix-your-shell
     sesh
     tex
+    tomato
 
     # Fonts
     iosevka-comfy.comfy

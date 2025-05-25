@@ -1,4 +1,5 @@
 #!/bin/sh
 # $(which emacsclient) --socket-name=/tmp/emacs$(id -u)/server --create-frame --alternate-editor=$(which emacs) $@ &
 # $(which emacsclient) --socket-name=/tmp/emacs$(id -u)/server --create-frame --alternate-editor=$(which emacs) $@ &
-$(which emacsclient) --create-frame --alternate-editor=$(which emacs) $@ &
+# $(which emacsclient) --create-frame --alternate-editor=$(which emacs) $@ &
+emacsclient --create-frame --alternate-editor=emacs $@ &
