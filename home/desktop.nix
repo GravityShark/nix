@@ -84,5 +84,19 @@
         "text/x-c++"
       ];
     };
+
+    tomato = {
+      name = "Tomato.C";
+      genericName = "Timer";
+      comment = "Edit text files";
+      icon = "tomato";
+      # tryExec = "nvim";
+      # exec = "ghostty -e nvim \"%F\"";
+      exec = "tomato";
+      terminal = true;
+      categories = [
+        "Utility"
+      ];
+    };
   };
 }
