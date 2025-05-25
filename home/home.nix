@@ -47,7 +47,7 @@
     ".config/nvim/lua".source = dump/.config/nvim/lua;
     ".config/run-or-raise".source = dump/.config/run-or-raise;
     ".config/sesh".source = dump/.config/sesh;
-    ".config/zoomus.config ".source = dump/.config/zoomus.conf;
+    # ".config/zoomus.config ".source = dump/.config/zoomus.conf;
     ".clang-format".source = dump/.clang-format;
     ".doom.d".source = dump/.doom.d;
     ".gitconfig".source = dump/.gitconfig;
