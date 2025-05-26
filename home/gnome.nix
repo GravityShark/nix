@@ -169,10 +169,11 @@
       spacing-app-right = 1;
     };
 
-    # "org/gnome/shell/extensions/executor" = {
-    #   right-active = false;
-    #   left-active = false;
-    #   center-active = true;
-    # };
+    "org/gnome/shell/extensions/executor" = {
+      right-active = false;
+      left-active = false;
+      center-active = true;
+      center-commands-json = "{\"commands\":[{\"isActive\":true,\"command\":\"tomato -t\",\"interval\":1,\"uuid\":\"c2f225a9-1b95-4f82-b5c6-ce9e42a5a767\"}]}";
+    };
   };
 }
