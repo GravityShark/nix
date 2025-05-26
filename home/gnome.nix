@@ -41,6 +41,7 @@
     "org/gnome/desktop/interface" = {
       enable-hot-corners = true;
       color-scheme = "prefer-light";
+      font-name = "Aporetic Sans 11";
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Super>1" ];
