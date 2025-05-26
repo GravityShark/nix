@@ -28,8 +28,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 
-(setq doom-font (font-spec :family "Iosevka Comfy" :size 36)
-      doom-variable-pitch-font (font-spec :family "Iosevka Comfy Wide Motion" :size 36))
+(setq doom-font (font-spec :family "Aporetic Sans Mono" :size 36)
+      doom-variable-pitch-font (font-spec :family "Aporetic Sans" :size 36))true
 ;; doom-variable-pitch-font (font-spec :family "Ubuntu Sans Nerd Font" :size 20))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
