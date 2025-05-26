@@ -19,7 +19,7 @@
 
   # Emacs service
   services.emacs.enable = true;
-  # services.zerotierone.enable = true;
+  services.zerotierone.enable = true;
 
   # auto clean or smthn
   # services.home-manager.autoExpire.enable = true;
