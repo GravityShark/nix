@@ -103,8 +103,8 @@ in
     # Fonts
     iosevka-comfy.comfy
     iosevka-comfy.comfy-wide-motion
-    nerd-fonts.adwaita-mono
     nerd-fonts.iosevka
+    nerd-fonts.ubuntu-sans
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
