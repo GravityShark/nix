@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   # Syncthing setup
@@ -26,7 +26,7 @@
         };
       };
       folders = {
-        "/home/gravity/Notes" = {
+        "/home/${config.home.username}/Notes" = {
           id = "i2ekx-2lgrg";
           devices = [
             "clear"
