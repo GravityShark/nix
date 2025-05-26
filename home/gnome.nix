@@ -7,12 +7,12 @@
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
-    gnomeExtensions.executor
     gnomeExtensions.freon
     gnomeExtensions.luminus-desktop
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
+    gnomeExtensions.tomatoc-to-panel
     gnomeExtensions.workspaces-indicator-by-open-apps
   ];
 
@@ -102,6 +102,7 @@
     "org/gnome/shell" = {
       # `gnome-extensions list` for a list
       disable-user-extensions = false;
+      disable-extension-version-validation = true;
       favorite-apps = [ "" ];
       enabled-extensions = [
         "alttab-mod@leleat-on-github"
@@ -114,6 +115,7 @@
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
         "switchWorkSpace@sun.wxg@gmail.com"
+        "tomato-c-to-panel@thomas-philippot.dev"
         "workspaces-by-open-apps@favo02.github.com"
       ];
     };
@@ -170,11 +172,11 @@
       spacing-app-right = 1;
     };
 
-    "org/gnome/shell/extensions/executor" = {
-      right-active = false;
-      left-active = false;
-      center-active = true;
-      center-commands-json = "{\"commands\":[{\"isActive\":true,\"command\":\"tomato -t\",\"interval\":1,\"uuid\":\"c2f225a9-1b95-4f82-b5c6-ce9e42a5a767\"}]}";
-    };
+    # "org/gnome/shell/extensions/executor" = {
+    #   right-active = false;
+    #   left-active = false;
+    #   center-active = true;
+    #   center-commands-json = "{\"commands\":[{\"isActive\":true,\"command\":\"tomato -t\",\"interval\":1,\"uuid\":\"c2f225a9-1b95-4f82-b5c6-ce9e42a5a767\"}]}";
+    # };
   };
 }
