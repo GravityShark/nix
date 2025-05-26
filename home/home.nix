@@ -19,16 +19,6 @@
 
   # Emacs service
   services.emacs.enable = true;
-  services.zerotierone.enable = true;
-
-  # auto clean or smthn
-  # services.home-manager.autoExpire.enable = true;
-
-  # Auto update
-  # services.home-manager.autoUpgrade = {
-  #   enable = true;
-  #   frequency = "02:00";
-  # };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -73,4 +63,14 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # auto clean or smthn
+  # services.home-manager.autoExpire.enable = true;
+
+  # Auto update
+  # services.home-manager.autoUpgrade = {
+  #   enable = true;
+  #   frequency = "02:00";
+  # };
+
 }
