@@ -101,8 +101,7 @@ in
     xdg-terminal-exec
 
     # Fonts
-    iosevka-comfy.comfy
-    iosevka-comfy.comfy-wide-motion
+    aporetic
     nerd-fonts.iosevka
     nerd-fonts.ubuntu-sans
 

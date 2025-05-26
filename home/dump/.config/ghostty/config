@@ -1,7 +1,7 @@
 theme = rose-pine-dawn
 window-decoration = none
 gtk-titlebar = false
-font-family = "Iosevka Comfy"
+font-family = "Aporetic"
 font-size = 13
 shell-integration-features = no-cursor
 cursor-style = block
