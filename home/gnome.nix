@@ -101,8 +101,9 @@
 
     "org/gnome/shell" = {
       # `gnome-extensions list` for a list
-      disable-user-extensions = false;
       disable-extension-version-validation = true;
+      disable-user-extensions = false;
+      disabled-extensions = [ ];
       favorite-apps = [ "" ];
       enabled-extensions = [
         "alttab-mod@leleat-on-github"
