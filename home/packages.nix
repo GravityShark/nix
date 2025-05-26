@@ -103,12 +103,8 @@ in
     # Fonts
     iosevka-comfy.comfy
     iosevka-comfy.comfy-wide-motion
-    nerd-fonts.fira-code
+    nerd-fonts.adwaita-mono
     nerd-fonts.iosevka
-
-    # Theme
-    rose-pine-gtk-theme
-    rose-pine-icon-theme
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
