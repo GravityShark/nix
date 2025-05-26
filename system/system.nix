@@ -66,7 +66,8 @@
   };
 
   # allow it to work with windows time tbh
-  time.hardwareClockInLocalTime = true;
+  time.hardwareClockInLocalTime = false;
+
   # networking.timeServers = options.networking.timeServers.default ++ [ "asia.pool.ntp.org" ];
   networking.timeServers = [
     "0.asia.pool.ntp.org"
