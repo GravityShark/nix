@@ -12,7 +12,7 @@
 
     # Apps
 
-    anki-bin
+    anki
     # deluge # Torrenting
     discord-canary
     emacs
