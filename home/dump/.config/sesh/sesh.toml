@@ -1,3 +1,7 @@
+#i might try looking into tmuxinator
+#https://github.com/joshmedeski/sesh/issues/184
+#https://github.com/tmuxinator/tmuxinator
+
 [default_session]
 startup_command = "l"
 # preview_command = "l"
