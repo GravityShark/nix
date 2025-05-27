@@ -35,7 +35,7 @@
     gnumake
     go
     nodejs
-    # python3
+    python3
     racket
 
     # Systems

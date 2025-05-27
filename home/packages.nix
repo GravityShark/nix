@@ -32,31 +32,34 @@ in
   # environment.
   home.packages = with pkgs; [
     # 25 day AOC challenge
+
+    # crystal
+    # csharp-ls
     # dotnet-sdk
-    # pharo
-    # R
+    # erlang
     # fpc
-    # odin
-    # zig
-    # opam
+    # gleam
+    # ocamlPackages.ocamlformat
     # ocamlPackages.ocaml-lsp
     # ocamlPackages.utop
-    # ocamlPackages.ocamlformat
-    # crystal
-    # gleam
-    # erlang
+    # odin
+    # ols
+    # opam
+    # perlPackages.PLS
+    # pharo
+    # R
+    # ruby
+    # rubyfmt
+    # ruby-lsp
+    # sourcekit-lsp
     # swift
     # swift-format
-    # sourcekit-lsp
     # swiftPackages.swiftpm
-    # ruby
-    # ruby-lsp
-    # rubyfmt
+    # zig
 
     ## Mason
 
-    # clang-tools
-    # csharp-ls
+    clang-tools
     emmet-language-server
     # gdb
     gofumpt
@@ -69,12 +72,10 @@ in
     lua-language-server
     nil
     nixfmt-rfc-style
-    # ols
-    # perlPackages.PLS
     prettierd
-    # pyright
+    pyright
     quick-lint-js
-    # ruff
+    ruff
     shfmt
     stylua
     tailwindcss-language-server
