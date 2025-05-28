@@ -14,7 +14,7 @@
 
     anki
     # deluge # Torrenting
-    # discord-canary
+    discord-canary
     emacs
     evince # Document viewer
     foliate # Epub viewer
