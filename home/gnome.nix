@@ -42,6 +42,7 @@
       enable-hot-corners = true;
       color-scheme = "prefer-light";
       font-name = "Aporetic Sans 11";
+
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Super>1" ];
@@ -144,7 +145,7 @@
     };
     "org/gnome/shell/extensions/pop-shell" = {
       active-hint = true;
-      # active-hint-border-radius = "uint 16";
+      active-hint-border-radius = 16;
       hint-color-rgba = "rgba(87, 82, 121, 255)";
       tile-by-default = true;
     };
