@@ -74,52 +74,6 @@
     {
       "pattern": [
         [
-          -26,
-          -299
-        ],
-        [
-          -236,
-          -4
-        ]
-      ],
-      "command": {
-        "name": "FocusLeftTab",
-        "settings": {
-          "cycling": true,
-          "excludeDiscarded": false
-        }
-      }
-    },
-    {
-      "pattern": [
-        [
-          -16,
-          -146
-        ],
-        [
-          10,
-          -131
-        ],
-        [
-          5,
-          -9
-        ],
-        [
-          264,
-          9
-        ]
-      ],
-      "command": {
-        "name": "FocusRightTab",
-        "settings": {
-          "cycling": true,
-          "excludeDiscarded": false
-        }
-      }
-    },
-    {
-      "pattern": [
-        [
           0,
           1
         ]
