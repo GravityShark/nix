@@ -234,6 +234,9 @@
       :desc "Save buffer"
       "w" #'save-buffer)
 
+(map! :desc "Find file in project"
+      "C-f" #'projectile-find-file)
+
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
