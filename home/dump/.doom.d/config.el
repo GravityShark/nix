@@ -210,13 +210,13 @@
       [remap evil-next-line] #'evil-next-visual-line
       [remap evil-previous-line] #'evil-previous-visual-line)
 
-(map! :leader
-      :desc "Mixed Pitch Mode"
-      "t p" #'mixed-pitch-mode)
+;; (map! :leader
+;;       :desc "Mixed Pitch Mode"
+;;       "t p" #'mixed-pitch-mode)
 
-(map! :leader
-      :desc "Open plan/schedule"
-      "n p" #'(lambda () (interactive) (find-file "~/Notes/assets/schedule.jpg")))
+;; (map! :leader
+;;       :desc "Open plan/schedule"
+;;       "n p" #'(lambda () (interactive) (find-file "~/Notes/assets/schedule.jpg")))
 
 (map! :leader
       :desc "Open calendar"
@@ -234,7 +234,7 @@
       :desc "Save buffer"
       "w" #'save-buffer)
 
-(map! "C-f" #'projectile-find-file)
+(map! :n "C-f" #'projectile-find-file)
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
