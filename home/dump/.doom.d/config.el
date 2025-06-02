@@ -236,7 +236,6 @@
 
 (map! "C-f" #'projectile-find-file)
 
-
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
