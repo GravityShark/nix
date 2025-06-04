@@ -6,16 +6,10 @@
     enable = true;
     settings = {
       devices = {
-        # phone = {
-        #   name = "phone";
-        #   allowedNetwork = "192.168.0.0/24";
-        #   id = "U2WXU7A-PJ7IO6X-H6YCEXI-SIBCKKW-M7XAOBK-EW5IIIL-3CGARBS-G2LOJA2";
-        #   introducer = true;
-        # };
-        brick = {
-          name = "brick";
+        brick2ah = {
+          name = "brick2ah";
           allowedNetwork = "192.168.0.0/24";
-          id = "QFP3772-B63OTA4-WXRQQ47-7VWCIDL-4Q6CMI7-ODY6RVA-JBXB5EJ-FXAWFQ5";
+          id = "3IZGDCS-V2NI56X-ZIY42FE-65AKDGO-FDWGB7R-UT5GBBC-PQIBPTY-CIZIBAP";
         };
         clear = {
           name = "clear";
@@ -28,8 +22,7 @@
           id = "i2ekx-2lgrg";
           devices = [
             "clear"
-            # "phone"
-            "brick"
+            "brick2ah"
           ];
           label = "Notes";
           versioning.type = "simple";
