@@ -11,7 +11,7 @@
   };
 
   services.xserver.videoDrivers = [
-    # "modesetting"
+    "modesetting"
     "nvidia"
   ];
 
@@ -33,7 +33,7 @@
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
     powerManagement.enable = true;
-    # powerManagement.finegrained = true;
+    powerManagement.finegrained = true;
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
@@ -43,12 +43,12 @@
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:2:0:0";
 
-      # offload = {
-      #   enable = true;
-      #   enableOffloadCmd = true;
-      # };
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
 
-      sync.enable = true;
+      # sync.enable = true;
       # reverseSync.enable = true;
       # Enable if using an external GPU
       # allowExternalGpu = false;
