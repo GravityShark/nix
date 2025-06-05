@@ -1,5 +1,10 @@
 { pkgs, options, ... }:
 
+let
+  discord = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
+  };
+in
 {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -90,8 +95,8 @@
       "0.0.0.0" = [
         "youtube.com"
         "www.youtube.com"
-        "youtu.be"
         "m.youtube.com"
+        "youtu.be"
       ];
     };
     stevenblack = {
@@ -101,5 +106,6 @@
         "porn"
       ];
     };
+    extraHosts = ''${builtins.readFile discord} '';
   };
 }
