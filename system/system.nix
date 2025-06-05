@@ -94,10 +94,13 @@ in
     hosts = {
       "192.168.0.3" = [ "clr" ];
       "0.0.0.0" = [
+        "youtu.be"
         "youtube.com"
         "www.youtube.com"
         "m.youtube.com"
-        "youtu.be"
+        "help.youtube.com"
+        "img.youtube.com"
+        "gdata.youtube.com"
       ];
     };
     stevenblack = {
