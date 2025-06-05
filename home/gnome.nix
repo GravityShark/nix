@@ -43,7 +43,7 @@
       enable-hot-corners = true;
       color-scheme = "prefer-light";
       font-name = "Aporetic Sans 11";
-
+      enable-animations = false;
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Super>1" ];
@@ -87,15 +87,14 @@
     "org/gnome/mutter" = {
       focus-change-on-pointer-rest = false;
       dynamic-workspaces = true;
-
       edge-tiling = true;
       experimental-features = [
         "scale-monitor-framebuffer"
         "xwayland-native-scaling"
       ];
-
       workspaces-only-on-primary = true;
     };
+
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-right = [ "" ];
       toggle-tiled-left = [ "" ];
