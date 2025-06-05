@@ -103,7 +103,7 @@ in
         "redirector.googlevideo.com"
         "youtu.be"
         "youtube.com"
-        "youtube.googleapis.com"
+        # "youtube.googleapis.com"
         "youtubei.googleapis.com"
         "youtube-nocookie.com"
         "ytimg.com"
