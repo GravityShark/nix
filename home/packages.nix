@@ -87,8 +87,8 @@ in
     # Apps
 
     # arduino-ide
-    authenticator
-    fragments # Bittorrent client
+    # authenticator
+    # fragments # Bittorrent client
     gnome-frog
     ungoogled-chromium
     vial
@@ -104,7 +104,7 @@ in
     # Fonts
     aporetic
     nerd-fonts.iosevka
-    nerd-fonts.ubuntu-sans
+    # nerd-fonts.ubuntu-sans
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

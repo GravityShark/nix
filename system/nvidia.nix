@@ -10,11 +10,14 @@
     extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
 
   hardware.nvidia = {
     # Use the stable version cause idek if the beta version even exists
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     # package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     modesetting.enable = true;
@@ -25,12 +28,12 @@
     # supported GPUs is at:
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
-    open = true;
+    open = false;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.enable = true;
-    powerManagement.finegrained = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
@@ -40,10 +43,10 @@
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:2:0:0";
 
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
+      # offload = {
+      #   enable = true;
+      #   enableOffloadCmd = true;
+      # };
 
       # sync.enable = true;
       # reverseSync.enable = true;
