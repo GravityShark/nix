@@ -19,14 +19,14 @@
       # "discord-canary"
       "zoom"
       # "zerotierone"
-      "nvidia-x11"
+      # "nvidia-x11"
     ];
 
   imports = [
     ./gnome.nix
     ./hardware-configuration.nix
     # ./ld.nix
-    ./nvidia.nix
+    # ./nvidia.nix
     ./packages.nix
     ./system.nix
     ./services.nix
