@@ -101,6 +101,7 @@ in
         "help.youtube.com"
         "img.youtube.com"
         "gdata.youtube.com"
+        "www.youtube-nocookie.com"
       ];
     };
     stevenblack = {
