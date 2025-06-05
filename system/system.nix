@@ -94,14 +94,25 @@ in
     hosts = {
       "192.168.0.3" = [ "clr" ];
       "0.0.0.0" = [
-        "youtu.be"
-        "youtube.com"
-        "www.youtube.com"
-        "m.youtube.com"
+        "gdata.youtube.com"
+        "googlevideo.com"
         "help.youtube.com"
         "img.youtube.com"
-        "gdata.youtube.com"
+        "kids.youtube.com"
+        "m.youtube.com"
+        "redirector.googlevideo.com"
+        "youtu.be"
+        "youtube.com"
+        "youtube.googleapis.com"
+        "youtubei.googleapis.com"
+        "youtube-nocookie.com"
+        "ytimg.com"
+        "ytimg-edge-static.l.google.com"
+        "ytimg.l.google.com"
+        "www.youtube.com"
+        "www.googlevideo.com"
         "www.youtube-nocookie.com"
+        "www.ytimg.com"
       ];
     };
     stevenblack = {
