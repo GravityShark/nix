@@ -1,8 +1,9 @@
-{ pkgs, options, ... }:
+{ pkgs, ... }:
 
 let
   discord = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
+    sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
   };
 in
 {
