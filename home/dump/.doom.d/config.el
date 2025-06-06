@@ -29,9 +29,7 @@
 ;; accept. For example:
 
 (setq doom-font (font-spec :family "Aporetic Sans Mono" :size 30)
-      doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 30)
-      ;; doom-variable-pitch-font (font-spec :size 36)
-      )
+      doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 30))
 ;; doom-variable-pitch-font (font-spec :family "Ubuntu Sans Nerd Font" :size 20))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
