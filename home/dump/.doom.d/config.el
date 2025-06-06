@@ -28,8 +28,10 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 
-(setq doom-font (font-spec :family "Aporetic Sans Mono" :size 36)
-      doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 36))
+(setq doom-font (font-spec :family "Aporetic Sans Mono" :size 30)
+      doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 30)
+      ;; doom-variable-pitch-font (font-spec :size 36)
+      )
 ;; doom-variable-pitch-font (font-spec :family "Ubuntu Sans Nerd Font" :size 20))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -123,10 +125,10 @@
   (setq org-log-done 'time)
 
   (custom-set-faces
-   '(org-level-1 ((t (:height 1.5 :weight bold))))
-   '(org-level-2 ((t (:height 1.3 :weight bold))))
-   '(org-level-3 ((t (:height 1.2 :weight bold))))
-   '(org-level-4 ((t (:height 1.1 :weight bold)))))
+   '(org-level-1 ((t (:height 1.68 :weight bold))))
+   '(org-level-2 ((t (:height 1.49 :weight bold))))
+   '(org-level-3 ((t (:height 1.33 :weight bold))))
+   '(org-level-4 ((t (:height 1.18 :weight bold)))))
 
   ;; (custom-theme-set-faces
   ;;  'user
