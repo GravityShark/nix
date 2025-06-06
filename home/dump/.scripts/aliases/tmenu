@@ -5,11 +5,11 @@ sesh list -i -H | fzf-tmux -e --ansi -p 80%,80% \
         --bind 'tab:down,btab:up' \
         --bind 'ctrl-a:change-prompt(⚡ )+reload(sesh list -iH)' \
         --bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
-        --bind 'ctrl-f:change-prompt(  )+reload(fd -H -cnever --type d | sed "s|^\./||")' \
-        --bind 'ctrl-k:execute(tmux kill-session -t $(echo {} | cut -c 5-))+change-prompt(⚡ )+reload(sesh list -iH )'
+        --bind 'ctrl-f:change-prompt(  )+reload(ls -D1)' \
+        --bind 'ctrl-k:execute(tmux kill-session -t $(echo {} | cut -c 5-))+change-prompt(⚡ )+reload(sesh list -iH)'
 
+# --bind 'ctrl-f:change-prompt(  )+reload(fd -H -cnever --type d | sed "s|^\./||")' \
 # --bind 'ctrl-f:change-prompt(  )+reload(fd -H -cnever --type d -x stat --format "%Y %n" | cut -d" " -f2- | sed "s|^\./||")' \
-
 # --bind 'ctrl-l:execute(sesh last)+abort'
 # --bind 'ctrl-f:change-prompt(  )+reload(fd -Htd -cnever)' \
 # --bind 'ctrl-f:change-prompt(  )+reload(fd -td --absolute-path | sed -E "s|$HOME|~|g; s|.*|\x1b[36m \x1b[0m&\x1b[0m|")' \
