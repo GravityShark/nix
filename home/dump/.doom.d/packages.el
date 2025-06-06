@@ -55,10 +55,11 @@
 
 (package! with-editor)
 (package! xkcd)
-(package! el-fetch)
+;; (package! el-fetch)
 (package! org-preview-html)
 (package! calfw)
-(package! org-hyperscheduler)
+;; (package! org-hyperscheduler)
+(package! mixed-pitch)
 
 ;; the ubuntu emacs package is not compiled with tree-sitter
 ;; (package! typst-ts-mode

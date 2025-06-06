@@ -29,7 +29,7 @@
 ;; accept. For example:
 
 (setq doom-font (font-spec :family "Aporetic Sans Mono" :size 36)
-      doom-variable-pitch-font (font-spec :family "Aporetic Sans" :size 36))
+      doom-variable-pitch-font (font-spec :family "TeX Gyre Pagella" :size 36))
 ;; doom-variable-pitch-font (font-spec :family "Ubuntu Sans Nerd Font" :size 20))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -193,6 +193,11 @@
   (setq lsp-ltex-plus-language "en")
   (setq lsp-ltex-plus-mother-tongue "tl-PH"))
 
+;; Configure mixed pitch mode
+(use-package! mixed-pitch
+  :hook
+  (text-mode . mixed-pitch-mode))
+
 ;;; Key maps
 ;; Allow for C-y to accept company selection
 ;; (map! :after corfu
@@ -235,6 +240,10 @@
       "w" #'save-buffer)
 
 (map! :n "C-f" #'projectile-find-file)
+
+(map! :leader
+      :desc "Toggle mixed pitch"
+      "t m" #'mixed-pitch-mode)
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
