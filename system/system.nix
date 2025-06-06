@@ -122,6 +122,6 @@ in
         "porn"
       ];
     };
-    extraHosts = ''${builtins.readFile discord} '';
+    # extraHosts = ''${builtins.readFile discord} '';
   };
 }
