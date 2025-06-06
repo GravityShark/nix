@@ -29,7 +29,7 @@
 ;; accept. For example:
 
 (setq doom-font (font-spec :family "Aporetic Sans Mono" :size 36)
-      doom-variable-pitch-font (font-spec :family "TeX Gyre Pagella" :size 36))
+      doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 36))
 ;; doom-variable-pitch-font (font-spec :family "Ubuntu Sans Nerd Font" :size 20))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -122,43 +122,52 @@
   ;; Set closed timestamp when closing
   (setq org-log-done 'time)
 
-  (custom-theme-set-faces
-   'user
-   '(org-block ((t (:inherit fixed-pitch))))
-   '(org-code ((t (:inherit (shadow fixed-pitch)))))
-   '(org-document-info ((t (:foreground "dark orange"))))
-   '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
-   '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
-   '(org-link ((t (:foreground "royal blue" :underline t))))
-   '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
-   '(org-property-value ((t (:inherit fixed-pitch))) t)
-   '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
-   '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
-   '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
-   '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+  (custom-set-faces
+   '(org-level-1 ((t (:height 1.5 :weight bold))))
+   '(org-level-2 ((t (:height 1.3 :weight bold))))
+   '(org-level-3 ((t (:height 1.2 :weight bold))))
+   '(org-level-4 ((t (:height 1.1 :weight bold)))))
 
-  (let* ((variable-tuple
-          (cond ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
-                ((x-list-fonts "Adwaita Sans")         '(:font "Adwaita Sans"))
-                ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
-                ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
-                ((x-list-fonts "Verdana")         '(:font "Verdana"))
-                ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
-                (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
-         (base-font-color     (face-foreground 'default nil 'default))
-         (headline           `(:inherit default :weight bold :foreground ,base-font-color)))
+  ;; (custom-theme-set-faces
+  ;;  'user
+  ;;  '(org-block ((t (:inherit fixed-pitch))))
+  ;;  '(org-code ((t (:inherit (shadow fixed-pitch)))))
+  ;;  '(org-document-info ((t (:foreground "dark orange"))))
+  ;;  '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+  ;;  '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
+  ;;  '(org-link ((t (:foreground "royal blue" :underline t))))
+  ;;  '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+  ;;  '(org-property-value ((t (:inherit fixed-pitch))) t)
+  ;;  '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+  ;;  '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
+  ;;  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
+  ;;  '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 
-    (custom-theme-set-faces
-     'user
-     `(org-level-8 ((t (,@headline ,@variable-tuple))))
-     `(org-level-7 ((t (,@headline ,@variable-tuple))))
-     `(org-level-6 ((t (,@headline ,@variable-tuple))))
-     `(org-level-5 ((t (,@headline ,@variable-tuple))))
-     `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
-     `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.25))))
-     `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
-     `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
-     `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
+  ;; (let* ((variable-tuple
+  ;;         (cond ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
+  ;;               ((x-list-fonts "Adwaita Sans")         '(:font "Adwaita Sans"))
+  ;;               ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
+  ;;               ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
+  ;;               ((x-list-fonts "Verdana")         '(:font "Verdana"))
+  ;;               ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
+  ;;               (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+  ;;        (base-font-color     (face-foreground 'default nil 'default))
+  ;;        (headline           `(:inherit default :weight bold :foreground ,base-font-color)))
+
+  ;; (custom-theme-set-faces
+  ;;  'user
+  ;;  `(org-level-8 ((t (,@headline ,@variable-tuple))))
+  ;;  `(org-level-7 ((t (,@headline ,@variable-tuple))))
+  ;;  `(org-level-6 ((t (,@headline ,@variable-tuple))))
+  ;;  `(org-level-5 ((t (,@headline ,@variable-tuple))))
+  ;;  `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
+  ;;  `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.25))))
+  ;;  `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
+  ;;  `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
+  ;;
+
+  ;;
+  ;;  `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
   )
 
 ;; Org capture templates
@@ -216,7 +225,9 @@
                                     (?B . (:inverse-video t :foreground "#d7827e"))
                                     (?C . (:inverse-video t :foreground "#ea9d34"))
                                     (?D . (:inverse-video t :foreground "#907aa9"))
-                                    (?E . (:inverse-video t :foreground "#56949f")))))
+                                    (?E . (:inverse-video t :foreground "#56949f"))))
+  (setq org-modern-star 'replace)
+  )
 
 (use-package! lsp-ltex-plus
   :hook (org-mode . (lambda ()
