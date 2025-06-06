@@ -104,6 +104,7 @@ in
     # Fonts
     aporetic
     nerd-fonts.iosevka
+    source-sans-pro
     # nerd-fonts.ubuntu-sans
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
