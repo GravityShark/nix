@@ -242,6 +242,9 @@
 ;;   (setq lsp-ltex-plus-language "en")
 ;;   (setq lsp-ltex-plus-mother-tongue "tl-PH"))
 
+(after! langtool
+  (setq langtool-mother-tongue "tl-PH"))
+
 (after! writegood-mode
   (writegood-passive-voice-turn-off))
 
@@ -249,8 +252,6 @@
 (use-package! mixed-pitch
   :hook
   (text-mode . mixed-pitch-mode))
-
-
 
 ;;; Key maps
 ;; Allow for C-y to accept company selection
@@ -298,6 +299,17 @@
 (map! :leader
       :desc "Toggle mixed pitch"
       "t m" #'mixed-pitch-mode)
+
+(map! :leader
+      :desc "Grammar check"
+      "c g" #'langtool-check)
+
+;; - ~M-x langtool-check~
+;; - ~M-x langtool-correct-buffer~
+
+(map! :leader
+      :desc "Toggle langtool"
+      "t l" #'langtool-popup)
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
