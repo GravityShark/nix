@@ -291,7 +291,7 @@
 
 (map! :leader
       :desc "LSP Popup diagnostics"
-      "c l p" #'lsp-ui-doc-show)
+      "c p" #'lsp-ui-doc-show)
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
