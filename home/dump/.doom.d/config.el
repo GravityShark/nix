@@ -236,6 +236,9 @@
   (setq lsp-ltex-plus-language "en")
   (setq lsp-ltex-plus-mother-tongue "tl-PH"))
 
+(after! lsp-ui
+  (setq lsp-ui-doc-use-webkit t))
+
 ;; Configure mixed pitch mode
 (use-package! mixed-pitch
   :hook
