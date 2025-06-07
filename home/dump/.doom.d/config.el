@@ -296,6 +296,22 @@
       :desc "LSP Popup diagnostics"
       "c p" #'lsp-ui-doc-show)
 
+;; Shitgippity made this lol, im too lazy for ⏱
+(defun org-copy-image-to-clipboard ()
+  "Copy the image linked in the Org buffer to the clipboard using wl-copy."
+  (interactive)
+  (let ((image-path (org-link-unescape (org-element-property :path (org-element-context)))))
+    (if (and image-path (file-exists-p image-path))
+        (progn
+          (start-process "wl-copy" nil "wl-copy" "-t" "image/png" image-path)
+          (message "Copied image to clipboard: %s" image-path))
+      (message "No valid image found at point."))))
+
+(map! :localleader
+      :map org-mode-map
+      :desc " m"
+      "a y" #'org-copy-image-to-clipboard)
+
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
