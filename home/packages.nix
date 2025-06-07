@@ -67,7 +67,7 @@ in
     golangci-lint
     golines
     gopls
-    graalvm-ce
+    # graalvm-ce
     # lldb
     lua-language-server
     nil
