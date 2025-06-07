@@ -94,24 +94,24 @@ in
     hosts = {
       "192.168.0.3" = [ "clr" ];
       "0.0.0.0" = [
-        # "gdata.youtube.com"
-        # "googlevideo.com"
-        # "help.youtube.com"
-        # "img.youtube.com"
-        # "kids.youtube.com"
-        # "m.youtube.com"
-        # "redirector.googlevideo.com"
-        # "youtu.be"
-        # "youtube.com"
-        # "youtubei.googleapis.com"
-        # "youtube-nocookie.com"
-        # "ytimg.com"
-        # "ytimg-edge-static.l.google.com"
-        # "ytimg.l.google.com"
-        # "www.youtube.com"
-        # "www.googlevideo.com"
-        # "www.youtube-nocookie.com"
-        # "www.ytimg.com"
+        "gdata.youtube.com"
+        "googlevideo.com"
+        "help.youtube.com"
+        "img.youtube.com"
+        "kids.youtube.com"
+        "m.youtube.com"
+        "redirector.googlevideo.com"
+        "youtu.be"
+        "youtube.com"
+        "youtubei.googleapis.com"
+        "youtube-nocookie.com"
+        "ytimg.com"
+        "ytimg-edge-static.l.google.com"
+        "ytimg.l.google.com"
+        "www.youtube.com"
+        "www.googlevideo.com"
+        "www.youtube-nocookie.com"
+        "www.ytimg.com"
       ];
     };
     stevenblack = {
@@ -121,6 +121,6 @@ in
         "porn"
       ];
     };
-    # extraHosts = ''${builtins.readFile discord} '';
+    extraHosts = ''${builtins.readFile discord} '';
   };
 }
