@@ -50,17 +50,17 @@
 
 
 ;; (package! lsp-ltex)
-;; (package! lsp-ltex-plus
-;;   :recipe (:host github :repo "emacs-languagetool/lsp-ltex-plus"))
+(package! lsp-ltex-plus
+  :recipe (:host github :repo "emacs-languagetool/lsp-ltex-plus"))
 
 (package! with-editor)
-(package! langtool-popup)
 (package! xkcd)
 ;; (package! el-fetch)
 (package! org-preview-html)
 (package! calfw)
 ;; (package! org-hyperscheduler)
 (package! mixed-pitch)
+;; (package! flycheck-languagetool)
 
 ;; the ubuntu emacs package is not compiled with tree-sitter
 ;; (package! typst-ts-mode

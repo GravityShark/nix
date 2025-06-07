@@ -23,7 +23,6 @@
     # kdePackages.kdenlive
     keepassxc
     krita
-    languagetool
     libreoffice-fresh
     mcontrolcenter # MSI
     mpv

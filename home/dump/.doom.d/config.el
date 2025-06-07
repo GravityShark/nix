@@ -204,17 +204,6 @@
 (after! corfu
   (setq +corfu-want-ret-to-confirm nil))
 
-;; (after! org-fancy-priorities
-;;   (setq org-fancy-priorities-list '((?A . "⚑")
-;;                                     (?B . "⬆")
-;;                                     (?C . "■")
-;;                                     (?D . "⬇")
-;;                                     (?E . "❄")))
-;; (setq org-priority-faces '((?A . (:foreground "#b4637a"))
-;;                            (?B . (:foreground "#d7827e"))
-;;                            (?C . (:foreground "#ea9d34"))
-;;                            (?D . (:foreground "#907aa9"))
-;;                            (?E . (:foreground "#56949f")))))
 (after! org-modern
   ;; (setq org-modern-priority (quote ((?A . "⚑")
   ;;                                   (?B . "⬆")
@@ -230,24 +219,18 @@
   (setq org-modern-star 'replace)
   )
 
-;; (use-package! lsp-ltex-plus
-;;   :hook (org-mode . (lambda ()
-;;                       (require 'lsp-ltex-plus)
-;;                       (lsp-deferred)))
-;;   (markdown-mode . (lambda ()
-;;                      (require 'lsp-ltex-plus)
-;;                      (lsp-deferred)))
-;;   :init
-;;   (setq lsp-ltex-plus-version "18.5.0")
-;;   (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
-;;   (setq lsp-ltex-plus-language "en")
-;;   (setq lsp-ltex-plus-mother-tongue "tl-PH"))
-
-(after! langtool
-  (setq langtool-mother-tongue "tl-PH"))
-
-(after! writegood-mode
-  (writegood-passive-voice-turn-off))
+(use-package! lsp-ltex-plus
+  :hook (org-mode . (lambda ()
+                      (require 'lsp-ltex-plus)
+                      (lsp-deferred)))
+  (markdown-mode . (lambda ()
+                     (require 'lsp-ltex-plus)
+                     (lsp-deferred)))
+  :init
+  (setq lsp-ltex-plus-version "18.5.1")
+  (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
+  (setq lsp-ltex-plus-language "en")
+  (setq lsp-ltex-plus-mother-tongue "tl-PH"))
 
 ;; Configure mixed pitch mode
 (use-package! mixed-pitch
@@ -256,10 +239,11 @@
 
 ;;; Key maps
 ;; Allow for C-y to accept company selection
-;; (map! :after corfu
-;;       :map corfu-map
-;;       "C-y" #'corfu-insert
-;;       "C-e" #'corfu-quit)
+(map! :after corfu
+      :map corfu-map
+      :n
+      "C-y" #'corfu-insert
+      "C-e" #'corfu-quit)
 
 ;; (map! :after treemacs
 ;;       :leader
@@ -270,10 +254,6 @@
       :map evil-motion-state-map
       [remap evil-next-line] #'evil-next-visual-line
       [remap evil-previous-line] #'evil-previous-visual-line)
-
-;; (map! :leader
-;;       :desc "Mixed Pitch Mode"
-;;       "t p" #'mixed-pitch-mode)
 
 ;; (map! :leader
 ;;       :desc "Open plan/schedule"
@@ -300,16 +280,6 @@
 (map! :leader
       :desc "Toggle mixed pitch"
       "t m" #'mixed-pitch-mode)
-
-(map! :leader
-      :desc "Grammar check"
-      "c g" #'langtool-check)
-
-(map! :leader
-      :desc "Grammar check remove"
-      "c G" #'langtool-check-done)
-;; - ~M-x langtool-correct-buffer~
-
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
