@@ -285,6 +285,10 @@
       :desc "Toggle mixed pitch"
       "t m" #'mixed-pitch-mode)
 
+(map! :leader
+      :desc "LSP List diagnostics"
+      "c L" #'lsp-ui-flycheck-list)
+
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
