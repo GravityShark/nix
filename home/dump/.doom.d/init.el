@@ -38,7 +38,7 @@
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        indent-guides       ; highlighted indent columns
        ligatures           ; ligatures and symbols to make your code pretty again
-       ;;minimap           ; show a map of the code on the side
+       minimap           ; show a map of the code on the side
        modeline            ; snazzy, Atom-inspired modeline, plus API
        nav-flash           ; blink cursor line after big motions
        ;;neotree           ; a project drawer, like NERDTree for vim
@@ -60,7 +60,7 @@
        (format +onsave)    ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
-       ;; multiple-cursors  ; editing in many places at once
+       ;;multiple-cursors  ; editing in many places at once
        ;;objed             ; text object editing for the innocent
        ;;parinfer          ; turn lisp into python, sort of
        ;;rotate-text       ; cycle region at point between text candidates
@@ -71,7 +71,7 @@
        (dired +dirvish +icons) ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
        ibuffer           ; interactive buffer management
-       undo              ; persistent, smarter undo for your inevitable mistakes
+       undo + tree              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
@@ -83,7 +83,7 @@
        :checkers
        (syntax +icons)   ; tasing you for every semicolon you forget
        (spell +hunspell) ; tasing you for misspelling mispelling
-       ;;grammar           ; tasing grammar mistake every you make
+       grammar           ; tasing grammar mistake every you make
 
        :tools
        ;;ansible

@@ -229,18 +229,21 @@
   (setq org-modern-star 'replace)
   )
 
-(use-package! lsp-ltex-plus
-  :hook (org-mode . (lambda ()
-                      (require 'lsp-ltex-plus)
-                      (lsp-deferred)))
-  (markdown-mode . (lambda ()
-                     (require 'lsp-ltex-plus)
-                     (lsp-deferred)))
-  :init
-  (setq lsp-ltex-plus-version "18.5.0")
-  (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
-  (setq lsp-ltex-plus-language "en")
-  (setq lsp-ltex-plus-mother-tongue "tl-PH"))
+;; (use-package! lsp-ltex-plus
+;;   :hook (org-mode . (lambda ()
+;;                       (require 'lsp-ltex-plus)
+;;                       (lsp-deferred)))
+;;   (markdown-mode . (lambda ()
+;;                      (require 'lsp-ltex-plus)
+;;                      (lsp-deferred)))
+;;   :init
+;;   (setq lsp-ltex-plus-version "18.5.0")
+;;   (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
+;;   (setq lsp-ltex-plus-language "en")
+;;   (setq lsp-ltex-plus-mother-tongue "tl-PH"))
+
+(after! writegood-mode
+  (writegood-passive-voice-turn-off))
 
 ;; Configure mixed pitch mode
 (use-package! mixed-pitch
