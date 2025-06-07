@@ -192,8 +192,9 @@
 (add-hook 'spell-fu-mode-hook
           (lambda ()
             (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US"))
-            (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "tl"))
-            (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US,tl"))))
+            ;; (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "tl"))
+            ;; (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US,tl"))
+            ))
 
 ;; Make which-key faster
 (after! which-key
@@ -304,12 +305,11 @@
       :desc "Grammar check"
       "c g" #'langtool-check)
 
-;; - ~M-x langtool-check~
+(map! :leader
+      :desc "Grammar check remove"
+      "c G" #'langtool-check-done)
 ;; - ~M-x langtool-correct-buffer~
 
-(map! :leader
-      :desc "Toggle langtool"
-      "t l" #'langtool-popup)
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")

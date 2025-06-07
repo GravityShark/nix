@@ -54,6 +54,7 @@
 ;;   :recipe (:host github :repo "emacs-languagetool/lsp-ltex-plus"))
 
 (package! with-editor)
+(package! langtool-popup)
 (package! xkcd)
 ;; (package! el-fetch)
 (package! org-preview-html)
