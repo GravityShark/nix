@@ -289,6 +289,10 @@
       :desc "LSP List diagnostics"
       "c L" #'lsp-ui-flycheck-list)
 
+(map! :leader
+      :desc "LSP Popup diagnostics"
+      "c l p" #'lsp-ui-doc-show)
+
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
