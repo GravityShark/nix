@@ -28,6 +28,6 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 
 3. browsers firefox and chromium
    you gotta reinstall the extension setttings from [./home/dump/firefox_extension_settings/]
-   and add chromium webapps
+   and add chromium webapps back (YouTube Music, Messenger)
 
 4. syncthing a lil funky tbh

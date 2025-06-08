@@ -95,10 +95,12 @@ in
 
     # arduino-ide
     # authenticator
+    caprine
     # fragments # Bittorrent client
     gnome-frog
-    ungoogled-chromium
+    # ungoogled-chromium
     vial
+    youtube-music
     zen-browser.default
 
     # CLIs
