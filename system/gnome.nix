@@ -32,7 +32,7 @@
     gnome-text-editor
     gnome-tour # GNOME Shell detects the .desktop file on first log-in.
     gnome-weather
-    # seahorse # Passwords and Keys
+    seahorse # Passwords and Keys
     # simple-scan
     # snapshot
     # sysprof
