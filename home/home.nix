@@ -59,7 +59,7 @@
   '';
   home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ -x "$HOME/.emacs.d/bin/doom" ]; then
-      export PATH="${pkgs.emacs}/bin:$PATH"
+      export PATH="${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH"
       echo "Running doom sync..."
       "$HOME/.emacs.d/bin/doom" sync || echo "doom sync failed, continuing anyway"
     else
