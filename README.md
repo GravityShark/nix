@@ -16,8 +16,6 @@
 
 ### installation
 
-1. nixos
-
 install nixos from the gui setting up the partitions n reboot.
 
 also add flake capabilities lol
@@ -53,10 +51,12 @@ git switch master
 
 n ur done, jus complete this checklist
 
-- [ ] sync the browser, and extensions
-- [ ] [reinstall doomemacs](./home/dump/README.md)
+- [ ] sync the browser, and [extensions](./home/dump/README.md)
+- [ ] [setup doom emacs](./home/dump/README.md)
 - [ ] Redownload and setup some wallpapers or something
-- [ ] re sync syncthing (should be automatic tho just recheck it)
 
-there are still some shits that needs to be installed non declaratively (which sucks)
-more in [home/dump/README.md](home/dump/README.md)
+### maintaining the system
+
+1. for updating use `updatescript`
+2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
+   - and also clean up doom emacs too `doom gc`
