@@ -36,7 +36,7 @@
     # simple-scan
     # snapshot
     # sysprof
-    totem # Videos that doesnt even work
+    # totem # Videos that doesnt even work
   ];
 
   xdg.terminal-exec.settings = {

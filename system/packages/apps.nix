@@ -11,7 +11,6 @@ with pkgs;
   # File viewer
   evince # Documents
   foliate # Epub
-  mpv # Video
 
   # Media creation
   gnome-sound-recorder
