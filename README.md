@@ -18,7 +18,7 @@
 
 1. install nixos from the gui setting up the partitions n reboot.
 
-also add flake capabilities lol
+2. now you're in enable flake capabilities
 
 ```nix
 #/etc/nixos/configuration.nix
@@ -29,15 +29,23 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 sudo nixos-rebuild switch
 ```
 
-```bash
+3. clone this nix config
 
+```bash
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
+```
+
+    - Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/system/hardware-configuration.nix`) and setup some [swap](https://nixos.wiki/wiki/Swap)
+
+4. then update
+
+```bash
 nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
 home-manager switch --flake ~/.nix\?submodules=1
 ```
 
-setup git
+5. setup git so that you can push new changes easily
 
 ```bash
 cd ~/.nix
