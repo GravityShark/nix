@@ -183,7 +183,14 @@
 (after! ispell
   (setq ispell-program-name "aspell")
   (add-to-list 'ispell-dictionary-alist
-               '("tl" "en_US"))
+               '("tagalog"
+                 "[A-Za-zñÑ]"
+                 "[^A-Za-zñÑ]"
+                 "[']"
+                 t
+                 ("-d" "tl")
+                 nil
+                 utf-8))
   )
 
 ;; Make which-key faster
