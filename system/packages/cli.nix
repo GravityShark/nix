@@ -3,9 +3,6 @@
 with pkgs;
 [
   # CLIs
-  aspell
-  aspellDicts.en
-  aspellDicts.tl
   # bc
   dash
   doas-sudo-shim

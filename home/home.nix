@@ -8,10 +8,11 @@
     ./desktop.nix
     ./emacs.nix
     ./gnome.nix
+    ./keepassxc.nix
     ./mime.nix
     ./packages.nix
-    ./syncthing.nix
     ./restic.nix
+    ./syncthing.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -31,7 +32,7 @@
     ".config/ghostty".source = dump/.config/ghostty;
     ".config/joshuto".source = dump/.config/joshuto;
     ".config/modprobed-db.conf".source = dump/.config/modprobed-db.conf;
-    # ".config/monitors.xml".source = dump/.config/monitors.xml;
+    ".config/monitors.xml".source = dump/.config/monitors.xml;
     ".config/nvim/after".source = dump/.config/nvim/after;
     ".config/nvim/init.lua".source = dump/.config/nvim/init.lua;
     ".config/nvim/lua".source = dump/.config/nvim/lua;

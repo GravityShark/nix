@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -38,7 +37,12 @@ in
   home.file.".doom.d".source = dump/.doom.d;
 
   # Allow for inline LaTeX to work
-  home.packages = [ tex ];
+  home.packages = with pkgs; [
+    aspell
+    aspellDicts.en
+    aspellDicts.tl
+    tex
+  ];
 
   # Automatic doom sync everytime using home-manager switch
   # Doesnt work right now
@@ -54,6 +58,7 @@ in
       echo "Finished installing doom emacs"
     fi
   '';
+
   home.activation.doomSync = lib.hm.dag.entryAfter [ "doomInstall" ] ''
     if [ -x "$HOME/.emacs.d/bin/doom" ]; then
       export PATH="${pkgs.git}/bin:${pkgs.emacs}/bin:$PATH"
@@ -62,7 +67,7 @@ in
       "$HOME/.emacs.d/bin/doom" sync -e || echo "doom sync failed"
       "$HOME/.emacs.d/bin/doom" gc || echo "doom gc failed"
 
-      echo "Finished running doom sync..."
+      echo "Finished running doom sync... remember to use doom env && doom doctor!"
     else
       echo "doom binary not found, skipping doom sync"
     fi

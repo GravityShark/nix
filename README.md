@@ -31,13 +31,13 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 sudo nixos-rebuild switch
 ```
 
-````bash
+```bash
 
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
 nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
 home-manager switch --flake ~/.nix\?submodules=1
-````
+```
 
 setup git
 
@@ -53,14 +53,10 @@ git switch master
 
 n ur done, jus complete this checklist
 
-- [-] change the scaling to 150%
 - [ ] sync the browser, and extensions
 - [ ] [reinstall doomemacs](./home/dump/README.md)
-- [ ] re sync anki
-- [ ] re sync syncthing
-- [ ] login back to the various applications
 - [ ] Redownload and setup some wallpapers or something
+- [ ] re sync syncthing (should be automatic tho just recheck it)
 
 there are still some shits that needs to be installed non declaratively (which sucks)
 more in [home/dump/README.md](home/dump/README.md)
-
