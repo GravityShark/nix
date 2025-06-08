@@ -4,6 +4,7 @@
 
 with pkgs;
 [
+  # discord-canary
   ghostty # Terminal
   keepassxc # Passwords
   mcontrolcenter # MSI
@@ -23,7 +24,4 @@ with pkgs;
   libreoffice-fresh # Basic office utilities
   telegram-desktop
   zoom-us
-
-  # discord-canary
-  emacs
 ]

@@ -12,13 +12,13 @@
     ./mime.nix
   ];
 
+  # Emacs service
+  services.emacs.enable = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "gravity";
   home.homeDirectory = "/home/gravity";
-
-  # Emacs service
-  services.emacs.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

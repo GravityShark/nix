@@ -6,14 +6,12 @@ with pkgs;
 [
   # CLIs
   # bc
-  # dash
   doas-sudo-shim
   efibootmgr
   eza
   fastfetch
   fd
   ffmpeg
-  fish
   fzf
   git
   hunspell
