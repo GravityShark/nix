@@ -36,16 +36,17 @@ in
   home.packages = [ tex ];
 
   # Automatic doom sync everytime using home-manager switch
-  home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ -x "$HOME/.emacs.d/bin/doom" ]; then
-      export PATH="${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH"
-      echo "Running doom sync..."
-      "$HOME/.emacs.d/bin/doom" sync || echo "doom sync failed"
-      "$HOME/.emacs.d/bin/doom" gc || echo "doom gc failed"
-    else
-      echo "doom binary not found, skipping doom sync"
-    fi
-  '';
+  # Doesnt work right now
+  # home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #   if [ -x "$HOME/.emacs.d/bin/doom" ]; then
+  #     export PATH="${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH"
+  #     echo "Running doom sync..."
+  #     "$HOME/.emacs.d/bin/doom" sync || echo "doom sync failed"
+  #     "$HOME/.emacs.d/bin/doom" gc || echo "doom gc failed"
+  #   else
+  #     echo "doom binary not found, skipping doom sync"
+  #   fi
+  # '';
 
   # Desktop file
 
