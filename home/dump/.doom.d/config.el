@@ -180,21 +180,21 @@
                '("r" "Refile" entry (file org-default-notes-file) "* %?\n%U\n%i")))
 
 ;; Configure to allow both english and tagalog in spell checking
-(after! ispell
-  (setq ispell-program-name "hunspell")
-  (setq ispell-dictionary "en_US")
-  ;; (setq ispell-dictionary "en_US,tl")
-  ;; mkdir -p ~/.emacs.d/.local/etc/ispell && touch ~/.emacs.d/.local/etc/ispell/.pws && chmod 660 ~/.emacs.d/.local/etc/ispell/.pws
-  (setq ispell-personal-dictionary "~/.emacs.d/.local/etc/ispell/.pws")
-  (ispell-set-spellchecker-params)
-  (ispell-hunspell-add-multi-dic "en_US"))
-;; (ispell-hunspell-add-multi-dic "en_US,tl"))
-(add-hook 'spell-fu-mode-hook
-          (lambda ()
-            (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US"))
-            ;; (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "tl"))
-            ;; (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US,tl"))
-            ))
+;; (after! ispell
+;;   (setq ispell-program-name "hunspell")
+;;   (setq ispell-dictionary "en_US")
+;;   ;; (setq ispell-dictionary "en_US,tl")
+;;   ;; mkdir -p ~/.emacs.d/.local/etc/ispell && touch ~/.emacs.d/.local/etc/ispell/.pws && chmod 660 ~/.emacs.d/.local/etc/ispell/.pws
+;;   (setq ispell-personal-dictionary "~/.emacs.d/.local/etc/ispell/.pws")
+;;   (ispell-set-spellchecker-params)
+;;   (ispell-hunspell-add-multi-dic "en_US"))
+;; ;; (ispell-hunspell-add-multi-dic "en_US,tl"))
+;; (add-hook 'spell-fu-mode-hook
+;;           (lambda ()
+;;             (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US"))
+;;             ;; (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "tl"))
+;;             ;; (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US,tl"))
+;;             ))
 
 ;; Make which-key faster
 (after! which-key
@@ -323,6 +323,11 @@
       :map org-mode-map
       :desc "my/org-attach-copy-image-to-clipboard"
       "a y" #'my/org-attach-copy-image-to-clipboard)
+
+(map! :leader
+      :desc "Switch spellcheck dictionary"
+      "t s" #'ispell-change-dictionary)
+
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")

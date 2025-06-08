@@ -3,6 +3,9 @@
 with pkgs;
 [
   # CLIs
+  aspell
+  aspell-en
+  aspell-tl
   # bc
   dash
   doas-sudo-shim
@@ -14,8 +17,6 @@ with pkgs;
   fish
   fzf
   git
-  hunspell
-  hunspellDicts.en_US
   joshuto
   neovim
   restic

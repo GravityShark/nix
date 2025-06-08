@@ -63,7 +63,7 @@ if status is-interactive
     set fish_pager_color_selected_completion \x1d
     set fish_pager_color_selected_description \x1d
     set fish_pager_color_selected_prefix \x1d
-    set --export plugins https\x3a//github\x2ecom/kidonng/plug\x2efish https\x3a//github\x2ecom/franciscolourenco/done https\x3a//github\x2ecom/nickeb96/puffer\x2dfish https\x3a//github\x2ecom/GravityShark/safe-rm
+    set --export plugins https\x3a//github\x2ecom/kidonng/plug\x2efish https\x3a//github\x2ecom/franciscolourenco/done https\x3a//github\x2ecom/nickeb96/puffer\x2dfish https\x3a//github\x2ecom/fishingline/safe-rm
     set CFLAGS '-std=c99 -Wall -Werror'
 
     alias s sesh
