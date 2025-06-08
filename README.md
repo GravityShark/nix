@@ -33,7 +33,6 @@ sudo nixos-rebuild switch
 
 ````bash
 
-```bash
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
 nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
@@ -55,22 +54,13 @@ git switch master
 n ur done, jus complete this checklist
 
 - [-] change the scaling to 150%
-- [ ] sync the browser
+- [ ] sync the browser, and extensions
 - [ ] [reinstall doomemacs](./home/dump/README.md)
 - [ ] re sync anki
 - [ ] re sync syncthing
 - [ ] login back to the various applications
 - [ ] Redownload and setup some wallpapers or something
 
-2. gentoo
-   follow this one
-   [https://wiki.gentoo.org/wiki/User:Alxhr0/Nix_on_openrc](https://wiki.gentoo.org/wiki/User:Alxhr0/Nix_on_openrc)
-
-- note: some git configurations you might wanna enable
-
 there are still some shits that needs to be installed non declaratively (which sucks)
 more in [home/dump/README.md](home/dump/README.md)
 
-## things i might look out for
-
-- in gentoo they have [etckeeper](https://wiki.gentoo.org/wiki/Etckeeper)
