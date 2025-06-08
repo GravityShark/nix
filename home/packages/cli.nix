@@ -8,23 +8,23 @@ with pkgs;
   tomato-c
   xdg-terminal-exec
 
-  texlive.combine
-  {
-    inherit (pkgs.texlive)
-      scheme-basic
-      dvisvgm
-      dvipng # for preview and export as html
-      wrapfig
-      amsmath
-      ulem
-      hyperref
-      capt-of
-      etoolbox
-      nopageno
-      mlmodern
-      metafont
-      ;
-    #(setq org-latex-compiler "lualatex")
-    #(setq org-preview-latex-default-process 'dvisvgm)
-  }
+  # texlive.combine
+  # {
+  #   inherit (pkgs.texlive)
+  #     scheme-basic
+  #     dvisvgm
+  #     dvipng # for preview and export as html
+  #     wrapfig
+  #     amsmath
+  #     ulem
+  #     hyperref
+  #     capt-of
+  #     etoolbox
+  #     nopageno
+  #     mlmodern
+  #     metafont
+  #     ;
+  #   #(setq org-latex-compiler "lualatex")
+  #   #(setq org-preview-latex-default-process 'dvisvgm)
+  # }
 ]
