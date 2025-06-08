@@ -1,6 +1,2 @@
 #!/bin/sh
-ng && fu && {
-        nrs &
-        hms &
-        wait
-}
+ng && fu && nrs && hms
