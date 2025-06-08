@@ -1,6 +1,6 @@
 [submodule "dump/.config/nvim"]
 	path = home/dump/.config/nvim
-	url = git@github.com:GravityShark0/nvim-kick.git
+	url = git@github.com:GravityShark/nvim-kick.git
 	branch = master
 [submodule "dump/.config/foot/rose-pine"]
 	path = home/dump/.config/foot/rose-pine

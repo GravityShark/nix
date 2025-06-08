@@ -1,6 +1,6 @@
 # im using nixos now
 
-![default nixos gnome screenshot i just took](https://github.com/GravityShark0/nix/blob/83b2c1b262985569411d3a4c544031521a2099d3/assets/Screenshot%20from%202024-11-22%2018-46-39.png)
+![default nixos gnome screenshot i just took](https://github.com/GravityShark/nix/blob/83b2c1b262985569411d3a4c544031521a2099d3/assets/Screenshot%20from%202024-11-22%2018-46-39.png)
 
 ## resources im using
 
@@ -48,7 +48,7 @@ then install it dimwit
 also enable
 
 ```bash
-git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark0/nix.git ~/.nix
+git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark/nix.git ~/.nix
 nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
 home-manager switch --flake ~/.nix\?submodules=1
