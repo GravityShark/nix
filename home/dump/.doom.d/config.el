@@ -322,7 +322,7 @@
 (map! :localleader
       :map org-mode-map
       :desc "my/org-attach-copy-image-to-clipboard"
-      "a y" #'my/org-link-copy-image-to-clipboard)
+      "a y" #'my/org-attach-copy-image-to-clipboard)
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
