@@ -56,9 +56,11 @@
   home.activation.updateFontCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     fc-cache -f
   '';
-  # home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-  #   doom sync
-  # '';
+  home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ -x "$HOME/.emacs.d/bin/doom" ]; then
+      $HOME/.emacs.d/bin/doom sync
+    fi
+  '';
 
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
