@@ -304,20 +304,20 @@
   (let* ((link (org-element-context))
          (type (org-element-property :type link))
          (path (org-element-property :path link)))
-    (when (and (equal type "attachment")
-               (string-match-p (image-file-name-regexp) path))
-      (let* ((attach-dir (org-attach-dir t))
-             (full-path (expand-file-name path attach-dir)))
-        (if (file-exists-p full-path)
-            (let ((process-connection-type nil)) ; Use pipe
-              (let ((proc (start-process "wl-copy" "*wl-copy*" "wl-copy" "--type" "image/png")))
-                (set-process-sentinel
-                 proc
-                 (lambda (_proc _event)
-                   (message "Image copied to clipboard: %s" full-path)))
-                (process-send-region proc (find-file-noselect full-path) (point-min) (point-max))
-                (process-send-eof proc)))
-          (message "File not found: %s" full-path))))))
+    (if (and (equal type "attachment")
+             (string-match-p (image-file-name-regexp) path))
+        (let* ((attach-dir (org-attach-dir t))
+               (full-path (expand-file-name path attach-dir)))
+          (if (file-exists-p full-path)
+              (with-temp-buffer
+                (insert-file-contents-literally full-path)
+                (let ((process-connection-type nil)) ; Use pipe
+                  (let ((proc (start-process "wl-copy" "*wl-copy*" "wl-copy" "--type" "image/png")))
+                    (process-send-region proc (point-min) (point-max))
+                    (process-send-eof proc)
+                    (message "Image copied to clipboard: %s" full-path))))
+            (message "File not found: %s" full-path)))
+      (message "Not on a valid image attachment link."))))
 
 (map! :localleader
       :map org-mode-map
