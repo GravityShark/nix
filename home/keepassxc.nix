@@ -3,7 +3,26 @@
 {
   programs.keepassxc = {
     enable = true;
+
     settings = {
+      General = {
+        ConfigVersion = 2;
+        MinimizeAfterUnlock = true;
+      };
+
+      GUI = {
+        MinimizeOnClose = true;
+        MinimizeToTray = true;
+        ShowTrayIcon = true;
+        ToolButtonStyle = 0;
+        TrayIconAppearance = "monochrome-light";
+      };
+
+      Security = {
+        IconDownloadFallback = true;
+        LockDatabaseIdle = true;
+      };
+
       Browser.Enabled = true;
 
       PasswordGenerator = {
