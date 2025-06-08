@@ -26,14 +26,8 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
    mv ~/.shitssh ~/.ssh
    ```
 
-3. fonts for somereason need some little bit of shittery to fix every time you update it
-
-```bash
-fc-cache -f
-```
-
-4. browsers firefox and chromium
+3. browsers firefox and chromium
    you gotta reinstall the extension setttings from [./home/dump/firefox_extension_settings/]
    and add chromium webapps
 
-5. syncthing a lil funky tbh
+4. syncthing a lil funky tbh
