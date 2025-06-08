@@ -1,11 +1,11 @@
 {
   pkgs ? import <nixpkgs> { },
+  zen-browser ? import <nixpkgs> { },
 }:
 
 with pkgs;
 [
   # arduino-ide
-  # authenticator
   caprine
   # fragments # Bittorrent client
   gnome-frog
