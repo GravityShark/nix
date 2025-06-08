@@ -59,14 +59,21 @@ in
 
     ## Mason
 
+    # C
     clang-tools
-    emmet-language-server
     # gdb
+
+    # Go
     gofumpt
     goimports-reviser
     golangci-lint
     golines
     gopls
+
+    # Java
+
+    emmet-language-server
+
     graalvm-ce
     # lldb
     lua-language-server
