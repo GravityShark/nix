@@ -45,7 +45,7 @@ in
   home.activation.doomInstall = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -x "$HOME/.emacs.d/bin/doom" ]; then
       echo "Installing doom emacs..."
-      export PATH="${config.home.sessionPath}:${pkgs.emacs}/bin:$PATH"
+      export PATH="${lib.concatStringsSep ":" config.home.sessionPath}:${pkgs.emacs}/bin:$PATH"
       echo "Running doom sync..."
 
       git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
