@@ -1,19 +1,17 @@
-{ ... }:
+{ lib, ... }:
 
 {
   # ENABLE IF NOT NIXOS
   # targets.genericLinux.enable = false;
 
   imports = [
-    ./packages.nix
-    ./gnome.nix
-    ./syncthing.nix
     ./desktop.nix
+    ./emacs.nix
+    ./gnome.nix
     ./mime.nix
+    ./packages.nix
+    ./syncthing.nix
   ];
-
-  # Emacs service
-  services.emacs.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -24,6 +22,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".clang-format".source = dump/.clang-format;
+
     ".config/fastfetch".source = dump/.config/fastfetch;
     ".config/fish/completions".source = dump/.config/fish/completions;
     ".config/fish/conf.d".source = dump/.config/fish/conf.d;
@@ -40,7 +39,6 @@
     ".config/sesh".source = dump/.config/sesh;
     ".config/xdg-terminals.list".source = dump/.config/xdg-terminals.list;
     # ".config/zoomus.config ".source = dump/.config/zoomus.conf;
-    ".doom.d".source = dump/.doom.d;
     ".gitconfig".source = dump/.gitconfig;
     ".mkshrc".source = dump/.mkshrc;
     ".prettierrc".source = dump/.prettierrc;
@@ -55,11 +53,18 @@
     # '';
   };
 
+  # Automatic
+  home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    doom sync
+  '';
+  home.activation.updateFontCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    fc-cache -f
+  '';
+
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
-  home.enableNixpkgsReleaseCheck = false;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -72,5 +77,4 @@
   #   enable = true;
   #   frequency = "02:00";
   # };
-
 }

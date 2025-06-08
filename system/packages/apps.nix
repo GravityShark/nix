@@ -5,6 +5,7 @@
 with pkgs;
 [
   # discord-canary
+  emacs
   ghostty # Terminal
   keepassxc # Passwords
   mcontrolcenter # MSI
