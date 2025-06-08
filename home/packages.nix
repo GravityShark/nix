@@ -7,7 +7,7 @@ let
   };
   dev = import ./packages/dev.nix { inherit pkgs; };
   cli = import ./packages/cli.nix { inherit pkgs; };
-  fonts = import ./packages/cli.nix { inherit pkgs; };
+  fonts = import ./packages/fonts.nix { inherit pkgs; };
 in
 {
   environment.systemPackages = apps ++ dev ++ cli ++ fonts;

@@ -1,7 +1,4 @@
-{
-  pkgs ? import <nixpkgs> { },
-  zen-browser ? import <nixpkgs> { },
-}:
+{ pkgs, zen-browser }:
 
 with pkgs;
 [
