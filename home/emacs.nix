@@ -45,21 +45,21 @@ in
   home.activation.doomInstall = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -x "$HOME/.emacs.d/bin/doom" ]; then
       echo "Installing doom emacs..."
-      export PATH="${lib.concatStringsSep ":" config.home.sessionPath}:${pkgs.emacs}/bin:$PATH"
+      export PATH="${pkgs.git}:${pkgs.emacs}/bin:$PATH"
       echo "Running doom sync..."
 
       git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
-      "$HOME/.emacs.d/bin/doom" install
+      "$HOME/.emacs.d/bin/doom" install --no-env
 
       echo "Finished installing doom emacs"
     fi
   '';
   home.activation.doomSync = lib.hm.dag.entryAfter [ "doomInstall" ] ''
     if [ -x "$HOME/.emacs.d/bin/doom" ]; then
-      export PATH="${config.home.sessionPath}:${pkgs.emacs}/bin:$PATH"
+      export PATH="${pkgs.git}:${pkgs.emacs}/bin:$PATH"
       echo "Running doom sync..."
 
-      "$HOME/.emacs.d/bin/doom" sync || echo "doom sync failed"
+      "$HOME/.emacs.d/bin/doom" sync -e || echo "doom sync failed"
       "$HOME/.emacs.d/bin/doom" gc || echo "doom gc failed"
 
       echo "Finished running doom sync..."
