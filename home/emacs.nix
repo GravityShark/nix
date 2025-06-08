@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   tex = (
@@ -37,16 +42,31 @@ in
 
   # Automatic doom sync everytime using home-manager switch
   # Doesnt work right now
-  # home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-  #   if [ -x "$HOME/.emacs.d/bin/doom" ]; then
-  #     export PATH="${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH"
+  # home.activation.doomInstall = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #   if [ ! -x "$HOME/.emacs.d/bin/doom" ]; then
+  #     echo "Installing doom emacs..."
+  #     export PATH="${config.home.sessionPath}:${pkgs.emacs}/bin:$PATH"
   #     echo "Running doom sync..."
-  #     "$HOME/.emacs.d/bin/doom" sync || echo "doom sync failed"
-  #     "$HOME/.emacs.d/bin/doom" gc || echo "doom gc failed"
-  #   else
-  #     echo "doom binary not found, skipping doom sync"
+  #
+  #     git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
+  #     "$HOME/.emacs.d/bin/doom" install
+  #
+  #     echo "Finished installing doom emacs"
   #   fi
   # '';
+  home.activation.doomSync = lib.hm.dag.entryAfter [ "doomInstall" ] ''
+    if [ -x "$HOME/.emacs.d/bin/doom" ]; then
+      export PATH="${config.home.sessionPath}:${pkgs.emacs}/bin:$PATH"
+      echo "Running doom sync..."
+
+      "$HOME/.emacs.d/bin/doom" sync || echo "doom sync failed"
+      "$HOME/.emacs.d/bin/doom" gc || echo "doom gc failed"
+
+      echo "Finished running doom sync..."
+    else
+      echo "doom binary not found, skipping doom sync"
+    fi
+  '';
 
   # Desktop file
 

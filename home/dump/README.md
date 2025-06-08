@@ -13,22 +13,7 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 ```
 
-2. ssh gnupg and password-store
-
-   - duh i dont want my passwords be open to the public
-
-   ```sh
-   git clone gravity@clr:Git/password-store.git ~/.password-store
-   git clone gravity@clr:Git/ssh.git ~/.shitssh
-   git clone gravity@clr:Git/gnupg.git ~/.gnupg
-
-   mv ~/.ssh ~/.shitssh2
-   mv ~/.shitssh ~/.ssh
-   ```
-
-   - I want it so that it uses keepassxc for the ssh instead
-
-3. browsers firefox
+2. browsers firefox
    you gotta reinstall the extension setttings from [./home/dump/firefox_extension_settings/]
 
-4. syncthing a lil funky tbh
+3. syncthing a lil funky tbh
