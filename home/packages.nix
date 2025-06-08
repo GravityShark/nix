@@ -10,7 +10,7 @@ let
   fonts = import ./packages/fonts.nix { inherit pkgs; };
 in
 {
-  environment.systemPackages = apps ++ dev ++ cli ++ fonts;
+  home.packages = apps ++ dev ++ cli ++ fonts;
 }
 
 # # It is sometimes useful to fine-tune packages, for example, by applying
