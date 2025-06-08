@@ -28,31 +28,17 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
 ```bash
-
 sudo nixos-rebuild switch
 ```
 
-get yo .ssh and .gnupg up then install it
+````bash
 
 ```bash
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/id_*
-chmod 644 ~/.ssh/id_*.pub
-chmod 600 ~/.ssh/config
-# chown -R $(whoami) ~/.gnupg/
-# chmod 600 ~/.gnupg/*
-# chmod 700 ~/.gnupg
-```
-
-then install it dimwit
-also enable
-
-```bash
-git clone --recurse-submodules --shallow-submodules git@github.com:GravityShark/nix.git ~/.nix
+git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
 nix flake update --flake ~/.nix
 sudo nixos-rebuild boot --flake ~/.nix
 home-manager switch --flake ~/.nix\?submodules=1
-```
+````
 
 setup git
 
@@ -68,21 +54,13 @@ git switch master
 
 n ur done, jus complete this checklist
 
-- [ ] change the scaling to 150%
+- [-] change the scaling to 150%
 - [ ] sync the browser
-  - unduck
-- [ ] add youtubemusic and messenger as web apps
-- [ ] reinstall doomemacs
-
-```bash
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-```
-
+- [ ] [reinstall doomemacs](./home/dump/README.md)
 - [ ] re sync anki
 - [ ] re sync syncthing
-- [ ] setup authenticator
-- [ ] login back to disc and other
+- [ ] login back to the various applications
+- [ ] Redownload and setup some wallpapers or something
 
 2. gentoo
    follow this one
@@ -96,7 +74,3 @@ more in [home/dump/README.md](home/dump/README.md)
 ## things i might look out for
 
 - in gentoo they have [etckeeper](https://wiki.gentoo.org/wiki/Etckeeper)
-
-```
-
-```

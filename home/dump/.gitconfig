@@ -1,7 +1,7 @@
 [user]
 	email = alternativegravitational@protonmail.com
 	name = Gravity
-	signingkey = /home/gravity/.ssh/id_ed25519
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHIMEBAQx0PcSRv0pxyZzCj7W/ItHWCVq5Yp3FEkreF gravity@nixos
 [gpg]
 	format = ssh
 [merge]
