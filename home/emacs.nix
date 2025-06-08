@@ -1,5 +1,28 @@
 { lib, pkgs, ... }:
 
+let
+  tex = (
+    pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-basic
+        dvisvgm
+        dvipng # for preview and export as html
+        wrapfig
+        amsmath
+        ulem
+        hyperref
+        capt-of
+        etoolbox
+        nopageno
+        mlmodern
+        metafont
+        ;
+      #(setq org-latex-compiler "lualatex")
+      #(setq org-preview-latex-default-process 'dvisvgm)
+    }
+  );
+in
+
 {
   # Read the doom emacs line of ./dump/README.md
 
@@ -8,6 +31,9 @@
 
   # Doom emacs
   home.file.".doom.d".source = dump/.doom.d;
+
+  # Allow for inline LaTeX to work
+  home.packages = [ tex ];
 
   # Automatic doom sync everytime using home-manager switch
   home.activation.doomSync = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
