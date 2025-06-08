@@ -2,7 +2,6 @@
 
 with pkgs;
 [
-  # CLIs
   nix-your-shell
   sesh
   tomato-c
