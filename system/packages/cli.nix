@@ -6,6 +6,8 @@ with pkgs;
 [
   # CLIs
   # bc
+  dash
+  fish
   doas-sudo-shim
   efibootmgr
   eza
@@ -24,6 +26,6 @@ with pkgs;
   unzip
   wl-clipboard
   yt-dlp
-  # ytfzf
+  ytfzf
   zoxide
 ]
