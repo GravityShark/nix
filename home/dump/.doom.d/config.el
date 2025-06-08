@@ -297,20 +297,32 @@
       "c p" #'lsp-ui-doc-show)
 
 ;; Shitgippity made this lol, im too lazy for ⏱
-(defun org-copy-image-to-clipboard ()
-  "Copy the image linked in the Org buffer to the clipboard using wl-copy."
+(defun my/org-attach-copy-image-to-clipboard ()
+  "Copy the attached image at point to the clipboard using wl-copy."
   (interactive)
-  (let ((image-path (org-link-unescape (org-element-property :path (org-element-context)))))
-    (if (and image-path (file-exists-p image-path))
-        (progn
-          (start-process "wl-copy" nil "wl-copy" "-t" "image/png" image-path)
-          (message "Copied image to clipboard: %s" image-path))
-      (message "No valid image found at point."))))
+  (require 'org-attach)
+  (let* ((link (org-element-context))
+         (type (org-element-property :type link))
+         (path (org-element-property :path link)))
+    (when (and (equal type "attachment")
+               (string-match-p (image-file-name-regexp) path))
+      (let* ((attach-dir (org-attach-dir t))
+             (full-path (expand-file-name path attach-dir)))
+        (if (file-exists-p full-path)
+            (let ((process-connection-type nil)) ; Use pipe
+              (let ((proc (start-process "wl-copy" "*wl-copy*" "wl-copy" "--type" "image/png")))
+                (set-process-sentinel
+                 proc
+                 (lambda (_proc _event)
+                   (message "Image copied to clipboard: %s" full-path)))
+                (process-send-region proc (find-file-noselect full-path) (point-min) (point-max))
+                (process-send-eof proc)))
+          (message "File not found: %s" full-path))))))
 
 (map! :localleader
       :map org-mode-map
-      :desc " m"
-      "a y" #'org-copy-image-to-clipboard)
+      :desc "my/org-attach-copy-image-to-clipboard"
+      "a y" #'org-link-copy-image-to-clipboard)
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
