@@ -23,7 +23,8 @@
   imports = [
     ./env.nix
     ./gnome.nix
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     # ./lanzaboote.nix
     # ./ld.nix
     # ./nvidia.nix
