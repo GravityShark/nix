@@ -182,7 +182,9 @@
 ;; Configure to allow both english and tagalog in spell checking
 (after! ispell
   (setq ispell-program-name "aspell")
-  (setq ispell-dictionary "en_US,tl"))
+  (add-to-list 'ispell-dictionary-alist
+               '("tl" "en_US"))
+  )
 
 ;; Make which-key faster
 (after! which-key
