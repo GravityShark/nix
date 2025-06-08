@@ -8,7 +8,7 @@ with pkgs;
   tomato-c
   xdg-terminal-exec
 
-  pkgs.texlive.combine
+  texlive.combine
   {
     inherit (pkgs.texlive)
       scheme-basic
