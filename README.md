@@ -16,7 +16,7 @@
 
 ### installation
 
-install nixos from the gui setting up the partitions n reboot.
+1. install nixos from the gui setting up the partitions n reboot.
 
 also add flake capabilities lol
 

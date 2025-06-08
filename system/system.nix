@@ -89,6 +89,14 @@ in
   # boot.kernelModules = [ "v4l2loopback" ];
   # boot.extraModulePackages = [ pkgs.linuxPackages_xanmod_latest.v4l2loopback ];
 
+  # Add some swap
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+    }
+  ];
+
   # Hosts file
   networking = {
     hosts = {
