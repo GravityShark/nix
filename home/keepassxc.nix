@@ -31,9 +31,9 @@
         Length = 40;
         SpecialChars = true;
         Type = 0;
-        WordCase = 2;
+        WordCase = 0;
         WordCount = 7;
-        WordSeparator = "-";
+        WordSeparator = " ";
       };
 
       SSHAgent.Enabled = true;
