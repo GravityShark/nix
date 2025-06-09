@@ -68,5 +68,6 @@ n ur done, jus complete this checklist then reboot
 ## maintaining the system
 
 1. for updating use `updatescript`
-2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
+   - For doom emacs just do a `doom env`
+3. for cleaning up use `ngc` (abbrevation of nix garbage collect)
    - and also clean up doom emacs too `doom gc`
