@@ -69,5 +69,9 @@ n ur done, jus complete this checklist then reboot
 
 1. for updating use `updatescript`
    - For doom emacs just do a `doom env`
-3. for cleaning up use `ngc` (abbrevation of nix garbage collect)
+2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
    - and also clean up doom emacs too `doom gc`
+  
+## future ventures
+1. try to fix this [gnome extension that i really like](https://github.com/Favo02/workspaces-by-open-apps/issues/115)
+2. 
