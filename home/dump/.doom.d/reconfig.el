@@ -1,6 +1,9 @@
 ;;; reconfig.el -*- lexical-binding: t; -*-
 
+
 ;;; Package configs
+
+;; Configure org-mode
 (after! org
   ;; Default
   (setq org-archive-location (concat org-directory ".archive/%s_archive::"))
@@ -93,7 +96,7 @@
 
 (after! org-download
   (setq org-download-method 'directory)
-  (setq org-download-abbreviate-filename-function 'file-name-relative)
+  (setq org-download-abbreviate-filename-function 'file-relative-name)
   (setq org-download-link-format "[[file:%s]]\n")
   (setq-default org-download-heading-lvl 'nil)
   (setq org-download-link-format-function #'org-download-link-format-function-default)

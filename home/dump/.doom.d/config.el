@@ -88,10 +88,13 @@
 ;; Nakakatawa ka naman
 
 
+
 (load! "reconfig.el")
 (load! "keymaps.el")
 
 ;;; Various silly things
 ;; (load! "silly/pomodoro.el")
 ;; (load! "silly/plot.el")
+
+;; Remove decorations from emacs
 (setq default-frame-alist '((undecorated . t)))
