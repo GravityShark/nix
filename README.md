@@ -70,7 +70,7 @@ n ur done, jus complete this checklist then reboot
 ## maintaining the system
 
 1. for updating use `updatescript`
-   - For doom emacs just do a `doom env`
+   - For doom emacs just do a `doom env`, and if you want an actual update do `doom upgrade` but you barely want to do this if it wokrs it wokrs type ish
 2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
    - and also clean up doom emacs too `doom gc`
 
