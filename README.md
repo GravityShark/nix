@@ -62,9 +62,8 @@ n ur done, jus complete this checklist then reboot
 - [ ] sync the browser, and [extensions](./home/dump/README.md)
 - [ ] [setup doom emacs](./home/dump/README.md)
 - [ ] Redownload and setup some wallpapers or something
-  -  Wallpaper I like
-    -  [Distrotube](https://gitlab.com/dwt1/wallpapers)
-    -  Rosepine ([1](https://github.com/rose-pine/wallpapers), [2](https://wallhaven.cc/tag/162505), or just [google](https://www.google.com/search?q=rose+pine+wallpaper&tbs=imgo:1&udm=2) [it](https://duckduckgo.com/?t=h_&q=rose+pine+wallpaper&ia=images&iax=images))
+  -  [Distrotube](https://gitlab.com/dwt1/wallpapers)
+  -  Rosepine ([1](https://github.com/rose-pine/wallpapers), [2](https://wallhaven.cc/tag/162505), or just [google](https://www.google.com/search?q=rose+pine+wallpaper&tbs=imgo:1&udm=2) [it](https://duckduckgo.com/?t=h_&q=rose+pine+wallpaper&ia=images&iax=images))
 
 ## maintaining the system
 
