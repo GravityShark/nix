@@ -24,7 +24,9 @@
 #/etc/nixos/configuration.nix
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
+
 then run
+
 ```bash
 sudo nixos-rebuild switch
 ```
@@ -35,7 +37,7 @@ sudo nixos-rebuild switch
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
 ```
 
-  - Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/system/hardware-configuration.nix`) and setup some [swap](https://nixos.wiki/wiki/Swap)
+- Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/system/hardware-configuration.nix`) and setup some [swap](https://nixos.wiki/wiki/Swap)
 
 4. then update
 
@@ -62,8 +64,8 @@ n ur done, jus complete this checklist then reboot
 - [ ] sync the browser, and [extensions](./home/dump/README.md)
 - [ ] [setup doom emacs](./home/dump/README.md)
 - [ ] Redownload and setup some wallpapers or something
-  -  [Distrotube](https://gitlab.com/dwt1/wallpapers)
-  -  Rosepine ([1](https://github.com/rose-pine/wallpapers), [2](https://wallhaven.cc/tag/162505), or just [google](https://www.google.com/search?q=rose+pine+wallpaper&tbs=imgo:1&udm=2) [it](https://duckduckgo.com/?t=h_&q=rose+pine+wallpaper&ia=images&iax=images))
+  - [Distrotube](https://gitlab.com/dwt1/wallpapers)
+  - Rosepine ([1](https://github.com/rose-pine/wallpapers), [2](https://wallhaven.cc/tag/162505), or just [google](https://www.google.com/search?q=rose+pine+wallpaper&tbs=imgo:1&udm=2) [it](https://duckduckgo.com/?t=h_&q=rose+pine+wallpaper&ia=images&iax=images))
 
 ## maintaining the system
 
@@ -71,7 +73,7 @@ n ur done, jus complete this checklist then reboot
    - For doom emacs just do a `doom env`
 2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
    - and also clean up doom emacs too `doom gc`
-  
+
 ## future ventures
+
 1. try to fix this [gnome extension that i really like](https://github.com/Favo02/workspaces-by-open-apps/issues/115)
-2. 
