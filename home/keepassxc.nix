@@ -12,6 +12,7 @@
 
       GUI = {
         MinimizeOnClose = true;
+        MinimizeOnStartup = true;
         MinimizeToTray = true;
         ShowTrayIcon = true;
         ToolButtonStyle = 0;
