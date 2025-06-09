@@ -68,6 +68,7 @@
   (add-to-list 'org-capture-templates
                '("r" "Refile" entry (file org-default-notes-file) "* %?\n%U\n%i")))
 
+;; Configure how org-modern looks
 (after! org-modern
   ;; (setq org-modern-priority (quote ((?A . "⚑")
   ;;                                   (?B . "⬆")
@@ -83,6 +84,7 @@
   (setq org-modern-star 'replace)
   )
 
+;; Configure org-download
 (add-hook 'org-mode-hook
           (lambda ()
             (when buffer-file-name
@@ -94,22 +96,8 @@
   (setq org-download-abbreviate-filename-function 'file-name-relative)
   (setq org-download-link-format "[[file:%s]]\n")
   (setq-default org-download-heading-lvl 'nil)
-  ;; (setq org-download-link-format-function #'org-download-link-format-function-default)
+  (setq org-download-link-format-function #'org-download-link-format-function-default)
   )
-
-;; Configure to allow both english and tagalog in spell checking
-;; (after! ispell
-;;   (setq ispell-program-name "aspell")
-;;   (add-to-list 'ispell-dictionary-alist
-;;                '("tagalog"
-;;                  "[A-Za-zñÑ]"
-;;                  "[^A-Za-zñÑ]"
-;;                  "[']"
-;;                  t
-;;                  ("-d" "tl")
-;;                  nil
-;;                  utf-8))
-;;   )
 
 ;; Make which-key faster
 (after! which-key
