@@ -83,9 +83,19 @@
   (setq org-modern-star 'replace)
   )
 
+(add-hook 'org-mode-hook
+          (lambda ()
+            (when buffer-file-name
+              (setq org-download-image-dir
+                    (concat org-directory "assets/attachments/" (file-name-sans-extension (file-name-nondirectory buffer-file-name)))))))
+
 (after! org-download
   (setq org-download-method 'directory)
-  (setq-default org-download-image-dir (concat org-directory "assets/attachments/")))
+  (setq org-download-abbreviate-filename-function 'file-name-relative)
+  (setq org-download-link-format "[[file:%s]]\n")
+  (setq-default org-download-heading-lvl 'nil)
+  ;; (setq org-download-link-format-function #'org-download-link-format-function-default)
+  )
 
 ;; Configure to allow both english and tagalog in spell checking
 ;; (after! ispell
