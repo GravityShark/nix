@@ -74,3 +74,36 @@
 (map! :leader
       :desc "Switch spellcheck dictionary"
       "t S" #'ispell-change-dictionary)
+
+;; Shitgippity made this lol, im too lazy for ⏱
+;; Allow for copying attached images
+(defun my/org-copy-image-at-point-to-clipboard ()
+  "Copy the image at point (either attachment or file) to the clipboard using wl-copy."
+  (interactive)
+  (require 'org-attach)
+  (let* ((link (org-element-context))
+         (type (org-element-property :type link))
+         (path (org-element-property :path link)))
+    (if (and (member type '("attachment" "file"))
+             (string-match-p (image-file-name-regexp) path))
+        (let* ((full-path (cond
+                           ((equal type "attachment")
+                            (expand-file-name path (org-attach-dir t)))
+                           ((equal type "file")
+                            (expand-file-name path))))
+               )
+          (if (file-exists-p full-path)
+              (with-temp-buffer
+                (insert-file-contents-literally full-path)
+                (let ((process-connection-type nil))
+                  (let ((proc (start-process "wl-copy" "*wl-copy*" "wl-copy" "--type" "image/png")))
+                    (process-send-region proc (point-min) (point-max))
+                    (process-send-eof proc)
+                    (message "Image copied to clipboard: %s" full-path))))
+            (message "File not found: %s" full-path)))
+      (message "Not on a valid image link (file or attachment)."))))
+
+(map! :localleader
+      :map org-mode-map
+      :desc "my/org-attach-copy-image-to-clipboard"
+      "a y" #'my/org-attach-copy-image-to-clipboard)
