@@ -77,7 +77,7 @@
 
 ;; Shitgippity made this lol, im too lazy for ⏱
 ;; Allow for copying attached images
-(defun my/org-copy-image-at-point-to-clipboard ()
+(defun my/org-attach-copy-image-to-clipboard ()
   "Copy the image at point (either attachment or file) to the clipboard using wl-copy."
   (interactive)
   (require 'org-attach)
