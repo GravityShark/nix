@@ -10,6 +10,7 @@ with pkgs;
   # File viewer
   evince # Documents
   foliate # Epub
+  vlc # Videos + Music
 
   # Media creation
   gnome-sound-recorder
@@ -18,7 +19,7 @@ with pkgs;
 
   # School
   anki
-  libreoffice-fresh # Basic office utilities
+  # libreoffice-fresh # Basic office utilities
   telegram-desktop
   zoom-us
 ]
