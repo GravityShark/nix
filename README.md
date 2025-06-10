@@ -16,7 +16,10 @@
 
 ## installation
 
+> assuming that you like use the same user name (gravity) and also disk partitioning
+
 1. install nixos from the gui setting up the partitions n reboot.
+
 
 2. now when you're in, enable flake capabilities
 
