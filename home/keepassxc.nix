@@ -31,7 +31,7 @@
         ExcludedChars = "";
         Length = 40;
         SpecialChars = true;
-        Type = 0;
+        Type = 1;
         WordCase = 0;
         WordCount = 7;
         WordSeparator = " ";
