@@ -4,7 +4,7 @@ with pkgs;
 [
   # arduino-ide
   caprine
-  # fragments # Bittorrent client
+  fragments # Bittorrent client
   gnome-frog
   # vial
   youtube-music

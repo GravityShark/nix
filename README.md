@@ -20,7 +20,6 @@
 
 1. install nixos from the gui setting up the partitions n reboot.
 
-
 2. now when you're in, enable flake capabilities
 
 ```nix
