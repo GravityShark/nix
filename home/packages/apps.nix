@@ -3,7 +3,6 @@
 with pkgs;
 [
   # arduino-ide
-  caprine-bin
   # fragments # Bittorrent client
   qbittorrent
   gnome-frog
