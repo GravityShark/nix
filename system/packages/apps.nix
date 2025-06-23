@@ -2,7 +2,6 @@
 
 with pkgs;
 [
-  # discord-canary
   emacs
   ghostty # Terminal
   mcontrolcenter # MSI
@@ -19,7 +18,7 @@ with pkgs;
 
   # School
   anki
-  # libreoffice-fresh # Basic office utilities
+  onlyoffice-desktopeditors
   telegram-desktop
   zoom-us
 ]
