@@ -34,7 +34,7 @@
         Type = 1;
         WordCase = 0;
         WordCount = 7;
-        WordSeparator = " ";
+        WordSeparator = "\\x20";
       };
 
       SSHAgent.Enabled = true;
