@@ -79,3 +79,4 @@ n ur done, jus complete this checklist then reboot
 ## future ventures
 
 1. try to fix this [gnome extension that i really like](https://github.com/Favo02/workspaces-by-open-apps/issues/115)
+2. [quickshell](https://quickshell.outfoxxed.me/) seems to be goated, if added with like a very minimal window manager
