@@ -58,8 +58,8 @@
       unmaximize = [ "" ];
       switch-applications = [ "<Alt>Tab" ];
       switch-applications-backward = [ "<Shift><Alt>Tab" ];
-      switch-group = [ "" ];
-      switch-group-backward = [ "" ];
+      switch-group = [ "<Alt>grave" ];
+      switch-group-backward = [ "<Shift><Alt>grave" ];
       switch-windows = [ "" ];
       switch-windows-backward = [ "" ];
     };
