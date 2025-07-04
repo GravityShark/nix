@@ -121,6 +121,9 @@ in
         "porn"
       ];
     };
-    extraHosts = ''${builtins.readFile discord} ${builtins.readFile instagram}'';
+    extraHosts = ''
+      ${builtins.readFile discord}
+      ${builtins.readFile instagram}
+    '';
   };
 }
