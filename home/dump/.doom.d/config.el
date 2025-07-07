@@ -87,6 +87,19 @@
 
 ;; Nakakatawa ka naman
 
+;; Auto-save every few seconds
+(auto-save-visited-mode 1)
+(setq auto-save-visited-interval 20)
+
+;; Backups to a central directory with versioning
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq version-control t)
+(setq kept-new-versions 10)
+(setq kept-old-versions 2)
+(setq delete-old-versions t)
+
+;; Automatically reload files changed on disk
+(global-auto-revert-mode 1)
 
 
 (load! "reconfig.el")
