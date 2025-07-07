@@ -2,6 +2,7 @@
 
 with pkgs;
 [
+  anki
   # arduino-ide
   # fragments # Bittorrent client
   qbittorrent

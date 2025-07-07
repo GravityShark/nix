@@ -17,7 +17,6 @@ with pkgs;
   krita # Drawing
 
   # School
-  anki
   onlyoffice-desktopeditors
   telegram-desktop
   zoom-us
