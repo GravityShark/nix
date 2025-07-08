@@ -2,6 +2,7 @@
 
 with pkgs;
 [
+  appimage-run
   nix-your-shell
   sesh
   tomato-c
