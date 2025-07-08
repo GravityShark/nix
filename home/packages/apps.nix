@@ -4,7 +4,6 @@ with pkgs;
 [
   anki
   # arduino-ide
-  caprine
   # fragments # Bittorrent client
   gnome-frog
   qbittorrent
