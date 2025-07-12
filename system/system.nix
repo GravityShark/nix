@@ -87,7 +87,7 @@ in
   ];
 
   # Use linux zen
-  # boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Hosts file
   networking = {
