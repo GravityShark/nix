@@ -4,7 +4,7 @@ with pkgs;
 [
   emacs
   ghostty # Terminal
-  foot # Terminal
+  # foot # Terminal
   mcontrolcenter # MSI
 
   # File viewer
