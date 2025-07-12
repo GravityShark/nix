@@ -7,7 +7,7 @@ with pkgs;
   # fragments # Bittorrent client
   gnome-frog
   qbittorrent
-  # vial
+  vial
   youtube-music
   zen-browser.default
 ]
