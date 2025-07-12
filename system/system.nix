@@ -87,7 +87,7 @@ in
   ];
 
   # Use linux zen
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Hosts file
   networking = {
@@ -121,8 +121,8 @@ in
         "porn"
       ];
     };
+    # ${builtins.readFile discord}
     extraHosts = ''
-      # ${builtins.readFile discord}
       ${builtins.readFile instagram}
     '';
   };
