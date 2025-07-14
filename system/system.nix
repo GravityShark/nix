@@ -123,7 +123,7 @@ in
     };
     extraHosts = ''
       ${builtins.readFile discord}
-      ${builtins.readFile instagram}
+        ${builtins.readFile instagram}
     '';
   };
 }
