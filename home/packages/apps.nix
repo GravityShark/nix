@@ -6,6 +6,7 @@ with pkgs;
   # arduino-ide
   # fragments # Bittorrent client
   gnome-frog
+  normcap
   qbittorrent
   vial
   youtube-music
