@@ -4,11 +4,12 @@
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
     gnomeExtensions.alttab-mod
+    # https://extensions.gnome.org/extension/2741/remove-alttab-delay-v2/
+    gnomeExtensions.remove-alttab-delay-v2
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
-    gnomeExtensions.dash-to-dock
     gnomeExtensions.freon
-    gnomeExtensions.luminus-desktop
+    # gnomeExtensions.luminus-desktop
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
@@ -29,7 +30,8 @@
     };
     "org/gnome/desktop/interface" = {
       enable-hot-corners = true;
-      color-scheme = "prefer-light";
+      color-scheme = "prefer-dark";
+      accent-color = "purple";
       font-name = "Aporetic Sans 11";
       enable-animations = false;
     };
@@ -56,10 +58,10 @@
       toggle-maximized = [ "<Super>f" ];
       maximize = [ "" ];
       unmaximize = [ "" ];
-      switch-applications = [ "<Alt>Tab" ];
-      switch-applications-backward = [ "<Shift><Alt>Tab" ];
-      switch-group = [ "<Alt>grave" ];
-      switch-group-backward = [ "<Shift><Alt>grave" ];
+      switch-applications = [ "<Super>Tab" ];
+      switch-applications-backward = [ "<Shift><Super>Tab" ];
+      switch-group = [ "<Super>grave" ];
+      switch-group-backward = [ "<Shift><Super>grave" ];
       switch-windows = [ "" ];
       switch-windows-backward = [ "" ];
     };
@@ -106,10 +108,8 @@
         "alttab-mod@leleat-on-github"
         "appindicatorsupport@rgcjonas.gmail.com"
         "caffeine@patapon.info"
-        "dash-to-dock@micxgx.gmail.com"
-        "executor@raujonas.github.io"
         "freon@UshakovVasilii_Github.yahoo.com"
-        "luminus-desktop@dikasp.gitlab"
+        # "luminus-desktop@dikasp.gitlab"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
         "switchWorkSpace@sun.wxg@gmail.com"
@@ -132,13 +132,6 @@
     };
 
     # Extensions
-    "org/gnome/shell/extensions/dash-to-dock" = {
-      hot-keys = false;
-      show-dock-urgent-notify = false;
-      show-trash = false;
-      # shortcut = [ "<Super>grave" ];
-      # shortcut-text = "<Super>grave";
-    };
     "org/gnome/shell/extensions/pop-shell" = {
       active-hint = true;
       # active-hint-border-radius = 16;
@@ -159,8 +152,8 @@
       remove-delay = true;
     };
     "org/gnome/shell/extensions/switchWorkSpace" = {
-      switch-workspace = [ "<Super>Tab" ];
-      switch-workspace-backward = [ "<Shift><Super>Tab" ];
+      switch-workspace = [ "<Alt>Tab" ];
+      switch-workspace-backward = [ "<Shift><Alt>Tab" ];
     };
     "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
       indicator-color = "rgb(87,82,121)";
@@ -169,12 +162,5 @@
       spacing-app-left = 1;
       spacing-app-right = 1;
     };
-
-    # "org/gnome/shell/extensions/executor" = {
-    #   right-active = false;
-    #   left-active = false;
-    #   center-active = true;
-    #   center-commands-json = "{\"commands\":[{\"isActive\":true,\"command\":\"tomato -t\",\"interval\":1,\"uuid\":\"c2f225a9-1b95-4f82-b5c6-ce9e42a5a767\"}]}";
-    # };
   };
 }
