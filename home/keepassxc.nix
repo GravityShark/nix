@@ -14,9 +14,9 @@
         MinimizeOnClose = true;
         MinimizeOnStartup = true;
         MinimizeToTray = true;
-        ShowTrayIcon = false;
+        ShowTrayIcon = true;
         ToolButtonStyle = 0;
-        TrayIconAppearance = "monochrome-dark";
+        TrayIconAppearance = "monochrome-light";
       };
 
       Security = {
