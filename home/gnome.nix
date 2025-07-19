@@ -8,7 +8,7 @@
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.freon
-    # gnomeExtensions.luminus-desktop
+    gnomeExtensions.luminus-desktop
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
@@ -29,8 +29,8 @@
     };
     "org/gnome/desktop/interface" = {
       enable-hot-corners = true;
-      color-scheme = "prefer-dark";
-      accent-color = "purple";
+      color-scheme = "prefer-light";
+      accent-color = "teal";
       font-name = "Aporetic Sans 11";
       enable-animations = false;
     };
@@ -108,7 +108,7 @@
         "appindicatorsupport@rgcjonas.gmail.com"
         "caffeine@patapon.info"
         "freon@UshakovVasilii_Github.yahoo.com"
-        # "luminus-desktop@dikasp.gitlab"
+        "luminus-desktop@dikasp.gitlab"
         "pop-shell@system76.com"
         "run-or-raise@edvard.cz"
         "switchWorkSpace@sun.wxg@gmail.com"
