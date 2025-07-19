@@ -71,12 +71,12 @@
       sleep-inactive-ac-type = "suspend";
       sleep-inactive-ac-timeout = 900;
     };
-    "org/gnome/settings-daemon/plugins/media-keys/".custom-keybindings = [
+    "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
       "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
     ];
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Control>Print";
-      command = "normcap";
+      command = "normcap --clipboard-handler=wlclipboard";
       name = "OCR with normcap";
     };
 
