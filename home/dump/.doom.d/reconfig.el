@@ -35,15 +35,22 @@
   (setq org-format-latex-options
         (plist-put (plist-put org-format-latex-options :scale 3.5)
                    :html-scale 3.5))
+
   ;; Set closed timestamp when closing
   (setq org-log-done 'time)
 
   ;; Headline sizes
+  (setq org-cycle-level-faces nil)
   (custom-set-faces
    '(org-level-1 ((t (:height 1.68 :weight bold))))
    '(org-level-2 ((t (:height 1.49 :weight bold))))
    '(org-level-3 ((t (:height 1.33 :weight bold))))
-   '(org-level-4 ((t (:height 1.18 :weight bold)))))
+   '(org-level-4 ((t (:height 1.18 :weight bold))))
+   '(org-level-5 ((t (:height 1.1 :weight semi-bold))))
+   '(org-level-6 ((t (:height 1.05 :weight semi-bold))))
+   '(org-level-7 ((t (:height 1.0 :weight normal))))
+   '(org-level-8 ((t (:height 0.95 :weight normal))))
+   '(org-level-9 ((t (:height 0.9 :weight normal)))))
 
   ;;Theme faces
   ;; (custom-theme-set-faces
