@@ -5,7 +5,6 @@
     gnome-epub-thumbnailer
     gnomeExtensions.alttab-mod
     # https://extensions.gnome.org/extension/2741/remove-alttab-delay-v2/
-    gnomeExtensions.remove-alttab-delay-v2
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.freon
