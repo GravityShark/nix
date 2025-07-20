@@ -5,8 +5,8 @@ with pkgs;
   anki
   # arduino-ide
   # fragments # Bittorrent client
-  gnome-frog
-  normcap
+  # gnome-frog # OCR
+  normcap # better OCR
   qbittorrent
   vial
   youtube-music
