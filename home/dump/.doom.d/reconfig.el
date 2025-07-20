@@ -35,6 +35,7 @@
   (setq org-format-latex-options
         (plist-put (plist-put org-format-latex-options :scale 3.5)
                    :html-scale 3.5))
+  (setq org-image-max-width 520)
 
   ;; Set closed timestamp when closing
   (setq org-log-done 'time)
