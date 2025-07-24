@@ -5,6 +5,7 @@ with pkgs;
   anki
   # arduino-ide
   # fragments # Bittorrent client
+  gnome-decoder
   # gnome-frog # OCR
   normcap # better OCR
   qbittorrent
