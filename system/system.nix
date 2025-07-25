@@ -88,7 +88,7 @@ in
 
   # Use linux zen
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  environment.systemPackages = pkgs.linuxKernel.packages.linux_6_15.msi-ec;
+  environment.systemPackages = [ pkgs.linuxKernel.packages.linux_6_15.msi-ec ];
   # Hosts file
   networking = {
     hosts = {
