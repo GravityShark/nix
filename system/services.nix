@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # GnuPG
@@ -64,8 +64,14 @@
   # };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-  services.libinput.mouse.scrollMethod = "button";
+  environment.systemPackages = [ pkgs.libinput ];
+  services.libinput = {
+    enable = true;
+    mouse = {
+      scrollMethod = "button";
+      scrollButton = 274;
+    };
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
