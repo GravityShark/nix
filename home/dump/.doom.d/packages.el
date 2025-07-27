@@ -50,8 +50,8 @@
 
 
 ;; (package! lsp-ltex)
-(package! lsp-ltex-plus
-  :recipe (:host github :repo "emacs-languagetool/lsp-ltex-plus"))
+;; (package! lsp-ltex-plus
+;;   :recipe (:host github :repo "emacs-languagetool/lsp-ltex-plus"))
 
 (package! with-editor)
 (package! xkcd)

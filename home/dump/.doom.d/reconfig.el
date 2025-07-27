@@ -119,8 +119,8 @@
   (setq +corfu-want-ret-to-confirm nil))
 
 ;; Try to enable gui docs
-(after! lsp-ui
-  (setq lsp-ui-doc-use-webkit t))
+;; (after! lsp-ui
+;;   (setq lsp-ui-doc-use-webkit t))
 
 ;; Configure mixed pitch mode
 (use-package! mixed-pitch
@@ -128,19 +128,19 @@
   (text-mode . mixed-pitch-mode))
 
 ;; Configure lsp-ltex-plus
-(use-package! lsp-ltex-plus
-  :hook
-  (org-mode . (lambda ()
-                (require 'lsp-ltex-plus)
-                (lsp-deferred)))
-  (markdown-mode . (lambda ()
-                     (require 'lsp-ltex-plus)
-                     (lsp-deferred)))
-  (text-mode . (lambda ()
-                 (require 'lsp-ltex-plus)
-                 (lsp-deferred)))
-  :init
-  (setq lsp-ltex-plus-version "18.5.1")
-  (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
-  (setq lsp-ltex-plus-language "en")
-  (setq lsp-ltex-plus-mother-tongue "tl-PH"))
+;; (use-package! lsp-ltex-plus
+;;   :hook
+;;   (org-mode . (lambda ()
+;;                 (require 'lsp-ltex-plus)
+;;                 (lsp-deferred)))
+;;   (markdown-mode . (lambda ()
+;;                      (require 'lsp-ltex-plus)
+;;                      (lsp-deferred)))
+;;   (text-mode . (lambda ()
+;;                  (require 'lsp-ltex-plus)
+;;                  (lsp-deferred)))
+;;   :init
+;;   (setq lsp-ltex-plus-version "18.5.1")
+;;   (setq lsp-ltex-plus-additional-rules-enable-picky-rules "true")
+;;   (setq lsp-ltex-plus-language "en")
+;;   (setq lsp-ltex-plus-mother-tongue "tl-PH"))

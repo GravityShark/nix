@@ -64,7 +64,8 @@
   # };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
+  services.libinput.mouse.scrollMethod = "button";
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

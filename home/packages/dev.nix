@@ -15,7 +15,7 @@ with pkgs;
   gopls
 
   # Java
-  graalvm-ce
+  # graalvm-ce
 
   # Lua
   lua-language-server

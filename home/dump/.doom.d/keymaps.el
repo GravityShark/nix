@@ -61,14 +61,14 @@
       "t m" #'mixed-pitch-mode)
 
 ;; List all LSP diagnostics in buffer
-(map! :leader
-      :desc "LSP List diagnostics"
-      "c L" #'lsp-ui-flycheck-list)
+;; (map! :leader
+;;       :desc "LSP List diagnostics"
+;;       "c L" #'lsp-ui-flycheck-list)
 
-;; Forcefully pop up the diagnostic on cursor
-(map! :leader
-      :desc "LSP Popup diagnostics"
-      "c p" #'lsp-ui-doc-show)
+;; ;; Forcefully pop up the diagnostic on cursor
+;; (map! :leader
+;;       :desc "LSP Popup diagnostics"
+;;       "c p" #'lsp-ui-doc-show)
 
 ;; Change the ispell dictionary
 (map! :leader
