@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   # GnuPG
@@ -64,14 +64,18 @@
   # };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  environment.systemPackages = [ pkgs.libinput ];
-  services.libinput = {
-    enable = true;
-    mouse = {
-      scrollMethod = "button";
-      scrollButton = 274;
-    };
-  };
+  # Doesn't work, needs https://gitlab.freedesktop.org/libinput/libinput/-/merge_requests/1192, to be pushed
+  # services.libinput = {
+  #   enable = true;
+  #   mouse = {
+  #     scrollMethod = "button";
+  #     scrollButton = 274;
+  #   };
+  # };
+  # environment.systemPackages = with pkgs; [
+  #   libinput
+  #   libinput.dev
+  # ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
