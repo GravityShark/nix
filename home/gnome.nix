@@ -19,10 +19,15 @@
   # Gnome settings
 
   dconf.settings = {
+
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
     "org/gnome/desktop/peripherals/mouse".speed = -0.6;
     "org/gnome/desktop/peripherals/keyboard".repeat = true;
+    "org/gnome/desktop/input-sources".xkb-options = [
+      "terminate:ctrl_alt_bksp"
+      "caps:ctrl_shifted_capslock" # turns capslock into ctrl
+    ];
     "org/gnome/desktop/wm/preferences" = {
       focus-mode = "sloppy";
       num-workspaces = 9;
