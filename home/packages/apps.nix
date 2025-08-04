@@ -4,8 +4,9 @@ with pkgs;
 [
   anki
   # arduino-ide
+  dialect # translation
   # fragments # Bittorrent client
-  gnome-decoder
+  # gnome-decoder
   # gnome-frog # OCR
   normcap # better OCR
   qbittorrent
