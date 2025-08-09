@@ -3,7 +3,7 @@
 with pkgs;
 [
   anki
-  # arduino-ide
+  arduino-ide
   dialect # translation
   # fragments # Bittorrent client
   # gnome-decoder
