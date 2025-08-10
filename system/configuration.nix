@@ -17,7 +17,8 @@
       # "discord-canary"
       # "nvidia-x11"
       # "zerotierone"
-      "zoom"
+      # "zoom"
+      "teams"
     ];
 
   imports = [

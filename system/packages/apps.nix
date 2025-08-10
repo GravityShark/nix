@@ -19,6 +19,6 @@ with pkgs;
   # School
   onlyoffice-desktopeditors
   pdfarranger
-  telegram-desktop
-  zoom-us
+  # telegram-desktop
+  # zoom-us
 ]
