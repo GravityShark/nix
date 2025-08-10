@@ -19,7 +19,6 @@ with pkgs;
   # School
   onlyoffice-desktopeditors
   pdfarranger
-  teams
   # telegram-desktop
   # zoom-us
 ]
