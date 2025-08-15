@@ -2,6 +2,9 @@
 
 with pkgs;
 [
+  # Arduino
+  arduino-ide
+
   # C
   clang-tools
   # gdb

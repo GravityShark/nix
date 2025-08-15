@@ -12,7 +12,5 @@ let
   cli = import ./packages/cli.nix { inherit pkgs; };
 in
 {
-  environment.systemPackages =
-    apps ++ dev ++ cli # [pkgs.home-manager]
-  ;
+  environment.systemPackages = apps ++ dev ++ cli; # ++ [ pkgs.home-manager ];
 }

@@ -12,8 +12,9 @@ with pkgs;
   vlc # Videos + Music
 
   # Media creation
-  gnome-sound-recorder
-  kdePackages.kdenlive # Video editor (I should enable gpu when using this)
+  # audacity
+  # gnome-sound-recorder
+  # kdePackages.kdenlive # Video editor (I should enable gpu when using this)
   krita # Drawing
 
   # School

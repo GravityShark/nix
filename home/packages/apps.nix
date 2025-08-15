@@ -3,9 +3,8 @@
 with pkgs;
 [
   anki
-  arduino-ide
   normcap # better OCR
-  qbittorrent
+  # qbittorrent
   vial
   teams-for-linux
   youtube-music
