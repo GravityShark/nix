@@ -19,6 +19,10 @@
     pinentryPackage = lib.mkDefault pkgs.pinentry-gnome3;
   };
 
+  environment.systemPackages = with pkgs; [
+    ffmpegthumbnailer
+  ];
+
   # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
   environment.gnome.excludePackages = with pkgs; [
     epiphany

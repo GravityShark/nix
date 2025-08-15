@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
+    ffmpegthumbnailer
     gnomeExtensions.alttab-mod
     # https://extensions.gnome.org/extension/2741/remove-alttab-delay-v2/
     gnomeExtensions.appindicator
