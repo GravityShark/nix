@@ -13,7 +13,7 @@ with pkgs;
 
   # Media creation
   gnome-sound-recorder
-  # kdePackages.kdenlive # Video editor (I should enable gpu when using this)
+  kdePackages.kdenlive # Video editor (I should enable gpu when using this)
   krita # Drawing
 
   # School
