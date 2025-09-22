@@ -23,7 +23,7 @@
     "org/gnome/desktop/sound".allow-volume-above-100-percent = true;
     "org/gnome/desktop/session".idle-delay = 300;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
-    "org/gnome/desktop/peripherals/mouse".speed = -0.6;
+    "org/gnome/desktop/peripherals/mouse".speed = -0.8;
     "org/gnome/desktop/peripherals/keyboard".repeat = true;
     "org/gnome/desktop/input-sources".xkb-options = [
       "terminate:ctrl_alt_bksp"
