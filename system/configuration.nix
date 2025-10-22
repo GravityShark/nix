@@ -31,7 +31,7 @@
     # ./ld.nix
     ./default.nix
     # <nixos-hardware/msi/gl65/10SDR-492>
-    ./nvidia.nix
+    # ./nvidia.nix
     ./packages.nix
     ./services.nix
     ./system.nix
