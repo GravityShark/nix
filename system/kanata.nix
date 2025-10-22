@@ -71,6 +71,14 @@
             _    _    _    _    @base
           )
 
+          (deflayer nav
+            _    _
+            vold    ret  esc  A-tab volu             home    pgdn    pgup    end    caps
+            osm    osa    oss    osc    C-tab      left    down    up    rght    tab
+            prtsc    brid    briu    lmet    bspc    grv    bspc    del    menu    Insert
+            _    _    _    _    @base
+          )
+
           (defchords cw 30
             (lsft rsft) (caps-word 2000)
           )
