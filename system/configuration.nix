@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
+  lib,
   inputs,
   ...
 }:
@@ -10,23 +11,27 @@
 {
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true;
-  # nixpkgs.config.allowUnfreePredicate =
-  #   pkg:
-  #   builtins.elem (lib.getName pkg) [
-  #     # "discord-canary"
-  #     # "nvidia-x11"
-  #     # "zerotierone"
-  #     # "zoom"
-  #     "teams"
-  #   ];
-  #
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      # "discord-canary"
+      "nvidia-x11"
+      "nvidia-settings"
+      # "zerotierone"
+      # "zoom"
+      # "teams"
+    ];
+
   imports = [
     ./env.nix
     ./gnome.nix
     ./hardware-configuration.nix
+    ./kanata.nix
     # ./lanzaboote.nix
     # ./ld.nix
-    # ./nvidia.nix
+    <nixos-hardware/msi/gl65/10SDR-492>
+    ./default.nix
+    ./nvidia.nix
     ./packages.nix
     ./services.nix
     ./system.nix

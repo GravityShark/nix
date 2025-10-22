@@ -34,8 +34,8 @@
         config = ''
           (defsrc
             lsft rsft
-            q    w    e    r    t    y    u    i    o    p    [ 
-            a    s    d    f    g    h    j    k    l    ;    '
+            q    w    e    r    t         u    i    o    p    [ 
+            a    s    d    f    g         j    k    l    ;    '
             z    x    c    v    b    n    m    ,    .    / 
             lalt spc < ralt rctl
           )
@@ -57,18 +57,22 @@
 
           (deflayer base
             lsft rsft
-            f    p    l    k    j    _    '    g    o    u    q
-            s    n    h    t    v    _    y    c    a    i    e
+            f    p    l    k    j         '    g    o    u    q
+            s    n    h    t    v         y    c    a    i    e
             b    m    d    z    !    ?    x    w    .    ,  
             @nav r    spc  @sym @qwerty
           )
 
           (deflayer qwerty
             _    _
-            _    _    _    _    _    _    _    _    _    _    _
-            _    _    _    _    _    _    _    _    _    _    _
+            _    _    _    _    _         _    _    _    _    _
+            _    _    _    _    _         _    _    _    _    _
             _    _    _    _    _    _    _    _    _    _
             _    _    _    _    @base
+          )
+
+          (defchords cw 30
+            (lsft rsft) (caps-word 2000)
           )
         '';
       };

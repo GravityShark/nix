@@ -2,6 +2,7 @@
   description = "This is MY flake";
 
   inputs = {
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,6 +24,7 @@
     {
       self,
       # nixpkgs,
+      nixos-hardware,
       nixpkgs-unstable,
       home-manager,
       # lanzaboote,
@@ -40,6 +42,7 @@
           inherit system;
           modules = [
             ./system/configuration.nix
+            nixos-hardware.msi-gl65-10SDR-492
             # lanzaboote.nixosModules.lanzaboote
           ];
           specialArgs = {
