@@ -42,7 +42,7 @@
           inherit system;
           modules = [
             ./system/configuration.nix
-            nixos-hardware.msi-gl65-10SDR-492
+            nixos-hardware.nixosModules.msi-gl65-10SDR-492
             # lanzaboote.nixosModules.lanzaboote
           ];
           specialArgs = {
