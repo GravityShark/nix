@@ -88,7 +88,9 @@ in
   ];
 
   # Use linux zen
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
   boot.kernelModules = [ "msi-ec" ];
   # Hosts file

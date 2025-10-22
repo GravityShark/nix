@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  lib,
+  # lib,
   inputs,
   ...
 }:
@@ -11,27 +11,32 @@
 {
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      # "discord-canary"
-      "nvidia-x11"
-      "nvidia-settings"
-      # "zerotierone"
-      # "zoom"
-      # "teams"
-    ];
+  # nixpkgs.config.allowUnfreePredicate =
+  #   pkg:
+  #   builtins.elem (lib.getName pkg) [
+  # "discord-canary"
+  # "nvidia-x11"
+  # "nvidia-settings"
+  # "zerotierone"
+  # "zoom"
+  # "teams"
+  # ];
 
   imports = [
+    # Gnome + Wayland + NVIDIA will not working until this issue has been fixed https://gitlab.gnome.org/GNOME/mutter/-/issues/2969
+    # "${
+    #   builtins.fetchGit {
+    #     url = "https://github.com/NixOS/nixos-hardware.git";
+    #     rev = "7d9552ef6b02da7b8fafe426c0db5358ab8c4009";
+    #   }
+    # }/msi/gl65/10SDR-492"
+    # ./nvidia.nix
     ./env.nix
     ./gnome.nix
     ./hardware-configuration.nix
     ./kanata.nix
     # ./lanzaboote.nix
     # ./ld.nix
-    ./default.nix
-    <nixos-hardware/msi/gl65/10SDR-492>
-    ./nvidia.nix
     ./packages.nix
     ./services.nix
     ./system.nix
