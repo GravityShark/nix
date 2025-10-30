@@ -21,4 +21,44 @@
       </monitor>
     </logicalmonitor>
   </configuration>
+  <configuration>
+    <layoutmode>logical</layoutmode>
+    <logicalmonitor>
+      <x>855</x>
+      <y>0</y>
+      <scale>1.5</scale>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>eDP-1</connector>
+          <vendor>AUO</vendor>
+          <product>0x21ed</product>
+          <serial>0x00000000</serial>
+        </monitorspec>
+        <mode>
+          <width>1920</width>
+          <height>1080</height>
+          <rate>60.030</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+    <logicalmonitor>
+      <x>0</x>
+      <y>550</y>
+      <scale>1.4970760345458984</scale>
+      <monitor>
+        <monitorspec>
+          <connector>HDMI-2</connector>
+          <vendor>XXX</vendor>
+          <product>AAA</product>
+          <serial>0x00000000</serial>
+        </monitorspec>
+        <mode>
+          <width>1280</width>
+          <height>1024</height>
+          <rate>60.020</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+  </configuration>
 </monitors>
