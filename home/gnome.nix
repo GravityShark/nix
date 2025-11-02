@@ -5,7 +5,6 @@
     gnome-epub-thumbnailer
     ffmpegthumbnailer
     gnomeExtensions.alttab-mod
-    # https://extensions.gnome.org/extension/2741/remove-alttab-delay-v2/
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.freon
@@ -14,7 +13,7 @@
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
     gnomeExtensions.tomatoc-to-panel
-    gnomeExtensions.workspaces-indicator-by-open-apps
+    gnomeExtensions.workspace-buttons-with-app-icons
   ];
 
   # Gnome settings
@@ -111,7 +110,6 @@
       favorite-apps = [ "" ];
       enabled-extensions = [
         "alttab-mod@leleat-on-github"
-        "appindicatorsupport@rgcjonas.gmail.com"
         "caffeine@patapon.info"
         "freon@UshakovVasilii_Github.yahoo.com"
         "luminus-desktop@dikasp.gitlab"
@@ -119,6 +117,7 @@
         "run-or-raise@edvard.cz"
         "switchWorkSpace@sun.wxg@gmail.com"
         "tomato-c-to-panel@thomas-philippot.dev"
+        "workspace-buttons-with-app-icons@miro011.github.com"
         "workspaces-by-open-apps@favo02.github.com"
       ];
     };
@@ -159,13 +158,6 @@
     "org/gnome/shell/extensions/switchWorkSpace" = {
       switch-workspace = [ "<Alt>Tab" ];
       switch-workspace-backward = [ "<Shift><Alt>Tab" ];
-    };
-    "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
-      indicator-color = "rgb(87,82,121)";
-      indicator-show-indexes = true;
-      size-app-icon = 24;
-      spacing-app-left = 1;
-      spacing-app-right = 1;
     };
   };
 }
