@@ -10,7 +10,6 @@
 
 {
   # Allow unfree packages
-  # nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowUnfreePredicate =
   #   pkg:
   #   builtins.elem (lib.getName pkg) [
@@ -35,12 +34,10 @@
     ./gnome.nix
     ./hardware-configuration.nix
     ./kanata.nix
-    # ./lanzaboote.nix
-    # ./ld.nix
+    ./lanzaboote.nix
     ./packages.nix
     ./services.nix
     ./system.nix
-    # ./virt-manager.nix
   ];
 
   system.autoUpgrade = {
