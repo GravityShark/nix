@@ -159,9 +159,14 @@
       switch-workspace-backward = [ "<Shift><Alt>Tab" ];
     };
     "org/gnome/shell/extensions/workspaces-indicator-by-open-apps" = {
+      apps-inactive-effect = "NOTHING";
+      apps-minimized-effect = "REDUCE OPACITY";
       indicator-color = "rgb(87,82,121)";
       indicator-show-indexes = true;
+      indicator-swap-position = true;
+      indicator-text-use-theme-color = true;
       size-app-icon = 24;
+      size-labels = 15;
       spacing-app-left = 1;
       spacing-app-right = 1;
     };
