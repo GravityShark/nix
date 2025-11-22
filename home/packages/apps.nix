@@ -4,7 +4,7 @@ with pkgs;
 [
   anki
   normcap # better OCR
-  # qbittorrent
+  qbittorrent
   vial
   # teams-for-linux
   youtube-music
