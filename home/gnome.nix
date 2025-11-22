@@ -12,7 +12,6 @@
     gnomeExtensions.pop-shell
     gnomeExtensions.run-or-raise
     gnomeExtensions.switch-workspace
-    gnomeExtensions.tomatoc-to-panel
     gnomeExtensions.workspaces-indicator-by-open-apps
   ];
 
