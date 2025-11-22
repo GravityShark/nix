@@ -75,6 +75,7 @@
   # For somereason /dev/null is NOT being properly permissionisezed
   # system.activationScripts.chmod-dev-null.text = "chmod 777 /dev/null";
 
+  nix.settings.download-buffer-size = 500000000;
   # gettin flakey
   nix.settings.experimental-features = [
     "nix-command"
