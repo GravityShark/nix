@@ -25,7 +25,7 @@
     "org/gnome/desktop/peripherals/keyboard".repeat = true;
     "org/gnome/desktop/input-sources".xkb-options = [
       "terminate:ctrl_alt_bksp"
-      "ctrl:nocaps" # turns capslock into ctrl
+      # "ctrl:nocaps" # turns capslock into ctrl
     ];
     "org/gnome/desktop/wm/preferences" = {
       focus-mode = "sloppy";

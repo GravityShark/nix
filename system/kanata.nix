@@ -35,19 +35,18 @@
           concurrent-tap-hold yes'';
         config = ''
           (defsrc
-            q    w    e    r    t    y    u    i    o    p   [
-            a    s    d    f    g    h    j    k    l    ;   '
-            z    x    c    v    b    n    m    ,    .    / 
-            lalt spc  <
+                 q    w    e    r    t    y    u    i    o    p   [
+                 a    s    d    f    g    h    j    k    l    ;   '
+            lsft z    x    c    v    b    n    m    ,    .    / 
+            lalt spc  <    ralt rctl
           )
 
           (defalias
-            nav (layer-toggle nav)
-            sym (layer-toggle sym)
-            num (layer-toggle num)
-            #|
-            fn (layer-toggle fn)
-            |#
+            mc   (layer-switch mc)
+            base (layer-switch base)
+            nav  (layer-toggle nav)
+            sym  (layer-toggle sym)
+            num  (layer-toggle num)
 
             oss (one-shot 5000 lsft)
             osc (one-shot 5000 lctl)
@@ -60,42 +59,38 @@
           )
 
           (deflayer base
+            lsft p    l    k    j         '    g    i    u    rsft XX 
+            s    n    h    t    v         y    c    a    i    e    XX
+            f    b    m    d    z    XX   x    w    .    ,    q 
+            @nav r    spc    @sym @mc
+          )
+          (deflayer @mc
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
-            _    _    _    _    _    _    _    _    _    _
-            @nav _    @sym
+            _    _    _    _    _    _    _    _    _    _   _
+            _    _    _    _    @base
           )
 
           (deflayer nav
-            vold  ret  esc  A-tab volu  home pgdn pgup end  caps   _
-            @osm  @osa @oss @osc  C-tab left down up   rght tab    _
-            prtsc XX   XX   lmet  bspc  grv  bspc del  menu Insert
-            _     ret  @num
+                  vold  ret  esc  A-tab volu    home pgdn pgup end  caps   _
+                  @osm  @osa @oss @osc  C-tab   left down up   rght tab    _
+            prtsc XX   XX   lmet  bspc  XX      grv  bspc del  menu Insert
+            _     ret ret  @num XX
           )
 
           (deflayer sym
             ,    S-grv    S-3    S-4    S-5    S-7  S-[    [    ]    =    _
             S-6    S-'    -    ;    S-8    S-]    @osc   @oss @osa    @osm    _
-            S-=    S-\    S-2    /    \    .    S-9    S-,    S-.    S-0
-            @num   S--    _
+            S-=    S-\    S-2    /    \ XX    .    S-9    S-,    S-.    S-0
+            @num   S--    S--    _     XX
           )
 
           (deflayer num
             XX  F11 up  C-a     XX XX    7    8    9    _    _
             @osm @osa @oss @osc XX XX    4    5    6    0    _
-            F5  XX  XX  down    XX XX    1    2    3    _
-            _   XX  _   
+            F5  XX  XX  down XX XX XX    1    2    3    _
+            _   XX  XX _   XX
           )
-
-          #|
-          (deflayer fn
-            _    _
-            _    _    _    _    _         _    _    _    _    _
-            _    _    _    _    _         _    _    _    _    _
-            _    _    _    _    _    _    _    _    _    _
-            _    _    _    _    @base
-          )
-          |#
         '';
       };
     };
