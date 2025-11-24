@@ -42,7 +42,7 @@
           )
 
           (defalias
-            mc   (layer-switch mc)
+            ruckus   (layer-switch ruckus)
             base (layer-switch base)
             nav  (layer-toggle nav)
             sym  (layer-toggle sym)
@@ -55,34 +55,35 @@
           )
 
           (defchordsv2 
-            (lsft rsft) (caps-word 2000) 30 first-release ()
+            (lsft rsft) (caps-word 2000) 200 first-release (nav sym num)
           )
 
           (deflayer base
-            lsft p    l    k    j         '    g    i    u    rsft XX 
-            s    n    h    t    v         y    c    a    i    e    XX
-            f    b    m    d    z    XX   x    w    .    ,    q 
-            @nav r    spc    @sym @mc
-          )
-          (deflayer mc
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
             _    _    _    _    _    _    _    _    _    _   _
-            _    _    _    _    @base
+            @nav    _    @sym    _    _
+          )
+
+          (deflayer ruckus
+            lsft p    l    k    j         '    g    o    u    rsft XX 
+            s    n    h    t    v         y    c    a    i    e    XX
+            f    b    m    d    z    XX   x    w    .    ,    q 
+            @nav r    spc    @sym @base
           )
 
           (deflayer nav
                   vold  ret  esc  A-tab volu    home pgdn pgup end  caps   _
                   @osm  @osa @oss @osc  C-tab   left down up   rght tab    _
             prtsc XX   XX   lmet  bspc  XX      grv  bspc del  menu Insert
-            _     ret ret  @num XX
+            _     ret @num XX XX
           )
 
           (deflayer sym
             ,    S-grv    S-3    S-4    S-5    S-7  S-[    [    ]    =    _
             S-6    S-'    -    ;    S-8    S-]    @osc   @oss @osa    @osm    _
             S-=    S-\    S-2    /    \ XX    .    S-9    S-,    S-.    S-0
-            @num   S--    S--    _     XX
+            @num   S--    _     XX XX
           )
 
           (deflayer num
