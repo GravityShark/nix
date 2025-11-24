@@ -64,7 +64,7 @@
             f    b    m    d    z    XX   x    w    .    ,    q 
             @nav r    spc    @sym @mc
           )
-          (deflayer @mc
+          (deflayer mc
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
             _    _    _    _    _    _    _    _    _    _   _
