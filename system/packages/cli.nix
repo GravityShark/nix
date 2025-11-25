@@ -14,11 +14,6 @@ with pkgs;
   fish
   fzf
   git
-
-  nnn
-  yazi
-  lf
-
   neovim
   restic
   ripgrep
