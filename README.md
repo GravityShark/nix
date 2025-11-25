@@ -78,8 +78,7 @@ n ur done, jus complete this checklist then reboot
 
 ## future ventures
 
-1. try to fix this [gnome extension that i really like](https://github.com/Favo02/workspaces-by-open-apps/issues/115)
-2. [quickshell](https://quickshell.outfoxxed.me/) seems to be goated, if added with like a very minimal window manager
+1. [quickshell](https://quickshell.outfoxxed.me/) seems to be goated, if added with like a very minimal window manager
 
-3. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake because it's the only working caprine fork for me
+2. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake because it's the only working caprine fork for me
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
