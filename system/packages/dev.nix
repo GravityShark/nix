@@ -7,5 +7,5 @@ with pkgs;
   go
   nodejs
   python3
-  racket
+  # racket
 ]

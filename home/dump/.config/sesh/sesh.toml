@@ -47,7 +47,8 @@ startup_command = "exec ssh gravity@clr"
 
 [[session]]
 name = "TMux config  "
-startup_command = "exec $EDITOR ~/.nix/home/dump/.tmux.conf"
+path = "~/.nix/home/dump"
+startup_command = "$EDITOR .tmux.conf"
 
 [[session]]
 name = "LIttle cool website" 

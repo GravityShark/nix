@@ -9,6 +9,7 @@ with pkgs;
   efibootmgr
   eza
   fastfetch
+  imagemagick
   fd
   ffmpeg
   fish
