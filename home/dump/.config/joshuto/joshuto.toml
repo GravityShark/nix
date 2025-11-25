@@ -39,7 +39,7 @@ directories_first = true
 reverse = true
 
 [preview]
-max_preview_size = "16MB"                           # 2MB
+max_preview_size = 50000097152
 preview_script = "~/.config/joshuto/preview_file.sh" # make sure it's marked as executable
 
 [search]
