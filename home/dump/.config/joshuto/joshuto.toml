@@ -33,7 +33,7 @@ linemode = "size"
 
 [display.sort]
 # lexical, mtime, natural, size, ext
-sort_method = "mtime"
+sort_method = "mtime | size"
 case_sensitive = false
 directories_first = true
 reverse = true
