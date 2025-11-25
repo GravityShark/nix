@@ -95,6 +95,14 @@ in
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
   boot.kernelModules = [ "msi-ec" ];
+  systemd.tmpfiles.rules = [
+    "w /sys/devices/platform/msi-ec/webcam - - - - off"
+    "w /sys/devices/platform/msi-ec/shift_mode - - - - eco"
+    "w /sys/class/leds/msiacpi::kbd_backlight/brightness - - - - 0"
+    "w /sys/class/power_supply/BAT1/charge_control_start_threshold - - - - 50"
+    "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 60"
+  ];
+
   # Hosts file
   networking = {
     hosts = {
