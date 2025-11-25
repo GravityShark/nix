@@ -63,7 +63,7 @@
 
           (defoverrides
             (lsft .) (-)
-            (lsft ,) (2)
+            (lsft ,) (lsft 4)
             (lsft rsft) (lsft /)
             (rsft lsft) (lsft 1)
 
