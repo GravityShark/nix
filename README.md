@@ -85,3 +85,19 @@ n ur done, jus complete this checklist then reboot
 
 3. create your own window manager using [dwl](https://codeberg.org/dwl/dwl)
    - probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
+   - my ideal setup would probably be something like 1 application per
+     tag/workspace. each new application open in a new tag automatically, also
+     you auto focus on it. but new windows of the same application stay
+     floating if it wants to be floating or just tiled on the same tag.
+   - the start menu must be powerful, can get emojis, calculator, settings, file indexing allathat
+   - not necessary but i would like shortcuts to open like the same top right
+     menu for gnome, and also have the same top right menu as gnoem
+   - i would also like to have a way to combine tags temporarily, like if you
+     want to dual screen your browser and terminal you can select it and when you
+     go away and return its gonna be gone - or semi permanently by just m oving
+     the windows to the same tag - to reverse there should be another shortcut
+     to move the current selected window int oa new workspace
+
+   - the most important issues i dont know how to solve are:
+     1. how would i be able to switch to tags efficiently
+        - lowkey i forgot i have run or raise
