@@ -65,6 +65,8 @@
           (defoverrides
             (lsft .) (-)
             (lsft ,) (=)
+            (-) (lsft .)
+            (=) (lsft ,)
             ;; (lsft @osrs) (lsft /)
             ;; (rsft @oss) (lsft 1)
 
@@ -101,9 +103,9 @@
           )
 
           (deflayer sym
-            ,    S-grv    S-3    S-4    S-5    S-7  S-[    [    ]    =    _
-            S-6    S-'    -    ;    S-8    S-]    @osc   @oss @osa    @osm    _
-            S-=    S-\    S-2    /    \ XX    .    S-9    < >    S-0   _
+            ,    S-grv    S-3    S-4    S-5    S-7  S-[    [    ]    S-,    _
+            S-6    S-'    S-.    ;    S-8    S-]    @osc   @oss @osa    @osm    _
+            S-=    S-\    S-2    /    \ XX    .    S-9    = -    S-0   _
             @num   S-;    _     XX XX
           )
 
