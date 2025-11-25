@@ -44,6 +44,7 @@
           (defalias
             ruckus   (layer-switch ruckus)
             base (layer-switch base)
+            mc (layer-switch mc)
             nav  (layer-toggle nav)
             sym  (layer-toggle sym)
             num  (layer-toggle num)
@@ -62,14 +63,21 @@
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
             _    _    _    _    _    _    _    _    _    _   _
-            @nav    _    @sym    _    _
+            @nav    _    @sym    @mc    @ruckus
           )
 
           (deflayer ruckus
             lsft p    l    k    j         '    g    o    u    rsft XX 
             s    n    h    t    v         y    c    a    i    e    XX
             f    b    m    d    z    XX   x    w    .    ,    q 
-            @nav r    spc    @sym @base
+            @nav r    spc    @sym     @base
+          )
+
+          (deflayer mc
+            _    _    _    _    _    _    _    _    _    _   _ 
+            _    _    _    _    _    _    _    _    _    _   _
+            _    _    _    _    _    _    _    _    _    _   _
+            _    _    _    @base    _
           )
 
           (deflayer nav
