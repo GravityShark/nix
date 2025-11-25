@@ -1,6 +1,6 @@
 #!/bin/sh
-nix-collect-garbage -d
 sudo nix-collect-garbage -d
 sudo nix-store --optimise
 sudo nix-store --gc
 home-manager expire-generations 1
+nix-collect-garbage -d
