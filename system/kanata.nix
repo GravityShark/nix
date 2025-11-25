@@ -50,6 +50,7 @@
             num  (layer-toggle num)
 
             oss (one-shot 5000 lsft)
+            osrs (one-shot 5000 rsft)
             osc (one-shot 5000 lctl)
             osm (one-shot 5000 lmet)
             osa (one-shot 5000 lalt)
@@ -63,18 +64,18 @@
 
           (defoverrides
             (lsft .) (-)
-            (lsft ,) (lsft 4)
-            (lsft rsft) (lsft /)
-            (rsft lsft) (lsft 1)
+            (lsft ,) (=)
+            ;; (lsft @osrs) (lsft /)
+            ;; (rsft @oss) (lsft 1)
 
-            (lsft spc) (lsft ;)
-            (rsft spc) (rsft ;)
+            (lsft spc) (lsft -)
+            (rsft spc) (rsft -)
           )
 
           (deflayer base
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
-            _    _    _    _    _    _    _    _    _    _   _   _
+            @oss    _    _    _    _    _    _    _    _    _   _   @osrs
             @nav    _    @sym    @mc    @ruckus
           )
 
