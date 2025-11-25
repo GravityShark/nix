@@ -37,14 +37,14 @@
           (defsrc
                  q    w    e    r    t    y    u    i    o    p   [
                  a    s    d    f    g    h    j    k    l    ;   '
-            lsft z    x    c    v    b    n    m    ,    .    / 
+            lsft z    x    c    v    b    n    m    ,    .    /   rsft
             lalt spc  <    ralt rctl
           )
 
           (defalias
-            ruckus   (layer-switch ruckus)
             base (layer-switch base)
-            mc (layer-switch mc)
+            ruckus   (layer-switch ruckus)
+            mc   (layer-switch mc)
             nav  (layer-toggle nav)
             sym  (layer-toggle sym)
             num  (layer-toggle num)
@@ -53,51 +53,63 @@
             osc (one-shot 5000 lctl)
             osm (one-shot 5000 lmet)
             osa (one-shot 5000 lalt)
+
+            cw (caps-word 2000)
           )
 
           (defchordsv2 
-            (lsft rsft) (caps-word 2000) 200 first-release (nav sym num)
+            (lsft rsft) @cw 200 first-release (nav sym num)
+          )
+
+          (defoverrides
+            (lsft .) (-)
+            (lsft ,) (2)
+            (lsft rsft) (lsft /)
+            (rsft lsft) (lsft 1)
+
+            (lsft spc) (lsft ;)
+            (rsft spc) (rsft ;)
           )
 
           (deflayer base
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
-            _    _    _    _    _    _    _    _    _    _   _
+            _    _    _    _    _    _    _    _    _    _   _   _
             @nav    _    @sym    @mc    @ruckus
           )
 
           (deflayer ruckus
-            lsft p    l    k    j         '    g    o    u    rsft XX 
-            s    n    h    t    v         y    c    a    i    e    XX
-            f    b    m    d    z    XX   x    w    .    ,    q 
+            lsft p    l    k    j    XX        '    g    o    u    rsft
+            s    n    h    t    v    XX        y    c    a    i    e   
+            f    b    m    d    z    XX   XX   x    w    .    ,    q 
             @nav r    spc    @sym     @base
           )
 
           (deflayer mc
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
-            _    _    _    _    _    _    _    _    _    _   _
+            _    _    _    _    _    _    _    _    _    _   _   _
             _    _    _    @base    _
           )
 
           (deflayer nav
                   vold  ret  esc  A-tab volu    home pgdn pgup end  caps   _
                   @osm  @osa @oss @osc  C-tab   left down up   rght tab    _
-            prtsc XX   XX   lmet  bspc  XX      grv  bspc del  menu Insert
+            prtsc XX   XX   lmet  bspc  XX      grv  bspc del  menu Insert    _
             _     ret @num XX XX
           )
 
           (deflayer sym
             ,    S-grv    S-3    S-4    S-5    S-7  S-[    [    ]    =    _
             S-6    S-'    -    ;    S-8    S-]    @osc   @oss @osa    @osm    _
-            S-=    S-\    S-2    /    \ XX    .    S-9    S-,    S-.    S-0
-            @num   S--    _     XX XX
+            S-=    S-\    S-2    /    \ XX    .    S-9    S-,    S-.    S-0   _
+            @num   S-;    _     XX XX
           )
 
           (deflayer num
             XX  F11 up  C-a     XX XX    7    8    9    _    _
             @osm @osa @oss @osc XX XX    4    5    6    0    _
-            F5  XX  XX  down XX XX XX    1    2    3    _
+            F5  XX  XX  down XX XX XX    1    2    3    _    _
             _   XX  XX _   XX
           )
         '';
