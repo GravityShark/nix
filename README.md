@@ -82,3 +82,6 @@ n ur done, jus complete this checklist then reboot
 
 2. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake because it's the only working caprine fork for me
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
+
+3. create your own window manager using [dwl](https://codeberg.org/dwl/dwl)
+   - probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
