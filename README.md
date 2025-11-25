@@ -104,3 +104,4 @@ n ur done, jus complete this checklist then reboot
 
 4. maybe replace joshuto cause it sucks and doesn't work within tmux, and also
    also its really slow for some reason
+   - probably with [yazi](https://github.com/sxyazi/yazi)
