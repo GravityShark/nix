@@ -14,14 +14,18 @@ with pkgs;
   fish
   fzf
   git
-  joshuto
+
+  nnn
+  yazi
+  lf
+
   neovim
   restic
   ripgrep
   tmux
   unzip
   wl-clipboard
-  yt-dlp
-  ytfzf
+  # yt-dlp
+  # ytfzf
   zoxide
 ]

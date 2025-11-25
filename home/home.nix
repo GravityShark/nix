@@ -31,7 +31,7 @@
     ".config/fish/functions".source = dump/.config/fish/functions;
     ".config/ghostty".source = dump/.config/ghostty;
     # ".config/foot".source = dump/.config/foot;
-    ".config/joshuto".source = dump/.config/joshuto;
+    # ".config/joshuto".source = dump/.config/joshuto;
     ".config/modprobed-db.conf".source = dump/.config/modprobed-db.conf;
     ".config/monitors.xml".source = dump/.config/monitors.xml;
     ".config/monitors.xml".force = true;

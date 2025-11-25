@@ -5,6 +5,6 @@ with pkgs;
   appimage-run
   nix-your-shell
   sesh
-  tomato-c
+  # tomato-c
   xdg-terminal-exec
 ]

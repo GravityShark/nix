@@ -50,18 +50,18 @@
       ];
     };
 
-    tomato = {
-      name = "Tomato.C";
-      genericName = "Timer";
-      comment = "Edit text files";
-      icon = "tools-timer";
-      # tryExec = "nvim";
-      # exec = "ghostty -e nvim \"%F\"";
-      exec = "sesh connect \" TOmato 🍅\"";
-      terminal = true;
-      categories = [
-        "Utility"
-      ];
-    };
+    # tomato = {
+    #   name = "Tomato.C";
+    #   genericName = "Timer";
+    #   comment = "Edit text files";
+    #   icon = "tools-timer";
+    #   # tryExec = "nvim";
+    #   # exec = "ghostty -e nvim \"%F\"";
+    #   exec = "sesh connect \" TOmato 🍅\"";
+    #   terminal = true;
+    #   categories = [
+    #     "Utility"
+    #   ];
+    # };
   };
 }
