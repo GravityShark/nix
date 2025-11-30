@@ -3,23 +3,24 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  # lib,
+  lib,
   inputs,
   ...
 }:
 
 {
   # Allow unfree packages
-  # nixpkgs.config.allowUnfreePredicate =
-  #   pkg:
-  #   builtins.elem (lib.getName pkg) [
-  # "discord-canary"
-  # "nvidia-x11"
-  # "nvidia-settings"
-  # "zerotierone"
-  # "zoom"
-  # "teams"
-  # ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      # "discord-canary"
+      # "nvidia-settings"
+      # "nvidia-x11"
+      "obsidian"
+      # "teams"
+      # "zerotierone"
+      # "zoom"
+    ];
 
   imports = [
     # Gnome + Wayland + NVIDIA will not working until this issue has been fixed https://gitlab.gnome.org/GNOME/mutter/-/issues/2969
