@@ -2,9 +2,9 @@
 
 with pkgs;
 [
-  emacs
+  # emacs
   ghostty # Terminal
-  mcontrolcenter # MSI
+  # mcontrolcenter # MSI
 
   # File viewer
   evince # Documents

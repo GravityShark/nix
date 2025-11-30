@@ -106,5 +106,8 @@ n ur done, jus complete this checklist then reboot
    also its really slow for some reason
    - probably with [yazi](https://github.com/sxyazi/yazi)
    - im gonna try using oil.nvim
+     - oil really works tbh
 
 5. remove emacs for obsidian/obsi
+
+6. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or wait for sesh to update

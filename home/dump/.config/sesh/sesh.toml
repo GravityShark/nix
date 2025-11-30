@@ -4,57 +4,59 @@
 
 [default_session]
 startup_command = "l"
+preview_command = "eza --all --git --icons --color=always {}"
 # preview_command = "l"
 #
 # [default_session]
 # startup_command = "nvim -c ':Telescope find_files'"
 # preview_command = "eza --all --git --icons --color=always {}"
 
-[[session]]
-name = "COde 💻"
-path = "~/Code"
+# [[session]]
+# name = "COde 💻"
+# path = "~/Code"
+
+# [[session]]
+# name = "DOom emacs config  "
+# path = "~/.nix/home/dump/.doom.d/"
 
 [[session]]
-name = "DOom emacs config  "
-path = "~/.nix/home/dump/.doom.d/"
-
-[[session]]
-name = "NEovim config  "
+name = "neovim config"
 path = "~/.nix/home/dump/.config/nvim"
 startup_command = "git status"
 
-[[session]]
-name = "POrtage config 🧴"
-path = "~/.pumpfiles/root/etc/portage/"
+# [[session]]
+# name = "POrtage config 🧴"
+# path = "~/.pumpfiles/root/etc/portage/"
 
 [[session]]
-name = "NIx 󱄅"
+name = "nix"
+# name = "nix 󱄅"
 path = "~/.nix"
 startup_command = "git status"
 
 [[session]]
-name = "SCripts 📜 "
+name = "scripts"
 path = "~/.nix/home/dump/.scripts"
 
 [[session]]
-name = "SEsh config  "
+name = "sesh"
 path = "~/.nix/home/dump/.config/sesh"
-startup_command = "exec $EDITOR sesh.toml"
+startup_command = "$EDITOR sesh.toml"
 
 [[session]]
-name = "SSh 󰣀 "
+name = "ssh"
 startup_command = "exec ssh gravity@clr"
 
 [[session]]
-name = "TMux config  "
+name = "tmux"
 path = "~/.nix/home/dump"
 startup_command = "$EDITOR .tmux.conf"
 
 [[session]]
-name = "LIttle cool website" 
+name = "Little cool website" 
 path = "~/Code/coollittlewebsite"
 startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"
 
-[[session]]
-name = "TOmato 🍅" 
-startup_command = "exec tomato"
+# [[session]]
+# name = "TOmato 🍅" 
+# startup_command = "exec tomato"

@@ -41,6 +41,7 @@
     # snapshot
     # sysprof
     totem # Videos that doesnt even work
+    showtime
   ];
 
   xdg.terminal-exec.settings = {

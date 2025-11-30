@@ -7,7 +7,9 @@ sesh list -i -H | fzf-tmux -e --ansi -p 80%,80% \
         --bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
         --bind 'ctrl-f:change-prompt(  )+reload(ls -D1)' \
         --bind 'ctrl-k:execute(tmux kill-session -t $(echo {} | cut -c 5-))+change-prompt(⚡ )+reload(sesh list -iH)' \
-        --bind 'ctrl-r:execute(sesh connect --root .)'
+        --bind 'ctrl-r:execute(sesh connect --root .)' \
+        --preview-window 'right:55%' \
+        --preview 'sesh preview {}'
 
 # --bind 'ctrl-f:change-prompt(  )+reload(fd -H -cnever --type d | sed "s|^\./||")' \
 # --bind 'ctrl-f:change-prompt(  )+reload(fd -H -cnever --type d -x stat --format "%Y %n" | cut -d" " -f2- | sed "s|^\./||")' \
