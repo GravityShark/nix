@@ -5,6 +5,7 @@ with pkgs;
   # emacs
   ghostty # Terminal
   # mcontrolcenter # MSI
+  obsidian
 
   # File viewer
   evince # Documents
