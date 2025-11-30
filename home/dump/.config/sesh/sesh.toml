@@ -20,7 +20,7 @@ preview_command = "eza --all --git --icons --color=always {}"
 # path = "~/.nix/home/dump/.doom.d/"
 
 [[session]]
-name = "neovim config"
+name = "neovim"
 path = "~/.nix/home/dump/.config/nvim"
 startup_command = "git status"
 
