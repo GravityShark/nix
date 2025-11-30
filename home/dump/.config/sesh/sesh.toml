@@ -32,7 +32,6 @@ startup_command = "git status"
 name = "nix"
 # name = "nix 󱄅"
 path = "~/.nix"
-startup_command = "git status"
 
 [[session]]
 name = "scripts"
@@ -41,7 +40,8 @@ path = "~/.nix/home/dump/.scripts"
 [[session]]
 name = "sesh"
 path = "~/.nix/home/dump/.config/sesh"
-startup_command = "$EDITOR sesh.toml"
+startup_command = "$editor sesh.toml"
+preview_command = "cat sesh.toml"
 
 [[session]]
 name = "ssh"
@@ -51,6 +51,7 @@ startup_command = "exec ssh gravity@clr"
 name = "tmux"
 path = "~/.nix/home/dump"
 startup_command = "$EDITOR .tmux.conf"
+preview_command = "cat .tmux.conf"
 
 [[session]]
 name = "Little cool website" 
