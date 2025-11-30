@@ -3,6 +3,6 @@
 with pkgs;
 [
   aporetic
-  nerd-fonts.iosevka
+  # nerd-fonts.iosevka
   source-sans-pro
 ]
