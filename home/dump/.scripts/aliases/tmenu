@@ -10,19 +10,19 @@ TRANSFORMER='
   fi
 '
 
-sesh list -i -H | fzf-tmux -e --ansi -p 80%,80%
-
---no-sort --border-label " ${1:-sesh} " --prompt '⚡ ' \
-        --header '  ^a all ^t sessions ^f find ^k kill selected session ^r root' \
-        --bind 'tab:down,btab:up' \
-        --bind 'ctrl-a:change-prompt(⚡ )+reload(sesh list -iH)' \
-        --bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
-        --bind 'ctrl-f:change-prompt(  )+reload(ls -D1)' \
-        --bind 'ctrl-k:execute(tmux kill-session -t $(echo {} | cut -c 5-))+change-prompt(⚡ )+reload(sesh list -iH)' \
-        --bind 'ctrl-r:execute(sesh connect --root .)' \
-        --bind "start:transform($TRANSFORMER),resize:transform($TRANSFORMER)" \ # https://github.com/junegunn/fzf/issues/3817
---preview-window 'right:55%' \
-        --preview 'sesh preview {}'
+sesh list -i -H | fzf-tmux -e --ansi -p 80%,80% \
+  --no-sort --border-label " ${1:-sesh} " --prompt '⚡ ' \
+  --header '  ^a all ^t sessions ^f find ^k kill selected session ^r root' \
+  --bind 'tab:down,btab:up' \
+  --bind 'ctrl-a:change-prompt(⚡ )+reload(sesh list -iH)' \
+  --bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
+  --bind 'ctrl-f:change-prompt(  )+reload(ls -D1)' \
+  --bind 'ctrl-k:execute(tmux kill-session -t $(echo {} | cut -c 5-))+change-prompt(⚡ )+reload(sesh list -iH)' \
+  --bind 'ctrl-r:execute(sesh connect --root .)' \
+  --bind "start:transform($TRANSFORMER),resize:transform($TRANSFORMER)" \
+  --preview-window 'right:55%' \
+  --preview 'sesh preview {}'
+# https://github.com/junegunn/fzf/issues/3817
 
 # --bind 'ctrl-f:change-prompt(  )+reload(fd -H -cnever --type d | sed "s|^\./||")' \
 # --bind 'ctrl-f:change-prompt(  )+reload(fd -H -cnever --type d -x stat --format "%Y %n" | cut -d" " -f2- | sed "s|^\./||")' \
