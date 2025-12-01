@@ -6,7 +6,7 @@
 
   imports = [
     ./desktop.nix
-    ./emacs.nix
+    # ./emacs.nix
     ./gnome.nix
     ./keepassxc.nix
     ./mime.nix
