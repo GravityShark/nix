@@ -111,9 +111,12 @@ n ur done, jus complete this checklist then reboot
 5. remove emacs for obsidian/obsi
 
 6. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or wait for sesh to update
+
 7. new browser
-   - vieb
-   - vimb
-   - wyeb
-   - qutebrowser
-   - luakit
+   - vieb (electron)
+   - vimb (webkit2gtk)
+   - wyeb (webkit2gtk, 2months ago, ment to be used like suckless' surf)
+   - with tabbed
+   - qutebrowser (qtwebengine)
+   - luakit (webkit2gtk, 10 months ago, broke last time i used it)
+   - the main hurdle is that i really like mozilla sync, so i need an alternative
