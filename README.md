@@ -16,9 +16,9 @@
 
 ## installation
 
-> assuming that you like use the same user name (gravity) and also disk partitioning
+> assuming that you like use the same user name (gravity)
 
-1. install nixos from the gui setting up the partitions n reboot.
+1. install nixos from the gui setting up the partitions (preferably swap partition n reboot.
 
 2. now when you're in, enable flake capabilities
 
@@ -38,14 +38,13 @@ sudo nixos-rebuild switch
 ```bash
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
 ```
-
-- Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/system/hardware-configuration.nix`) and setup some [swap](https://nixos.wiki/wiki/Swap)
+- Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/system/hardware-configuration.nix`)
 
 4. then update
 
 ```bash
 nix flake update --flake ~/.nix
-sudo nixos-rebuild boot --flake ~/.nix
+sudo nixos-rebuild switch --flake ~/.nix
 home-manager switch --flake ~/.nix\?submodules=1
 ```
 

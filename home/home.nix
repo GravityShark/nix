@@ -64,10 +64,10 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "25.05"; # Please read the comment before changing.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # programs.home-manager.enable = true;
 
   # auto clean or smthn
   # services.home-manager.autoExpire.enable = true;

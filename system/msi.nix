@@ -1,4 +1,4 @@
-{...}:
+{config, ...}:
 
 {
   boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
