@@ -59,6 +59,7 @@ git config --local include.path ../.gitconfig
 
 cd ~/.nix/home/dump/.config/nvim/
 git switch master
+git config --local include.path ../../../../../home/dump/.config/nvim/.gitconfig
 ```
 
 n ur done, jus complete this checklist then reboot
