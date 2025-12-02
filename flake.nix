@@ -2,42 +2,40 @@
   description = "This is MY flake";
 
   inputs = {
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.3";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    # lanzaboote = {
+    #   url = "github:nix-community/lanzaboote/v0.4.3";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     {
       self,
-      nixpkgs-unstable,
+      nixpkgs,
       home-manager,
-      lanzaboote,
       zen-browser-flake,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs-unstable.legacyPackages.${system};
+      pkgs = nixpkgs.legacyPackages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs-unstable.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             ./system/configuration.nix
-            lanzaboote.nixosModules.lanzaboote
           ];
           specialArgs = {
             inherit inputs;

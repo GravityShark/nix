@@ -43,6 +43,29 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
+  # environment shit
+  environment = {
+    variables = {
+      EDITOR = "nvim";
+      SYSTEMD_EDITOR = "nvim";
+      VISUAL = "nvim";
+      GSK_RENDERER = "ngl";
+    };
+    # currengly making chromium run on wayland makes it load much slower
+    sessionVariables.NIXOS_OZONE_WL = "1"; # Make chromium run on wayland
+    sessionVariables.QT_QPA_PLATFORM = "wayland";
+    shells = with pkgs; [
+      bash
+      dash
+      mksh
+      fish
+    ];
+    binsh = "${pkgs.dash}/bin/dash";
+  };
+
+  # Long live the better posix shell
+  users.defaultUserShell = pkgs.mksh;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.gravity = {
     isNormalUser = true;
@@ -90,18 +113,9 @@ in
   ];
 
   # Use linux zen
-  #boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages = pkgs.linuxPackages;
   #boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
-  boot.kernelModules = [ "msi-ec" ];
-  systemd.tmpfiles.rules = [
-    "w /sys/devices/platform/msi-ec/webcam - - - - off"
-    "w /sys/devices/platform/msi-ec/shift_mode - - - - eco"
-    "w /sys/class/leds/msiacpi::kbd_backlight/brightness - - - - 0"
-    "w /sys/class/power_supply/BAT1/charge_control_start_threshold - - - - 50"
-    "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 60"
-  ];
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Hosts file
   networking = {
