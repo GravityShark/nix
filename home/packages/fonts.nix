@@ -5,6 +5,6 @@ with pkgs;
   aporetic
   arkpandora_ttf
   inter
-  liberation-fonts
+  liberation_ttf
   source-sans-pro
 ]
