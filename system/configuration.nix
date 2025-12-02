@@ -11,7 +11,7 @@
     #     rev = "7d9552ef6b02da7b8fafe426c0db5358ab8c4009";
     #   }
     # }/msi/gl65/10SDR-492"
-    # ./gnome.nix
+    ./gnome.nix
     ./hardware-configuration.nix
     ./kanata.nix
     # ./lanzaboote.nix

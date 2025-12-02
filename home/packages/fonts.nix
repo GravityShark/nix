@@ -3,7 +3,7 @@
 with pkgs;
 [
   aporetic
-  arkpandora
+  arkpandora_ttf
   inter
   liberation-fonts
   source-sans-pro
