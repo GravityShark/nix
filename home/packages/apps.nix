@@ -4,9 +4,8 @@ with pkgs;
 [
   anki
   normcap # better OCR
-  qbittorrent
-  vial
   # teams-for-linux
+  vial
   youtube-music
-  zen-browser.default
+  zen-browser.default # might want to try other browser
 ]

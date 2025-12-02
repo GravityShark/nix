@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  home.file.".config/run-or-raise".source = dump/.config/run-or-raise;
+
   home.packages = with pkgs; [
     gnome-epub-thumbnailer
     ffmpegthumbnailer

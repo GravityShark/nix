@@ -19,7 +19,9 @@ in
   boot.loader.timeout = 1;
 
   networking.hostName = "nixos"; # Define your hostname.
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -45,15 +47,11 @@ in
 
   # environment shit
   environment = {
-    variables = {
+    sessionVariables = {
       EDITOR = "nvim";
       SYSTEMD_EDITOR = "nvim";
       VISUAL = "nvim";
-      GSK_RENDERER = "ngl";
     };
-    # currengly making chromium run on wayland makes it load much slower
-    sessionVariables.NIXOS_OZONE_WL = "1"; # Make chromium run on wayland
-    sessionVariables.QT_QPA_PLATFORM = "wayland";
     shells = with pkgs; [
       bash
       dash

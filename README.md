@@ -4,7 +4,7 @@
 
 ## resources im using
 
-- looking stuff up
+- looking stuff ub
   - [NixOS Search](https://search.nixos.org)
   - [MyNixOS](https://mynixos.com/)
   - [google](https://www.google.com/) or [whatever privacy oriented search engine](https://search.brave.com)
@@ -38,6 +38,7 @@ sudo nixos-rebuild switch
 ```bash
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
 ```
+
 - Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/system/hardware-configuration.nix`)
 
 4. then update
@@ -110,3 +111,9 @@ n ur done, jus complete this checklist then reboot
 5. remove emacs for obsidian/obsi
 
 6. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or wait for sesh to update
+7. new browser
+   - vieb
+   - vimb
+   - wyeb
+   - qutebrowser
+   - luakit

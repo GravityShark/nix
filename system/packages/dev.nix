@@ -5,7 +5,6 @@ with pkgs;
   clang
   gnumake
   go
-  nodejs
+  # nodejs
   python3
-  # racket
 ]

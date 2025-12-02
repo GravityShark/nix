@@ -2,9 +2,10 @@
 
 with pkgs;
 [
-  appimage-run
+  # appimage-run
+  doas-sudo-shim
   nix-your-shell
   sesh
-  # tomato-c
+  # tomato-c # find something better
   xdg-terminal-exec
 ]

@@ -3,6 +3,8 @@
 with pkgs;
 [
   aporetic
-  # nerd-fonts.iosevka
+  arkpandora
+  inter
+  liberation-fonts
   source-sans-pro
 ]

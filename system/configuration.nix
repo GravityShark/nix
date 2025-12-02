@@ -1,27 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# man `configuration.nix(5)` or `nixos-help`
+
+{ lib, ... }:
 
 {
-  lib,
-  inputs,
-  ...
-}:
-
-{
-  # Allow unfree packages
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      # "discord-canary"
-      # "nvidia-settings"
-      # "nvidia-x11"
-      "obsidian"
-      # "teams"
-      # "zerotierone"
-      # "zoom"
-    ];
-
   imports = [
     # Gnome + Wayland + NVIDIA will not work until this issue has been fixed https://gitlab.gnome.org/GNOME/mutter/-/issues/2969
     # "${
@@ -30,40 +11,29 @@
     #     rev = "7d9552ef6b02da7b8fafe426c0db5358ab8c4009";
     #   }
     # }/msi/gl65/10SDR-492"
-    # ./nvidia.nix
-    ./msi.nix
-    ./gnome.nix
+    # ./gnome.nix
     ./hardware-configuration.nix
     ./kanata.nix
     # ./lanzaboote.nix
+    ./msi.nix
+    # ./nvidia.nix
     ./packages.nix
     ./services.nix
     ./system.nix
   ];
 
-  # system.autoUpgrade = {
-  #   enable = true;
-  #   flake = inputs.self.outPath;
-  #   flags = [
-  #     "--update-input"
-  #     "nixpkgs"
-  #     "--commit-lock-file"
-  #     "-L" # print build logs
-  #   ];
-  #   dates = "02:00";
-  #   randomizedDelaySec = "45min";
-  # };
-
-  # Optimise package sizes
-  # nix.optimise.automatic = true;
-  # nix.optimise.dates = [ "01:30" ];
-
-  # Garbage collection
-  # nix.gc = {
-  #   automatic = true;
-  #   dates = "01:00";
-  #   options = "--delete-older-than 5d";
-  # };
+  # Allow unfree packages
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      # "discord-canary"
+      "nvidia-settings"
+      "nvidia-x11"
+      "obsidian"
+      # "teams"
+      # "zerotierone"
+      # "zoom"
+    ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -76,8 +46,14 @@
   # For somereason /dev/null is NOT being properly permissionisezed
   # system.activationScripts.chmod-dev-null.text = "chmod 777 /dev/null";
 
+  # systemd.services."chmod" = {
+  #   script = ''
+  #     chmod 777 /dev/null
+  #   '';
+  #   wantedBy = [ "multi-user.target" ];
+  # };
+
   nix.settings.download-buffer-size = 500000000;
-  # gettin flakey
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

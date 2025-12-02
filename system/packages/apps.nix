@@ -2,14 +2,14 @@
 
 with pkgs;
 [
-  # emacs
   ghostty # Terminal
   # mcontrolcenter # MSI
-  obsidian
+  obsidian # r7l overlay
+  qbittorrent
 
   # File viewer
-  evince # Documents
-  foliate # Epub
+  # evince # Documents
+  # foliate # Epub
   vlc # Videos + Music
 
   # Media creation
@@ -20,7 +20,7 @@ with pkgs;
 
   # School
   onlyoffice-desktopeditors
-  pdfarranger
+  # pdfarranger
   # telegram-desktop
   # zoom-us
 ]

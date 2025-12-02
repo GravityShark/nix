@@ -5,7 +5,6 @@ with pkgs;
   # CLIs
   # bc
   dash
-  doas-sudo-shim
   efibootmgr
   eza
   fastfetch
@@ -20,8 +19,5 @@ with pkgs;
   ripgrep
   tmux
   unzip
-  wl-clipboard
-  # yt-dlp
-  # ytfzf
   zoxide
 ]

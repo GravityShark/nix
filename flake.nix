@@ -44,7 +44,7 @@
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/home.nix ];
+        modules = [ ./home/configuration.nix ];
         extraSpecialArgs = {
           inherit zen-browser;
         };

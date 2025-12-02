@@ -25,7 +25,7 @@
       # tryExec = "nvim";
       # exec = "ghostty -e nvim \"%F\"";
       # exec = "tmux new-session \"exec nvim \"%F\" \"";
-      exec = "nvim \"%F\"";
+      exec = "nvim %F";
       terminal = true;
       categories = [
         "Utility"
