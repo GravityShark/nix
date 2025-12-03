@@ -12,7 +12,6 @@ This is the step by step for my dementia ahh to remember what to do next.
 
 ## Settings
 
-1. General > Browsing > Use smooth scrolling
 2. General > Startup > Continue where you left off + Open previous windows and tabs
 3. General > Ctrl+Tab cycles through tabs in recently used order
 4. Right click on the bar and turn on "Tabs on the right"
