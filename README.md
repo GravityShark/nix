@@ -74,6 +74,7 @@ n ur done, jus complete this checklist then reboot
 
 1. for updating use `updatescript`
    - For doom emacs just do a `doom env`, and if you want an actual update do `doom upgrade` (which already also does doom env) but you barely want to do this if it wokrs it wokrs type ish
+   - if you are tryna build without internet, use the `--option substitute false` option for nixos-rebuild, and `--no-substitute` for home-manager
 2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
    - and also clean up doom emacs too `doom gc`
 
