@@ -41,7 +41,10 @@
           inherit system;
           modules = [
             ./system/configuration.nix
-            inputs.mangowc.nixosModules.default
+            inputs.mangowc.nixosModules.mango
+            {
+              programs.mango.enable = true;
+            }
           ];
           specialArgs = {
             inherit inputs;
