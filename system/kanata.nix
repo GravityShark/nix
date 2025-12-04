@@ -96,17 +96,17 @@
           )
 
           (deflayer nav
-                  vold  ret  esc  A-tab volu    home pgdn pgup end  caps   _
-                  @osm  @osa @oss @osc  C-tab   left down up   rght tab    _
-            prtsc XX   XX   lmet  bspc  XX      grv  bspc del  menu Insert    _
+            XX     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
+            @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
+            prtsc  XX    XX    lmet   vold   XX  grv   bspc  del   menu  Insert _
             _     ret @num XX XX
           )
 
           (deflayer sym
-            ,    S-grv    S-3    S-4    S-5    S-7  S-[    [    ]    S-,    _
-            S-6    S-'    S-.    ;    S-8    S-]    @osc   @oss @osa    @osm    _
-            S-= S-\    S-2    /    \ XX    .    S-9    = -    S-0   _
-            @num   S-;    _     XX XX
+            S-grv  S-2   S-3   S-4  S-5      S-7  [     S-[   S-]   ]     _
+            S-6    S-'   S-.   ;    S-8      \    @osc  @oss  @osa  @osm  _
+            +      S-\   S-,   /    ,    XX  .    S-9   =     -     S-0   _
+            @num   S-;   _     XX XX
           )
 
           (deflayer num

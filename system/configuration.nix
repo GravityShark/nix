@@ -5,18 +5,19 @@
 {
   imports = [
     # Gnome + Wayland + NVIDIA will not work until this issue has been fixed https://gitlab.gnome.org/GNOME/mutter/-/issues/2969
-    # "${
-    #   builtins.fetchGit {
-    #     url = "https://github.com/NixOS/nixos-hardware.git";
-    #     rev = "7d9552ef6b02da7b8fafe426c0db5358ab8c4009";
-    #   }
-    # }/msi/gl65/10SDR-492"
+    "${
+      builtins.fetchGit {
+        url = "https://github.com/NixOS/nixos-hardware.git";
+        rev = "7d9552ef6b02da7b8fafe426c0db5358ab8c4009";
+      }
+    }/msi/gl65/10SDR-492"
     ./gnome.nix
     ./hardware-configuration.nix
     ./kanata.nix
     # ./lanzaboote.nix
     ./msi.nix
-    # ./nvidia.nix
+    ./nvidia2.nix
+    ./mangowc.nix
     ./packages.nix
     ./services.nix
     ./system.nix

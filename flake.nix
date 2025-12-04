@@ -11,6 +11,10 @@
     #   url = "github:nix-community/lanzaboote/v0.4.3";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
+    mangowc = {
+      url = "github:DreamMaoMao/mangowc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +26,7 @@
       self,
       nixpkgs,
       home-manager,
+      mangowc,
       zen-browser-flake,
       ...
     }@inputs:
@@ -36,6 +41,7 @@
           inherit system;
           modules = [
             ./system/configuration.nix
+            mangowc.nixosModules.default
           ];
           specialArgs = {
             inherit inputs;
