@@ -41,7 +41,7 @@
           inherit system;
           modules = [
             ./system/configuration.nix
-            mangowc.nixosModules.default
+            inputs.mangowc.nixosModules.default
           ];
           specialArgs = {
             inherit inputs;
