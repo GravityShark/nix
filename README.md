@@ -122,3 +122,5 @@ n ur done, jus complete this checklist then reboot
    - qutebrowser (qtwebengine)
    - luakit (webkit2gtk, 10 months ago, broke last time i used it)
    - the main hurdle is that i really like mozilla sync, so i need an alternative
+
+8. KDE Connect
