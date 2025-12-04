@@ -15,9 +15,9 @@
     ./hardware-configuration.nix
     ./kanata.nix
     # ./lanzaboote.nix
+    ./mangowc.nix
     ./msi.nix
     ./nvidia2.nix
-    ./mangowc.nix
     ./packages.nix
     ./services.nix
     ./system.nix

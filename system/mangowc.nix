@@ -1,7 +1,7 @@
-{ mangowc, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  programs.mangowc.enable = true;
+  programs.mango.enable = true;
 
   environment.systemPackages = with pkgs; [
     wmenu
