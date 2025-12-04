@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ mangowc, pkgs, ... }:
 
 {
   programs.mangowc.enable = true;
