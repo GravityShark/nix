@@ -4,7 +4,7 @@
   # Ly display manager
   services.displayManager.ly = {
     enable = true;
-    setting = {
+    settings = {
       # Session name to launch automatically
       # To find available session names, check the .desktop files in:
       #   - /usr/share/xsessions/ (for X11 sessions)
