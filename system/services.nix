@@ -2,13 +2,7 @@
 
 {
   services.thermald.enable = true;
-
-  # tlp
-  services.tlp = {
-    enable = true;
-  };
-
-  # sTimming
+  services.tlp.enable = true;
   services.fstrim.enable = true;
 
   # ssh agent

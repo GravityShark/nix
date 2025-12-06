@@ -14,8 +14,10 @@
     # ./gnome.nix
     # ./nvidia2.nix
 
+    # ./mangowc.nix
+
     # ./intel.nix
-    ./mangowc.nix
+    ./dwl.nix
     ./nvidia.nix
 
     ./hardware-configuration.nix

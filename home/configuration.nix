@@ -8,7 +8,7 @@
 
   imports = [
     # ./gnome.nix
-    ./mangowc.nix
+    # ./mangowc.nix
 
     ./desktop.nix
     # ./emacs.nix

@@ -60,7 +60,10 @@ git config --local include.path ../.gitconfig
 cd ~/.nix/home/dump/.config/nvim/
 git switch master
 git config --local include.path ../../../../../home/dump/.config/nvim/.gitconfig
-```
+
+# and dwl-patches
+cd ~/.nix/system/packages/dwl-conf-patches
+git config --local include.path ../../../../../system/packages/dwl-conf-patches/.gitconfig
 
 n ur done, jus complete this checklist then reboot
 
@@ -124,3 +127,4 @@ n ur done, jus complete this checklist then reboot
    - the main hurdle is that i really like mozilla sync, so i need an alternative
 
 8. KDE Connect
+```

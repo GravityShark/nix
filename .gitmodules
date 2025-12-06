@@ -2,3 +2,6 @@
 	path = home/dump/.config/nvim
 	url = https://github.com/GravityShark/nvim-kick
 	branch = master
+[submodule "system/packages/dwl-conf-patches"]
+	path = system/packages/dwl-conf-patches
+	url = https://github.com/GravityShark/dwl-conf-patches.git
