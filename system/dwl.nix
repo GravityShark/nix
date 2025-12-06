@@ -3,7 +3,7 @@
 {
   nixpkgs.overlays = [
     (final: prev: {
-      dwl = prev.dwl.overrideAttrs { patches = [ ./packages/dwl-conf-patches/ ]; };
+      dwl = prev.dwl.overrideAttrs { patches = [ ./packages/dwl-conf-patches/patches/bar/bar.patch ]; };
     })
   ];
 
