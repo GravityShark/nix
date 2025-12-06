@@ -1,20 +1,8 @@
-{ pkgs, ... }:
-let
-  patches = builtins.fetchGit {
-    url = "https://github.com/GravityShark/dwl-conf-patches";
-    rev = "506f5b12eb12dadd7e8327012d30596baeb1560d";
-  };
-  # configH = builtins.path {
-  #   path = "${patches}/config.h";
-  # };
-in
+{ dwl-grav, pkgs, ... }:
 {
-  nixpkgs.overlays = [
-    (final: prev: { dwl = prev.dwl.override { configH = builtins.readFile "${patches}/config.h"; }; })
-  ];
 
   environment.systemPackages = with pkgs; [
-    dwl
+    dwl-grav.defaults
     wmenu
     wl-clipboard
     grim

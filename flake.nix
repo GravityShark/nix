@@ -11,6 +11,10 @@
     #   url = "github:nix-community/lanzaboote/v0.4.3";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
+    dwl-conf-patches = {
+      url = "github:GravityShark/dwl-conf-patches";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,12 +26,14 @@
       home-manager,
       nixpkgs,
       self,
+      dwl-conf-patches,
       zen-browser-flake,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      dwl-grav = dwl-conf-patches.packages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
@@ -39,6 +45,7 @@
           ];
           specialArgs = {
             inherit inputs;
+            inherit dwl-grav;
           };
         };
       };
