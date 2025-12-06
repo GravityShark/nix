@@ -7,7 +7,7 @@ let
 in
 {
   nixpkgs.overlays = [
-    (final: prev: { dwl = prev.dwl.override { configH = patches + "/config.h"; }; })
+    (final: prev: { dwl = prev.dwl.override { configH = patches; }; })
   ];
 
   environment.systemPackages = with pkgs; [
