@@ -1,15 +1,8 @@
 { ... }:
 
 {
-  xdg.autostart.enable = true;
-  services.gpg-agent = {
-    enable = true;
-    enableSshSupport = true;
-  };
-
   programs.keepassxc = {
     enable = true;
-    autostart = true;
 
     settings = {
       General = {

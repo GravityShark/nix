@@ -11,6 +11,9 @@
   # sTimming
   services.fstrim.enable = true;
 
+  # ssh agent
+  programs.ssh.startAgent = true;
+
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
