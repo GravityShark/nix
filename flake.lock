@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "dwl-conf-patches": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765062537,
+        "narHash": "sha256-C/sF0wT5rgHSRCx7ZDaBET1eUpfhaI6IWN2lep72S68=",
+        "owner": "GravityShark",
+        "repo": "dwl-conf-patches",
+        "rev": "7aaf6116d4198f499059c85495baa755979cf45d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "GravityShark",
+        "repo": "dwl-conf-patches",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -39,6 +59,7 @@
     },
     "root": {
       "inputs": {
+        "dwl-conf-patches": "dwl-conf-patches",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "zen-browser-flake": "zen-browser-flake"
