@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   discord = pkgs.fetchurl {
@@ -81,7 +81,7 @@ in
       mksh
       fish
     ];
-    binsh = "${pkgs.dash}/bin/dash";
+    binsh = lib.mkForce "${pkgs.dash}/bin/dash";
   };
 
   # Long live the better posix shell
