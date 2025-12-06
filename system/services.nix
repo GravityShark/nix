@@ -1,57 +1,15 @@
 { ... }:
 
 {
-  # Ly display manager
-  services.displayManager.ly = {
-    enable = true;
-    settings = {
-      # Session name to launch automatically
-      # To find available session names, check the .desktop files in:
-      #   - /usr/share/xsessions/ (for X11 sessions)
-      #   - /usr/share/wayland-sessions/ (for Wayland sessions)
-      # Use the filename without .desktop extension, or the value of DesktopNames field
-      # Examples: "i3", "sway", "gnome", "plasma", "xfce"
-      # If null, automatic login is disabled
-      auto_login_session = "mango";
+  services.thermald.enable = true;
 
-      # Username to automatically log in
-      # Must be a valid user on the system
-      # If null, automatic login is disabled
-      auto_login_user = "gravity";
-    };
+  # tlp
+  services.tlp = {
+    enable = true;
   };
 
-  # GDM display manager
-  # services.displayManager.gdm.enable = true;
-
-  # Enable automatic login for the user.
-  # services.displayManager.autoLogin.enable = true;
-  # services.displayManager.autoLogin.user = "gravity";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
-
-  # GnuPG
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  # Vial udev rule
-  # https://get.vial.today/manual/linux-udev.html
-  services.udev.extraRules = ''
-    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
-  '';
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
+  # sTimming
+  services.fstrim.enable = true;
 
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;

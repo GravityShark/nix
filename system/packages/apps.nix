@@ -3,6 +3,7 @@
 with pkgs;
 [
   ghostty # Terminal
+  foot
   # mcontrolcenter # MSI
   obsidian # r7l overlay
   qbittorrent

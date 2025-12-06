@@ -41,6 +41,6 @@
 
   # Automatic font cache update
   home.activation.updateFontCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.fontconfig}/bin/fc-cache -f || echo "fc-cache failed, continuing anyway"
+    ${pkgs.fontconfig}/bin/fc-cache -f || echo "fc-cache failed"
   '';
 }

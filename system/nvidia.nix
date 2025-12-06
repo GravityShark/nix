@@ -10,46 +10,53 @@
     extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
 
-  # services.xserver.videoDrivers = [
-  #   "modesetting"
-  #   "nvidia"
-  # ];
+  services.xserver.videoDrivers = [
+    "nvidia"
+    "modesetting"
+  ];
 
+  # services.tlp.settings = {
+  #   sound_power_save_on_ac = 1;
+  #   sound_power_save_on_bat = 1;
+  #   runtime_pm_enable = "02:00.0";
+  # };
+
+  # https://wiki.archlinux.org/title/PRIME#NVIDIA
+  # https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend
+  services.udev.extraRules = ''
+    # Enable runtime PM for NVIDIA VGA/3D controller devices on driver bind
+    ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
+    ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
+
+    # Disable runtime PM for NVIDIA VGA/3D controller devices on driver unbind
+    ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="on"
+    ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"
+
+    # Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
+    # ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
+    # ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
+  '';
+  boot.extraModprobeConfig = ''
+    options nvidia "NVreg_DynamicPowerManagement=0x02"
+    options nvidia "NVreg_EnableGpuFirmware=0"
+  '';
+  # This actually breaks suspend
+  # options nvidia "NVreg_PreserveVideoMemoryAllocations=1"
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    modesetting.enable = true;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of
-    # supported GPUs is at:
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
-    # Only available from driver 515.43.04+
-    open = true;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.enable = true;
-    powerManagement.finegrained = true;
-
-    # Enable the Nvidia settings menu,
-    # accessible via `nvidia-settings`.
-    nvidiaSettings = false;
-
+    nvidiaPersistenced = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    # NOOOO
+    # https://bbs.archlinux.org/viewtopic.php?pid=2187680#p2187680
+    open = false;
     prime = {
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:2:0:0";
 
+      # sync.enable = true;
       offload = {
         enable = true;
         enableOffloadCmd = true;
       };
-
-      # sync.enable = true;
-      # reverseSync.enable = true;
-      # Enable if using an external GPU
-      # allowExternalGpu = false;
     };
   };
 }

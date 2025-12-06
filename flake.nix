@@ -23,10 +23,9 @@
 
   outputs =
     {
-      self,
-      nixpkgs,
       home-manager,
-      mangowc,
+      nixpkgs,
+      self,
       zen-browser-flake,
       ...
     }@inputs:

@@ -7,9 +7,11 @@
   # programs.home-manager.enable = true;
 
   imports = [
+    # ./gnome.nix
+    ./mangowc.nix
+
     ./desktop.nix
     # ./emacs.nix
-    ./gnome.nix
     ./home.nix
     ./keepassxc.nix
     # ./mime.nix
