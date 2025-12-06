@@ -60,15 +60,11 @@ git config --local include.path ../.gitconfig
 cd ~/.nix/home/dump/.config/nvim/
 git switch master
 git config --local include.path ../../../../../home/dump/.config/nvim/.gitconfig
-
-# and dwl-patches
-cd ~/.nix/system/packages/dwl-conf-patches
-git config --local include.path ../../../../../system/packages/dwl-conf-patches/.gitconfig
+```
 
 n ur done, jus complete this checklist then reboot
 
 - [ ] sync the browser, and [extensions](./home/dump/README.md)
-- [ ] [setup doom emacs](./home/dump/README.md)
 - [ ] Redownload and setup some wallpapers or something
   - [Distrotube](https://gitlab.com/dwt1/wallpapers)
   - Rosepine ([1](https://github.com/rose-pine/wallpapers), [2](https://wallhaven.cc/tag/162505), or just [google](https://www.google.com/search?q=rose+pine+wallpaper&tbs=imgo:1&udm=2) [it](https://duckduckgo.com/?t=h_&q=rose+pine+wallpaper&ia=images&iax=images))
@@ -84,6 +80,7 @@ n ur done, jus complete this checklist then reboot
 ## future ventures
 
 1. [quickshell](https://quickshell.outfoxxed.me/) seems to be goated, if added with like a very minimal window manager
+   https://github.com/AvengeMedia/DankMaterialShell
 
 2. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake because it's the only working caprine fork for me
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
@@ -112,6 +109,9 @@ n ur done, jus complete this checklist then reboot
    - probably with [yazi](https://github.com/sxyazi/yazi)
    - im gonna try using oil.nvim
      - oil really works tbh
+     - the only 2 things that is missing oil for me
+       1. follow tree view (fyler could work but buggy rn)
+       2. exit cd, but its all good
 
 5. remove emacs for obsidian/obsi
 
@@ -127,4 +127,7 @@ n ur done, jus complete this checklist then reboot
    - the main hurdle is that i really like mozilla sync, so i need an alternative
 
 8. KDE Connect
+
+```
+
 ```
