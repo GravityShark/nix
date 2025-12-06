@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765062779,
-        "narHash": "sha256-k4/wC4YDPtu/SMrGV+/T88ns/S4/XhNCDtgEaW8AP70=",
+        "lastModified": 1765063888,
+        "narHash": "sha256-5EqfUzvEBULy1J5YWZLGkiNT7N93ypzzE84qTtDsheQ=",
         "owner": "GravityShark",
         "repo": "dwl-conf-patches",
-        "rev": "3e342a9faf5dc35fbea6ee77e5d78a7204bc8018",
+        "rev": "44e1bff30d7009bb7b9d44d1b7bf6f16ff771996",
         "type": "github"
       },
       "original": {
