@@ -1,14 +1,25 @@
 { pkgs, ... }:
 
+let
+  dwl-patched =
+    (pkgs.dwl.override {
+      configH = ./system/packages/dwl-conf-patches/config.h;
+    }).overrideAttrs
+      {
+        patches = [
+          ./packages/dwl-conf-patches/patches/bar/bar.patch
+        ];
+      };
+in
 {
   nixpkgs.overlays = [
     (final: prev: {
-      dwl = prev.dwl.overrideAttrs { patches = [ ./packages/dwl-conf-patches/patches/bar/bar.patch ]; };
+      dwl = prev.dwl.overrideAttrs { patches = [ ]; };
     })
   ];
 
   environment.systemPackages = with pkgs; [
-    dwl
+    dwl-patched
     wmenu
     wl-clipboard
     grim
