@@ -7,7 +7,7 @@ let
     }).overrideAttrs
       {
         patches = [
-          ./packages/dwl-conf-patches/patches/bar/bar.patch
+          ./system/packages/dwl-conf-patches/patches/bar/bar.patch
         ];
       };
 in
