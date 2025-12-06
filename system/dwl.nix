@@ -2,7 +2,7 @@
 let
   patches = builtins.fetchGit {
     url = "https://github.com/GravityShark/dwl-conf-patches";
-    rev = "main";
+    # rev = "main";
   };
 in
 {
