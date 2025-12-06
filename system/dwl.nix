@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      dwl = prev.dwl.overrideAttrs { patches = [ ./packages/dwl-conf-patches/ ]; };
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
     dwl
     wmenu
