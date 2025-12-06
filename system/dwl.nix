@@ -2,7 +2,7 @@
 {
 
   environment.systemPackages = with pkgs; [
-    dwl-grav.defaults
+    dwl-grav.default
     wmenu
     wl-clipboard
     grim
