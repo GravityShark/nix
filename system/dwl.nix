@@ -2,12 +2,12 @@
 let
   patches = builtins.fetchGit {
     url = "https://github.com/GravityShark/dwl-conf-patches";
-    rev = "4d14d67a3bd9cdf9a683645bf5f74e94e40055ef";
+    rev = "506f5b12eb12dadd7e8327012d30596baeb1560d";
   };
 in
 {
   nixpkgs.overlays = [
-    (final: prev: { dwl = prev.dwl.override { configH = "${patches}/config.h"; }; })
+    (final: prev: { dwl = prev.dwl.override { configH = builtins.toPath "${patches}/config.h"; }; })
   ];
 
   environment.systemPackages = with pkgs; [
