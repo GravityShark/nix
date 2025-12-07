@@ -103,6 +103,7 @@ n ur done, jus complete this checklist then reboot
    - the most important issues i dont know how to solve are:
      1. how would i be able to switch to tags efficiently
         - lowkey i forgot i have run or raise
+   -
 
 4. maybe replace joshuto cause it sucks and doesn't work within tmux, and also
    also its really slow for some reason
