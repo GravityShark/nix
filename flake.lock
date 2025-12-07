@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "dwl-conf-patches": {
+    "dwl-grav-flake": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -10,13 +10,13 @@
         "lastModified": 1765093913,
         "narHash": "sha256-V5QhBJj+r/jTJrBR+BsKwQA/ojMCyYPVibE8wO0M0b4=",
         "owner": "GravityShark",
-        "repo": "dwl-conf-patches",
+        "repo": "dwl-grav",
         "rev": "89a2a85084132ddee0d615f61c1233e3c4196ad5",
         "type": "github"
       },
       "original": {
         "owner": "GravityShark",
-        "repo": "dwl-conf-patches",
+        "repo": "dwl-grav",
         "type": "github"
       }
     },
@@ -59,7 +59,7 @@
     },
     "root": {
       "inputs": {
-        "dwl-conf-patches": "dwl-conf-patches",
+        "dwl-grav-flake": "dwl-grav-flake",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "zen-browser-flake": "zen-browser-flake"
