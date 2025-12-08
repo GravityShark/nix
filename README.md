@@ -86,7 +86,6 @@ n ur done, jus complete this checklist then reboot
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
 
 3. create your own window manager using [dwl](https://codeberg.org/dwl/dwl)
-   - probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
    - my ideal setup would probably be something like 1 application per
      tag/workspace. each new application open in a new tag automatically, also
      you auto focus on it. but new windows of the same application stay
@@ -130,5 +129,6 @@ n ur done, jus complete this checklist then reboot
 8. KDE Connect
 
 ```
+9. - probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
 
 ```
