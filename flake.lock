@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765207402,
-        "narHash": "sha256-Win8kg+lVafJr661HWEsh7OC7dmocm27t48hTBBYn8s=",
+        "lastModified": 1765208279,
+        "narHash": "sha256-Zq/cIxa6Kuxlb2+kO7ZlaHYc63rtqSCJlXnmg8IhGZg=",
         "owner": "GravityShark",
         "repo": "dwl-grav",
-        "rev": "176705f936b4ef028bc24148771d8d3532ef20e6",
+        "rev": "84eef235abf6fdc26bdb280d4f5fafc55275199e",
         "type": "github"
       },
       "original": {
