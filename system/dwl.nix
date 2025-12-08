@@ -21,8 +21,8 @@
       };
 
       default_session = {
-        command = "dwl";
-        user = "gravity";
+        command = "agreety --cmd dwl";
+        user = "greeter";
       };
     };
   };
