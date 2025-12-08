@@ -7,15 +7,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1765179434,
-        "narHash": "sha256-BZ/eKprElQZTSUqAPEZOeqtHr9sgfckz9Le6Jl338jU=",
+        "lastModified": 1765195799,
+        "narHash": "sha256-ufp2ZpqONZYBld2kiZF98mcFwoiRpTANQvc0TbuPZaU=",
         "owner": "GravityShark",
         "repo": "dwl-grav",
-        "rev": "3ec81b933ffa3d17599f3c10c28cba2b01ff5409",
+        "rev": "47fa856afc4fb9d2af974b013cdbbf4b7a210c71",
         "type": "github"
       },
       "original": {
         "owner": "GravityShark",
+        "ref": "foreign-toplevel-management",
         "repo": "dwl-grav",
         "type": "github"
       }
