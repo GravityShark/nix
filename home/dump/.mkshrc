@@ -19,6 +19,6 @@ export GOSUMDB=sum.golang.org
 # [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ] && exec startx
 
 # Fish shell is my actual shell
-if command -v fish; then
-        SHELL=$(which fish) exec fish
+if SH=$(which fish); then
+        SHELL=$SH exec fish
 fi
