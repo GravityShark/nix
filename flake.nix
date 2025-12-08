@@ -12,7 +12,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
     dwl-grav-flake = {
-      url = "github:GravityShark/dwl-grav/foreign-toplevel-management";
+      url = "github:GravityShark/dwl-grav/spawnorfocus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser-flake = {
