@@ -78,7 +78,7 @@
           (deflayer base
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
-            @oss    _    _    _    _    _    _    _    _    _   _   @osrs
+            _    _    _    _    _    _    _    _    _    _   _   _
             @nav    _    @sym    @mc    @ruckus
           )
 
@@ -99,7 +99,7 @@
           (deflayer nav
             XX     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
             @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
-            prtsc  XX    XX    lmet   vold   XX  grv   bspc  del   menu  Insert _
+            prtsc  XX    XX    C-esc   vold   XX  grv   bspc  del   menu  Insert _
             _     ret @num XX XX
           )
 

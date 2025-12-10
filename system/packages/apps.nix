@@ -2,15 +2,13 @@
 
 with pkgs;
 [
-  ghostty # Terminal
-  foot
-  # mcontrolcenter # MSI
+  mcontrolcenter # MSI
   obsidian # r7l overlay
   qbittorrent
 
   # File viewer
-  # evince # Documents
-  # foliate # Epub
+  evince # Documents
+  foliate # Epub
   vlc # Videos + Music
 
   # Media creation

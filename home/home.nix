@@ -15,7 +15,6 @@
     ".config/fish/conf.d".source = dump/.config/fish/conf.d;
     ".config/fish/config.fish".source = dump/.config/fish/config.fish;
     ".config/fish/functions".source = dump/.config/fish/functions;
-    ".config/ghostty".source = dump/.config/ghostty;
     # ".config/monitors.xml".force = true;
     # ".config/monitors.xml".source = dump/.config/monitors.xml;
     ".config/nvim/after".source = dump/.config/nvim/after;

@@ -2,7 +2,7 @@
 
 {
   # Power
-  services.thermald.enable = true;
+  services.thermald.enable = false; # test this later
   services.tlp.enable = true;
   services.fstrim.enable = true;
 

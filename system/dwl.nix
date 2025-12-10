@@ -8,11 +8,13 @@ in
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    sway
+    dwl
     greetd
-    labwc
     grim
+    htop
+    labwc
     slurp
+    sway
     swaybg
     wiremix
     wl-clipboard

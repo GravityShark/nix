@@ -19,7 +19,7 @@
     ./dwl.nix
 
     ./hardware-configuration.nix
-    ./kanata.nix
+    # ./kanata.nix
     # ./lanzaboote.nix
     ./msi.nix
     ./nvidia.nix
