@@ -48,6 +48,7 @@
             nav  (layer-toggle nav)
             sym  (layer-toggle sym)
             num  (layer-toggle num)
+            fun  (layer-toggle fun)
 
             oss (one-shot 5000 lsft)
             osrs (one-shot 5000 rsft)
@@ -105,7 +106,7 @@
           (deflayer sym
             S-grv  S-2   S-3   S-4  S-5      S-7  [     S-[   S-]   ]     _
             S-6    S-'   S-.   ;    S-8      \    @osc  @oss  @osa  @osm  _
-            +      S-\   S-,   /    ,    XX  .    S-9   =     -     S-0   _
+            +      S-\   S-,   /    ,    XX  .    S-9   =     -    S-0   _
             @num   S-;   _     XX XX
           )
 
@@ -113,6 +114,13 @@
             XX  F11 up  C-a     XX XX    7    8    9    _    _
             @osm @osa @oss @osc XX XX    4    5    6    0    _
             F5  XX  XX  down XX XX XX    1    2    3    _    _
+            _   XX  XX _   XX
+          )
+
+          (deflayer fun
+            XX   XX   XX   XX   XX       F12    F7    F8    F9    _    _ 
+            @osm @osa @oss @osc XX       F11    F4    F5    F6    _    _
+            XX   XX   XX   XX   XX  XX   F10    F1    F2    F3    _    _
             _   XX  XX _   XX
           )
         '';

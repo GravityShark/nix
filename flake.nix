@@ -11,6 +11,10 @@
     #   url = "github:nix-community/lanzaboote/v0.4.3";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
+    mango = {
+      url = "github:DreamMaoMao/mangowc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dwl-grav-flake = {
       url = "github:GravityShark/dwl-grav/spawnorfocus";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +46,7 @@
           inherit system;
           modules = [
             ./system/configuration.nix
+            inputs.mango.nixosModules.mango
           ];
           specialArgs = {
             inherit inputs;

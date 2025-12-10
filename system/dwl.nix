@@ -1,27 +1,44 @@
-{ dwl-grav, pkgs, ... }:
 {
+  dwl-grav,
+  pkgs,
+  ...
+}:
+
+let
+  wc = "sway";
+in
+{
+  programs.mango.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
+    brightnessctl
     dwl-grav.default
-    wmenu
-    wl-clipboard
+    sway
+    greetd
+    niri
     grim
     slurp
     swaybg
-    brightnessctl
+    wiremix
+    wl-clipboard
+    wmenu
   ];
 
   services.greetd = {
-    enable = true;
+    enable = false;
     settings = {
       terminal.vt = 1;
       initial_session = {
-        command = "dwl";
+        command = "${wc}";
         user = "gravity";
       };
 
       default_session = {
-        command = "agreety --cmd dwl";
+        command = "${pkgs.greetd}/bin/agreety --cmd ${wc}";
         user = "greeter";
       };
     };
