@@ -21,7 +21,7 @@
     ./hardware-configuration.nix
     # ./kanata.nix
     # ./lanzaboote.nix
-    ./msi.nix
+    # ./msi.nix
     ./nvidia.nix
     ./packages.nix
     ./services.nix

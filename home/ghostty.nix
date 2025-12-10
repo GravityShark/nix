@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.ghostty = {
@@ -16,6 +16,22 @@
     };
   };
 
-  systemd.user.services."app-com.mitchellh.ghostty".enable = true;
+  systemd.user.services.ghostty = {
+    Unit = {
+      Description = "Ghostty";
+      After = [
+        "graphical-session.target"
+        "dbus.socket"
+      ];
+      Requires = [ "dbus.socket" ];
+    };
+    Service = {
+      Type = "notify-reload";
+      ReloadSignal = "SIGUSR2";
+      BusName = "com.mitchellh.ghostty";
+      ExecStart = "${pkgs.ghostty}/bin/ghostty --gtk-single-instance=true --initial-window=false";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
   home.file.".config/ghostty".source = dump/.config/ghostty;
 }
