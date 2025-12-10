@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765217993,
-        "narHash": "sha256-OM0BNlLG+f1DnxikEzJ5S4Z2yrJoHSbkt1gr9FNpS/g=",
+        "lastModified": 1765332562,
+        "narHash": "sha256-MDweH+4RiinyI0QgJgCWsSXWjQKJCtrzKIb3A00QfFk=",
         "owner": "GravityShark",
         "repo": "dwl-grav",
-        "rev": "f01006eeced83ef3d20ec442923578be9b05e99f",
+        "rev": "996a52d94c486c12461b990f62254d3836f649be",
         "type": "github"
       },
       "original": {
@@ -119,6 +119,7 @@
         "home-manager": "home-manager",
         "mango": "mango",
         "nixpkgs": "nixpkgs",
+        "scroll-flake": "scroll-flake",
         "zen-browser-flake": "zen-browser-flake"
       }
     },
@@ -141,6 +142,62 @@
         "owner": "wlrfx",
         "repo": "scenefx",
         "type": "github"
+      }
+    },
+    "scroll-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "scroll-git": "scroll-git",
+        "scroll-stable": "scroll-stable"
+      },
+      "locked": {
+        "lastModified": 1765323034,
+        "narHash": "sha256-kO9AafSqjQ2px9EuGltndjK7CfBQahAq3OeZgE/eCCY=",
+        "owner": "AsahiRocks",
+        "repo": "scroll-flake",
+        "rev": "d5ff268e219fdf541d0d59968e66519d0efc256d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AsahiRocks",
+        "repo": "scroll-flake",
+        "type": "github"
+      }
+    },
+    "scroll-git": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765281241,
+        "narHash": "sha256-AebQQxBEOcPHefIusCId+6888vTCueq2HKq1xN501BM=",
+        "ref": "master",
+        "rev": "9b88165452d6864a0eb48788abbb6cd883c0f1b7",
+        "revCount": 8018,
+        "type": "git",
+        "url": "https://github.com/dawsers/scroll"
+      },
+      "original": {
+        "ref": "master",
+        "type": "git",
+        "url": "https://github.com/dawsers/scroll"
+      }
+    },
+    "scroll-stable": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765281500,
+        "narHash": "sha256-KewKSW8hv75VRQZvBQ6fRN5x6bEQKaaFmymg7SH4fGQ=",
+        "ref": "refs/tags/1.12.2",
+        "rev": "d680a2e81737c9512a8017d69d52f96a18a1ebaa",
+        "revCount": 8019,
+        "type": "git",
+        "url": "https://github.com/dawsers/scroll"
+      },
+      "original": {
+        "ref": "refs/tags/1.12.2",
+        "type": "git",
+        "url": "https://github.com/dawsers/scroll"
       }
     },
     "zen-browser-flake": {

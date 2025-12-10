@@ -19,6 +19,10 @@
       url = "github:GravityShark/dwl-grav/spawnorfocus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    scroll-flake = {
+      url = "github:AsahiRocks/scroll-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +51,7 @@
           modules = [
             ./system/configuration.nix
             inputs.mango.nixosModules.mango
+            inputs.scroll-flake.nixosModules.default
           ];
           specialArgs = {
             inherit inputs;

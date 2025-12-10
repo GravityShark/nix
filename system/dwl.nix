@@ -5,9 +5,10 @@
 }:
 
 let
-  wc = "sway";
+  wc = "dwl";
 in
 {
+  programs.scroll.enable = true;
   programs.mango.enable = true;
   programs.hyprland = {
     enable = true;
@@ -20,6 +21,7 @@ in
     sway
     greetd
     niri
+    labwc
     grim
     slurp
     swaybg
@@ -29,7 +31,7 @@ in
   ];
 
   services.greetd = {
-    enable = false;
+    enable = true;
     settings = {
       terminal.vt = 1;
       initial_session = {
