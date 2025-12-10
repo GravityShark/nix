@@ -1,26 +1,15 @@
-{
-  dwl-grav,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 let
-  wc = "dwl";
+  wc = "scroll";
 in
 {
   programs.scroll.enable = true;
-  programs.mango.enable = true;
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    dwl-grav.default
     sway
     greetd
-    niri
     labwc
     grim
     slurp
