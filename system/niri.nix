@@ -46,7 +46,6 @@ in
 
   # ssh agent
   services.tlp.enable = true;
-  programs.ssh.startAgent = true;
 
   systemd.services.autologin = {
     enable = true;
