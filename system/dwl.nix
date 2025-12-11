@@ -1,15 +1,15 @@
 { pkgs, ... }:
 
 let
-  wc = "dbus-run-session scroll";
+  wc = "scroll";
 in
 {
   programs.scroll = {
     enable = true;
     extraSessionCommands = ''
         # Tell QT, GDK and others to use the Wayland backend by default, X11 if not available
-        export QT_QPA_PLATFORM="wayland;xcb"
-        export GDK_BACKEND="wayland,x11"
+        export QT_QPA_PLATFORM="wayland"
+        export GDK_BACKEND="wayland"
         export SDL_VIDEODRIVER=wayland
         export CLUTTER_BACKEND=wayland
 
