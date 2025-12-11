@@ -1,8 +1,11 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.ghostty = {
     enable = true;
+    clearDefaultKeybinds = true;
+    enableFishIntegration = true;
+    package = pkgs.ghostty;
     settings = {
       confirm-close-surface = false;
       cursor-style = "block";
@@ -10,28 +13,22 @@
       font-size = 11;
       gtk-single-instance = true;
       gtk-titlebar = false;
+      quit-after-last-window-closed = false;
       shell-integration-features = "no-cursor";
       theme = "Gruvbox Material Light";
       window-decoration = "none";
     };
   };
 
-  systemd.user.services.ghostty = {
-    Unit = {
-      Description = "Ghostty";
-      After = [
-        "graphical-session.target"
-        "dbus.socket"
-      ];
-      Requires = [ "dbus.socket" ];
-    };
-    Service = {
-      Type = "notify-reload";
-      ReloadSignal = "SIGUSR2";
-      BusName = "com.mitchellh.ghostty";
-      ExecStart = "${pkgs.ghostty}/bin/ghostty --gtk-single-instance=true --initial-window=false";
-    };
-    Install.WantedBy = [ "graphical-session.target" ];
+  systemdIntegration.variables = lib.mkOption {
+    type = with lib.types; listOf (string);
+    default = [
+      "DISPLAY"
+      "WAYLAND_DISPLAY"
+      # "XDG_RUNTIME_DIR"
+      # "XDG_SESSION_TYPE"
+      # "DBUS_SESSION_BUS_ADDRESS"
+    ];
   };
-  home.file.".config/ghostty".source = dump/.config/ghostty;
+
 }

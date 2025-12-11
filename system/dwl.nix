@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  wc = "scroll";
+  wc = "dbus-run-session scroll";
 in
 {
   programs.scroll.enable = true;
