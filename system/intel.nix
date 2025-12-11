@@ -10,7 +10,6 @@
 
   hardware.graphics = {
     enable = true;
-    enableRedistributableFirmware = true;
     extraPackages = with pkgs; [
       intel-media-driver # VA-API (iHD) userspace
       intel-compute-runtime # OpenCL (NEO) + Level Zero for Arc/Xe
@@ -20,5 +19,6 @@
       # libvdpau-va-gl       # Only if you must run VDPAU-only apps
     ];
   };
+  hardware.enableRedistributableFirmware = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 }
