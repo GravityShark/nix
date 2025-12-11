@@ -11,14 +11,6 @@
     #   url = "github:nix-community/lanzaboote/v0.4.3";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
-    mango = {
-      url = "github:DreamMaoMao/mangowc";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dwl-grav-flake = {
-      url = "github:GravityShark/dwl-grav/spawnorfocus";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     scroll-flake = {
       url = "github:AsahiRocks/scroll-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,14 +26,12 @@
       home-manager,
       nixpkgs,
       self,
-      dwl-grav-flake,
       zen-browser-flake,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      dwl-grav = dwl-grav-flake.packages.${system};
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
@@ -50,12 +40,10 @@
           inherit system;
           modules = [
             ./system/configuration.nix
-            inputs.mango.nixosModules.mango
             inputs.scroll-flake.nixosModules.default
           ];
           specialArgs = {
             inherit inputs;
-            inherit dwl-grav;
           };
         };
       };

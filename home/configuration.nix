@@ -10,7 +10,7 @@
     # ./gnome.nix
     # ./mangowc.nix
 
-    ./desktop.nix
+    # ./desktop.nix
     # ./emacs.nix
     ./ghostty.nix
     ./home.nix

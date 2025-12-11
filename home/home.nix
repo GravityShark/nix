@@ -37,9 +37,4 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-
-  # Automatic font cache update
-  home.activation.updateFontCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.fontconfig}/bin/fc-cache -f || echo "fc-cache failed"
-  '';
 }

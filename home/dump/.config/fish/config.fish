@@ -1,13 +1,17 @@
 if status is-interactive
+    fish_add_path $HOME/.scripts
+    fish_add_path $HOME/.scripts/aliases
     # variables tbh
     set --export EDITOR nvim
     set --export FZF_DEFAULT_COMMAND \x1d
     set --export FZF_DEFAULT_OPTS \x0a\x2d\x2dcolor\x3dfg\x3a\x23797593\x2cbg\x3a\x23faf4ed\x2chl\x3a\x23d7827e\x0a\x2d\x2dcolor\x3dfg\x2b\x3a\x23575279\x2cbg\x2b\x3a\x23f2e9e1\x2chl\x2b\x3a\x23d7827e\x0a\x2d\x2dcolor\x3dborder\x3a\x23dfdad9\x2cheader\x3a\x23286983\x2cgutter\x3a\x23faf4ed\x0a\x2d\x2dcolor\x3dspinner\x3a\x23ea9d34\x2cinfo\x3a\x2356949f\x2cseparator\x3a\x23dfdad9\x0a\x2d\x2dcolor\x3dpointer\x3a\x23907aa9\x2cmarker\x3a\x23b4637a\x2cprompt\x3a\x23797593\x0a\x2d\x2dborder\x3drounded\x0a
     set FZF_TMUX_HEIGHT 80\x25
-    set --path GOPATH /home/gravity/Other/go
+    set --path GOPATH $HOME/.go
+    set ZO_CMD zo
+    set Z_CMD z
     set --export PAGER less \x2d\x2dRAW\x2dCONTROL\x2dCHARS
-    set --export SYNCTHING_GROUP wheel
-    set --export SYNCTHING_USER gravity
+    # set --export SYNCTHING_GROUP wheel
+    # set --export SYNCTHING_USER gravity
     set ZO_CMD zo
     set Z_CMD z
     set Z_DATA /home/gravity/\x2elocal/share/z/data

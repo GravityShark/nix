@@ -1,44 +1,5 @@
 {
   "nodes": {
-    "dwl-grav-flake": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1765332562,
-        "narHash": "sha256-MDweH+4RiinyI0QgJgCWsSXWjQKJCtrzKIb3A00QfFk=",
-        "owner": "GravityShark",
-        "repo": "dwl-grav",
-        "rev": "996a52d94c486c12461b990f62254d3836f649be",
-        "type": "github"
-      },
-      "original": {
-        "owner": "GravityShark",
-        "ref": "spawnorfocus",
-        "repo": "dwl-grav",
-        "type": "github"
-      }
-    },
-    "flake-parts": {
-      "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib"
-      },
-      "locked": {
-        "lastModified": 1749398372,
-        "narHash": "sha256-tYBdgS56eXYaWVW3fsnPQ/nFlgWi/Z2Ymhyu21zVM98=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "9305fe4e5c2a6fcf5ba6a3ff155720fbe4076569",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -60,28 +21,6 @@
         "type": "github"
       }
     },
-    "mango": {
-      "inputs": {
-        "flake-parts": "flake-parts",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "scenefx": "scenefx"
-      },
-      "locked": {
-        "lastModified": 1765417269,
-        "narHash": "sha256-3X55TFVdYU8vtTiKau1JZU38kMhKNOhzfhh8b/EOJTg=",
-        "owner": "DreamMaoMao",
-        "repo": "mangowc",
-        "rev": "bbc5ee19a84e8843d513f16db12b486fd3f41179",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DreamMaoMao",
-        "repo": "mangowc",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1765311797,
@@ -98,50 +37,12 @@
         "type": "github"
       }
     },
-    "nixpkgs-lib": {
-      "locked": {
-        "lastModified": 1748740939,
-        "narHash": "sha256-rQaysilft1aVMwF14xIdGS3sj1yHlI6oKQNBRTF40cc=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "656a64127e9d791a334452c6b6606d17539476e2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "dwl-grav-flake": "dwl-grav-flake",
         "home-manager": "home-manager",
-        "mango": "mango",
         "nixpkgs": "nixpkgs",
         "scroll-flake": "scroll-flake",
         "zen-browser-flake": "zen-browser-flake"
-      }
-    },
-    "scenefx": {
-      "inputs": {
-        "nixpkgs": [
-          "mango",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1750785057,
-        "narHash": "sha256-tGX6j4W91rcb+glXJo43sjPI9zQvPotonknG1BdihR4=",
-        "owner": "wlrfx",
-        "repo": "scenefx",
-        "rev": "3a6cfb12e4ba97b43326357d14f7b3e40897adfc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "wlrfx",
-        "repo": "scenefx",
-        "type": "github"
       }
     },
     "scroll-flake": {
@@ -153,11 +54,11 @@
         "scroll-stable": "scroll-stable"
       },
       "locked": {
-        "lastModified": 1765323034,
-        "narHash": "sha256-kO9AafSqjQ2px9EuGltndjK7CfBQahAq3OeZgE/eCCY=",
+        "lastModified": 1765425085,
+        "narHash": "sha256-GG2aPk1bp4JFXzVxpV/pV+678EKllDeZOV+4FgFErkk=",
         "owner": "AsahiRocks",
         "repo": "scroll-flake",
-        "rev": "d5ff268e219fdf541d0d59968e66519d0efc256d",
+        "rev": "9d3070d0747b75b263d357b36d009a0ff6df8d36",
         "type": "github"
       },
       "original": {
@@ -169,11 +70,11 @@
     "scroll-git": {
       "flake": false,
       "locked": {
-        "lastModified": 1765281241,
-        "narHash": "sha256-AebQQxBEOcPHefIusCId+6888vTCueq2HKq1xN501BM=",
+        "lastModified": 1765405372,
+        "narHash": "sha256-DVrqAlllZf3pyjXYuxfU24IMqiH0js8yccMdgD7cZfk=",
         "ref": "master",
-        "rev": "9b88165452d6864a0eb48788abbb6cd883c0f1b7",
-        "revCount": 8018,
+        "rev": "cd6f1c7e9ea5ec2bf1cd5159683337885b634633",
+        "revCount": 8021,
         "type": "git",
         "url": "https://github.com/dawsers/scroll"
       },

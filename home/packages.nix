@@ -1,4 +1,9 @@
-{ pkgs, zen-browser, ... }:
+{
+  lib,
+  pkgs,
+  zen-browser,
+  ...
+}:
 
 let
   apps = import ./packages/apps.nix {
@@ -11,6 +16,11 @@ let
 in
 {
   home.packages = apps ++ dev ++ cli ++ fonts;
+
+  # Automatic font cache update
+  home.activation.updateFontCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    ${pkgs.fontconfig}/bin/fc-cache -f || echo "fc-cache failed"
+  '';
 }
 
 # # It is sometimes useful to fine-tune packages, for example, by applying

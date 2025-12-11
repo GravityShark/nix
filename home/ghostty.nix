@@ -7,6 +7,7 @@
     enableFishIntegration = true;
     package = pkgs.ghostty;
     settings = {
+      command = "${pkgs.fish}/bin/fish --login --interactive";
       confirm-close-surface = false;
       cursor-style = "block";
       font-family = "Aporetic Sans Mono";
@@ -15,26 +16,10 @@
       gtk-titlebar = false;
       quit-after-last-window-closed = false;
       shell-integration-features = "no-cursor";
+      shell-integration = "fish";
       theme = "Gruvbox Material Light";
       window-decoration = "none";
     };
+    systemd.enable = true;
   };
-
-  # systemd.user.services.ghostty = {
-  #   Unit = {
-  #     Description = "Ghostty";
-  #     After = [
-  #       "graphical-session.target"
-  #       "dbus.socket"
-  #     ];
-  #     Requires = [ "dbus.socket" ];
-  #   };
-  #   Service = {
-  #     Type = "notify-reload";
-  #     ReloadSignal = "SIGUSR2";
-  #     BusName = "com.mitchellh.ghostty";
-  #     ExecStart = "${pkgs.ghostty}/bin/ghostty --gtk-single-instance=true --initial-window=false";
-  #   };
-  #   Install.WantedBy = [ "graphical-session.target" ];
-  # };
 }

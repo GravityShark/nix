@@ -4,6 +4,14 @@
   ...
 }:
 
+# "${
+#   builtins.fetchGit {
+#     url = "https://github.com/NixOS/nixos-hardware.git";
+#     rev = "7d9552ef6b02da7b8fafe426c0db5358ab8c4009";
+#   }
+# }/msi/gl65/10SDR-492"
+# ./nvidia2.nix
+
 {
   hardware.graphics = {
     enable = true;

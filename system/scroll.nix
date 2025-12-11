@@ -8,8 +8,8 @@ in
     enable = true;
     extraSessionCommands = ''
         # Tell QT, GDK and others to use the Wayland backend by default, X11 if not available
-        export QT_QPA_PLATFORM="wayland"
-        export GDK_BACKEND="wayland"
+        export QT_QPA_PLATFORM="wayland;xcb"
+        export GDK_BACKEND="wayland,x11"
         export SDL_VIDEODRIVER=wayland
         export CLUTTER_BACKEND=wayland
 
@@ -26,6 +26,18 @@ in
     '';
   };
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    config = {
+      common.default = [
+        "wlr"
+        "gtk"
+      ];
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     brightnessctl
     greetd
@@ -36,6 +48,7 @@ in
     swaybg
     wiremix
     wl-clipboard
+    foot
     wmenu
   ];
 
