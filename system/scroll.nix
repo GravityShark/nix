@@ -54,7 +54,7 @@ in
     grim
     htop
     slurp
-    sway
+    # sway
     swaybg
     wiremix
     wl-clipboard
