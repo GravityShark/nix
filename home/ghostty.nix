@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.ghostty = {
@@ -19,16 +19,4 @@
       window-decoration = "none";
     };
   };
-
-  systemdIntegration.variables = lib.mkOption {
-    type = with lib.types; listOf (string);
-    default = [
-      "DISPLAY"
-      "WAYLAND_DISPLAY"
-      # "XDG_RUNTIME_DIR"
-      # "XDG_SESSION_TYPE"
-      # "DBUS_SESSION_BUS_ADDRESS"
-    ];
-  };
-
 }
