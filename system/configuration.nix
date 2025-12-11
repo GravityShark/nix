@@ -4,13 +4,11 @@
 
 {
   imports = [
-    # Gnome + Wayland + NVIDIA will not work until this issue has been fixed https://gitlab.gnome.org/GNOME/mutter/-/issues/2969
-
     # ./gnome.nix
-    # ./mangowc.nix
-    ./scroll.nix
+    ./niri.nix
 
     ./hardware-configuration.nix
+    ./intel.nix
     # ./kanata.nix
     # ./lanzaboote.nix
     ./msi.nix

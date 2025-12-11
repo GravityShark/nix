@@ -13,9 +13,7 @@
   '';
 
   # ssh agent
-  programs.ssh.startAgent = true;
-
-  security.polkit.enable = true;
+  # programs.ssh.startAgent = true;
 
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;

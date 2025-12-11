@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.ghostty = {
@@ -23,7 +23,9 @@
     systemd.enable = true;
   };
 
-  # systemd.user.services."app-com.mitchellh.ghostty".Unit = lib.mkForce {
+
+  #lib.mkForce {
+
   # PartOf = [ "graphical-session.target" ];
 
   # Environment = [
