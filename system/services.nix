@@ -3,7 +3,6 @@
 {
   # Power
   services.thermald.enable = false; # test this later
-  services.tlp.enable = true;
   services.fstrim.enable = true;
 
   # Vial udev rule
@@ -11,9 +10,6 @@
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
-
-  # ssh agent
-  # programs.ssh.startAgent = true;
 
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;

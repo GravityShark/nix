@@ -44,6 +44,10 @@ in
     wl-clipboard
   ];
 
+  # ssh agent
+  services.tlp.enable = true;
+  programs.ssh.startAgent = true;
+
   systemd.services.autologin = {
     enable = true;
     restartIfChanged = lib.mkForce false;
