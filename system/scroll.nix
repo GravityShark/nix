@@ -1,14 +1,14 @@
 {
-  input,
+  inputs,
   lib,
   pkgs,
   ...
 }:
 
-# let
-#   wc = "scroll";
-#   name = "gravity";
-# in
+let
+  wc = "scroll";
+  name = "gravity";
+in
 {
   programs.scroll = {
     enable = true;
@@ -77,7 +77,7 @@
 
     serviceConfig = {
       ExecStart = "${pkgs.autologin}/bin/autologin gravity ${
-        input.scroll-flake.packages.${pkgs.stdenv.hostPlatform.system}.scroll-git
+        inputs.scroll-flake.packages.${pkgs.stdenv.hostPlatform.system}.scroll-git
       }";
       Type = "simple";
       IgnoreSIGPIPE = "no";
