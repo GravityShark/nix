@@ -1,7 +1,13 @@
-{ pkgs, ... }:
+{
+  input,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   wc = "scroll";
+  name = "gravity";
 in
 {
   programs.scroll = {
@@ -22,6 +28,10 @@ in
         export ELECTRON_OZONE_PLATFORM_HINT=wayland
         export NIXOS_OZONE_WL=1; # Make chromium run on wayland
         export MOZ_ENABLE_WAYLAND=1
+
+        dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SCROLLSOCK XDG_CURRENT_DESKTOP
+        "systemctl --user import-environment {,WAYLAND_}DISPLAY SCROLLSOCK; systemctl --user start scroll-session.target"
+        scrollmsg -t subscribe '["shutdown"]' && systemctl --user stop scroll-session.target
       ;
     '';
   };
@@ -50,21 +60,55 @@ in
     wl-clipboard
     foot
     wmenu
+    autologin
   ];
 
-  services.greetd = {
+  # Autologin
+  # see https://git.sr.ht/~kennylevinsen/autologin
+  # https://superuser.com/questions/1904422/how-can-i-use-autologin-without-a-display-manager-for-nixos-wayland-and-niri
+  systemd.services.autologin = {
     enable = true;
-    settings = {
-      terminal.vt = 1;
-      initial_session = {
-        command = "${wc}";
-        user = "gravity";
-      };
+    restartIfChanged = lib.mkForce false;
+    description = "Autologin";
+    after = [
+      "systemd-user-sessions.service"
+      "plymouth-quit-wait.service"
+    ];
 
-      default_session = {
-        command = "${pkgs.greetd}/bin/agreety --cmd ${wc}";
-        user = "greeter";
-      };
+    serviceConfig = {
+      ExecStart = "${pkgs.autologin}/bin/autologin ${name} ${
+        input.scroll-flake.packages.${pkgs.stdenv.hostPlatform.system}.scroll-git
+      }";
+      Type = "simple";
+      IgnoreSIGPIPE = "no";
+      SendSIGHUP = "yes";
+      TimeoutStopSec = "30s";
+      KeyringMode = "shared";
+      Restart = "always";
+      RestartSec = "1";
     };
+    startLimitBurst = 5;
+    startLimitIntervalSec = 30;
+    aliases = [ "display-manager.service" ];
+    wantedBy = [ "multi-user.target" ];
   };
+
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
+
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     terminal.vt = 1;
+  #     initial_session = {
+  #       command = "${wc}";
+  #       user = "gravity";
+  #     };
+  #
+  #     default_session = {
+  #       command = "${pkgs.greetd}/bin/agreety --cmd ${wc}";
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
 }

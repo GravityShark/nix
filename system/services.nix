@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   # Power
@@ -14,6 +14,8 @@
 
   # ssh agent
   programs.ssh.startAgent = true;
+
+  security.polkit.enable = true;
 
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
