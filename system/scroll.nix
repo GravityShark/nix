@@ -77,7 +77,7 @@ in
 
     serviceConfig = {
       ExecStart = "${pkgs.autologin}/bin/autologin gravity ${
-        inputs.scroll-flake.packages.${pkgs.stdenv.hostPlatform.system}.scroll-git
+        inputs.scroll-flake.packages.${pkgs.stdenv.hostPlatform.system}.default
       }";
       Type = "simple";
       IgnoreSIGPIPE = "no";
