@@ -446,7 +446,7 @@
         fontDefault = "Aporetic Sans";
         fontDefaultScale = 1.4;
         fontFixed = "Aporetic Sans Mono";
-        fontFixedScale = 1.25;
+        fontFixedScale = 1.3;
         panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
