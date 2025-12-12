@@ -39,8 +39,8 @@
     # "xdg-terminals.list".source = dump/.config/xdg-terminals.list;
   };
 
-  home.sessionPath = [
-    "${home.homeDirectory}/.scripts"
-    "${home.homeDirectory}/.scripts/aliases"
-  ];
+  # home.sessionPath = [
+  #   "${home.homeDirectory}/.scripts"
+  #   "${home.homeDirectory}/.scripts/aliases"
+  # ];
 }
