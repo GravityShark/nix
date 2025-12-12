@@ -48,8 +48,8 @@
     ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"
 
     # Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
-    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
-    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
+    # ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
+    # ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
   '';
   # systemd.tmpfiles.rules = [ "w /sys/bus/pci/devices/0000:02:00.0/power/control - - - - auto" ];
 
@@ -65,6 +65,12 @@
     # NOOOO
     # https://bbs.archlinux.org/viewtopic.php?pid=2187680#p2187680
     open = false;
+
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
+
     prime = {
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:2:0:0";

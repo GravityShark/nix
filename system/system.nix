@@ -1,11 +1,11 @@
 { lib, pkgs, ... }:
 
 let
-  discord = pkgs.fetchurl {
-    name = "discord";
-    url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
-    sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
-  };
+  # discord = pkgs.fetchurl {
+  #   name = "discord";
+  #   url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
+  #   sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
+  # };
   instagram = pkgs.fetchurl {
     name = "instagram";
     url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/instagramhosts.txt";
@@ -43,13 +43,12 @@ in
 
   networking.hostName = "nixos"; # Define your hostname.
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   # Enable networking
   networking.networkmanager.enable = true;
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
   time.timeZone = "Asia/Manila";
@@ -133,8 +132,7 @@ in
     "3.asia.pool.ntp.org"
   ];
 
-  # Use linux zen
-  boot.kernelPackages = pkgs.linuxPackages;
+  # boot.kernelPackages = pkgs.linuxPackages;
   #boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -170,8 +168,8 @@ in
         "porn"
       ];
     };
+    # ${builtins.readFile discord}
     extraHosts = ''
-      ${builtins.readFile discord}
       ${builtins.readFile instagram}
     '';
   };

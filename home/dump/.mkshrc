@@ -19,10 +19,10 @@
 # [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ] && exec startx
 
 # Fish shell is my actual shell
-# case "$-" in 
-#     *i*)
+case "$-" in 
+    *i*)
         if SH=$(which fish); then
             SHELL=$SH exec fish
         fi
-#     ;;
-# esac
+    ;;
+esac

@@ -18,7 +18,7 @@
     # ./mime.nix
     ./packages.nix
     ./restic.nix
-    # ./syncthing.nix
+    ./syncthing.nix
   ];
 
   # You should not change this value, even if you update Home Manager. If you do

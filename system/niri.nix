@@ -12,9 +12,29 @@ let
   });
 in
 {
-  programs.niri = {
-    enable = true;
-  };
+  programs.niri.enable = true;
+  security.polkit.enable = true;
+  # services.mako.enable = true;
+  systemd.user.services."app-com.mitchellh.ghostty".wantedBy = [ "graphical-session.target" ];
+
+  environment.systemPackages = with pkgs; [
+    autologin_on_7
+    brightnessctl
+    fuzzel
+    grim
+    htop
+    mako
+    slurp
+    swaybg
+    swaylock
+    wev
+    wiremix
+    wl-clipboard
+    xwayland-satellite
+  ];
+
+  # ssh agent
+  services.tlp.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -29,23 +49,6 @@ in
       ];
     };
   };
-
-  security.polkit.enable = true;
-  systemd.user.services."app-com.mitchellh.ghostty".wantedBy = [ "graphical-session.target" ];
-
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-    xwayland-satellite
-    grim
-    htop
-    slurp
-    swaybg
-    wiremix
-    wl-clipboard
-  ];
-
-  # ssh agent
-  services.tlp.enable = true;
 
   systemd.services.autologin = {
     enable = true;
