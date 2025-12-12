@@ -4,6 +4,33 @@
   imports = [ noctalia ];
 
   home.packages = [ pkgs.wdisplays ];
+
+  systemd.user.services."swidle" = {
+    Unit = {
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+      Requisite = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = ''swayidle -w timeout 120 "niri msg action power-off-monitors" timeout 180 "noctalia-shell ipc call lockScreen lock" timeout 300 "systemctl suspend" before-sleep "noctalia-shell ipc call lockScreen lock" '';
+      Restart = "on-failure";
+    };
+  };
+  home.file.".cache/noctalia/wallpapers.json" = {
+    text = builtins.toJSON {
+      defaultWallpaper = "~/Pictures/Wallpapers/Tranquility.png";
+      wallpapers = {
+        "eDP-1" = "~/Pictures/Wallpapers/Tranquility.png";
+      };
+    };
+  };
+
+  # {
+  #     "defaultWallpaper": "/nix/store/s8qc5iqpv818jcrmxwz3f9s8ybgapamn-noctalia-shell-2025-12-12_764299e/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
+  #     "wallpapers": {
+  #         "eDP-1": "/home/gravity/Pictures/Wallpapers/Tranquility.png"
+  #     }
+  # }
   programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
@@ -85,6 +112,11 @@
             }
             {
               displayMode = "alwaysShow";
+              id = "Volume";
+            }
+            {
+              deviceNativePath = "";
+              displayMode = "alwaysShow";
               id = "Battery";
               showNoctaliaPerformance = true;
               showPowerProfiles = true;
@@ -160,7 +192,7 @@
             id = "audio-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "weather-card";
           }
           {
@@ -299,8 +331,7 @@
           lowSoundFile = "";
           normalSoundFile = "";
           separateSounds = false;
-          volume = {
-          };
+          volume = 0.75;
         };
       };
       osd = {
@@ -417,11 +448,10 @@
       };
       ui = {
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = {
-        };
+        fontDefaultScale = 1.5;
         fontFixed = "Aporetic Sans Mono";
-        fontFixedScale = 1;
-        panelBackgroundOpacity = 1;
+        fontFixedScale = 1.25;
+        panelBackgroundOpacity = 0.3;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         tooltipsEnabled = true;
@@ -446,7 +476,7 @@
         transitionEdgeSmoothness = {
         };
         transitionType = "random";
-        useWallhaven = true;
+        useWallhaven = false;
         wallhavenCategories = "111";
         wallhavenOrder = "desc";
         wallhavenPurity = "100";
@@ -459,13 +489,5 @@
     };
     # this may also be a string or a path to a JSON file,
     # but in this case must include *all* settings.
-  };
-  home.file.".cache/noctalia/wallpapers.json" = {
-    text = builtins.toJSON {
-      defaultWallpaper = "~/Pictures/Wallpapers/Tranquility.png";
-      wallpapers = {
-        "eDP-1" = "~/Pictures/Wallpapers/Tranquility.png";
-      };
-    };
   };
 }

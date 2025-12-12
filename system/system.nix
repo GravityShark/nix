@@ -44,7 +44,9 @@
     isNormalUser = true;
     description = "gravity";
     extraGroups = [
+      "lp"
       "networkmanager"
+      "scanner"
       "wheel"
       # "dialout" # Arduino
     ];

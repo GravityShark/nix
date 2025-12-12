@@ -1,6 +1,6 @@
 if status is-interactive
-    fish_add_path $HOME/.scripts
-    fish_add_path $HOME/.scripts/aliases
+    # fish_add_path $HOME/.scripts
+    # fish_add_path $HOME/.scripts/aliases
     # variables tbh
     set --export EDITOR nvim
     set --export SYSTEMD_EDITOR nvim

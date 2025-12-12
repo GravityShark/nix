@@ -69,7 +69,7 @@
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
     powerManagement.enable = true;
-    powerManagement.finegrained = true;
+    # powerManagement.finegrained = true;
 
     prime = {
       intelBusId = "PCI:0:2:0";

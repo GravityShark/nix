@@ -18,5 +18,5 @@ WINDOW_ID=$(niri msg --json windows | jq -r --arg app_id "$APP_ID" '.[] | select
 if [ -n "$WINDOW_ID" ]; then
     niri msg action focus-window --id "$WINDOW_ID"
 else
-    setsid "$EXECUTABLE" &
+    setsid $EXECUTABLE &
 fi

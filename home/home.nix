@@ -38,4 +38,9 @@
     "sesh".source = dump/.config/sesh;
     # "xdg-terminals.list".source = dump/.config/xdg-terminals.list;
   };
+
+  home.sessionPath = [
+    "$HOME/.scripts"
+    "$HOME/.scripts/aliases"
+  ];
 }

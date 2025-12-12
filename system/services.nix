@@ -2,10 +2,11 @@
 
 {
   # Power
-  services.tuned.enable = true;
-  services.upower.enable = true;
-  services.thermald.enable = true; # test this later
   services.fstrim.enable = true;
+  services.thermald.enable = true; # test this later
+  services.tuned.enable = true;
+  services.udisks2.enable = true;
+  services.upower.enable = true;
 
   # Vial udev rule
   # https://get.vial.today/manual/linux-udev.html

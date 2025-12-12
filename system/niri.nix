@@ -24,7 +24,6 @@ in
     gnome-system-monitor
     # grim
     # htop
-    jq
     # mako
     # slurp
     # swaybg
@@ -35,6 +34,8 @@ in
     wiremix
     wl-clipboard
     xwayland-satellite
+    xlsclients
+    nirius
   ];
 
   environment.sessionVariables = {
