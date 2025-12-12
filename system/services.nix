@@ -2,6 +2,8 @@
 
 {
   # Power
+  services.tuned.enable = true;
+  services.upower.enable = true;
   services.thermald.enable = true; # test this later
   services.fstrim.enable = true;
 
