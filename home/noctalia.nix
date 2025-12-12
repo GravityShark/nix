@@ -1,5 +1,5 @@
 {
-  home,
+  config,
   pkgs,
   noctalia,
   ...
@@ -24,9 +24,9 @@
   };
   home.file.".cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
-      defaultWallpaper = "${home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
+      defaultWallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
       wallpapers = {
-        "eDP-1" = "${home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
+        "eDP-1" = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
       };
     };
   };
@@ -54,7 +54,7 @@
         sortByMostUsed = true;
         terminalCommand = "ghostty -e";
         useApp2Unit = false;
-        viewMode = "grid";
+        viewMode = "list";
       };
       audio = {
         cavaFrameRate = 30;
