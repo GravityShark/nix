@@ -65,7 +65,7 @@
       bar = {
         backgroundOpacity = 1;
         capsuleOpacity = 0.3;
-        density = "compact";
+        density = "mini";
         exclusive = true;
         floating = false;
         marginHorizontal = 0;
@@ -73,7 +73,7 @@
         monitors = [ ];
         outerCorners = false;
         position = "right";
-        showCapsule = true;
+        showCapsule = false;
         widgets = {
           center = [
             {
@@ -444,9 +444,9 @@
       };
       ui = {
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = 1.4;
+        fontDefaultScale = 1.5;
         fontFixed = "Aporetic Sans Mono";
-        fontFixedScale = 1.4;
+        fontFixedScale = 1.5;
         panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
