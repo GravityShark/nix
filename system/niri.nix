@@ -31,6 +31,7 @@ in
     swayimg
     # swaylock
     wev
+    nautilus
     wiremix
     wl-clipboard
     xwayland-satellite
