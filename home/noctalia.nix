@@ -64,17 +64,13 @@
       };
       bar = {
         backgroundOpacity = 1;
-        capsuleOpacity = {
-        };
+        capsuleOpacity = 0.3;
         density = "compact";
         exclusive = true;
         floating = false;
         marginHorizontal = 0;
-        marginVertical = {
-        };
-        monitors = [
-
-        ];
+        marginVertical = { };
+        monitors = [ ];
         outerCorners = false;
         position = "right";
         showCapsule = true;
@@ -448,10 +444,10 @@
       };
       ui = {
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = 1.5;
+        fontDefaultScale = 1.3;
         fontFixed = "Aporetic Sans Mono";
         fontFixedScale = 1.25;
-        panelBackgroundOpacity = 0.3;
+        panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         tooltipsEnabled = true;
