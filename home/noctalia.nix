@@ -6,8 +6,8 @@
   home.packages = [ pkgs.wdisplays ];
   programs.noctalia-shell = {
     enable = true;
+    systemd.enable = true;
     settings = {
-
       appLauncher = {
         customLaunchPrefix = "";
         customLaunchPrefixEnabled = false;
@@ -32,13 +32,14 @@
         preferredPlayer = "youtube";
         visualizerQuality = "high";
         visualizerType = "linear";
-        volumeOverdrive = false;
+        volumeOverdrive = true;
         volumeStep = 5;
       };
       bar = {
         backgroundOpacity = 1;
-        capsuleOpacity = 1;
-        density = "mini";
+        capsuleOpacity = {
+        };
+        density = "compact";
         exclusive = true;
         floating = false;
         marginHorizontal = 0;
@@ -49,7 +50,7 @@
         ];
         outerCorners = false;
         position = "right";
-        showCapsule = false;
+        showCapsule = true;
         widgets = {
           center = [
             {
@@ -83,7 +84,7 @@
               id = "WiFi";
             }
             {
-              displayMode = "onhover";
+              displayMode = "alwaysShow";
               id = "Battery";
               showNoctaliaPerformance = true;
               showPowerProfiles = true;
@@ -129,7 +130,7 @@
             id = "timer-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "weather-card";
           }
         ];
@@ -255,15 +256,15 @@
         wallpaperChange = "";
       };
       location = {
-        analogClockInCalendar = false;
+        analogClockInCalendar = true;
         firstDayOfWeek = -1;
-        name = "Manila, Philippines";
+        name = "Tokyo";
         showCalendarEvents = true;
         showCalendarWeather = true;
         showWeekNumberInCalendar = false;
         use12hourFormat = false;
         useFahrenheit = false;
-        weatherEnabled = true;
+        weatherEnabled = false;
         weatherShowEffects = true;
       };
       network = {
@@ -439,17 +440,17 @@
         panelPosition = "follow_bar";
         randomEnabled = false;
         randomIntervalSec = 300;
-        recursiveSearch = false;
+        recursiveSearch = true;
         setWallpaperOnAllMonitors = true;
         transitionDuration = 1500;
         transitionEdgeSmoothness = {
         };
         transitionType = "random";
-        useWallhaven = false;
+        useWallhaven = true;
         wallhavenCategories = "111";
         wallhavenOrder = "desc";
         wallhavenPurity = "100";
-        wallhavenQuery = "";
+        wallhavenQuery = "gruvbox";
         wallhavenResolutionHeight = "";
         wallhavenResolutionMode = "atleast";
         wallhavenResolutionWidth = "";
@@ -461,12 +462,10 @@
   };
   home.file.".cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
-      defaultWallpaper = "$HOME/Pictures/Wallpapers/Tranquility.png";
-      # wallpapers = {
-      #   "DP-1" = "/path/to/monitor/wallpaper.png";
-      # };
+      defaultWallpaper = "~/Pictures/Wallpapers/Tranquility.png";
+      wallpapers = {
+        "eDP-1" = "~/Pictures/Wallpapers/Tranquility.png";
+      };
     };
   };
-
-  programs.noctalia-shell.systemd.enable = true;
 }

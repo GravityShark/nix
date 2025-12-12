@@ -75,6 +75,10 @@
             (rsft spc) (rsft -)
           )
 
+          (deflocalkeys-linux
+           brup 233
+           brdn 232)
+
           (deflayer base
             _    _    _    _    _    _    _    _    _    _   _ 
             _    _    _    _    _    _    _    _    _    _   _
@@ -97,9 +101,9 @@
           )
 
           (deflayer nav
-            XF86AudioMute     ret   esc   A-tab  XF86AudioRaiseVolume       home  pgdn  pgup  end   caps   _
+            _     ret   esc   A-tab  _       home  pgdn  pgup  end   caps   _
             @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
-            prtsc  XF86MonBrightnessDown    XF86MonBrightnessUp    C-esc   XF86AudioLowerVolume   XX  grv   bspc  del   menu  Insert _
+            prtsc  brdn    brup    C-esc   _   XX  grv   bspc  del   menu  Insert _
             _     ret @num XX XX
           )
 
