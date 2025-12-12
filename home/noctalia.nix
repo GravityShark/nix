@@ -17,7 +17,7 @@
       Requisite = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = ''swayidle -w timeout 120 \"niri msg action power-off-monitors\" timeout 180 \"noctalia-shell ipc call lockScreen lock\" timeout 300 \"systemctl suspend\" before-sleep \"noctalia-shell ipc call lockScreen lock\" '';
+      ExecStart = ''swayidle -w timeout 120 \"${pkgs.niri} msg action power-off-monitors\" timeout 180 \"${pkgs.noctalia-shell} ipc call lockScreen lock\" timeout 300 \"systemctl suspend\" before-sleep \"${pkgs.noctalia-shell} ipc call lockScreen lock\" '';
       Restart = "on-failure";
       RestartSec = "10";
     };
