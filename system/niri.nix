@@ -36,8 +36,8 @@ in
   ];
 
   environment.sessionVariables = {
-    QT_QPA_PLATFORM = "wayland,x11";
-    GDK_BACKEND = "wayland,x11";
+    QT_QPA_PLATFORM = "wayland";
+    GDK_BACKEND = "wayland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
 

@@ -37,68 +37,32 @@
         "type": "github"
       }
     },
+    "noctalia-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765505023,
+        "narHash": "sha256-E5cbIxe+HtPL6MR8GVgzupUUzAejcz7l15ArvGvUWVo=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "764299e4e77d994ad9270b849aab50bd395a3a50",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "scroll-flake": "scroll-flake",
+        "noctalia-flake": "noctalia-flake",
         "zen-browser-flake": "zen-browser-flake"
-      }
-    },
-    "scroll-flake": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "scroll-git": "scroll-git",
-        "scroll-stable": "scroll-stable"
-      },
-      "locked": {
-        "lastModified": 1765425085,
-        "narHash": "sha256-GG2aPk1bp4JFXzVxpV/pV+678EKllDeZOV+4FgFErkk=",
-        "owner": "AsahiRocks",
-        "repo": "scroll-flake",
-        "rev": "9d3070d0747b75b263d357b36d009a0ff6df8d36",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AsahiRocks",
-        "repo": "scroll-flake",
-        "type": "github"
-      }
-    },
-    "scroll-git": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1765405372,
-        "narHash": "sha256-DVrqAlllZf3pyjXYuxfU24IMqiH0js8yccMdgD7cZfk=",
-        "ref": "master",
-        "rev": "cd6f1c7e9ea5ec2bf1cd5159683337885b634633",
-        "revCount": 8021,
-        "type": "git",
-        "url": "https://github.com/dawsers/scroll"
-      },
-      "original": {
-        "ref": "master",
-        "type": "git",
-        "url": "https://github.com/dawsers/scroll"
-      }
-    },
-    "scroll-stable": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1765281500,
-        "narHash": "sha256-KewKSW8hv75VRQZvBQ6fRN5x6bEQKaaFmymg7SH4fGQ=",
-        "ref": "refs/tags/1.12.2",
-        "rev": "d680a2e81737c9512a8017d69d52f96a18a1ebaa",
-        "revCount": 8019,
-        "type": "git",
-        "url": "https://github.com/dawsers/scroll"
-      },
-      "original": {
-        "ref": "refs/tags/1.12.2",
-        "type": "git",
-        "url": "https://github.com/dawsers/scroll"
       }
     },
     "zen-browser-flake": {

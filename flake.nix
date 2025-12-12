@@ -11,8 +11,8 @@
     #   url = "github:nix-community/lanzaboote/v0.4.3";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
-    scroll-flake = {
-      url = "github:AsahiRocks/scroll-flake";
+    noctalia-flake = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser-flake = {
@@ -25,6 +25,7 @@
     {
       home-manager,
       nixpkgs,
+      noctalia-flake,
       self,
       zen-browser-flake,
       ...
@@ -32,16 +33,14 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      noctalia = noctalia-flake.homeModules.default;
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            ./system/configuration.nix
-            inputs.scroll-flake.nixosModules.default
-          ];
+          modules = [ ./system/configuration.nix ];
           specialArgs = {
             inherit inputs;
           };
@@ -51,6 +50,7 @@
         inherit pkgs;
         modules = [ ./home/configuration.nix ];
         extraSpecialArgs = {
+          inherit noctalia;
           inherit zen-browser;
         };
       };
