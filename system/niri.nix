@@ -21,6 +21,7 @@ in
     autologin_on_7
     brightnessctl
     fuzzel
+    gnome-system-monitor
     grim
     htop
     mako
