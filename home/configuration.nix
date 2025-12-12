@@ -8,6 +8,7 @@
 
   imports = [
     # ./gnome.nix
+    ./noctalia.nix
 
     # ./desktop.nix
     # ./emacs.nix
