@@ -424,7 +424,7 @@
         alacritty = false;
         cava = false;
         code = false;
-        discord = false;
+        discord = true;
         emacs = false;
         enableUserTemplates = false;
         foot = false;
@@ -435,7 +435,7 @@
         kitty = false;
         niri = true;
         pywalfox = false;
-        qt = false;
+        qt = true;
         spicetify = false;
         telegram = false;
         vicinae = false;
@@ -444,7 +444,7 @@
       };
       ui = {
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = 1.3;
+        fontDefaultScale = 1.4;
         fontFixed = "Aporetic Sans Mono";
         fontFixedScale = 1.25;
         panelBackgroundOpacity = 1;
