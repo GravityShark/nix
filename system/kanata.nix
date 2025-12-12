@@ -97,9 +97,9 @@
           )
 
           (deflayer nav
-            XX     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
+            XF86AudioMute     ret   esc   A-tab  XF86AudioRaiseVolume       home  pgdn  pgup  end   caps   _
             @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
-            prtsc  XX    XX    C-esc   vold   XX  grv   bspc  del   menu  Insert _
+            prtsc  XF86MonBrightnessDown    XF86MonBrightnessUp    C-esc   XF86AudioLowerVolume   XX  grv   bspc  del   menu  Insert _
             _     ret @num XX XX
           )
 

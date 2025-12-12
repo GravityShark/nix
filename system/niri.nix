@@ -19,16 +19,17 @@ in
 
   environment.systemPackages = with pkgs; [
     autologin_on_7
-    brightnessctl
-    fuzzel
+    # brightnessctl
+    # fuzzel
     gnome-system-monitor
-    grim
-    htop
-    mako
-    slurp
-    swaybg
+    # grim
+    # htop
+    # mako
+    # slurp
+    # swaybg
+    swayidle
     swayimg
-    swaylock
+    # swaylock
     wev
     wiremix
     wl-clipboard
