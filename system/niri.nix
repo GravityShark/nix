@@ -47,7 +47,7 @@ in
   };
 
   # powermanagement
-  services.tlp.enable = true;
+  # services.tlp.enable = true;
 
   xdg.portal = {
     enable = true;
