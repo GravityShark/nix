@@ -1,4 +1,9 @@
-{ pkgs, noctalia, ... }:
+{
+  home,
+  pkgs,
+  noctalia,
+  ...
+}:
 
 {
   imports = [ noctalia ];
@@ -15,12 +20,13 @@
       ExecStart = ''swayidle -w timeout 120 "niri msg action power-off-monitors" timeout 180 "noctalia-shell ipc call lockScreen lock" timeout 300 "systemctl suspend" before-sleep "noctalia-shell ipc call lockScreen lock" '';
       Restart = "on-failure";
     };
+    Install.WantedBy = [ "graphical-session.target" ];
   };
   home.file.".cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
-      defaultWallpaper = "~/Pictures/Wallpapers/Tranquility.png";
+      defaultWallpaper = "${home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
       wallpapers = {
-        "eDP-1" = "~/Pictures/Wallpapers/Tranquility.png";
+        "eDP-1" = "${home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
       };
     };
   };

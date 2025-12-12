@@ -40,7 +40,7 @@
   };
 
   home.sessionPath = [
-    "$HOME/.scripts"
-    "$HOME/.scripts/aliases"
+    "${home.homeDirectory}/.scripts"
+    "${home.homeDirectory}/.scripts/aliases"
   ];
 }
