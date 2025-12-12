@@ -10,19 +10,19 @@
 
   home.packages = [ pkgs.wdisplays ];
 
-  systemd.user.services."swidle" = {
-    Unit = {
-      PartOf = [ "graphical-session.target" ];
-      After = [ "graphical-session.target" ];
-      Requisite = [ "graphical-session.target" ];
-    };
-    Service = {
-      ExecStart = ''swayidle -w timeout 120 \"${pkgs.niri} msg action power-off-monitors\" timeout 180 \"${pkgs.noctalia} ipc call lockScreen lock\" timeout 300 \"systemctl suspend\" before-sleep \"${pkgs.noctalia} ipc call lockScreen lock\" '';
-      Restart = "on-failure";
-      RestartSec = "10";
-    };
-    Install.WantedBy = [ "graphical-session.target" ];
-  };
+  # systemd.user.services."swidle" = {
+  #   Unit = {
+  #     PartOf = [ "graphical-session.target" ];
+  #     After = [ "graphical-session.target" ];
+  #     Requisite = [ "graphical-session.target" ];
+  #   };
+  #   Service = {
+  #     ExecStart = ''swayidle -w timeout 120 \"${pkgs.niri} msg action power-off-monitors\" timeout 180 \"${pkgs.noctalia} ipc call lockScreen lock\" timeout 300 \"systemctl suspend\" before-sleep \"${pkgs.noctalia} ipc call lockScreen lock\" '';
+  #     Restart = "on-failure";
+  #     RestartSec = "10";
+  #   };
+  #   Install.WantedBy = [ "graphical-session.target" ];
+  # };
   home.file.".cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
       defaultWallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
