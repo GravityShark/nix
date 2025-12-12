@@ -24,6 +24,7 @@ in
     gnome-system-monitor
     # grim
     # htop
+    jq
     # mako
     # slurp
     # swaybg
