@@ -3,7 +3,7 @@
 with pkgs;
 [
   # Arduino
-  arduino-ide
+  # arduino-ide
 
   # C
   clang-tools

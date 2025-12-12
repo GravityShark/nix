@@ -2,7 +2,7 @@
 
 {
   # Power
-  services.thermald.enable = false; # test this later
+  services.thermald.enable = true; # test this later
   services.fstrim.enable = true;
 
   # Vial udev rule

@@ -14,6 +14,7 @@ in
 {
   programs.niri.enable = true;
   security.polkit.enable = true;
+  # services.mako.enable = true;
   systemd.user.services."app-com.mitchellh.ghostty".wantedBy = [ "graphical-session.target" ];
 
   environment.systemPackages = with pkgs; [
@@ -25,6 +26,7 @@ in
     mako
     slurp
     swaybg
+    swayimg
     swaylock
     wev
     wiremix
@@ -32,7 +34,18 @@ in
     xwayland-satellite
   ];
 
-  # ssh agent
+  environment.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland,x11";
+    GDK_BACKEND = "wayland,x11";
+    SDL_VIDEODRIVER = "wayland";
+    CLUTTER_BACKEND = "wayland";
+
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = 1;
+  };
+
+  # powermanagement
   services.tlp.enable = true;
 
   xdg.portal = {
@@ -49,6 +62,7 @@ in
     };
   };
 
+  # Using autologin instead of a display manager
   systemd.services.autologin = {
     enable = true;
     restartIfChanged = lib.mkForce false;

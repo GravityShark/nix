@@ -1,41 +1,6 @@
 { lib, pkgs, ... }:
 
-let
-  # discord = pkgs.fetchurl {
-  #   name = "discord";
-  #   url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
-  #   sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
-  # };
-  instagram = pkgs.fetchurl {
-    name = "instagram";
-    url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/instagramhosts.txt";
-    sha256 = "21a7ffd6e67f2baf9da7221b4bf8e3374436a09a0603e678b8c0ae11845d26c8";
-  };
-in
 {
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-    settings = {
-      General = {
-        # Shows battery charge of connected devices on supported
-        # Bluetooth adapters. Defaults to 'false'.
-        Experimental = true;
-        # When enabled other devices can connect faster to us, however
-        # the tradeoff is increased power consumption. Defaults to
-        # 'false'.
-        FastConnectable = false;
-      };
-      Policy = {
-        # Enable all controllers when they are found. This includes
-        # adapters present on start as well as adapters that are plugged
-        # in later on. Defaults to 'true'.
-        AutoEnable = true;
-      };
-    };
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -43,17 +8,10 @@ in
 
   networking.hostName = "nixos"; # Define your hostname.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  # Enable networking
-  networking.networkmanager.enable = true;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  time.timeZone = "Asia/Manila"; # Set your time zone.
+  time.hardwareClockInLocalTime = false; # allow it to work with windows time tbh
 
-  # Set your time zone.
-  time.timeZone = "Asia/Manila";
-
-  # Select internationalisation properties.
+  # Use amurican localization so things don't break lol
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -69,11 +27,6 @@ in
 
   # environment shit
   environment = {
-    sessionVariables = {
-      EDITOR = "nvim";
-      SYSTEMD_EDITOR = "nvim";
-      VISUAL = "nvim";
-    };
     shells = with pkgs; [
       bash
       dash
@@ -93,17 +46,9 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
-      "dialout"
+      # "dialout" # Arduino
     ];
   };
-
-  # List services that you want to enable:
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Use doas instead of sudo
   # https://www.reddit.com/r/NixOS/comments/rts8gm/sudo_or_doas/
@@ -119,58 +64,5 @@ in
         }
       ];
     };
-  };
-
-  # allow it to work with windows time tbh
-  time.hardwareClockInLocalTime = false;
-
-  # networking.timeServers = options.networking.timeServers.default ++ [ "asia.pool.ntp.org" ];
-  networking.timeServers = [
-    "0.asia.pool.ntp.org"
-    "1.asia.pool.ntp.org"
-    "2.asia.pool.ntp.org"
-    "3.asia.pool.ntp.org"
-  ];
-
-  # boot.kernelPackages = pkgs.linuxPackages;
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
-  # boot.kernelPackages = pkgs.linuxPackages_zen;
-
-  # Hosts file
-  networking = {
-    hosts = {
-      "192.168.0.3" = [ "clr" ];
-      #   "0.0.0.0" = [
-      #     "gdata.youtube.com"
-      #     "googlevideo.com"
-      #     "help.youtube.com"
-      #     "img.youtube.com"
-      #     "kids.youtube.com"
-      #     "m.youtube.com"
-      #     "redirector.googlevideo.com"
-      #     "youtu.be"
-      #     "youtube.com"
-      #     "youtubei.googleapis.com"
-      #     "youtube-nocookie.com"
-      #     "ytimg.com"
-      #     "ytimg-edge-static.l.google.com"
-      #     "ytimg.l.google.com"
-      #     "www.youtube.com"
-      #     "www.googlevideo.com"
-      #     "www.youtube-nocookie.com"
-      #     "www.ytimg.com"
-      #   ];
-    };
-    stevenblack = {
-      enable = true;
-      block = [
-        "gambling"
-        "porn"
-      ];
-    };
-    # ${builtins.readFile discord}
-    extraHosts = ''
-      ${builtins.readFile instagram}
-    '';
   };
 }

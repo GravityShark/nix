@@ -4,23 +4,27 @@
 
 {
   imports = [
-    # Mutually exclusive
+    # Desktop Environments (Mutually exclusive)
     # ./gnome.nix
     ./niri.nix
 
+    # Apps
     ./kanata.nix
-    # ./keyd.nix #WIP
 
-    ./intel.nix
-    ./nvidia.nix
-
-    ./msi.nix
-    # ./lanzaboote.nix
-
+    # Global
     ./hardware-configuration.nix
+    ./intel.nix
+    # ./lanzaboote.nix
+    ./msi.nix
+    ./nvidia.nix
+    ./printing.nix
+    ./bluetooth.nix
+    ./networking.nix
+
+    # Meta
     ./packages.nix
     ./services.nix
-    ./system.nix
+    ./system.nix # You NEVER have to change this file ever again
   ];
 
   # Allow unfree packages
