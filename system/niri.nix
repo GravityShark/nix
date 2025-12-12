@@ -14,7 +14,6 @@ in
 {
   programs.niri.enable = true;
   security.polkit.enable = true;
-  # services.mako.enable = true;
   systemd.user.services."app-com.mitchellh.ghostty".wantedBy = [ "graphical-session.target" ];
 
   environment.systemPackages = with pkgs; [
