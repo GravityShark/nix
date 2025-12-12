@@ -4,15 +4,20 @@
 
 {
   imports = [
+    # Mutually exclusive
     # ./gnome.nix
     ./niri.nix
 
-    ./hardware-configuration.nix
+    ./kanata.nix
+    # ./keyd.nix #WIP
+
     ./intel.nix
-    # ./kanata.nix
-    # ./lanzaboote.nix
-    ./msi.nix
     ./nvidia.nix
+
+    ./msi.nix
+    # ./lanzaboote.nix
+
+    ./hardware-configuration.nix
     ./packages.nix
     ./services.nix
     ./system.nix
