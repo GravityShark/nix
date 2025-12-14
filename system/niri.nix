@@ -19,7 +19,7 @@ in
 
   environment.systemPackages = with pkgs; [
     autologin_on_7
-    # brightnessctl
+    brightnessctl
     # fuzzel
     gnome-system-monitor
     # grim
@@ -32,7 +32,7 @@ in
     # swaylock
     wev
     nautilus
-    wiremix
+    pwvucontrol
     wl-clipboard
     xwayland-satellite
     xlsclients

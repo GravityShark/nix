@@ -58,14 +58,14 @@
         viewMode = "list";
       };
       audio = {
-        cavaFrameRate = 30;
+        cavaFrameRate = 60;
         externalMixer = "wiremix";
         mprisBlacklist = [
 
         ];
         preferredPlayer = "youtube";
-        visualizerQuality = "high";
-        visualizerType = "linear";
+        visualizerQuality = "low";
+        visualizerType = "mirrored";
         volumeOverdrive = true;
         volumeStep = 5;
       };
@@ -80,7 +80,7 @@
         monitors = [ ];
         outerCorners = false;
         position = "right";
-        showCapsule = false;
+        showCapsule = true;
         widgets = {
           center = [
             {
@@ -199,7 +199,7 @@
             id = "weather-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "media-sysmon-card";
           }
         ];

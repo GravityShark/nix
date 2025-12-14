@@ -30,6 +30,7 @@
           # Use `ls /dev/input/by-path/` to find your keyboard devices.
           "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
         ];
+        # https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
         extraDefCfg = ''
           process-unmapped-keys yes
           concurrent-tap-hold yes'';
@@ -60,7 +61,8 @@
           )
 
           (defchordsv2 
-            (lsft rsft) @cw 200 first-release (nav sym num)
+            (lsft rsft) @cw 200 first-release (nav sym num fun)
+            (voldwn volu) mute 200 first-release (base ruckus mc sym num fun)
           )
 
           (defoverrides
@@ -74,10 +76,6 @@
             (lsft spc) (lsft -)
             (rsft spc) (rsft -)
           )
-
-          (deflocalkeys-linux
-           brup 233
-           brdn 232)
 
           (deflayer base
             _    _    _    _    _    _    _    _    _    _   _ 
@@ -101,9 +99,9 @@
           )
 
           (deflayer nav
-            _     ret   esc   A-tab  _       home  pgdn  pgup  end   caps   _
+            voldwn     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
             @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
-            prtsc  brdn    brup    C-esc   _   XX  grv   bspc  del   menu  Insert _
+            prtsc  brdown    brup    C-esc   pp   XX  grv   bspc  del   menu  Insert _
             _     ret @num XX XX
           )
 

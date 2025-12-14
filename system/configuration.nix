@@ -4,24 +4,25 @@
 
 {
   imports = [
-    # Desktop Environments (Mutually exclusive)
+    ## Desktop Environments (Mutually exclusive)
     # ./gnome.nix
     ./niri.nix
 
-    # Apps
+    ## Apps
     ./kanata.nix
 
-    # Global
-    ./hardware-configuration.nix
+    ## Global
+    ./bluetooth.nix
     ./intel.nix
     # ./lanzaboote.nix
     ./msi.nix
-    ./nvidia.nix
-    ./printing.nix
-    ./bluetooth.nix
     ./networking.nix
+    ./nvidia.nix
+    ./pipewire.nix
+    # ./printing.nix
 
-    # Meta
+    ## Meta
+    ./hardware-configuration.nix
     ./packages.nix
     ./services.nix
     ./system.nix # You NEVER have to change this file ever again

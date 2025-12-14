@@ -23,7 +23,6 @@
     systemd.enable = true;
   };
 
-
   #lib.mkForce {
 
   # PartOf = [ "graphical-session.target" ];

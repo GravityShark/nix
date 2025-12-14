@@ -6,6 +6,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
 
+  boot.initrd.availableKernelModules = [
+    "usb_storage"
+    "uas"
+    "sd_mod"
+  ];
+
   networking.hostName = "nixos"; # Define your hostname.
 
   time.timeZone = "Asia/Manila"; # Set your time zone.
@@ -67,4 +73,5 @@
       ];
     };
   };
+
 }
