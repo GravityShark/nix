@@ -79,7 +79,7 @@
         marginVertical = { };
         monitors = [ ];
         outerCorners = false;
-        position = "right";
+        position = "bottom";
         showCapsule = true;
         widgets = {
           center = [
@@ -451,9 +451,9 @@
       };
       ui = {
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = 1.5;
+        fontDefaultScale = 1.3;
         fontFixed = "Aporetic Sans Mono";
-        fontFixedScale = 1.5;
+        fontFixedScale = 1.3;
         panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";

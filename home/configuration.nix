@@ -9,16 +9,19 @@
   imports = [
     # ./gnome.nix
     ./noctalia.nix
+    ./vicinae.nix
 
-    # ./desktop.nix
     # ./emacs.nix
     ./ghostty.nix
-    ./home.nix
     ./keepassxc.nix
-    # ./mime.nix
-    ./packages.nix
+
     ./restic.nix
     ./syncthing.nix
+
+    # ./desktop.nix
+    ./home.nix
+    # ./mime.nix
+    ./packages.nix
   ];
 
   # You should not change this value, even if you update Home Manager. If you do

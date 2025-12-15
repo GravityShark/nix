@@ -37,7 +37,7 @@
         config = ''
           (defsrc
                  q    w    e    r    t    y    u    i    o    p   [
-                 a    s    d    f    g    h    j    k    l    ;   '
+            caps a    s    d    f    g    h    j    k    l    ;   '
             lsft z    x    c    v    b    n    m    ,    .    /   rsft
             lalt spc  <    ralt rctl
           )
@@ -79,49 +79,49 @@
 
           (deflayer base
             _    _    _    _    _    _    _    _    _    _   _ 
-            _    _    _    _    _    _    _    _    _    _   _
+            lmet    _    _    _    _    _    _    _    _    _   _   _
             _    _    _    _    _    _    _    _    _    _   _   _
             @nav    _    @sym    @mc    @ruckus
           )
 
           (deflayer ruckus
-            lsft p    l    k    j    XX        '    g    o    u    rsft
-            s    n    h    t    v    XX        y    c    a    i    e   
-            f    b    m    d    z    XX   XX   x    w    .    ,    q 
+                 lsft p    l    k    j    XX        '    g    o    u    rsft
+            _    s    n    h    t    v    XX        y    c    a    i    e   
+                 f    b    m    d    z    XX   XX   x    w    .    ,    q 
             @nav r    spc    @sym     @base
           )
 
           (deflayer mc
             _    _    _    _    _    _    _    _    _    _   _ 
-            _    _    _    _    _    _    _    _    _    _   _
+            _ _    _    _    _    _    _    _    _    _    _   _
             _    _    _    _    _    _    _    _    _    _   _   _
             _    _    _    @base    _
           )
 
           (deflayer nav
             voldwn     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
-            @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
+            _ @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
             prtsc  brdown    brup    C-esc   pp   XX  grv   bspc  del   menu  Insert _
             _     ret @num XX XX
           )
 
           (deflayer sym
             S-grv  S-2   S-3   S-4  S-5      S-7  [     S-[   S-]   ]     _
-            S-6    S-'   S-.   ;    S-8      \    @osc  @oss  @osa  @osm  _
+            _ S-6    S-'   S-.   ;    S-8      \    @osc  @oss  @osa  @osm  _
             +      S-\   S-,   /    ,    XX  .    S-9   =     -    S-0   _
             @num   S-;   _     XX XX
           )
 
           (deflayer num
             XX  F11 up  C-a     XX XX    7    8    9    _    _
-            @osm @osa @oss @osc XX XX    4    5    6    0    _
+            _ @osm @osa @oss @osc XX XX    4    5    6    0    _
             F5  XX  XX  down XX XX XX    1    2    3    _    _
             _   XX  XX _   XX
           )
 
           (deflayer fun
             XX   XX   XX   XX   XX       F12    F7    F8    F9    _    _ 
-            @osm @osa @oss @osc XX       F11    F4    F5    F6    _    _
+            _ @osm @osa @oss @osc XX       F11    F4    F5    F6    _    _
             XX   XX   XX   XX   XX  XX   F10    F1    F2    F3    _    _
             _   XX  XX _   XX
           )

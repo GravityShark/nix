@@ -15,6 +15,7 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vicinae.url = "github:vicinaehq/vicinae";
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,10 +24,11 @@
 
   outputs =
     {
-      home-manager,
-      nixpkgs,
-      noctalia-flake,
       self,
+      nixpkgs,
+      home-manager,
+      noctalia-flake,
+      vicinae,
       zen-browser-flake,
       ...
     }@inputs:
@@ -48,7 +50,10 @@
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/configuration.nix ];
+        modules = [
+          ./home/configuration.nix
+          vicinae.homeManagerModules.default
+        ];
         extraSpecialArgs = {
           inherit noctalia;
           inherit zen-browser;

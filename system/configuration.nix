@@ -22,7 +22,7 @@
     # ./printing.nix
 
     ## Meta
-    ./hardware-configuration.nix
+    ./hardware-configuration.nix # Copy exactly from /etc/nixos
     ./packages.nix
     ./services.nix
     ./system.nix # You NEVER have to change this file ever again
