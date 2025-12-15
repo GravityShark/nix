@@ -50,6 +50,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 
+  nix.settings.extra-substituters = [ "https://vicinae.cachix.org" ];
+  nix.settings.extra-trusted-public-keys = [
+    "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+  ];
   nix.settings.download-buffer-size = 500000000;
   nix.settings.experimental-features = [
     "nix-command"
