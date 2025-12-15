@@ -59,53 +59,47 @@
       };
       audio = {
         cavaFrameRate = 60;
-        externalMixer = "wiremix";
+        externalMixer = "pwvucontrol || ghostty -e wiremix";
         mprisBlacklist = [
 
         ];
         preferredPlayer = "youtube";
-        visualizerQuality = "low";
-        visualizerType = "mirrored";
+        visualizerQuality = "high";
+        visualizerType = "linear";
         volumeOverdrive = true;
         volumeStep = 5;
       };
       bar = {
-        backgroundOpacity = 1;
-        capsuleOpacity = 0.3;
+        capsuleOpacity = 0;
         density = "mini";
         exclusive = true;
         floating = false;
         marginHorizontal = 0;
-        marginVertical = { };
-        monitors = [ ];
+        marginVertical = {
+        };
+        monitors = [
+
+        ];
         outerCorners = false;
         position = "bottom";
         showCapsule = true;
+        transparent = false;
         widgets = {
           center = [
             {
               characterCount = 2;
+              colorizeIcons = true;
               followFocusedScreen = false;
               hideUnoccupied = false;
               id = "Workspace";
-              labelMode = "none";
+              labelMode = "index";
+              showApplications = true;
+              showLabelsOnlyWhenOccupied = true;
             }
           ];
           left = [
             {
               id = "plugin:launcher-button";
-            }
-            {
-              colorizeIcons = true;
-              hideMode = "hidden";
-              id = "Taskbar";
-              maxTaskbarWidth = 40;
-              onlyActiveWorkspaces = true;
-              onlySameOutput = true;
-              showPinnedApps = true;
-              showTitle = false;
-              smartWidth = true;
-              titleWidth = 120;
             }
           ];
           right = [
@@ -199,7 +193,7 @@
             id = "weather-card";
           }
           {
-            enabled = false;
+            enabled = true;
             id = "media-sysmon-card";
           }
         ];
@@ -242,9 +236,34 @@
           ];
         };
       };
+      desktopWidgets = {
+        editMode = false;
+        enabled = true;
+        monitorWidgets = [
+          {
+            name = "eDP-1";
+            widgets = [
+              {
+                id = "MediaPlayer";
+                showBackground = true;
+                visualizerType = "linear";
+                x = 1600;
+                y = {
+                };
+              }
+              {
+                id = "Clock";
+                showBackground = true;
+                x = 1778;
+                y = 0;
+              }
+            ];
+          }
+        ];
+      };
       dock = {
         backgroundOpacity = 1;
-        colorizeIcons = false;
+        colorizeIcons = true;
         deadOpacity = {
         };
         displayMode = "exclusive";
@@ -276,7 +295,7 @@
         language = "";
         lockOnSuspend = true;
         radiusRatio = 0;
-        scaleRatio = 1;
+        scaleRatio = 0.8;
         screenRadiusRatio = 0;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
@@ -361,7 +380,7 @@
         frameRate = 60;
         quality = "very_high";
         showCursor = true;
-        videoCodec = "h264";
+        videoCodec = "av1";
         videoSource = "portal";
       };
       sessionMenu = {
@@ -406,9 +425,9 @@
             enabled = true;
           }
         ];
-        showHeader = true;
+        showHeader = false;
       };
-      settingsVersion = 27;
+      settingsVersion = 30;
       systemMonitor = {
         cpuCriticalThreshold = 90;
         cpuPollingInterval = 3000;
@@ -417,6 +436,10 @@
         diskCriticalThreshold = 90;
         diskPollingInterval = 3000;
         diskWarningThreshold = 80;
+        enableNvidiaGpu = false;
+        gpuCriticalThreshold = 90;
+        gpuPollingInterval = 3000;
+        gpuWarningThreshold = 80;
         memCriticalThreshold = 90;
         memPollingInterval = 3000;
         memWarningThreshold = 80;
@@ -438,7 +461,7 @@
         fuzzel = false;
         ghostty = false;
         gtk = true;
-        kcolorscheme = false;
+        kcolorscheme = true;
         kitty = false;
         niri = true;
         pywalfox = false;
@@ -448,12 +471,14 @@
         vicinae = false;
         walker = false;
         wezterm = false;
+        yazi = false;
+        zed = false;
       };
       ui = {
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = 1.3;
+        fontDefaultScale = 1.4;
         fontFixed = "Aporetic Sans Mono";
-        fontFixedScale = 1.3;
+        fontFixedScale = 1.6;
         panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
@@ -465,7 +490,7 @@
         enabled = true;
         fillColor = "#000000";
         fillMode = "crop";
-        hideWallpaperFilenames = false;
+        hideWallpaperFilenames = true;
         monitorDirectories = [
 
         ];
@@ -475,10 +500,10 @@
         randomIntervalSec = 300;
         recursiveSearch = true;
         setWallpaperOnAllMonitors = true;
-        transitionDuration = 1500;
+        transitionDuration = 1000;
         transitionEdgeSmoothness = {
         };
-        transitionType = "random";
+        transitionType = "stripes";
         useWallhaven = false;
         wallhavenCategories = "111";
         wallhavenOrder = "desc";
