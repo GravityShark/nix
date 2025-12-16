@@ -121,7 +121,7 @@
             }
             {
               customFont = "";
-              formatHorizontal = "ddd MM dd HH:mm:ss";
+              formatHorizontal = "ddd-MM-dd  HH:mm:ss";
               formatVertical = "HH mm";
               id = "Clock";
               useCustomFont = false;
@@ -247,11 +247,11 @@
                 id = "MediaPlayer";
                 showBackground = true;
                 visualizerType = "linear";
-                x = 1600;
-                y = {
-                };
+                x = 1656;
+                y = 994;
               }
               {
+
                 id = "Clock";
                 showBackground = true;
                 x = 1778;
