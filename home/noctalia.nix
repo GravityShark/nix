@@ -121,7 +121,7 @@
             }
             {
               customFont = "";
-              formatHorizontal = "HH:mm";
+              formatHorizontal = "HH:mm MM:dd:ss";
               formatVertical = "HH mm";
               id = "Clock";
               useCustomFont = false;

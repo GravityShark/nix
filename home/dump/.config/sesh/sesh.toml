@@ -32,6 +32,7 @@ startup_command = "git status"
 name = "nix"
 # name = "nix 󱄅"
 path = "~/.nix"
+startup_command = "git status"
 
 [[session]]
 name = "scripts"
