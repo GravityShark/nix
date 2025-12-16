@@ -58,6 +58,8 @@
             osa (one-shot 5000 lalt)
 
             cw (caps-word 2000)
+
+            cm (tap-hold-press 200 200 caps lmet)
           )
 
           (defchordsv2 
@@ -79,7 +81,7 @@
 
           (deflayer base
             _    _    _    _    _    _    _    _    _    _   _ 
-            lmet    _    _    _    _    _    _    _    _    _   _   _
+            @cm    _    _    _    _    _    _    _    _    _   _   _
             _    _    _    _    _    _    _    _    _    _   _   _
             @nav    _    @sym    @mc    @ruckus
           )
@@ -114,7 +116,7 @@
 
           (deflayer num
             XX  F11 up  C-a     XX XX    7    8    9    _    _
-            _ @osm @osa @oss @osc XX XX    4    5    6    0    _
+            _ @osm @osa @oss @osc @fun XX    4    5    6    0    _
             F5  XX  XX  down XX XX XX    1    2    3    _    _
             _   XX  XX _   XX
           )
