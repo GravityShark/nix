@@ -3,7 +3,7 @@
 {
   programs.ghostty = {
     enable = true;
-    clearDefaultKeybinds = true;
+    # clearDefaultKeybinds = true;
     enableFishIntegration = true;
     package = pkgs.ghostty;
     settings = {
