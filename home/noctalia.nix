@@ -289,7 +289,7 @@
                 showBackground = true;
                 visualizerType = "";
                 x = 0;
-                y = 977;
+                y = 978;
               }
             ];
           }
