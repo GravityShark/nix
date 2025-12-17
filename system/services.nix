@@ -5,7 +5,7 @@
   # Power
   services.fstrim.enable = true; # ibe strimmin my disks (runs once at boot)
   services.thermald.enable = true; # test this later
-  services.tuned.enable = true; # power-profiles-daemon
+  services.tuned.enable = true; # power-profiles-daemon, sometimes takes up power randomly
   services.udisks2.enable = true; # allows for usb storage devices to work without root
   services.upower.enable = true; # power viewing
 
