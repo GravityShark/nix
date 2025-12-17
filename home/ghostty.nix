@@ -3,7 +3,7 @@
 {
   programs.ghostty = {
     enable = true;
-    # clearDefaultKeybinds = true;
+    clearDefaultKeybinds = true;
     enableFishIntegration = true;
     package = pkgs.ghostty;
     settings = {
@@ -22,38 +22,4 @@
     };
     systemd.enable = false;
   };
-
-  #lib.mkForce {
-
-  # PartOf = [ "graphical-session.target" ];
-
-  # Environment = [
-  #   "DISPLAY=%{DISPLAY}"
-  #   "WAYLAND_DISPLAY=%{WAYLAND_DISPLAY}"
-  #   "XDG_RUNTIME_DIR=%t"
-  #   "DBUS_SESSION_BUS_ADDRESS=unix:path=%t/bus"
-  # ];
-
-  # Good practice for GUI apps under systemd
-  # Restart = "on-failure";
-  # };
-  # systemd.user.services.ghostty = {
-  #   Unit = {
-  #     Description = "Ghostty";
-  #     After = [
-  #       "graphical-session.target"
-  #       "dbus.socket"
-  #     ];
-  #     PartOf = [ "graphical-session.target" ];
-  #     Requires = [ "dbus.socket" ];
-  #   };
-  #   Service = {
-  #     Type = "notify-reload";
-  #     ReloadSignal = "SIGUSR2";
-  #     BusName = "com.mitchellh.ghostty";
-  #     ExecStart = "${pkgs.ghostty}/bin/ghostty --gtk-single-instance=true --initial-window=false";
-  #
-  #   };
-  #   Install.WantedBy = [ "graphical-session.target" ];
-  # };
 }

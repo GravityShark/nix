@@ -263,7 +263,7 @@
               generalTooltipText = "Syncthing";
               icon = "affiliate";
               id = "CustomButton";
-              onClicked = "toggle-syncthing";
+              onClicked = "/home/${config.home.username}/.scripts/toggle-syncthing";
               onMiddleClicked = "pkill syncthing";
               onRightClicked = "syncthing --no-browser";
               stateChecksJson = "[{\"command\":\"curl http://127.0.0.1:8384/rest/system/ping\",\"icon\":\"\"}]";
