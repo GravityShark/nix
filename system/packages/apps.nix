@@ -7,8 +7,8 @@ with pkgs;
   qbittorrent
 
   # File viewer
-  zathura # Documents
   vlc # Videos + Music
+  zathura # Documents
 
   # Media creation
   # audacity
@@ -18,7 +18,7 @@ with pkgs;
 
   # School
   onlyoffice-desktopeditors
-  # pdfarranger
+  pdfarranger
   # telegram-desktop
   # zoom-us
 ]
