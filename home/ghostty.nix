@@ -11,7 +11,7 @@
       confirm-close-surface = false;
       cursor-style = "block";
       font-family = "Aporetic Sans Mono";
-      font-size = 11;
+      font-size = 13;
       gtk-single-instance = true;
       gtk-titlebar = false;
       quit-after-last-window-closed = false;

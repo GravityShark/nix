@@ -98,7 +98,7 @@
               hideUnoccupied = false;
               id = "Workspace";
               labelMode = "index";
-              showApplications = false;
+              showApplications = true;
               showLabelsOnlyWhenOccupied = true;
             }
           ];
