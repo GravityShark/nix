@@ -14,29 +14,30 @@ in
 {
   programs.niri.enable = true;
   security.polkit.enable = true;
-  # services.mako.enable = true;
-  systemd.user.services."app-com.mitchellh.ghostty".wantedBy = [ "graphical-session.target" ];
 
   environment.systemPackages = with pkgs; [
     autologin_on_7
     brightnessctl
+    foot
     # fuzzel
     gnome-system-monitor
     # grim
     # htop
     # mako
+    nautilus
+    nirius
+    notify-desktop
+    powertop
+    pwvucontrol
     # slurp
     # swaybg
     swayidle
     swayimg
     # swaylock
     wev
-    nautilus
-    pwvucontrol
     wl-clipboard
-    xwayland-satellite
     xlsclients
-    nirius
+    xwayland-satellite
   ];
 
   environment.sessionVariables = {
@@ -49,9 +50,6 @@ in
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = 1;
   };
-
-  # powermanagement
-  # services.tlp.enable = true;
 
   xdg.portal = {
     enable = true;

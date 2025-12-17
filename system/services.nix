@@ -1,18 +1,13 @@
 { ... }:
 
+# This is where generic systemd services should go, kinda like packages
 {
   # Power
-  services.fstrim.enable = true;
+  services.fstrim.enable = true; # ibe strimmin my disks (runs once at boot)
   services.thermald.enable = true; # test this later
-  services.tuned.enable = true;
-  services.udisks2.enable = true;
-  services.upower.enable = true;
-
-  # Vial udev rule
-  # https://get.vial.today/manual/linux-udev.html
-  services.udev.extraRules = ''
-    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
-  '';
+  services.tuned.enable = true; # power-profiles-daemon
+  services.udisks2.enable = true; # allows for usb storage devices to work without root
+  services.upower.enable = true; # power viewing
 
   # systemd.timers."background" = {
   #   wantedBy = [ "timers.target" ];

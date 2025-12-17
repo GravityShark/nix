@@ -1,10 +1,14 @@
 { lib, pkgs, ... }:
 
+# You should NEVER edit this file at all because it's already perfect
+# But it contains settings that edit the entire system as a whole in some way
 {
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 1;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -27,13 +31,13 @@
 
   # environment shit
   environment = {
+    binsh = lib.mkForce "${pkgs.dash}/bin/dash";
     shells = with pkgs; [
       bash
       dash
       mksh
       fish
     ];
-    binsh = lib.mkForce "${pkgs.dash}/bin/dash";
   };
 
   # Long live the better posix shell

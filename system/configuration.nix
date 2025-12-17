@@ -8,18 +8,19 @@
     # ./gnome.nix
     ./niri.nix
 
-    ## Apps
+    ## Services
+    ./bluetooth.nix
     ./kanata.nix
+    ./networking.nix
+    ./pipewire.nix
+    # ./printing.nix
+    # ./vial.nix
 
     ## Global
-    ./bluetooth.nix
     ./intel.nix
     # ./lanzaboote.nix
     ./msi.nix
-    ./networking.nix
     ./nvidia.nix
-    ./pipewire.nix
-    # ./printing.nix
 
     ## Meta
     ./hardware-configuration.nix # Copy exactly from /etc/nixos

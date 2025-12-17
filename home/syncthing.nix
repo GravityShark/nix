@@ -1,9 +1,14 @@
-{ config, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   # Syncthing setup
+  home.packages = [ pkgs.syncthing ];
   services.syncthing = {
-    enable = true;
+    enable = false;
     settings = {
       devices = {
         brick2ah = {
@@ -27,6 +32,10 @@
           label = "Notes";
           versioning.type = "simple";
         };
+      };
+      gui = {
+        user = "gravity";
+        password = "gravity";
       };
     };
   };

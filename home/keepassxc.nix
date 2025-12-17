@@ -2,6 +2,11 @@
 
 {
   xdg.autostart.enable = true;
+  xdg.portal.config = {
+    common = {
+      "org.freedesktop.impl.portal.Secret" = [ "keepassxc" ];
+    };
+  };
   programs.keepassxc = {
     enable = true;
     autostart = true;

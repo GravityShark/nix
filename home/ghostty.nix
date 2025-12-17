@@ -20,7 +20,7 @@
       theme = "Gruvbox Material Light";
       window-decoration = "none";
     };
-    systemd.enable = true;
+    systemd.enable = false;
   };
 
   #lib.mkForce {

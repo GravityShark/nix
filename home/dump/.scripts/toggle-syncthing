@@ -1,0 +1,6 @@
+#!/bin/sh
+if (curl http://127.0.0.1:8384/rest/system/ping); then
+        pkill syncthing
+else
+        syncthing serve --no-browser
+fi

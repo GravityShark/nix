@@ -9,11 +9,11 @@
   imports = [
     # ./gnome.nix
     ./noctalia.nix
-    ./vicinae.nix
 
     # ./emacs.nix
     ./ghostty.nix
     ./keepassxc.nix
+    ./vicinae.nix
 
     ./restic.nix
     ./syncthing.nix

@@ -7,8 +7,7 @@ with pkgs;
   qbittorrent
 
   # File viewer
-  evince # Documents
-  foliate # Epub
+  zathura # Documents
   vlc # Videos + Music
 
   # Media creation
