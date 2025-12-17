@@ -104,7 +104,32 @@
           ];
           left = [
             {
-              id = "plugin:launcher-button";
+              hideMode = "alwaysExpanded";
+              icon = "rocket";
+              id = "CustomButton";
+              leftClickExec = "vicinae toggle";
+              leftClickUpdateText = true;
+              maxTextLength = {
+                horizontal = 10;
+                vertical = 10;
+              };
+              middleClickExec = "";
+              middleClickUpdateText = false;
+              parseJson = false;
+              rightClickExec = "";
+              rightClickUpdateText = false;
+              showIcon = true;
+              textCollapse = "";
+              textCommand = "";
+              textIntervalMs = 3000;
+              textStream = false;
+              wheelDownExec = "";
+              wheelDownUpdateText = false;
+              wheelExec = "";
+              wheelMode = "unified";
+              wheelUpExec = "";
+              wheelUpUpdateText = false;
+              wheelUpdateText = false;
             }
           ];
           right = [
@@ -263,8 +288,8 @@
                 id = "MediaPlayer";
                 showBackground = true;
                 visualizerType = "";
-                x = 1592;
-                y = 980;
+                x = 0;
+                y = 977;
               }
             ];
           }
