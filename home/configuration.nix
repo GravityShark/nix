@@ -13,6 +13,7 @@
     # ./emacs.nix
     ./ghostty.nix
     ./keepassxc.nix
+    ./mcsr.nix
     ./vicinae.nix
 
     ./restic.nix

@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    graalvm-ce
+    # graalvmPackages.graalvm-ce
     javaPackages.compiler.temurin-bin.jre-21
     prismlauncher
     waywall
