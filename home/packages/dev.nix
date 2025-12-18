@@ -19,6 +19,7 @@ with pkgs;
 
   # Java
   # graalvm-ce
+  # javaPackages.compiler.temurin-bin.jre-21
 
   # Lua
   lua-language-server
