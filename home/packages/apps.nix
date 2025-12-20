@@ -3,7 +3,7 @@
 with pkgs;
 [
   anki
-  # normcap # better OCR
+  super-productivity
   # teams-for-linux
   vial
   youtube-music
