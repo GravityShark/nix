@@ -40,6 +40,7 @@
     # "xdg-terminals.list".source = dump/.config/xdg-terminals.list;
   };
 
+  programs.hm-ricing-mode.enable = true;
   programs.hm-ricing-mode.apps = {
     tmux.dest_dir = ".tmux.conf";
     sesh.dest_dir = ".config/sesh";

@@ -5,6 +5,6 @@
     bubblewrap
     dwarfs
     fuse-overlayfs
-    wineWowPackages.waylandFull
+    wineWowPackages.staging
   ];
 }
