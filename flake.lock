@@ -37,22 +37,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1762111121,
-        "narHash": "sha256-4vhDuZ7OZaZmKKrnDpxLZZpGIJvAeMtK6FKLJYUtAdw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "noctalia-flake": {
       "inputs": {
         "nixpkgs": [
@@ -60,11 +44,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766024842,
-        "narHash": "sha256-3G7kbKHWs+IynAUOxHlem7bUtDkXvxgGQSoqo1y93iI=",
+        "lastModified": 1766202991,
+        "narHash": "sha256-i0bSny2EeEdWjErFUXbFfoJOZMJLMsxEYMyw/f5oZu0=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "abe3e8a906ba842b69732410320a65097a748d71",
+        "rev": "c8b76c7b90c1a9efa8c8c5a5c3229ca86b855830",
         "type": "github"
       },
       "original": {
@@ -78,42 +62,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "noctalia-flake": "noctalia-flake",
-        "vicinae": "vicinae",
         "zen-browser-flake": "zen-browser-flake"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "vicinae": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2",
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1765982567,
-        "narHash": "sha256-lii6QTyRYIaQk9eDsvwzSZ1ZlICQoP/sIAWDGlXVpbI=",
-        "owner": "vicinaehq",
-        "repo": "vicinae",
-        "rev": "69f8a116929b9bc5f4b0e3b822a148ae657bb9c6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vicinaehq",
-        "repo": "vicinae",
-        "type": "github"
       }
     },
     "zen-browser-flake": {
