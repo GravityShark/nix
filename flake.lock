@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "hm-ricing-mode": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1764340891,
+        "narHash": "sha256-OYR4LtJ7pMJ2hqkcGgeeYJ4wK1PY/Q1T6qCL9zWZUXM=",
+        "owner": "mipmip",
+        "repo": "hm-ricing-mode",
+        "rev": "a17f3a1ec51eef0b8581554cab7e86641327c650",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mipmip",
+        "repo": "hm-ricing-mode",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -23,6 +41,21 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1742493529,
+        "narHash": "sha256-VJ9BZ52tjJSicVvPD5fJZuM3JmcGt9DQIJTVPLRGL58=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "750fef2a6310c764911e49a04c88d7c3c6d88585",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1765838191,
         "narHash": "sha256-m5KWt1nOm76ILk/JSCxBM4MfK3rYY7Wq9/TZIIeGnT8=",
         "owner": "NixOS",
@@ -37,7 +70,7 @@
         "type": "github"
       }
     },
-    "noctalia-flake": {
+    "noctalia": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -60,9 +93,10 @@
     },
     "root": {
       "inputs": {
+        "hm-ricing-mode": "hm-ricing-mode",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "noctalia-flake": "noctalia-flake",
+        "nixpkgs": "nixpkgs_2",
+        "noctalia": "noctalia",
         "zen-browser-flake": "zen-browser-flake"
       }
     },
