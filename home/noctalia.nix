@@ -546,7 +546,7 @@
         setWallpaperOnAllMonitors = true;
         transitionDuration = 1000;
         transitionEdgeSmoothness = 0.05;
-        transitionType = "stripes";
+        transitionType = "wipe";
         useWallhaven = false;
         wallhavenCategories = "111";
         wallhavenOrder = "desc";
