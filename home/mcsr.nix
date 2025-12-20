@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    # graalvmPackages.graalvm-ce
-    javaPackages.compiler.temurin-bin.jre-21
+    obs-studio
     prismlauncher
+    temurin-jre-bin
     waywall
-    chromium
+    lunar-client
   ];
 }

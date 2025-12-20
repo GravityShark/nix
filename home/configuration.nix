@@ -14,7 +14,7 @@
     ./ghostty.nix
     ./keepassxc.nix
     ./mcsr.nix
-    ./vicinae.nix
+    # ./vicinae.nix
 
     ./restic.nix
     ./syncthing.nix
