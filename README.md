@@ -1,6 +1,7 @@
 # im using nixos now
-
-![non default nixos niri screenshot i just took](./assets/Screenshot from 2025-12-20 21-37-00.png)
+2025
+![non default nixos niri screenshot i just took](https://github.com/GravityShark/nix/blob/68823a66db28cae998f1068240349a0bc0034f3a/assets/Screenshot%20from%202025-12-20%2021-37-00.png)
+2024
 ![default nixos gnome screenshot i just took](https://github.com/GravityShark/nix/blob/83b2c1b262985569411d3a4c544031521a2099d3/assets/Screenshot%20from%202024-11-22%2018-46-39.png)
 
 ## resources im using
