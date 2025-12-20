@@ -34,7 +34,6 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       # "discord-canary"
-      "lunarclient"
       "nvidia-persistenced"
       "nvidia-settings"
       "nvidia-x11"
