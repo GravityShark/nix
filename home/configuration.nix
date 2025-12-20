@@ -14,6 +14,7 @@
     ./ghostty.nix
     ./keepassxc.nix
     ./mcsr.nix
+    ./walker.nix
     # ./vicinae.nix
 
     ./restic.nix

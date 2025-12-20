@@ -32,12 +32,13 @@
     efibootmgr
     eza
     fastfetch
-    imagemagick
     fd
     ffmpeg
     fish
     fzf
+    ghostscript_headless
     git
+    imagemagick
     neovim
     restic
     ripgrep
