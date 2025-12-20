@@ -40,13 +40,6 @@
     # "xdg-terminals.list".source = dump/.config/xdg-terminals.list;
   };
 
-  programs.hm-ricing-mode.enable = true;
-  programs.hm-ricing-mode.apps = {
-    tmux.dest_dir = ".tmux.conf";
-    sesh.dest_dir = ".config/sesh";
-    ghostty.dest_dir = ".config/ghostty";
-    nvim.dest_dir = ".config/nvim";
-  };
 
   # home.sessionPath = [
   #   "${home.homeDirectory}/.scripts"

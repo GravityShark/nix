@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hm-ricing-mode.url = "github:mipmip/hm-ricing-mode";
     # lanzaboote = {
     #   url = "github:nix-community/lanzaboote/v0.4.3";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -27,7 +26,6 @@
       self,
       nixpkgs,
       home-manager,
-      hm-ricing-mode,
       noctalia,
       zen-browser-flake,
       ...
@@ -49,10 +47,7 @@
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [
-          ./home/configuration.nix
-          hm-ricing-mode.homeManagerModules.hm-ricing-mode
-        ];
+        modules = [ ./home/configuration.nix ];
         extraSpecialArgs = {
           inherit noctalia;
           inherit zen-browser;
