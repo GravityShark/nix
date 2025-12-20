@@ -17,7 +17,7 @@
       {
         event = "before-sleep";
         command = "${
-          pkgs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         }/bin/noctalia-shell ipc call lockScreen lock";
       }
     ];
@@ -29,7 +29,7 @@
       {
         timeout = 180;
         command = "${
-          pkgs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         }/bin/noctalia-shell ipc call lockScreen lock";
       }
       {
