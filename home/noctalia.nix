@@ -34,7 +34,7 @@
       }
       {
         timeout = 300;
-        command = "${pkgs.noctalia.systemd}/bin/systemctl suspend";
+        command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
   };
