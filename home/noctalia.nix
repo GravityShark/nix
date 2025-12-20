@@ -80,19 +80,18 @@
         volumeStep = 5;
       };
       bar = {
-        capsuleOpacity = 0;
+        capsuleOpacity = 1;
         density = "mini";
         exclusive = true;
         floating = false;
         marginHorizontal = 0;
-        marginVertical = {
-        };
+        marginVertical = 0.25;
         monitors = [
 
         ];
         outerCorners = false;
         position = "bottom";
-        showCapsule = true;
+        showCapsule = false;
         showOutline = false;
         transparent = false;
         widgets = {
@@ -114,7 +113,7 @@
               hideMode = "alwaysExpanded";
               icon = "rocket";
               id = "CustomButton";
-              leftClickExec = "vicinae toggle";
+              leftClickExec = "walker";
               leftClickUpdateText = true;
               maxTextLength = {
                 horizontal = 10;
@@ -270,7 +269,7 @@
               generalTooltipText = "Syncthing";
               icon = "affiliate";
               id = "CustomButton";
-              onClicked = "/home/${config.home.username}/.scripts/toggle-syncthing";
+              onClicked = "if (curl http://127.0.0.1:8384/rest/system/ping); then pkill syncthing else syncthing serve --no-browser fi";
               onMiddleClicked = "pkill syncthing";
               onRightClicked = "syncthing --no-browser";
               stateChecksJson = "[{\"command\":\"curl http://127.0.0.1:8384/rest/system/ping\",\"icon\":\"\"}]";
@@ -287,6 +286,7 @@
       desktopWidgets = {
         editMode = false;
         enabled = true;
+        gridSnap = true;
         monitorWidgets = [
           {
             name = "eDP-1";
@@ -303,10 +303,10 @@
         ];
       };
       dock = {
+        animationSpeed = 1;
         backgroundOpacity = 1;
         colorizeIcons = true;
-        deadOpacity = {
-        };
+        deadOpacity = 0.6;
         displayMode = "exclusive";
         enabled = false;
         floatingRatio = 1;
@@ -328,15 +328,14 @@
         avatarImage = "/home/gravity/.face";
         boxRadiusRatio = 1;
         compactLockScreen = false;
-        dimmerOpacity = {
-        };
+        dimmerOpacity = 0.2;
         enableShadows = false;
         forceBlackScreenCorners = false;
         iRadiusRatio = 0;
         language = "";
         lockOnSuspend = true;
         radiusRatio = 0;
-        scaleRatio = 1.0;
+        scaleRatio = 1;
         screenRadiusRatio = 0;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
@@ -439,12 +438,6 @@
             enabled = true;
           }
           {
-            action = "suspend";
-            command = "";
-            countdownEnabled = true;
-            enabled = true;
-          }
-          {
             action = "hibernate";
             command = "";
             countdownEnabled = true;
@@ -457,16 +450,22 @@
             enabled = true;
           }
           {
-            action = "logout";
+            action = "shutdown";
+            command = "";
+            countdownEnabled = true;
+            enabled = true;
+          }
+          {
+            action = "suspend";
             command = "";
             countdownEnabled = true;
             enabled = false;
           }
           {
-            action = "shutdown";
+            action = "logout";
             command = "";
             countdownEnabled = true;
-            enabled = true;
+            enabled = false;
           }
         ];
         showHeader = false;
@@ -507,12 +506,13 @@
         gtk = true;
         kcolorscheme = true;
         kitty = false;
+        mango = false;
         niri = true;
         pywalfox = false;
         qt = true;
         spicetify = false;
         telegram = false;
-        vicinae = true;
+        vicinae = false;
         walker = false;
         wezterm = false;
         yazi = false;
@@ -520,9 +520,9 @@
       };
       ui = {
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = 1.4;
+        fontDefaultScale = 1.35;
         fontFixed = "Aporetic Sans Mono";
-        fontFixedScale = 1.5;
+        fontFixedScale = 1.45;
         panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
@@ -545,8 +545,7 @@
         recursiveSearch = true;
         setWallpaperOnAllMonitors = true;
         transitionDuration = 1000;
-        transitionEdgeSmoothness = {
-        };
+        transitionEdgeSmoothness = 0.05;
         transitionType = "stripes";
         useWallhaven = false;
         wallhavenCategories = "111";
