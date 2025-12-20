@@ -32,10 +32,10 @@
     "fish/conf.d".source = dump/.config/fish/conf.d;
     "fish/config.fish".source = dump/.config/fish/config.fish;
     "fish/functions".source = dump/.config/fish/functions;
-    # "nvim/after".source = dump/.config/nvim/after;
-    # "nvim/init.lua".source = dump/.config/nvim/init.lua;
-    # "nvim/lua".source = dump/.config/nvim/lua;
-    # "nvim/snippets".source = dump/.config/nvim/snippets;
+    "nvim/after".source = dump/.config/nvim/after;
+    "nvim/init.lua".source = dump/.config/nvim/init.lua;
+    "nvim/lua".source = dump/.config/nvim/lua;
+    "nvim/snippets".source = dump/.config/nvim/snippets;
     "sesh".source = dump/.config/sesh;
     # "xdg-terminals.list".source = dump/.config/xdg-terminals.list;
   };
