@@ -16,6 +16,7 @@
     ./mcsr.nix
     ./walker.nix
     # ./vicinae.nix
+    ./gaming.nix
 
     ./restic.nix
     ./syncthing.nix
