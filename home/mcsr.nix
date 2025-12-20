@@ -6,5 +6,6 @@
     javaPackages.compiler.temurin-bin.jre-21
     prismlauncher
     waywall
+    chromium
   ];
 }

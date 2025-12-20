@@ -1,16 +1,55 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 # List packages installed in system profile. To search, run:
-# $ nix search wget
-
-let
-  apps = import ./packages/apps.nix { inherit pkgs; };
-  dev = import ./packages/dev.nix { inherit pkgs; };
-  cli = import ./packages/cli.nix { inherit pkgs; };
-in
+# $ nix search nixpkgs wget
 {
-  environment.systemPackages = apps ++ dev ++ cli ++ [ pkgs.home-manager ];
+  environment.systemPackages = with pkgs; [
+    home-manager
+
+    mcontrolcenter # MSI
+    obsidian # r7l overlay
+    qbittorrent
+
+    ## File viewer
+    vlc # Videos + Music
+    zathura # Documents
+
+    ## Media
+    # audacity
+    # gnome-sound-recorder
+    # kdePackages.kdenlive # Video editor (I should enable gpu when using this)
+    krita # Drawing
+
+    ## School
+    onlyoffice-desktopeditors
+    pdfarranger
+    # telegram-desktop
+    # zoom-us
+
+    ## CLIs
+    # bc
+    dash
+    efibootmgr
+    eza
+    fastfetch
+    imagemagick
+    fd
+    ffmpeg
+    fish
+    fzf
+    git
+    neovim
+    restic
+    ripgrep
+    tmux
+    unzip
+    zoxide
+
+    ## Dev
+    clang
+    gnumake
+    go
+    # nodejs
+    python3
+  ];
 }
