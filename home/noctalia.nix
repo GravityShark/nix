@@ -13,7 +13,7 @@
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
+        command = "${noctalia.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       }
     ];
     timeouts = [
@@ -23,11 +23,11 @@
       }
       {
         timeout = 180;
-        command = "${pkgs.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
+        command = "${noctalia.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       }
       {
         timeout = 300;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
+        command = "${noctalia.systemd}/bin/systemctl suspend";
       }
     ];
   };
