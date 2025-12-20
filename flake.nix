@@ -7,15 +7,15 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hm-ricing-mode.url = "github:mipmip/hm-ricing-mode";
     # lanzaboote = {
     #   url = "github:nix-community/lanzaboote/v0.4.3";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
-    noctalia-flake = {
+    noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v3.7.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # vicinae.url = "github:vicinaehq/vicinae";
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,15 +27,14 @@
       self,
       nixpkgs,
       home-manager,
-      noctalia-flake,
-      # vicinae,
+      hm-ricing-mode,
+      noctalia,
       zen-browser-flake,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      noctalia = noctalia-flake;
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
@@ -52,7 +51,7 @@
         inherit pkgs;
         modules = [
           ./home/configuration.nix
-          # vicinae.homeManagerModules.default
+          hm-ricing-mode.homeManagerModules.hm-ricing-mode
         ];
         extraSpecialArgs = {
           inherit noctalia;
