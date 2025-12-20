@@ -6,14 +6,19 @@
 }:
 
 {
-  imports = [ noctalia ];
-  home.packages = [ pkgs.wdisplays ];
+  imports = [ noctalia.homeModules.default ];
+  home.packages = with pkgs; [
+    wdisplays
+    walker
+  ];
   services.swayidle = {
     enable = true;
     events = [
       {
         event = "before-sleep";
-        command = "${noctalia.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
+        command = "${
+          pkgs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+        }/bin/noctalia-shell ipc call lockScreen lock";
       }
     ];
     timeouts = [
@@ -23,11 +28,13 @@
       }
       {
         timeout = 180;
-        command = "${noctalia.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
+        command = "${
+          pkgs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+        }/bin/noctalia-shell ipc call lockScreen lock";
       }
       {
         timeout = 300;
-        command = "${noctalia.systemd}/bin/systemctl suspend";
+        command = "${pkgs.noctalia.systemd}/bin/systemctl suspend";
       }
     ];
   };
@@ -145,7 +152,7 @@
               deviceNativePath = "";
               displayMode = "alwaysShow";
               id = "Battery";
-              showNoctaliaPerformance = true;
+              showNoctaliaPerformance = false;
               showPowerProfiles = true;
               warningThreshold = 30;
             }

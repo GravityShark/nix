@@ -12,7 +12,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
     noctalia-flake = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia-shell/v3.7.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # vicinae.url = "github:vicinaehq/vicinae";
@@ -35,7 +35,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      noctalia = noctalia-flake.homeModules.default;
+      noctalia = noctalia-flake;
       zen-browser = zen-browser-flake.packages.${system};
     in
     {
