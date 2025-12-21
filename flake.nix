@@ -15,6 +15,10 @@
       url = "github:noctalia-dev/noctalia-shell/v3.7.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser-flake = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,6 +31,7 @@
       nixpkgs,
       home-manager,
       noctalia,
+      stylix,
       zen-browser-flake,
       ...
     }@inputs:
@@ -47,7 +52,10 @@
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/configuration.nix ];
+        modules = [
+          ./home/configuration.nix
+          stylix.homeModules.stylix
+        ];
         extraSpecialArgs = {
           inherit noctalia;
           inherit zen-browser;
