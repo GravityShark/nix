@@ -35,6 +35,7 @@
       self,
       nixpkgs,
       home-manager,
+      noctalia,
       stylix,
       ...
     }@inputs:
@@ -58,6 +59,9 @@
           ./home/configuration.nix
           stylix.homeModules.stylix
         ];
+        extraSpecialArgs = {
+          inherit noctalia;
+        };
       };
     };
 }

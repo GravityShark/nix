@@ -2,15 +2,12 @@
   lib,
   config,
   pkgs,
-  inputs,
+  noctalia,
   ...
 }:
 
-let
-  noctalia = inputs.noctalia.homeModules.default;
-in
 {
-  imports = [ noctalia ];
+  imports = [ noctalia.homeModules.default ];
   home.packages = with pkgs; [
     wdisplays
   ];
