@@ -1,23 +1,22 @@
-{ pkgs, ... }:
+{ lib, ... }:
 
 {
   programs.ghostty = {
     enable = true;
     # clearDefaultKeybinds = true;
     enableFishIntegration = true;
-    package = pkgs.ghostty;
     settings = {
       # command = "${pkgs.fish}/bin/fish --login --interactive";
       confirm-close-surface = false;
       cursor-style = "block";
-      font-family = "Aporetic Sans Mono";
-      font-size = 13;
+      font-family = lib.mkDefault "Aporetic Sans Mono";
+      font-size = lib.mkDefault 13;
       gtk-single-instance = true;
       gtk-titlebar = false;
       quit-after-last-window-closed = false;
       shell-integration-features = "no-cursor";
       shell-integration = "fish";
-      theme = "Gruvbox Material Light";
+      theme = lib.mkDefault "Gruvbox Material Light";
       window-decoration = "none";
     };
     systemd.enable = false;

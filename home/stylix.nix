@@ -14,7 +14,7 @@
 
   stylix.fonts = {
     sizes = {
-      applications = 11;
+      applications = 13;
       # desktop = 10;
       # popups = 10;
       # terminal = 11;
@@ -54,11 +54,17 @@
     fish.enable = true;
     fzf.enable = true;
     ghostty.enable = true;
-    # gnome.enable = true;
+    gnome.enable = true;
     gtk.enable = true;
-    # gtksourceview.enable = true;
+    gtksourceview.enable = true;
     # mangohud.enable = true;
     # mpv.enable = true;
+    neovim.enable = true;
+    noctalia-shell.enable = true;
+    obsidian.enable = true;
+    qt.enable = true;
+    zathura.enable = true;
+    zen-browser.enable = true;
   };
   ## Niri
   xdg.configFile = {
