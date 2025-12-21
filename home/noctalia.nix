@@ -47,10 +47,8 @@
     };
   };
 
-  programs.noctalia-shell = {
-    enable = true;
-    systemd.enable = true;
-    plugins = {
+  home.file.".conig/noctalia/plugins.json" = {
+    text = builtins.toJSON {
       sources = [
         {
           enabled = true;
@@ -65,6 +63,11 @@
       };
       version = 1;
     };
+  };
+
+  programs.noctalia-shell = {
+    enable = true;
+    systemd.enable = true;
     settings = {
       appLauncher = {
         customLaunchPrefix = "";
