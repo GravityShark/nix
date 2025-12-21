@@ -295,8 +295,9 @@
                 id = "MediaPlayer";
                 showBackground = true;
                 visualizerType = "";
-                x = 0;
-                y = 978;
+                x = 1500;
+                y = 960;
+                hideMode = "hidden";
               }
             ];
           }

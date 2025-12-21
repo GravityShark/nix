@@ -1,4 +1,5 @@
 # im using nixos now
+
 2025
 ![non default nixos niri screenshot i just took](https://github.com/GravityShark/nix/blob/68823a66db28cae998f1068240349a0bc0034f3a/assets/Screenshot%20from%202025-12-20%2021-37-00.png)
 2024
@@ -6,21 +7,20 @@
 
 ## resources im using
 
-- looking stuff ub
+- looking stuff up
   - [NixOS Search](https://search.nixos.org)
   - [MyNixOS](https://mynixos.com/)
   - [google](https://www.google.com/) or [whatever privacy oriented search engine](https://search.brave.com)
 - learning about nixos
   - [NixOS tutorial by LibrePhoenix](https://www.youtube.com/watch?v=6WLaNIlDW0M&list=PL_WcXIXdDWWpuypAEKzZF2b5PijTluxRG)
 
-> probably where my entire dotfiles is gonna reside from now on
-> even for non nixos systems
+> probably where my entire dotfiles is gonna reside from now on, even for non nixos systems
 
 ## installation
 
 > assuming that you like use the same user name (gravity)
 
-1. install nixos from the gui setting up the partitions (preferably swap partition n reboot.
+1. install nixos from the gui setting up the partitions (preferably swap partition) n reboot
 
 2. now when you're in, enable flake capabilities
 
@@ -70,12 +70,13 @@ n ur done, jus complete this checklist then reboot
 - [ ] Redownload and setup some wallpapers or something
   - [Distrotube](https://gitlab.com/dwt1/wallpapers)
   - Rosepine ([1](https://github.com/rose-pine/wallpapers), [2](https://wallhaven.cc/tag/162505), or just [google](https://www.google.com/search?q=rose+pine+wallpaper&tbs=imgo:1&udm=2) [it](https://duckduckgo.com/?t=h_&q=rose+pine+wallpaper&ia=images&iax=images))
+  - [Wallhaven](https://wallhaven.cc/)
+  - [Gruvbox](https://gruvbox-wallpapers.pages.dev/)
 
 ## maintaining the system
 
 1. for updating use `updatescript`
    - For doom emacs just do a `doom env`, and if you want an actual update do `doom upgrade` (which already also does doom env) but you barely want to do this if it wokrs it wokrs type ish
-   - if you are tryna build without internet, use the `--option substitute false` option for nixos-rebuild, and `--no-substitute` for home-manager
 2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
    - and also clean up doom emacs too `doom gc`
 
@@ -83,11 +84,14 @@ n ur done, jus complete this checklist then reboot
 
 1. [quickshell](https://quickshell.outfoxxed.me/) seems to be goated, if added with like a very minimal window manager
    https://github.com/AvengeMedia/DankMaterialShell
+   - alternatives are: [Astal](https://aylur.github.io/astal/)/[AGS](https://aylur.github.io/ags/), [fabric](https://wiki.ffpy.org/), [Ignis](https://ignis-sh.github.io/ignis/stable/index.html), [ewww](https://github.com/elkowar/eww), [quickshell](https://quickshell.org/) and probably even more
+   - not shells but good bars: [ironbar](https://crates.io/crates/ironbar), [waybar](https://github.com/Alexays/Waybar), [nwg-panel](https://github.com/nwg-piotr/nwg-panel)
 
 2. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake because it's the only working caprine fork for me
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
 
 3. create your own window manager using [dwl](https://codeberg.org/dwl/dwl)
+   - dwl is no longer maintanied
    - my ideal setup would probably be something like 1 application per
      tag/workspace. each new application open in a new tag automatically, also
      you auto focus on it. but new windows of the same application stay
@@ -104,18 +108,19 @@ n ur done, jus complete this checklist then reboot
    - the most important issues i dont know how to solve are:
      1. how would i be able to switch to tags efficiently
         - lowkey i forgot i have run or raise
-   -
 
 4. maybe replace joshuto cause it sucks and doesn't work within tmux, and also
    also its really slow for some reason
    - probably with [yazi](https://github.com/sxyazi/yazi)
    - im gonna try using oil.nvim
      - oil really works tbh
-     - the only 2 things that is missing oil for me
+     - the only 3 things that is missing oil for me
        1. follow tree view (fyler could work but buggy rn)
        2. exit cd, but its all good
+       3. [default file manager](http://askubuntu.com/questions/84929/ddg#335911) and as [file chooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser)
 
 5. remove emacs for obsidian/obsi
+   - obsidian sucks for task management, might try super productivity for this
 
 6. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or wait for sesh to update
 
@@ -127,6 +132,7 @@ n ur done, jus complete this checklist then reboot
    - qutebrowser (qtwebengine)
    - luakit (webkit2gtk, 10 months ago, broke last time i used it)
    - the main hurdle is that i really like mozilla sync, so i need an alternative
+   - and also zen browser works really well, ((just need to theme it right))
 
 8. KDE Connect
 
