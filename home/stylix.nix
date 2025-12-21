@@ -6,7 +6,7 @@
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-hard.yaml";
   stylix.image = pkgs.fetchurl {
     url = "https://gruvbox-wallpapers.pages.dev/wallpapers/minimalistic/light/Tranquility.png";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-yb+R/lH8OaQcNFIUdY0qlFmsN6sy1GKXhV7LyaQHUe0=";
   };
   stylix.fonts = {
     serif = {
@@ -30,4 +30,6 @@
     };
   };
 
+  # stylix.targets.noctalia-shell.enable = false;
+  stylix.targets.kde.enable = false;
 }

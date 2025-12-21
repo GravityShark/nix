@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   noctalia,
@@ -38,7 +39,7 @@
     ];
   };
 
-  home.file.".cache/noctalia/wallpapers.json" = {
+  home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
     text = builtins.toJSON {
       defaultWallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
       # wallpapers = {
@@ -141,12 +142,28 @@
           ];
           right = [
             {
+              blacklist = [
+
+              ];
+              colorizeIcons = false;
+              drawerEnabled = true;
+              hidePassive = false;
+              id = "Tray";
+              pinned = [
+
+              ];
+            }
+            {
+              id = "Spacer";
+              width = 2;
+            }
+            {
               displayMode = "alwaysShow";
               id = "Volume";
             }
             {
               id = "Spacer";
-              width = 2;
+              width = 3;
             }
             {
               deviceNativePath = "";
@@ -175,22 +192,6 @@
               id = "Clock";
               useCustomFont = false;
               usePrimaryColor = false;
-            }
-            {
-              id = "Spacer";
-              width = 1;
-            }
-            {
-              blacklist = [
-
-              ];
-              colorizeIcons = false;
-              drawerEnabled = true;
-              hidePassive = false;
-              id = "Tray";
-              pinned = [
-
-              ];
             }
           ];
         };
@@ -289,10 +290,10 @@
               generalTooltipText = "Syncthing";
               icon = "affiliate";
               id = "CustomButton";
-              onClicked = "if (curl http://127.0.0.1:8384/rest/system/ping); then pkill syncthing; else syncthing serve --no-browser && notify-desktop 'Syncthing shut down'; fi";
+              onClicked = "if (systemctl is-active --quiet --user syncthing.service); then systemctl stop --user syncthing.service && notify-desktop 'Stopping Syncthing'; else systemctl start --user syncthing.service && notify-desktop 'Starting Syncthing'; fi";
               onMiddleClicked = "pkill syncthing";
               onRightClicked = "syncthing --no-browser";
-              stateChecksJson = "[{\"command\":\"curl http://127.0.0.1:8384/rest/system/ping && notify-desktop yo\",\"icon\":\"\"}]";
+              stateChecksJson = "[{\"command\":\"systemctl is-active --quiet --user syncthing.service\",\"icon\":\"\"}]";
             }
             {
               id = "KeepAwake";
@@ -326,7 +327,7 @@
       };
       dock = {
         animationSpeed = 1;
-        backgroundOpacity = 1;
+        backgroundOpacity = 1.0;
         colorizeIcons = true;
         deadOpacity = 0.6;
         displayMode = "auto_hide";
@@ -398,7 +399,7 @@
         nightTemp = "4000";
       };
       notifications = {
-        backgroundOpacity = 1;
+        backgroundOpacity = 1.0;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = true;
         enabled = true;
@@ -422,7 +423,7 @@
       };
       osd = {
         autoHideMs = 2000;
-        backgroundOpacity = 1;
+        backgroundOpacity = 1.0;
         enabled = true;
         enabledTypes = [
           0
@@ -545,7 +546,7 @@
         fontDefaultScale = 1.25;
         fontFixed = "Aporetic Sans Mono";
         fontFixedScale = 1.25;
-        panelBackgroundOpacity = 1;
+        panelBackgroundOpacity = 1.0;
         panelsAttachedToBar = true;
         settingsPanelMode = "centered";
         tooltipsEnabled = true;
