@@ -3,8 +3,8 @@
 {
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
-  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
   stylix.autoEnable = false;
 
   stylix.image = pkgs.fetchurl {
@@ -98,6 +98,8 @@
       }
     '';
   };
+  ## Extra noctalia-shell
+
 }
 
 # palette:
