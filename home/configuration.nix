@@ -17,7 +17,6 @@
     ./keepassxc.nix
     ./mcsr.nix
     ./stylix.nix
-    ./niri.nix
     # ./vicinae.nix
     # ./walker.nix
 
