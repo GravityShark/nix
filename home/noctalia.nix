@@ -289,7 +289,7 @@
               generalTooltipText = "Syncthing";
               icon = "affiliate";
               id = "CustomButton";
-              onClicked = "if (curl http://127.0.0.1:8384/rest/system/ping); then pkill syncthing else syncthing serve --no-browser fi";
+              onClicked = "if (curl http://127.0.0.1:8384/rest/system/ping); then pkill syncthing; else syncthing serve --no-browser; fi";
               onMiddleClicked = "pkill syncthing";
               onRightClicked = "syncthing --no-browser";
               stateChecksJson = "[{\"command\":\"curl http://127.0.0.1:8384/rest/system/ping\",\"icon\":\"\"}]";
