@@ -47,7 +47,7 @@
     };
   };
 
-  home.file.".conig/noctalia/plugins.json" = {
+  home.file.".config/noctalia/plugins.json" = {
     text = builtins.toJSON {
       sources = [
         {
@@ -149,6 +149,7 @@
               width = 2;
             }
             {
+              deviceNativePath = "";
               displayMode = "alwaysShow";
               id = "Battery";
               showNoctaliaPerformance = false;
@@ -385,7 +386,7 @@
         weatherShowEffects = true;
       };
       network = {
-        wifiEnabled = false;
+        wifiEnabled = true;
       };
       nightLight = {
         autoSchedule = true;
