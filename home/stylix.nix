@@ -14,10 +14,10 @@
 
   stylix.fonts = {
     sizes = {
-      applications = 13;
+      applications = 11;
       # desktop = 10;
       # popups = 10;
-      # terminal = 11;
+      terminal = 13;
     };
 
     serif = {
