@@ -37,13 +37,11 @@
       home-manager,
       noctalia,
       stylix,
-      zen-browser-flake,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      zen-browser = zen-browser-flake.packages.${system};
     in
     {
       nixosConfigurations = {
