@@ -36,7 +36,7 @@
   stylix.icons.dark = "Papirus-Dark";
 
   xdg.configFile = {
-    "niri/base16.kdl".text = with config.colors.withHashtag; ''
+    "niri/base16.kdl".text = with config.lib.stylix.colors.withHashtag; ''
       layout {
           focus-ring {
               active-color   "${base0B}"
