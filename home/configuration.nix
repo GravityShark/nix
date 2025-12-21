@@ -38,5 +38,6 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "lunarclient"
+      "obsidian"
     ];
 }

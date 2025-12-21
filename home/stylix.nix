@@ -59,7 +59,7 @@
     gtksourceview.enable = true;
     # mangohud.enable = true;
     # mpv.enable = true;
-    neovim.enable = true;
+    # neovim.enable = true;
     noctalia-shell.enable = true;
     obsidian.enable = true;
     qt.enable = true;

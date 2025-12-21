@@ -7,12 +7,11 @@
     home-manager
 
     mcontrolcenter # MSI
-    obsidian # r7l overlay
     qbittorrent
 
     ## File viewer
     vlc # Videos + Music
-    zathura # Documents
+    # zathura # Documents
 
     ## Media
     # audacity

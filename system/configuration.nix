@@ -37,7 +37,6 @@
       "nvidia-persistenced"
       "nvidia-settings"
       "nvidia-x11"
-      "obsidian"
       # "teams"
       # "zerotierone"
       # "zoom"

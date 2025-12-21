@@ -1,14 +1,13 @@
 {
   lib,
   pkgs,
-  zen-browser,
+  inputs,
   ...
 }:
 
 let
   apps = import ./packages/apps.nix {
     inherit pkgs;
-    inherit zen-browser;
   };
   dev = import ./packages/dev.nix { inherit pkgs; };
   cli = import ./packages/cli.nix { inherit pkgs; };
@@ -21,6 +20,16 @@ in
   home.activation.updateFontCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     ${pkgs.fontconfig}/bin/fc-cache -f || echo "fc-cache failed"
   '';
+
+  imports = [ inputs.zen-browser.homeModules.beta ];
+  programs = {
+    anki.enable = true;
+    fish.enable = true;
+    fzf.enable = true;
+    obsidian.enable = true;
+    zathura.enable = true;
+    zen-browser.enable = true;
+  };
 }
 
 # # It is sometimes useful to fine-tune packages, for example, by applying
