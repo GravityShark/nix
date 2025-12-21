@@ -3,7 +3,7 @@
 {
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-hard.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
   stylix.image = pkgs.fetchurl {
     url = "https://gruvbox-wallpapers.pages.dev/wallpapers/minimalistic/light/Tranquility.png";
     hash = "sha256-yb+R/lH8OaQcNFIUdY0qlFmsN6sy1GKXhV7LyaQHUe0=";
