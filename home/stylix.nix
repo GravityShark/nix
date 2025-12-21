@@ -35,8 +35,8 @@
 
   stylix.icons.enable = true;
   stylix.icons.package = pkgs.papirus-icon-theme;
-  # stylix.icons.light = "Papi";
-  # stylix.icons.dark = pkgs.papirus-icon-theme;
+  stylix.icons.light = "Papirus-Light";
+  stylix.icons.dark = "Papirus-Dark";
 
   xdg.configFile = {
     "niri/base16.kdl".text = with colors.withHashtag; ''
