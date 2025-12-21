@@ -229,7 +229,7 @@
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "stylix": "stylix",
-        "zen-browser-flake": "zen-browser-flake"
+        "zen-browser": "zen-browser"
       }
     },
     "stylix": {
@@ -363,22 +363,25 @@
         "type": "github"
       }
     },
-    "zen-browser-flake": {
+    "zen-browser": {
       "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1765772419,
-        "narHash": "sha256-1mQ1K4fqebT54nz13rcRNjd6a+IbNLwLvYyR62EcyE8=",
-        "owner": "youwen5",
+        "lastModified": 1766334296,
+        "narHash": "sha256-81a54ZI2kMDMyzxpFj39X4kJhUuP1Q1W7yJ88TASvJY=",
+        "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "227e836e43fe7985b4c4f8b0076446a6d66f3343",
+        "rev": "dd0d0452dec10787ddb095a99da5d402cb8d0500",
         "type": "github"
       },
       "original": {
-        "owner": "youwen5",
+        "owner": "0xc000022070",
         "repo": "zen-browser-flake",
         "type": "github"
       }
