@@ -223,11 +223,11 @@
       };
       colorSchemes = {
         darkMode = false;
-        generateTemplatesForPredefined = true;
+        generateTemplatesForPredefined = false;
         manualSunrise = "06:30";
         manualSunset = "18:30";
         matugenSchemeType = "scheme-fruit-salad";
-        predefinedScheme = "Gruvbox";
+        # predefinedScheme = "Gruvbox";
         schedulingMode = "off";
         useWallpaperColors = false;
       };
