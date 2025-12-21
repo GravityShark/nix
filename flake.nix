@@ -54,7 +54,7 @@
         inherit pkgs;
         modules = [
           ./home/configuration.nix
-          # stylix.homeModules.stylix
+          stylix.homeModules.stylix
         ];
         extraSpecialArgs = {
           inherit noctalia;
