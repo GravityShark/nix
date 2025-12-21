@@ -35,6 +35,7 @@
       self,
       nixpkgs,
       home-manager,
+      noctalia,
       stylix,
       zen-browser,
       ...
@@ -57,6 +58,7 @@
         inherit pkgs;
         modules = [
           ./home/configuration.nix
+          noctalia
           stylix.homeModules.stylix
           zen-browser.homeModules.beta
         ];
