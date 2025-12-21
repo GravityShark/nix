@@ -10,13 +10,14 @@
     # ./gnome.nix
     ./noctalia.nix
 
+    ./anyrun.nix
     # ./emacs.nix
+    ./gaming.nix
     ./ghostty.nix
     ./keepassxc.nix
     ./mcsr.nix
-    ./walker.nix
     # ./vicinae.nix
-    ./gaming.nix
+    # ./walker.nix
 
     ./restic.nix
     ./syncthing.nix
