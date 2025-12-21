@@ -129,7 +129,7 @@
           left = [
             {
               id = "Spacer";
-              width = 2;
+              width = 1;
             }
             {
               colorizeDistroLogo = true;

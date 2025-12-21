@@ -36,10 +36,10 @@
     "nvim/init.lua".source = dump/.config/nvim/init.lua;
     "nvim/lua".source = dump/.config/nvim/lua;
     "nvim/snippets".source = dump/.config/nvim/snippets;
+    "niri/config.kdl".source = dump/.config/niri/config.kdl;
     "sesh".source = dump/.config/sesh;
     # "xdg-terminals.list".source = dump/.config/xdg-terminals.list;
   };
-
 
   # home.sessionPath = [
   #   "${home.homeDirectory}/.scripts"

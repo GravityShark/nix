@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, colors, ... }:
 
+# let
+# config.lib.stylix.colors = {
+#   base08 = "ff0000";
 {
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
@@ -30,6 +33,58 @@
     };
   };
 
+  stylix.icons.enable = true;
+
+  xdg.configFile = {
+    "niri/base16.kdl".text = with colors.withHashtag; ''
+      layout {
+          focus-ring {
+              active-color   "${base0B}"
+              inactive-color "${base00}"
+              urgent-color   "${base08}"
+          }
+
+          border {
+              active-color   "${base0B}"
+              inactive-color "${base00}"
+              urgent-color   "${base08}"
+          }
+
+          shadow {
+              color "#00000070"
+          }
+
+          tab-indicator {
+              active-color   "${base0B}"
+              inactive-color "${base00}"
+              urgent-color   "${base08}"
+          }
+
+          insert-hint {
+              color "#98971a80"
+          }
+      }
+    '';
+  };
+
   # stylix.targets.noctalia-shell.enable = false;
   stylix.targets.kde.enable = false;
 }
+
+# palette:
+#   base00: "#fbf1c7"
+#   base01: "#f2e5bc"
+#   base02: "#d5c4a1"
+#   base03: "#bdae93"
+#   base04: "#665c54"
+#   base05: "#654735"
+#   base06: "#3c3836"
+#   base07: "#282828"
+#   base08: "#c14a4a"
+#   base09: "#c35e0a"
+#   base0A: "#b47109"
+#   base0B: "#6c782e"
+#   base0C: "#4c7a5d"
+#   base0D: "#45707a"
+#   base0E: "#945e80"
+#   base0F: "#e78a4e"
