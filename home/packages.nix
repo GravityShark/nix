@@ -25,7 +25,12 @@ in
     fzf.enable = true;
     obsidian.enable = true;
     zathura.enable = true;
-    zen-browser.enable = true;
+    zen-browser = {
+      enable = true;
+      # profiles = {
+      #   "Default Profile" = { };
+      # };
+    };
   };
 }
 

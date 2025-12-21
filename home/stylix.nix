@@ -64,7 +64,10 @@
     obsidian.enable = true;
     qt.enable = true;
     zathura.enable = true;
-    zen-browser.enable = true;
+    zen-browser = {
+      enable = true;
+      profileNames = [ "Default Profile" ];
+    };
   };
   ## Niri
   xdg.configFile = {
