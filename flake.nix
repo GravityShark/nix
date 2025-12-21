@@ -12,7 +12,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
     # };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v3.7.1";
+      url = "github:noctalia-dev/noctalia-shell/v3.7.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser-flake = {
