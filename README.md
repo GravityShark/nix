@@ -139,4 +139,6 @@ n ur done, jus complete this checklist then reboot
 ```
 9. - probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
 
+10. use [stylix](https://nix-community.github.io/stylix/)
+
 ```
