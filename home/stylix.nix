@@ -1,8 +1,5 @@
-{ pkgs, colors, ... }:
+{ pkgs, config, ... }:
 
-# let
-# config.lib.stylix.colors = {
-#   base08 = "ff0000";
 {
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
@@ -39,7 +36,7 @@
   stylix.icons.dark = "Papirus-Dark";
 
   xdg.configFile = {
-    "niri/base16.kdl".text = with colors.withHashtag; ''
+    "niri/base16.kdl".text = with config.colors.withHashtag; ''
       layout {
           focus-ring {
               active-color   "${base0B}"
