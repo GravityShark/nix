@@ -6,9 +6,7 @@
 }:
 
 let
-  apps = import ./packages/apps.nix {
-    inherit pkgs;
-  };
+  apps = import ./packages/apps.nix { inherit pkgs; };
   dev = import ./packages/dev.nix { inherit pkgs; };
   cli = import ./packages/cli.nix { inherit pkgs; };
   fonts = import ./packages/fonts.nix { inherit pkgs; };
