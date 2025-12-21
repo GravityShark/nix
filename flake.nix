@@ -53,8 +53,8 @@
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./home/configuration.nix
           stylix.homeModules.stylix
+          ./home/configuration.nix
         ];
         extraSpecialArgs = {
           inherit noctalia;
