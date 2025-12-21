@@ -136,9 +136,7 @@ n ur done, jus complete this checklist then reboot
 
 8. KDE Connect
 
-```
-9. - probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
+9. probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
+   - nvm guix is so UN supported bruh
 
 10. use [stylix](https://nix-community.github.io/stylix/)
-
-```
