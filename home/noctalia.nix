@@ -50,6 +50,21 @@
   programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
+    plugins = {
+      sources = [
+        {
+          enabled = true;
+          name = "Official Noctalia Plugins";
+          url = "https://github.com/noctalia-dev/noctalia-plugins";
+        }
+      ];
+      states = {
+        launcher-button = {
+          enabled = true;
+        };
+      };
+      version = 1;
+    };
     settings = {
       appLauncher = {
         customLaunchPrefix = "";
