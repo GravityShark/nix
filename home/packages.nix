@@ -26,7 +26,7 @@ in
     obsidian = {
       enable = true;
       vaults.Notes = {
-        enabled = true;
+        enable = true;
         target = "Notes";
       };
 
