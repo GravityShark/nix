@@ -61,7 +61,6 @@
         ];
         extraSpecialArgs = {
           inherit noctalia;
-          inherit zen-browser;
         };
       };
     };
