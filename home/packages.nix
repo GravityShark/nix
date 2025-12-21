@@ -12,6 +12,8 @@ let
   fonts = import ./packages/fonts.nix { inherit pkgs; };
 in
 {
+  imports = [ inputs.zen-browser.homeModules.beta ];
+
   home.packages = apps ++ dev ++ cli ++ fonts;
 
   # Automatic font cache update
@@ -19,7 +21,6 @@ in
     ${pkgs.fontconfig}/bin/fc-cache -f || echo "fc-cache failed"
   '';
 
-  imports = [ inputs.zen-browser.homeModules.beta ];
   programs = {
     anki.enable = true;
     fish.enable = true;
