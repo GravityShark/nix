@@ -10,7 +10,7 @@
     # ./gnome.nix
     ./noctalia.nix
 
-    ./anyrun.nix
+    # ./anyrun.nix
     # ./emacs.nix
     ./gaming.nix
     ./ghostty.nix
