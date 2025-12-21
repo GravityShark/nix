@@ -36,7 +36,6 @@
       bash
       dash
       mksh
-      fish
     ];
   };
 

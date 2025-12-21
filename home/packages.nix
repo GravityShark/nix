@@ -23,6 +23,7 @@ in
     anki.enable = true;
     fish.enable = true;
     fzf.enable = true;
+    neovim.enable = true;
     obsidian = {
       enable = true;
       vaults.Notes = {

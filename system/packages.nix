@@ -27,18 +27,18 @@
 
     ## CLIs
     # bc
-    dash
+    # dash
     efibootmgr
     eza
     fastfetch
     fd
     ffmpeg
-    fish
-    fzf
+    # fish
+    # fzf
     ghostscript_headless
     git
     imagemagick
-    neovim
+    # neovim
     restic
     ripgrep
     tmux
