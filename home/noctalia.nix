@@ -292,7 +292,7 @@
               onClicked = "if (curl http://127.0.0.1:8384/rest/system/ping); then pkill syncthing; else syncthing serve --no-browser && notify-desktop 'Syncthing shut down'; fi";
               onMiddleClicked = "pkill syncthing";
               onRightClicked = "syncthing --no-browser";
-              stateChecksJson = "[{\"command\":\"curl http://127.0.0.1:8384/rest/system/ping && notify-desktop 'yo'\",\"icon\":\"\"}]";
+              stateChecksJson = "[{\"command\":\"curl http://127.0.0.1:8384/rest/system/ping && notify-desktop yo\",\"icon\":\"\"}]";
             }
             {
               id = "KeepAwake";
