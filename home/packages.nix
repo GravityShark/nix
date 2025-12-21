@@ -23,7 +23,14 @@ in
     anki.enable = true;
     fish.enable = true;
     fzf.enable = true;
-    obsidian.enable = true;
+    obsidian = {
+      enable = true;
+      vaults.Notes = {
+        enabled = true;
+        target = "Notes";
+      };
+
+    };
     zathura.enable = true;
     zen-browser = {
       enable = true;
