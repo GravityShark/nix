@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -30,7 +30,7 @@
     "fastfetch".source = dump/.config/fastfetch;
     "fish/completions".source = dump/.config/fish/completions;
     "fish/conf.d".source = dump/.config/fish/conf.d;
-    "fish/config.fish".source = dump/.config/fish/config.fish;
+    "fish/config.fish".source = lib.mkForce dump/.config/fish/config.fish;
     "fish/functions".source = dump/.config/fish/functions;
     "nvim/after".source = dump/.config/nvim/after;
     "nvim/init.lua".source = dump/.config/nvim/init.lua;
