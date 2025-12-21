@@ -128,6 +128,10 @@
           ];
           left = [
             {
+              id = "Spacer";
+              width = 2;
+            }
+            {
               colorizeDistroLogo = true;
               colorizeSystemIcon = "none";
               customIconPath = "";
