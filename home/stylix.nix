@@ -3,31 +3,45 @@
 {
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+  stylix.autoEnable = false;
+
   stylix.image = pkgs.fetchurl {
     url = "https://gruvbox-wallpapers.pages.dev/wallpapers/minimalistic/light/Tranquility.png";
     hash = "sha256-yb+R/lH8OaQcNFIUdY0qlFmsN6sy1GKXhV7LyaQHUe0=";
   };
+
   stylix.fonts = {
+    sizes = {
+      applications = 11;
+      # desktop = 10;
+      # popups = 10;
+      # terminal = 11;
+    };
+
     serif = {
       package = pkgs.aporetic;
       name = "Aporetic Serif";
     };
-
     sansSerif = {
       package = pkgs.aporetic;
       name = "Aporetic Sans";
     };
-
     monospace = {
       package = pkgs.aporetic;
       name = "Aporetic Sans Mono";
     };
-
     emoji = {
       package = pkgs.noto-fonts-color-emoji;
       name = "Noto Color Emoji";
     };
+  };
+
+  stylix.cursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 12;
   };
 
   stylix.icons.enable = true;
@@ -35,6 +49,18 @@
   stylix.icons.light = "Papirus-Light";
   stylix.icons.dark = "Papirus-Dark";
 
+  stylix.targets = {
+    anki.enable = true;
+    fish.enable = true;
+    fzf.enable = true;
+    ghostty.enable = true;
+    # gnome.enable = true;
+    gtk.enable = true;
+    # gtksourceview.enable = true;
+    # mangohud.enable = true;
+    # mpv.enable = true;
+  };
+  ## Niri
   xdg.configFile = {
     "niri/base16.kdl".text = with config.lib.stylix.colors.withHashtag; ''
       layout {
@@ -66,9 +92,6 @@
       }
     '';
   };
-
-  # stylix.targets.noctalia-shell.enable = false;
-  stylix.targets.kde.enable = false;
 }
 
 # palette:
