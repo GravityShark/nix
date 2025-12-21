@@ -86,6 +86,8 @@ n ur done, jus complete this checklist then reboot
    https://github.com/AvengeMedia/DankMaterialShell
    - alternatives are: [Astal](https://aylur.github.io/astal/)/[AGS](https://aylur.github.io/ags/), [fabric](https://wiki.ffpy.org/), [Ignis](https://ignis-sh.github.io/ignis/stable/index.html), [ewww](https://github.com/elkowar/eww), [quickshell](https://quickshell.org/) and probably even more
    - not shells but good bars: [ironbar](https://crates.io/crates/ironbar), [waybar](https://github.com/Alexays/Waybar), [nwg-panel](https://github.com/nwg-piotr/nwg-panel)
+   - alternative launcher would either be fuzzel if you want to have icons, or tofi to be blazingly fast
+     - check out [raffi](https://github.com/chmouel/raffi)
 
 2. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake because it's the only working caprine fork for me
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
