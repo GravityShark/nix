@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  services.walker.enable = true;
+  services.walker = {
+    enable = true;
+    systemd.enable = true;
+  };
 }

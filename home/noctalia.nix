@@ -9,7 +9,6 @@
   imports = [ noctalia.homeModules.default ];
   home.packages = with pkgs; [
     wdisplays
-    walker
   ];
   services.swayidle = {
     enable = true;
