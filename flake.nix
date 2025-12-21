@@ -36,6 +36,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      zen-browser,
       ...
     }@inputs:
     let
@@ -57,6 +58,7 @@
         modules = [
           ./home/configuration.nix
           stylix.homeModules.stylix
+          zen-browser.homeModules.beta
         ];
       };
     };

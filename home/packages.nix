@@ -1,8 +1,6 @@
 {
   lib,
   pkgs,
-  inputs,
-  config,
   ...
 }:
 
@@ -13,7 +11,6 @@ let
   fonts = import ./packages/fonts.nix { inherit pkgs; };
 in
 {
-  imports = [ inputs.zen-browser.homeModules.beta ];
 
   home.packages = apps ++ dev ++ cli ++ fonts;
 
