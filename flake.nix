@@ -29,11 +29,13 @@
       self,
       nixpkgs,
       home-manager,
+      noctalia,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
     in
     {
       nixosConfigurations = {
@@ -47,9 +49,13 @@
         inherit pkgs;
         modules = [
           ./home/configuration.nix
+          inputs.noctalia.homeModules.default
           inputs.stylix.homeModules.stylix
           inputs.zen-browser.homeModules.beta
         ];
+        extraSpecialArgs = {
+          inherit noctalia-shell;
+        };
       };
     };
 }
