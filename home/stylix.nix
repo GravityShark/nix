@@ -9,7 +9,7 @@
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
   imports = [
-    # ./stylix/gruvbox-material.nix
+    ./stylix/gruvbox-material.nix
     ./stylix/rose-pine.nix
   ];
 
@@ -63,7 +63,10 @@
     # mpv.enable = true;
     # neovim.enable = true;
     noctalia-shell.enable = true;
-    obsidian.enable = true;
+    obsidian = {
+      enable = true;
+      fonts.override.sizes.desktop = 16;
+    };
     qt.enable = true;
     zathura.enable = true;
     zen-browser = {

@@ -29,9 +29,6 @@
       self,
       nixpkgs,
       home-manager,
-      noctalia,
-      stylix,
-      zen-browser,
       ...
     }@inputs:
     let
@@ -42,24 +39,17 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            ./system/configuration.nix
-            inputs.stylix.nixosModules.stylix
-          ];
-          specialArgs = {
-            inherit inputs;
-          };
+          modules = [ ./system/configuration.nix ];
+          specialArgs = { inherit inputs; };
         };
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./home/configuration.nix
-          zen-browser.homeModules.beta
+          inputs.stylix.homeModules.stylix
+          inputs.zen-browser.homeModules.beta
         ];
-        extraSpecialArgs = {
-          inherit noctalia;
-        };
       };
     };
 }

@@ -2,10 +2,13 @@
   lib,
   config,
   pkgs,
-  noctalia,
+  inputs,
   ...
 }:
 
+let
+  noctalia = inputs.noctalia;
+in
 {
   imports = [ noctalia.homeModules.default ];
   home.packages = with pkgs; [
