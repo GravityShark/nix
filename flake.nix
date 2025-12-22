@@ -7,10 +7,6 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # lanzaboote = {
-    #   url = "github:nix-community/lanzaboote/v0.4.3";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v3.7.1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,8 +18,6 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
-        # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-        # to have it up-to-date or simply don't specify the nixpkgs input
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
@@ -48,7 +42,10 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./system/configuration.nix ];
+          modules = [
+            ./system/configuration.nix
+            inputs.stylix.nixosModules.stylix
+          ];
           specialArgs = {
             inherit inputs;
           };
@@ -58,7 +55,6 @@
         inherit pkgs;
         modules = [
           ./home/configuration.nix
-          stylix.homeModules.stylix
           zen-browser.homeModules.beta
         ];
         extraSpecialArgs = {
