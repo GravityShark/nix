@@ -56,7 +56,7 @@
     gtksourceview.enable = true;
     # mangohud.enable = true;
     # mpv.enable = true;
-    neovim.enable = true;
+    # neovim.enable = true;
     noctalia-shell.enable = true;
     obsidian.enable = true;
     qt.enable = true;
@@ -69,6 +69,12 @@
   ## Niri
   xdg.configFile = {
     "niri/base16.kdl".text = with config.lib.stylix.colors.withHashtag; ''
+      output "eDP-1" {
+          layout {
+              background-color "${base00}"
+          }
+          backdrop-color "${base01}"
+      }
       layout {
           focus-ring {
               active-color   "${base0B}"

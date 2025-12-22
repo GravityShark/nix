@@ -108,10 +108,10 @@ output "eDP-1" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     // position x=1280 y=0
-    layout {
-        background-color "#FBF1C7"
-    }
-    backdrop-color "#F2E5BC"
+    // layout {
+    //     background-color "#FBF1C7"
+    // }
+    // backdrop-color "#F2E5BC"
 }
 
 // Settings that influence how windows are positioned and sized.
