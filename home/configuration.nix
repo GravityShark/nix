@@ -10,15 +10,13 @@
     # ./gnome.nix
     ./noctalia.nix
 
-    # ./anyrun.nix
-    # ./emacs.nix
     ./gaming.nix
     ./ghostty.nix
     ./keepassxc.nix
     ./mcsr.nix
     ./stylix.nix
-    # ./vicinae.nix
-    # ./walker.nix
+    ./wayidle.nix
+    # ./wayland-pipewire-idle-inhibit.nix
 
     ./restic.nix
     ./syncthing.nix

@@ -15,6 +15,11 @@
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    wayland-pipewire-idle-inhibit = {
+      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # QT_QPA_PLATFORMTHEME = "gtk3";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -51,6 +56,7 @@
           ./home/configuration.nix
           inputs.noctalia.homeModules.default
           inputs.stylix.homeModules.stylix
+          inputs.wayland-pipewire-idle-inhibit.homeModules.default
           inputs.zen-browser.homeModules.beta
         ];
         extraSpecialArgs = {

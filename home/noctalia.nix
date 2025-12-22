@@ -7,32 +7,52 @@
 }:
 
 {
-  home.packages = with pkgs; [
-    wdisplays
-  ];
-  services.swayidle = {
-    enable = true;
-    events = [
-      {
-        event = "before-sleep";
-        command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
-      }
-    ];
-    timeouts = [
-      {
-        timeout = 120;
-        command = "${pkgs.niri}/bin/niri msg action power-off-monitors";
-      }
-      {
-        timeout = 180;
-        command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
-      }
-      {
-        timeout = 300;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
-      }
-    ];
-  };
+  services.swayidle =
+    let
+      lock = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
+      display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+    in
+    {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 15; # in seconds
+          command = "${pkgs.notify-desktop}/bin/notify-desktop 'Locking in 5 seconds' -t 5000 -a System";
+        }
+        {
+          timeout = 20;
+          command = lock;
+        }
+        {
+          timeout = 25;
+          command = display "off";
+          resumeCommand = display "on";
+        }
+        {
+          timeout = 30;
+          command = "${pkgs.systemd}/bin/systemctl suspend";
+        }
+      ];
+      events = [
+        {
+          event = "before-sleep";
+          # adding duplicated entries for the same event may not work
+          command = (display "off") + "; " + lock;
+        }
+        {
+          event = "after-resume";
+          command = display "on";
+        }
+        {
+          event = "lock";
+          command = (display "off") + "; " + lock;
+        }
+        {
+          event = "unlock";
+          command = display "on";
+        }
+      ];
+    };
 
   home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
     text = builtins.toJSON {
