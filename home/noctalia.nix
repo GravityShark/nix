@@ -6,11 +6,8 @@
   ...
 }:
 
-let
-  noctalia = inputs.noctalia;
-in
 {
-  imports = [ noctalia.homeModules.default ];
+  imports = [ inputs.noctalia.homeModules.default ];
   home.packages = with pkgs; [
     wdisplays
   ];
@@ -20,7 +17,7 @@ in
       {
         event = "before-sleep";
         command = "${
-          noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         }/bin/noctalia-shell ipc call lockScreen lock";
       }
     ];
@@ -32,7 +29,7 @@ in
       {
         timeout = 180;
         command = "${
-          noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         }/bin/noctalia-shell ipc call lockScreen lock";
       }
       {
