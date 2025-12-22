@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   # https://nix-community.github.io/stylix/configuration.html
@@ -36,7 +41,7 @@
 
   stylix.cursor = {
     package = pkgs.bibata-cursors;
-    name = "Bibata-Original-Classic";
+    name = lib.mkDefault "Bibata-Original-Classic";
     size = 12;
   };
 
