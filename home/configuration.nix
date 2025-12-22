@@ -15,7 +15,7 @@
     ./keepassxc.nix
     ./mcsr.nix
     ./stylix.nix
-    ./wayidle.nix
+    # ./wayidle.nix
     # ./wayland-pipewire-idle-inhibit.nix
 
     ./restic.nix
