@@ -5,7 +5,7 @@
   stylix.enable = true;
   imports = [
     # ./stylix/gruvbox-material.nix
-    ./stylix/rose-pine-moon.nix
+    ./stylix/rose-pine.nix
   ];
 
   stylix.fonts = {

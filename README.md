@@ -13,6 +13,8 @@
   - [google](https://www.google.com/) or [whatever privacy oriented search engine](https://search.brave.com)
 - learning about nixos
   - [NixOS tutorial by LibrePhoenix](https://www.youtube.com/watch?v=6WLaNIlDW0M&list=PL_WcXIXdDWWpuypAEKzZF2b5PijTluxRG)
+  - NixOS tutorials by [Vimjoyer](https://www.youtube.com/@vimjoyer)
+    - there is nixos-rebuild --upgrade
 
 > probably where my entire dotfiles is gonna reside from now on, even for non nixos systems
 
