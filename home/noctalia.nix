@@ -289,7 +289,7 @@
               generalTooltipText = "Syncthing";
               icon = "affiliate";
               id = "CustomButton";
-              onClicked = "if (systemctl is-active --quiet --user syncthing.service); then systemctl stop --user syncthing.service && notify-desktop 'Stopping Syncthing'; else systemctl start --user syncthing.service && notify-desktop 'Starting Syncthing'; fi";
+              onClicked = "if (systemctl is-active --quiet --user syncthing.service); then systemctl stop --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Stopping Syncthing'; else systemctl start --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Starting Syncthing'; fi";
               onMiddleClicked = "pkill syncthing";
               onRightClicked = "syncthing --no-browser";
               stateChecksJson = "[{\"command\":\"systemctl is-active --quiet --user syncthing.service\",\"icon\":\"\"}]";
