@@ -51,11 +51,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 
-  # nix.settings.download-buffer-size = 500000000;
-  # nix.settings.experimental-features = [
-  #   "nix-command"
-  #   "flakes"
-  # ];
+  nix.settings.download-buffer-size = 500000000;
 
   # For somereason /dev/null is NOT being properly permissionisezed
   # system.activationScripts.chmod-dev-null.text = "chmod 777 /dev/null";
