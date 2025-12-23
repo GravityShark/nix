@@ -109,10 +109,16 @@ output "eDP-1" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     // position x=1280 y=0
-    // layout {
-    //     background-color "#FBF1C7"
-    // }
+    layout {
+        background-color "#000000"
+    }
     // backdrop-color "#F2E5BC"
+}
+
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="overview"
+    place-within-backdrop true
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -290,7 +296,7 @@ layout {
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
