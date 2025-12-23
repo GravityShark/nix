@@ -34,11 +34,11 @@ in
     swayidle
     swayimg
     # swaylock
+    wdisplays
     wev
     wl-clipboard
     xlsclients
     xwayland-satellite
-    wdisplays
   ];
 
   environment.sessionVariables = {

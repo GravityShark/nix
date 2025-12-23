@@ -10,46 +10,43 @@
   services.swayidle =
     let
       lock = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
-      display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+      # https://github.com/YaLTeR/niri/pull/3077 wait for this to get implemented
+      # display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors"; -- doesn't work rn
+      bright = "${pkgs.brightnessctl}/bin/brightnessctl";
+      bsav = "${bright} --save";
+      bset = level: "${bright} set ${level}";
+      bres = "${bright} --restore";
     in
     {
       enable = true;
       timeouts = [
         {
-          timeout = 15; # in seconds
-          command = "${pkgs.notify-desktop}/bin/notify-desktop 'Locking in 5 seconds' -t 5000 -a System";
+          timeout = 120;
+          command = bsav + " && " + (bset "10%");
+          resumeCommand = bres;
         }
         {
-          timeout = 20;
+          timeout = 180;
+          command = bset "0";
+          resumeCommand = bres;
+        }
+        {
+          timeout = 240;
           command = lock;
         }
         {
-          timeout = 25;
-          command = display "off";
-          resumeCommand = display "on";
-        }
-        {
-          timeout = 30;
+          timeout = 300;
           command = "${pkgs.systemd}/bin/systemctl suspend";
         }
       ];
       events = [
         {
           event = "before-sleep";
-          # adding duplicated entries for the same event may not work
-          command = (display "off") + "; " + lock;
+          command = lock;
         }
         {
           event = "after-resume";
-          command = display "on";
-        }
-        {
-          event = "lock";
-          command = (display "off") + "; " + lock;
-        }
-        {
-          event = "unlock";
-          command = display "on";
+          command = bres;
         }
       ];
     };
@@ -480,6 +477,12 @@
             enabled = true;
           }
           {
+            action = "suspend";
+            command = "";
+            countdownEnabled = false;
+            enabled = true;
+          }
+          {
             action = "hibernate";
             command = "";
             countdownEnabled = true;
@@ -496,12 +499,6 @@
             command = "";
             countdownEnabled = true;
             enabled = true;
-          }
-          {
-            action = "suspend";
-            command = "";
-            countdownEnabled = true;
-            enabled = false;
           }
           {
             action = "logout";
