@@ -1,0 +1,3 @@
+#!/bin/sh
+# ng && home-manager switch --flake ~/.nix\?submodules=1
+home-manager boot --flake ~/.nix\?submodules=1
