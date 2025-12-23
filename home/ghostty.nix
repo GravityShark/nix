@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.ghostty = {
@@ -23,6 +23,6 @@
   };
 
   home.activation.reloadGhostty = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    pkill -SIGUSR2 ghostty
+    ${pkgs.system-path}/bin/pkill -SIGUSR2 ghostty
   '';
 }
