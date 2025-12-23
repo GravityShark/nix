@@ -51,6 +51,7 @@
       "networkmanager"
       "scanner"
       "wheel"
+      "ydotool"
       # "dialout" # Arduino
     ];
   };
