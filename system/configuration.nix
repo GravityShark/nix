@@ -15,6 +15,7 @@
     ./pipewire.nix
     # ./printing.nix
     # ./vial.nix
+    ./ydotool.nix
 
     ## Global
     ./intel.nix

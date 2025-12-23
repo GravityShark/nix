@@ -7,6 +7,5 @@
     temurin-jre-bin
     waywall
     lunar-client
-    ydotool
   ];
 }
