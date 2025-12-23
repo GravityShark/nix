@@ -9,8 +9,8 @@
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
   imports = [
-    ./stylix/gruvbox-material.nix
-    # ./stylix/rose-pine.nix
+    # ./stylix/gruvbox-material.nix
+    ./stylix/rose-pine.nix
   ];
 
   stylix.fonts = {
