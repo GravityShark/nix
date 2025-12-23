@@ -368,6 +368,7 @@ window-rule {
 window-rule {
     geometry-corner-radius 2
     clip-to-geometry true
+    open-focused true
 }
 
 // window-rule {

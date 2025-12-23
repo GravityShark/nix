@@ -125,6 +125,7 @@
       		base0E = '${base0E}',
       		base0F = '${base0F}',
       	},
+        plugins = {default = false},
       })
       vim.g.colors_name = 'base16'
     '';
