@@ -128,7 +128,6 @@
         use_cterm = true,
         plugins = {
           default = false,
-
           ['nvim-mini/mini.nvim'] = true,
           ['folke/lazy.nvim'] = true,
           ['folke/noice.nvim'] = true,

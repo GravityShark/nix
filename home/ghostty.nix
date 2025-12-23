@@ -21,4 +21,8 @@
     };
     systemd.enable = false;
   };
+
+  home.activation.reloadGhostty = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    pkill -SIGUSR2 ghostty
+  '';
 }
