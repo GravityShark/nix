@@ -1,6 +1,18 @@
 {
   description = "This is MY flake";
 
+  nixConfig = {
+    download-buffer-size = 500000000;
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    extra-substitutors = [ "https://nix-community.cachix.org" ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
@@ -8,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v3.7.1";
+      url = "github:noctalia-dev/noctalia-shell/v3.7.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
@@ -19,7 +31,6 @@
       url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # QT_QPA_PLATFORMTHEME = "gtk3";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {

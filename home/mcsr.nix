@@ -6,6 +6,5 @@
     prismlauncher
     temurin-jre-bin
     waywall
-    lunar-client
   ];
 }
