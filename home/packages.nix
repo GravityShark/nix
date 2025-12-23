@@ -26,10 +26,10 @@ in
     neovim.enable = true;
     obsidian = {
       enable = true;
-      vaults.Notes = {
-        enable = true;
-        target = "Notes";
-      };
+      # vaults.Notes = {
+      #   enable = true;
+      #   target = "Notes";
+      # };
 
     };
     zathura.enable = true;
