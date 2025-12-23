@@ -1,13 +1,6 @@
 {
   description = "This is MY flake";
 
-  nixConfig = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-  };
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {

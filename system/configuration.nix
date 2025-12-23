@@ -52,6 +52,14 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
   nix.settings.download-buffer-size = 500000000;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  nix.settings.extra-substitutors = [ "https://nix-community.cachix.org" ];
+  nix.settings.extra-trusted-public-keys = [
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
 
   # For somereason /dev/null is NOT being properly permissionisezed
   # system.activationScripts.chmod-dev-null.text = "chmod 777 /dev/null";
