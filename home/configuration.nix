@@ -22,7 +22,7 @@
 
     # ./desktop.nix
     ./home.nix
-    # ./mime.nix
+    ./mime.nix
     ./packages.nix
   ];
 
