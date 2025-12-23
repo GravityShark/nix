@@ -125,7 +125,17 @@
       		base0E = '${base0E}',
       		base0F = '${base0F}',
       	},
-        plugins = {default = false},
+        use_cterm = true
+        plugins = {
+          default = false
+          ['nvim-mini/mini.nvim'] = true,
+          ['folke/lazy.nvim'] = true,
+          ['folke/noice.nvim'] = true,
+          ['folke/todo-comments.nvim'] = true,
+          ['folke/trouble.nvim'] = true,
+          ['folke/which-key.nvim'] = true,
+          ['lewis6991/gitsigns.nvim'] = true,
+        },
       })
       vim.g.colors_name = 'base16'
     '';
