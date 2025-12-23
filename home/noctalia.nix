@@ -577,7 +577,7 @@
         monitorDirectories = [
 
         ];
-        overviewEnabled = false;
+        overviewEnabled = true;
         panelPosition = "follow_bar";
         randomEnabled = false;
         randomIntervalSec = 300;
