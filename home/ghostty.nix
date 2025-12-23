@@ -23,6 +23,6 @@
   };
 
   home.activation.reloadGhostty = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.system-path}/bin/pkill -SIGUSR2 ghostty
+    ${pkgs.procps}/bin/pkill -SIGUSR2 ghostty
   '';
 }
