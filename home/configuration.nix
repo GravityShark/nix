@@ -10,6 +10,7 @@
     # ./gnome.nix
     ./noctalia.nix
 
+./neovim.nix
     ./gaming.nix
     ./ghostty.nix
     ./keepassxc.nix
