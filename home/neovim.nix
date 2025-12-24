@@ -3,7 +3,6 @@
 {
   xdg.configFile = {
     "nvim/after".source = dump/.config/nvim/after;
-    "nvim/enabled-plugins.txt".source = dump/.config/nvim/enabled-plugins.txt;
     "nvim/relink.go".source = dump/.config/nvim/relink.go;
     "nvim/init.lua".source = dump/.config/nvim/init.lua;
     "nvim/snippets".source = dump/.config/nvim/snippets;
@@ -11,6 +10,38 @@
     "nvim/lua/pluggers".source = dump/.config/nvim/lua/pluggers;
     "nvim/lua/templates".source = dump/.config/nvim/lua/templates;
   };
+
+  xdg.configFile."nvim/enabled-plugins.txt".text = ''
+    main/blink
+    main/conform
+    main/lint
+    main/lsp
+    main/snacks
+    main/treesitter
+
+    editor/guess-indent
+    editor/mini.ai
+    editor/mini.jump
+    editor/mini.pairs
+    editor/mini.surround
+
+    extra/fugitive
+    extra/gitsigns
+    extra/inc-rename
+    extra/neogen
+    extra/new-file-template
+    extra/oil
+    extra/trouble
+    extra/ts-comments
+    extra/undotree
+    extra/which-key
+
+    ui/colorizer
+    ui/mini.statusline
+    ui/noice
+    ui/smear-cursor
+    ui/todo-comments
+  '';
 
   home.activation.relinkPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     cd ~/.config/nvim
