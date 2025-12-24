@@ -1,14 +1,10 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
-let
-  nvim-relink = pkgs.buildGoModule {
-    pname = "nvim-relink";
-    version = "0.2.1";
-    src = ./dump/.config/nvim;
-    # vendorHash = "sha256-REPLACE";
-    vendorHash = null;
-  };
-in
 {
 
   xdg.configFile = {
@@ -53,8 +49,17 @@ in
     ui/todo-comments
   '';
 
-  home.activation.relinkPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    cd "$XDG_CONFIG_HOME/nvim"
-    ${nvim-relink}/bin/nvim-relink
-  '';
+  home.activation.relinkPlugins =
+    let
+      nvim-relink = pkgs.buildGoModule {
+        pname = "nvim-relink";
+        version = "0.2.1";
+        src = ./dump/.config/nvim;
+        vendorHash = null;
+      };
+    in
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      cd "${config.xdg.configHome}/nvim"
+      ${nvim-relink}/bin/nvim-relink
+    '';
 }
