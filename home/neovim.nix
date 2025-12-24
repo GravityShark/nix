@@ -1,6 +1,15 @@
 { lib, pkgs, ... }:
 
+let
+  pho = pkgs.buildGoModule {
+    pname = "nvim-relink";
+    version = "0.2.0";
+    src = ./dump/.config/nvim/relink.go;
+    vendorHash = "sha256-REPLACE";
+  };
+in
 {
+
   xdg.configFile = {
     "nvim/after".source = dump/.config/nvim/after;
     "nvim/relink.go".source = dump/.config/nvim/relink.go;
@@ -44,7 +53,7 @@
   '';
 
   home.activation.relinkPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    cd ~/.config/nvim
-    ${pkgs.go}/bin/go run relink.go
+    cd "$XDG_CONFIG_HOME/nvim"
+    ${pkgs.nvim-relink}/bin/nvim-relink
   '';
 }
