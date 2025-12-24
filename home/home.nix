@@ -32,14 +32,6 @@
     "fish/conf.d".source = dump/.config/fish/conf.d;
     "fish/config.fish".source = lib.mkForce dump/.config/fish/config.fish;
     "fish/functions".source = dump/.config/fish/functions;
-
-    "nvim/after".source = dump/.config/nvim/after;
-    "nvim/init.lua".source = dump/.config/nvim/init.lua;
-    "nvim/lua/other".source = dump/.config/nvim/lua/other;
-    "nvim/lua/pluggers".source = dump/.config/nvim/lua/pluggers;
-    "nvim/lua/templates".source = dump/.config/nvim/lua/templates;
-    "nvim/snippets".source = dump/.config/nvim/snippets;
-
     "niri/config.kdl".source = dump/.config/niri/config.kdl;
     "sesh".source = dump/.config/sesh;
     # "xdg-terminals.list".source = dump/.config/xdg-terminals.list;
