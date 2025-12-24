@@ -11,7 +11,7 @@
     "nvim/lua/templates".source = dump/.config/nvim/lua/templates;
   };
 
-  home.activation.reloadGhostty = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.relinkPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     cd ~/.config/nvim
     ${pkgs.go}/bin/go run relink.go
   '';
