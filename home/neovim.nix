@@ -6,7 +6,6 @@
 }:
 
 {
-
   xdg.configFile = {
     "nvim/after".source = dump/.config/nvim/after;
     "nvim/relink.go".source = dump/.config/nvim/relink.go;
@@ -60,6 +59,6 @@
     in
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       cd "${config.xdg.configHome}/nvim"
-      ${nvim-relink}/bin/nvim-relink
+      ${nvim-relink}/bin/relink
     '';
 }
