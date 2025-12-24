@@ -105,40 +105,9 @@
           }
       }
     '';
-    "nvim/colors/base16.lua".text = with config.lib.stylix.colors.withHashtag; ''
-      require('mini.base16').setup({
-      	palette = {
-      		base00 = '${base00}',
-      		base01 = '${base01}',
-      		base02 = '${base02}',
-      		base03 = '${base03}',
-      		base04 = '${base04}',
-      		base05 = '${base05}',
-      		base06 = '${base06}',
-      		base07 = '${base07}',
-      		base08 = '${base08}',
-      		base09 = '${base09}',
-      		base0A = '${base0A}',
-      		base0B = '${base0B}',
-      		base0C = '${base0C}',
-      		base0D = '${base0D}',
-      		base0E = '${base0E}',
-      		base0F = '${base0F}',
-      	},
-        use_cterm = true,
-        plugins = {
-          default = false,
-          ['nvim-mini/mini.nvim'] = true,
-          ['folke/lazy.nvim'] = true,
-          ['folke/noice.nvim'] = true,
-          ['folke/todo-comments.nvim'] = true,
-          ['folke/trouble.nvim'] = true,
-          ['folke/which-key.nvim'] = true,
-          ['lewis6991/gitsigns.nvim'] = true,
-        }
-      })
-      vim.g.colors_name = 'base16'
-    '';
+    "nvim/colors/nix.lua".text =
+      with config.lib.stylix.colors.withHashtag;
+      builtins.readFile ./dump/.config/nvim/colors/nix.lua;
   };
 
   ## Extra noctalia-shell
