@@ -54,6 +54,6 @@ in
 
   home.activation.relinkPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     cd "$XDG_CONFIG_HOME/nvim"
-    ${nvim-relink}/bin/nvim-relink
+    ${pkgs.nvim-relink}/bin/nvim-relink
   '';
 }
