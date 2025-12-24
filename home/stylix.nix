@@ -105,7 +105,7 @@
           }
       }
     '';
-    "nvim/colors/nix.lua".text =
+    "nvim/colors/nix.lua".source =
       with config.lib.stylix.colors.withHashtag;
       (pkgs.replaceVars ./dump/.config/nvim/colors/nix.lua {
         base00 = "${base00}";
