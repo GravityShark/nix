@@ -6,6 +6,7 @@ let
     version = "0.2.1";
     src = ./dump/.config/nvim;
     # vendorHash = "sha256-REPLACE";
+    vendorHash = null;
   };
 in
 {
