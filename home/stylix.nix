@@ -2,10 +2,12 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }:
 
 {
+  import = [ inputs.stylix.homeModules.stylix ];
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
   imports = [

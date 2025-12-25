@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -13,6 +14,8 @@ in
 {
 
   home.packages = apps ++ dev ++ cli ++ fonts;
+
+  import = [ inputs.zen-browser.homeModules.beta ];
 
   # Automatic font cache update
   home.activation.updateFontCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
