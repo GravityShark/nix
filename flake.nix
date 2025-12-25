@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixcraft = {
+      url = "github:loystonpais/nixcraft";
+      inputs.follows.nixpkgs = "nixpkgs"; # Set correct nixpkgs name
+    };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v3.7.2";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -10,11 +10,12 @@
     # ./gnome.nix
     ./noctalia.nix
 
-./neovim.nix
     ./gaming.nix
     ./ghostty.nix
     ./keepassxc.nix
     ./mcsr.nix
+    ./neovim.nix
+    ./nixcraft.nix
     ./stylix.nix
     ./wayland-pipewire-idle-inhibit.nix
 
