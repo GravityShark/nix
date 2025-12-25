@@ -16,37 +16,8 @@
     "nvim/lua/templates".source = dump/.config/nvim/lua/templates;
   };
 
-  xdg.configFile."nvim/enabled-plugins.txt".text = ''
-    main/blink
-    main/conform
-    main/lint
-    main/lsp
-    main/snacks
-    main/treesitter
-
-    editor/guess-indent
-    editor/mini.ai
-    editor/mini.jump
-    editor/mini.pairs
-    editor/mini.surround
-
-    extra/fugitive
-    extra/gitsigns
-    extra/inc-rename
-    extra/neogen
-    extra/new-file-template
-    extra/oil
-    extra/trouble
-    extra/ts-comments
-    extra/undotree
-    extra/which-key
-
-    ui/colorizer
-    ui/mini.statusline
-    ui/noice
-    ui/smear-cursor
-    ui/todo-comments
-  '';
+  xdg.configFile."nvim/enabled-plugins.txt".text =
+    builtins.readFile dump/.config/nvim/enabled-plugins.txt;
 
   home.activation.relinkPlugins =
     let
