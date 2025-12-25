@@ -144,6 +144,7 @@ in
           envVars = {
             # Fixes bug with nvidia (applied by default)
             __GL_THREADED_OPTIMIZATIONS = "0";
+            GDK_BACKEND = "x11";
           };
 
           binEntry.enable = true;
