@@ -9,7 +9,7 @@
     };
     nixcraft = {
       url = "github:flammablebunny/nixcraft";
-      inputs.follows.nixpkgs = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v3.7.2";
