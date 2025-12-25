@@ -387,7 +387,7 @@ workspace "music"
 spawn-at-startup "niriusd" //hopefully i dont need this anymore
 spawn-at-startup "ghostty"
 // spawn-at-startup "zen"
-spawn-at-startup "obsidian"
+// spawn-at-startup "obsidian"
 // spawn-at-startup "youtube-music"
 
 window-rule {
@@ -444,7 +444,7 @@ binds {
     Mod+M hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "youtube-music"; }
     Mod+Ctrl+M hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "--focus" "youtube-music"; }
 
-    Mod+K hotkey-overlay-title="Open KeepassXC" repeat=false { spawn "keepassxc"; }
+    Mod+K hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "org.keepassxc.KeePassXC" "--focus" "keepassxc"; }
 
     // Mod+B {spawn "noctalia-shell" "ipc" "call" "bar" "toggle";}
     Ctrl+Escape hotkey-overlay-title="Run an Application" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
