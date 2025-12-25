@@ -21,6 +21,7 @@
 
     ./restic.nix
     ./syncthing.nix
+    ./zerotier.nix
 
     # ./desktop.nix
     ./home.nix
@@ -37,5 +38,6 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "obsidian"
+      "zerotier-one"
     ];
 }
