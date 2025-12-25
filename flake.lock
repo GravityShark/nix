@@ -471,15 +471,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1766682031,
-        "narHash": "sha256-1KA/pP1CYmLAOfZzAa3jX/oEo0rlYbTyluK0mI4fZDo=",
+        "lastModified": 1766683136,
+        "narHash": "sha256-RdQv8QQVghgoBz4g6QVM8HTdfdjrtcEclOWKX5SIZRo=",
         "owner": "GravityShark",
         "repo": "noctalia-shell",
-        "rev": "37cec1c32d4a9b79c0a4688e04dc78cc98510813",
+        "rev": "867e064a4ba506f823b6ade1f128755112ba09e8",
         "type": "github"
       },
       "original": {
         "owner": "GravityShark",
+        "ref": "workspace-color",
         "repo": "noctalia-shell",
         "type": "github"
       }

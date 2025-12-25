@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:GravityShark/noctalia-shell/workspace-color";
+      url = "github:GravityShark/noctalia-shell";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
