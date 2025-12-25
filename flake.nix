@@ -13,7 +13,7 @@
     };
     noctalia = {
       url = "github:GravityShark/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
