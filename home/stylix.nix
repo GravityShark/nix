@@ -7,10 +7,10 @@
 }:
 
 {
-  import = [ inputs.stylix.homeModules.stylix ];
   # https://nix-community.github.io/stylix/configuration.html
   stylix.enable = true;
   imports = [
+    inputs.stylix.homeModules.stylix
     ./stylix/gruvbox-material.nix
     # ./stylix/rose-pine.nix
   ];
