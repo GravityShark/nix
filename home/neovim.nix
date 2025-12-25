@@ -23,13 +23,12 @@
     let
       nvim-relink = pkgs.buildGoModule {
         pname = "nvim-relink";
-        version = "0.2.1";
+        # version = "0.2.1";
         src = ./dump/.config/nvim;
         vendorHash = null;
       };
     in
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      cd "${config.xdg.configHome}/nvim"
-      ${nvim-relink}/bin/relink
+      ${nvim-relink}/bin/relink ${config.xdg.configHome}/nvim
     '';
 }
