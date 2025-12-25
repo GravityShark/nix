@@ -457,15 +457,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1766626087,
-        "narHash": "sha256-85SoTgGK4/QTcrrH73CW3JWxbARQMeKZO1tIdH2OarI=",
-        "owner": "noctalia-dev",
+        "lastModified": 1766680554,
+        "narHash": "sha256-jWt9x/pjLdyGwlvpQ+nIErNnoRhNtY9ACY8M2X3P0OQ=",
+        "owner": "GravityShark",
         "repo": "noctalia-shell",
-        "rev": "c689d16dff078bc4efbc66336cb11c36fcdf7734",
+        "rev": "210fd5dc038420f5899fdae45d6a8c6c07358c3c",
         "type": "github"
       },
       "original": {
-        "owner": "noctalia-dev",
+        "owner": "GravityShark",
         "repo": "noctalia-shell",
         "type": "github"
       }
@@ -706,11 +706,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766614843,
-        "narHash": "sha256-upUQfQv7Xiy5IZzfsVOL0lH4A/wuUQjG2jlzmBmVuwU=",
+        "lastModified": 1766672420,
+        "narHash": "sha256-9IKYXodaB/8wufIFNq9jQx3bPKUi/CjudycQ/9nsz2E=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "b01d17acbec3d1b76fecf500289d8509da202585",
+        "rev": "36928276e201bec0191215121b8e7f669694dd54",
         "type": "github"
       },
       "original": {
