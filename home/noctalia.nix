@@ -2,13 +2,16 @@
   lib,
   config,
   pkgs,
-  noctalia-shell,
+  inputs,
   ...
 }:
 
 {
+  imports = [ inputs.noctalia.homeModules.default ];
+
   services.swayidle =
     let
+      noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
       lock = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       # https://github.com/YaLTeR/niri/pull/3077 wait for this to get implemented
       # display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors"; -- doesn't work rn

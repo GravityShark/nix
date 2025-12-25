@@ -64,6 +64,7 @@
         ];
         extraSpecialArgs = {
           inherit noctalia-shell;
+          inherit inputs;
         };
       };
     };
