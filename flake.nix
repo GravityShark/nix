@@ -8,8 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcraft = {
-      url = "github:loystonpais/nixcraft";
-      inputs.follows.nixpkgs = "nixpkgs"; # Set correct nixpkgs name
+      url = "github:flammablebunny/nixcraft";
+      inputs.follows.nixpkgs = "nixpkgs";
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v3.7.2";
