@@ -11,8 +11,8 @@
   stylix.enable = true;
   imports = [
     inputs.stylix.homeModules.stylix
-    # ./stylix/gruvbox-material.nix
-    ./stylix/rose-pine.nix
+    ./stylix/gruvbox-material.nix
+    # ./stylix/rose-pine.nix
   ];
 
   stylix.fonts = {
