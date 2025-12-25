@@ -16,6 +16,7 @@
     # ./printing.nix
     # ./vial.nix
     ./ydotool.nix
+    ./zerotierone.nix
 
     ## Global
     ./intel.nix
@@ -39,7 +40,7 @@
       "nvidia-settings"
       "nvidia-x11"
       # "teams"
-      # "zerotierone"
+      "zerotierone"
       # "zoom"
     ];
 
