@@ -8,7 +8,7 @@
 }:
 let
   # Fetch any mrpack which can be used with both servers and clients!
-  simply-optimized-mrpack = pkgs.fetchurl {
+  simply-optimized-mrpack-12111 = pkgs.fetchurl {
     url = "https://cdn.modrinth.com/data/BYfVnHa7/versions/FdWDH0vs/Simply%20Optimized-1.21.11-1.0.1.mrpack";
     hash = "sha256-oBTlK+GiqEViyttXx4FYADHQkWPNBtW+uAiqJXCQuR8=";
   };
@@ -161,7 +161,7 @@ in
             };
             mrpack = {
               enable = true;
-              file = simply-optimized-mrpack;
+              file = simply-optimized-mrpack-12111;
             };
           };
 
