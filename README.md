@@ -81,6 +81,7 @@ n ur done, jus complete this checklist then reboot
    - For doom emacs just do a `doom env`, and if you want an actual update do `doom upgrade` (which already also does doom env) but you barely want to do this if it wokrs it wokrs type ish
 2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
    - and also clean up doom emacs too `doom gc`
+3. if you want te explore go into flake.nix and just use `gf` on any file you can see
 
 ## future ventures
 

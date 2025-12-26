@@ -2,6 +2,19 @@
 
 # This is where generic systemd services should go, kinda like packages
 {
+  imports = [
+    ./bluetooth.nix
+    ./kanata.nix
+    ./networking.nix
+    ./pipewire.nix
+    ./printing.nix
+    ./vial.nix
+    ./ydotool.nix
+    ./zerotierone.nix
+  ];
+
+  bluetooth.enable = true;
+
   # Power
   services.fstrim.enable = true; # ibe strimmin my disks (runs once at boot)
   services.thermald.enable = true; # test this later

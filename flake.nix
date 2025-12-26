@@ -47,13 +47,17 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./system/configuration.nix ];
+          modules = [
+            ./system/configuration.nix
+          ];
           specialArgs = { inherit inputs; };
         };
       };
       homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/configuration.nix ];
+        modules = [
+          ./home/configuration.nix
+        ];
         extraSpecialArgs = { inherit inputs; };
       };
     };

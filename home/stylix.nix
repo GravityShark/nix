@@ -11,8 +11,8 @@
   stylix.enable = true;
   imports = [
     inputs.stylix.homeModules.stylix
-    ./stylix/gruvbox-material.nix
-    # ./stylix/rose-pine.nix
+    # ./stylix/gruvbox-material.nix
+    ./stylix/rose-pine.nix
   ];
 
   stylix.fonts = {
@@ -64,7 +64,7 @@
     # mangohud.enable = true;
     # mpv.enable = true;
     # neovim.enable = true;
-    # noctalia-shell.enable = true;
+    noctalia-shell.enable = true;
     obsidian = {
       enable = true;
       fonts.override.sizes.desktop = 16;

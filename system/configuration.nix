@@ -4,33 +4,27 @@
 
 {
   imports = [
-    ## Desktop Environments (Mutually exclusive)
-    # ./gnome.nix
-    ./niri.nix
-
-    ## Services
-    ./bluetooth.nix
-    ./kanata.nix
-    ./networking.nix
-    ./pipewire.nix
-    # ./printing.nix
-    # ./vial.nix
-    ./ydotool.nix
-    ./update-scripts.nix
-    ./zerotierone.nix
-
-    ## Global
-    ./intel.nix
-    # ./lanzaboote.nix
-    ./msi.nix
-    ./nvidia.nix
-
-    ## Meta
-    ./hardware-configuration.nix # Copy exactly from /etc/nixos
-    ./packages.nix
-    ./services.nix
-    ./system.nix # You NEVER have to change this file ever again
+    ./hardware-configuration.nix
+    ./desktop/desktop.nix
+    ./packages/packages.nix
+    ./services/services.nix
+    ./system/system.nix
   ];
+
+  intel.enable = true;
+  msi.enable = true;
+  nvidia.enable = true;
+
+  update-scripts.enable = true;
+  openrazer.enable = true;
+
+  kanata.enable = true;
+  networking.enable = true;
+  pipewire.enable = true;
+  printing.enable = true;
+  vial.enable = true;
+  ydotool.enable = true;
+  zerotierone.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfreePredicate =
@@ -45,11 +39,6 @@
       # "zoom"
     ];
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 

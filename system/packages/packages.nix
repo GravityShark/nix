@@ -3,6 +3,10 @@
 # List packages installed in system profile. To search, run:
 # $ nix search nixpkgs wget
 {
+  imports = [
+    ./openrazer.nix
+    ./update-scripts.nix
+  ];
   environment.systemPackages = with pkgs; [
     home-manager
 
