@@ -8,7 +8,7 @@
 
   imports = [
     # ./gnome.nix
-    # ./noctalia.nix
+    ./noctalia.nix
 
     ./gaming.nix
     ./ghostty.nix

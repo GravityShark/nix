@@ -285,7 +285,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 
-// spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "2000"
+spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "5000"
 // spawn-at-startup "~/.scripts/swidle"
 // spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/Tranquility.png"
 // spawn-at-startup "noctalia-shell"
