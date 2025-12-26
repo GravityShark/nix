@@ -16,6 +16,7 @@
     # ./printing.nix
     # ./vial.nix
     ./ydotool.nix
+    ./update-scripts.nix
     ./zerotierone.nix
 
     ## Global
