@@ -64,7 +64,7 @@
     # mangohud.enable = true;
     # mpv.enable = true;
     # neovim.enable = true;
-    noctalia-shell.enable = true;
+    # noctalia-shell.enable = true;
     obsidian = {
       enable = true;
       fonts.override.sizes.desktop = 16;
@@ -130,10 +130,10 @@
   };
 
   ## Extra noctalia-shell
-  programs.noctalia-shell.settings.colorSchemes.darkMode = lib.mkForce (
-    lib.mkMerge [
-      (lib.mkIf (config.stylix.polarity == "light") false)
-      (lib.mkIf (config.stylix.polarity == "dark") true)
-    ]
-  );
+  # programs.noctalia-shell.settings.colorSchemes.darkMode = lib.mkForce (
+  #   lib.mkMerge [
+  #     (lib.mkIf (config.stylix.polarity == "light") false)
+  #     (lib.mkIf (config.stylix.polarity == "dark") true)
+  #   ]
+  # );
 }

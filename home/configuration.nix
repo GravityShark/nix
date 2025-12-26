@@ -8,7 +8,7 @@
 
   imports = [
     # ./gnome.nix
-    ./noctalia.nix
+    # ./noctalia.nix
 
     ./gaming.nix
     ./ghostty.nix
@@ -17,7 +17,7 @@
     ./neovim.nix
     ./nixcraft.nix
     ./stylix.nix
-    ./wayland-pipewire-idle-inhibit.nix
+    # ./wayland-pipewire-idle-inhibit.nix
 
     ./restic.nix
     ./syncthing.nix

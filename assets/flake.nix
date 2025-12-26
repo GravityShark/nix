@@ -1,5 +1,5 @@
 {
-  description = "The WORST flake config you will EVER see";
+  description = "This is MY flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v3.7.3";
+      url = "github:noctalia-dev/noctalia-shell/v3.7.5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     wayland-pipewire-idle-inhibit = {
-      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit/";
+      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
