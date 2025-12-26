@@ -119,16 +119,16 @@
             )
 
             (deflayer num
-              XX  F11 up  C-a     XX XX    7    8    9    _    _
+              XX  XX up  XX     XX XX    9    8    9    _    _
               _ @osm @osa @oss @osc @fun XX    4    5    6    0    _
-              F5  XX  XX  down XX XX XX    1    2    3    _    _
+              XX  XX  XX  down XX XX XX    1    2    3    _    _
               _   XX  XX _   XX
             )
 
             (deflayer fun
-              XX   XX   XX   XX   XX       F12    F7    F8    F9    _    _ 
-              _ @osm @osa @oss @osc XX       F11    F4    F5    F6    _    _
-              XX   XX   XX   XX   XX  XX   F10    F1    F2    F3    _    _
+              XX   XX   XX   XX   XX     _    F7    F8    F9    F12   _    
+              _ @osm @osa @oss @osc XX     _    F4    F5    F6    F11   _  
+              XX   XX   XX   XX   XX  XX _    F1    F2    F3    F10   _    
               _   XX  XX _   XX
             )
           '';
