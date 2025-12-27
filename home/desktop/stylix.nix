@@ -11,14 +11,15 @@
     desktop.stylix.enable = lib.mkEnableOption "enables stylix";
   };
 
+  imports = [
+    inputs.stylix.homeModules.stylix
+    # ./stylix/gruvbox-material.nix
+    ./stylix/rose-pine.nix
+  ];
+
   config = lib.mkIf config.desktop.stylix.enable {
     # https://nix-community.github.io/stylix/configuration.html
     stylix.enable = true;
-    imports = [
-      inputs.stylix.homeModules.stylix
-      # ./stylix/gruvbox-material.nix
-      ./stylix/rose-pine.nix
-    ];
 
     stylix.fonts = {
       sizes = {
