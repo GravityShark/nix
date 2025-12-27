@@ -6,10 +6,6 @@
 }:
 
 {
-  options = {
-    niri.enable = lib.mkEnableOption "enables niri";
-  };
-
   config =
     let
       autologin_on_7 = pkgs.autologin.overrideAttrs (_: {
@@ -20,7 +16,7 @@
         '';
       });
     in
-    lib.mkIf config.niri.enable
+    lib.mkIf (config.desktop.type == "niri")
       # autologin
       # https://superuser.com/a/1904473
       {

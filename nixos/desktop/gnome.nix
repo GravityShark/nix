@@ -6,12 +6,7 @@
 }:
 
 {
-  options = {
-    gnome.enable = lib.mkEnableOption "enables gnome";
-
-  };
-
-  config = lib.mkIf config.gnome.enable {
+  config = lib.mkIf (config.desktop.type == "gnome") {
     warnings = (
       # Some NixOS module: throw error, if services.foo.bar == true
       lib.optionals config.niri.enable ""

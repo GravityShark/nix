@@ -20,7 +20,7 @@
   ydotool.enable = true;
   zerotierone.enable = true;
 
-  niri.enable = true;
+  desktop = "niri";
 
   wayland-pipewire-idle-inhibit.enable = true;
 
