@@ -1,3 +1,0 @@
-[remote "origin"]
-	pushurl = git@github.com:GravityShark/nvim-kick.git
-	; pushurl = gravity@clr:Git/nix.git
