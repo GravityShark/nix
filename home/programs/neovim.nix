@@ -24,7 +24,7 @@
       nvim-relink = pkgs.buildGoModule {
         pname = "nvim-relink";
         version = "1";
-        src = ./dump/.config/nvim;
+        src = dump/.config/nvim;
         vendorHash = null;
       };
     in
