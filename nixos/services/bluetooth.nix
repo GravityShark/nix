@@ -7,9 +7,9 @@
 
 {
   options = {
-    bluetooth.enable = lib.mkEnableOption "enables bluetooth";
+    service.bluetooth.enable = lib.mkEnableOption "enables bluetooth";
   };
-  config = lib.mkIf config.bluetooth.enable {
+  config = lib.mkIf config.service.bluetooth.enable {
     # Bluetooth must include pipewire
     environment.systemPackages = [ pkgs.bluetui ];
     hardware.bluetooth = {

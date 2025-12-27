@@ -2,9 +2,9 @@
 
 {
   options = {
-    vial.enable = lib.mkEnableOption "enables vial";
+    system.vial.enable = lib.mkEnableOption "enables vial";
   };
-  config = lib.mkIf config.vial.enable {
+  config = lib.mkIf config.system.vial.enable {
     # Vial udev rule
     # https://get.vial.today/manual/linux-udev.html
     services.udev.extraRules = ''

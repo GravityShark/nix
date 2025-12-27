@@ -7,9 +7,9 @@
 
 {
   options = {
-    intel.enable = lib.mkEnableOption "enables intel";
+    system.intel.enable = lib.mkEnableOption "enables intel";
   };
-  config = lib.mkIf config.intel.enable {
+  config = lib.mkIf config.system.intel.enable {
     services.thermald.enable = true;
 
     boot.initrd.kernelModules = [ "i915" ];

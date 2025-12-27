@@ -2,9 +2,9 @@
 
 {
   options = {
-    kanata.enable = lib.mkEnableOption "enables kanata";
+    service.kanata.enable = lib.mkEnableOption "enables kanata";
   };
-  config = lib.mkIf config.kanata.enable {
+  config = lib.mkIf config.service.kanata.enable {
     boot.kernelModules = [ "uinput" ];
     # Enable uinput
     hardware.uinput.enable = true;

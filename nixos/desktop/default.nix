@@ -6,7 +6,7 @@
     ./niri.nix
   ];
 
-  options.displayserver = lib.mkOption {
+  options.desktop.display-server = lib.mkOption {
     type = lib.types.enum [
       "niri"
       "gnome"

@@ -6,9 +6,9 @@
 
 {
   options = {
-    msi.enable = lib.mkEnableOption "enables msi";
+    system.msi.enable = lib.mkEnableOption "enables msi";
   };
-  config = lib.mkIf config.msi.enable {
+  config = lib.mkIf config.system.msi.enable {
     boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
     boot.kernelModules = [ "msi-ec" ];
     # Sets the msi stats

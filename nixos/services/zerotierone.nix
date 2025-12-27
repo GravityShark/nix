@@ -6,9 +6,9 @@
 
 {
   options = {
-    zerotierone.enable = lib.mkEnableOption "enables zerotierone";
+    service.zerotierone.enable = lib.mkEnableOption "enables zerotierone";
   };
-  config = lib.mkIf config.zerotierone.enable {
+  config = lib.mkIf config.service.zerotierone.enable {
     services.zerotierone = {
       enable = true;
       joinNetworks = [

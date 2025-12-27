@@ -7,7 +7,7 @@
 
 {
   options = {
-    networking.enable = lib.mkEnableOption "enables networking";
+    service.networking.enable = lib.mkEnableOption "enables networking";
   };
   config =
     # let
@@ -22,7 +22,7 @@
     #     sha256 = "21a7ffd6e67f2baf9da7221b4bf8e3374436a09a0603e678b8c0ae11845d26c8";
     #   };
     # in
-    lib.mkIf config.networking.enable {
+    lib.mkIf config.service.networking.enable {
 
       # Configure network proxy if necessary
       # networking.proxy.default = "http://user:password@proxy:port/";

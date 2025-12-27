@@ -16,7 +16,7 @@
         '';
       });
     in
-    lib.mkIf (config.displayserver == "niri")
+    lib.mkIf (config.desktop.display-server == "niri")
       # autologin
       # https://superuser.com/a/1904473
       {

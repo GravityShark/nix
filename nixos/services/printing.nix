@@ -2,9 +2,9 @@
 
 {
   options = {
-    printing.enable = lib.mkEnableOption "enables printing";
+    service.printing.enable = lib.mkEnableOption "enables printing";
   };
-  config = lib.mkIf config.printing.enable {
+  config = lib.mkIf config.service.printing.enable {
     # https://nixos.wiki/wiki/Printing
     services.printing.enable = true;
 

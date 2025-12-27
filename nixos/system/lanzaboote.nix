@@ -7,9 +7,9 @@
 
 {
   options = {
-    lanzaboote.enable = lib.mkEnableOption "enables lanzaboote";
+    system.lanzaboote.enable = lib.mkEnableOption "enables lanzaboote";
   };
-  config = lib.mkIf config.lanzaboote.enable {
+  config = lib.mkIf config.system.lanzaboote.enable {
     environment.systemPackages = [
       # For debugging and troubleshooting Secure Boot.
       pkgs.sbctl

@@ -8,10 +8,10 @@
 {
   imports = [ inputs.wayland-pipewire-idle-inhibit.nixosModules.default ];
   options = {
-    wayland-pipewire-idle-inhibit.enable = lib.mkEnableOption "enables wayland-pipewire-idle-inhibit";
+    service.wayland-pipewire-idle-inhibit.enable = lib.mkEnableOption "enables wayland-pipewire-idle-inhibit";
   };
 
-  config = lib.mkIf config.wayland-pipewire-idle-inhibit.enable {
+  config = lib.mkIf config.service.wayland-pipewire-idle-inhibit.enable {
     services.wayland-pipewire-idle-inhibit = {
       enable = true;
       systemdTarget = "graphical-session.target";

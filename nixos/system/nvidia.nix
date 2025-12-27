@@ -7,9 +7,9 @@
 
 {
   options = {
-    nvidia.enable = lib.mkEnableOption "enables nvidia";
+    system.nvidia.enable = lib.mkEnableOption "enables nvidia";
   };
-  config = lib.mkIf config.nvidia.enable {
+  config = lib.mkIf config.system.nvidia.enable {
     hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [ nvidia-vaapi-driver ];
