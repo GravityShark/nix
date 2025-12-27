@@ -5,20 +5,7 @@
     ./desktop
     ./packages
     ./home
-
-    ./ghostty.nix
-    ./keepassxc.nix
-    ./neovim.nix
-    ./nixcraft.nix
-    ./stylix.nix
-
-    ./restic.nix
-    ./syncthing.nix
-
-    # ./desktop.nix
-    ./links.nix
-    ./mime.nix
-    ./packages.nix
+    ./services
   ];
 
   programs.home-manager.enable = true;
