@@ -18,6 +18,21 @@
 
 > probably where my entire dotfiles is gonna reside from now on, even for non nixos systems
 
+## file stcrcuture
+
+```
+󰝰 nix
+├╴󰉋 assets
+├╴󰉋 dump
+├╴󰉋 home
+├╴󰉋 hosts
+└╴󰉋 nixos
+
+```
+
+- assets: just extra stuff like pictures
+- dump: impure dotfiles (yuck!)
+
 ## installation
 
 > assuming that you like use the same user name (gravity)
@@ -38,9 +53,9 @@ sudo nixos-rebuild switch
 ```
 
 3. clone this nix config
-    - you might want to shell into this first:
-        a. git
-        b. home-manager
+   - you might want to shell into this first:
+     a. git
+     b. home-manager
 
 ```bash
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
