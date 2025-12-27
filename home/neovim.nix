@@ -19,8 +19,8 @@
   xdg.configFile."nvim/enabled-plugins.txt".text =
     builtins.readFile dump/.config/nvim/enabled-plugins.txt;
 
-  home.packages = [
-    pkgs.buildGoModule
+  home.packages = with pkgs; [
+    buildGoModule
     {
       pname = "nvim-relink";
       version = "1";

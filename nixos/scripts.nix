@@ -33,7 +33,6 @@
                 (git diff --cached --quiet ||
                         (git commit -m "Update configuration" -S >/dev/null 2>&1 &&
                                 git push >/dev/null 2>&1)) &
-        return 0
       '')
 
       (writeShellScriptBin "ngc" ''
