@@ -38,6 +38,9 @@ sudo nixos-rebuild switch
 ```
 
 3. clone this nix config
+    - you might want to shell into this first:
+        a. git
+        b. home-manager
 
 ```bash
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix

@@ -22,4 +22,6 @@
     ./mime.nix
     ./packages.nix
   ];
+
+  programs.home-manager.enable = true;
 }
