@@ -32,6 +32,11 @@
 
 - assets: just extra stuff like pictures
 - dump: impure dotfiles (yuck!)
+- home: home-manager related modules
+- hosts: where you enable or disable modules per host
+- nixos: nixos related modules
+
+- i recommend just going to `flake.nix` and use `gf` in vim to follow links
 
 ## installation
 
@@ -81,7 +86,7 @@ git config --local include.path ../.gitconfig
 
 cd ~/.nix/home/dump/.config/nvim/
 git switch master
-git config --local include.path ../../../../../home/dump/.config/nvim/.gitconfig
+git config --local include.path ../../../../../dump/.config/nvim/.gitconfig
 ```
 
 n ur done, jus complete this checklist then reboot

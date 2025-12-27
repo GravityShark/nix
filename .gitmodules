@@ -1,0 +1,3 @@
+[submodule "dump/.config/nvim"]
+	path = dump/.config/nvim
+	url = https://github.com/GravityShark/nvim-kick
