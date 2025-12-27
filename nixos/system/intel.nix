@@ -10,6 +10,8 @@
     intel.enable = lib.mkEnableOption "enables intel";
   };
   config = lib.mkIf config.intel.enable {
+    services.thermald.enable = true;
+
     boot.initrd.kernelModules = [ "i915" ];
     boot.kernelParams = [ "i915.enable_guc=2" ];
     environment.sessionVariables = {

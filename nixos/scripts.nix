@@ -11,9 +11,51 @@
   };
   config = lib.mkIf config.scripts.enable {
     environment.systemPackages = with pkgs; [
-      (writeShellScriptBin "my-script" ''
-        DATE="$(${pkgs.ddate}/bin/ddate +'the %e of %B%, %Y')"
-        ${pkgs.cowsay}/bin/cowsay Hello, world! Today is $DATE.
+      (writeShellScriptBin "fe" ''
+        $EDITOR ~/.nix/flake.nix && nixfmt ~/.nix/*.nix
+      '')
+
+      (writeShellScriptBin "fu" ''
+        nix flake update --flake ~/.nix
+      '')
+
+      (writeShellScriptBin "hmn" ''
+        home-manager news --flake ~/.nix
+      '')
+
+      (writeShellScriptBin "hms" ''
+        home-manager news --flake ~/.nix
+      '')
+
+      (writeShellScriptBin "ng" ''
+        cd ~/.nix &&
+                git add . &&
+                (git diff --cached --quiet ||
+                        (git commit -m "Update configuration" -S >/dev/null 2>&1 &&
+                                git push >/dev/null 2>&1)) &
+        return 0
+      '')
+
+      (writeShellScriptBin "ngc" ''
+        sudo nix-collect-garbage -d
+        sudo nix-store --optimise
+        sudo nix-store --gc
+        home-manager expire-generations 1
+        nix-collect-garbage -d
+      '')
+
+      (writeShellScriptBin "nrb" ''
+        sudo nixos-rebuild boot --flake ~/.nix
+      '')
+
+      (writeShellScriptBin "nrbu" ''
+        sudo nixos-rebuild boot --upgrade --flake ~/.nix
+      '')
+      (writeShellScriptBin "nrs" ''
+        sudo nixos-rebuild switch --flake ~/.nix
+      '')
+      (writeShellScriptBin "updatescript" ''
+        ng && fu && nrsu && hms
       '')
     ];
   };

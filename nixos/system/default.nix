@@ -5,10 +5,11 @@
 {
   imports = [
     ./intel.nix
-    ./openrazer.nix
     # ./lanzaboote.nix
     ./msi.nix
     ./nvidia.nix
+    ./openrazer.nix
+    ./vial.nix
   ];
 
   # Bootloader.

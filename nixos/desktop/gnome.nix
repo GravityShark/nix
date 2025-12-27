@@ -6,11 +6,7 @@
 }:
 
 {
-  config = lib.mkIf (config.desktop.type == "gnome") {
-    warnings = (
-      # Some NixOS module: throw error, if services.foo.bar == true
-      lib.optionals config.niri.enable ""
-    );
+  config = lib.mkIf (config.displayserver == "gnome") {
     # Gnome + Wayland + NVIDIA will not work until this issue has been fixed https://gitlab.gnome.org/GNOME/mutter/-/issues/2969
     # Enables gnome and gdm
     services.displayManager.gdm.enable = true;

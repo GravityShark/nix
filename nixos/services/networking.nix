@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  # pkgs,
   ...
 }:
 
@@ -10,18 +10,18 @@
     networking.enable = lib.mkEnableOption "enables networking";
   };
   config =
-    let
-      discord = pkgs.fetchurl {
-        name = "discord";
-        url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
-        sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
-      };
-      instagram = pkgs.fetchurl {
-        name = "instagram";
-        url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/instagramhosts.txt";
-        sha256 = "21a7ffd6e67f2baf9da7221b4bf8e3374436a09a0603e678b8c0ae11845d26c8";
-      };
-    in
+    # let
+    #   discord = pkgs.fetchurl {
+    #     name = "discord";
+    #     url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
+    #     sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
+    #   };
+    #   instagram = pkgs.fetchurl {
+    #     name = "instagram";
+    #     url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/instagramhosts.txt";
+    #     sha256 = "21a7ffd6e67f2baf9da7221b4bf8e3374436a09a0603e678b8c0ae11845d26c8";
+    #   };
+    # in
     lib.mkIf config.networking.enable {
 
       # Configure network proxy if necessary
@@ -82,9 +82,9 @@
           ];
         };
         # ${builtins.readFile discord}
-        extraHosts = ''
-          ${builtins.readFile instagram}
-        '';
+        # extraHosts = ''
+        #   ${builtins.readFile instagram}
+        # '';
       };
     };
 }

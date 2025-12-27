@@ -1,27 +1,32 @@
-{ ... }:
+{ lib, config, ... }:
 
 # This is where generic systemd services should go, kinda like packages
 {
   imports = [
     ./bluetooth.nix
+    ./disks.nix
     ./kanata.nix
     ./networking.nix
     ./pipewire.nix
+    ./power-management.nix
     ./printing.nix
-    ./vial.nix
     ./wayland-pipewire-idle-inhibit.nix
     ./ydotool.nix
     ./zerotierone.nix
   ];
 
-  bluetooth.enable = true;
-
-  # Power
-  services.fstrim.enable = true; # ibe strimmin my disks (runs once at boot)
-  services.thermald.enable = true; # test this later
-  services.tuned.enable = true; # power-profiles-daemon, sometimes takes up power randomly
-  services.udisks2.enable = true; # allows for usb storage devices to work without root
-  services.upower.enable = true; # power viewing
+  config = lib.mkIf (config.displayserver == "gnome") {
+    assertions = [
+      {
+        assertion = !(config.power-management.enable);
+        message = "displayserver as \"gnome\" is incompatible with power-management.enable as true";
+      }
+      {
+        assertion = !(config.wayland-pipewire-idle-inhibit.enable);
+        message = "displayserver as \"gnome\" is incompatible with wayland-pipewire-idle-inhibit.enable as true";
+      }
+    ];
+  };
 
   # systemd.timers."background" = {
   #   wantedBy = [ "timers.target" ];

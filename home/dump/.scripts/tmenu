@@ -1,10 +1,11 @@
 #!/bin/sh
 sesh list -i -H | fzf-tmux -e --ansi -p 80%,80% \
         --no-sort --border-label " ${1:-sesh} " --prompt '⚡ ' \
-        --header '  ^a all ^t sessions ^k kill selected session ^r root' \
+        --header '  ^a all ^t sessions ^f find ^k kill selected session ^r root' \
         --bind 'tab:down,btab:up' \
         --bind 'ctrl-a:change-prompt(⚡ )+reload(sesh list -iH)' \
         --bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
+        --bind 'ctrl-f:change-prompt(  )+reload(fd -Htd -cnever)' \
         --bind 'ctrl-k:execute(tmux kill-session -t $(echo {} | cut -c 5-))+change-prompt(⚡ )+reload(sesh list -iH)' \
         --bind 'ctrl-r:execute(sesh connect --root .)' \
         --preview-window 'right:55%' \

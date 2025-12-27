@@ -1,5 +1,0 @@
-#!/bin/sh
-lights=120
-lock=$((lights + 60))
-suspend=300
-swayidle -w timeout $lights "niri msg action power-off-monitors" timeout $lock "noctalia-shell ipc call lockScreen lock" timeout $suspend "systemctl suspend" before-sleep "noctalia-shell ipc call lockScreen lock"

@@ -6,14 +6,12 @@
     ./niri.nix
   ];
 
-  options = {
-    desktop = lib.mkOption {
-      type = lib.types.enum [
-        "niri"
-        "gnome"
-      ];
-      description = "Type of desktop environment used: niri, gnome";
-      example = "gnome";
-    };
+  options.displayserver = lib.mkOption {
+    type = lib.types.enum [
+      "niri"
+      "gnome"
+    ];
+    description = "Type of display server used: niri, gnome";
+    example = "gnome";
   };
 }
