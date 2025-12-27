@@ -14,7 +14,7 @@
   imports = [
     inputs.stylix.homeModules.stylix
     # ./stylix/gruvbox-material.nix
-    ./stylix/rose-pine.nix
+    ../stylix/rose-pine.nix
   ];
 
   config = lib.mkIf config.desktop.stylix.enable {
