@@ -19,16 +19,16 @@
   xdg.configFile."nvim/enabled-plugins.txt".text =
     builtins.readFile dump/.config/nvim/enabled-plugins.txt;
 
-  home.packages = [
-    (pkgs.buildGoModule {
-      pname = "nvim-relink";
-      version = "1";
-      src = ./dump/.config/nvim;
-      vendorHash = null;
-    })
-  ];
-
-  home.activation.relinkPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.nvim-relink}/relink ${config.xdg.configHome}/nvim
-  '';
+  home.activation.relinkPlugins =
+    let
+      nvim-relink = pkgs.buildGoModule {
+        pname = "nvim-relink";
+        version = "1";
+        src = ./dump/.config/nvim;
+        vendorHash = null;
+      };
+    in
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      ${nvim-relink}/bin/relink ${config.xdg.configHome}/nvim
+    '';
 }

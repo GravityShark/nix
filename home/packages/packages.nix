@@ -6,10 +6,10 @@
 }:
 
 let
-  apps = import ./packages/apps.nix { inherit pkgs; };
-  dev = import ./packages/dev.nix { inherit pkgs; };
-  cli = import ./packages/cli.nix { inherit pkgs; };
-  fonts = import ./packages/fonts.nix { inherit pkgs; };
+  apps = import ./apps.nix { inherit pkgs; };
+  dev = import ./dev.nix { inherit pkgs; };
+  cli = import ./cli.nix { inherit pkgs; };
+  fonts = import ./fonts.nix { inherit pkgs; };
 in
 {
 

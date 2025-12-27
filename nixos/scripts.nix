@@ -24,7 +24,7 @@
       '')
 
       (writeShellScriptBin "hms" ''
-        home-manager switch --flake ~/.nix
+        home-manager switch --flake ~/.nix\?submodules=1
       '')
 
       (writeShellScriptBin "ng" ''

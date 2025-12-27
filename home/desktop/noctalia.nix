@@ -159,9 +159,20 @@
               useDistroLogo = false;
             }
             {
-              id = "Spacer";
-              width = 20;
+              hideMode = "hidden";
+              hideWhenIdle = false;
+              id = "MediaMini";
+              maxWidth = 800;
+              scrollingMode = "hover";
+              showAlbumArt = true;
+              showArtistFirst = false;
+              showProgressRing = true;
+              showVisualizer = true;
+              useFixedWidth = false;
+              visualizerType = "wave";
             }
+          ];
+          right = [
             {
               diskPath = "/";
               id = "SystemMonitor";
@@ -176,23 +187,8 @@
             }
             {
               id = "Spacer";
-              width = 20;
+              width = 5;
             }
-            {
-              hideMode = "hidden";
-              hideWhenIdle = false;
-              id = "MediaMini";
-              maxWidth = 6700;
-              scrollingMode = "hover";
-              showAlbumArt = true;
-              showArtistFirst = false;
-              showProgressRing = true;
-              showVisualizer = true;
-              useFixedWidth = false;
-              visualizerType = "wave";
-            }
-          ];
-          right = [
             {
               blacklist = [
 
@@ -215,7 +211,7 @@
             }
             {
               id = "Spacer";
-              width = 1;
+              width = 6;
             }
             {
               deviceNativePath = "";
@@ -228,7 +224,7 @@
             }
             {
               id = "Spacer";
-              width = 8;
+              width = 11;
             }
             {
               displayMode = "onhover";
@@ -236,7 +232,7 @@
             }
             {
               id = "Spacer";
-              width = 1;
+              width = 3;
             }
             {
               customFont = "Aporetic Sans Mono";
