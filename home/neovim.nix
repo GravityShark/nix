@@ -29,6 +29,6 @@
   ];
 
   home.activation.relinkPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.nvim-relink}/bin/relink ${config.xdg.configHome}/nvim
+    ${pkgs.nvim-relink}/relink ${config.xdg.configHome}/nvim
   '';
 }
