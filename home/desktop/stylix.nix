@@ -115,7 +115,7 @@
       '';
       "nvim/colors/nix.lua".source =
         with config.lib.stylix.colors.withHashtag;
-        (pkgs.replaceVars dump/.config/nvim/colors/nix.lua {
+        (pkgs.replaceVars ../dump/.config/nvim/colors/nix.lua {
           base00 = "${base00}";
           base01 = "${base01}";
           base02 = "${base02}";

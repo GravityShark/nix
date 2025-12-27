@@ -28,13 +28,13 @@ let
 in
 
 {
-  # Read the doom emacs line of ./dump/README.md
+  # Read the doom emacs line of ./../dump/README.md
 
   # Emacs service
   services.emacs.enable = true;
 
   # Doom emacs
-  home.file.".doom.d".source = dump/.doom.d;
+  home.file.".doom.d".source = ../dump/.doom.d;
 
   # Allow for inline LaTeX to work
   home.packages = with pkgs; [
