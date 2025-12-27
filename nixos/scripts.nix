@@ -24,7 +24,7 @@
       '')
 
       (writeShellScriptBin "hms" ''
-        home-manager news --flake ~/.nix
+        home-manager switch --flake ~/.nix
       '')
 
       (writeShellScriptBin "ng" ''

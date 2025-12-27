@@ -27,16 +27,6 @@
   ydotool.enable = true;
   zerotierone.enable = true;
 
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
-
-  # For somereason /dev/null is NOT being properly permissionisezed
-  # system.activationScripts.chmod-dev-null.text = "chmod 777 /dev/null";
-
-  # systemd.services."chmod" = {
-  #   script = ''
-  #     chmod 777 /dev/null
-  #   '';
-  #   wantedBy = [ "multi-user.target" ];
-  # };
+  # `man configuration.nix` or https://nixos.org/nixos/options.html).
+  system.stateVersion = "25.11";
 }
