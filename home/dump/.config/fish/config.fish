@@ -89,10 +89,12 @@ if status is-interactive
 
     # if command -v tmux > /dev/null and test -n "$PS1" and not echo $TERM | grep -q 'tmux' and test -z "$TMUX"
     # if command -v tmux > /dev/null 'tmux'; and not set -q "$TMUX"
-    if type -q tmux ; and not set -q TMUX
+    if set -q TMUX
+        if test (count (tmux list-windows)) -gt 3
+            echo "BTW you should only have 3 tabs cause lowkey the 1 is for vim, 2 is for cmdline and 3rd is wild card. no more brochacho"
+        end
+    else if type -q tmux
         tmux
-    else if test (tmux list-windows || wc -l) -gt 3
-        echo "BTW you should only have 3 tabs cause lowkey the 1 is for vim, 2 is for cmdline and 3rd is wild card. no more brochacho"
     end
 
 end
