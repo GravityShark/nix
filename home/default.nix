@@ -3,11 +3,11 @@
 {
   imports = [
     ./desktop
+    ./packages
+    ./home
 
-    ./gaming.nix
     ./ghostty.nix
     ./keepassxc.nix
-    ./mcsr.nix
     ./neovim.nix
     ./nixcraft.nix
     ./stylix.nix

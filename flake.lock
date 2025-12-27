@@ -496,29 +496,12 @@
         "type": "github"
       }
     },
-    "nvim-kick": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1766843811,
-        "narHash": "sha256-lEf/I9SDcgRzya99/4Qoy2OY7XaK6moAMdPDOcFL+tU=",
-        "owner": "GravityShark",
-        "repo": "nvim-kick",
-        "rev": "be6149fb27cfe4f4e07f79392f667ee6bffcf8bb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "GravityShark",
-        "repo": "nvim-kick",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixcraft": "nixcraft",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
-        "nvim-kick": "nvim-kick",
         "stylix": "stylix",
         "wayland-pipewire-idle-inhibit": "wayland-pipewire-idle-inhibit",
         "zen-browser": "zen-browser"
