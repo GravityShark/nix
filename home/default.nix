@@ -2,8 +2,7 @@
 
 {
   imports = [
-    # ./gnome.nix
-    ./noctalia.nix
+    ./desktop
 
     ./gaming.nix
     ./ghostty.nix
