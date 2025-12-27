@@ -3,21 +3,15 @@
 { lib, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./desktop/desktop.nix
-    ./packages/packages.nix
-    ./services/services.nix
-    ./system/system.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   intel.enable = true;
   msi.enable = true;
   nvidia.enable = true;
 
-  update-scripts.enable = true;
   openrazer.enable = true;
 
+  scripts.enable = true;
   kanata.enable = true;
   networking.enable = true;
   pipewire.enable = true;
@@ -26,18 +20,7 @@
   ydotool.enable = true;
   zerotierone.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      # "discord-canary"
-      "nvidia-persistenced"
-      "nvidia-settings"
-      "nvidia-x11"
-      # "teams"
-      "zerotierone"
-      # "zoom"
-    ];
+  niri.enable = true;
 
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?

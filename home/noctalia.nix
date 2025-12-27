@@ -90,6 +90,7 @@
         customLaunchPrefixEnabled = false;
         enableClipPreview = true;
         enableClipboardHistory = true;
+        iconMode = "tabler";
         pinnedExecs = [
 
         ];
@@ -107,13 +108,12 @@
 
         ];
         preferredPlayer = "youtube";
-        visualizerQuality = "high";
         visualizerType = "none";
         volumeOverdrive = true;
         volumeStep = 5;
       };
       bar = {
-        capsuleOpacity = 1.0;
+        capsuleOpacity = lib.mkDefault 1;
         density = "compact";
         exclusive = true;
         floating = false;
@@ -147,6 +147,9 @@
               width = 1;
             }
             {
+              id = "plugin:launcher-button";
+            }
+            {
               colorizeDistroLogo = true;
               colorizeSystemIcon = "none";
               customIconPath = "";
@@ -156,7 +159,37 @@
               useDistroLogo = false;
             }
             {
-              id = "plugin:launcher-button";
+              id = "Spacer";
+              width = 20;
+            }
+            {
+              diskPath = "/";
+              id = "SystemMonitor";
+              showCpuTemp = true;
+              showCpuUsage = false;
+              showDiskUsage = true;
+              showGpuTemp = false;
+              showMemoryAsPercent = false;
+              showMemoryUsage = true;
+              showNetworkStats = true;
+              usePrimaryColor = false;
+            }
+            {
+              id = "Spacer";
+              width = 20;
+            }
+            {
+              hideMode = "hidden";
+              hideWhenIdle = false;
+              id = "MediaMini";
+              maxWidth = 6700;
+              scrollingMode = "hover";
+              showAlbumArt = true;
+              showArtistFirst = false;
+              showProgressRing = true;
+              showVisualizer = true;
+              useFixedWidth = false;
+              visualizerType = "wave";
             }
           ];
           right = [
@@ -174,42 +207,43 @@
             }
             {
               id = "Spacer";
-              width = 2;
+              width = 3;
             }
             {
               displayMode = "alwaysShow";
-              id = "Volume";
+              id = "WiFi";
             }
             {
               id = "Spacer";
-              width = 3;
+              width = 1;
             }
             {
               deviceNativePath = "";
               displayMode = "alwaysShow";
+              hideIfNotDetected = true;
               id = "Battery";
-              showNoctaliaPerformance = false;
+              showNoctaliaPerformance = true;
               showPowerProfiles = true;
               warningThreshold = 30;
             }
             {
               id = "Spacer";
-              width = 7;
+              width = 8;
             }
             {
-              displayMode = "alwaysHide";
-              id = "WiFi";
+              displayMode = "onhover";
+              id = "Volume";
             }
             {
               id = "Spacer";
-              width = 2;
+              width = 1;
             }
             {
-              customFont = "";
+              customFont = "Aporetic Sans Mono";
               formatHorizontal = "ddd dd hh:mm AP";
               formatVertical = "HH mm";
               id = "Clock";
-              useCustomFont = false;
+              useCustomFont = true;
               usePrimaryColor = false;
             }
           ];
@@ -241,12 +275,12 @@
         ];
       };
       colorSchemes = {
-        darkMode = false;
+        darkMode = true;
         generateTemplatesForPredefined = false;
         manualSunrise = "06:30";
         manualSunset = "18:30";
         matugenSchemeType = "scheme-fruit-salad";
-        # predefinedScheme = "Gruvbox";
+        predefinedScheme = "Noctalia (default)";
         schedulingMode = "off";
         useWallpaperColors = false;
       };
@@ -284,24 +318,6 @@
               id = "WiFi";
             }
             {
-              id = "Notifications";
-            }
-            {
-              id = "ScreenRecorder";
-            }
-            {
-              enableOnStateLogic = false;
-              generalTooltipText = "Monitor Configuration";
-              icon = "user-screen";
-              id = "CustomButton";
-              onClicked = "wdisplays";
-              onMiddleClicked = "";
-              onRightClicked = "";
-              stateChecksJson = "[]";
-            }
-          ];
-          right = [
-            {
               id = "Bluetooth";
             }
             {
@@ -318,14 +334,44 @@
               id = "KeepAwake";
             }
             {
+              enableOnStateLogic = false;
+              generalTooltipText = "Camera";
+              icon = "camera";
+              id = "CustomButton";
+              onClicked = "notify-desktop \"yo make this into an actual button that enables and disables camera 🙏\"";
+              onMiddleClicked = "";
+              onRightClicked = "";
+              stateChecksJson = "[]";
+            }
+          ];
+          right = [
+            {
+              id = "Notifications";
+            }
+            {
               id = "PowerProfile";
+            }
+            {
+              id = "ScreenRecorder";
+            }
+            {
+              enableOnStateLogic = false;
+              generalTooltipText = "Monitor Configuration";
+              icon = "user-screen";
+              id = "CustomButton";
+              onClicked = "wdisplays";
+              onMiddleClicked = "";
+              onRightClicked = "";
+              stateChecksJson = "[]";
+            }
+            {
+              id = "WallpaperSelector";
             }
           ];
         };
       };
       desktopWidgets = {
-        editMode = false;
-        enabled = true;
+        enabled = false;
         gridSnap = true;
         monitorWidgets = [
           {
@@ -335,7 +381,8 @@
                 hideMode = "hidden";
                 id = "MediaPlayer";
                 showBackground = true;
-                visualizerType = "";
+                showButtons = true;
+                visualizerType = "wave";
                 visualizerVisibility = "always";
                 x = 20;
                 y = 960;
@@ -346,7 +393,7 @@
       };
       dock = {
         animationSpeed = 1;
-        backgroundOpacity = 1.0;
+        backgroundOpacity = lib.mkDefault 1;
         colorizeIcons = true;
         deadOpacity = 0.6;
         displayMode = "auto_hide";
@@ -365,23 +412,23 @@
       };
       general = {
         allowPanelsOnScreenWithoutBar = true;
-        animationDisabled = true;
-        animationSpeed = 1;
+        animationDisabled = false;
+        animationSpeed = 2;
         avatarImage = "/home/gravity/Notes/assets/gravityshark.png";
         boxRadiusRatio = 1;
         compactLockScreen = false;
-        dimmerOpacity = 0.2;
-        enableShadows = false;
+        dimmerOpacity = 0.5;
+        enableShadows = true;
         forceBlackScreenCorners = false;
         iRadiusRatio = 0.3;
         language = "";
         lockOnSuspend = true;
         radiusRatio = 0.3;
-        scaleRatio = 0.9;
+        scaleRatio = 1;
         screenRadiusRatio = 0.3;
-        shadowDirection = "bottom_right";
-        shadowOffsetX = 2;
-        shadowOffsetY = 3;
+        shadowDirection = "center";
+        shadowOffsetX = 0;
+        shadowOffsetY = 0;
         showHibernateOnLockScreen = true;
         showScreenCorners = false;
         showSessionButtonsOnLockScreen = true;
@@ -389,6 +436,8 @@
       hooks = {
         darkModeChange = "";
         enabled = false;
+        performanceModeDisabled = "";
+        performanceModeEnabled = "";
         screenLock = "";
         screenUnlock = "";
         wallpaperChange = "";
@@ -418,11 +467,11 @@
         nightTemp = "4000";
       };
       notifications = {
-        backgroundOpacity = 1.0;
+        backgroundOpacity = lib.mkDefault 1;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = true;
         enabled = true;
-        location = "bottom_right";
+        location = "top_right";
         lowUrgencyDuration = 3;
         monitors = [
 
@@ -442,7 +491,7 @@
       };
       osd = {
         autoHideMs = 2000;
-        backgroundOpacity = 1.0;
+        backgroundOpacity = lib.mkDefault 1;
         enabled = true;
         enabledTypes = [
           0
@@ -450,7 +499,7 @@
           2
           3
         ];
-        location = "bottom_right";
+        location = "top_right";
         monitors = [
 
         ];
@@ -512,7 +561,7 @@
         ];
         showHeader = false;
       };
-      settingsVersion = 31;
+      settingsVersion = 32;
       systemMonitor = {
         cpuCriticalThreshold = 90;
         cpuPollingInterval = 3000;
@@ -521,7 +570,7 @@
         diskCriticalThreshold = 90;
         diskPollingInterval = 3000;
         diskWarningThreshold = 80;
-        enableNvidiaGpu = false;
+        enableDgpuMonitoring = false;
         gpuCriticalThreshold = 90;
         gpuPollingInterval = 3000;
         gpuWarningThreshold = 80;
@@ -529,9 +578,9 @@
         memPollingInterval = 3000;
         memWarningThreshold = 80;
         networkPollingInterval = 3000;
-        tempCriticalThreshold = 90;
+        tempCriticalThreshold = 80;
         tempPollingInterval = 3000;
-        tempWarningThreshold = 80;
+        tempWarningThreshold = 60;
         useCustomColors = false;
         warningColor = "#458588";
       };
@@ -546,6 +595,8 @@
         fuzzel = false;
         ghostty = false;
         gtk = false;
+        helix = false;
+        hyprland = false;
         kcolorscheme = false;
         kitty = false;
         mango = false;
@@ -561,14 +612,17 @@
         zed = false;
       };
       ui = {
+        bluetoothDetailsViewMode = "grid";
+        bluetoothHideUnnamedDevices = false;
         fontDefault = "Aporetic Sans";
-        fontDefaultScale = 1.25;
+        fontDefaultScale = 1;
         fontFixed = "Aporetic Sans Mono";
         fontFixedScale = 1.25;
-        panelBackgroundOpacity = 1.0;
+        panelBackgroundOpacity = lib.mkDefault 1;
         panelsAttachedToBar = true;
         settingsPanelMode = "centered";
         tooltipsEnabled = true;
+        wifiDetailsViewMode = "grid";
       };
       wallpaper = {
         directory = "/home/gravity/Pictures/Wallpapers";
@@ -594,6 +648,7 @@
         wallhavenOrder = "desc";
         wallhavenPurity = "100";
         wallhavenQuery = "gruvbox";
+        wallhavenRatios = "";
         wallhavenResolutionHeight = "";
         wallhavenResolutionMode = "atleast";
         wallhavenResolutionWidth = "";
