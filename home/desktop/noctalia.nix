@@ -8,9 +8,9 @@
 
 {
   options = {
-    noctalia.enable = lib.mkEnableOption "enables noctalia";
+    desktop.noctalia.enable = lib.mkEnableOption "enables noctalia";
   };
-  config = lib.mkIf config.noctalia.enable {
+  config = lib.mkIf config.desktop.noctalia.enable {
     imports = [ inputs.noctalia.homeModules.default ];
 
     services.swayidle =
