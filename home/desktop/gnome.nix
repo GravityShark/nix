@@ -10,7 +10,7 @@
     desktop.gnome.enable = lib.mkEnableOption "enables dconf settings and installs packages related to gnome";
   };
 
-  config = lib.mkIf config.gnome.enable {
+  config = lib.mkIf config.desktop.gnome.enable {
     home.file.".config/run-or-raise".source = dump/.config/run-or-raise;
 
     home.packages = with pkgs; [

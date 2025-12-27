@@ -7,10 +7,10 @@
     ./stylix.nix
   ];
 
-  config = lib.mkIf config.gnome.enable {
+  config = lib.mkIf config.desktop.gnome.enable {
     assertions = [
       {
-        assertion = !(config.noctalia.enable || config.stylix.enable);
+        assertion = !(config.desktop.desktop.noctalia.enable || config.desktop.stylix.enable);
         message = "desktop.gnome is currently incompatible with desktop.noctalia or desktop.stylix";
       }
     ];
