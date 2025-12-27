@@ -6,7 +6,7 @@
   imports = [ ./hardware-configuration.nix ];
 
   # Display server
-  displayserver = "gnome";
+  displayserver = "niri";
 
   # System
   intel.enable = true;
