@@ -406,11 +406,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766632879,
-        "narHash": "sha256-CmrphHVa5sh0Xrf2OUNfRfyZd11Tas/xw7rjpNX2UDY=",
+        "lastModified": 1766858637,
+        "narHash": "sha256-5FRWVuSsZWjviVnTUY/BpnUlqwSlOTYpA6AalJ8kDwk=",
         "owner": "flammablebunny",
         "repo": "nixcraft",
-        "rev": "1ef570e98b5e0b06413cf85f75ff78e226d50d26",
+        "rev": "b6ea89ee0902304527ad5e4a40b75e22f598fde2",
         "type": "github"
       },
       "original": {
