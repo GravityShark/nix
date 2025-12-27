@@ -12,7 +12,6 @@
     ./neovim.nix
     ./nixcraft.nix
     ./stylix.nix
-    ./wayland-pipewire-idle-inhibit.nix
 
     ./restic.nix
     ./syncthing.nix

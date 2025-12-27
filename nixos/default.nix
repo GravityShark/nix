@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./desktop/default.nix
-    ./services/default.nix
-    ./system/default.nix
+    ./desktop
+    ./services
+    ./system
     ./scripts.nix
   ];
 

@@ -9,6 +9,7 @@
     ./pipewire.nix
     ./printing.nix
     ./vial.nix
+    ./wayland-pipewire-idle-inhibit.nix
     ./ydotool.nix
     ./zerotierone.nix
   ];

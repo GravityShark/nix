@@ -49,7 +49,7 @@
           inherit system;
           modules = [
             ./hosts/msi/configuration.nix
-            ./nixos/default.nix
+            ./nixos
           ];
           specialArgs = { inherit inputs; };
         };
@@ -58,7 +58,7 @@
         inherit pkgs;
         modules = [
           ./hosts/msi/home.nix
-          ./home/default.nix
+          ./home
         ];
         extraSpecialArgs = { inherit inputs; };
       };
