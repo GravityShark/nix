@@ -46,6 +46,7 @@
       dash
       mksh
     ];
+    systemPackages = with pkgs; [ dash ];
   };
 
   # Long live the better posix shell
