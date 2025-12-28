@@ -662,6 +662,7 @@ binds {
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Alt+F { fullscreen-window; }
 
     Mod+C { center-column; }
 
