@@ -5,6 +5,11 @@
     service.printing.enable = lib.mkEnableOption "enables printing";
   };
   config = lib.mkIf config.service.printing.enable {
+    users.users.gravity.extraGroups = [
+
+      "lp"
+      "scanner"
+    ];
     # https://nixos.wiki/wiki/Printing
     services.printing.enable = true;
 

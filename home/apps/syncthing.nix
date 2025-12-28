@@ -15,7 +15,7 @@
     home.packages = with pkgs; [
       syncthing
       notify-desktop
-      (writeShellScriptBin "toggle-syncthing" ''
+      (writers.writeDashBin "toggle-syncthing" ''
         if (systemctl is-active --quiet --user syncthing.service); then 
           systemctl stop --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Stopping Syncthing';
         else

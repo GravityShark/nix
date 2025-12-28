@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 # You should NEVER edit this file at all because it's already perfect
 # But it contains settings that edit the entire system as a whole in some way
@@ -40,13 +40,10 @@
 
   # environment shit
   environment = {
-    binsh = lib.mkForce "${pkgs.dash}/bin/dash";
     shells = with pkgs; [
       bash
-      dash
       mksh
     ];
-    systemPackages = with pkgs; [ dash ];
   };
 
   # Long live the better posix shell
@@ -56,14 +53,7 @@
   users.users.gravity = {
     isNormalUser = true;
     description = "gravity";
-    extraGroups = [
-      "lp"
-      "networkmanager"
-      "scanner"
-      "wheel"
-      "ydotool"
-      # "dialout" # Arduino
-    ];
+    extraGroups = [ "wheel" ];
   };
 
   # Use doas instead of sudo

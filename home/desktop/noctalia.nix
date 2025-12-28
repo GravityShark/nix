@@ -15,10 +15,10 @@
   config = lib.mkIf config.desktop.noctalia.enable {
 
     home.packages = with pkgs; [
-      (writeShellScriptBin "lock" ''
-        "${
+      (writers.writeDashBin "lock" ''
+        ${
           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-        }/bin/noctalia-shell ipc call lockScreen lock";
+        }/bin/noctalia-shell ipc call lockScreen lock;
       '')
     ];
 

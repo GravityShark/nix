@@ -11,24 +11,24 @@
   };
 
   config = lib.mkIf config.update-scripts.enable {
-    environment.systemPackages = with pkgs; [
-      (writeShellScriptBin "fe" ''
+    environment.systemPackages = with pkgs.writers; [
+      (writeDashBin "fe" ''
         $EDITOR ~/.nix/flake.nix && nixfmt ~/.nix/*.nix
       '')
 
-      (writeShellScriptBin "fu" ''
+      (writeDashBin "fu" ''
         nix flake update --flake ~/.nix
       '')
 
-      (writeShellScriptBin "hmn" ''
+      (writeDashBin "hmn" ''
         home-manager news --flake ~/.nix
       '')
 
-      (writeShellScriptBin "hms" ''
+      (writeDashBin "hms" ''
         home-manager switch --flake ~/.nix\?submodules=1
       '')
 
-      (writeShellScriptBin "ng" ''
+      (writeDashBin "ng" ''
         cd ~/.nix &&
                 git add . &&
                 (git diff --cached --quiet ||
@@ -36,7 +36,7 @@
                                 git push >/dev/null 2>&1)) &
       '')
 
-      (writeShellScriptBin "ngc" ''
+      (writeDashBin "ngc" ''
         sudo nix-collect-garbage -d
         sudo nix-store --optimise
         sudo nix-store --gc
@@ -44,20 +44,20 @@
         nix-collect-garbage -d
       '')
 
-      (writeShellScriptBin "nrb" ''
+      (writeDashBin "nrb" ''
         sudo nixos-rebuild boot --flake ~/.nix
       '')
 
-      (writeShellScriptBin "nrbu" ''
+      (writeDashBin "nrbu" ''
         sudo nixos-rebuild boot --upgrade --flake ~/.nix
       '')
-      (writeShellScriptBin "nrs" ''
+      (writeDashBin "nrs" ''
         sudo nixos-rebuild switch --flake ~/.nix
       '')
-      (writeShellScriptBin "nrsu" ''
+      (writeDashBin "nrsu" ''
         sudo nixos-rebuild switch --upgrade --flake ~/.nix
       '')
-      (writeShellScriptBin "updatescript" ''
+      (writeDashBin "updatescript" ''
         ng && fu && nrsu && hms
       '')
     ];
