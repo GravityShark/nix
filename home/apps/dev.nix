@@ -26,6 +26,13 @@
     };
 
     home.packages = with pkgs; [
+      ## Dev
+      # clang
+      # gnumake
+      # go
+      # nodejs
+      # python3
+      # arduino-ide
 
       # C
       clang-tools

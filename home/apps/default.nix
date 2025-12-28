@@ -3,13 +3,15 @@
 {
   imports = [
     ./desktop.nix
-    ./tmux.nix
     ./dev.nix
+    ./fish.nix
+    ./fonts.nix
+    ./fzf.nix
     ./ghostty.nix
     ./neovim.nix
     ./nixcraft.nix
     ./syncthing.nix
-    ./yo.nix
+    ./tmux.nix
     ./zen-browser.nix
   ];
 }
