@@ -6,9 +6,9 @@
 
 {
   options = {
-    home.mime.enable = lib.mkEnableOption "enables mime";
+    mime.enable = lib.mkEnableOption "enables mime";
   };
-  config = lib.mkIf config.home.mime.enable {
+  config = lib.mkIf config.mime.enable {
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
