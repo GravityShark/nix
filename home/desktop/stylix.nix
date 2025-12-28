@@ -82,6 +82,7 @@
       ghostty.enable = true;
       gnome.enable = true;
       gtk.enable = true;
+      fontconfig.enable = true;
       gtksourceview.enable = true;
       # mangohud.enable = true;
       # mpv.enable = true;
@@ -92,6 +93,7 @@
         fonts.override.sizes.desktop = 16;
       };
       qt.enable = true;
+      vesktop.enable = true;
       zathura.enable = true;
       zen-browser = {
         enable = true;

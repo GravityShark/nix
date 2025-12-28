@@ -1,9 +1,8 @@
 { pkgs, ... }:
 
 {
-  desktop-entries.enable = false;
   links.enable = true;
-  mime.enable = false;
+  mime.enable = true;
 
   apps = {
     desktop.enable = true;
@@ -34,9 +33,20 @@
     swayidle.enable = true;
   };
 
-  # Extra shit
+  ####### Extra shit
+  home.file = {
+    ".mkshrc".source = ../../dump/.mkshrc;
+    ".scripts".source = ../../dump/.scripts;
+  };
+
+  xdg.configFile = {
+    "fastfetch".source = ../../dump/.config/fastfetch;
+    # "xdg-terminals.list".source = ../dump/.config/xdg-terminals.list;
+  };
+
   home.packages = with pkgs; [
-    discord
+    selectdefaultapplication
+    equibop
     super-productivity
     # teams-for-linux
     vial
@@ -102,10 +112,10 @@
     ];
     obsidian = {
       enable = true;
-      # vaults.Notes = {
-      #   enable = true;
-      #   target = "Notes";
-      # };
+      vaults.Notes = {
+        enable = true;
+        target = "Notes";
+      };
     };
     zathura.enable = true;
   };
