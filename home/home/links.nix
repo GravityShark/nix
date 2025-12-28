@@ -11,7 +11,6 @@
     home.file = {
       ".mkshrc".source = ../../dump/.mkshrc;
       ".scripts".source = ../../dump/.scripts;
-      ".tmux.conf".source = ../../dump/.tmux.conf;
 
       # # You can also set the file content immediately.
       # ".gradle/gradle.properties".text = ''

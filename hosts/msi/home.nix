@@ -14,6 +14,7 @@
     syncthing.enable = true;
     yo.enable = true;
     zen-browser.enable = true;
+    tmux.enable = true;
   };
 
   desktop = {
