@@ -321,16 +321,16 @@
               {
                 id = "Bluetooth";
               }
-              {
+              (lib.mkIf config.apps.syncthing.enable {
                 enableOnStateLogic = true;
                 generalTooltipText = "Syncthing";
                 icon = "affiliate";
                 id = "CustomButton";
-                onClicked = "if (systemctl is-active --quiet --user syncthing.service); then systemctl stop --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Stopping Syncthing'; else systemctl start --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Starting Syncthing'; fi";
-                onMiddleClicked = "pkill syncthing";
-                onRightClicked = "systemctl restart --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Restarting Syncthing'";
+                onClicked = "toggle-syncthing";
+                # onMiddleClicked = "pkill syncthing";
+                # onRightClicked = "systemctl restart --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Restarting Syncthing'";
                 stateChecksJson = "[{\"command\":\"systemctl is-active --quiet --user syncthing.service\",\"icon\":\"\"}]";
-              }
+              })
               {
                 id = "KeepAwake";
               }
@@ -365,9 +365,9 @@
                 onRightClicked = "";
                 stateChecksJson = "[]";
               }
-              {
+              (lib.mkIf config.apps.syncthing.enable {
                 id = "WallpaperSelector";
-              }
+              })
             ];
           };
         };
