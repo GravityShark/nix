@@ -11,6 +11,7 @@
   config = lib.mkIf config.apps.fzf.enable {
     programs.fzf = {
       enable = true;
+      enableFishIntegration = true;
       defaultOptions = [
         "--border=none"
         "--layout=reverse"

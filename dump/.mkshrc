@@ -3,9 +3,11 @@
 # export XMODIFIERS=@im=ibus
 # export QT_IM_MODULE=ibus
 
+. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
 # ~/.local/bin is where you would put your user binaries
 # export PATH=$PATH:~/.local/bin:~/.scripts:~/.scripts/aliases
-# export PATH=$PATH:~/.scripts:~/.scripts/aliases
+export PATH=$PATH:~/.scripts:~/.scripts/aliases
 # :~/.emacs.d/bin
 
 # Wouldn't work otherwise
@@ -20,17 +22,17 @@
 # [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ] && exec startx
 
 # Fish shell is my actual shell
-# case "$-" in 
-#     *i*)
-#         if SH=$(which fish); then
-#             SHELL=$SH fish
-#             status=$?
-#
-#             if [ "$status" -eq 0 ]; then
-#                 exit 0
-#             else
-#                 echo "Program exited abnormally (status $status)."
-#             fi
-#         fi
-#     ;;
-# esac
+case "$-" in 
+    *i*)
+        if SH=$(which fish); then
+            SHELL=$SH fish
+            status=$?
+            
+            if [ "$status" -eq 0 ]; then
+                exit 0
+            else
+                echo "Program exited abnormally (status $status)."
+            fi
+        fi
+    ;;
+esac
