@@ -61,28 +61,6 @@
     extraGroups = [ "wheel" ];
   };
 
-  # Use doas instead of sudo
-  # https://www.reddit.com/r/NixOS/comments/rts8gm/sudo_or_doas/
-  security = {
-    sudo.enable = false;
-    doas = {
-      enable = true;
-      extraRules = [
-        {
-          users = [ "gravity" ];
-          keepEnv = true;
-          persist = true;
-        }
-      ];
-    };
-  };
-
-  services.logind.settings.Login = {
-    HandleLidSwitch = "suspend";
-    HandleLidSwitchExternalPower = "suspend";
-    HandleLidSwitchDocked = "ignore";
-  };
-
   nix.settings.download-buffer-size = 500000000;
   nix.settings.experimental-features = [
     "nix-command"
