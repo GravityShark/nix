@@ -25,7 +25,6 @@
       "fish/conf.d".source = ../../dump/.config/fish/conf.d;
       "fish/config.fish".source = lib.mkForce ../../dump/.config/fish/config.fish;
       "fish/functions".source = ../../dump/.config/fish/functions;
-      "sesh".source = ../../dump/.config/sesh;
       # "xdg-terminals.list".source = ../dump/.config/xdg-terminals.list;
     };
 

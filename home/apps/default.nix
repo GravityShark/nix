@@ -3,7 +3,6 @@
 {
   imports = [
     ./desktop.nix
-    ./fzf.nix
     ./tmux.nix
     ./dev.nix
     ./ghostty.nix
