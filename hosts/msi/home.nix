@@ -19,8 +19,10 @@
   desktop = {
     niri.enable = true;
     noctalia.enable = true;
-    stylix.enable = true;
-    stylix.theme = "gruvbox-material-light";
+    stylix = {
+      enable = true;
+      theme = "gruvbox-material-light";
+    };
   };
 
   service = {

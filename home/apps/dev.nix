@@ -16,8 +16,6 @@
       ".gitconfig".source = ../../dump/.gitconfig;
       ".prettierrc".source = ../../dump/.prettierrc;
       ".ruff.toml".source = ../../dump/.ruff.toml;
-      ".scripts".source = ../../dump/.scripts;
-      ".tmux.conf".source = ../../dump/.tmux.conf;
       ".stylua.toml".source = ../../dump/.stylua.toml;
 
       # # You can also set the file content immediately.

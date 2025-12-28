@@ -42,6 +42,7 @@
       eza
       fastfetch
       fd
+      bfs
       ffmpeg
       ghostscript_headless
       git

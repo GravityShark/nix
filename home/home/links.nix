@@ -9,13 +9,8 @@
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
     home.file = {
-      ".clang-format".source = ../../dump/.clang-format;
-      ".gitconfig".source = ../../dump/.gitconfig;
       ".mkshrc".source = ../../dump/.mkshrc;
-      ".prettierrc".source = ../../dump/.prettierrc;
-      ".ruff.toml".source = ../../dump/.ruff.toml;
       ".scripts".source = ../../dump/.scripts;
-      ".stylua.toml".source = ../../dump/.stylua.toml;
       ".tmux.conf".source = ../../dump/.tmux.conf;
 
       # # You can also set the file content immediately.
