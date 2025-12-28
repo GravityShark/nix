@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -21,8 +26,8 @@
       #   org.gradle.daemon.idletimeout=3600000
       # '';
     };
-    
-    home.packages = {
+
+    home.packages = with pkgs; [
 
       # C
       clang-tools
@@ -89,6 +94,6 @@
       # swiftPackages.swiftpm
       # zig
 
-    };
+    ];
   };
 }
