@@ -36,6 +36,7 @@
 
   # Extra shit
   home.packages = with pkgs; [
+    discord
     super-productivity
     # teams-for-linux
     vial

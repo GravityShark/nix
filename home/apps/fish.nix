@@ -46,6 +46,16 @@
         set --export EDITOR nvim
         set --export SYSTEMD_EDITOR nvim
         set --export VISUAL nvim
+        set __fish_git_prompt_color_branch brmagenta
+        set __fish_git_prompt_color_cleanstate brgreen
+        set __fish_git_prompt_color_dirtystate blue
+        set __fish_git_prompt_color_invalidstate red
+        set __fish_git_prompt_color_stagedstate yellow
+        set __fish_git_prompt_color_untrackedfiles cdd6f4
+        set __fish_git_prompt_hide_untrackedfiles 1
+        set __fish_git_prompt_show_informative_status 1
+        set __fish_git_prompt_showupstream informative
+        set __fish_initialized 3400
         set CFLAGS '-std=c99 -Wall -Werror'
 
         if set -q TMUX
