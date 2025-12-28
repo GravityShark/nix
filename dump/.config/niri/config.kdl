@@ -285,14 +285,6 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 
-spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "5000"
-// spawn-at-startup "~/.scripts/swidle"
-// spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/Tranquility.png"
-// spawn-at-startup "noctalia-shell"
-// spawn-at-startup "mako"
-
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -384,10 +376,13 @@ workspace "browser"
 workspace "notes"
 workspace "music"
 
+
+// spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "10000"
+
 spawn-at-startup "niriusd" //hopefully i dont need this anymore
 spawn-at-startup "ghostty"
 // spawn-at-startup "zen"
-// spawn-at-startup "obsidian"
+spawn-at-startup "obsidian"
 // spawn-at-startup "youtube-music"
 
 window-rule {
