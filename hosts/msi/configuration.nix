@@ -14,7 +14,7 @@
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
-    openrazer.enable = true;
+    openrazer.enable = false;
     systemd-boot.enable = true;
     vial.enable = true;
   };
