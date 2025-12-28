@@ -31,7 +31,7 @@
 
         environment.sessionVariables = {
           QT_QPA_PLATFORM = "wayland";
-          QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+          # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
 
           GDK_BACKEND = "wayland";
           SDL_VIDEODRIVER = "wayland";
