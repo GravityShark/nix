@@ -10,7 +10,7 @@
     apps.yo.enable = lib.mkEnableOption "enable whatever";
   };
 
-  config = lib.mk config.apps.yo.enable {
+  config = lib.mkIf config.apps.yo.enable {
     home.packages = with pkgs; [
       super-productivity
       # teams-for-linux

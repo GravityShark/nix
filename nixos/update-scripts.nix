@@ -9,6 +9,7 @@
   options = {
     update-scripts.enable = lib.mkEnableOption "enables scripts that are useful for maintaining nixos";
   };
+
   config = lib.mkIf config.update-scripts.enable {
     environment.systemPackages = with pkgs; [
       (writeShellScriptBin "fe" ''
@@ -52,6 +53,9 @@
       '')
       (writeShellScriptBin "nrs" ''
         sudo nixos-rebuild switch --flake ~/.nix
+      '')
+      (writeShellScriptBin "nrsu" ''
+        sudo nixos-rebuild switch --upgrade --flake ~/.nix
       '')
       (writeShellScriptBin "updatescript" ''
         ng && fu && nrsu && hms
