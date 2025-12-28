@@ -12,6 +12,7 @@
     syncthing.enable = true;
     yo.enable = true;
     zen-browser.enable = true;
+    dev.enable = true;
   };
 
   desktop = {
