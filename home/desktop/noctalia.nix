@@ -379,7 +379,7 @@
           allowPanelsOnScreenWithoutBar = true;
           animationDisabled = false;
           animationSpeed = 2;
-          avatarImage = "/home/gravity/Notes/assets/gravityshark.png";
+          avatarImage = "/home/${config.home.username}/Notes/assets/gravityshark.png";
           boxRadiusRatio = 1;
           compactLockScreen = false;
           dimmerOpacity = 0.5;
@@ -474,7 +474,7 @@
           audioCodec = "opus";
           audioSource = "default_output";
           colorRange = "limited";
-          directory = "/home/gravity/Videos/Screencasts";
+          directory = "/home/${config.home.username}/Videos/Screencasts";
           frameRate = 60;
           quality = "very_high";
           showCursor = true;
@@ -590,7 +590,7 @@
           wifiDetailsViewMode = "grid";
         };
         wallpaper = {
-          directory = "/home/gravity/Pictures/Wallpapers";
+          directory = "/home/${config.home.username}/Pictures/Wallpapers";
           enableMultiMonitorDirectories = false;
           enabled = true;
           fillColor = "#000000";

@@ -50,8 +50,8 @@
           };
         };
         gui = {
-          user = "gravity";
-          password = "gravity";
+          user = config.home.username;
+          password = config.home.username;
         };
       };
     };

@@ -23,7 +23,7 @@
     #   };
     # in
     lib.mkIf config.service.networking.enable {
-      users.users.gravity.extraGroups = [ "networkmanager" ];
+      users.users.${config.username}.extraGroups = [ "networkmanager" ];
 
       # Configure network proxy if necessary
       # networking.proxy.default = "http://user:password@proxy:port/";

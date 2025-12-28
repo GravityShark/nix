@@ -67,7 +67,7 @@
           ];
 
           serviceConfig = {
-            ExecStart = "${autologin_on_7}/bin/autologin gravity ${pkgs.niri}/bin/niri-session";
+            ExecStart = "${autologin_on_7}/bin/autologin ${config.username} ${pkgs.niri}/bin/niri-session";
             Type = "simple";
             IgnoreSIGPIPE = "no";
             SendSIGHUP = "yes";

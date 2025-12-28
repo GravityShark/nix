@@ -20,7 +20,7 @@
         enable = true;
         extraRules = [
           {
-            users = [ "gravity" ];
+            users = [ config.username ];
             keepEnv = true;
             persist = true;
           }

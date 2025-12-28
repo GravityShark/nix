@@ -21,7 +21,7 @@
   #   timerConfig = {
   #     OnBootSec = "10m";
   #     OnUnitActiveSec = "100m";
-  #     User = "gravity";
+  #     User = config.username;
   #     Unit = "hello-world.service";
   #   };
   # };
@@ -30,7 +30,7 @@
   #   script = ''$HOME/.scripts/random_background'';
   #   serviceConfig = {
   #     Type = "oneshot";
-  #     User = "gravity";
+  #     User = config.username;
   #   };
   # };
 

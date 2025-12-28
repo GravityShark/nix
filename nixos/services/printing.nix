@@ -5,7 +5,7 @@
     service.printing.enable = lib.mkEnableOption "enables printing";
   };
   config = lib.mkIf config.service.printing.enable {
-    users.users.gravity.extraGroups = [
+    users.users.${config.username}.extraGroups = [
 
       "lp"
       "scanner"

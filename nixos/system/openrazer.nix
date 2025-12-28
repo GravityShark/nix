@@ -15,7 +15,7 @@
       openrazer-daemon
       polychromatic
     ];
-    users.users.gravity = {
+    users.users.${config.username} = {
       extraGroups = [ "openrazer" ];
     };
   };

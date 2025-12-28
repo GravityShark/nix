@@ -41,6 +41,7 @@
       ...
     }@inputs:
     let
+      username = "gravity";
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
@@ -51,15 +52,20 @@
           modules = [
             ./hosts/msi/configuration.nix
             ./nixos
+            { config.username = username; }
           ];
           specialArgs = { inherit inputs; };
         };
       };
-      homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./hosts/msi/home.nix
           ./home
+          {
+            home.username = username;
+            home.homeDirectory = "/home/${username}";
+          }
         ];
         extraSpecialArgs = { inherit inputs; };
       };
