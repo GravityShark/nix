@@ -6,7 +6,7 @@
   };
 
   config = lib.mkIf config.service.keepassxc.enable {
-    # xdg.autostart.enable = true;
+    xdg.autostart.enable = true;
     # xdg.portal.config = {
     #   common = {
     #     "org.freedesktop.impl.portal.Secret" = [ "keepassxc" ];
