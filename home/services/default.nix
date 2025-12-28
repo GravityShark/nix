@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./restic.nix
-    ./syncthing.nix
+    ./emacs.nix
+    ./keepassxc.nix
+    ./notes-backup.nix
+    ./vicinae.nix
   ];
 }

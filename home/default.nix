@@ -2,10 +2,9 @@
 
 {
   imports = [
+    ./apps
     ./desktop
     ./home
-    ./packages
-    ./programs
     ./services
   ];
 

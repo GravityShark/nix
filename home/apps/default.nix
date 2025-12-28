@@ -3,8 +3,10 @@
 {
   imports = [
     ./ghostty.nix
-    ./keepassxc.nix
     ./neovim.nix
     ./nixcraft.nix
+    ./syncthing.nix
+    ./yo.nix
+    ./zen-browser.nix
   ];
 }

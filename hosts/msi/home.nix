@@ -1,11 +1,28 @@
 { ... }:
 
 {
+  desktop-entries.nix = false;
+  links.enable = true;
+  mime.nix = false;
+
+  apps = {
+    ghostty.enable = true;
+    neovim.enable = true;
+    nixcraft.enable = true;
+    syncthing.enable = true;
+    yo.enable = true;
+    zen-browser.enable = true;
+  };
+
   desktop = {
     stylix.enable = true;
     noctalia.enable = true;
   };
-  # desktop-entries.enable = true;
+
+  service = {
+    notes-backup.enable = true;
+    keepassxc.enable = true;
+  };
 
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
