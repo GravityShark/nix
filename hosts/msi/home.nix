@@ -59,7 +59,7 @@
     # zoom-us
 
     ## CLIs
-    # doas-sudo-shim
+    doas-sudo-shim
 
     efibootmgr
     fastfetch
