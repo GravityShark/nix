@@ -10,12 +10,12 @@
 
   # System
   system = {
+    doas.enable = true;
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
     openrazer.enable = true;
     vial.enable = true;
-    doas.enable = true;
   };
 
   # Services
@@ -23,12 +23,12 @@
     bluetooth.enable = true;
     disks.enable = true;
     kanata.enable = true;
+    logind.enable = true;
     networking.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
     wayland-pipewire-idle-inhibit.enable = true;
     ydotool.enable = true;
-    logind.enable = true;
     zerotierone.enable = true;
   };
 
