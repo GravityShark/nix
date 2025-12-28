@@ -15,6 +15,7 @@
   config = lib.mkIf config.desktop.noctalia.enable {
 
     home.packages = with pkgs; [
+      notify-desktop
       (writers.writeDashBin "lock" ''
         ${
           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default

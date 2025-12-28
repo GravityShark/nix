@@ -27,26 +27,24 @@
         environment.systemPackages = with pkgs; [
           autologin_on_7
           brightnessctl
+          nirius
+          notify-desktop
+
+          nautilus
           foot
           # fuzzel
           gnome-system-monitor
           # grim
           # htop
           # mako
-          nautilus
-          nirius
-          notify-desktop
           powertop
           pwvucontrol
-          # slurp
-          # swaybg
-          swayidle
           swayimg
-          # swaylock
           wdisplays
           wev
-          wl-clipboard
           xlsclients
+
+          wl-clipboard
           xwayland-satellite
         ];
 

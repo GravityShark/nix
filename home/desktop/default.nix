@@ -21,6 +21,10 @@
         assertion = !(config.service.swayidle.enable);
         message = "desktop.gnome is currently incompatible with service.swayidle";
       }
+      {
+        assertion = !(config.niri.niri.enable);
+        message = "desktop.gnome is currently incompatible with desktop.niri";
+      }
     ];
   };
 }

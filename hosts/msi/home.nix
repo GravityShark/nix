@@ -15,6 +15,7 @@
   };
 
   desktop = {
+    niri.enable = true;
     stylix.enable = true;
     noctalia.enable = true;
   };
