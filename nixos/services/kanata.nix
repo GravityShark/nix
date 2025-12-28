@@ -119,7 +119,7 @@
             )
 
             (deflayer num
-              XX  XX up  XX     XX XX    9    8    9    _    _
+              XX  XX up  XX     XX XX    7    8    9    _    _
               _ @osm @osa @oss @osc @fun XX    4    5    6    0    _
               XX  XX  XX  down XX XX XX    1    2    3    _    _
               _   XX  XX _   XX
