@@ -8,7 +8,7 @@
   apps = {
     desktop.enable = true;
     dev.enable = true;
-    fish.enable = false;
+    fish.enable = true;
     fonts.enable = true;
     fzf.enable = true;
     ghostty.enable = true;
