@@ -15,6 +15,7 @@
     nvidia.enable = true;
     openrazer.enable = true;
     vial.enable = true;
+    doas.enable = true;
   };
 
   # Services
@@ -27,6 +28,7 @@
     power-management.enable = true;
     wayland-pipewire-idle-inhibit.enable = true;
     ydotool.enable = true;
+    logind.enable = true;
     zerotierone.enable = true;
   };
 

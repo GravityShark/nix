@@ -6,13 +6,13 @@
     ./bluetooth.nix
     ./disks.nix
     ./kanata.nix
+    ./logind.nix
     ./networking.nix
     ./pipewire.nix
     ./power-management.nix
     ./printing.nix
     ./wayland-pipewire-idle-inhibit.nix
     ./ydotool.nix
-    ./logind.nix
     ./zerotierone.nix
   ];
 
