@@ -187,6 +187,8 @@
                 file = optimization-12111;
               };
 
+              waywall.enable = true;
+
               java = {
                 extraArguments = [
                   "-XX:+UseZGC"
@@ -197,6 +199,8 @@
                 # set memory in MBs
                 maxMemory = 4000;
               };
+
+              enableNvidiaOffload = true; # NVIDIA: sets offload env vars
             };
 
             # Example bare bones client

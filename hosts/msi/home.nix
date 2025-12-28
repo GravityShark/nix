@@ -34,6 +34,7 @@
     swayidle.enable = true;
   };
 
+  # Extra shit
   home.packages = with pkgs; [
     super-productivity
     # teams-for-linux
@@ -60,8 +61,7 @@
 
     ## CLIs
     doas-sudo-shim
-
-    efibootmgr
+    # efibootmgr
     fastfetch
     fd
     ffmpeg
