@@ -22,6 +22,7 @@
   service = {
     notes-backup.enable = true;
     keepassxc.enable = true;
+    swayidle.enable = true;
   };
 
   # You should not change this value, even if you update Home Manager. If you do
