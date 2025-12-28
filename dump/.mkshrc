@@ -22,7 +22,14 @@ export PATH=$PATH:~/.local/bin:~/.scripts:~/.scripts/aliases
 case "$-" in 
     *i*)
         if SH=$(which fish); then
-            SHELL=$SH exec fish
+            SHELL=$SH fish
+            status=$?
+            
+            if [ "$status" -eq 0 ]; then
+                exit 0
+            else
+                echo "Program exited abnormally (status $status)."
+            fi
         fi
     ;;
 esac
