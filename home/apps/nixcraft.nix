@@ -194,13 +194,9 @@
                   "-XX:+UseZGC"
                   "-XX:+UseCompactObjectHeaders"
                 ];
-                # override java package. This mrpack needs java 17
                 package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
-                # set memory in MBs
-                maxMemory = 4000;
+                maxMemory = 8000;
               };
-
-              enableNvidiaOffload = true; # NVIDIA: sets offload env vars
             };
 
             # Example bare bones client
