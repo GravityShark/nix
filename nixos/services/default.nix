@@ -15,7 +15,7 @@
     ./zerotierone.nix
   ];
 
-  config = lib.mkIf (config.displayserver == "gnome") {
+  config = lib.mkIf (config.desktop.display-server == "gnome") {
     assertions = [
       {
         assertion = !(config.power-management.enable);

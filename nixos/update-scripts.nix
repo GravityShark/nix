@@ -7,9 +7,9 @@
 
 {
   options = {
-    scripts.enable = lib.mkEnableOption "enables scripts";
+    update-scripts.enable = lib.mkEnableOption "enables scripts that are useful for maintaining nixos";
   };
-  config = lib.mkIf config.scripts.enable {
+  config = lib.mkIf config.update-scripts.enable {
     environment.systemPackages = with pkgs; [
       (writeShellScriptBin "fe" ''
         $EDITOR ~/.nix/flake.nix && nixfmt ~/.nix/*.nix

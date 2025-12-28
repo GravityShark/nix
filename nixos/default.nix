@@ -5,7 +5,7 @@
     ./desktop
     ./services
     ./system
-    ./scripts.nix
+    ./update-scripts.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate =

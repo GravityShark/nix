@@ -21,7 +21,7 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    service.kanata.enable = true;
+    kanata.enable = true;
     networking.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
@@ -30,7 +30,8 @@
     zerotierone.enable = true;
   };
 
-  scripts.enable = true;
+  # Scripts tha
+  update-scripts.enable = true;
 
   # `man configuration.nix` or https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
