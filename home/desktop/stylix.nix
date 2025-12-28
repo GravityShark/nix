@@ -9,15 +9,31 @@
 {
   options = {
     desktop.stylix.enable = lib.mkEnableOption "enables stylix";
+
+    desktop.stylix.theme = lib.mkOption {
+      type = lib.types.nullOr (
+        lib.types.enum [
+          "gruvbox-material-light"
+          "rose-pine"
+        ]
+      );
+      default =
+        lib.throwIf config.desktop.stylix.enable
+          "Use a predefined theme when stylix is used: gruvbox-material-light, rose-pine"
+          null;
+      description = "Type of predefined theme to be used. gruvbox-material-light, rose-pine";
+      example = "gruvbox-material-light";
+    };
+
   };
 
   imports = [
     inputs.stylix.homeModules.stylix
-    # ./stylix/gruvbox-material.nix
+    ./stylix/gruvbox-material-light.nix
     ./stylix/rose-pine.nix
   ];
 
-  config = lib.mkIf config.desktop.stylix.enable {
+  config = lib.mkIf (config.desktop.stylix.enable) {
     # https://nix-community.github.io/stylix/configuration.html
     stylix.enable = true;
 
@@ -136,11 +152,13 @@
     };
 
     ## Extra noctalia-shell
-    programs.noctalia-shell.settings.colorSchemes.darkMode = lib.mkForce (
-      lib.mkMerge [
-        (lib.mkIf (config.stylix.polarity == "light") false)
-        (lib.mkIf (config.stylix.polarity == "dark") true)
-      ]
-    );
+    programs.noctalia-shell.settings.colorSchemes.darkMode =
+      lib.mkIf config.desktop.noctalia.enable lib.mkForce
+        (
+          lib.mkMerge [
+            (lib.mkIf (config.stylix.polarity == "light") false)
+            (lib.mkIf (config.stylix.polarity == "dark") true)
+          ]
+        );
   };
 }

@@ -8,4 +8,5 @@
     ./swayidle.nix
     # ./vicinae.nix
   ];
+
 }

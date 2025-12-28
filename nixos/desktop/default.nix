@@ -7,11 +7,14 @@
   ];
 
   options.desktop.display-server = lib.mkOption {
-    type = lib.types.enum [
-      "niri"
-      "gnome"
-    ];
+    type = lib.types.nullOr (
+      lib.types.enum [
+        "niri"
+        "gnome"
+      ]
+    );
     description = "Type of display server used: niri, gnome";
     example = "gnome";
+    default = null;
   };
 }

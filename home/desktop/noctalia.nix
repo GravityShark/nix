@@ -23,14 +23,14 @@
       '')
     ];
 
-    home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
-      text = builtins.toJSON {
-        defaultWallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
-        # wallpapers = {
-        #   "eDP-1" = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
-        # };
-      };
-    };
+    # home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
+    #   text = builtins.toJSON {
+    #     defaultWallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
+    #     # wallpapers = {
+    #     #   "eDP-1" = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";
+    #     # };
+    #   };
+    # };
 
     home.file.".config/noctalia/plugins.json" = {
       text = builtins.toJSON {

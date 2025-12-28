@@ -11,27 +11,23 @@
   };
 
   config = lib.mkIf config.desktop.niri.enable {
+    assertions = [
+      {
+        assertion = config.desktop.noctalia.enable;
+        message = "desktop.niri currently needs to have desktop.noctalia";
+      }
+    ];
+
     xdg.configFile = {
       "niri/config.kdl".source = ../../dump/.config/niri/config.kdl;
     };
 
     home.packages = with pkgs; [
       brightnessctl
-      foot
-      # fuzzel
-      gnome-system-monitor
-      # grim
-      # htop
-      # mako
-      nautilus
       nirius
-      notify-desktop
-      powertop
-      pwvucontrol
-      swayimg
-      wdisplays
-      wev
-      xlsclients
+      # notify-desktop
+      wl-clipboard
+      # xlsclients
     ];
   };
 }

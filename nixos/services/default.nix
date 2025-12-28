@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ ... }:
 
 # This is where generic systemd services should go, kinda like packages
 {
@@ -14,19 +14,6 @@
     ./ydotool.nix
     ./zerotierone.nix
   ];
-
-  config = lib.mkIf (config.desktop.display-server == "gnome") {
-    assertions = [
-      {
-        assertion = !(config.power-management.enable);
-        message = "displayserver as \"gnome\" is incompatible with power-management.enable as true";
-      }
-      {
-        assertion = !(config.wayland-pipewire-idle-inhibit.enable);
-        message = "displayserver as \"gnome\" is incompatible with wayland-pipewire-idle-inhibit.enable as true";
-      }
-    ];
-  };
 
   # systemd.timers."background" = {
   #   wantedBy = [ "timers.target" ];

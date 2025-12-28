@@ -10,6 +10,13 @@
     service.swayidle.enable = lib.mkEnableOption "enables swayidle";
   };
   config = lib.mkIf config.service.swayidle.enable {
+    assertions = [
+      {
+        assertion = config.desktop.noctalia.enable;
+        message = "sorry bub, for now you need noctalia to lock with swayidle";
+      }
+    ];
+
     services.swayidle =
       let
         # https://github.com/YaLTeR/niri/pull/3077 wait for this to get implemented

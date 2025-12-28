@@ -7,6 +7,17 @@
 
 {
   config = lib.mkIf (config.desktop.display-server == "gnome") {
+    assertions = [
+      {
+        assertion = !(config.power-management.enable);
+        message = "displayserver as \"gnome\" is incompatible with power-management.enable as true";
+      }
+      {
+        assertion = !(config.wayland-pipewire-idle-inhibit.enable);
+        message = "displayserver as \"gnome\" is incompatible with wayland-pipewire-idle-inhibit.enable as true";
+      }
+    ];
+
     # Gnome + Wayland + NVIDIA will not work until this issue has been fixed https://gitlab.gnome.org/GNOME/mutter/-/issues/2969
     # Enables gnome and gdm
     services.displayManager.gdm.enable = true;

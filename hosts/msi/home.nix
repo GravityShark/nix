@@ -6,19 +6,21 @@
   mime.enable = false;
 
   apps = {
+    desktop.enable = true;
+    dev.enable = true;
     ghostty.enable = true;
     neovim.enable = true;
     nixcraft.enable = true;
     syncthing.enable = true;
     yo.enable = true;
     zen-browser.enable = true;
-    dev.enable = true;
   };
 
   desktop = {
     niri.enable = true;
-    stylix.enable = true;
     noctalia.enable = true;
+    stylix.enable = true;
+    stylix.theme = "gruvbox-material-light";
   };
 
   service = {
