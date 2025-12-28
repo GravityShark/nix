@@ -3,9 +3,9 @@
 {
   imports = [
     ./desktop
+    ./home
     ./packages
     ./programs
-    ./home
     ./services
   ];
 
