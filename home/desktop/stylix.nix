@@ -152,13 +152,13 @@
     };
 
     ## Extra noctalia-shell
-    programs.noctalia-shell.settings.colorSchemes.darkMode =
-      lib.mkIf config.desktop.noctalia.enable lib.mkForce
-        (
-          lib.mkMerge [
-            (lib.mkIf (config.stylix.polarity == "light") false)
-            (lib.mkIf (config.stylix.polarity == "dark") true)
-          ]
-        );
+    programs.noctalia-shell.settings.colorSchemes.darkMode = lib.mkIf config.desktop.noctalia.enable (
+      lib.mkForce (
+        lib.mkMerge [
+          (lib.mkIf (config.stylix.polarity == "light") false)
+          (lib.mkIf (config.stylix.polarity == "dark") true)
+        ]
+      )
+    );
   };
 }
