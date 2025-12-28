@@ -46,7 +46,7 @@
 
   home.packages = with pkgs; [
     selectdefaultapplication
-    equibop
+    vesktop
     super-productivity
     # teams-for-linux
     vial
