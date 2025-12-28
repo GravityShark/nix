@@ -12,6 +12,7 @@
     ./printing.nix
     ./wayland-pipewire-idle-inhibit.nix
     ./ydotool.nix
+    ./logind.nix
     ./zerotierone.nix
   ];
 
