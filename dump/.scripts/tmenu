@@ -5,7 +5,7 @@ sesh list -i -H | fzf-tmux -e --ansi -p 80%,80% \
         --bind 'tab:down,btab:up' \
         --bind 'ctrl-a:change-prompt(⚡ )+reload(sesh list -iH)' \
         --bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
-        --bind 'ctrl-f:change-prompt(  )+reload(bfs -type d)' \
+        --bind 'ctrl-f:change-prompt(  )+reload(bfs -type d -printf %P\n)' \
         --bind 'ctrl-k:execute(tmux kill-session -t $(echo {} | cut -c 5-))+change-prompt(⚡ )+reload(sesh list -iH)' \
         --bind 'ctrl-r:execute(sesh connect --root .)' \
         --preview-window 'right:55%' \

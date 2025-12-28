@@ -4,7 +4,8 @@
 # export QT_IM_MODULE=ibus
 
 # ~/.local/bin is where you would put your user binaries
-export PATH=$PATH:~/.local/bin:~/.scripts:~/.scripts/aliases
+# export PATH=$PATH:~/.local/bin:~/.scripts:~/.scripts/aliases
+export PATH=$PATH:~/.scripts:~/.scripts/aliases
 # :~/.emacs.d/bin
 
 # Wouldn't work otherwise

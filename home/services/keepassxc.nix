@@ -6,12 +6,12 @@
   };
 
   config = lib.mkIf config.service.keepassxc.enable {
-    xdg.autostart.enable = true;
-    xdg.portal.config = {
-      common = {
-        "org.freedesktop.impl.portal.Secret" = [ "keepassxc" ];
-      };
-    };
+    # xdg.autostart.enable = true;
+    # xdg.portal.config = {
+    #   common = {
+    #     "org.freedesktop.impl.portal.Secret" = [ "keepassxc" ];
+    #   };
+    # };
     programs.keepassxc = {
       enable = true;
       autostart = true;
@@ -49,7 +49,7 @@
         };
 
         SSHAgent.Enabled = true;
-        FdoSecrets.Enabled = true;
+        # FdoSecrets.Enabled = true;
       };
     };
   };
