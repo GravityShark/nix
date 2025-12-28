@@ -5,6 +5,7 @@
     ./emacs.nix
     ./keepassxc.nix
     ./notes-backup.nix
+    ./swayidle.nix
     # ./vicinae.nix
   ];
 }
