@@ -1,9 +1,9 @@
 { ... }:
 
 {
-  desktop-entries.nix = false;
+  desktop-entries.enable = false;
   links.enable = true;
-  mime.nix = false;
+  mime.enable = false;
 
   apps = {
     ghostty.enable = true;
