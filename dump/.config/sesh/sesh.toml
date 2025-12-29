@@ -59,6 +59,11 @@ name = "Little cool website"
 path = "~/Code/coollittlewebsite"
 startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"
 
+[[session]]
+name = "Notes" 
+path = "~/Notes"
+startup_command = "$EDITOR index.md"
+
 # [[session]]
 # name = "TOmato 🍅" 
 # startup_command = "exec tomato"

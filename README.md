@@ -168,3 +168,6 @@ n ur done, jus complete this checklist then reboot
    - nvm guix is so UN supported bruh
 
 10. use [stylix](https://nix-community.github.io/stylix/)
+
+11. pls fix this, otherwise we gonna use superproductivity instead https://github.com/CCExtractor/taskwarrior-flutter/issues/382
+    - superprod got mkdwn plugins
