@@ -63,24 +63,28 @@
     # kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
+    obsidian
+
     ## School
     onlyoffice-desktopeditors
     pdfarranger
     # telegram-desktop
     # zoom-us
 
+    git
+
     ## CLIs
     doas-sudo-shim
     # efibootmgr
     fastfetch
-    fd
-    ffmpeg
-    ghostscript_headless
-    git
-    imagemagick
-    powertop
-    ripgrep
-    unzip
+
+    fd # only use is neovim
+    # ffmpeg # i dont even use this
+    ghostscript_headless # only use is making neovim image pdf thumbnails
+    imagemagick # making neovim image thumbnails
+    powertop # ion even use this
+    ripgrep # neovim
+    unzip # if i need to unzip something, maybe from neovim oil?
 
     # appimage-run
     # tomato-c # find something better
@@ -109,13 +113,6 @@
         key = "c";
       }
     ];
-    obsidian = {
-      enable = true;
-      # vaults.Notes = {
-      #   enable = true;
-      #   target = "Notes";
-      # };
-    };
     vesktop.enable = true;
     zathura.enable = true;
   };

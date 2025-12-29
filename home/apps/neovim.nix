@@ -37,6 +37,13 @@
         ${nvim-relink}/bin/relink ${config.xdg.configHome}/nvim
       '';
 
+    home.packages = with pkgs; [
+      fd # only use is neovim
+      ghostscript_headless # only use is making neovim image pdf thumbnails
+      imagemagick # making neovim image thumbnails
+      ripgrep # neovim
+      unzip # if i need to unzip something, maybe from neovim oil?
+    ];
     programs.neovim.enable = true;
   };
 }
