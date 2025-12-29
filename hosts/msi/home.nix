@@ -46,7 +46,6 @@
 
   home.packages = with pkgs; [
     selectdefaultapplication
-    vesktop
     super-productivity
     # teams-for-linux
     vial
@@ -117,6 +116,7 @@
       #   target = "Notes";
       # };
     };
+    vesktop.enable = true;
     zathura.enable = true;
   };
 
