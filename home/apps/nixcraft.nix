@@ -87,10 +87,10 @@
                 enable = true;
               };
 
-              # mrpack = {
-              #   enable = true;
-              #   file = optimization-12111;
-              # };
+              mrpack = {
+                enable = true;
+                file = optimization-12111;
+              };
               waywall.enable = true;
 
               # files = {
