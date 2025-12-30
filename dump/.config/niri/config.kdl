@@ -443,11 +443,11 @@ binds {
     Mod+Ctrl+N hotkey-overlay-title="Open a Notes App" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "obsidian" "--focus" "obsidian"; }
     Mod+M hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "youtube-music"; }
     Mod+Ctrl+M hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "--focus" "youtube-music"; }
-
     Mod+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
     Mod+Ctrl+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
-
-    Mod+K hotkey-overlay-title="Open KeePassXC" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "org.keepassxc.KeePassXC" "--focus" "keepassxc"; }
+    Mod+P hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
+    Mod+Ctrl+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
+    Mod+K hotkey-overlay-title="Open KeepassXC" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "org.keepassxc.KeePassXC" "--focus" "keepassxc"; }
 
     // Mod+B {spawn "noctalia-shell" "ipc" "call" "bar" "toggle";}
     Ctrl+Escape hotkey-overlay-title="Run an Application" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }

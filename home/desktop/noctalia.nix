@@ -84,7 +84,7 @@
           volumeStep = 5;
         };
         bar = {
-          backgroundOpacity = 1;
+          backgroundOpacity = lib.mkDefault 1;
           capsuleOpacity = 1;
           density = "compact";
           exclusive = true;
