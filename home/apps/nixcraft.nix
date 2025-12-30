@@ -16,7 +16,7 @@
   };
 
   config = lib.mkIf config.apps.nixcraft.enable {
-    home.packages = with pkgs; [ nixcraft-cli ];
+    home.packages = with pkgs; [ gamemode ];
 
     nixcraft =
       let
@@ -194,7 +194,7 @@
                 # mutableOverrides = true;
                 placeOverrides = true;
               };
-              waywall.enable = true;
+              # waywall.enable = true;
 
               files = {
                 "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
@@ -203,6 +203,7 @@
                 };
               };
 
+              wrapper = [ "gamemoderun" ];
               java = {
                 extraArguments = [
                   "-XX:+UseZGC"
