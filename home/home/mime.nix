@@ -12,7 +12,7 @@
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
-        # "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+        "inode/directory" = [ "nvim.desktop" ];
         # "application/pdf" = [ "org.gnome.Evince.desktop" ];
         # "application/x-extension-html" = [ "zen.desktop" ];
         # "application/x-extension-htm" = [ "zen.desktop" ];

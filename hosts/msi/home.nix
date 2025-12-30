@@ -78,18 +78,6 @@
     # efibootmgr
     fastfetch
 
-    fd # only use is neovim
-    # ffmpeg # i dont even use this
-    ghostscript_headless # only use is making neovim image pdf thumbnails
-    imagemagick # making neovim image thumbnails
-    powertop # ion even use this
-    ripgrep # neovim
-    unzip # if i need to unzip something, maybe from neovim oil?
-
-    # appimage-run
-    # tomato-c # find something better
-    # xdg-terminal-exec
-
     # obs-studio
     # prismlauncher
     # temurin-jre-bin
