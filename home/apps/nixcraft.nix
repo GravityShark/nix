@@ -80,24 +80,25 @@
           instances = {
             optimization = {
               enable = true;
+              version = "1.21.11";
 
               # Add a desktop entry
               desktopEntry = {
                 enable = true;
               };
 
-              mrpack = {
-                enable = true;
-                file = optimization-12111;
-              };
+              # mrpack = {
+              #   enable = true;
+              #   file = optimization-12111;
+              # };
               waywall.enable = true;
 
-              files = {
-                "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
-                  url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
-                  hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
-                };
-              };
+              # files = {
+              #   "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
+              #     url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
+              #     hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
+              #   };
+              # };
 
               java = {
                 extraArguments = [
