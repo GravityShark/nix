@@ -194,7 +194,7 @@
                 # mutableOverrides = true;
                 placeOverrides = true;
               };
-              # waywall.enable = true;
+              waywall.enable = true;
 
               files = {
                 "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
@@ -203,7 +203,7 @@
                 };
               };
 
-              wrapper = [ "gamemoderun" ];
+              # wrapper = [ "gamemoderun" ];
               java = {
                 extraArguments = [
                   "-XX:+UseZGC"
