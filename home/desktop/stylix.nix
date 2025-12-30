@@ -78,12 +78,13 @@
     stylix.targets = {
       anki.enable = true;
       fish.enable = true;
+      fontconfig.enable = true;
       fzf.enable = true;
       ghostty.enable = true;
       gnome.enable = true;
       gtk.enable = true;
-      fontconfig.enable = true;
       gtksourceview.enable = true;
+      kde.enable = true;
       # mangohud.enable = true;
       # mpv.enable = true;
       # neovim.enable = true;
