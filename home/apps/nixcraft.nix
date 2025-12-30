@@ -183,8 +183,13 @@
                 enable = true;
               };
               mrpack = {
-                enable = true;
+                enable = false;
                 file = optimization-12111;
+              };
+              files = {
+                # "options.txt" = {
+                #   text = ./options.txt;
+                # };
               };
 
               waywall.enable = true;
