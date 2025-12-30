@@ -177,6 +177,7 @@
 
             optimization = {
               enable = true;
+              version = "1.21.11";
 
               # Add a desktop entry
               desktopEntry = {
@@ -186,11 +187,11 @@
                 enable = false;
                 file = optimization-12111;
               };
-              files = {
-                # "options.txt" = {
-                #   text = ./options.txt;
-                # };
-              };
+              # files = {
+              # "options.txt" = {
+              #   text = ./options.txt;
+              # };
+              # };
 
               waywall.enable = true;
 
@@ -205,10 +206,22 @@
             };
 
             # Example bare bones client
-            # nomods = {
-            #   enable = true;
-            #   version = "1.21.1";
-            # };
+            nomods = {
+              enable = true;
+              desktopEntry = {
+                enable = true;
+              };
+              version = "1.21.11";
+              waywall.enable = true;
+              java = {
+                extraArguments = [
+                  "-XX:+UseZGC"
+                  "-XX:+UseCompactObjectHeaders"
+                ];
+                package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
+                maxMemory = 8000;
+              };
+            };
 
             # Example client whose version is "latest-release"
             # Supports "latest-snapshot" too
