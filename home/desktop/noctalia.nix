@@ -448,7 +448,7 @@
           criticalUrgencyDuration = 15;
           enableKeyboardLayoutToast = true;
           enabled = true;
-          location = "top_right";
+          location = "bottom_right";
           lowUrgencyDuration = 3;
           monitors = [
 
@@ -481,11 +481,11 @@
             2
             3
           ];
-          location = "top_right";
+          location = "bottom_left";
           monitors = [
 
           ];
-          overlayLayer = true;
+          overlayLayer = false;
         };
         screenRecorder = {
           audioCodec = "opus";

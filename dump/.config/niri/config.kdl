@@ -389,7 +389,7 @@ spawn-at-startup "super-productivity"
 window-rule {
     match app-id="com.mitchellh.ghostty"
     open-on-workspace "terminal"
-    // open-maximized true
+    layout {default-column-width { proportion 0.66667 ; }}
 }
 
 window-rule {
@@ -407,17 +407,15 @@ window-rule {
 
 window-rule {
     match app-id="com.github.th_ch.youtube_music"
-    open-maximized true
     open-on-workspace "music"
-    default-column-width { proportion 0.66667 ; }
+    layout {default-column-width { proportion 0.66667 ; }}
 }
 
 window-rule {
     match app-id="vesktop"
     match app-id="Caprine"
-    open-maximized true
     open-on-workspace "chats"
-    default-column-width { proportion 0.66667 ; }
+    layout {default-column-width { proportion 0.66667 ; }}
 }
 
 
