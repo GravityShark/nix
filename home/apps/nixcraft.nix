@@ -185,8 +185,9 @@
               };
 
               files = {
-                "options.txt".source =
-                  lib.mkForce config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.minecraft/options.txt";
+                "options.txt".source = lib.mkForce (
+                  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.minecraft/options.txt"
+                );
               };
               mrpack = {
                 enable = true;
