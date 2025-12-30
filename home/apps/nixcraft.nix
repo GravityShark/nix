@@ -24,9 +24,9 @@
           url = "https://cdn.modrinth.com/data/ddF4bxsz/versions/a2nRRv3j/Optimization%20Sodium-1.21.11-4.6.mrpack";
           hash = "sha256-/HPHiAzaMchlHx+SRtIcgKhFGHQWecyln3QCMlQlAGY=";
         };
-        simply-optimized-mrpack-12111 = pkgs.fetchurl {
-          url = "https://cdn.modrinth.com/data/BYfVnHa7/versions/FdWDH0vs/Simply%20Optimized-1.21.11-1.0.1.mrpack";
-          hash = "sha256-oBTlK+GiqEViyttXx4FYADHQkWPNBtW+uAiqJXCQuR8=";
+        simply-optimized-mrpack = pkgs.fetchurl {
+          url = "https://cdn.modrinth.com/data/BYfVnHa7/versions/vZZwrcPm/Simply%20Optimized-1.21.1-5.0.mrpack";
+          hash = "sha256-n2BxHMmqpOEMsvDqRRYFfamcDCCT4ophUw7QAJQqXmg=";
         };
       in
       {
@@ -157,7 +157,7 @@
               GDK_BACKEND = "x11";
             };
 
-            binEntry.enable = true;
+            # binEntry.enable = true;
           };
 
           instances = {
@@ -171,7 +171,7 @@
               };
               mrpack = {
                 enable = true;
-                file = simply-optimized-mrpack-12111;
+                file = simply-optimized-mrpack;
               };
             };
 
