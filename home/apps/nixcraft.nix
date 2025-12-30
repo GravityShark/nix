@@ -16,8 +16,6 @@
   };
 
   config = lib.mkIf config.apps.nixcraft.enable {
-    home.packages = with pkgs; [ gamemode ];
-
     nixcraft =
       let
         # Fetch any mrpack which can be used with both servers and clients!
@@ -185,14 +183,9 @@
                 enable = true;
               };
 
-              # files = {
-              #   "options.txt".source = lib.mkForce "${config.home.homeDirectory}/.minecraft/options.txt";
-              # };
               mrpack = {
                 enable = true;
                 file = optimization-12111;
-                # mutableOverrides = true;
-                placeOverrides = true;
               };
               waywall.enable = true;
 
@@ -203,7 +196,6 @@
                 };
               };
 
-              # wrapper = [ "gamemoderun" ];
               java = {
                 extraArguments = [
                   "-XX:+UseZGC"
