@@ -157,7 +157,7 @@
               GDK_BACKEND = "x11";
             };
 
-            # binEntry.enable = true;
+            binEntry.enable = true;
           };
 
           instances = {
