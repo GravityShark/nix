@@ -192,36 +192,8 @@
                 enable = true;
                 file = optimization-12111;
               };
-              # files = {
-              # "options.txt" = {
-              #   text = ./options.txt;
-              # };
-              # };
-
               waywall.enable = true;
 
-              java = {
-                extraArguments = [
-                  "-XX:+UseZGC"
-                  "-XX:+UseCompactObjectHeaders"
-                ];
-                package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
-                maxMemory = 8000;
-              };
-            };
-
-            # Example bare bones client
-            nomods = {
-              enable = true;
-              desktopEntry = {
-                enable = true;
-              };
-              mrpack = {
-                enable = false;
-                file = optimization-12111;
-              };
-              version = "1.21.11";
-              waywall.enable = true;
               java = {
                 extraArguments = [
                   "-XX:+UseZGC"
