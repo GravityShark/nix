@@ -154,7 +154,7 @@
                 hideMode = "hidden";
                 hideWhenIdle = false;
                 id = "MediaMini";
-                maxWidth = 800;
+                maxWidth = 700;
                 scrollingMode = "hover";
                 showAlbumArt = true;
                 showArtistFirst = false;
