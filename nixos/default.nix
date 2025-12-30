@@ -29,6 +29,8 @@
         "zerotierone"
       ];
 
+    services.dbus.implementation = "broker";
+
     time.timeZone = lib.mkDefault "Asia/Manila"; # Set your time zone.
 
     # environment shit
