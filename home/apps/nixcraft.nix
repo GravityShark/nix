@@ -183,8 +183,13 @@
               desktopEntry = {
                 enable = true;
               };
+
+              files = {
+                "options.txt".source =
+                  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.minecraft/options.txt";
+              };
               mrpack = {
-                enable = false;
+                enable = true;
                 file = optimization-12111;
               };
               # files = {
