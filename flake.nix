@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcraft = {
-      url = "github:GravityShark/nixcraft";
+      url = "github:flammablebunny/nixcraft";
       # url = "github:flammablebunny/nixcraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
