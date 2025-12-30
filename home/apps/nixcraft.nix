@@ -93,6 +93,8 @@
               };
               waywall.enable = true;
 
+              files."options.txt".method = lib.mkForce "symlink";
+
               # files = {
               #   "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
               #     url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
