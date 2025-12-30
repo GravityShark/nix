@@ -406,15 +406,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1767100730,
-        "narHash": "sha256-4rPO+UeIXWJN0UK/P92stWp4Qk/VwytRwcBn3N8y5CI=",
-        "owner": "GravityShark",
+        "lastModified": 1766858637,
+        "narHash": "sha256-5FRWVuSsZWjviVnTUY/BpnUlqwSlOTYpA6AalJ8kDwk=",
+        "owner": "flammablebunny",
         "repo": "nixcraft",
-        "rev": "5dc48f821af4cefec5a309909211ae93f442914d",
+        "rev": "b6ea89ee0902304527ad5e4a40b75e22f598fde2",
         "type": "github"
       },
       "original": {
-        "owner": "GravityShark",
+        "owner": "flammablebunny",
         "repo": "nixcraft",
         "type": "github"
       }
