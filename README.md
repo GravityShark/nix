@@ -21,13 +21,12 @@
 ## file stcrcuture
 
 ```
-󰝰 nix
-├╴󰉋 assets
-├╴󰉋 dump
-├╴󰉋 home
-├╴󰉋 hosts
-└╴󰉋 nixos
-
+nix
+├╴assets
+├╴dump
+├╴home
+├╴hosts
+└╴nixos
 ```
 
 - assets: just extra stuff like pictures
@@ -36,11 +35,10 @@
 - hosts: where you enable or disable modules per host
 - nixos: nixos related modules
 
-- i recommend just going to `flake.nix` and use `gf` in vim to follow links
+- i recommend just going to `flake.nix` and use `gf` in vim to follow links to
+  understand what is going on
 
 ## installation
-
-> assuming that you like use the same user name (gravity)
 
 1. install nixos from the gui setting up the partitions (preferably swap partition) n reboot
 
@@ -66,7 +64,7 @@ sudo nixos-rebuild switch
 git clone --recurse-submodules --shallow-submodules https://github.com/GravityShark/nix.git ~/.nix
 ```
 
-- Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/system/hardware-configuration.nix`)
+- Might wanna copy the hardware config over (`cp /etc/nixos/hardware-configuration.nix ~/.nix/hosts/<YOUR_HOST>/hardware-configuration.nix`)
 
 4. then update
 
@@ -97,6 +95,7 @@ n ur done, jus complete this checklist then reboot
   - Rosepine ([1](https://github.com/rose-pine/wallpapers), [2](https://wallhaven.cc/tag/162505), or just [google](https://www.google.com/search?q=rose+pine+wallpaper&tbs=imgo:1&udm=2) [it](https://duckduckgo.com/?t=h_&q=rose+pine+wallpaper&ia=images&iax=images))
   - [Wallhaven](https://wallhaven.cc/)
   - [Gruvbox](https://gruvbox-wallpapers.pages.dev/)
+  - maybe not cause its goonna fetch the wallpaper for you anyway using noctalia
 
 ## maintaining the system
 
@@ -168,6 +167,8 @@ n ur done, jus complete this checklist then reboot
    - nvm guix is so UN supported bruh
 
 10. use [stylix](https://nix-community.github.io/stylix/)
+    - [ ] add it for youtube-music and super productivity
 
 11. pls fix this, otherwise we gonna use superproductivity instead https://github.com/CCExtractor/taskwarrior-flutter/issues/382
     - superprod got mkdwn plugins
+    - maybe get rid of obsidian
