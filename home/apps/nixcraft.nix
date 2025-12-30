@@ -211,6 +211,10 @@
               desktopEntry = {
                 enable = true;
               };
+              mrpack = {
+                enable = false;
+                file = optimization-12111;
+              };
               version = "1.21.11";
               waywall.enable = true;
               java = {
