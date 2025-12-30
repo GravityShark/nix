@@ -408,7 +408,7 @@ window-rule {
 window-rule {
     match app-id="com.github.th_ch.youtube_music"
     open-on-workspace "music"
-    layout {default-column-width { proportion 0.66667 ; }}
+    layout { default-column-width { proportion 0.66667 ;}; }
 }
 
 window-rule {

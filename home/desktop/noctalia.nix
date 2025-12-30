@@ -148,7 +148,7 @@
               }
               {
                 id = "Spacer";
-                width = 20;
+                width = 16;
               }
               {
                 hideMode = "hidden";
