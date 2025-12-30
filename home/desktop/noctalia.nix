@@ -85,7 +85,7 @@
         };
         bar = {
           backgroundOpacity = lib.mkDefault 1;
-          capsuleOpacity = 1;
+          capsuleOpacity = lib.mkDefault 1;
           density = "compact";
           exclusive = true;
           floating = false;
