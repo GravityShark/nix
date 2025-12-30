@@ -375,14 +375,15 @@ workspace "terminal"
 workspace "browser"
 workspace "notes"
 workspace "music"
+workspace "chats"
 
 
 // spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "10000"
 
-spawn-at-startup "niriusd" //hopefully i dont need this anymore
+spawn-at-startup "niriusd" // hopefully i dont need this anymore
 spawn-at-startup "ghostty"
 // spawn-at-startup "zen"
-spawn-at-startup "obsidian"
+spawn-at-startup "super-productivity"
 // spawn-at-startup "youtube-music"
 
 window-rule {
@@ -399,6 +400,7 @@ window-rule {
 
 window-rule {
     match app-id="obsidian"
+    match app-id="superProductivity"
     open-maximized true
     open-on-workspace "notes"
 }
@@ -409,10 +411,13 @@ window-rule {
     open-on-workspace "music"
 }
 
-// window-rule {
-//     match 
-//     open-maximized-to-edges true
-// }
+window-rule {
+    match app-id="vesktop"
+    match app-id="Caprine"
+    open-maximized true
+    open-on-workspace "chats"
+}
+
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -439,14 +444,17 @@ binds {
     Mod+M hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "youtube-music"; }
     Mod+Ctrl+M hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "--focus" "youtube-music"; }
 
-    Mod+K hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "org.keepassxc.KeePassXC" "--focus" "keepassxc"; }
+    Mod+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
+    Mod+Ctrl+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
+
+    Mod+K hotkey-overlay-title="Open KeePassXC" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "org.keepassxc.KeePassXC" "--focus" "keepassxc"; }
 
     // Mod+B {spawn "noctalia-shell" "ipc" "call" "bar" "toggle";}
     Ctrl+Escape hotkey-overlay-title="Run an Application" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     // Super+Shift+Q hotkey-overlay-title="Sleep" { spawn "systemctl suspend"; }
     // Super+Ctrl+Q hotkey-overlay-title="Hibernate" { spawn "systemctl hibernate"; }
     Super+Q hotkey-overlay-title="Powermenu" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    Mod+P {spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle";}
+    // Mod+P {spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle";}
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }

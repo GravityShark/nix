@@ -32,23 +32,25 @@
     #   };
     # };
 
-    home.file.".config/noctalia/plugins.json" = {
-      text = builtins.toJSON {
-        sources = [
-          {
-            enabled = true;
-            name = "Official Noctalia Plugins";
-            url = "https://github.com/noctalia-dev/noctalia-plugins";
-          }
-        ];
-        states = {
-          launcher-button = {
-            enabled = true;
-          };
-        };
-        version = 1;
-      };
-    };
+    xdg.configFile."noctalia/plugins.json".text = ''
+      {
+          "sources": [
+              {
+                  "enabled": true,
+                  "name": "Official Noctalia Plugins",
+                  "url": "https://github.com/noctalia-dev/noctalia-plugins"
+              }
+          ],
+          "states": {
+              "fancy-audiovisualizer": {
+                  "enabled": true
+              },
+              "launcher-button": {
+                  "enabled": true
+              }
+          },
+          "version": 1
+      }'';
 
     programs.noctalia-shell = {
       enable = true;
@@ -82,7 +84,8 @@
           volumeStep = 5;
         };
         bar = {
-          capsuleOpacity = lib.mkDefault 1;
+          backgroundOpacity = 1;
+          capsuleOpacity = 1;
           density = "compact";
           exclusive = true;
           floating = false;
@@ -95,69 +98,9 @@
           position = "bottom";
           showCapsule = false;
           showOutline = false;
-          transparent = false;
+          useSeparateOpacity = false;
           widgets = {
             center = [
-              {
-                characterCount = 1;
-                colorizeIcons = true;
-                enableScrollWheel = false;
-                followFocusedScreen = false;
-                hideUnoccupied = false;
-                id = "Workspace";
-                labelMode = "index";
-                showApplications = true;
-                showLabelsOnlyWhenOccupied = true;
-              }
-            ];
-            left = [
-              {
-                id = "Spacer";
-                width = 1;
-              }
-              {
-                id = "plugin:launcher-button";
-              }
-              {
-                colorizeDistroLogo = true;
-                colorizeSystemIcon = "none";
-                customIconPath = "";
-                enableColorization = true;
-                icon = "brand-snowflake";
-                id = "ControlCenter";
-                useDistroLogo = false;
-              }
-              {
-                hideMode = "hidden";
-                hideWhenIdle = false;
-                id = "MediaMini";
-                maxWidth = 800;
-                scrollingMode = "hover";
-                showAlbumArt = true;
-                showArtistFirst = false;
-                showProgressRing = true;
-                showVisualizer = true;
-                useFixedWidth = false;
-                visualizerType = "wave";
-              }
-            ];
-            right = [
-              {
-                diskPath = "/";
-                id = "SystemMonitor";
-                showCpuTemp = true;
-                showCpuUsage = false;
-                showDiskUsage = true;
-                showGpuTemp = false;
-                showMemoryAsPercent = false;
-                showMemoryUsage = true;
-                showNetworkStats = true;
-                usePrimaryColor = false;
-              }
-              {
-                id = "Spacer";
-                width = 5;
-              }
               {
                 blacklist = [
 
@@ -171,8 +114,74 @@
                 ];
               }
               {
+                characterCount = 1;
+                colorizeIcons = true;
+                enableScrollWheel = false;
+                followFocusedScreen = false;
+                groupedBorderOpacity = 0;
+                hideUnoccupied = false;
+                id = "Workspace";
+                labelMode = "index";
+                showApplications = true;
+                showLabelsOnlyWhenOccupied = true;
+                unfocusedIconsOpacity = 0.6;
+              }
+            ];
+            left = [
+              {
                 id = "Spacer";
-                width = 3;
+                width = 1;
+              }
+              {
+                colorizeDistroLogo = true;
+                colorizeSystemIcon = "none";
+                customIconPath = "";
+                enableColorization = true;
+                icon = "brand-snowflake";
+                id = "ControlCenter";
+                useDistroLogo = false;
+              }
+              {
+                defaultSettings = {
+                };
+                id = "plugin:launcher-button";
+              }
+              {
+                id = "Spacer";
+                width = 20;
+              }
+              {
+                hideMode = "hidden";
+                hideWhenIdle = false;
+                id = "MediaMini";
+                maxWidth = 800;
+                scrollingMode = "hover";
+                showAlbumArt = true;
+                showArtistFirst = false;
+                showProgressRing = true;
+                showVisualizer = false;
+                useFixedWidth = false;
+                visualizerType = "wave";
+              }
+            ];
+            right = [
+              {
+                compactMode = true;
+                diskPath = "/";
+                id = "SystemMonitor";
+                showCpuTemp = true;
+                showCpuUsage = false;
+                showDiskUsage = true;
+                showGpuTemp = false;
+                showMemoryAsPercent = false;
+                showMemoryUsage = true;
+                showNetworkStats = false;
+                useMonospaceFont = true;
+                usePrimaryColor = false;
+              }
+              {
+                id = "Spacer";
+                width = 16;
               }
               {
                 displayMode = "alwaysShow";
@@ -180,10 +189,17 @@
               }
               {
                 id = "Spacer";
-                width = 6;
+                width = 20;
               }
               {
-                deviceNativePath = "";
+                displayMode = "onhover";
+                id = "Volume";
+              }
+              {
+                id = "Spacer";
+                width = 12;
+              }
+              {
                 displayMode = "alwaysShow";
                 hideIfNotDetected = true;
                 id = "Battery";
@@ -193,21 +209,14 @@
               }
               {
                 id = "Spacer";
-                width = 11;
-              }
-              {
-                displayMode = "onhover";
-                id = "Volume";
-              }
-              {
-                id = "Spacer";
-                width = 3;
+                width = 9;
               }
               {
                 customFont = "Aporetic Sans Mono";
                 formatHorizontal = "ddd dd hh:mm AP";
                 formatVertical = "HH mm";
                 id = "Clock";
+                tooltipFormat = "HH:mm ddd, MMM dd";
                 useCustomFont = true;
                 usePrimaryColor = false;
               }
@@ -285,16 +294,14 @@
               {
                 id = "Bluetooth";
               }
-              (lib.mkIf config.apps.syncthing.enable {
+              {
                 enableOnStateLogic = true;
                 generalTooltipText = "Syncthing";
                 icon = "affiliate";
                 id = "CustomButton";
                 onClicked = "toggle-syncthing";
-                # onMiddleClicked = "pkill syncthing";
-                # onRightClicked = "systemctl restart --user syncthing.service && notify-desktop -i syncthing -a syncthing 'Restarting Syncthing'";
                 stateChecksJson = "[{\"command\":\"systemctl is-active --quiet --user syncthing.service\",\"icon\":\"\"}]";
-              })
+              }
               {
                 id = "KeepAwake";
               }
@@ -336,21 +343,26 @@
           };
         };
         desktopWidgets = {
-          enabled = false;
+          enabled = true;
           gridSnap = true;
           monitorWidgets = [
             {
               name = "eDP-1";
               widgets = [
                 {
-                  hideMode = "hidden";
-                  id = "MediaPlayer";
+                  defaultSettings = {
+                    barWidth = 0.6;
+                    bloomIntensity = 0.5;
+                    ringOpacity = 0.8;
+                    rotationSpeed = 0.5;
+                    sensitivity = 1.5;
+                    showBars = true;
+                    showRings = true;
+                  };
+                  id = "plugin:fancy-audiovisualizer";
                   showBackground = true;
-                  showButtons = true;
-                  visualizerType = "wave";
-                  visualizerVisibility = "always";
                   x = 20;
-                  y = 960;
+                  y = 740;
                 }
               ];
             }
@@ -444,6 +456,11 @@
           normalUrgencyDuration = 8;
           overlayLayer = true;
           respectExpireTimeout = false;
+          saveToHistory = {
+            critical = true;
+            low = true;
+            normal = true;
+          };
           sounds = {
             criticalSoundFile = "";
             enabled = true;
@@ -474,6 +491,7 @@
           audioCodec = "opus";
           audioSource = "default_output";
           colorRange = "limited";
+          copyToClipboard = false;
           directory = "/home/${config.home.username}/Videos/Screencasts";
           frameRate = 60;
           quality = "very_high";
@@ -525,25 +543,27 @@
             }
           ];
           showHeader = false;
+          showNumberLabels = true;
         };
-        settingsVersion = 32;
+        settingsVersion = 35;
         systemMonitor = {
           cpuCriticalThreshold = 90;
           cpuPollingInterval = 3000;
           cpuWarningThreshold = 80;
           criticalColor = "#cc241d";
           diskCriticalThreshold = 90;
+          diskPath = "/";
           diskPollingInterval = 3000;
-          diskWarningThreshold = 80;
+          diskWarningThreshold = 90;
           enableDgpuMonitoring = false;
           gpuCriticalThreshold = 90;
           gpuPollingInterval = 3000;
           gpuWarningThreshold = 80;
-          memCriticalThreshold = 90;
+          memCriticalThreshold = 70;
           memPollingInterval = 3000;
-          memWarningThreshold = 80;
+          memWarningThreshold = 70;
           networkPollingInterval = 3000;
-          tempCriticalThreshold = 80;
+          tempCriticalThreshold = 60;
           tempPollingInterval = 3000;
           tempWarningThreshold = 60;
           useCustomColors = false;
@@ -609,6 +629,7 @@
           transitionEdgeSmoothness = 0.05;
           transitionType = "wipe";
           useWallhaven = false;
+          wallhavenApiKey = "";
           wallhavenCategories = "111";
           wallhavenOrder = "desc";
           wallhavenPurity = "100";
@@ -618,6 +639,7 @@
           wallhavenResolutionMode = "atleast";
           wallhavenResolutionWidth = "";
           wallhavenSorting = "relevance";
+          wallpaperChangeMode = "random";
         };
       };
       # this may also be a string or a path to a JSON file,
