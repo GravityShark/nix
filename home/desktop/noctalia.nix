@@ -454,7 +454,7 @@
 
           ];
           normalUrgencyDuration = 8;
-          overlayLayer = true;
+          overlayLayer = false;
           respectExpireTimeout = false;
           saveToHistory = {
             critical = true;

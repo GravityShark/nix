@@ -16,6 +16,7 @@
   };
 
   config = lib.mkIf config.apps.nixcraft.enable {
+    home.packages = with pkgs; [ nixcraft-cli ];
 
     nixcraft =
       let
@@ -154,7 +155,7 @@
             envVars = {
               # Fixes bug with nvidia (applied by default)
               __GL_THREADED_OPTIMIZATIONS = "0";
-              GDK_BACKEND = "x11";
+              # GDK_BACKEND = "x11";
             };
 
             binEntry.enable = true;
@@ -184,17 +185,41 @@
                 enable = true;
               };
 
-              files = {
-                "options.txt".source = lib.mkForce (
-                  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.minecraft/options.txt"
-                );
-              };
+              # files = {
+              #   "options.txt".source = lib.mkForce "${config.home.homeDirectory}/.minecraft/options.txt";
+              # };
               mrpack = {
                 enable = true;
                 file = optimization-12111;
+                # mutableOverrides = true;
+                placeOverrides = true;
               };
               waywall.enable = true;
 
+              files = {
+                "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
+                  url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
+                  hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
+                };
+              };
+
+              java = {
+                extraArguments = [
+                  "-XX:+UseZGC"
+                  "-XX:+UseCompactObjectHeaders"
+                ];
+                package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
+                maxMemory = 8000;
+              };
+            };
+
+            nomods = {
+              enable = true;
+              desktopEntry = {
+                enable = true;
+              };
+              version = "1.21.11";
+              waywall.enable = true;
               java = {
                 extraArguments = [
                   "-XX:+UseZGC"
@@ -322,63 +347,64 @@
             # ============================================================
             # MCSR Ranked Example - Full featured speedrunning setup
             # ============================================================
-            # ranked = {
-            #   enable = true;
-            #
-            #   mrpack = {
-            #     enable = true;
-            #     file = pkgs.fetchurl {
-            #       url = "https://redlime.github.io/MCSRMods/modpacks/v4/MCSRRanked-Linux-1.16.1-All.mrpack";
-            #       hash = "sha256-mPerodqNklfLpeNzcJqe5g/wf9mGFwPNl7vApl/RggI=";
-            #     };
-            #   };
-            #
-            #   # Override LWJGL version (required for some speedrunning setups)
-            #   lwjglVersion = "3.3.3";
-            #
-            #   # Enable MangoHud overlay for FPS/performance monitoring
-            #   mangohud.enable = true;
-            #   # mangohud.configFile = ./mangohud.conf;  # Optional custom config
-            #
-            #   java = {
-            #     package = pkgs.jdk17;
-            #     maxMemory = 4096;
-            #     minMemory = 512;
-            #   };
-            #
-            #   # Waywall with custom command for GPU selection
-            #   waywall = {
-            #     enable = true;
-            #     # Simple path (auto-adds "wrap --")
-            #     binaryPath = "/path/to/waywall";
-            #     glfwPath = "/path/to/libglfw.so";
-            #
-            #     # OR full custom command as list (you control everything)
-            #     # command = ["env" "DRI_PRIME=renderD128" "/path/to/waywall" "wrap" "--"];
-            #   };
-            #
-            #   # Microsoft account authentication (use nixcraft-auth to login)
-            #   account = {
-            #     username = "YourUsername";
-            #     accessTokenPath = "/home/user/.local/share/nixcraft/auth/access_token";
-            #     # Skin auto-applied before each launch
-            #     skin = {
-            #       file = /path/to/skin.png;
-            #       variant = "classic"; # or "slim"
-            #     };
-            #   };
-            #
-            #   binEntry = {
-            #     enable = true;
-            #     name = "ranked";
-            #   };
-            #
-            #   desktopEntry = {
-            #     enable = true;
-            #     name = "MCSR Ranked";
-            #     icon = /path/to/icon.png;
-            #   };
-            # };
+            ranked = {
+              enable = true;
+
+              mrpack = {
+                enable = true;
+                file = optimization-12111;
+                # file = pkgs.fetchurl {
+                #   url = "https://redlime.github.io/MCSRMods/modpacks/v4/MCSRRanked-Linux-1.16.1-All.mrpack";
+                #   hash = "sha256-/lYIASwBA62TKhLer3jYzZqUD7NUjqjY7GRQk1Hkd5Y";
+                # };
+              };
+
+              # Override LWJGL version (required for some speedrunning setups)
+              # lwjglVersion = "3.3.3";
+
+              # Enable MangoHud overlay for FPS/performance monitoring
+              # mangohud.enable = true;
+              # mangohud.configFile = ./mangohud.conf;  # Optional custom config
+
+              java = {
+                package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
+                maxMemory = 4096;
+                minMemory = 512;
+              };
+
+              # Waywall with custom command for GPU selection
+              waywall = {
+                enable = true;
+                # Simple path (auto-adds "wrap --")
+                # binaryPath = "/path/to/waywall";
+                # glfwPath = "/path/to/libglfw.so";
+
+                # OR full custom command as list (you control everything)
+                # command = ["env" "DRI_PRIME=renderD128" "/path/to/waywall" "wrap" "--"];
+              };
+
+              # Microsoft account authentication (use nixcraft-auth to login)
+              # account = {
+              #   username = "YourUsername";
+              #   accessTokenPath = "/home/user/.local/share/nixcraft/auth/access_token";
+              #   # Skin auto-applied before each launch
+              #   skin = {
+              #     file = /path/to/skin.png;
+              #     variant = "classic"; # or "slim"
+              #   };
+              # };
+
+              binEntry = {
+                enable = true;
+                # name = "ranked";
+              };
+
+              desktopEntry = {
+                enable = true;
+                name = "MCSR Ranked";
+                # icon = /path/to/icon.png;
+              };
+            };
 
             # ============================================================
             # RSG (Random Seed Glitchless) Example
