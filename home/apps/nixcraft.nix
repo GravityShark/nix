@@ -212,7 +212,7 @@
                 enable = true;
               };
               mrpack = {
-                enable = true;
+                enable = false;
                 file = optimization-12111;
               };
               version = "1.21.11";
