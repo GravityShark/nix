@@ -172,3 +172,8 @@ n ur done, jus complete this checklist then reboot
 11. pls fix this, otherwise we gonna use superproductivity instead https://github.com/CCExtractor/taskwarrior-flutter/issues/382
     - superprod got mkdwn plugins
     - maybe get rid of obsidian
+
+12. other window managers
+    - hyprland (just for the maximum support, that isn't gnome or kde)
+    - mango (maybe second to hyprland, also supports tags like river)
+    - river (to make my own wayland compositor)

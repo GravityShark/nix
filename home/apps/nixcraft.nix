@@ -72,7 +72,11 @@
 
         instances =
           let
-
+            blazing = {
+              username = "BlazingSolrFire";
+              accessTokenPath = "${config.home.homeDirectory}/.local/share/nixcraft/auth/access_token";
+              offline = false;
+            };
             optimization = {
               enable = true;
               version = "1.21.11";
@@ -122,11 +126,7 @@
             optimization = optimization;
 
             optimization-blazing = optimization // {
-              account = {
-                username = "BlazingSolrFire";
-                accessTokenPath = "${config.home.homeDirectory}/.local/share/nixcraft/auth/access_token";
-                offline = false;
-              };
+              account = blazing;
             };
           };
       };

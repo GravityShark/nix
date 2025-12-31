@@ -25,7 +25,7 @@
           set -l nix_shell_info (
                 if test -n "$IN_NIX_SHELL"
                   set_color blue
-                  echo -n "<nix-shell>"
+                  echo -n "<nix-shell> "
                   set_color normal
                 end
               )
