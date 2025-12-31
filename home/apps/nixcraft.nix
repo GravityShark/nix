@@ -103,12 +103,17 @@
                 "config/moreculling.toml".method = "copy-init";
               };
 
-              # files = {
-              #   "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
-              #     url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
-              #     hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
-              #   };
-              # };
+              files = {
+                "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
+                  url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
+                  hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
+                };
+              };
+
+              account = {
+                username = "BlazingSolrFire";
+                accessTokenPath = "/home/gravity/.local/share/nixcraft/auth/access_token"; # When using full paths you must rebiuld with --impure
+              };
 
               java = {
                 extraArguments = [
