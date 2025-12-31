@@ -93,7 +93,14 @@
               };
               waywall.enable = true;
 
-              files."options.txt".method = "copy-init";
+              files = {
+                "options.txt".method = "copy-init";
+                "config/betterblockentities.json".method = "copy-init";
+                "config/ferritecore.mixin.properties".method = "copy-init";
+                "config/immediatelyfast.json".method = "copy-init";
+                "config/modernfix-mixins.properties".method = "copy-init";
+                "config/moreculling.toml".method = "copy-init";
+              };
 
               # files = {
               #   "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
