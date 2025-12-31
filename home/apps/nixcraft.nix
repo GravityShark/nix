@@ -58,11 +58,12 @@
               config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Pictures";
 
             # Common account
-            account = {
-              username = "susterinoskanye";
-              # uuid = "";
-              offline = true;
-            };
+            # account = {
+            #
+            #   username = "susterinoskanye";
+            #   # uuid = "";
+            #   offline = true;
+            # };
 
             useDiscreteGPU = true; # Enabled by default
 
