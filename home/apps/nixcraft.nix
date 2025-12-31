@@ -93,7 +93,7 @@
               };
               waywall.enable = true;
 
-              # files."options.txt".method = lib.mkForce "symlink";
+              files."options.txt".method = "copy-init";
 
               # files = {
               #   "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
