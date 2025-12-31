@@ -19,6 +19,7 @@
       (writers.writeDashBin "lock" ''
         ${inputs.noctalia.packages.${system}.default}/bin/noctalia-shell ipc call lockScreen lock;
       '')
+      app2unit
     ];
 
     # home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
@@ -67,7 +68,7 @@
           showCategories = true;
           sortByMostUsed = true;
           terminalCommand = "ghostty -e";
-          useApp2Unit = false;
+          useApp2Unit = true;
           viewMode = "list";
         };
         audio = {
