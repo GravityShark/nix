@@ -110,6 +110,10 @@
                   url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
                   hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
                 };
+                "mods/fabric-carpet-1.21.11-1.4.194%2Bv251223.jar".source = pkgs.fetchurl {
+                  url = "https://cdn.modrinth.com/data/TQTTVgYE/versions/HzPcczDK/fabric-carpet-1.21.11-1.4.194%2Bv251223.jar";
+                  hash = "sha256-G01m8DMr2l3u4IdV5JPC1qxk1k1SheETSqA2BJdcJSE=";
+                };
               };
 
               java = {

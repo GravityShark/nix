@@ -76,7 +76,11 @@
     ## CLIs
     doas-sudo-shim
     # efibootmgr
+
     fastfetch
+
+    bc
+    ffmpeg
 
     # obs-studio
     # prismlauncher
