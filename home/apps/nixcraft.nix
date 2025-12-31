@@ -55,7 +55,7 @@
           shared = {
             # Symlink screenshots dir from all instances
             files."screenshots".source =
-              config.lib.file.mkOutOfStorexSymlink "${config.home.homeDirectory}/Pictures";
+              config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Pictures";
 
             # Common account
             account = {
