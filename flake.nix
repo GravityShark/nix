@@ -61,7 +61,6 @@
       };
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        inherit system;
         modules = [
           ./hosts/msi/home.nix
           ./home
@@ -70,7 +69,10 @@
             home.homeDirectory = "/home/${username}";
           }
         ];
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit system;
+        };
       };
     };
 }
