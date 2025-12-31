@@ -20,19 +20,4 @@
       "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 00"
     ];
   };
-
-  services.tuned.profiles = {
-    balanced = {
-      script = {
-        "script" = "$\{i:PROFILE_DIR}/script.sh";
-        type = "script";
-      };
-    };
-    throughput-performance = {
-      script = {
-        "script" = "$\{i:PROFILE_DIR}/script.sh";
-        type = "script";
-      };
-    };
-  };
 }
