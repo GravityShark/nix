@@ -58,12 +58,12 @@
               config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Pictures";
 
             # Common account
-            # account = {
-            #
-            #   username = "susterinoskanye";
-            #   # uuid = "";
-            #   offline = true;
-            # };
+            account = lib.mkDefault {
+
+              username = "susterinoskanye";
+              # uuid = "";
+              offline = true;
+            };
 
             useDiscreteGPU = true; # Enabled by default
 
@@ -79,53 +79,60 @@
             binEntry.enable = true;
           };
 
-          instances = {
-            optimization = {
-              enable = true;
-              version = "1.21.11";
-
-              # Add a desktop entry
-              desktopEntry = {
+          instances =
+            let
+              optimization = {
                 enable = true;
-              };
+                version = "1.21.11";
 
-              mrpack = {
-                enable = true;
-                file = optimization-12111;
-              };
-              waywall.enable = true;
+                # Add a desktop entry
+                desktopEntry = {
+                  enable = true;
+                };
 
-              files = {
-                "options.txt".method = "copy-init";
-                "config/betterblockentities.json".method = "copy-init";
-                "config/ferritecore.mixin.properties".method = "copy-init";
-                "config/immediatelyfast.json".method = "copy-init";
-                "config/modernfix-mixins.properties".method = "copy-init";
-                "config/moreculling.toml".method = "copy-init";
-              };
+                mrpack = {
+                  enable = true;
+                  file = optimization-12111;
+                };
+                waywall.enable = true;
 
-              files = {
-                "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
-                  url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
-                  hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
+                files = {
+                  "options.txt".method = "copy-init";
+                  "config/betterblockentities.json".method = "copy-init";
+                  "config/ferritecore.mixin.properties".method = "copy-init";
+                  "config/immediatelyfast.json".method = "copy-init";
+                  "config/modernfix-mixins.properties".method = "copy-init";
+                  "config/moreculling.toml".method = "copy-init";
+                };
+
+                files = {
+                  "mods/modmenu-17.0.0-beta.1.jar".source = pkgs.fetchurl {
+                    url = "https://cdn.modrinth.com/data/mOgUt4GM/versions/hGuj7hNc/modmenu-17.0.0-beta.1.jar";
+                    hash = "sha256-xJ49ltXfNwuGXXBZ42YAGGUCvhvdelpOP2x9ay3+iTY=";
+                  };
+                };
+
+                java = {
+                  extraArguments = [
+                    "-XX:+UseZGC"
+                    "-XX:+UseCompactObjectHeaders"
+                  ];
+                  package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
+                  maxMemory = 8000;
                 };
               };
+            in
+            {
+              optimization = optimization;
 
-              account = {
-                username = "BlazingSolrFire";
-                accessTokenPath = "/home/gravity/.local/share/nixcraft/auth/access_token"; # When using full paths you must rebiuld with --impure
-              };
-
-              java = {
-                extraArguments = [
-                  "-XX:+UseZGC"
-                  "-XX:+UseCompactObjectHeaders"
-                ];
-                package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
-                maxMemory = 8000;
+              optimization-blazing = optimization // {
+                account = {
+                  username = "BlazingSolrFire";
+                  accessTokenPath = "${config.home.homeDirectory}/.local/share/nixcraft/auth/access_token"; # When using full paths you must rebiuld with --impure
+                  offline = false;
+                };
               };
             };
-          };
         };
       };
   };
