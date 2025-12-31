@@ -16,16 +16,17 @@
   };
 
   config = lib.mkIf config.apps.nixcraft.enable {
+    home.packages = with pkgs; [
+      inputs.nixcraft.packages.${system}.nixcraft-cli
+      inputs.nixcraft.packages.${system}.nixcraft-auth
+      inputs.nixcraft.packages.${system}.nixcraft-skin
+    ];
     nixcraft =
       let
         # Fetch any mrpack which can be used with both servers and clients!
         optimization-12111 = pkgs.fetchurl {
           url = "https://cdn.modrinth.com/data/ddF4bxsz/versions/a2nRRv3j/Optimization%20Sodium-1.21.11-4.6.mrpack";
           hash = "sha256-/HPHiAzaMchlHx+SRtIcgKhFGHQWecyln3QCMlQlAGY=";
-        };
-        simply-optimized-mrpack = pkgs.fetchurl {
-          url = "https://cdn.modrinth.com/data/BYfVnHa7/versions/vZZwrcPm/Simply%20Optimized-1.21.1-5.0.mrpack";
-          hash = "sha256-n2BxHMmqpOEMsvDqRRYFfamcDCCT4ophUw7QAJQqXmg=";
         };
       in
       {
@@ -39,7 +40,7 @@
           * Instances are placed under ~/.local/share/nixcraft/client/instances/<name> or ~/.local/share/nixcraft/server/instances/<name>
 
           * Executable to run the instance will be put in path as nixcraft-<server/client>-<name>
-          * Ex: nixcraft-client-myclient
+          * Ex: nixcraft-client-myclient19
           * See the binEntry option for customization
 
           * Read files found under submodules for more options
@@ -54,7 +55,7 @@
           shared = {
             # Symlink screenshots dir from all instances
             files."screenshots".source =
-              config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Pictures";
+              config.lib.file.mkOutOfStorexSymlink "${config.home.homeDirectory}/Pictures";
 
             # Common account
             account = {

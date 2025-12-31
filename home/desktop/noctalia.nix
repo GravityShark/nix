@@ -17,9 +17,7 @@
     home.packages = with pkgs; [
       notify-desktop
       (writers.writeDashBin "lock" ''
-        ${
-          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-        }/bin/noctalia-shell ipc call lockScreen lock;
+        ${inputs.noctalia.packages.${system}.default}/bin/noctalia-shell ipc call lockScreen lock;
       '')
     ];
 
