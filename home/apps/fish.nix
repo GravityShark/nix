@@ -36,12 +36,12 @@
         l = "eza --icons --long --all --sort=time --time=accessed $argv";
         ls = "eza --icons --group-directories-first --sort=name $argv";
         rm = "rip";
+      };
+      shellAbbrs = {
         x = "xdg-open";
       };
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
-        # alias s sesh
-        # alias x xdg-open
 
         fish_add_path $HOME/.scripts
         fish_add_path $HOME/.scripts/aliases
@@ -80,15 +80,16 @@
           src = pkgs.fishPlugins.done.src;
         }
         {
-          name = "sponge";
-          src = pkgs.fishPlugins.sponge.src;
-        }
-        {
           name = "puffer";
           src = pkgs.fishPlugins.puffer.src;
         }
+        {
+          name = "sponge";
+          src = pkgs.fishPlugins.sponge.src;
+        }
       ];
     };
+
     home.packages = with pkgs; [
       nix-your-shell
       eza
