@@ -48,18 +48,26 @@
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
+          system = "x86_64-linux";
           modules = [
             ./hosts/msi/configuration.nix
-            ./hosts/msi/home.nix
             ./nixos
-            ./home
-            ./hosts/msi/configuration.nix
-            ./hosts/msi/home.nix
             { config.username = username; }
           ];
         };
+      };
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = { inherit inputs; };
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [
+          ./hosts/msi/home.nix
+          ./home
+          {
+            home.username = username;
+            home.homeDirectory = "/home/${username}";
+          }
+        ];
       };
     };
 }
