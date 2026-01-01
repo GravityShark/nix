@@ -36,18 +36,18 @@
   update-scripts.enable = true;
 
   services.tuned.profiles = {
-    balanced = {
-      script = {
-        "script" = "$\{i:PROFILE_DIR}/script.sh";
-        type = "script";
-      };
-    };
-    throughput-performance = {
-      script = {
-        "script" = "$\{i:PROFILE_DIR}/script.sh";
-        type = "script";
-      };
-    };
+    # balanced = {
+    #   script = {
+    #     "script" = "$\{i:PROFILE_DIR}/script.sh";
+    #     type = "script";
+    #   };
+    # };
+    # throughput-performance = {
+    #   script = {
+    #     "script" = "$\{i:PROFILE_DIR}/script.sh";
+    #     type = "script";
+    #   };
+    # };
   };
 
   # `man configuration.nix` or https://nixos.org/nixos/options.html).

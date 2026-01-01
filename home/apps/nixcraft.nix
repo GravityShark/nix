@@ -88,9 +88,13 @@
 
               mrpack = {
                 enable = true;
+                # file = pkgs.fetchurl {
+                #   url = "https://cdn.modrinth.com/data/ddF4bxsz/versions/n6OCFedV/Optimization%20NeoSodium-1.21.11-2.7.mrpack";
+                #   hash = "sha256-Zlo55Ng0vI9bIcw0UnyNOwqhILOaRBQ2Z6Wql/yw1T8=";
+                # };
                 file = pkgs.fetchurl {
-                  url = "https://cdn.modrinth.com/data/ddF4bxsz/versions/a2nRRv3j/Optimization%20Sodium-1.21.11-4.6.mrpack";
-                  hash = "sha256-/HPHiAzaMchlHx+SRtIcgKhFGHQWecyln3QCMlQlAGY=";
+                  url = "https://cdn.modrinth.com/data/ddF4bxsz/versions/5AV2H86U/Optimization%20Sodium-1.21.11-4.8.mrpack";
+                  hash = "sha256-V1Do0ZVtcmzaEYZncwuLFjytXmrhMHx6SZYTbCUhZLo=";
                 };
 
               };
@@ -98,11 +102,11 @@
 
               files = {
                 "options.txt".method = "copy-init";
-                "config/betterblockentities.json".method = "copy-init";
-                "config/ferritecore.mixin.properties".method = "copy-init";
-                "config/immediatelyfast.json".method = "copy-init";
-                "config/modernfix-mixins.properties".method = "copy-init";
-                "config/moreculling.toml".method = "copy-init";
+                # "config/betterblockentities.json".method = "copy-init";
+                # "config/ferritecore.mixin.properties".method = "copy-init";
+                # "config/immediatelyfast.json".method = "copy-init";
+                # "config/modernfix-mixins.properties".method = "copy-init";
+                # "config/moreculling.toml".method = "copy-init";
               };
 
               files = {
