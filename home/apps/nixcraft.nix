@@ -16,9 +16,9 @@
 
   config = lib.mkIf config.apps.nixcraft.enable {
     home.packages = with pkgs; [
-      inputs.nixcraft.packages.${system}.nixcraft-cli
-      inputs.nixcraft.packages.${system}.nixcraft-auth
-      inputs.nixcraft.packages.${system}.nixcraft-skin
+      inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-cli
+      inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-auth
+      inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-skin
     ];
     nixcraft = {
       /*

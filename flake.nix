@@ -37,41 +37,34 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
+      self,
       ...
     }@inputs:
     let
       username = "gravity";
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
           modules = [
             ./hosts/msi/configuration.nix
             ./nixos
+            ./hosts/msi/home.nix
+            ./home
             { config.username = username; }
+            home-manager.nixosModules.default
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${username} = ./home.nix; # replace <USERNAME> with your actual username
+              };
+            }
           ];
           specialArgs = { inherit inputs; };
-        };
-      };
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./hosts/msi/home.nix
-          ./home
-          {
-            home.username = username;
-            home.homeDirectory = "/home/${username}";
-          }
-        ];
-        extraSpecialArgs = {
-          inherit inputs;
-          inherit system;
         };
       };
     };
