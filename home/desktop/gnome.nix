@@ -48,7 +48,7 @@
 
     # Gnome settings
 
-    dconf.settings = {
+    home-manager.dconf.settings = {
       "org/gnome/desktop/sound".allow-volume-above-100-percent = true;
       "org/gnome/desktop/session".idle-delay = 300;
       "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
