@@ -16,7 +16,7 @@
 
   config = lib.mkIf config.apps.nixcraft.enable {
     home.packages = with pkgs; [
-      inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-cli
+      # inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-cli
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-auth
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-skin
     ];
@@ -46,28 +46,33 @@
         shared = {
           # Symlink screenshots dir from all instances
           files."screenshots".source =
-            config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Pictures";
+            config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Pictures/Screenshots";
 
-          # Common account
+          # Default account
           account = lib.mkDefault {
-
             username = "susterinoskanye";
-            # uuid = "";
             offline = true;
           };
 
-          useDiscreteGPU = true; # Enabled by default
+          # Create a binary
+          binEntry.enable = true;
 
-          # Game is passed to the gpu (set if you have nvidia gpu)
-          enableNvidiaOffload = true; # Enabled by default
+          # Add a desktop entry
+          desktopEntry = {
+            enable = true;
+          };
+
+          # Put all files during activation instead
+          placeFilesAtActivation = true;
+
+          # Nvidia Offload (applied by default)
+          enableNvidiaOffload = true;
+          useDiscreteGPU = true;
 
           envVars = {
             # Fixes bug with nvidia (applied by default)
             __GL_THREADED_OPTIMIZATIONS = "0";
-            # GDK_BACKEND = "x11";
           };
-
-          binEntry.enable = true;
         };
 
         instances =
@@ -80,11 +85,6 @@
             optimization = {
               enable = true;
               version = "1.21.11";
-
-              # Add a desktop entry
-              desktopEntry = {
-                enable = true;
-              };
 
               mrpack = {
                 enable = true;
