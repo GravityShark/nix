@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 {
   imports = [
@@ -9,6 +9,12 @@
   ];
 
   programs.home-manager.enable = true;
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${config.username} = ./home.nix; # replace <USERNAME> with your actual username
+  };
 
   nixpkgs.config.allowUnfreePredicate =
     pkg:

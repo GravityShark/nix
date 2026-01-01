@@ -49,22 +49,16 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/msi/configuration.nix
-            ./nixos
             ./hosts/msi/home.nix
+            ./nixos
             ./home
+            ./hosts/msi/configuration.nix
+            ./hosts/msi/home.nix
             { config.username = username; }
-            home-manager.nixosModules.default
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${username} = ./home.nix; # replace <USERNAME> with your actual username
-              };
-            }
           ];
-          specialArgs = { inherit inputs; };
         };
       };
     };
