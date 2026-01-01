@@ -43,6 +43,8 @@
         # alias s sesh
         # alias x xdg-open
 
+        fish_add_path $HOME/.scripts
+        fish_add_path $HOME/.scripts/aliases
         set --export EDITOR nvim
         set --export SYSTEMD_EDITOR nvim
         set --export VISUAL nvim

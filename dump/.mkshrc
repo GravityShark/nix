@@ -7,7 +7,7 @@
 
 # ~/.local/bin is where you would put your user binaries
 # export PATH=$PATH:~/.local/bin:~/.scripts:~/.scripts/aliases
-export PATH=$PATH:~/.scripts:~/.scripts/aliases
+# export PATH=$PATH:~/.scripts:~/.scripts/aliases
 # :~/.emacs.d/bin
 
 # Wouldn't work otherwise
