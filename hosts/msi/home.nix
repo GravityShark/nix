@@ -1,38 +1,36 @@
 { pkgs, ... }:
 
 {
-  home-manager = {
-    links.enable = true;
-    mime.enable = true;
+  links.enable = true;
+  mime.enable = true;
 
-    apps = {
-      desktop.enable = true;
-      dev.enable = true;
-      fish.enable = true;
-      fonts.enable = true;
-      fzf.enable = true;
-      ghostty.enable = true;
-      neovim.enable = true;
-      nixcraft.enable = true;
-      syncthing.enable = true;
-      tmux.enable = true;
-      zen-browser.enable = true;
-    };
+  apps = {
+    desktop.enable = true;
+    dev.enable = true;
+    fish.enable = true;
+    fonts.enable = true;
+    fzf.enable = true;
+    ghostty.enable = true;
+    neovim.enable = true;
+    nixcraft.enable = true;
+    syncthing.enable = true;
+    tmux.enable = true;
+    zen-browser.enable = true;
+  };
 
-    desktop = {
-      niri.enable = true;
-      noctalia.enable = true;
-      stylix = {
-        enable = true;
-        theme = "gruvbox-material-light";
-      };
+  desktop = {
+    niri.enable = true;
+    noctalia.enable = true;
+    stylix = {
+      enable = true;
+      theme = "gruvbox-material-light";
     };
+  };
 
-    service = {
-      notes-backup.enable = true;
-      keepassxc.enable = true;
-      swayidle.enable = true;
-    };
+  service = {
+    notes-backup.enable = true;
+    keepassxc.enable = true;
+    swayidle.enable = true;
   };
 
   ####### Extra shit
