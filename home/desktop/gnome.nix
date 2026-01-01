@@ -47,7 +47,6 @@
     ];
 
     # Gnome settings
-    programs.dconf.enable = true;
     dconf.settings = {
       "org/gnome/desktop/sound".allow-volume-above-100-percent = true;
       "org/gnome/desktop/session".idle-delay = 300;
