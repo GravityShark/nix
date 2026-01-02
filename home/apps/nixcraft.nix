@@ -19,6 +19,7 @@
       # inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-cli
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-auth
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-skin
+      lunarclient
     ];
     nixcraft = {
       /*
