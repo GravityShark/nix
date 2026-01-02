@@ -107,7 +107,7 @@
             (deflayer nav
               voldwn     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
               _ @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
-              prtsc  brdown    brup    C-esc   delete   XX  grv   bspc  del   menu  Insert _
+              prtsc  brdown    brup    C-esc   del   XX  grv   bspc  del   menu  Insert _
               _     ret @num XX XX
             )
 
