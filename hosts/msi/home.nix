@@ -63,7 +63,7 @@
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
-    obsidian
+    # obsidian
 
     ## School
     onlyoffice-desktopeditors

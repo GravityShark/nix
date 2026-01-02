@@ -13,8 +13,8 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
-      "discord"
-      "obsidian"
+      "lunar-client"
+      # "obsidian"
     ];
 
   # Paths doesnt work!!
