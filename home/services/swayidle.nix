@@ -31,14 +31,14 @@
         timeouts = [
           {
             timeout = 120;
-            command = bsav + " && " + (bset "10%");
+            command = bsav + " && " + (bset "0");
             resumeCommand = bres;
           }
-          {
-            timeout = 180;
-            command = bset "0";
-            resumeCommand = bres;
-          }
+          # {
+          #   timeout = 180;
+          #   command = bset "0";
+          #   resumeCommand = bres;
+          # }
           {
             timeout = 240;
             command = lib.mkIf config.desktop.noctalia.enable "${pkgs.lock}/bin/lock";

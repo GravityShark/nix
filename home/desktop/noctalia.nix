@@ -24,6 +24,18 @@
       app2unit
     ];
 
+    systemd.user.services = {
+      power-profile = {
+        Unit = {
+          Description = "Noctalia Performance on powerprofile change";
+        };
+        Service = {
+          ExecStart = "/usr/bin/busctl monitor org.freedesktop.UPower.PowerProfiles";
+          Restart = "always";
+        };
+      };
+    };
+
     # home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
     #   text = builtins.toJSON {
     #     defaultWallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/Tranquility.png";

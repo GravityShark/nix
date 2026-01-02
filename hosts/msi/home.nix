@@ -50,7 +50,6 @@
     # teams-for-linux
     vial
     youtube-music
-    mcontrolcenter # MSI
     qbittorrent
 
     ## File viewer
