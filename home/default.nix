@@ -13,7 +13,7 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
-      "lunar-client"
+      "lunarclient"
       # "obsidian"
     ];
 
