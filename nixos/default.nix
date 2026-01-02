@@ -50,11 +50,7 @@
     users.users.${config.username} = {
       isNormalUser = true;
       description = config.username;
-      extraGroups = [
-        "wheel"
-        "lpadmin"
-        "netdev"
-      ];
+      extraGroups = [ "wheel" ];
     };
 
     # Use amurican localization so things don't break lol

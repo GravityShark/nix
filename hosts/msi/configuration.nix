@@ -65,6 +65,15 @@
     mcontrolcenter
   ];
 
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+        if (subject.isInGroup("wheel") &&
+            action.id === "org.freedesktop.DBus.Monitor") {
+              return polkit.Result.YES;
+        }
+    });
+  '';
+
   # `man configuration.nix` or https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
 }
