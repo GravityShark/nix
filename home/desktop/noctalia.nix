@@ -26,17 +26,19 @@
 
     systemd.user.services =
       let
-        ppd-dbus-hook = pkgs.buildGoModule {
-          pname = "ppd-dbus-hook";
-          version = "1";
-          src = pkgs.fetchFromGitHub {
-            owner = "GravityShark";
-            repo = "ppd-dbus-hook";
-            rev = "80c4a6adc3dc87ceabd2d622ec76290d815c3c98";
-            hash = "sha256-Hgm3NIfvye6kLdXyoAEtp3sh84WbvmQEnuXdG9SZg/Y=";
-          };
-          vendorHash = "sha256-Ac63bZlBvCrhS7b8mk7aJdApI8UGtJxnZG35L37roGY=";
-        };
+        ppd-dbus-hook = (
+          pkgs.buildGoModule {
+            pname = "ppd-dbus-hook";
+            version = "1.0.0";
+            src = pkgs.fetchFromGitHub {
+              owner = "GravityShark";
+              repo = "ppd-dbus-hook";
+              rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
+              hash = "sha256-tqhIoeP5NfaEdKbMjAGt7oqozfRWuSmkLUWqQKCUWVA=";
+            };
+            vendorHash = "sha256-NGjZ3eUWMYjsQWuLYumpewPY1weNHycu2wl3jz092Bs=";
+          }
+        );
       in
       {
         noctalia-performance = {
