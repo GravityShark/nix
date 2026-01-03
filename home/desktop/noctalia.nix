@@ -43,7 +43,7 @@
                          }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
                          "${
                            inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-                         }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance";
+                         }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
           '';
           Restart = "on-failure";
         };
