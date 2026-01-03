@@ -4,6 +4,7 @@
 # But it contains settings that edit the entire system as a whole in some way
 {
   imports = [
+    ./adb.nix
     ./doas.nix
     ./intel.nix
     # ./lanzaboote.nix

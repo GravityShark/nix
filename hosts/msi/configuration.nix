@@ -35,10 +35,6 @@
   # Helpful scripts for updating and maintaining the system
   update-scripts.enable = true;
 
-  programs.adb.enable = true;
-  users.users.${config.username}.extraGroups = [ "adbusers" ];
-  environment.systemPackages = with pkgs; [ android-file-transfer ];
-
   # `man configuration.nix` or https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
 }

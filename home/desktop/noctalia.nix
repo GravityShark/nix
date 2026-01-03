@@ -43,11 +43,10 @@
           Unit = {
             Description = "Noctalia Performance on power-profiles-daemon change";
             After = [ "noctalia-shell.service" ];
-            Requires = [ "noctalia-shell.service" ];
+            PartOf = [ "noctalia-shell.service" ];
           };
 
           Service = {
-            Type = "simple";
             ExecStart = ''
               ${ppd-dbus-hook}/bin/ppd-dbus-hook \
                            "${
@@ -60,9 +59,9 @@
                              inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
                            }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance";
             '';
-            Restart = "always";
+            Restart = "on-failure";
           };
-          Install.WantedBy = [ "graphical.target" ];
+          Install.WantedBy = [ "graphical-session.target" ];
         };
       };
 

@@ -21,7 +21,9 @@
       "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 00"
     ];
 
-    systemd.user.services.ppd-dbus-hook =
+    environment.systemPackages = with pkgs; [ mcontrolcenter ];
+
+    systemd.services.ppd-dbus-hook =
       let
         ppd-dbus-hook = pkgs.buildGoModule {
           pname = "ppd-dbus-hook";
@@ -38,16 +40,16 @@
       {
         enable = true;
         after = [ "tuned-ppd.service" ];
+        partOf = [ "tuned-ppd.service" ];
         requires = [ "tuned-ppd.service" ];
         wantedBy = [ "default.target" ];
         description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";
         serviceConfig = {
-          Type = "simple";
           ExecStart = ''
             ${ppd-dbus-hook}/bin/ppd-dbus-hook \
-              "echo eco | tee /sys/devices/platform/msi-ec/shift_mode" \
-              "echo comfort | tee /sys/devices/platform/msi-ec/shift_mode" \
-              "echo turbo | tee /sys/devices/platform/msi-ec/shift_mode"
+              "sh -c 'tee /sys/devices/platform/msi-ec/shift_mode <<< eco'" \
+              "sh -c 'tee /sys/devices/platform/msi-ec/shift_mode <<< comfort'" \
+              "sh -c 'tee /sys/devices/platform/msi-ec/shift_mode <<< turbo'"
           '';
           Restart = "always";
         };
