@@ -32,10 +32,10 @@
           src = pkgs.fetchFromGitHub {
             owner = "GravityShark";
             repo = "ppd-dbus-hook";
-            rev = "b2ac5027e052563a9702df718a67000b1ba9b028";
-            hash = "sha256-M/oaB/L9fI5WudiIGiPO6SPcwvoE2tfV0XaCD3f+6+4=";
+            rev = "80c4a6adc3dc87ceabd2d622ec76290d815c3c98";
+            # hash = "";
           };
-          vendorHash = null;
+          vendorHash = lib.fakeSha256;
         };
       in
       {
