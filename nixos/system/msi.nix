@@ -23,7 +23,7 @@
 
     environment.systemPackages = with pkgs; [ mcontrolcenter ];
 
-    systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management {
+    systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       enable = true;
       after = [ "tuned-ppd.service" ];
       partOf = [ "tuned-ppd.service" ];
