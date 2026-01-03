@@ -35,51 +35,9 @@
   # Helpful scripts for updating and maintaining the system
   update-scripts.enable = true;
 
-  # services.tuned.profiles = {
-  #   powersave = {
-  #     script = {
-  #       "script" = "/etc/tuned/powersave/script.sh";
-  #       type = "script";
-  #     };
-  #   };
-  #
-  #   balanced = {
-  #     script = {
-  #       "script" = "$\{i:PROFILE_DIR}/script.sh";
-  #       type = "script";
-  #     };
-  #   };
-  #   throughput-performance = {
-  #     script = {
-  #       "script" = "$\{i:PROFILE_DIR}/script.sh";
-  #       type = "script";
-  #     };
-  #   };
-  # };
-
   programs.adb.enable = true;
-  users.users.gravity.extraGroups = [ "adbusers" ];
-
-  environment.systemPackages = with pkgs; [
-    android-file-transfer
-    mcontrolcenter
-  ];
-
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (subject.isInGroup("wheel"))
-        return polkit.Result.YES;
-    });
-  '';
-
-  # security.polkit.extraConfig = ''
-  #   polkit.addRule(function(action, subject) {
-  #       if (subject.isInGroup("wheel") &&
-  #           action.id === "org.freedesktop.DBus.Monitor") {
-  #             return polkit.Result.YES;
-  #       }
-  #   });
-  # '';
+  users.users.${config.username}.extraGroups = [ "adbusers" ];
+  environment.systemPackages = with pkgs; [ android-file-transfer ];
 
   # `man configuration.nix` or https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
