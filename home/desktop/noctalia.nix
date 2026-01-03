@@ -33,19 +33,23 @@
             owner = "GravityShark";
             repo = "ppd-dbus-hook";
             rev = "80c4a6adc3dc87ceabd2d622ec76290d815c3c98";
-            # hash = "";
+            hash = "sha256-Hgm3NIfvye6kLdXyoAEtp3sh84WbvmQEnuXdG9SZg/Y=";
           };
-          vendorHash = lib.fakeSha256;
+          vendorHash = "sha256-Ac63bZlBvCrhS7b8mk7aJdApI8UGtJxnZG35L37roGY=";
         };
       in
       {
-        power-profile = {
+        noctalia-performance = {
           Unit = {
-            Description = "Noctalia Performance on powerprofile change";
+            Description = "Noctalia Performance on power-profiles-daemon change";
+            After = [ "noctalia-shell.service" ];
+            Requires = [ "noctalia-shell.service" ];
           };
+
           Service = {
+            Type = "simple";
             ExecStart = ''
-              ${ppd-dbus-hook} \
+              ${ppd-dbus-hook}/bin/ppd-dbus-hook \
                            "${
                              inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
                            }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
@@ -58,6 +62,7 @@
             '';
             Restart = "always";
           };
+          Install.WantedBy = [ "graphical.target" ];
         };
       };
 

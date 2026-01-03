@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 
@@ -19,5 +20,37 @@
       "w /sys/class/power_supply/BAT1/charge_control_start_threshold - - - - 70"
       "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 00"
     ];
+
+    systemd.user.services.my-cool-user-service =
+      let
+        ppd-dbus-hook = pkgs.buildGoModule {
+          pname = "ppd-dbus-hook";
+          version = "1";
+          src = pkgs.fetchFromGitHub {
+            owner = "GravityShark";
+            repo = "ppd-dbus-hook";
+            rev = "80c4a6adc3dc87ceabd2d622ec76290d815c3c98";
+            hash = "sha256-Hgm3NIfvye6kLdXyoAEtp3sh84WbvmQEnuXdG9SZg/Y=";
+          };
+          vendorHash = "sha256-Ac63bZlBvCrhS7b8mk7aJdApI8UGtJxnZG35L37roGY=";
+        };
+      in
+      {
+        enable = true;
+        after = [ "tuned-ppd.service" ];
+        requires = [ "tuned-ppd.service" ];
+        wantedBy = [ "default.target" ];
+        description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = ''
+            ${ppd-dbus-hook}/bin/ppd-dbus-hook \
+              "echo eco | tee /sys/devices/platform/msi-ec/shift_mode" \
+              "echo comfort | tee /sys/devices/platform/msi-ec/shift_mode" \
+              "echo turbo | tee /sys/devices/platform/msi-ec/shift_mode"
+          '';
+          Restart = "always";
+        };
+      };
   };
 }
