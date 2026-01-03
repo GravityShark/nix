@@ -14,22 +14,18 @@
     services.tuned.enable = true; # power-profiles-daemon, sometimes takes up power randomly
     services.upower.enable = true; # power viewing
 
-    environment.systemPackages =
-      let
-        ppd-dbus-hook = pkgs.buildGoModule {
-          pname = "ppd-dbus-hook";
-          version = "";
-          src = pkgs.fetchFromGitHub {
-            owner = "GravityShark";
-            repo = "ppd-dbus-hook";
-            rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
-            hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-          };
-          vendorHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    environment.systemPackages = with pkgs; [
+      (buildGoModule {
+        pname = "ppd-dbus-hook";
+        version = "1.0.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "GravityShark";
+          repo = "ppd-dbus-hook";
+          rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
+          hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
         };
-      in
-      [
-        ppd-dbus-hook
-      ];
+        vendorHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      })
+    ];
   };
 }
