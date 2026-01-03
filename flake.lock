@@ -305,11 +305,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767415807,
-        "narHash": "sha256-71QPg4dRInKSi6KbOiENUcaICVJzObyzuSqRsdjEQQY=",
+        "lastModified": 1767416507,
+        "narHash": "sha256-jlq/UwvHMLJrVNjnQg9KpnI9C7NlNXAF4EYl0FGaIOA=",
         "owner": "GravityShark",
         "repo": "ppd-dbus-hook",
-        "rev": "74136aca4fb3a61a434c731693390e93f5db51b6",
+        "rev": "7dab341c77fd3dc3886867623f307c9bffe64b87",
         "type": "github"
       },
       "original": {
