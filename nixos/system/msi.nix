@@ -33,7 +33,7 @@
               owner = "GravityShark";
               repo = "ppd-dbus-hook";
               rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
-              hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+              hash = "sha256-tqhIoeP5NfaEdKbMjAGt7oqozfRWuSmkLUWqQKCUWVA=";
             };
             vendorHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
           }
