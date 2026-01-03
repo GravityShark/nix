@@ -24,17 +24,43 @@
       app2unit
     ];
 
-    systemd.user.services = {
-      power-profile = {
-        Unit = {
-          Description = "Noctalia Performance on powerprofile change";
+    systemd.user.services =
+      let
+        ppd-dbus-hook = pkgs.buildGoModule {
+          pname = "ppd-dbus-hook";
+          version = "1";
+          src = pkgs.fetchFromGitHub {
+            owner = "GravityShark";
+            repo = "ppd-dbus-hook";
+            rev = "0d1a13ddd5096e955a7fb5c4fb405d9182aacb25";
+            hash = "sha256-AtE4D64gETVcklvyYZqnBjxDv5j5lSwuEjSuo7eJTBc=";
+          };
+          subPackages = [ "ppd-dbus-hook" ];
+          vendorHash = null;
         };
-        Service = {
-          ExecStart = "/usr/bin/busctl monitor org.freedesktop.UPower.PowerProfiles";
-          Restart = "always";
+      in
+      {
+        power-profile = {
+          Unit = {
+            Description = "Noctalia Performance on powerprofile change";
+          };
+          Service = {
+            ExecStart = ''
+              ${ppd-dbus-hook} \
+                           "${
+                             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+                           }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
+                           "${
+                             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+                           }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
+                           "${
+                             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+                           }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance";
+            '';
+            Restart = "always";
+          };
         };
       };
-    };
 
     # home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
     #   text = builtins.toJSON {
