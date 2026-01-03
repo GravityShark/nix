@@ -21,7 +21,7 @@
       "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 00"
     ];
 
-    systemd.user.services.my-cool-user-service =
+    systemd.user.services.ppd-dbus-hook =
       let
         ppd-dbus-hook = pkgs.buildGoModule {
           pname = "ppd-dbus-hook";
