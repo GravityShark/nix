@@ -25,21 +25,21 @@
     ];
 
     systemd.user.services =
-      let
-        ppd-dbus-hook = (
-          pkgs.buildGoModule {
-            pname = "ppd-dbus-hook";
-            version = "1.0.0";
-            src = pkgs.fetchFromGitHub {
-              owner = "GravityShark";
-              repo = "ppd-dbus-hook";
-              rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
-              hash = "sha256-tqhIoeP5NfaEdKbMjAGt7oqozfRWuSmkLUWqQKCUWVA=";
-            };
-            vendorHash = "sha256-NGjZ3eUWMYjsQWuLYumpewPY1weNHycu2wl3jz092Bs=";
-          }
-        );
-      in
+      # let
+      #   ppd-dbus-hook = (
+      #     pkgs.buildGoModule {
+      #       pname = "ppd-dbus-hook";
+      #       version = "1.0.0";
+      #       src = pkgs.fetchFromGitHub {
+      #         owner = "GravityShark";
+      #         repo = "ppd-dbus-hook";
+      #         rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
+      #         hash = "sha256-tqhIoeP5NfaEdKbMjAGt7oqozfRWuSmkLUWqQKCUWVA=";
+      #       };
+      #       vendorHash = "sha256-NGjZ3eUWMYjsQWuLYumpewPY1weNHycu2wl3jz092Bs=";
+      #     }
+      #   );
+      # in
       {
         noctalia-performance = {
           Unit = {
@@ -50,7 +50,7 @@
 
           Service = {
             ExecStart = ''
-              ${ppd-dbus-hook}/bin/ppd-dbus-hook \
+              ${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
                            "${
                              inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
                            }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \

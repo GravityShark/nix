@@ -18,6 +18,10 @@
       url = "github:noctalia-dev/noctalia-shell/v3.8.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ppd-dbus-hook = {
+      url = "github:GravityShark/ppd-dbus-hook";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -35,7 +35,7 @@
               rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
               hash = "sha256-tqhIoeP5NfaEdKbMjAGt7oqozfRWuSmkLUWqQKCUWVA=";
             };
-            vendorHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+            vendorHash = "sha256-NGjZ3eUWMYjsQWuLYumpewPY1weNHycu2wl3jz092Bs=";
           }
         );
       in

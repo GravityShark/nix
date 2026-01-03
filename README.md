@@ -177,3 +177,5 @@ n ur done, jus complete this checklist then reboot
     - hyprland (just for the maximum support, that isn't gnome or kde)
     - mango (maybe second to hyprland, also supports tags like river)
     - river (to make my own wayland compositor)
+
+13. make ppd-dbus-hook a flake
