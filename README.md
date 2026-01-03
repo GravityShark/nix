@@ -167,7 +167,7 @@ n ur done, jus complete this checklist then reboot
    - nvm guix is so UN supported bruh
 
 10. use [stylix](https://nix-community.github.io/stylix/)
-    - [ ] add it for youtube-music and super productivity
+    - [ ] add it fr youtube-music and super productivity
 
 11. pls fix this, otherwise we gonna use superproductivity instead https://github.com/CCExtractor/taskwarrior-flutter/issues/382
     - superprod got mkdwn plugins
@@ -178,4 +178,5 @@ n ur done, jus complete this checklist then reboot
     - mango (maybe second to hyprland, also supports tags like river)
     - river (to make my own wayland compositor)
 
-13. make ppd-dbus-hook a flake
+13. [ ] make ppd-dbus-hook a flake
+    - use tlp 1.9 when it comes out on nixpkgs and use it instead of tuned

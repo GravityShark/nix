@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  links.enable = true;
   mime.enable = true;
 
   apps = {
@@ -39,53 +38,51 @@
     ".scripts".source = ../../dump/.scripts;
   };
 
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.scripts"
+    "${config.home.homeDirectory}/.scripts/aliases"
+  ];
+
   xdg.configFile = {
     "fastfetch".source = ../../dump/.config/fastfetch;
-    # "xdg-terminals.list".source = ../dump/.config/xdg-terminals.list;
+    "xdg-terminals.list".source = ../dump/.config/xdg-terminals.list;
   };
 
   home.packages = with pkgs; [
-    selectdefaultapplication
-    super-productivity
-    # teams-for-linux
-    vial
-    youtube-music
     qbittorrent
+    # selectdefaultapplication
+    super-productivity
+    vial
+    xdg-terminal-exec
+    youtube-music
 
     ## File viewer
     vlc # Videos + Music
-    # zathura # Documents
 
     ## Media
     # audacity
     # gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
-
     # obsidian
 
     ## School
     onlyoffice-desktopeditors
     pdfarranger
+    # teams-for-linux
     # telegram-desktop
     # zoom-us
 
     git
 
     ## CLIs
+    bc
     doas-sudo-shim
     # efibootmgr
-
     fastfetch
-
-    bc
     ffmpeg
 
-    # obs-studio
-    # prismlauncher
-    # temurin-jre-bin
-    # waywall
-    #
+    ## Wine
     # bubblewrap
     # dwarfs
     # fuse-overlayfs

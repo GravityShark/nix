@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help`
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -14,7 +14,7 @@
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
-    openrazer.enable = false;
+    openrazer.enable = true;
     systemd-boot.enable = true;
     vial.enable = true;
   };
