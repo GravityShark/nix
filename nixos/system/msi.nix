@@ -50,9 +50,9 @@
         serviceConfig = {
           ExecStart = ''
             ${ppd-dbus-hook}/bin/ppd-dbus-hook \
-              "${pkgs.dash} -c \"echo eco > /sys/devices/platform/msi-ec/shift_mode\"" \
-              "${pkgs.dash} -c \"echo comfort > /sys/devices/platform/msi-ec/shift_mode\"" \
-              "${pkgs.dash} -c \"echo turbo > /sys/devices/platform/msi-ec/shift_mode\""
+              "/bin/sh -c 'echo eco > /sys/devices/platform/msi-ec/shift_mode'" \
+              "/bin/sh -c 'echo comfort > /sys/devices/platform/msi-ec/shift_mode'" \
+              "/bin/sh -c 'echo turbo > /sys/devices/platform/msi-ec/shift_mode'"
           '';
           Restart = "on-failure";
         };
