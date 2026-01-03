@@ -61,7 +61,7 @@
             '';
             Restart = "on-failure";
           };
-          Install.WantedBy = [ "graphical-session.target" ];
+          Install.WantedBy = [ "noctalia-shell.service" ];
         };
       };
 
