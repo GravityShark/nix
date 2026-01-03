@@ -14,7 +14,7 @@
     services.tuned.enable = true; # power-profiles-daemon, sometimes takes up power randomly
     services.upower.enable = true; # power viewing
 
-    environment.systemPackages = with pkgs; [
+    environment.packages = with pkgs; [
       (buildGoModule {
         pname = "ppd-dbus-hook";
         version = "1.0.0";
