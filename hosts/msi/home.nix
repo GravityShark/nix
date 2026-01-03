@@ -45,7 +45,7 @@
 
   xdg.configFile = {
     "fastfetch".source = ../../dump/.config/fastfetch;
-    "xdg-terminals.list".source = ../dump/.config/xdg-terminals.list;
+    "xdg-terminals.list".source = ../../dump/.config/xdg-terminals.list;
   };
 
   home.packages = with pkgs; [
