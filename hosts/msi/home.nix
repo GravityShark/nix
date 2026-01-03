@@ -87,6 +87,8 @@
     # dwarfs
     # fuse-overlayfs
     wineWowPackages.staging
+
+    javaPackages.compiler.temurin-bin.jre-25
   ];
 
   programs = {
