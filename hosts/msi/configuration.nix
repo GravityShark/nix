@@ -29,7 +29,6 @@
     pipewire.enable = true;
     power-management.enable = true;
     wayland-pipewire-idle-inhibit.enable = true;
-    zerotierone.enable = true;
   };
 
   # Helpful scripts for updating and maintaining the system

@@ -88,6 +88,7 @@
     # fuse-overlayfs
     wineWowPackages.staging
 
+    gamemode
     javaPackages.compiler.temurin-bin.jre-25
   ];
 
