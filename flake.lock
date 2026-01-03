@@ -298,12 +298,33 @@
         "type": "github"
       }
     },
+    "ppd-dbus-hook": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767415807,
+        "narHash": "sha256-71QPg4dRInKSi6KbOiENUcaICVJzObyzuSqRsdjEQQY=",
+        "owner": "GravityShark",
+        "repo": "ppd-dbus-hook",
+        "rev": "74136aca4fb3a61a434c731693390e93f5db51b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "GravityShark",
+        "repo": "ppd-dbus-hook",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixcraft": "nixcraft",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
+        "ppd-dbus-hook": "ppd-dbus-hook",
         "stylix": "stylix",
         "wayland-pipewire-idle-inhibit": "wayland-pipewire-idle-inhibit",
         "zen-browser": "zen-browser"

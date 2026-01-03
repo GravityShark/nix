@@ -24,48 +24,32 @@
       app2unit
     ];
 
-    systemd.user.services =
-      # let
-      #   ppd-dbus-hook = (
-      #     pkgs.buildGoModule {
-      #       pname = "ppd-dbus-hook";
-      #       version = "1.0.0";
-      #       src = pkgs.fetchFromGitHub {
-      #         owner = "GravityShark";
-      #         repo = "ppd-dbus-hook";
-      #         rev = "a710fa25384ba1c5a79fae949cd2051f52afabb1";
-      #         hash = "sha256-tqhIoeP5NfaEdKbMjAGt7oqozfRWuSmkLUWqQKCUWVA=";
-      #       };
-      #       vendorHash = "sha256-NGjZ3eUWMYjsQWuLYumpewPY1weNHycu2wl3jz092Bs=";
-      #     }
-      #   );
-      # in
-      {
-        noctalia-performance = {
-          Unit = {
-            Description = "Noctalia Performance on power-profiles-daemon change";
-            After = [ "noctalia-shell.service" ];
-            PartOf = [ "noctalia-shell.service" ];
-          };
-
-          Service = {
-            ExecStart = ''
-              ${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
-                           "${
-                             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-                           }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
-                           "${
-                             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-                           }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
-                           "${
-                             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-                           }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance";
-            '';
-            Restart = "on-failure";
-          };
-          Install.WantedBy = [ "noctalia-shell.service" ];
+    systemd.user.services = {
+      noctalia-performance = {
+        Unit = {
+          Description = "Noctalia Performance on power-profiles-daemon change";
+          After = [ "noctalia-shell.service" ];
+          PartOf = [ "noctalia-shell.service" ];
         };
+
+        Service = {
+          ExecStart = ''
+            ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
+                         "${
+                           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+                         }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
+                         "${
+                           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+                         }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
+                         "${
+                           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+                         }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance";
+          '';
+          Restart = "on-failure";
+        };
+        Install.WantedBy = [ "noctalia-shell.service" ];
       };
+    };
 
     # home.file.".cache/noctalia/wallpapers.json" = lib.mkDefault {
     #   text = builtins.toJSON {
