@@ -49,22 +49,38 @@
   };
 
   home.packages = with pkgs; [
+    caprine
+    # (caprine.overrideAttrs (old: rec {
+    #   pname = "caprine-ng";
+    #   version = "2.60.3";
+    #   src = fetchFromGitHub {
+    #     owner = "Alex313031";
+    #     repo = "caprine-ng";
+    #     rev = "v${version}";
+    #     hash = "sha256-DCjjNdSxpFp4vRXSPdSN0aiHG4SISEZ6IuBeHqz+b2g=";
+    #   };
+    #   # How to set npm hash https://discourse.nixos.org/t/npmdepshash-override-what-am-i-missing-please/50967/3
+    #   npmDepsHash = "sha256-OX+hqXSa+HAbAdOEtoOw56ogfVqGm1aWQajmO0+3snI=";
+    #   npmDeps = fetchNpmDeps {
+    #     inherit src;
+    #     name = "${pname}-${version}-npm-deps";
+    #     hash = npmDepsHash;
+    #   };
+    # }))
+    # obsidian
     qbittorrent
     # selectdefaultapplication
     super-productivity
     vial
+    vlc # Videos + Music
     xdg-terminal-exec
     youtube-music
-
-    ## File viewer
-    vlc # Videos + Music
 
     ## Media
     # audacity
     # gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
-    # obsidian
 
     ## School
     onlyoffice-desktopeditors
@@ -73,24 +89,21 @@
     # telegram-desktop
     # zoom-us
 
-    git
-
     ## CLIs
     bc
     doas-sudo-shim
     # efibootmgr
     fastfetch
     ffmpeg
+    git
     wget
 
-    ## Wine
+    ## Gaming
     # bubblewrap
     # dwarfs
     # fuse-overlayfs
+    # gamemode
     wineWowPackages.staging
-
-    gamemode
-    javaPackages.compiler.temurin-bin.jre-25
   ];
 
   programs = {
@@ -105,7 +118,7 @@
         key = "c";
       }
     ];
-    vesktop.enable = true;
+    # vesktop.enable = true;
     zathura.enable = true;
   };
 

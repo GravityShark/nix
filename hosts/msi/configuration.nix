@@ -20,8 +20,7 @@
   };
 
   # Services
-  services.flatpak.enable = true;
-  services.tailscale.enable = true;
+  # services.flatpak.enable = true;
   service = {
     bluetooth.enable = true;
     disks.enable = true;

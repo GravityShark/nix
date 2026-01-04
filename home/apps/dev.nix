@@ -49,6 +49,7 @@
       # Java
       # graalvm-ce
       # javaPackages.compiler.temurin-bin.jre-21
+      # javaPackages.compiler.temurin-bin.jre-25
 
       # Lua
       lua-language-server
