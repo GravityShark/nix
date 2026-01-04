@@ -35,5 +35,10 @@
     home.activation.reloadGhostty = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       ${pkgs.procps}/bin/pkill -SIGUSR2 ghostty
     '';
+
+    home.packages = with pkgs; [ xdg-terminal-exec ];
+    xdg.configFile = {
+      "xdg-terminals.list".source = ../../dump/.config/xdg-terminals.list;
+    };
   };
 }

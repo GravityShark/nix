@@ -33,10 +33,9 @@
   };
 
   ####### Extra shit
-  home.file = {
-    ".mkshrc".source = ../../dump/.mkshrc;
-    ".scripts".source = ../../dump/.scripts;
-  };
+  services.easyeffects.enable = true;
+
+  home.file.".scripts".source = ../../dump/.scripts;
 
   home.sessionPath = [
     "${config.home.homeDirectory}/.scripts"
@@ -45,7 +44,6 @@
 
   xdg.configFile = {
     "fastfetch".source = ../../dump/.config/fastfetch;
-    "xdg-terminals.list".source = ../../dump/.config/xdg-terminals.list;
   };
 
   home.packages = with pkgs; [
@@ -73,7 +71,6 @@
     super-productivity
     vial
     vlc # Videos + Music
-    xdg-terminal-exec
     youtube-music
 
     ## Media
@@ -90,11 +87,11 @@
     # zoom-us
 
     ## CLIs
-    bc
-    doas-sudo-shim
+    # bc
+    # ffmpeg
+    # doas-sudo-shim
     # efibootmgr
     fastfetch
-    ffmpeg
     git
     wget
 
@@ -103,7 +100,7 @@
     # dwarfs
     # fuse-overlayfs
     # gamemode
-    wineWowPackages.staging
+    # wineWowPackages.staging
   ];
 
   programs = {

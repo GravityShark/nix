@@ -106,12 +106,29 @@
       enableFishIntegration = true;
     };
 
-    xdg.configFile = {
-      # "fish/completions".source = ../../dump/.config/fish/completions;
-      "fish/conf.d/hydro.fish".source = ../../dump/.config/fish/conf.d/hydro.fish;
-      # "fish/config.fish".source = lib.mkForce ../../dump/.config/fish/config.fish;
-      # "fish/functions".source = ../../dump/.config/fish/functions;
-    };
+    xdg.configFile."fish/conf.d/hydro.fish".source = ../../dump/.config/fish/conf.d/hydro.fish;
+    # "fish/completions".source = ../../dump/.config/fish/completions;
+    # "fish/config.fish".source = lib.mkForce ../../dump/.config/fish/config.fish;
+    # "fish/functions".source = ../../dump/.config/fish/functions;
+
+    home.file."mkshrc".text = ''
+      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
+      case "$-" in 
+          *i*)
+              if SH=$(which fish); then
+                  SELL=$SH fish
+                  status=$?
+                  
+                  if [ "$status" -eq 0 ]; then
+                      exit 0
+                  else
+                      echo "Program exited abnormally (status $status)."
+                  fi
+              fi
+          ;;
+      esac
+    '';
   };
 
 }
