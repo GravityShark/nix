@@ -145,13 +145,12 @@
                 followFocusedScreen = false;
                 groupedBorderOpacity = 0;
                 hideUnoccupied = false;
+                iconScale = 1.0;
                 id = "Workspace";
                 labelMode = "index";
                 showApplications = true;
                 showLabelsOnlyWhenOccupied = true;
                 unfocusedIconsOpacity = 0.6;
-
-                    "iconScale": 1,
               }
             ];
             left = [
