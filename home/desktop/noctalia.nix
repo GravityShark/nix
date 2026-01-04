@@ -72,10 +72,11 @@
           "states": {
               "fancy-audiovisualizer": {
                   "enabled": true
-              },
+              }
           },
-          "version": 1
-      }'';
+          "version": 2
+      }
+    '';
 
     programs.noctalia-shell = {
       enable = true;
