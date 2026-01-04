@@ -14,14 +14,14 @@
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
-    openrazer.enable = true;
+    # openrazer.enable = true;
     systemd-boot.enable = true;
     vial.enable = true;
   };
-  programs.nix-ld.enable = true;
 
   # Services
   services.flatpak.enable = true;
+  services.tailscale.enable = true;
   service = {
     bluetooth.enable = true;
     disks.enable = true;
