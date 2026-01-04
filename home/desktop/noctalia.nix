@@ -73,9 +73,6 @@
               "fancy-audiovisualizer": {
                   "enabled": true
               },
-              "launcher-button": {
-                  "enabled": true
-              }
           },
           "version": 1
       }'';
@@ -153,6 +150,8 @@
                 showApplications = true;
                 showLabelsOnlyWhenOccupied = true;
                 unfocusedIconsOpacity = 0.6;
+
+                    "iconScale": 1,
               }
             ];
             left = [
@@ -170,9 +169,9 @@
                 useDistroLogo = false;
               }
               {
-                defaultSettings = {
-                };
-                id = "plugin:launcher-button";
+                icon = "rocket";
+                id = "Launcher";
+                usePrimaryColor = false;
               }
               {
                 id = "Spacer";
