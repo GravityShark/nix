@@ -47,6 +47,7 @@
   };
 
   home.packages = with pkgs; [
+    easyeffects
     caprine
     # (caprine.overrideAttrs (old: rec {
     #   pname = "caprine-ng";
