@@ -81,6 +81,7 @@
     # efibootmgr
     fastfetch
     ffmpeg
+    wget
 
     ## Wine
     # bubblewrap

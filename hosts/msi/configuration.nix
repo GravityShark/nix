@@ -20,6 +20,7 @@
   };
 
   # Services
+  services.flatpak.enable = true;
   service = {
     bluetooth.enable = true;
     disks.enable = true;
@@ -33,8 +34,6 @@
 
   # Helpful scripts for updating and maintaining the system
   update-scripts.enable = true;
-
-  services.flatpak.enable = true;
 
   # `man configuration.nix` or https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
