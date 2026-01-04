@@ -448,8 +448,8 @@ binds {
     Mod+D hotkey-overlay-title="Open Discord" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "vesktop" "vesktop"; }
     Mod+Ctrl+D hotkey-overlay-title="Open Discord" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "vesktop" "vesktop"; }
 
-    Mod+M hotkey-overlay-title="Open Messenger" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "caprine" "caprine"; }
-    Mod+Ctrl+M hotkey-overlay-title="Open Messenger" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "caprine" "caprine"; }
+    Mod+M hotkey-overlay-title="Open Messenger" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "Caprine" "caprine"; }
+    Mod+Ctrl+M hotkey-overlay-title="Open Messenger" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "Caprine" "caprine"; }
 
     Mod+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
     Mod+Ctrl+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
