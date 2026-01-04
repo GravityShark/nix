@@ -111,7 +111,7 @@
     # "fish/config.fish".source = lib.mkForce ../../dump/.config/fish/config.fish;
     # "fish/functions".source = ../../dump/.config/fish/functions;
 
-    home.file."mkshrc".text = ''
+    home.file.".mkshrc".text = ''
       . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
       case "$-" in 
