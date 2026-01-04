@@ -18,6 +18,7 @@
     systemd-boot.enable = true;
     vial.enable = true;
   };
+  programs.nix-ld.enable = true;
 
   # Services
   services.flatpak.enable = true;
