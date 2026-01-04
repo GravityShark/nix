@@ -33,8 +33,6 @@
   };
 
   ####### Extra shit
-  services.easyeffects.enable = true;
-
   home.file.".scripts".source = ../../dump/.scripts;
 
   home.sessionPath = [
@@ -47,7 +45,6 @@
   };
 
   home.packages = with pkgs; [
-    easyeffects
     caprine
     # (caprine.overrideAttrs (old: rec {
     #   pname = "caprine-ng";
@@ -66,8 +63,9 @@
     #     hash = npmDepsHash;
     #   };
     # }))
+    easyeffects
     # obsidian
-    qbittorrent
+    # qbittorrent
     # selectdefaultapplication
     super-productivity
     vial
