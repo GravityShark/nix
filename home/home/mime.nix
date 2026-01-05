@@ -143,48 +143,50 @@
         "application/epub+zip" = [ "org.pwmt.zathura.desktop" ];
         "application/vnd.sun.xml.writer.template" = [ "org.pwmt.zathura.desktop" ];
         "application/vnd.openxmlformats-officedocument.wordprocessingml.template" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
-        "application/vnd.oasis.opendocument.text-master" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.oasis.opendocument.text" = [ "org.pwmt.zathura.desktop" ];
+        "application/vnd.oasis.opendocument.text-master" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.oasis.opendocument.text" = [ "onlyoffice-desktopeditors.desktop" ];
         "application/vnd.openxmlformats-officedocument.presentationml.slide" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
-        "application/vnd.oasis.opendocument.text-template" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.oasis.opendocument.spreadsheet-template" = [ "org.pwmt.zathura.desktop" ];
-        "application/x-tar" = [ "org.pwmt.zathura.desktop" ];
-        "application/x-7z-compressed" = [ "org.pwmt.zathura.desktop" ];
+        "application/vnd.oasis.opendocument.text-template" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.oasis.opendocument.spreadsheet-template" = [ "onlyoffice-desktopeditors.desktop" ];
+        # "application/x-tar" = [ "org.pwmt.zathura.desktop" ];
+        # "application/x-7z-compressed" = [ "org.pwmt.zathura.desktop" ];
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
         "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
         "application/vnd.openxmlformats-officedocument.spreadsheetml.template" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
-        "application/vnd.sun.xml.impress.template" = [ "org.pwmt.zathura.desktop" ];
-        "application/x-fictionbook+xml" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.oasis.opendocument.spreadsheet" = [ "org.pwmt.zathura.desktop" ];
+        "application/vnd.sun.xml.impress.template" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/x-fictionbook+xml" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.oasis.opendocument.spreadsheet" = [ "onlyoffice-desktopeditors.desktop" ];
         "application/vnd.openxmlformats-officedocument.presentationml.template" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
-        "application/zip" = [ "org.pwmt.zathura.desktop" ];
-        "application/oxps" = [ "org.pwmt.zathura.desktop" ];
+        # "application/zip" = [ "org.pwmt.zathura.desktop" ];
+        # "application/oxps" = [ "org.pwmt.zathura.desktop" ];
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
-        "application/vnd.rar" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.oasis.opendocument.presentation" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.sun.xml.calc.template" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.sun.xml.writer.global" = [ "org.pwmt.zathura.desktop" ];
+        "application/vnd.rar" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.oasis.opendocument.presentation" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.sun.xml.calc.template" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.sun.xml.writer.global" = [ "onlyoffice-desktopeditors.desktop" ];
         "application/vnd.openxmlformats-officedocument.presentationml.slideshow" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
-        "application/vnd.oasis.opendocument.presentation-template" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.sun.xml.calc" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.sun.xml.impress" = [ "org.pwmt.zathura.desktop" ];
-        "application/vnd.oasis.opendocument.text-web" = [ "org.pwmt.zathura.desktop" ];
+        "application/vnd.oasis.opendocument.presentation-template" = [
+          "onlyoffice-desktopeditors.desktop"
+        ];
+        "application/vnd.sun.xml.calc" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.sun.xml.impress" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.oasis.opendocument.text-web" = [ "onlyoffice-desktopeditors.desktop" ];
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [
-          "org.pwmt.zathura.desktop"
+          "onlyoffice-desktopeditors.desktop"
         ];
         "application/x-shellscript" = [ "nvim.desktop" ];
       };
