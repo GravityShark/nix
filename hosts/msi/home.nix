@@ -67,7 +67,7 @@
     easyeffects
     # obsidian
     # qbittorrent
-    selectdefaultapplication
+    # selectdefaultapplication
     super-productivity
     vial
     vlc # Videos + Music

@@ -8,7 +8,7 @@
 {
   imports = [
     ./desktop
-    ./services
+    ./service
     ./system
     ./update-scripts.nix
   ];

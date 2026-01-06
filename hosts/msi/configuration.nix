@@ -17,6 +17,7 @@
     # openrazer.enable = true;
     systemd-boot.enable = true;
     vial.enable = true;
+    distrobox.enable = true;
   };
 
   # Services
@@ -24,6 +25,7 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
+    distrobox.enable = true;
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;

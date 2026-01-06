@@ -5,6 +5,7 @@
   imports = [
     ./bluetooth.nix
     ./disks.nix
+    ./distrobox.nix
     ./kanata.nix
     ./logind.nix
     ./networking.nix
