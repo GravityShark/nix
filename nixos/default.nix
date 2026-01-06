@@ -35,13 +35,11 @@
 
     # environment shit
     environment = {
-      shells =
-        with pkgs;
-        lib.mkDefault [
-          bash
-          dash
-        ];
-      binsh = lib.mkForce pkgs.dash;
+      shells = with pkgs; [
+        bash
+        dash
+      ];
+      binsh = lib.mkForce "${pkgs.dash}/bin/dash";
       sessionVariables.ENV = lib.mkDefault "$HOME/.dashrc";
     };
 
