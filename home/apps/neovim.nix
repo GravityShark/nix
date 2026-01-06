@@ -45,5 +45,11 @@
       unzip # if i need to unzip something, maybe from neovim oil?
     ];
     programs.neovim.enable = true;
+
+    home.sessionVariables = {
+      EDITOR = "nvim";
+      SYSTEMD_EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
   };
 }

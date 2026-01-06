@@ -34,13 +34,6 @@
   };
 
   ####### Extra shit
-  home.file.".scripts".source = ../../dump/.scripts;
-
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.scripts"
-    "${config.home.homeDirectory}/.scripts/aliases"
-  ];
-
   xdg.configFile = {
     "fastfetch".source = ../../dump/.config/fastfetch;
   };
@@ -118,6 +111,13 @@
     # vesktop.enable = true;
     zathura.enable = true;
   };
+
+  home.file.".scripts".source = ../../dump/.scripts;
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.scripts"
+    "${config.home.homeDirectory}/.scripts/aliases"
+  ];
 
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager

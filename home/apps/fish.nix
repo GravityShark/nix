@@ -40,14 +40,15 @@
       shellAbbrs = {
         x = "xdg-open";
       };
+
+      home.sessionVariables = {
+        EDITOR = "nvim";
+        SYSTEMD_EDITOR = "nvim";
+        VISUAL = "nvim";
+      };
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
 
-        fish_add_path $HOME/.scripts
-        fish_add_path $HOME/.scripts/aliases
-        set --export EDITOR nvim
-        set --export SYSTEMD_EDITOR nvim
-        set --export VISUAL nvim
         set __fish_git_prompt_color_branch brmagenta
         set __fish_git_prompt_color_cleanstate brgreen
         set __fish_git_prompt_color_dirtystate blue
