@@ -107,13 +107,12 @@
     # "fish/config.fish".source = lib.mkForce ../../dump/.config/fish/config.fish;
     # "fish/functions".source = ../../dump/.config/fish/functions;
 
-    home.file.".mkshrc".text = ''
-      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-
+    # Start up script using a dash ENV instead of bash
+    home.file.".dashrc".text = ''
       case "$-" in 
           *i*)
               if SH=$(which fish); then
-                  SELL=$SH fish
+                  SHELL=$SH fish
                   status=$?
                   
                   if [ "$status" -eq 0 ]; then

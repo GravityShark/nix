@@ -37,12 +37,13 @@
     environment = lib.mkDefault {
       shells = with pkgs; [
         bash
-        mksh
+        dash
       ];
+      sessionVariables.ENV = "$HOME/.dashrc";
     };
 
     # Long live the better posix shell
-    users.defaultUserShell = lib.mkOverride 999 pkgs.mksh;
+    users.defaultUserShell = lib.mkOverride 999 pkgs.dash;
 
     networking.hostName = lib.mkDefault "nixos"; # Define your hostname.
 
