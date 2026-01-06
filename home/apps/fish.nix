@@ -41,11 +41,6 @@
         x = "xdg-open";
       };
 
-      home.sessionVariables = {
-        EDITOR = "nvim";
-        SYSTEMD_EDITOR = "nvim";
-        VISUAL = "nvim";
-      };
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
 
