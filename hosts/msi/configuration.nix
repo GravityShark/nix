@@ -17,7 +17,6 @@
     # openrazer.enable = true;
     systemd-boot.enable = true;
     vial.enable = true;
-    distrobox.enable = true;
   };
 
   # Services
