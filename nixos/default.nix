@@ -34,15 +34,18 @@
     time.timeZone = lib.mkDefault "Asia/Manila"; # Set your time zone.
 
     # environment shit
-    environment = lib.mkDefault {
-      shells = with pkgs; [
-        bash
-        dash
-      ];
-      sessionVariables.ENV = "$HOME/.dashrc";
+    environment = {
+      shells =
+        with pkgs;
+        lib.mkDefault [
+          bash
+          dash
+        ];
+      binsh = lib.mkForce pkgs.dash;
+      sessionVariables.ENV = lib.mkDefault "$HOME/.dashrc";
     };
 
-    # Long live the better posix shell
+    # W shell
     users.defaultUserShell = lib.mkOverride 999 pkgs.dash;
 
     networking.hostName = lib.mkDefault "nixos"; # Define your hostname.
