@@ -204,15 +204,7 @@
               };
 
               # Waywall with custom command for GPU selection - When using full paths you must rebiuld with --impure
-              waywall = {
-                enable = true;
-                # Simple path (auto-adds "wrap --")
-                binaryPath = "/path/to/waywall";
-                glfwPath = "/path/to/libglfw.so";
-
-                # OR full custom command as list (you control everything)
-                # command = ["env" "DRI_PRIME=renderD128" "/path/to/waywall" "wrap" "--"];
-              };
+              waywall.enable = true;
 
               # Microsoft account authentication (use nixcraft-auth to login)
               account = blazing;
