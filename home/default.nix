@@ -15,6 +15,7 @@
     builtins.elem (lib.getName pkg) [
       "lunarclient"
       # "obsidian"
+      "graalvm-oracle"
     ];
 
   # Paths doesnt work!!

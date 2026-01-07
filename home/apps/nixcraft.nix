@@ -159,7 +159,7 @@
               # Enable MangoHud overlay for FPS/performance monitoring
 
               java = {
-                package = pkgs.javaPackages.compiler.temurin-bin.jre-21;
+                package = pkgs.graalvmPackages.graalvm-oracle;
                 extraArguments = [
                   "-XX:+UnlockExperimentalVMOptions"
                   "-XX:+UnlockDiagnosticVMOptions"
