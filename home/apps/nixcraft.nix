@@ -180,7 +180,7 @@
                   "-XX:+UseCriticalJavaThreadPriority"
                   "-XX:ThreadPriorityPolicy=1"
                   "-XX:AllocatePrefetchStyle=3"
-                  "-X:+UseG1GC"
+                  "-XX:+UseG1GC"
                   "-XX:MaxGCPauseMillis=37"
                   "-XX:+PerfDisableSharedMem"
                   "-XX:G1HeapRegionSize=16M"
