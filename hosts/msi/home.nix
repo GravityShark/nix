@@ -80,11 +80,11 @@
     # zoom-us
 
     ## CLIs
-    # bc
-    # ffmpeg
+    bc
     # doas-sudo-shim
     # efibootmgr
     fastfetch
+    ffmpeg
     git
     wget
 
@@ -108,7 +108,7 @@
         key = "c";
       }
     ];
-    # vesktop.enable = true;
+    vesktop.enable = true;
     zathura.enable = true;
   };
 

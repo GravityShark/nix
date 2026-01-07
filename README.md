@@ -173,7 +173,10 @@ n ur done, jus complete this checklist then reboot
      5. just good ol bash scripts
 
 10. use [stylix](https://nix-community.github.io/stylix/)
-    - [ ] add it fr youtube-music and super productivity
+    - [ ] support other applications
+      - [ ] youtube-music
+      - [ ] super productivity
+      - [ ] caprine
 
 11. pls fix this, otherwise we gonna use superproductivity instead https://github.com/CCExtractor/taskwarrior-flutter/issues/382
     - superprod got mkdwn plugins
