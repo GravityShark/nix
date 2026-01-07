@@ -13,9 +13,9 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      "graalvm-oracle"
       "lunarclient"
       # "obsidian"
-      "graalvm-oracle"
     ];
 
   # Paths doesnt work!!
