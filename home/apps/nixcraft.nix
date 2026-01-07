@@ -194,7 +194,7 @@
                   "-XX:MaxTenuringThreshold=1"
                   "-XX:G1SATBBufferEnqueueingThresholdPercent=30"
                   "-XX:G1ConcMarkStepDurationMillis=5.0"
-                  "-XX:G1ConcRSHotCardLimit=16"
+                  # "-XX:G1ConcRSHotCardLimit=16"
                   "-XX:G1ConcRefinementServiceIntervalMillis=150"
                   "-XX:GCTimeRatio=99"
                   "-XX:+UseLargePages"
