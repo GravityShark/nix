@@ -165,6 +165,12 @@ n ur done, jus complete this checklist then reboot
 
 9. probably the next step down the slippery slope is removing systemd, with like guixsd or nixng or notos or six-os
    - nvm guix is so UN supported bruh
+   - alternatives to nixos reproducibility/repeatability
+     1. https://github.com/numtide/system-manager uses nix, works on any distro
+     2. https://gitlab.com/Oglo12/rebos does NOT use nix, works on any distro
+     3. distrobox on nixos.
+     4. ansible playbook
+     5. just good ol bash scripts
 
 10. use [stylix](https://nix-community.github.io/stylix/)
     - [ ] add it fr youtube-music and super productivity
