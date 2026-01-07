@@ -141,6 +141,42 @@
             optimization-blazing = optimization // {
               account = blazing;
             };
+
+            ranked = {
+              enable = true;
+
+              mrpack = {
+                enable = true;
+                file = pkgs.fetchurl {
+                  url = "https://redlime.github.io/MCSRMods/modpacks/v4/MCSRRanked-Linux-1.16.1-All.mrpack";
+                  hash = "sha256-/lYIASwBA62TKhLer3jYzZqUD7NUjqjY7GRQk1Hkd5Y=";
+                };
+              };
+
+              # Override LWJGL version (required for some speedrunning setups)
+              # lwjglVersion = "3.3.3";
+
+              # Enable MangoHud overlay for FPS/performance monitoring
+
+              java = {
+                package = pkgs.javaPackages.compiler.temurin-bin.jre-21;
+                maxMemory = 8000;
+              };
+
+              # Waywall with custom command for GPU selection - When using full paths you must rebiuld with --impure
+              waywall = {
+                enable = true;
+                # Simple path (auto-adds "wrap --")
+                binaryPath = "/path/to/waywall";
+                glfwPath = "/path/to/libglfw.so";
+
+                # OR full custom command as list (you control everything)
+                # command = ["env" "DRI_PRIME=renderD128" "/path/to/waywall" "wrap" "--"];
+              };
+
+              # Microsoft account authentication (use nixcraft-auth to login)
+              account = blazing;
+            };
           };
       };
     };
