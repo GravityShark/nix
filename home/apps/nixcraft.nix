@@ -16,6 +16,7 @@
 
   config = lib.mkIf config.apps.nixcraft.enable {
     home.packages = with pkgs; [
+      javaPackages.compiler.temurin-bin.jre-25
       # inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-cli
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-auth
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-skin
