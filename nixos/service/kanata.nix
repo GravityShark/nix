@@ -54,6 +54,7 @@
               base (layer-switch base)
               ruckus   (layer-switch ruckus)
               mc   (layer-switch mc)
+              rblx   (layer-switch rblx)
               nav  (layer-toggle nav)
               sym  (layer-toggle sym)
               num  (layer-toggle num)
@@ -105,10 +106,16 @@
 
             (deflayer mc
                   p s 4 5
-                   o    _    a    _    _    _    _    _    _    _   _ 
+                   o    _    _    _    _    _    _    _    _    _   _ 
               k    _   d    i    _    _    _    _    _    _    _   _
               _    x    f3    _    n    _    0    _    _    _   _   _
-              _    _    _    @base    _
+              _    _    _    @base    @rblx
+            )
+            (deflayer rblx
+                   _    _    a    _    _    _    _    _    _    _   _ 
+              _    e    _    _    _    _    _    _    _    _    _   _
+              _    _    _    _    _    _    _    _    _    _   _   _
+              _    _    _    @base    @base
             )
 
             (deflayer nav
