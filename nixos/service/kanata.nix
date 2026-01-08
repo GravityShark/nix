@@ -33,6 +33,9 @@
             # Replace the paths below with the appropriate device paths for your setup.
             # Use `ls /dev/input/by-path/` to find your keyboard devices.
             "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+            "/dev/input/event28"
+            "/dev/input/event26"
+            "/dev/input/event25"
           ];
           # https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
           extraDefCfg = ''
@@ -40,6 +43,7 @@
             concurrent-tap-hold yes'';
           config = ''
             (defsrc
+              4 5 6 7
                    q    w    e    r    t    y    u    i    o    p   [
               caps a    s    d    f    g    h    j    k    l    ;   '
               lsft z    x    c    v    b    n    m    ,    .    /   rsft
@@ -84,6 +88,7 @@
             )
 
             (deflayer base
+              _ _ _ _
               _    _    _    _    _    _    _    _    _    _   _ 
               @cm    _    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
@@ -91,6 +96,7 @@
             )
 
             (deflayer ruckus
+              _ _ _ _
                    lsft p    l    k    j    XX        '    g    o    u    rsft
               _    s    n    h    t    v    XX        y    c    a    i    e   
                    f    b    m    d    z    XX   XX   x    w    .    ,    q 
@@ -98,13 +104,15 @@
             )
 
             (deflayer mc
-                   _    _    a    _    _    _    _    _    _    _   _ 
-              _    e    _    _    _    _    _    _    _    _    _   _
-              _    _    _    _    _    _    _    _    _    _   _   _
+                  p s 4 5
+                   o    _    a    _    _    _    _    _    _    _   _ 
+              k    _   d    i    _    _    _    _    _    _    _   _
+              _    x    f3    _    n    _    0    _    _    _   _   _
               _    _    _    @base    _
             )
 
             (deflayer nav
+              _ _ _ _
               voldwn     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
               _ @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
               prtsc  brdown    brup    C-esc   del   XX  grv   bspc  del   menu  Insert _
@@ -112,6 +120,7 @@
             )
 
             (deflayer sym
+              _ _ _ _
               S-grv  S-2   S-3   S-4  S-5      S-7  [     S-[   S-]   ]     _
               _ S-6    S-'   S-.   ;    S-8      \    @osc  @oss  @osa  @osm  _
               +      S-\   S-,   /    ,    XX  .    S-9   =     -    S-0   _
@@ -119,6 +128,7 @@
             )
 
             (deflayer num
+              _ _ _ _
               XX  XX up  XX     XX XX    7    8    9    _    _
               _ @osm @osa @oss @osc @fun XX    4    5    6    0    _
               XX  XX  XX  down XX XX XX    1    2    3    _    _
@@ -126,6 +136,7 @@
             )
 
             (deflayer fun
+              _ _ _ _
               XX   XX   XX   XX   XX     _    F7    F8    F9    F12   _    
               _ @osm @osa @oss @osc XX     _    F4    F5    F6    F11   _  
               XX   XX   XX   XX   XX  XX _    F1    F2    F3    F10   _    

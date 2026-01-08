@@ -7,7 +7,7 @@
 
 {
   options = {
-    apps.syncthing.enable = lib.mkEnableOption "enables syncthing app. does NOT enable service. provides a script `toggle-syncthing` to toggle syncthing using systemd";
+    apps.syncthing.enable = lib.mkEnableOption "enables syncthing app. provides a script `toggle-syncthing` to toggle syncthing using systemd";
   };
 
   config = lib.mkIf config.apps.syncthing.enable {
@@ -24,7 +24,7 @@
       '')
     ];
     services.syncthing = {
-      enable = false;
+      enable = true;
       settings = {
         devices = {
           brick2ah = {
