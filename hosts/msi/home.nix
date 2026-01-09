@@ -89,11 +89,11 @@
     wget
 
     ## Gaming
-    # bubblewrap
-    # dwarfs
-    # fuse-overlayfs
-    # gamemode
-    # wineWowPackages.staging
+    bubblewrap
+    dwarfs
+    fuse-overlayfs
+    gamemode
+    wineWowPackages.staging
   ];
 
   programs = {

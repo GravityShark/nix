@@ -33,9 +33,8 @@
             # Replace the paths below with the appropriate device paths for your setup.
             # Use `ls /dev/input/by-path/` to find your keyboard devices.
             "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
-            "/dev/input/event28"
-            "/dev/input/event26"
-            "/dev/input/event25"
+            "/dev/input/by-id/usb-LIZHI_Flash_IC_USB_Keyboard-event-kbd"
+            "/dev/input/by-id/usb-LIZHI_Flash_IC_USB_Keyboard-if01-event-kbd"
           ];
           # https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
           extraDefCfg = ''
