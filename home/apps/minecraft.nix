@@ -5,6 +5,8 @@
   ...
 }:
 
+# Copied a bit from here
+# https://github.com/MarwinKreuzig/nixos-config/tree/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr
 {
   options = {
     apps.minecraft.enable = lib.mkEnableOption "enables minecraft";
@@ -36,6 +38,7 @@
           libxkbcommon
         ];
       }))
+      # https://github.com/MarwinKreuzig/nixos-config/blob/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr/packages/ninjabrainbot/default.nix
       (pkgs.callPackage (maven.buildMavenPackage rec {
         pname = "ninjabrainbot";
         version = "1.5.1";
