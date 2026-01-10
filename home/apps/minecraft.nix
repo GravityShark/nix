@@ -34,18 +34,18 @@
           libxkbcommon
         ];
       }))
-      (pkgs.callPackage (fetchurl {
-        url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/modcheck/default.nix";
-        hash = "sha256-oeDTGniAJ+s4nPHoy2wwMkpzCAXjQBTVNXTS7yhiHRc=";
-      }) { })
-      (pkgs.callPackage (fetchurl {
-        url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/ninjabrainbot/default.nix";
-        hash = "sha256-mpwdLu5aLaDjYV7Dto2Lbpub0Zx6cqhHWbH5MvEGq9k=";
-      }) { })
-      (pkgs.callPackage (fetchurl {
-        url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/lingle/default.nix";
-        hash = "sha256-FNkb4thr1TqbNXUFithSDqa64UFh4hIKE0mctNMoJ9k=";
-      }) { })
+      # (pkgs.callPackage (fetchurl {
+      #   url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/modcheck/default.nix";
+      #   hash = "sha256-oeDTGniAJ+s4nPHoy2wwMkpzCAXjQBTVNXTS7yhiHRc=";
+      # }) { })
+      # (pkgs.callPackage (fetchurl {
+      #   url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/ninjabrainbot/default.nix";
+      #   hash = "sha256-mpwdLu5aLaDjYV7Dto2Lbpub0Zx6cqhHWbH5MvEGq9k=";
+      # }) { })
+      # (pkgs.callPackage (fetchurl {
+      #   url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/lingle/default.nix";
+      #   hash = "sha256-FNkb4thr1TqbNXUFithSDqa64UFh4hIKE0mctNMoJ9k=";
+      # }) { })
       (pkgs.waywall.overrideAttrs (
         finalAttrs: previousAttrs: {
           version = "0-unstable-2026-01-10";
@@ -71,7 +71,7 @@
       ];
     };
     xdg.configFile."waywall/init.lua".source = ../../dump/.config/waywall/init.lua;
-    xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
-      ../../dump/.config/waywall/ninjabrainbot.xml;
+    # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
+    #   ../../dump/.config/waywall/ninjabrainbot.xml;
   };
 }
