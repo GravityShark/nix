@@ -36,14 +36,6 @@
           libxkbcommon
         ];
       }))
-      # (pkgs.callPackage (fetchurl {
-      #   url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/modcheck/default.nix";
-      #   hash = "sha256-oeDTGniAJ+s4nPHoy2wwMkpzCAXjQBTVNXTS7yhiHRc=";
-      # }) { })
-      # (pkgs.callPackage (fetchurl {
-      #   url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/lingle/default.nix";
-      #   hash = "sha256-FNkb4thr1TqbNXUFithSDqa64UFh4hIKE0mctNMoJ9k=";
-      # }) { })
       (pkgs.callPackage (maven.buildMavenPackage rec {
         pname = "ninjabrainbot";
         version = "1.5.1";
@@ -53,7 +45,7 @@
           rev = version;
           hash = "sha256-r8TpL3VLf2QHwFS+DdjxgxyuZu167fP6/lN7a8e9opM=";
         };
-        mvnHash = "sha256-y8OWAgn+/wKDumex+EIjyw2Cd5JS3Uc2uC4oh1pd1xY=";
+        mvnHash = "sha256-zAVPH5a7ut21Ipz5BUY6cnRLT52bM8Yo2r8ClFon1p0";
 
         desktopItems = [
           (pkgs.makeDesktopItem {
