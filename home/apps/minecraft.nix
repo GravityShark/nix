@@ -44,7 +44,7 @@
       }) { })
       (pkgs.callPackage (fetchurl {
         url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/lingle/default.nix";
-        hash = "";
+        hash = "sha256-FNkb4thr1TqbNXUFithSDqa64UFh4hIKE0mctNMoJ9k=";
       }) { })
       (pkgs.waywall.overrideAttrs (
         finalAttrs: previousAttrs: {
