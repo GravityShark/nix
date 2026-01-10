@@ -36,6 +36,15 @@
   # Helpful scripts for updating and maintaining the system
   update-scripts.enable = true;
 
+  # Drag clicking
+  environment.etc = {
+    "libinput/local-overrides.quirks".text = ''
+      [Never Debounce]
+      MatchUdevType=mouse
+      ModelBouncingKeys=1
+    '';
+  };
+
   # `man configuration.nix` or https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
 }
