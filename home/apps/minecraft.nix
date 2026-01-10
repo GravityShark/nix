@@ -34,13 +34,18 @@
           libxkbcommon
         ];
       }))
-      (pkgs.callPackage ./packages/modcheck/default.nix { })
+      (pkgs.callPackage fetchurl {
+        url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/modcheck/default.nix";
+        hash = "";
+      } { })
       (pkgs.callPackage fetchurl {
         url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/ninjabrainbot/default.nix";
         hash = "";
       } { })
-      (pkgs.callPackage ./packages/paceman/default.nix { })
-      (pkgs.callPackage ./packages/lingle/default.nix { })
+      (pkgs.callPackage fetchurl {
+        url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/lingle/default.nix";
+        hash = "";
+      } { })
       (pkgs.waywall.overrideAttrs (
         finalAttrs: previousAttrs: {
           version = "0-unstable-2026-01-02";
