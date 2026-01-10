@@ -80,8 +80,8 @@
           };
 
           java = {
-            package = pkgs.graalvmPackages.graalvm-oracle;
-            extraArguments = [
+            package = lib.mkDefault pkgs.graalvmPackages.graalvm-oracle;
+            extraArguments = lib.mkDefault [
               "-XX:+UnlockExperimentalVMOptions"
               "-XX:+UnlockDiagnosticVMOptions"
               "-XX:+AlwaysPreTouch"
