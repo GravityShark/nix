@@ -17,7 +17,7 @@
     };
     home.packages = with pkgs; [
       jemalloc
-      lunarclient
+      lunar-client
       # javaPackages.compiler.temurin-bin.jre-21
 
       (prismlauncher.override (previous: {
