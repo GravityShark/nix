@@ -53,7 +53,7 @@
             owner = "tesselslate";
             repo = "waywall";
             rev = "4fef570253fbd9e1b1eb2fc77f1487cd34c4b67f";
-            hash = "";
+            hash = "sha256-ZaGJePzeJSpCCMCsbi025RnF4n7R5J0LpHIsY0YgfAU=";
           };
         }
       ))
