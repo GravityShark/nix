@@ -35,7 +35,10 @@
         ];
       }))
       (pkgs.callPackage ./packages/modcheck/default.nix { })
-      (pkgs.callPackage ./packages/ninjabrainbot/default.nix { })
+      (pkgs.callPackage fetchurl {
+        url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/ninjabrainbot/default.nix";
+        hash = "";
+      } { })
       (pkgs.callPackage ./packages/paceman/default.nix { })
       (pkgs.callPackage ./packages/lingle/default.nix { })
       (pkgs.waywall.overrideAttrs (
