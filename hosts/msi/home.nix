@@ -10,8 +10,8 @@
     fonts.enable = true;
     fzf.enable = true;
     ghostty.enable = true;
+    minecraft.enable = true;
     neovim.enable = true;
-    minecraft.enable = false;
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;
@@ -39,7 +39,6 @@
   };
 
   home.packages = with pkgs; [
-    prismlauncher
     caprine
     # (caprine.overrideAttrs (old: rec {
     #   pname = "caprine-ng";

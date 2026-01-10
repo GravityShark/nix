@@ -29,14 +29,14 @@
           # jdk8
         ];
         # runtime dependencies necessary for mcsr fairplay mod
-        additionalLibs = [
-          openssl
-          xorg.libXtst
-          xorg.libXt
-          xorg.libxcb
-          xorg.libXinerama
-          libxkbcommon
-        ];
+        # additionalLibs = [
+        #   openssl
+        #   xorg.libXtst
+        #   xorg.libXt
+        #   xorg.libxcb
+        #   xorg.libXinerama
+        #   libxkbcommon
+        # ];
       }))
 
       # https://github.com/MarwinKreuzig/nixos-config/blob/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr/packages/ninjabrainbot/default.nix
@@ -109,6 +109,7 @@
         }
       ))
     ];
+
     programs.obs-studio = {
       enable = true;
       package = (
