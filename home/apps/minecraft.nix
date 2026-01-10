@@ -18,7 +18,7 @@
       (pkgs.prismlauncher.override (previous: {
         jdks = [
           javaPackages.compiler.temurin-bin.jre-25
-          graalvmPackages.graalvm-oracle_21
+          graalvmPackages.graalvm-oracle
           # graal-pkgs.graalvm-ce
           # jdk21
           # jdk17
