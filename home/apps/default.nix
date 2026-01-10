@@ -9,7 +9,8 @@
     ./fzf.nix
     ./ghostty.nix
     ./neovim.nix
-    ./nixcraft.nix
+    # ./nixcraft.nix
+    ./minecraft.nix
     ./syncthing.nix
     ./tmux.nix
     ./zen-browser.nix

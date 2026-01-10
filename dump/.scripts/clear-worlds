@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+instances=("ranked")
+# DO NOT add a '/' at the end of launcher_prefix's value
+launcher_prefix=~/.local/share/nixcraft/client/instances
+for inst in ${instances[@]}; do
+    rm -r $launcher_prefix/$inst/minecraft/saves/Random*
+    rm -r $launcher_prefix/$inst/minecraft/saves/New*
+done

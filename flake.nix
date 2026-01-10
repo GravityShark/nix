@@ -8,12 +8,12 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixcraft = {
-      url = "github:GravityShark/nixcraft";
-      # url = "github:loystonpais/nixcraft";
-      # url = "github:flammablebunny/nixcraft";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixcraft = {
+    #   url = "github:GravityShark/nixcraft";
+    #   # url = "github:loystonpais/nixcraft";
+    #   # url = "github:flammablebunny/nixcraft";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v3.8.2";
       inputs.nixpkgs.follows = "nixpkgs";

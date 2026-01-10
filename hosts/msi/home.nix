@@ -11,7 +11,7 @@
     fzf.enable = true;
     ghostty.enable = true;
     neovim.enable = true;
-    nixcraft.enable = true;
+    minecraft.enable = true;
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;
