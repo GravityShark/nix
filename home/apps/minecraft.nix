@@ -53,7 +53,7 @@
           })
         ];
       }))
-      (pkgs.waywall.overrideAttrs (
+      (waywall.overrideAttrs (
         finalAttrs: previousAttrs: {
           version = "0-unstable-2026-01-02";
           src = pkgs.fetchFromGitHub {
@@ -62,6 +62,7 @@
             rev = "2e911de06a66d0b642e8d21c7a32bb8b3d957955";
             hash = "sha256-9gXKyhiX5cdgGPTVGNY+mKUukcg78kDY0uh01pvSIWE=";
           };
+          nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [ gcc15 ];
         }
       ))
       # (pkgs.waywall.overrideAttrs (
