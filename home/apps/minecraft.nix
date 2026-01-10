@@ -11,18 +11,17 @@
   };
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
-      xwayland
+      jemalloc
+      javaPackages.compiler.temurin-bin.jre-21
 
-      kdePackages.kdenlive
-
-      (pkgs.prismlauncher.override (previous: {
+      (prismlauncher.override (previous: {
         jdks = [
           javaPackages.compiler.temurin-bin.jre-25
           graalvmPackages.graalvm-oracle
-          # graal-pkgs.graalvm-ce
-          # jdk21
-          # jdk17
-          # jdk8
+          graalvmPackages.graalvm-ce
+          jdk21
+          jdk17
+          jdk8
         ];
         # runtime dependencies necessary for mcsr fairplay mod
         additionalLibs = [
@@ -46,6 +45,14 @@
       #   url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/lingle/default.nix";
       #   hash = "sha256-FNkb4thr1TqbNXUFithSDqa64UFh4hIKE0mctNMoJ9k=";
       # }) { })
+      (glfw3.overrideAttrs (o: {
+        patches = o.patches ++ [
+          (fetchpatch {
+            url = "https://raw.githubusercontent.com/tesselslate/waywall/refs/heads/main/contrib/glfw.patch";
+            hash = "sha256-8Sho5Yoj/FpV7utWz3aCXNvJKwwJ3ZA3qf1m2WNxm5M=";
+          })
+        ];
+      }))
       (pkgs.waywall.overrideAttrs (
         finalAttrs: previousAttrs: {
           version = "0-unstable-2026-01-10";
@@ -55,6 +62,7 @@
             rev = "4fef570253fbd9e1b1eb2fc77f1487cd34c4b67f";
             hash = "sha256-ZaGJePzeJSpCCMCsbi025RnF4n7R5J0LpHIsY0YgfAU=";
           };
+          nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [ gcc15 ];
         }
       ))
     ];
@@ -70,8 +78,8 @@
         input-overlay
       ];
     };
-    xdg.configFile."waywall/init.lua".source = ../../dump/.config/waywall/init.lua;
+    # xdg.configFile."waywall/init.lua".source = ../../dump/.config/waywall/init.lua;
     # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
-    #   ../../dump/.config/waywall/ninjabrainbot.xml;
+    #   ../../dump/.config/java/.java/.userPrefs/ninjabrainbot/prefs.xml;
   };
 }

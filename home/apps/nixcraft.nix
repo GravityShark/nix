@@ -16,12 +16,13 @@
 
   config = lib.mkIf config.apps.nixcraft.enable {
     home.packages = with pkgs; [
-      javaPackages.compiler.temurin-bin.jre-25
+      javaPackages.compiler.temurin-bin.jre-21
       # inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-cli
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-auth
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-skin
       prismlauncher
       lunar-client
+      jemalloc
     ];
     nixcraft = {
       /*
@@ -121,7 +122,7 @@
               "-XX:+UseLargePages"
               "-XX:LargePageSizeInBytes=2m"
             ];
-            maxMemory = 8000;
+            maxMemory = 10000;
           };
         };
 
@@ -187,7 +188,7 @@
 
             ranked = {
               enable = true;
-
+              lwjglVersion = "3.3.3";
               mrpack = {
                 enable = true;
                 file = pkgs.fetchurl {
@@ -195,7 +196,6 @@
                   hash = "sha256-/lYIASwBA62TKhLer3jYzZqUD7NUjqjY7GRQk1Hkd5Y=";
                 };
               };
-
               account = blazing;
             };
           };
