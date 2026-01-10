@@ -20,6 +20,7 @@
       # inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-cli
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-auth
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-skin
+      prismlauncher
       lunar-client
     ];
     nixcraft = {
@@ -56,6 +57,8 @@
             offline = true;
           };
 
+          waywall.enable = true;
+
           # Create a binary
           binEntry.enable = true;
 
@@ -75,6 +78,51 @@
             # Fixes bug with nvidia (applied by default)
             __GL_THREADED_OPTIMIZATIONS = "0";
           };
+
+          java = {
+            package = pkgs.graalvmPackages.graalvm-oracle;
+            extraArguments = [
+              "-XX:+UnlockExperimentalVMOptions"
+              "-XX:+UnlockDiagnosticVMOptions"
+              "-XX:+AlwaysPreTouch"
+              "-XX:+DisableExplicitGC"
+              "-XX:+UseNUMA"
+              "-XX:NmethodSweepActivity=1"
+              "-XX:ReservedCodeCacheSize=400M"
+              "-XX:NonNMethodCodeHeapSize=12M"
+              "-XX:ProfiledCodeHeapSize=194M"
+              "-XX:NonProfiledCodeHeapSize=194M"
+              "-XX:-DontCompileHugeMethods"
+              "-XX:MaxNodeLimit=240000"
+              "-XX:NodeLimitFudgeFactor=8000"
+              "-XX:+UseVectorCmov"
+              "-XX:+PerfDisableSharedMem"
+              "-XX:+UseFastUnorderedTimeStamps"
+              "-XX:+UseCriticalJavaThreadPriority"
+              "-XX:ThreadPriorityPolicy=1"
+              "-XX:AllocatePrefetchStyle=3"
+              "-XX:+UseG1GC"
+              "-XX:MaxGCPauseMillis=37"
+              "-XX:+PerfDisableSharedMem"
+              "-XX:G1HeapRegionSize=16M"
+              "-XX:G1NewSizePercent=23"
+              "-XX:G1ReservePercent=20"
+              "-XX:SurvivorRatio=32"
+              "-XX:G1MixedGCCountTarget=3"
+              "-XX:G1HeapWastePercent=20"
+              "-XX:InitiatingHeapOccupancyPercent=10"
+              "-XX:G1RSetUpdatingPauseTimePercent=0"
+              "-XX:MaxTenuringThreshold=1"
+              "-XX:G1SATBBufferEnqueueingThresholdPercent=30"
+              "-XX:G1ConcMarkStepDurationMillis=5.0"
+              # "-XX:G1ConcRSHotCardLimit=16"
+              # "-XX:G1ConcRefinementServiceIntervalMillis=150"
+              "-XX:GCTimeRatio=99"
+              "-XX:+UseLargePages"
+              "-XX:LargePageSizeInBytes=2m"
+            ];
+            maxMemory = 8000;
+          };
         };
 
         instances =
@@ -90,17 +138,12 @@
 
               mrpack = {
                 enable = true;
-                # file = pkgs.fetchurl {
-                #   url = "https://cdn.modrinth.com/data/ddF4bxsz/versions/n6OCFedV/Optimization%20NeoSodium-1.21.11-2.7.mrpack";
-                #   hash = "sha256-Zlo55Ng0vI9bIcw0UnyNOwqhILOaRBQ2Z6Wql/yw1T8=";
-                # };
                 file = pkgs.fetchurl {
                   url = "https://cdn.modrinth.com/data/ddF4bxsz/versions/5AV2H86U/Optimization%20Sodium-1.21.11-4.8.mrpack";
                   hash = "sha256-V1Do0ZVtcmzaEYZncwuLFjytXmrhMHx6SZYTbCUhZLo=";
                 };
 
               };
-              waywall.enable = true;
 
               files = {
                 "options.txt".method = "copy-init";
@@ -132,7 +175,6 @@
                   "-XX:+UseCompactObjectHeaders"
                 ];
                 package = pkgs.javaPackages.compiler.temurin-bin.jre-25;
-                maxMemory = 8000;
               };
             };
           in
@@ -150,64 +192,10 @@
                 enable = true;
                 file = pkgs.fetchurl {
                   url = "https://redlime.github.io/MCSRMods/modpacks/v4/MCSRRanked-Linux-1.16.1-All.mrpack";
-                  hash = "sha256-/lYIASwBA62TKhLer3jYzZqUD7NUjqjY7GRQk1Hkd5Y=";
+                  hash = "sha256-/lyiaswba62tkhler3jyzzqud7nujqjy7grqk1hkd5y=";
                 };
               };
 
-              # Override LWJGL version (required for some speedrunning setups)
-              # lwjglVersion = "3.3.3";
-
-              # Enable MangoHud overlay for FPS/performance monitoring
-
-              java = {
-                package = pkgs.graalvmPackages.graalvm-oracle;
-                extraArguments = [
-                  "-XX:+UnlockExperimentalVMOptions"
-                  "-XX:+UnlockDiagnosticVMOptions"
-                  "-XX:+AlwaysPreTouch"
-                  "-XX:+DisableExplicitGC"
-                  "-XX:+UseNUMA"
-                  "-XX:NmethodSweepActivity=1"
-                  "-XX:ReservedCodeCacheSize=400M"
-                  "-XX:NonNMethodCodeHeapSize=12M"
-                  "-XX:ProfiledCodeHeapSize=194M"
-                  "-XX:NonProfiledCodeHeapSize=194M"
-                  "-XX:-DontCompileHugeMethods"
-                  "-XX:MaxNodeLimit=240000"
-                  "-XX:NodeLimitFudgeFactor=8000"
-                  "-XX:+UseVectorCmov"
-                  "-XX:+PerfDisableSharedMem"
-                  "-XX:+UseFastUnorderedTimeStamps"
-                  "-XX:+UseCriticalJavaThreadPriority"
-                  "-XX:ThreadPriorityPolicy=1"
-                  "-XX:AllocatePrefetchStyle=3"
-                  "-XX:+UseG1GC"
-                  "-XX:MaxGCPauseMillis=37"
-                  "-XX:+PerfDisableSharedMem"
-                  "-XX:G1HeapRegionSize=16M"
-                  "-XX:G1NewSizePercent=23"
-                  "-XX:G1ReservePercent=20"
-                  "-XX:SurvivorRatio=32"
-                  "-XX:G1MixedGCCountTarget=3"
-                  "-XX:G1HeapWastePercent=20"
-                  "-XX:InitiatingHeapOccupancyPercent=10"
-                  "-XX:G1RSetUpdatingPauseTimePercent=0"
-                  "-XX:MaxTenuringThreshold=1"
-                  "-XX:G1SATBBufferEnqueueingThresholdPercent=30"
-                  "-XX:G1ConcMarkStepDurationMillis=5.0"
-                  # "-XX:G1ConcRSHotCardLimit=16"
-                  # "-XX:G1ConcRefinementServiceIntervalMillis=150"
-                  "-XX:GCTimeRatio=99"
-                  "-XX:+UseLargePages"
-                  "-XX:LargePageSizeInBytes=2m"
-                ];
-                maxMemory = 8000;
-              };
-
-              # Waywall with custom command for GPU selection - When using full paths you must rebiuld with --impure
-              waywall.enable = true;
-
-              # Microsoft account authentication (use nixcraft-auth to login)
               account = blazing;
             };
           };
