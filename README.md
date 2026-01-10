@@ -100,9 +100,7 @@ n ur done, jus complete this checklist then reboot
 ## maintaining the system
 
 1. for updating use `updatescript`
-   - For doom emacs just do a `doom env`, and if you want an actual update do `doom upgrade` (which already also does doom env) but you barely want to do this if it wokrs it wokrs type ish
 2. for cleaning up use `ngc` (abbrevation of nix garbage collect)
-   - and also clean up doom emacs too `doom gc`
 3. if you want te explore go into flake.nix and just use `gf` on any file you can see
 
 ## future ventures
@@ -148,6 +146,7 @@ n ur done, jus complete this checklist then reboot
 
 5. remove emacs for obsidian/obsi
    - obsidian sucks for task management, might try super productivity for this
+   - i think its working
 
 6. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or wait for sesh to update
 

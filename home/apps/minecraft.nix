@@ -40,7 +40,7 @@
       }) { })
       (pkgs.callPackage (fetchurl {
         url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/ninjabrainbot/default.nix";
-        hash = "";
+        hash = "sha256-mpwdLu5aLaDjYV7Dto2Lbpub0Zx6cqhHWbH5MvEGq9k=";
       }) { })
       (pkgs.callPackage (fetchurl {
         url = "https://raw.githubusercontent.com/MarwinKreuzig/nixos-config/refs/heads/main/modules/gaming/mcsr/packages/lingle/default.nix";
