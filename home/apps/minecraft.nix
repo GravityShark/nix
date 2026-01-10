@@ -27,8 +27,8 @@
           jdk8
         ];
         additionalLibs = [
+          # jemalloc
           # runtime dependencies necessary for mcsr fairplay mod
-          jemalloc
           openssl
           xorg.libXtst
           xorg.libXt
