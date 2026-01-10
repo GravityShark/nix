@@ -48,12 +48,12 @@
       }) { })
       (pkgs.waywall.overrideAttrs (
         finalAttrs: previousAttrs: {
-          version = "0-unstable-2026-01-02";
+          version = "0-unstable-2026-01-10";
           src = pkgs.fetchFromGitHub {
             owner = "tesselslate";
             repo = "waywall";
-            rev = "2e911de06a66d0b642e8d21c7a32bb8b3d957955";
-            hash = "sha256-9gXKyhiX5cdgGPTVGNY+mKUukcg78kDY0uh01pvSIWE=";
+            rev = "4fef570253fbd9e1b1eb2fc77f1487cd34c4b67f";
+            hash = "";
           };
         }
       ))
