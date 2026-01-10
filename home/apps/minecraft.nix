@@ -13,6 +13,7 @@
   };
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
+      jemalloc
       lunar-client
       jdk21
 
@@ -27,8 +28,8 @@
           jdk8
         ];
         additionalLibs = [
-          jemalloc
           # runtime dependencies necessary for mcsr fairplay mod
+          jemalloc
           openssl
           xorg.libXtst
           xorg.libXt
