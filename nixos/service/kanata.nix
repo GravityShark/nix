@@ -132,7 +132,7 @@
               _ _ _ _ _
               S-grv  S-2   S-3   S-4  S-5      S-7  [     S-[   S-]   ]     _
               _ S-6    S-'   -  ;    S-8      \    @osc  @oss  @osa  @osm  _
-              +      S-\   =   /    ,    XX  .    S-9   =     -    S-0   _
+              +      S-\   =   /    ,    XX  .    S-9   S-,     S-.    S-0   _
               @num   S-;   _     XX XX
             )
 
