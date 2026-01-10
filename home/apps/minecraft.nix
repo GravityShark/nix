@@ -18,14 +18,13 @@
     home.packages = with pkgs; [
       jemalloc
       lunar-client
-      # javaPackages.compiler.temurin-bin.jre-21
 
       (prismlauncher.override (previous: {
         jdks = [
           javaPackages.compiler.temurin-bin.jre-25
           graalvmPackages.graalvm-oracle
           # graalvmPackages.graalvm-ce
-          # jdk21
+          jdk21
           # jdk17
           # jdk8
         ];
