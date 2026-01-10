@@ -192,7 +192,7 @@
                 enable = true;
                 file = pkgs.fetchurl {
                   url = "https://redlime.github.io/MCSRMods/modpacks/v4/MCSRRanked-Linux-1.16.1-All.mrpack";
-                  hash = "sha256-/lyiaswba62tkhler3jyzzqud7nujqjy7grqk1hkd5y=";
+                  hash = "sha256-/lYIASwBA62TKhLer3jYzZqUD7NUjqjY7GRQk1Hkd5Y=";
                 };
               };
 
