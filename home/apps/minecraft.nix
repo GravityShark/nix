@@ -32,7 +32,6 @@
           jre8
         ];
         additionalLibs = [
-          jemalloc
           # runtime dependencies necessary for mcsr fairplay mod
           openssl
           xorg.libXtst
@@ -42,6 +41,7 @@
           libxkbcommon
         ];
         additionalPrograms = [
+          jemalloc
           (pkgs.waywall.overrideAttrs (
             finalAttrs: previousAttrs: {
               version = "0-unstable-2026-01-10";
