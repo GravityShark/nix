@@ -25,7 +25,7 @@ my pumpndump but now im moving it to home manager cause why not
 
 ### minecraft
 
-mainly follow this guide - mainly follow this guide (yuh) -
+mainly follow this guide - https://its-saanvi.github.io/linux-mcsr/minecraft/mmc.html#further-optimizations
 
 #### multiplayer
 
