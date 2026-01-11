@@ -108,21 +108,17 @@
     # "fish/functions".source = ../../dump/.config/fish/functions;
 
     # Start up script using a dash ENV instead of bash
-    home.file.".dashrc".text = ''
-      case "$-" in 
-          *i*)
-              if SH=$(which fish); then
-                  SHELL=$SH fish
-                  status=$?
-                  
-                  if [ "$status" -eq 0 ]; then
-                      exit 0
-                  else
-                      echo "Program exited abnormally (status $status)."
-                  fi
-              fi
-          ;;
-      esac
+    home.file.".shinit".text = ''
+      if [ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" ]; then
+        SHELL=${pkgs.fish}/bin/fish ${pkgs.fish}/bin/fish
+        status=$?
+
+        if [ "$status" -eq 0 ]; then
+            exit 0
+        else
+            echo "Program exited abnormally (status $status)."
+        fi
+      fi
     '';
   };
 

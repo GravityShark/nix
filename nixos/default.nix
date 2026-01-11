@@ -40,7 +40,7 @@
         dash
       ];
       binsh = lib.mkForce "${pkgs.dash}/bin/dash";
-      sessionVariables.ENV = lib.mkDefault "$HOME/.dashrc";
+      sessionVariables.ENV = lib.mkDefault "$HOME/.shinit";
     };
 
     # W shell

@@ -17,10 +17,14 @@
           renice = 10;
         };
 
-        custom = {
-          start = "${pkgs.notify-desktop}/bin/notify-desktop 'GameMode started'";
-          end = "${pkgs.notify-desktop}/bin/notify-desktop 'GameMode ended'";
-        };
+        custom =
+          let
+            tuned-adm = "${pkgs.tuned}/bin/tuned-adm";
+          in
+          lib.mkIf config.service.power-management.enable {
+            start = "cp /etc/tuned/active_profile /tmp/active_profile && ${tuned-adm} profile throughput-performance";
+            end = "${tuned-adm} profile $(cat /tmp/active_profile)";
+          };
       };
     };
   };
