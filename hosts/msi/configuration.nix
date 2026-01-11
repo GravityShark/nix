@@ -34,7 +34,9 @@
   # Helpful scripts for updating and maintaining the system
   update-scripts.enable = true;
 
+  system.stateVersion = "25.11";
   ################################## Extra ###################################
+
   # Currently only Roblox works with flatpak
   # services.flatpak.enable = true;
 
@@ -45,5 +47,4 @@
     ModelBouncingKeys=1
   '';
 
-  system.stateVersion = "25.11";
 }
