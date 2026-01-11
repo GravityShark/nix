@@ -24,7 +24,7 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    distrobox.enable = true;
+    gamemode.enable = true;
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;

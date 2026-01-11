@@ -10,7 +10,7 @@
     fonts.enable = true;
     fzf.enable = true;
     ghostty.enable = true;
-    minecraft.enable = false;
+    minecraft.enable = true;
     neovim.enable = true;
     syncthing.enable = true;
     tmux.enable = true;
@@ -39,25 +39,7 @@
   };
 
   home.packages = with pkgs; [
-    prismlauncher
-    caprine
-    # (caprine.overrideAttrs (old: rec {
-    #   pname = "caprine-ng";
-    #   version = "2.60.3";
-    #   src = fetchFromGitHub {
-    #     owner = "Alex313031";
-    #     repo = "caprine-ng";
-    #     rev = "v${version}";
-    #     hash = "sha256-DCjjNdSxpFp4vRXSPdSN0aiHG4SISEZ6IuBeHqz+b2g=";
-    #   };
-    #   # How to set npm hash https://discourse.nixos.org/t/npmdepshash-override-what-am-i-missing-please/50967/3
-    #   npmDepsHash = "sha256-OX+hqXSa+HAbAdOEtoOw56ogfVqGm1aWQajmO0+3snI=";
-    #   npmDeps = fetchNpmDeps {
-    #     inherit src;
-    #     name = "${pname}-${version}-npm-deps";
-    #     hash = npmDepsHash;
-    #   };
-    # }))
+    (callPackage ../../home/apps/packages/caprine-ng-bin.nix { })
     easyeffects
     # obsidian
     # qbittorrent
