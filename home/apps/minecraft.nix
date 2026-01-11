@@ -22,18 +22,10 @@
 
       (prismlauncher.override (previous: {
         jdks = [
-          (graalvmPackages.buildGraalvm {
-            inherit useMusl version;
-            src = fetchurl (import ./hashes.nix).${version}.${stdenv.system};
-            meta.platforms = builtins.attrNames (import ./hashes.nix).${version};
-            meta.license = lib.licenses.unfree;
-            pname = "graalvm-oracle";
-          })
-
-          javaPackages.compiler.temurin-bin.jre-25
-          javaPackages.compiler.temurin-bin.jre-21
+          # javaPackages.compiler.temurin-bin.jre-25
+          # javaPackages.compiler.temurin-bin.jre-21
           graalvmPackages.graalvm-oracle
-          graalvmPackages.graalvm-oracle_17
+          # graalvmPackages.graalvm-oracle_17
           # graalvmPackages.graalvm-ce
           # jdk21
           # jdk17
