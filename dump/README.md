@@ -46,6 +46,6 @@ try to use the best and then slowly go down the list
 ## links
 
 - https://github.com/brucethemoose/Minecraft-Performance-Flags-Benchmarks
-- https://github.com/Radk6/MC-Optimization-Guid
 - https://github.com/DataDalton/Minecraft-Performance-Guide/blob/main/Java%20Arguments/README.md
+- https://github.com/Radk6/MC-Optimization-Guide
 - https://noflags.sh/

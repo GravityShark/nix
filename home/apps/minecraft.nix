@@ -22,13 +22,13 @@
 
       (prismlauncher.override (previous: {
         jdks = [
-          # javaPackages.compiler.temurin-bin.jre-25
-          # javaPackages.compiler.temurin-bin.jre-21
           graalvmPackages.graalvm-oracle
-          # graalvmPackages.graalvm-oracle_17
-          # graalvmPackages.graalvm-ce
-          # jdk21
+          graalvmPackages.graalvm-oracle_17
+          javaPackages.compiler.temurin-bin.jre-17
+          javaPackages.compiler.temurin-bin.jre-21
+          javaPackages.compiler.temurin-bin.jre-25
           # jdk17
+          # jdk21
           jre8
         ];
         additionalLibs = [
