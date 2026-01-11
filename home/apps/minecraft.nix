@@ -16,19 +16,28 @@
   };
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
-      # lunar-client
-      jdk21
+      lunar-client
+      jre_minimal
       (callPackage ./packages/ninjabrainbot.nix { })
 
       (prismlauncher.override (previous: {
         jdks = [
-          javaPackages.compiler.temurin-bin.jre-17
-          # javaPackages.compiler.temurin-bin.jre-25
+          (graalvmPackages.buildGraalvm {
+            inherit useMusl version;
+            src = fetchurl (import ./hashes.nix).${version}.${stdenv.system};
+            meta.platforms = builtins.attrNames (import ./hashes.nix).${version};
+            meta.license = lib.licenses.unfree;
+            pname = "graalvm-oracle";
+          })
+
+          javaPackages.compiler.temurin-bin.jre-25
+          javaPackages.compiler.temurin-bin.jre-21
           graalvmPackages.graalvm-oracle
+          graalvmPackages.graalvm-oracle_17
           # graalvmPackages.graalvm-ce
           # jdk21
           # jdk17
-          # jdk8
+          jre8
         ];
         additionalLibs = [
           jemalloc

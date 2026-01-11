@@ -33,25 +33,23 @@
     swayidle.enable = true;
   };
 
-  ####### Extra shit
-  xdg.configFile = {
-    "fastfetch".source = ../../dump/.config/fastfetch;
-  };
+  ################################## Extra ###################################
 
   home.packages = with pkgs; [
+    ## Apps
     (callPackage ../../home/apps/packages/caprine-ng-bin.nix { })
     easyeffects
     # obsidian
     # qbittorrent
     # selectdefaultapplication
     super-productivity
-    vial
+    # vial
     vlc # Videos + Music
     youtube-music
 
     ## Media
     # audacity
-    # gnome-sound-recorder
+    gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
@@ -63,13 +61,10 @@
     # zoom-us
 
     ## CLIs
+    aria2
     bc
-    # doas-sudo-shim
-    # efibootmgr
-    fastfetch
     ffmpeg
     git
-    wget
 
     ## Gaming
     bubblewrap
@@ -80,26 +75,29 @@
   ];
 
   programs = {
-    anki.enable = true;
-    anki.answerKeys = [
-      {
-        ease = 1;
-        key = "x";
-      }
-      {
-        ease = 3;
-        key = "c";
-      }
-    ];
+    # Anki
+    anki = {
+      enable = true;
+      answerKeys = [
+        {
+          ease = 1;
+          key = "x";
+        }
+        {
+          ease = 3;
+          key = "c";
+        }
+      ];
+    };
     vesktop.enable = true;
     zathura.enable = true;
   };
 
   home.file.".scripts".source = ../../dump/.scripts;
-
   home.sessionPath = [
     "${config.home.homeDirectory}/.scripts"
     "${config.home.homeDirectory}/.scripts/aliases"
+    "${config.home.homeDirectory}/.local/bin"
   ];
 
   # You should not change this value, even if you update Home Manager. If you do

@@ -27,10 +27,25 @@ my pumpndump but now im moving it to home manager cause why not
 
 mainly follow this guide - mainly follow this guide (yuh) -
 
-#### modpacks and multi
+#### multiplayer
 
-    - if you have problem of unable to join in 1.16.4-1.16.5 use [this](https://github.com/MCTeamPotato/MultiOfflineFix/releases)
+- if you have problem of unable to join in 1.16.4-1.16.5 use [this](https://github.com/MCTeamPotato/MultiOfflineFix/releases)
+- if you want to make servers use [e4mc](https://modrinth.com/mod/e4mc) or [e4mcbiat](https://github.com/DuncanRuns/e4mcbiat/)
+  - if you need udp like bedrock edition, use [playit.gg](https://playit.gg/)
+
+#### choosing a java version
+
+there are 3 factors i want to test (sorted for best for CLIENT to least)
+
+1. java version (25,21,17,8)
+2. jre provider (azul prime (uses it's own gc), graalvm ee, adoptium)
+3. garbage collector (shenandoah, zgc + zgenerational, zgc, g1gc)
+
+try to use the best and then slowly go down the list
 
 ## links
 
 - https://github.com/brucethemoose/Minecraft-Performance-Flags-Benchmarks
+- https://github.com/Radk6/MC-Optimization-Guid
+- https://github.com/DataDalton/Minecraft-Performance-Guide/blob/main/Java%20Arguments/README.md
+- https://noflags.sh/

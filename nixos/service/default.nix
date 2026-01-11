@@ -4,6 +4,7 @@
 {
   imports = [
     ./bluetooth.nix
+    ./cloudflare-warp.nix
     ./disks.nix
     ./distrobox.nix
     ./gamemode.nix
@@ -15,7 +16,7 @@
     ./printing.nix
     ./wayland-pipewire-idle-inhibit.nix
     ./ydotool.nix
-    ./zerotierone.nix
+    # ./zerotierone.nix
   ];
 
   # systemd.timers."background" = {

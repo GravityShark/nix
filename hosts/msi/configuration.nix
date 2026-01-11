@@ -1,4 +1,4 @@
-# man `configuration.nix(5)` or `nixos-help`
+# man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
 { ... }:
 
@@ -14,13 +14,11 @@
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
-    # openrazer.enable = true;
     systemd-boot.enable = true;
     vial.enable = true;
   };
 
   # Services
-  # services.flatpak.enable = true;
   service = {
     bluetooth.enable = true;
     disks.enable = true;
@@ -36,13 +34,16 @@
   # Helpful scripts for updating and maintaining the system
   update-scripts.enable = true;
 
-  # Drag clicking
-  # environment.etc."libinput/local-overrides.quirks".text = ''
-  #   [Never Debounce]
-  #   MatchUdevType=mouse
-  #   ModelBouncingKeys=1
-  # '';
+  ################################## Extra ###################################
+  # Currently only Roblox works with flatpak
+  # services.flatpak.enable = true;
 
-  # `man configuration.nix` or https://nixos.org/nixos/options.html).
+  # Enable Drag clicking
+  environment.etc."libinput/local-overrides.quirks".text = ''
+    [Never Debounce]
+    MatchUdevType=mouse
+    ModelBouncingKeys=1
+  '';
+
   system.stateVersion = "25.11";
 }

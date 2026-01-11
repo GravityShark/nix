@@ -23,10 +23,11 @@
     nixpkgs.config.allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
+        "cloudflare-warp"
         "nvidia-persistenced"
         "nvidia-settings"
         "nvidia-x11"
-        "zerotierone"
+        # "zerotierone"
       ];
 
     services.dbus.implementation = "broker";
