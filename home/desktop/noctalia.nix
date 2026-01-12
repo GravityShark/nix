@@ -158,6 +158,7 @@
                 colorizeIcons = true;
                 enableScrollWheel = false;
                 followFocusedScreen = false;
+                groupedBorderOpacity = 0.0;
                 hideUnoccupied = false;
                 iconScale = 1;
                 id = "Workspace";
