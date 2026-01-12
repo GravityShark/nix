@@ -33,6 +33,14 @@ The setup goes like
 
 1.
 
+#### Prism Launcher Defaults
+
+Settings
+Settings > Minecraft > General > Window Size > Start Minecraft Maximized ✅
+Settings > Minecraft > Tweaks > Native library workarounds > Use system installation of GLFW ✅
+
+-
+
 #### Jemalloc
 
 - just add `jemalloc.sh` at the very start of a "wrapper command"
@@ -68,8 +76,10 @@ What I use is by default for all is GraalVM EE 25 with these flags
    - In Java 25, `-XX:+UseCompactObjectHeaders` is free optimization
    - `-XX:+AlwaysPreTouch` allocates all memory upfront, useful for like large (128GB) heap sizes, but slower startup.
    - `-XX:+UseTransparentHugePages` **if** transparent huge pages are enabled in linux.
-   - `-Djdk.graal.TuneInlinerExploration=1` GraalVM exclusive,
+   - `-Djdk.graal.TuneInlinerExploration=1` GraalVM exclusive, exerpt from the docs:
      > To tune for better peak performance or faster warmup. It automatically adjusts values governing the effort spent during inlining. The value of the option is a float clamped between -1 and 1 inclusive. Anything below 0 reduces inlining effort and anything above 0 increases inlining effort. In general, peak performance is improved with more inlining effort while less inlining effort improves warmup (albeit to a lower peak). Note that this option is only a heuristic and the optimal value can differ from application to application (only available in Oracle GraalVM).
+   - `-XX:+DisableExplicitGC` disables the manual garbage collect API. Useful if you are using stupid java code (like plugins, mods and such), but harmful if you aren't.
+
    - Otherwise Choosing java flags shouldn't be made by you, if a mod pack recommends you to use them, **try them if you'd like**.
    - But if there is **nothing** said, **don't** use your own.
    - You can check [here](https://github.com/Radk6/MC-Optimization-Guide/blob/main/modpack-specific/modpack-instructions.md) for them.
@@ -78,8 +88,9 @@ What I use is by default for all is GraalVM EE 25 with these flags
 
 #### mcsr (1.16.1)
 
-For MCSR I add nmethodsweepactivity and still use GraalVM EE 25
+For MCSR with SeedQueue I add nmethodsweepactivity and still use GraalVM EE 25
 `-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:NmethodSweepActivity=1 -XX:+UseTransparentHugePages -Djdk.graal.TuneInlinerExploration=1`
+Otherwise (like MCSR Ranked) use the default one.
 
 1. People recommend to only use java 17-22
    - Specifically GraalVM EE 21, because using Java 22 is stupid cause the software isn't updated anymore
@@ -95,10 +106,14 @@ For MCSR I add nmethodsweepactivity and still use GraalVM EE 25
    - ZGenerational wass known to be slower
 
 4. Recommended SeedQueue settings:
+
    > Max Queued Seeds: 22
    > Max Generating Seeds: 2
    > You can try a higher value, and if you start consistently lagging after tabbing into a world, lower it back.
    > Max Generating Seeds (Wall): 9
+
+5. waywall
+   - just add `waywall wrap --` at the end of your thing
 
 #### Multiplayer
 
