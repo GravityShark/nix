@@ -356,21 +356,18 @@ window-rule {
     block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
+// Black out notifications
+layer-rule {
+    match namespace="^notifications$"
+    block-out-from "screencast"
+}
+
+// Slight rounded corners for each window
 window-rule {
     geometry-corner-radius 2
     clip-to-geometry true
     open-focused true
 }
-
-// window-rule {
-    // geometry-corner-radius 2
-    // border {
-    //     uff
-    // }
-    // clip-to-geometry true
-// }
 
 workspace "terminal"
 workspace "browser"
