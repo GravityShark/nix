@@ -27,6 +27,9 @@ my pumpndump but now im moving it to home manager cause why not
 
 mainly follow this guide - https://its-saanvi.github.io/linux-mcsr/minecraft/mmc.html#further-optimizations
 
+1. jemalloc
+   - just add `jemalloc.sh` at the very start of a "wrapper command"
+
 #### multiplayer
 
 - if you have problem of unable to join in 1.16.4-1.16.5 use [this](https://github.com/MCTeamPotato/MultiOfflineFix/releases)
@@ -35,17 +38,35 @@ mainly follow this guide - https://its-saanvi.github.io/linux-mcsr/minecraft/mmc
 
 #### choosing a java version
 
-there are 3 factors i want to test (sorted for best for CLIENT to least)
+there are 3 factors to picking a java distribution.
 
-1. java version (25,21,17,8)
-2. jre provider (azul prime (uses it's own gc), graalvm ee, adoptium)
-3. garbage collector (shenandoah, zgc + zgenerational, zgc, g1gc)
+just pick the highest one for each factor that doesn't crash the game.
 
+1. java version (25,21,17,8) -
+2. jre provider
+   a. azul prime - actually uses it's own garbage collector - doesn't work in nixos cause it's dynamically linked
+   b. graalvm ee - recommended
+   c. adoptium - it ain't that bad compared to graalvm but it usually has greater compatibility
+3. garbage collector (shenandoah, zgc + zgenerational (generational is default by v24+), zgc, g1gc)
+   - nobody actually uses shenandoah
+     a. java 24+ `-XX:+UseZGC -XX:+UseCompactObjectHeaders`
+     b. java 21-23 `-XX:+UseZGC -XX:+ZGenerational`
+     c. java 11-20 `-XX:+UseZGC`
+     d. java 8 `-XX:+UseG1GC`
+4. java flags
+   - choosing java flags shouldnt be made by you, if a mod pack recommends you to use them, use them.
+   - but if there is nothing said, just add the garbage collector ones
+
+1.8 2.5+s
+
+graalvm ee 25 zgc
+2nd - graalvm ee 17
 try to use the best and then slowly go down the list
+
+what i've
 
 ## links
 
-- https://github.com/brucethemoose/Minecraft-Performance-Flags-Benchmarks
-- https://github.com/DataDalton/Minecraft-Performance-Guide/blob/main/Java%20Arguments/README.md
-- https://github.com/Radk6/MC-Optimization-Guide
-- https://noflags.sh/
+- https://github.com/Radk6/MC-Optimization-Guide <- has some mod specific java flags if you need em. and also general tips
+- https://github.com/DataDalton/Minecraft-Performance-Guide/blob/main/Java%20Arguments/README.md <- some people don't like this
+- https://noflags.sh/ <- servers

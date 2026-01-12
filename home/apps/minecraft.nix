@@ -16,30 +16,33 @@
   };
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
+      jre
+      # javaPackages.compiler.temurin-bin.jre-25
+      # graalvmPackages.graalvm-oracle
+      # javaPackages.compiler.temurin-bin.jre-21
       lunar-client
-      jre_minimal
       (callPackage ./packages/ninjabrainbot.nix { })
 
       (prismlauncher.override (previous: {
         jdks = [
           graalvmPackages.graalvm-oracle
-          graalvmPackages.graalvm-oracle_17
-          javaPackages.compiler.temurin-bin.jre-17
-          javaPackages.compiler.temurin-bin.jre-21
-          javaPackages.compiler.temurin-bin.jre-25
+          # graalvmPackages.graalvm-oracle_17
+          # javaPackages.compiler.temurin-bin.jre-17
+          # javaPackages.compiler.temurin-bin.jre-21
+          # javaPackages.compiler.temurin-bin.jre-25
           # jdk17
           # jdk21
-          jre8
+          # jre8
         ];
-        additionalLibs = [
-          # runtime dependencies necessary for mcsr fairplay mod
-          openssl
-          xorg.libXtst
-          xorg.libXt
-          xorg.libxcb
-          xorg.libXinerama
-          libxkbcommon
-        ];
+        # additionalLibs = [
+        #   # runtime dependencies necessary for mcsr fairplay mod
+        #   openssl
+        #   xorg.libXtst
+        #   xorg.libXt
+        #   xorg.libxcb
+        #   xorg.libXinerama
+        #   libxkbcommon
+        # ];
         additionalPrograms = [
           jemalloc
           (pkgs.waywall.overrideAttrs (
