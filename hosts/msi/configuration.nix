@@ -21,6 +21,7 @@
   # Services
   service = {
     bluetooth.enable = true;
+    cloudflare-warp.enable = true;
     disks.enable = true;
     gamemode.enable = true;
     kanata.enable = true;
