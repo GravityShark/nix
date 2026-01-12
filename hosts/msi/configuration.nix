@@ -1,14 +1,12 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
 
-  # Display server
   desktop.display-server = "niri";
 
-  # System
   system = {
     doas.enable = true;
     intel.enable = true;
@@ -18,7 +16,6 @@
     vial.enable = true;
   };
 
-  # Services
   service = {
     bluetooth.enable = true;
     disks.enable = true;
@@ -51,4 +48,13 @@
   '';
 
   boot.kernelParams = [ "transparent_hugepage_shmem=advise" ];
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      bubblewrap
+      dwarfs
+      fuse-overlayfs
+      wineWowPackages.staging
+    ];
+  };
 }

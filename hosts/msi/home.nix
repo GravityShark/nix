@@ -3,6 +3,16 @@
 {
   mime.enable = true;
 
+  desktop = {
+    niri.enable = true;
+    noctalia.enable = true;
+    stylix = {
+      enable = true;
+      # theme = "rose-pine";
+      theme = "gruvbox-material-light";
+    };
+  };
+
   apps = {
     desktop.enable = true;
     dev.enable = true;
@@ -15,16 +25,6 @@
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;
-  };
-
-  desktop = {
-    niri.enable = true;
-    noctalia.enable = true;
-    stylix = {
-      enable = true;
-      # theme = "rose-pine";
-      theme = "gruvbox-material-light";
-    };
   };
 
   service = {
@@ -63,16 +63,17 @@
     # zoom-us
 
     ## CLIs
-    aria2
+    # aria2
     bc
     ffmpeg
     git
+    wget
 
     ## Gaming
-    bubblewrap
-    dwarfs
-    fuse-overlayfs
-    wineWowPackages.staging
+    # bubblewrap
+    # dwarfs
+    # fuse-overlayfs
+    # wineWowPackages.staging
   ];
 
   programs = {
