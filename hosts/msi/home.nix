@@ -34,6 +34,7 @@
   };
 
   home.stateVersion = "25.11"; # Read Home Manager release notes when changing.
+
   ################################## Extra ###################################
 
   home.packages = with pkgs; [

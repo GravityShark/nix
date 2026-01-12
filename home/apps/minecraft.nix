@@ -23,23 +23,23 @@
       (prismlauncher.override (previous: {
         jdks = [
           graalvmPackages.graalvm-oracle
-          javaPackages.compiler.temurin-bin.jre-25
           # graalvmPackages.graalvm-oracle_17
           # javaPackages.compiler.temurin-bin.jre-17
-          # javaPackages.compiler.temurin-bin.jre-21
+          javaPackages.compiler.temurin-bin.jre-21
+          javaPackages.compiler.temurin-bin.jre-25
           # jdk17
           # jdk21
           # jre8
         ];
-        # additionalLibs = [
-        #   # runtime dependencies necessary for mcsr fairplay mod
-        #   openssl
-        #   xorg.libXtst
-        #   xorg.libXt
-        #   xorg.libxcb
-        #   xorg.libXinerama
-        #   libxkbcommon
-        # ];
+        additionalLibs = [
+          # runtime dependencies necessary for mcsr fairplay mod
+          openssl
+          xorg.libXtst
+          xorg.libXt
+          xorg.libxcb
+          xorg.libXinerama
+          libxkbcommon
+        ];
         additionalPrograms = [
           jemalloc
           (pkgs.waywall.overrideAttrs (

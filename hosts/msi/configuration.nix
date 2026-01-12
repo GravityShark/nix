@@ -22,7 +22,6 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    gamemode.enable = true;
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;
@@ -50,6 +49,7 @@
     ModelBouncingKeys=1
   '';
 
+  boot.kernelParams = [ "transparent_hugepage_shmem=advise" ];
   programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [
   #   # Add any missing dynamic libraries for unpackaged programs
