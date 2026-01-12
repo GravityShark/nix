@@ -36,10 +36,24 @@ The setup goes like
 #### Prism Launcher Defaults
 
 Settings
+
 Settings > Minecraft > General > Window Size > Start Minecraft Maximized ✅
+
 Settings > Minecraft > Tweaks > Native library workarounds > Use system installation of GLFW ✅
 
--
+Settings > Minecraft > Tweaks > Performance > Use discrete GPU ✅
+
+Settings > Java > Memory > Minimum & Maximum memory allocation = 6144MiB
+
+Settings > Java > Java Runtime > Java path: = _select GraalVM EE 25_
+
+Settings > Java > Java Runtime > Skip Java compatibility checks ✅
+
+Settings > Java > Java Runtime > JVM arguments: = `-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -Djdk.graal.TuneInlinerExploration=1`
+
+Settings > Custom Commands > Wrapper command: = `jemalloc.sh`
+
+Settings > Environment Variables > Name: `__GL_THREADED_OPTIMIZATIONS` Value: `0`
 
 #### Jemalloc
 
@@ -55,6 +69,7 @@ Settings > Minecraft > Tweaks > Native library workarounds > Use system installa
 #### Choosing a Java Version
 
 What I use is by default for all is GraalVM EE 25 with these flags
+
 `-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -Djdk.graal.TuneInlinerExploration=1`
 
 1. Java Version (25,21,17,8)
@@ -70,7 +85,7 @@ What I use is by default for all is GraalVM EE 25 with these flags
    b. 21-23 `-XX:+UseZGC -XX:+ZGenerational`
    c. 11-20 `-XX:+UseZGC`
    d. 8 `-XX:+UseG1GC`
-   - If you are feeling spicy you can try Shenandoah, YMMV.
+   - If you are feeling spicy you can try Shenandoah. YMMV, but it would mostly be just slightly than ZGC.
      - `-XX:+UseShenandoahGC`
 4. Java Flagss
    - In Java 25, `-XX:+UseCompactObjectHeaders` is free optimization
@@ -89,7 +104,9 @@ What I use is by default for all is GraalVM EE 25 with these flags
 #### mcsr (1.16.1)
 
 For MCSR with SeedQueue I add nmethodsweepactivity and still use GraalVM EE 25
+
 `-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:NmethodSweepActivity=1 -XX:+UseTransparentHugePages -Djdk.graal.TuneInlinerExploration=1`
+
 Otherwise (like MCSR Ranked) use the default one.
 
 1. People recommend to only use java 17-22
@@ -114,6 +131,12 @@ Otherwise (like MCSR Ranked) use the default one.
 
 5. waywall
    - just add `waywall wrap --` at the end of your thing
+
+#### MCSR Ranked Defaults
+
+Settings > Java > Memory > Minimum & Maximum memory allocation = 3072MiB
+
+Settings > Custom Commands > Wrapper command: = `jemalloc.sh waywall wrap --`
 
 #### Multiplayer
 

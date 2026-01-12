@@ -72,7 +72,6 @@
     bubblewrap
     dwarfs
     fuse-overlayfs
-    gamemode
     wineWowPackages.staging
   ];
 
