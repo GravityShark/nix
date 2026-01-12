@@ -180,3 +180,16 @@ n ur done, jus complete this [checklist](./dump/README.md) for stuff that isn't 
 
 13. [ ] make ppd-dbus-hook a flake
     - use tlp 1.9 when it comes out on nixpkgs and use it instead of tuned
+
+14. make a personal setup for gpu-screen-recorder
+    a. https://git.dec05eba.com/gpu-screen-recorder/about/
+
+15. checkout [gradia](https://github.com/AlexanderVanhee/Gradia) and [satty](https://github.com/Satty-org/Satty) for better screensots
+
+16. [supergfxctl](https://gitlab.com/asus-linux/supergfxctl) gpu mode and vfio
+
+17. start reading RSS and use this https://noctalia.dev/plugins/rss-feed/
+
+18. add a search tool in noctalia-shell like this https://noctalia.dev/plugins/kagi-quick-search/
+
+19. add duplication of monitors

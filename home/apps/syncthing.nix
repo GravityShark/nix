@@ -55,5 +55,18 @@
         };
       };
     };
+
+    programs.noctalia-shell.settings.controlCenter.shortcuts.left =
+      lib.mkIf config.desktop.noctalia.enable
+        [
+          {
+            enableOnStateLogic = true;
+            generalTooltipText = "Syncthing";
+            icon = "affiliate";
+            id = "CustomButton";
+            onClicked = "toggle-syncthing";
+            stateChecksJson = "[{\"command\":\"systemctl is-active --quiet --user syncthing.service\",\"icon\":\"\"}]";
+          }
+        ];
   };
 }
