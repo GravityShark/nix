@@ -11,6 +11,7 @@
   };
   config = lib.mkIf config.service.gamemode.enable {
     environment.sessionVariables.GAMEMODERUNEXEC = "nvidia-offload";
+    users.users.${config.username}.extraGroups = [ "gamemode" ];
 
     programs.gamemode = {
       enable = true;
