@@ -46,9 +46,6 @@
         "3.asia.pool.ntp.org"
       ];
 
-      # boot.kernelPackages = pkgs.linuxPackages;
-      boot.kernelPackages = pkgs.linuxPackages_zen;
-
       # Hosts file
       networking = {
         hosts = {
