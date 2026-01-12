@@ -11,6 +11,6 @@
   };
   config = lib.mkIf config.service.cloudflare-warp.enable {
     services.cloudflare-warp.enable = true;
-    environment.systemPackages = [ pkgs.cloudflare-warp ];
+    # environment.systemPackages = [ pkgs.cloudflare-warp ];
   };
 }
