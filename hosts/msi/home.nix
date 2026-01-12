@@ -77,7 +77,6 @@
   ];
 
   programs = {
-    # Anki
     anki = {
       enable = true;
       answerKeys = [

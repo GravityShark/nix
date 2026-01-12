@@ -10,11 +10,14 @@
     service.gamemode.enable = lib.mkEnableOption "enables gamemode";
   };
   config = lib.mkIf config.service.gamemode.enable {
+    environment.sessionVariables.GAMEMODERUNEXEC = "nvidia-offload";
+
     programs.gamemode = {
       enable = true;
       settings = {
         general = {
           renice = 10;
+          softrealtime = "auto";
         };
 
         custom =

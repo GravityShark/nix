@@ -47,7 +47,13 @@
     ModelBouncingKeys=1
   '';
 
-  boot.kernelParams = [ "transparent_hugepage_shmem=advise" ];
+  # Transparent Huge Page
+  boot.kernelParams = [
+    "transparent_hugepage=madvise"
+    "transparent_hugepage_shmem=advise"
+  ];
+
+  # Nix-ld for jc
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
@@ -57,4 +63,7 @@
       wineWowPackages.staging
     ];
   };
+
+  # We are so Zen
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 }
