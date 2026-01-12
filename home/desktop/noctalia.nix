@@ -132,8 +132,6 @@
           volumeStep = 5;
         };
         bar = {
-          backgroundOpacity = 1;
-          capsuleOpacity = 1;
           density = "mini";
           exclusive = true;
           floating = false;
@@ -160,7 +158,6 @@
                 colorizeIcons = true;
                 enableScrollWheel = false;
                 followFocusedScreen = false;
-                groupedBorderOpacity = 0;
                 hideUnoccupied = false;
                 iconScale = 1;
                 id = "Workspace";
@@ -413,7 +410,6 @@
         };
         dock = {
           animationSpeed = 1;
-          backgroundOpacity = 1;
           colorizeIcons = true;
           deadOpacity = 0.6;
           displayMode = "auto_hide";
@@ -492,7 +488,6 @@
           nightTemp = "4000";
         };
         notifications = {
-          backgroundOpacity = 1;
           criticalUrgencyDuration = 15;
           enableKeyboardLayoutToast = true;
           enabled = true;
@@ -519,7 +514,6 @@
         };
         osd = {
           autoHideMs = 2000;
-          backgroundOpacity = 1;
           enabled = true;
           enabledTypes = [
             0
@@ -640,7 +634,6 @@
           fontFixed = "Aporetic Sans Mono";
           fontFixedScale = 1.25;
           networkPanelView = "wifi";
-          panelBackgroundOpacity = 1;
           panelsAttachedToBar = true;
           settingsPanelMode = "centered";
           tooltipsEnabled = true;
