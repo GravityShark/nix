@@ -4,7 +4,6 @@
 {
   imports = [
     ./bluetooth.nix
-    ./cloudflare-warp.nix
     ./disks.nix
     ./distrobox.nix
     ./gamemode.nix

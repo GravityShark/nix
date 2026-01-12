@@ -15,6 +15,7 @@
       dockerCompat = true;
     };
 
+    users.users.${config.username}.extraGroups = [ "podman" ];
     environment.systemPackages = [ pkgs.distrobox ];
   };
 }

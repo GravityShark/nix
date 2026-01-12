@@ -21,8 +21,8 @@
   # Services
   service = {
     bluetooth.enable = true;
-    cloudflare-warp.enable = true;
     disks.enable = true;
+    distrobox.enable = true;
     gamemode.enable = true;
     kanata.enable = true;
     logind.enable = true;
@@ -41,6 +41,9 @@
   # Currently only Roblox works with flatpak
   # services.flatpak.enable = true;
 
+  # Cloudflare Warp for slow downloads
+  # services.cloudflare-warp.enable = true;
+
   # Enable Drag clicking
   environment.etc."libinput/local-overrides.quirks".text = ''
     [Never Debounce]
@@ -48,7 +51,7 @@
     ModelBouncingKeys=1
   '';
 
-  programs.nix-ld.enable = true;
+  # programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [
   #   # Add any missing dynamic libraries for unpackaged programs
   #   # here, NOT in environment.systemPackages
