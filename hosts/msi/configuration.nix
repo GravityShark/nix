@@ -32,28 +32,29 @@
   update-scripts.enable = true;
 
   system.stateVersion = "25.11";
+
   ################################## Extra ###################################
 
-  # Currently only Roblox works with flatpak
+  ## Currently only Roblox works with flatpak
   # services.flatpak.enable = true;
 
-  # Cloudflare Warp for slow downloads
+  ## Cloudflare Warp for slow downloads
   # services.cloudflare-warp.enable = true;
 
-  # Enable Drag clicking
+  ## Enable Drag clicking
   environment.etc."libinput/local-overrides.quirks".text = ''
     [Never Debounce]
     MatchUdevType=mouse
     ModelBouncingKeys=1
   '';
 
-  # Transparent Huge Page
+  ## Transparent Huge Page for Minecraft performance
   boot.kernelParams = [
     "transparent_hugepage=madvise"
     "transparent_hugepage_shmem=advise"
   ];
 
-  # Nix-ld for jc
+  ## Nix-ld for jc
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [

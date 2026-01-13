@@ -36,6 +36,15 @@
 
   ################################## Extra ###################################
 
+  ## Local scripts that I would prefer to not add to my shell
+  home.file.".scripts".source = ../../dump/.scripts;
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.scripts"
+    "${config.home.homeDirectory}/.scripts/aliases"
+    "${config.home.homeDirectory}/.local/bin"
+  ];
+
+  ## Packages
   home.packages = with pkgs; [
     ## Apps
     (callPackage ../../home/apps/packages/caprine-ng-bin.nix { })
@@ -75,6 +84,7 @@
     # wineWowPackages.staging
   ];
 
+  ## Other programss
   programs = {
     anki = {
       enable = true;
@@ -92,11 +102,4 @@
     vesktop.enable = true;
     zathura.enable = true;
   };
-
-  home.file.".scripts".source = ../../dump/.scripts;
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.scripts"
-    "${config.home.homeDirectory}/.scripts/aliases"
-    "${config.home.homeDirectory}/.local/bin"
-  ];
 }

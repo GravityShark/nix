@@ -17,7 +17,7 @@
       '')
 
       (writeDashBin "fu" ''
-        nix flake update --flake ~/.nix
+        nix flake update --flake ~/.nix "$@"
       '')
 
       (writeDashBin "hmn" ''
@@ -25,7 +25,7 @@
       '')
 
       (writeDashBin "hms" ''
-        home-manager switch --flake ~/.nix\?submodules=1
+        home-manager switch --flake ~/.nix\?submodules=1 "$@"
       '')
 
       (writeDashBin "ng" ''
@@ -45,17 +45,17 @@
       '')
 
       (writeDashBin "nrb" ''
-        sudo nixos-rebuild boot --flake ~/.nix
+        sudo nixos-rebuild boot --flake ~/.nix "$@"
       '')
 
       (writeDashBin "nrbu" ''
-        sudo nixos-rebuild boot --upgrade --flake ~/.nix
+        sudo nixos-rebuild boot --upgrade --flake ~/.nix "$@"
       '')
       (writeDashBin "nrs" ''
-        sudo nixos-rebuild switch --flake ~/.nix
+        sudo nixos-rebuild switch --flake ~/.nix "$@"
       '')
       (writeDashBin "nrsu" ''
-        sudo nixos-rebuild switch --upgrade --flake ~/.nix
+        sudo nixos-rebuild switch --upgrade --flake ~/.nix "$@"
       '')
       (writeDashBin "updatescript" ''
         ng && fu && nrsu && hms

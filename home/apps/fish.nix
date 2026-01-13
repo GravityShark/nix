@@ -17,6 +17,22 @@
       }
     ];
 
+    home.packages = with pkgs; [
+      nix-your-shell
+      eza
+      rip2
+    ];
+
+    programs.nix-your-shell = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    programs.zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     programs.fish = {
       enable = true;
       functions = {
@@ -84,22 +100,6 @@
           src = pkgs.fishPlugins.sponge.src;
         }
       ];
-    };
-
-    home.packages = with pkgs; [
-      nix-your-shell
-      eza
-      rip2
-    ];
-
-    programs.nix-your-shell = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
-    programs.zoxide = {
-      enable = true;
-      enableFishIntegration = true;
     };
 
     xdg.configFile."fish/conf.d/hydro.fish".source = ../../dump/.config/fish/conf.d/hydro.fish;
