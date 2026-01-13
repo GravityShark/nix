@@ -14,6 +14,7 @@
       hash = "sha256-yb+R/lH8OaQcNFIUdY0qlFmsN6sy1GKXhV7LyaQHUe0=";
     };
 
+    # colors/mini.base16
     xdg.configFile."nvim/enabled-plugins.txt".text = (
       lib.mkIf config.apps.neovim.enable "colors/gruvbox-material"
     );

@@ -8,7 +8,6 @@
     noctalia.enable = true;
     stylix = {
       enable = true;
-      # theme = "rose-pine";
       theme = "gruvbox-material-light";
     };
   };

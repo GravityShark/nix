@@ -91,7 +91,7 @@
         "frameRate": "60",
         "audioCodec": "opus",
         "videoCodec": "av1",
-        "quality": "high",
+        "quality": "medium",
         "colorRange": "limited",
         "showCursor": true,
         "copyToClipboard": true,
