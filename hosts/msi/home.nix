@@ -36,7 +36,7 @@
 
   ################################## Extra ###################################
 
-  ## Local scripts that I would prefer to not add to my shell
+  ## Local scripts that I would prefer to not add to my shell directly
   home.file.".scripts".source = ../../dump/.scripts;
   home.sessionPath = [
     "${config.home.homeDirectory}/.scripts"
@@ -59,7 +59,7 @@
 
     ## Media
     # audacity
-    gnome-sound-recordeshntecsr
+    gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
