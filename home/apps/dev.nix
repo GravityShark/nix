@@ -17,12 +17,13 @@
       ".prettierrc".source = ../../dump/.prettierrc;
       ".ruff.toml".source = ../../dump/.ruff.toml;
       ".stylua.toml".source = ../../dump/.stylua.toml;
+    };
 
-      # # You can also set the file content immediately.
-      # ".gradle/gradle.properties".text = ''
-      #   org.gradle.console=verbose
-      #   org.gradle.daemon.idletimeout=3600000
-      # '';
+    home.sessionVariables = {
+      GOPATH = "$HOME/.go";
+      GOPROXY = "https://proxy.golang.org";
+      GOSUMDB = "sum.golang.org";
+      CFLAGS = "-std=c99 -Wall -Werror";
     };
 
     home.packages = with pkgs; [
@@ -99,7 +100,6 @@
       # swift-format
       # swiftPackages.swiftpm
       # zig
-
     ];
   };
 }
