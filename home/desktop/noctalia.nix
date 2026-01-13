@@ -86,12 +86,12 @@
 
     xdg.configFile."noctalia/plugins/screen-recorder/settings.json".text = ''
       {
-        "directory": "",
-        "filenamePattern": "recording_yyyyMMdd_HHmmss",
+        "directory": "~/Videos/Screencasts/",
+        "filenamePattern": "yyyyMMdd_HHmmss",
         "frameRate": "60",
         "audioCodec": "opus",
         "videoCodec": "av1",
-        "quality": "medium",
+        "quality": "high",
         "colorRange": "limited",
         "showCursor": true,
         "copyToClipboard": true,
@@ -194,6 +194,9 @@
               {
                 id = "Spacer";
                 width = 1;
+              }
+              {
+                id = "plugin:screen-recorder";
               }
               {
                 compactMode = false;
