@@ -70,7 +70,6 @@
         set __fish_git_prompt_show_informative_status 1
         set __fish_git_prompt_showupstream informative
         set __fish_initialized 3400
-        set CFLAGS '-std=c99 -Wall -Werror'
 
         if set -q TMUX
             if test (count (tmux list-windows)) -gt 3
@@ -79,7 +78,6 @@
         else if type -q tmux
             tmux
         end
-
       '';
       plugins = [
         # Enable a plugin (here grc for colorized command output) from nixpkgs
