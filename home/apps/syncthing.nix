@@ -30,7 +30,7 @@
           brick2ah = {
             name = "brick2ah";
             allowedNetwork = "192.168.0.0/24";
-            id = "3IZGDCS-V2NI56X-ZIY42FE-65AKDGO-FDWGB7R-UT5GBBC-PQIBPTY-CIZIBAP";
+            id = "C32X25B-EOZRWWL-WA5677F-WVVFLRU-YZIKIXX-ZXMCNNA-U5G27XH-SM55MAA";
           };
           clear = {
             name = "clear";
