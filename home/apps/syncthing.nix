@@ -46,7 +46,7 @@
               "brick2ah"
             ];
             label = "Notes";
-            versioning.type = "simple";
+            versioning.type = "trash";
           };
         };
         gui = {

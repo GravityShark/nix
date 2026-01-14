@@ -1,23 +1,23 @@
 #!/bin/sh
 
-DIRECTORY=$1
+out=$1
 
-if [ ! -n "$DIRECTORY" ]; then
+if [ ! -n "$out" ]; then
         exit 1
 fi
 
-if [ ! -d "$DIRECTORY" ]; then
-        mkdir $DIRECTORY
+if [ ! -d "$out" ]; then
+        mkdir $out
 fi
 
 [ ! -n "$TMUX" ] && {
-        sesh connect $DIRECTORY
+        sesh connect $out
         return
 }
 
 prev_session=$(tmux display-message -p '#S')
 
-sesh connect "$DIRECTORY" || return
-if [ "$DIRECTORY" != "" ]; then
+sesh connect "$out" || return
+if [ -n "$out" ] && [ "$out" != "$prev_session" ] && [ "$(echo "$out" | cut -c 5-)" != "$prev_session" ]; then
         tmux kill-session -t "$prev_session"
 fi
