@@ -105,7 +105,7 @@
             repo = "ankitty";
             rev = "v${finalAttrs.version}";
             sparseCheckout = [ "src/ankitty" ];
-            hash = "sha256-+mTnypVxsD6xQeiSnCABU43PJ7CWpc4kP/w32kBlZSA=";
+            hash = "";
           };
           sourceRoot = "${finalAttrs.src.name}/src/ankitty";
         }))
