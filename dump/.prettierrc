@@ -12,4 +12,4 @@ overrides:
   - files:
       - "*.md"
     options:
-      prose-wrap: "always"
+      proseWrap: "always"
