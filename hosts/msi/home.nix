@@ -117,7 +117,7 @@
             owner = "gugutu";
             repo = "Anki-Note-Linker";
             rev = "cfd51d17cfd3b40d21a7670d8c79728c8e8e4488";
-            hash = "";
+            hash = "sha256-sB7SoblB8lXxiSftTAK101CdeEmqImpr862BIN/5SAY=";
           };
         }))
 
