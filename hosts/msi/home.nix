@@ -128,7 +128,7 @@
             owner = "rrzhang139";
             repo = "automatic_note_linker";
             rev = "114ae3593e338a95d6524aa5e3163746b36fbe56";
-            hash = "";
+            hash = "sha256-Xy5kZPOqVnLoPK/YzFGNE5iLBJbZ06b1nMUdtkhr27M=";
           };
         }))
       ];
