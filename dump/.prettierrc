@@ -9,4 +9,7 @@ overrides:
       - "*.css"
     options:
       tabWidth: 2
-      printWidth: 120
+  - files:
+      - "*.md"
+    options:
+      prose-wrap: "always"
