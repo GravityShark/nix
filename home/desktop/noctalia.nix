@@ -30,9 +30,7 @@
         Unit = {
           Description = "Noctalia Performance on power-profiles-daemon change";
           After = [ "noctalia-shell.service" ];
-          PartOf = [ "noctalia-shell.service" ];
         };
-
         Service = {
           ExecStart = ''
             ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
