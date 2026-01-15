@@ -97,18 +97,18 @@
       addons = with pkgs; [
         ankiAddons.review-heatmap
 
-        # (anki-utils.buildAnkiAddon (finalAttrs: {
-        #   pname = "ankitty";
-        #   version = "1.1.1";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "marvinruder";
-        #     repo = "ankitty";
-        #     rev = "v${finalAttrs.version}";
-        #     sparseCheckout = [ "src/ankitty" ];
-        #     hash = "sha256-+mTnypVxsD6xQeiSnCABU43PJ7CWpc4kP/w32kBlZSA=";
-        #   };
-        #   sourceRoot = "${finalAttrs.src.name}/src/ankitty";
-        # }))
+        (anki-utils.buildAnkiAddon (finalAttrs: {
+          pname = "ankitty";
+          version = "1.1.1";
+          src = pkgs.fetchFromGitHub {
+            owner = "marvinruder";
+            repo = "ankitty";
+            rev = "v${finalAttrs.version}";
+            sparseCheckout = [ "src/ankitty" ];
+            hash = "sha256-+mTnypVxsD6xQeiSnCABU43PJ7CWpc4kP/w32kBlZSA=";
+          };
+          sourceRoot = "${finalAttrs.src.name}/src/ankitty";
+        }))
 
         (anki-utils.buildAnkiAddon (finalAttrs: {
           pname = "anki-note-linker";
@@ -126,7 +126,7 @@
           version = "0-unstable-2024-9-16";
           src = pkgs.fetchFromGitHub {
             owner = "rrzhang139";
-            repo = "automaticc_note_linker";
+            repo = "automatic_note_linker";
             rev = "114ae3593e338a95d6524aa5e3163746b36fbe56";
             hash = "";
           };
