@@ -493,7 +493,7 @@
           criticalUrgencyDuration = 15;
           enableKeyboardLayoutToast = true;
           enabled = true;
-          location = "bottom_right";
+          location = "top_right";
           lowUrgencyDuration = 3;
           monitors = [ ];
           normalUrgencyDuration = 8;
@@ -523,7 +523,7 @@
             2
             3
           ];
-          location = "bottom_left";
+          location = "top_left";
           monitors = [ ];
           overlayLayer = false;
         };

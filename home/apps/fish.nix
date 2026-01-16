@@ -73,7 +73,9 @@
 
         if set -q TMUX
             if test (count (tmux list-windows)) -gt 3
+                set_color -o red
                 echo "BTW you should only have 3 tabs cause lowkey the 1 is for vim, 2 is for cmdline and 3rd is wild card. no more brochacho"
+                set_color normal
             end
         else if type -q tmux
             tmux

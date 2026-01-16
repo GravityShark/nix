@@ -32,9 +32,13 @@
       systemd.enable = false;
     };
 
-    home.activation.reloadGhostty = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      ${pkgs.procps}/bin/pkill -SIGUSR2 ghostty
-    '';
+    home.activation.reloadGhostty =
+      let
+        after = if (config.desktop.stylix.enable) then "stylixLookAndFeel" else "writeBoundary";
+      in
+      (lib.hm.dag.entryAfter [ after ] ''
+        ${pkgs.procps}/bin/pkill -SIGUSR2 ghostty
+      '');
 
     home.packages = with pkgs; [ xdg-terminal-exec ];
     xdg.configFile = {

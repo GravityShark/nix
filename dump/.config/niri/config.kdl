@@ -441,25 +441,24 @@ binds {
     Mod+Ctrl+N hotkey-overlay-title="Open a Notes App" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "obsidian" "--focus" "obsidian"; }
     Mod+U hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "youtube-music"; }
     Mod+Ctrl+U hotkey-overlay-title="Open a YouTube Music" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "com.github.th_ch.youtube_music" "--focus" "youtube-music"; }
-
     Mod+D hotkey-overlay-title="Open Discord" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "vesktop" "vesktop"; }
     Mod+Ctrl+D hotkey-overlay-title="Open Discord" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "vesktop" "vesktop"; }
-
     Mod+M hotkey-overlay-title="Open Messenger" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "Caprine" "caprine"; }
     Mod+Ctrl+M hotkey-overlay-title="Open Messenger" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "Caprine" "caprine"; }
-
-    Mod+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
-    Mod+Ctrl+P hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
-
+    Mod+S hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
+    Mod+Ctrl+S hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "superProductivity" "super-productivity"; }
+    Mod+A hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "anki" "anki"; }
+    Mod+Ctrl+A hotkey-overlay-title="Open Super Productivity" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "anki" "anki"; }
     Mod+K hotkey-overlay-title="Open KeepassXC" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "org.keepassxc.KeePassXC" "--focus" "keepassxc"; }
 
-    // Mod+B {spawn "noctalia-shell" "ipc" "call" "bar" "toggle";}
     Ctrl+Escape hotkey-overlay-title="Run an Application" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    // Super+Shift+Q hotkey-overlay-title="Sleep" { spawn "systemctl suspend"; }
-    // Super+Ctrl+Q hotkey-overlay-title="Hibernate" { spawn "systemctl hibernate"; }
-    Super+Q hotkey-overlay-title="Powermenu" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    // Mod+P {spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle";}
-    // The quit action will show a confirmation dialog to avoid accidental exits.
+
+    Mod+Shift+Q hotkey-overlay-title="Sleep" { spawn "systemctl suspend"; }
+    Mod+Q hotkey-overlay-title="Powermenu" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+
+    Mod+P hotkey-overlay-title="Cycle power profiles" { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
+    Mod+I hotkey-overlay-title="Inhibit idle" { spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle"; }
+
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
@@ -473,31 +472,16 @@ binds {
     // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
-    // The allow-when-locked=true property makes them work even when the session is locked.
-    // Using spawn-sh allows to pass multiple arguments together with the command.
-    // "-l 1.0" limits the volume to 100%.
-    // XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    // XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    // XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    // XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
+    XF86AudioPlay        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
+    // XF86AudioStop        allow-when-locked=true { spawn "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "next"; }
 
-    // Example media keys mapping using playerctl.
-    // This will work with any MPRIS-enabled media player.
-    // XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    // XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    // XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    // XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
-
-    // Example brightness key mappings for brightnessctl.
-    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-    // but you need to manually put each argument in separate "" quotes.
-    // XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    // XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "--exponent=5" "-n" "set" "+2%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "--exponent=5" "-n" "set" "2%-"; }
 
@@ -709,8 +693,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Shift+Print { screenshot-window; }
+    Shift+Print { screenshot-screen; }
     Alt+Print { spawn "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
@@ -727,5 +710,6 @@ binds {
 // Disable nvidia dGPU from running Niri so that it could go to D3
 debug {
     ignore-drm-device "/dev/dri/card0"
+    honor-xdg-activation-with-invalid-serial
 }
 include "./base16.kdl"
