@@ -75,6 +75,7 @@
 
     xdg.configFile."waywall/init.lua".source = ../../dump/.config/waywall/init.lua;
     xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;
+    xdg.configFile."xkb/symbols/mc".source = ../../dump/.config/xkb/symbols/mc;
     # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
     #   ../../dump/.config/java/.java/.userPrefs/ninjabrainbot/prefs.xml;
   };
