@@ -19,7 +19,6 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    gamemode.enable = true;
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;
@@ -56,6 +55,28 @@
 
   # Steam
   programs.steam.enable = true;
+
+  # environment.systemPackages = with pkgs; [
+  #   # WINE
+  #   wine
+  #   winetricks
+  #   protontricks
+  #   vulkan-tools
+  #
+  #   # Lutris
+  #   #lutris-unwrapped  # (not needed)
+  #   lutris
+  #
+  #   # Extra dependencies
+  #   # https://github.com/lutris/docs/
+  #   gnutls
+  #   openldap
+  #   freetype
+  #   sqlite
+  #   libxml2
+  #   xml2
+  #   SDL2
+  # ];
 
   ## Nix-ld for jc
   # programs.nix-ld = {

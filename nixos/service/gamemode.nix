@@ -19,25 +19,45 @@
       enableRenice = false;
       settings = {
         general = {
-          # renice = 10;
+          renice = 10;
           softrealtime = "auto";
         };
 
         custom =
-          let
-            tuned-adm = "${pkgs.tuned}/bin/tuned-adm";
-
-            start = pkgs.writers.writeDash "start" ''
-              cp /etc/tuned/active_profile /tmp/active_profile && ${tuned-adm} profile throughput-performance
-            '';
-
-            end = pkgs.writers.writeDash "end" ''
-              ${tuned-adm} profile $(cat /tmp/active_profile)
-            '';
-          in
+          # let
+          #   start = pkgs.writers.writeDash "start" ''
+          #     # cp /etc/tuned/active_profile /tmp/active_profile && ${pkgs.tuned}/bin/tuned-adm profile throughput-performance
+          #     STATE_FILE="$\{XDG_RUNTIME_DIR:-/tmp}/gamemode-tuned-prev"
+          #
+          #     # Save previous profile only once
+          #     if [ ! -f "$STATE_FILE" ]; then
+          #         # Capture output
+          #         out=$(${pkgs.tuned}/bin/tuned-adm active)
+          #
+          #         # Strip prefix using POSIX shell parameter expansion
+          #         prev=$\{out#Current active profile: }
+          #
+          #         echo "$prev" > "$STATE_FILE"
+          #     fi
+          #
+          #     # Switch to performance-style tuned profile
+          #     ${pkgs.tuned}/bin/tuned-adm profile throughput-performance
+          #   '';
+          #
+          #   end = pkgs.writers.writeDash "end" ''
+          #     # ${pkgs.tuned}/bin/${pkgs.tuned}/bin/tuned-adm profile $(cat /tmp/active_profile)
+          #     STATE_FILE="$\{XDG_RUNTIME_DIR:-/tmp}/gamemode-tuned-prev"
+          #
+          #     if [ -f "$STATE_FILE" ]; then
+          #         prev=$(cat "$STATE_FILE")
+          #         ${pkgs.tuned}/bin/tuned-adm profile "$prev"
+          #         rm -f "$STATE_FILE"
+          #     fi
+          #   '';
+          # in
           lib.mkIf config.service.power-management.enable {
-            start = "${start}";
-            end = "${end}";
+            start = "${pkgs.tuned}/bin/tuned-adm profile throughput-performance";
+            end = "${pkgs.tuned}/bin/tuned-adm profile balanced";
           };
       };
     };
