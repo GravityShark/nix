@@ -202,7 +202,7 @@ local config = {
 		sensitivity = 0.81920004,
 		confine_pointer = false,
 
-		-- remaps = game_remaps,
+		remaps = game_remaps,
 	},
 	theme = {
 		-- background = '#1b0e1fff',
