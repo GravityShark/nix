@@ -79,10 +79,10 @@
     wget
 
     ## Gaming
-    bubblewrap
-    dwarfs
-    fuse-overlayfs
-    wineWowPackages.staging
+    # bubblewrap
+    # dwarfs
+    # fuse-overlayfs
+    # wineWowPackages.staging
   ];
 
   ## Other programss
