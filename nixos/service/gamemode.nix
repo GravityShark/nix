@@ -36,8 +36,8 @@
             '';
           in
           lib.mkIf config.service.power-management.enable {
-            start = start;
-            end = end;
+            start = "${start}";
+            end = "${end}";
           };
       };
     };
