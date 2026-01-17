@@ -54,16 +54,19 @@
     "transparent_hugepage_shmem=advise"
   ];
 
+  # Steam
+  programs.steam.enable = true;
+
   ## Nix-ld for jc
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      bubblewrap
-      dwarfs
-      fuse-overlayfs
-      wineWowPackages.staging
-    ];
-  };
+  # programs.nix-ld = {
+  #   enable = true;
+  #   libraries = with pkgs; [
+  #     bubblewrap
+  #     dwarfs
+  #     fuse-overlayfs
+  #     wineWowPackages.staging
+  #   ];
+  # };
 
   # We are so Zen
   boot.kernelPackages = pkgs.linuxPackages_zen;

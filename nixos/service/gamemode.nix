@@ -15,9 +15,10 @@
 
     programs.gamemode = {
       enable = true;
+      enableRenice = false;
       settings = {
         general = {
-          renice = 10;
+          # renice = 10;
           softrealtime = "auto";
         };
 
