@@ -1,30 +1,8 @@
 local waywall = require('waywall')
 local helpers = require('waywall.helpers')
 
-local config = {
-	input = {
-		layout = 'us',
-		repeat_rate = 100,
-		repeat_delay = 150,
-
-		sensitivity = 1.0,
-		confine_pointer = false,
-	},
-	theme = {
-		background = '#303030ff',
-	},
-}
-
 config.actions = {}
 
-return config
-
--- local waywall = require('waywall')
--- local helpers = require('waywall.helpers')
---
--- -- ################################################################################################
--- -- HELPERS
--- -- ################################################################################################
 -- local is_process_running = function(name)
 -- 	local handle = io.popen("pgrep -f '" .. name .. "'")
 -- 	local result = handle:read('*l')
@@ -39,112 +17,112 @@ return config
 -- 	thin1 = nil,
 -- 	thin2 = nil,
 -- }
---
--- waywall.listen('load', function()
--- 	if not is_process_running('ninjabrainbot') then
--- 		waywall.exec('ninjabrainbot')
--- 	end
--- 	deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
--- 		dst = { x = 0, y = 0, w = 823, h = 1080 },
--- 		depth = -1,
--- 	})
--- 	deco_objects.thin1 = waywall.image('${../../../assets/mcsr/bg.png}', {
--- 		dst = { x = 1920 - 823, y = 0, w = 823, h = 1080 },
--- 		depth = -1,
--- 	})
--- 	waywall.show_floating(true)
--- end)
+
+waywall.listen('load', function()
+	-- if not is_process_running('ninjabrainbot') then
+	waywall.exec('ninjabrainbot')
+	-- end
+	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
+	-- 	dst = { x = 0, y = 0, w = 823, h = 1080 },
+	-- 	depth = -1,
+	-- })
+	-- deco_objects.thin1 = waywall.image('${../../../assets/mcsr/bg.png}', {
+	-- 	dst = { x = 1920 - 823, y = 0, w = 823, h = 1080 },
+	-- 	depth = -1,
+	-- })
+	waywall.show_floating(true)
+end)
 --
 -- -- ################################################################################################
 -- -- PROJECTOR SETUP
 -- -- ################################################################################################
 -- -- entity counter location and projection size
--- local counter_src = {
--- 	x = 0,
--- 	y = 37,
--- 	w = 300,
--- 	h = 9,
--- }
--- local counter_dst_size = {
--- 	w = counter_src.w * (40 / counter_src.h),
--- 	h = 40,
--- }
--- local function setup_entity_counter(width, height)
--- 	return helpers.res_mirror({
--- 		src = counter_src,
--- 		dst = {
--- 			x = (1920 + width) / 2,
--- 			y = (1080 - counter_dst_size.h) / 2,
--- 			w = counter_dst_size.w,
--- 			h = counter_dst_size.h,
--- 		},
--- 		color_key = {
--- 			input = '#dddddd',
--- 			output = '#ffffff',
--- 		},
--- 	}, width, height)
--- end
+local counter_src = {
+	x = 0,
+	y = 37,
+	w = 300,
+	h = 9,
+}
+local counter_dst_size = {
+	w = counter_src.w * (40 / counter_src.h),
+	h = 40,
+}
+local function setup_entity_counter(width, height)
+	return helpers.res_mirror({
+		src = counter_src,
+		dst = {
+			x = (1920 + width) / 2,
+			y = (1080 - counter_dst_size.h) / 2,
+			w = counter_dst_size.w,
+			h = counter_dst_size.h,
+		},
+		color_key = {
+			input = '#dddddd',
+			output = '#ffffff',
+		},
+	}, width, height)
+end
 --
 -- -- ##############################################################################################
 -- -- EYE ZOOM
 --
--- local eye = {
--- 	sens = 0.74,
--- 	res = {
--- 		w = 300,
--- 		h = 16384,
--- 	},
--- 	proj = {
--- 		x = 0,
--- 		y = 312,
--- 		w = 810,
--- 		h = 456,
--- 	},
--- 	src = {
--- 		w = 60,
--- 		h = 580,
--- 	},
--- }
+local eye = {
+	sens = 0.74,
+	res = {
+		w = 300,
+		h = 16384,
+	},
+	proj = {
+		x = 0,
+		y = 312,
+		w = 810,
+		h = 456,
+	},
+	src = {
+		w = 60,
+		h = 580,
+	},
+}
 --
--- helpers.res_mirror({
--- 	dst = eye.proj,
--- 	src = {
--- 		x = (eye.res.w - eye.src.w) / 2,
--- 		y = (eye.res.h - eye.src.h) / 2,
--- 		w = eye.src.w,
--- 		h = eye.src.h,
--- 	},
--- }, eye.res.w, eye.res.h)
+helpers.res_mirror({
+	dst = eye.proj,
+	src = {
+		x = (eye.res.w - eye.src.w) / 2,
+		y = (eye.res.h - eye.src.h) / 2,
+		w = eye.src.w,
+		h = eye.src.h,
+	},
+}, eye.res.w, eye.res.h)
 --
--- helpers.res_image('${../../../assets/mcsr/overlay.png}', { dst = eye.proj }, eye.res.w, eye.res.h)
+helpers.res_image('${./overlay.png}', { dst = eye.proj }, eye.res.w, eye.res.h)
 --
--- setup_entity_counter(eye.res.w, eye.res.h)
---
--- local pie_height = 320
--- local dst_height = (1080 - counter_dst_size.h) / 2
--- helpers.res_mirror({
--- 	src = {
--- 		x = 0,
--- 		y = eye.res.h - 420,
--- 		w = eye.res.w,
--- 		h = pie_height,
--- 	},
--- 	dst = {
--- 		x = (1920 + eye.res.w) / 2,
--- 		y = (1080 + counter_dst_size.h) / 2,
--- 		w = (dst_height / pie_height) * eye.res.w,
--- 		h = dst_height,
--- 	},
--- }, eye.res.w, eye.res.h)
+setup_entity_counter(eye.res.w, eye.res.h)
+
+local pie_height = 320
+local dst_height = (1080 - counter_dst_size.h) / 2
+helpers.res_mirror({
+	src = {
+		x = 0,
+		y = eye.res.h - 420,
+		w = eye.res.w,
+		h = pie_height,
+	},
+	dst = {
+		x = (1920 + eye.res.w) / 2,
+		y = (1080 + counter_dst_size.h) / 2,
+		w = (dst_height / pie_height) * eye.res.w,
+		h = dst_height,
+	},
+}, eye.res.w, eye.res.h)
 --
 -- -- ##############################################################################################
 -- -- THIN
 --
--- local thin_res = {
--- 	w = 300,
--- 	h = 1080,
--- }
--- setup_entity_counter(thin_res.w, thin_res.h)
+local thin_res = {
+	w = 300,
+	h = 1080,
+}
+setup_entity_counter(thin_res.w, thin_res.h)
 --
 -- -- ################################################################################################
 -- -- CONFIG
@@ -196,65 +174,60 @@ return config
 --
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
--- local config = {
--- 	input = {
--- 		-- KEYBOARD CONFIG
--- 		layout = 'us,de',
--- 		variant = 'dvp',
--- 		model = 'pc105',
--- 		options = 'lv3:ralt_switch',
--- 		repeat_rate = 40,
--- 		repeat_delay = 200,
---
--- 		remaps = game_remaps,
---
--- 		-- MOUSE CONFIG
--- 		-- value obtained by trial and error (binary search) and https://github.com/Esensats/mcsr-calcsens
--- 		-- should correspond to 36cm/360
--- 		sensitivity = 11,
--- 		confine_pointer = false,
--- 	},
--- 	theme = {
--- 		background = '#1b0e1fff',
--- 		ninb_anchor = 'topleft',
--- 		ninb_opacity = 0.9,
--- 	},
--- 	actions = {
--- 		['*-D'] = function()
--- 			if chat_state.enabled then
--- 				return false
--- 			end
--- 			if not is_process_running('ninjabrainbot') then
--- 				waywall.exec('ninjabrainbot')
--- 				waywall.show_floating(true)
--- 			else
--- 				helpers.toggle_floating()
--- 			end
--- 		end,
---
--- 		['ctrl-N'] = function()
--- 			toggle_chat()
--- 		end,
---
--- 		-- use to navigate pie chart with left hand only
--- 		-- can't be a regular rebind because of the way programmer dvorak handles number keys
--- 		['*-apostrophe'] = function()
--- 			if chat_state.enabled then
--- 				return false
--- 			end
--- 			waywall.press_key('0')
--- 		end,
--- 		-- RESOLUTION MACROS
--- 		['*-m3'] = function()
--- 			(helpers.toggle_res(thin_res.w, thin_res.h))()
--- 		end,
--- 		['*-shift-m4'] = function()
--- 			(helpers.toggle_res(1920, 300))()
--- 		end,
--- 		['*-ctrl-m5'] = function()
--- 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
--- 		end,
--- 	},
--- }
---
--- return config
+local config = {
+	input = {
+		-- KEYBOARD CONFIG
+		layout = 'us',
+		repeat_rate = 100,
+		repeat_delay = 200,
+
+		sensitivity = 0.81920004,
+		confine_pointer = false,
+
+		-- remaps = game_remaps,
+	},
+	theme = {
+		-- background = '#1b0e1fff',
+		background = '#303030ff',
+		ninb_anchor = 'topright',
+		ninb_opacity = 0.9,
+	},
+	actions = {
+		-- ['*-D'] = function()
+		-- 	if chat_state.enabled then
+		-- 		return false
+		-- 	end
+		-- 	if not is_process_running('ninjabrainbot') then
+		-- 		waywall.exec('ninjabrainbot')
+		-- 		waywall.show_floating(true)
+		-- 	else
+		-- 		helpers.toggle_floating()
+		-- 	end
+		-- end,
+
+		-- ['Enter'] = function()
+		-- 	toggle_chat()
+		-- end,
+
+		-- use to navigate pie chart with left hand only
+		-- can't be a regular rebind because of the way programmer dvorak handles number keys
+		-- ['*-apostrophe'] = function()
+		-- 	if chat_state.enabled then
+		-- 		return false
+		-- 	end
+		-- 	waywall.press_key('0')
+		-- end,
+		-- RESOLUTION MACROS
+		['b'] = function()
+			(helpers.toggle_res(thin_res.w, thin_res.h))()
+		end,
+		['h'] = function()
+			(helpers.toggle_res(1920, 300))()
+		end,
+		['`'] = function()
+			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
+		end,
+	},
+}
+
+return config
