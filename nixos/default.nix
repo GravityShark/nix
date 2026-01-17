@@ -28,6 +28,7 @@
         "nvidia-settings"
         "nvidia-x11"
         "steam"
+        "steamcmd"
         "steam-unwrapped"
         # "zerotierone"
       ];
