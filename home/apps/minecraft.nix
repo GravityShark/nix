@@ -73,7 +73,7 @@
 
     systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
 
-    # xdg.configFile."waywall/init.lua".source = ../../dump/.config/waywall/init.lua;
+    xdg.configFile."waywall/init.lua".source = ../../dump/.config/waywall/init.lua;
     # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
     #   ../../dump/.config/java/.java/.userPrefs/ninjabrainbot/prefs.xml;
   };

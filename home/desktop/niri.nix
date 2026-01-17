@@ -27,6 +27,7 @@
       nirius
       # notify-desktop
       wl-clipboard
+      wl-mirror
       # xlsclients
     ];
   };
