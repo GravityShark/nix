@@ -211,7 +211,7 @@ local config = {
 		ninb_opacity = 0.9,
 	},
 	actions = {
-		['*-D'] = function()
+		['shift-grave'] = function()
 			if chat_state.enabled then
 				return false
 			end
@@ -227,14 +227,6 @@ local config = {
 			toggle_chat()
 		end,
 
-		-- use to navigate pie chart with left hand only
-		-- can't be a regular rebind because of the way programmer dvorak handles number keys
-		['*-apostrophe'] = function()
-			if chat_state.enabled then
-				return false
-			end
-			waywall.press_key('0')
-		end,
 		-- RESOLUTION MACROS
 		['b'] = function()
 			(helpers.toggle_res(thin_res.w, thin_res.h))()
