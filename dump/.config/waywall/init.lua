@@ -94,7 +94,7 @@ helpers.res_mirror({
 	},
 }, eye.res.w, eye.res.h)
 --
-helpers.res_image('${./overlay.png}', { dst = eye.proj }, eye.res.w, eye.res.h)
+helpers.res_image('./overlay.png', { dst = eye.proj }, eye.res.w, eye.res.h)
 --
 setup_entity_counter(eye.res.w, eye.res.h)
 
