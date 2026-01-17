@@ -1,12 +1,13 @@
+-- https://github.com/MarwinKreuzig/nixos-config/blob/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr/home.nix
 local waywall = require('waywall')
 local helpers = require('waywall.helpers')
 
--- local is_process_running = function(name)
--- 	local handle = io.popen("pgrep -f '" .. name .. "'")
--- 	local result = handle:read('*l')
--- 	handle:close()
--- 	return result ~= nil
--- end
+local is_process_running = function(name)
+	local handle = io.popen("pgrep -f '" .. name .. "'")
+	local result = handle:read('*l')
+	handle:close()
+	return result ~= nil
+end
 --
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
@@ -17,9 +18,9 @@ local helpers = require('waywall.helpers')
 -- }
 
 waywall.listen('load', function()
-	-- if not is_process_running('ninjabrainbot') then
-	waywall.exec('ninjabrainbot')
-	-- end
+	if not is_process_running('ninjabrainbot') then
+		waywall.exec('ninjabrainbot')
+	end
 	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
 	-- 	dst = { x = 0, y = 0, w = 823, h = 1080 },
 	-- 	depth = -1,
@@ -65,7 +66,7 @@ end
 -- -- EYE ZOOM
 --
 local eye = {
-	sens = 0.74,
+	-- sens = 0.74,
 	res = {
 		w = 300,
 		h = 16384,
@@ -92,7 +93,7 @@ helpers.res_mirror({
 	},
 }, eye.res.w, eye.res.h)
 --
-helpers.res_image('./overlay.png', { dst = eye.proj }, eye.res.w, eye.res.h)
+helpers.res_image('~/.config/waywall/overlay.png', { dst = eye.proj }, eye.res.w, eye.res.h)
 --
 setup_entity_counter(eye.res.w, eye.res.h)
 
@@ -162,15 +163,6 @@ local game_remaps = {
 	['x'] = 'f3',
 	['v'] = 'n',
 	['n'] = '0',
-
-	-- (defsrc
-	--   1 4 5 6 7
-	--        q    w    e    r    t    y    u    i    o    p   [
-	--   caps a    s    d    f    g    h    j    k    l    ;   '
-	--   lsft z    x    c    v    b    n    m    ,    .    /   rsft
-	--   lalt spc  <    ralt rctl
-	-- )
-	--
 	--    _   p s 4 5
 	--        o    _    _    _    _    _    _    _    _    _   _
 	--   k    _   d    i    _    _    _    _    _    _    _   _
@@ -202,10 +194,11 @@ end
 local config = {
 	input = {
 		-- KEYBOARD CONFIG
-		layout = 'mc',
+		layout = 'us',
 		repeat_rate = 100,
 		repeat_delay = 200,
 
+		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
 		sensitivity = 0.81920004,
 		confine_pointer = false,
 
@@ -214,34 +207,34 @@ local config = {
 	theme = {
 		-- background = '#1b0e1fff',
 		background = '#303030ff',
-		ninb_anchor = 'topright',
+		ninb_anchor = 'topleft',
 		ninb_opacity = 0.9,
 	},
 	actions = {
-		-- ['*-D'] = function()
-		-- 	if chat_state.enabled then
-		-- 		return false
-		-- 	end
-		-- 	if not is_process_running('ninjabrainbot') then
-		-- 		waywall.exec('ninjabrainbot')
-		-- 		waywall.show_floating(true)
-		-- 	else
-		-- 		helpers.toggle_floating()
-		-- 	end
-		-- end,
+		['*-D'] = function()
+			if chat_state.enabled then
+				return false
+			end
+			if not is_process_running('ninjabrainbot') then
+				waywall.exec('ninjabrainbot')
+				waywall.show_floating(true)
+			else
+				helpers.toggle_floating()
+			end
+		end,
 
-		['return'] = function()
+		['ctrl-N'] = function()
 			toggle_chat()
 		end,
 
 		-- use to navigate pie chart with left hand only
 		-- can't be a regular rebind because of the way programmer dvorak handles number keys
-		-- ['*-apostrophe'] = function()
-		-- 	if chat_state.enabled then
-		-- 		return false
-		-- 	end
-		-- 	waywall.press_key('0')
-		-- end,
+		['*-apostrophe'] = function()
+			if chat_state.enabled then
+				return false
+			end
+			waywall.press_key('0')
+		end,
 		-- RESOLUTION MACROS
 		['b'] = function()
 			(helpers.toggle_res(thin_res.w, thin_res.h))()
