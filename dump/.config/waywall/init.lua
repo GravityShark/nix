@@ -92,9 +92,9 @@ helpers.res_mirror({
 		h = eye.src.h,
 	},
 }, eye.res.w, eye.res.h)
---
-helpers.res_image('~/.config/waywall/overlay.png', { dst = eye.proj }, eye.res.w, eye.res.h)
---
+
+helpers.res_image(os.getenv('HOME') .. '~/.config/waywall/overlay.png', { dst = eye.proj }, eye.res.w, eye.res.h)
+
 setup_entity_counter(eye.res.w, eye.res.h)
 
 local pie_height = 320
