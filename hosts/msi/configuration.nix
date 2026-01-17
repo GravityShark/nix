@@ -56,7 +56,7 @@
   # Steam
   programs.steam.enable = true;
 
-  environment.systemPackages = with pkgs; [ steamtui ]
+  environment.systemPackages = with pkgs; [ steamtui ];
   #   # WINE
   #   wine
   #   winetricks
