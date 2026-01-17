@@ -17,7 +17,7 @@
       enable = true;
       settings = {
         general = {
-          # renice = 10;
+          renice = 10;
           softrealtime = "auto";
         };
 
@@ -26,8 +26,8 @@
             tuned-adm = "${pkgs.tuned}/bin/tuned-adm";
           in
           lib.mkIf config.service.power-management.enable {
-            start = "cp /etc/tuned/active_profile /tmp/active_profile && ${tuned-adm} profile throughput-performance";
-            end = "${tuned-adm} profile $(cat /tmp/active_profile)";
+            start = "sh -c 'cp /etc/tuned/active_profile /tmp/active_profile && ${tuned-adm} profile throughput-performance'";
+            end = "sh -c '${tuned-adm} profile $(cat /tmp/active_profile)'";
           };
       };
     };
