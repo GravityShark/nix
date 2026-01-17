@@ -1,8 +1,6 @@
 local waywall = require('waywall')
 local helpers = require('waywall.helpers')
 
-config.actions = {}
-
 -- local is_process_running = function(name)
 -- 	local handle = io.popen("pgrep -f '" .. name .. "'")
 -- 	local result = handle:read('*l')
@@ -137,47 +135,74 @@ setup_entity_counter(thin_res.w, thin_res.h)
 -- -- execute sudo showkey
 -- -- find keycode in https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
 -- -- (might be in decimal or in hex)
--- local game_remaps = {
--- 	-- DO NOT REMAP: number row (messes up piechart), any F3 shortcut
--- 	-- use right shift to access pie chart without crouching
--- 	['102ND'] = 'RIGHTSHIFT',
--- 	-- easier F3
--- 	['X'] = 'F3', --  Q -> F3
--- 	-- search crafting
--- 	['MB4'] = 'BackSpace', --  MB4 -> Backspace
--- 	['W'] = 'N', --  , -> B
--- 	['E'] = 'D', --  . -> E
--- 	['D'] = 'K', --  E -> T
--- 	['V'] = 'COMMA', --  K -> W
--- 	['T'] = 'O', --  Y -> R
--- 	['Q'] = 'B', --  ; -> X
--- 	['R'] = 'KP4', --  P -> 4
--- }
+local game_remaps = {
+	-- DO NOT REMAP: number row (messes up piechart), any F3 shortcut
+	-- use right shift to access pie chart without crouching
+	-- ['102ND'] = 'RIGHTSHIFT',
+	-- easier F3
+	-- ['X'] = 'F3', --  Q -> F3
+	-- search crafting
+	-- ['MB4'] = 'BackSpace', --  MB4 -> Backspace
+	-- ['W'] = 'N', --  , -> B
+	-- ['E'] = 'D', --  . -> E
+	-- ['D'] = 'K', --  E -> T
+	-- ['V'] = 'COMMA', --  K -> W
+	-- ['T'] = 'O', --  Y -> R
+	-- ['Q'] = 'B', --  ; -> X
+	-- ['R'] = 'KP4', --  P -> 4
+	['4'] = 'p',
+	['5'] = 's',
+	['6'] = '4',
+	['7'] = '5',
+	['q'] = 'o',
+	-- ['capslock'] = 'k',
+	['s'] = 'd',
+	['d'] = 'i',
+	['z'] = 'x',
+	['x'] = 'f3',
+	['v'] = 'n',
+	['n'] = '0',
+
+	-- (defsrc
+	--   1 4 5 6 7
+	--        q    w    e    r    t    y    u    i    o    p   [
+	--   caps a    s    d    f    g    h    j    k    l    ;   '
+	--   lsft z    x    c    v    b    n    m    ,    .    /   rsft
+	--   lalt spc  <    ralt rctl
+	-- )
+	--
+	--    _   p s 4 5
+	--        o    _    _    _    _    _    _    _    _    _   _
+	--   k    _   d    i    _    _    _    _    _    _    _   _
+	--   _    x    f3    _    n    _    0    _    _    _   _   _
+	--   _    _    _    @base    _
+}
 --
 -- -- ##############################################################################################
 -- -- CHAT MODE
--- local chat_state = {
--- 	enabled = false,
--- 	text = nil,
--- }
--- local toggle_chat = function()
--- 	chat_state.enabled = not chat_state.enabled
--- 	if chat_state.enabled then
--- 		waywall.set_remaps({})
--- 		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 10 })
--- 	else
--- 		waywall.set_remaps(game_remaps)
--- 		chat_state.text:close()
--- 		chat_state.text = nil
--- 	end
--- end
+local chat_state = {
+	enabled = false,
+	text = nil,
+}
+
+local toggle_chat = function()
+	chat_state.enabled = not chat_state.enabled
+	if chat_state.enabled then
+		waywall.set_remaps({})
+		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 10 })
+	else
+		waywall.set_remaps(game_remaps)
+		chat_state.text:close()
+		chat_state.text = nil
+	end
+end
 --
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
 local config = {
 	input = {
 		-- KEYBOARD CONFIG
-		layout = 'us',
+		layout = 'mc',
 		repeat_rate = 100,
 		repeat_delay = 200,
 
@@ -205,9 +230,9 @@ local config = {
 		-- 	end
 		-- end,
 
-		-- ['Enter'] = function()
-		-- 	toggle_chat()
-		-- end,
+		['return'] = function()
+			toggle_chat()
+		end,
 
 		-- use to navigate pie chart with left hand only
 		-- can't be a regular rebind because of the way programmer dvorak handles number keys
@@ -224,7 +249,7 @@ local config = {
 		['h'] = function()
 			(helpers.toggle_res(1920, 300))()
 		end,
-		['`'] = function()
+		['grave'] = function()
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
 	},
