@@ -10,6 +10,7 @@
     service.gamemode.enable = lib.mkEnableOption "enables gamemode";
   };
   config = lib.mkIf config.service.gamemode.enable {
+
     environment.sessionVariables.GAMEMODERUNEXEC = "nvidia-offload";
     users.users.${config.username}.extraGroups = [ "gamemode" ];
 
@@ -25,10 +26,18 @@
         custom =
           let
             tuned-adm = "${pkgs.tuned}/bin/tuned-adm";
+
+            start = pkgs.writers.writeDash "start" ''
+              cp /etc/tuned/active_profile /tmp/active_profile && ${tuned-adm} profile throughput-performance
+            '';
+
+            end = pkgs.writers.writeDash "end" ''
+              ${tuned-adm} profile $(cat /tmp/active_profile)
+            '';
           in
           lib.mkIf config.service.power-management.enable {
-            start = "sh -c 'cp /etc/tuned/active_profile /tmp/active_profile && ${tuned-adm} profile throughput-performance'";
-            end = "sh -c '${tuned-adm} profile $(cat /tmp/active_profile)'";
+            start = "${start}/bin/start";
+            end = "${end}/bin/end";
           };
       };
     };
