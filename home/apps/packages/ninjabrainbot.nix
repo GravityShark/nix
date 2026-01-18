@@ -7,6 +7,7 @@
   libxinerama,
   libxkbcommon,
   libxt,
+  copyDesktopItems,
   makeDesktopItem,
   makeWrapper,
   temurin-bin-17,
@@ -20,7 +21,22 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     hash = "sha256-Rxu9A2EiTr69fLBUImRv+RLC2LmosawIDyDPIaRcrdw=";
   };
 
-  nativeBuildInputs = [ makeWrapper ];
+  desktopItems = [
+    (makeDesktopItem {
+      name = "ninjabrain-bot";
+      type = "Application";
+      exec = "ninjabrain-bot";
+      comment = "An accurate stronghold calculator for Minecraft speedrunning.";
+      desktopName = "Ninjabrain Bot";
+      genericName = "A Minecraft stronghold calculator";
+      categories = [ "Game" ];
+    })
+  ];
+
+  nativeBuildInputs = [
+    copyDesktopItems
+    makeWrapper
+  ];
 
   dontUnpack = true;
 
@@ -42,18 +58,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     runHook postInstall
   '';
-
-  desktopItems = [
-    (makeDesktopItem {
-      name = "ninjabrain-bot";
-      type = "Application";
-      exec = "ninjabrain-bot";
-      comment = "An accurate stronghold calculator for Minecraft speedrunning.";
-      desktopName = "Ninjabrain Bot";
-      genericName = "A Minecraft stronghold calculator";
-      categories = [ "Game" ];
-    })
-  ];
 
   meta = {
     description = "Stronghold calculator for Minecraft speedrunning";
