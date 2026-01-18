@@ -75,11 +75,12 @@ in
 
     # local resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
 
-    xdg.configFile."waywall/init.lua".text = ''
-      local ninb_path = "${lib.getExe ninjabrain-bot}"
-      local eye_overlay = "${../../dump/.config/waywall/overlay.png}"
-    ''
-    + builtins.readFile ../../dump/.config/waywall/init.lua;
+    xdg.configFile."waywall/init.lua".text = "" + builtins.readFile ../../dump/.config/waywall/init.lua;
+
+    xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
+      ninb_path = "${lib.getExe ninjabrain-bot}";
+      eye_overlay = "${../../dump/.config/waywall/overlay.png}";
+    };
 
     # xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;
     # xdg.configFile."xkb/symbols/mc".source = ../../dump/.config/xkb/symbols/mc;

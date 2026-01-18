@@ -27,7 +27,6 @@
       waywall = prev.waywall.overrideAttrs (
         f: p: {
           version = "0.2026.01.11";
-
           src = prev.fetchFromGitHub {
             owner = "tesselslate";
             repo = "waywall";

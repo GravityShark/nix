@@ -2,13 +2,16 @@
 local waywall = require('waywall')
 local helpers = require('waywall.helpers')
 
+local ninb_path = '@ninb_path@'
+local eye_overlay = '@eye_overlay@'
+
 local is_process_running = function(name)
 	local handle = io.popen("pgrep -f '" .. name .. "'")
 	local result = handle:read('*l')
 	handle:close()
 	return result ~= nil
 end
---
+
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
 -- -- ################################################################################################
@@ -18,9 +21,9 @@ end
 -- }
 
 waywall.listen('load', function()
-	-- if not is_process_running('ninjabrainbot') then
-	-- 	waywall.exec('ninjabrainbot')
-	-- end
+	if not is_process_running('ninjabrainbot') then
+		waywall.exec('ninjabrainbot')
+	end
 	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
 	-- 	dst = { x = 0, y = 0, w = 823, h = 1080 },
 	-- 	depth = -1,
@@ -29,14 +32,6 @@ waywall.listen('load', function()
 	-- 	dst = { x = 1920 - 823, y = 0, w = 823, h = 1080 },
 	-- 	depth = -1,
 	-- })
-	-- waywall.show_floating(true)
-
-	-- waywall.exec('ninjabrainbot')
-	-- waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
-	-- waywall.show_floating(true)
-	-- waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
-
-	-- waywall.exec('env -u WAYLAND_DISPLAY -u WAYLAND_SOCKET _JAVA_AWT_WM_NONREPARENTING=1 ninjabrainbot')
 	waywall.show_floating(true)
 end)
 --
@@ -130,94 +125,19 @@ local thin_res = {
 	h = 1080,
 }
 setup_entity_counter(thin_res.w, thin_res.h)
---
--- -- ################################################################################################
--- -- CONFIG
--- -- ################################################################################################
---
--- -- ##############################################################################################
--- -- REMAPS
--- -- Remaps are done using the qwerty layout - on both sides!
--- -- If you want to remap the "o" key to the "g" key you need to map "S" to "U"!
--- --
+
 -- -- when in doubt, do this:
 -- -- execute sudo showkey
 -- -- find keycode in https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
 -- -- (might be in decimal or in hex)
 local game_remaps = {
-	-- DO NOT REMAP: number row (messes up piechart), any F3 shortcut
-	-- use right shift to access pie chart without crouching
-	-- ['102ND'] = 'RIGHTSHIFT',
-	-- easier F3
-	-- ['X'] = 'F3', --  Q -> F3
-	-- search crafting
-	-- ['MB4'] = 'BackSpace', --  MB4 -> Backspace
-	-- ['W'] = 'N', --  , -> B
-	-- ['E'] = 'D', --  . -> E
-	-- ['D'] = 'K', --  E -> T
-	-- ['V'] = 'COMMA', --  K -> W
-	-- ['T'] = 'O', --  Y -> R
-	-- ['Q'] = 'B', --  ; -> X
-	-- ['R'] = 'KP4', --  P -> 4
-
 	--[[
-
-	f
-	b
-	c
-	f4
-
-+4 - stone sword
-+5 - iron sword
-8 - gold pick
-+8 - iron axe
-8 - iron pick (pick and iron axe junk)
-+8 - stone axe
-_a – fns no junk
-aw – anchors
-ba – iron bars
-be – bed no junk
-bow – bow (bowl)
-br – bread
-de – blaze powder + ender eyes
-ic – sticks + nether brick
-ke – bucket no junk
-ne – bricks + glowstone
-ngo – gold-iron ingots (boots junk)
-oat - boat
-pp - golden apple
-r_ - nether bricks no junk
-ro - any iron
-rr – golden carrots no junk
-tn - tnt
-wo - wool
-ws - glowstone
-
-
-### Alternatives
-4 – all swords
-ie - shield (no junk)
-it – wool no junk
-ka - pickaxes
-ok - tripwire hook
-ow – bed + bow
-_r - fishing rod
-rs – iron bars
-rt – coarse dirt no junk
-w_ / be / ow (can be overlapped with backspace) - blaze bed
-wn – bed + anchor (less junk)
-w – wool + glowstone
-x – all axes/pickaxes
-
-
-	space = open chat
+	eye  1    2    3    k    +    4    5
+	_    8    o    d    r    t    f    _    _    _    _   _
+	s    e    i    g    n    b    _    _    _    _    _   _
+	_    a    f3   c    w    _    0    _    _    _   _   _
+	_    _    spc   @base    _
 	]]
-
-	--   eye  1    2    3    k    +    4    5
-	--   _    8    o    d    r    t    f    _    _    _    _   _
-	--   s    e    i    g    n    b    _    _    _    _    _   _
-	--   _    a    f3   c    w    _    0    _    _    _   _   _
-	--   _    _    spc   @base    _
 
 	['4'] = 'k',
 	['5'] = 'KPPLUS',
@@ -262,6 +182,13 @@ end
 
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
+local disabled_in_chat_mode = function(f)
+	if chat_state.enabled then
+		return false
+	end
+	return f
+end
+
 local config = {
 	input = {
 		-- KEYBOARD CONFIG
@@ -279,56 +206,23 @@ local config = {
 		-- background = '#1b0e1fff',
 		-- background = '#303030ff',
 		background = '#00000000',
-		ninb_anchor = 'topleft',
-		-- ninb_opacity = 0.9,
+		ninb_anchor = 'topright',
+		ninb_opacity = 0.9,
 	},
 	actions = {
-		['shift-backslash'] = function()
-			print('toggled float')
-			helpers.toggle_floating()
-		end,
-		['*-backslash'] = function()
-			-- if chat_state.enabled then
-			-- 	return false
-			-- end
-			-- if not is_process_running('ninjabrainbot') then
-			-- 	waywall.exec('ninjabrainbot')
-			-- 	waywall.show_floating(true)
-			-- else
-			-- 	helpers.toggle_floating()
-			-- end
-			-- waywall.exec('ninjabrainbot')
-			-- helpers.toggle_floating()
-
-			-- waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
-			-- waywall.exec('env -u WAYLAND_DISPLAY -u WAYLAND_SOCKET _JAVA_AWT_WM_NONREPARENTING=1 ninjabrainbot')
-			print('ninjabrain-bot')
-			waywall.exec(ninb_path)
-			waywall.exec('ninjabrain-bot')
-			waywall.exec(
-				'java -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar '
-			)
-			waywall.exec(
-				'java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel '
-			)
-			waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
-		end,
-
-		['ctrl-shift-d'] = function()
-			if chat_state.enabled then
-				return false
-			end
+		['ctrl-shift-d'] = disabled_in_chat_mode(function()
 			if not is_process_running('ninjabrainbot') then
 				waywall.exec('ninjabrainbot')
 				waywall.show_floating(true)
 			else
 				helpers.toggle_floating()
 			end
-		end,
+		end),
 
 		['ctrl-N'] = function()
 			toggle_chat()
 		end,
+
 		['return'] = function()
 			if chat_state.enabled then
 				waywall.press_key('enter')
@@ -345,24 +239,9 @@ local config = {
 		end,
 
 		-- RESOLUTION MACROS
-		['*-b'] = function()
-			if chat_state.enabled then
-				return false
-			end
-			(helpers.toggle_res(thin_res.w, thin_res.h))()
-		end,
-		['*-h'] = function()
-			if chat_state.enabled then
-				return false
-			end
-			(helpers.toggle_res(1920, 300))()
-		end,
-		['*-grave'] = function()
-			if chat_state.enabled then
-				return false
-			end
-			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
-		end,
+		['*-b'] = disabled_in_chat_mode((helpers.toggle_res(thin_res.w, thin_res.h))()),
+		['*-h'] = disabled_in_chat_mode((helpers.toggle_res(1920, 300))()),
+		['*-grave'] = disabled_in_chat_mode((helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()),
 	},
 }
 

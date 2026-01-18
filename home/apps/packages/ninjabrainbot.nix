@@ -7,6 +7,7 @@
   libxinerama,
   libxkbcommon,
   libxt,
+  makeDesktopItem,
   makeWrapper,
   temurin-bin-17,
 }:
@@ -41,6 +42,18 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     runHook postInstall
   '';
+
+  desktopItems = [
+    (makeDesktopItem {
+      name = "ninjabrain-bot";
+      type = "Application";
+      exec = "ninjabrain-bot";
+      comment = "An accurate stronghold calculator for Minecraft speedrunning.";
+      desktopName = "Ninjabrain Bot";
+      genericName = "A Minecraft stronghold calculator";
+      categories = [ "Game" ];
+    })
+  ];
 
   meta = {
     description = "Stronghold calculator for Minecraft speedrunning";
