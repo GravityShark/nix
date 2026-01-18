@@ -15,77 +15,77 @@ in
   options = {
     apps.minecraft = {
       enable = lib.mkEnableOption "enables minecraft";
-      width = lib.mkOption {
-        type = lib.types.int;
-        default = 1920;
-      };
-
-      height = lib.mkOption {
-        type = lib.types.int;
-        default = 1080;
-      };
+      #   width = lib.mkOption {
+      #     type = lib.types.int;
+      #     default = 1920;
+      #   };
+      #
+      #   height = lib.mkOption {
+      #     type = lib.types.int;
+      #     default = 1080;
+      #   };
+      # };
     };
-  };
-  config = lib.mkIf config.apps.minecraft.enable {
-    home.packages = with pkgs; [
-      jre
-      ninjabrain-bot
-      lunar-client
-      waywall
+    config = lib.mkIf config.apps.minecraft.enable {
 
-      (prismlauncher.override (previous: {
-        jdks = [
-          graalvmPackages.graalvm-oracle
-          # graalvmPackages.graalvm-oracle_17
-          javaPackages.compiler.temurin-bin.jre-17
-          javaPackages.compiler.temurin-bin.jre-21
-          # javaPackages.compiler.temurin-bin.jre-25
-          # jdk17
-          # jdk21
-          # jre8
-        ];
-        additionalLibs = [
-          # runtime dependencies necessary for mcsr fairplay mod
-          libxtst
-          libxkbcommon
-          libxt
-          libxinerama
-        ];
-        additionalPrograms = [
-          jemalloc
-          ninjabrain-bot
-          waywall
-        ];
-      }))
-    ];
+      # Disable lunar client autostart
+      # systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
 
-    programs.obs-studio = {
-      enable = true;
-      # package = (
-      #   pkgs.obs-studio.override {
-      #     cudaSupport = true;
-      #   }
-      # );
-      plugins = with pkgs.obs-studio-plugins; [
-        obs-pipewire-audio-capture
-        input-overlay
+      home.packages = with pkgs; [
+        # jre
+        # lunar-client
+
+        (prismlauncher.override (previous: {
+          jdks = [
+            graalvmPackages.graalvm-oracle
+            # graalvmPackages.graalvm-oracle_17
+            # javaPackages.compiler.temurin-bin.jre-17
+            # javaPackages.compiler.temurin-bin.jre-21
+            # javaPackages.compiler.temurin-bin.jre-25
+            # jdk17
+            # jdk21
+            # jre8
+          ];
+          additionalLibs = [
+            # runtime dependencies necessary for mcsr fairplay mod
+            libxtst
+            libxkbcommon
+            libxt
+            libxinerama
+          ];
+          additionalPrograms = [
+            jemalloc
+            ninjabrain-bot
+            waywall
+          ];
+        }))
       ];
+
+      programs.obs-studio = {
+        enable = true;
+        # package = (
+        #   pkgs.obs-studio.override {
+        #     cudaSupport = true;
+        #   }
+        # );
+        plugins = with pkgs.obs-studio-plugins; [
+          obs-pipewire-audio-capture
+          input-overlay
+        ];
+      };
+
+      xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
+        eye_overlay = "${../../dump/.config/waywall/overlay.png}";
+        ninb_path = "${lib.getExe ninjabrain-bot}";
+        # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
+      };
+
+      home.file.".java/.userPrefs/ninjabrainbot/prefs.xml".source =
+        ../../dump/.java/.userPrefs/ninjabrainbot/prefs.xml;
+      # xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;
+      # xdg.configFile."xkb/symbols/mc".source = ../../dump/.config/xkb/symbols/mc;
+      # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
+      #
     };
-
-    systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
-
-    # local resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
-
-    xdg.configFile."waywall/init.lua".text = "" + builtins.readFile ../../dump/.config/waywall/init.lua;
-
-    xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
-      ninb_path = "${lib.getExe ninjabrain-bot}";
-      eye_overlay = "${../../dump/.config/waywall/overlay.png}";
-    };
-
-    # xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;
-    # xdg.configFile."xkb/symbols/mc".source = ../../dump/.config/xkb/symbols/mc;
-    # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
-    #   ../../dump/.config/java/.java/.userPrefs/ninjabrainbot/prefs.xml;
   };
 }
