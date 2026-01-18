@@ -9,7 +9,7 @@
 }:
 
 let
-  ninjabrain-bot = pkgs.callPackage ./ninjabrain.nix { };
+  ninjabrain-bot = pkgs.callPackage ./packages/ninjabrainbot.nix { };
 in
 {
   options = {
@@ -86,7 +86,6 @@ in
       #   tall = "${./tall.png}",
       # }
     ''
-
     + builtins.readFile ../../dump/.config/waywall/init.lua;
 
     # xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;

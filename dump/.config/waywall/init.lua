@@ -303,6 +303,7 @@ local config = {
 			-- waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
 			-- waywall.exec('env -u WAYLAND_DISPLAY -u WAYLAND_SOCKET _JAVA_AWT_WM_NONREPARENTING=1 ninjabrainbot')
 			print('ninjabrain-bot')
+			waywall.exec(ninb_path)
 			waywall.exec('ninjabrain-bot')
 			waywall.exec(
 				'java -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar '
