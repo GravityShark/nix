@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-instances=("ranked")
+instances=("1.16.1" "MCSRRanked-Linux-1.16.1-All")
 # DO NOT add a '/' at the end of launcher_prefix's value
-launcher_prefix=~/.local/share/nixcraft/client/instances
+launcher_prefix=~/.local/share/PrismLauncher/instances
 for inst in ${instances[@]}; do
     rm -r $launcher_prefix/$inst/minecraft/saves/Random*
     rm -r $launcher_prefix/$inst/minecraft/saves/New*
+    rm -r $launcher_prefix/$inst/minecraft/saves/mcsrranked*
 done
