@@ -56,7 +56,7 @@
     super-productivity
     # vial
     vlc # Videos + Music
-    youtube-music
+    pear-desktop
 
     ## Media
     # audacity

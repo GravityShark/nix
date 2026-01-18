@@ -54,7 +54,10 @@
   ];
 
   # Steam
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+  };
 
   environment.systemPackages = with pkgs; [ steam-tui ];
   #   # WINE

@@ -18,20 +18,6 @@
     home.packages = with pkgs; [
       jre
       (callPackage ./packages/ninjabrainbot.nix { })
-
-      (pkgs.waywall.overrideAttrs (
-        finalAttrs: previousAttrs: {
-          pname = "waywall";
-          version = "0.2025.12.30";
-
-          src = fetchFromGitHub {
-            owner = "tesselslate";
-            repo = "waywall";
-            tag = finalAttrs.version;
-            hash = "sha256-idtlOXT3RGjAOMgZ+e5vwZnxd33snc4sIjq0G6TU7HU=";
-          };
-        }
-      ))
       lunar-client
 
       (prismlauncher.override (previous: {
@@ -47,52 +33,26 @@
         ];
         additionalLibs = [
           # runtime dependencies necessary for mcsr fairplay mod
-          openssl
-          xorg.libXtst
-          xorg.libXt
-          xorg.libxcb
-          xorg.libXinerama
+          libxtst
           libxkbcommon
-
-          libxkbcommon
-          xorg.libX11
-          xorg.libxcb
-          xorg.libXt
-          xorg.libXtst
-          xorg.libXi
-          xorg.libXext
-          xorg.libXinerama
-          xorg.libXrender
-          xorg.libXfixes
-          xorg.libXrandr
-          xorg.libXcursor
+          libxt
+          libxinerama
         ];
         additionalPrograms = [
           jemalloc
           (callPackage ./packages/ninjabrainbot.nix { })
-          (pkgs.waywall.overrideAttrs (
-            finalAttrs: previousAttrs: {
-              version = "0-unstable-2026-01-18";
-              src = pkgs.fetchFromGitHub {
-                owner = "tesselslate";
-                repo = "waywall";
-                rev = "d0647b422ca93feb0af9d8f9ffae1d0f247baa06";
-                hash = "sha256-R0hclyI5edZRlv2Okqr0M2r0Zdf0k7qWnuX0C1io8fs=";
-              };
-              nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [ gcc15 ];
-            }
-          ))
+          waywall
         ];
       }))
     ];
 
     programs.obs-studio = {
       enable = true;
-      package = (
-        pkgs.obs-studio.override {
-          cudaSupport = true;
-        }
-      );
+      # package = (
+      #   pkgs.obs-studio.override {
+      #     cudaSupport = true;
+      #   }
+      # );
       plugins = with pkgs.obs-studio-plugins; [
         obs-pipewire-audio-capture
         input-overlay
