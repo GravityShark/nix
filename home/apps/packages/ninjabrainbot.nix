@@ -1,67 +1,52 @@
-# https://github.com/MarwinKreuzig/nixos-config/blob/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr/packages/ninjabrainbot/default.nix
-{ pkgs }:
-pkgs.maven.buildMavenPackage rec {
-  pname = "ninjabrainbot";
+# https://git.uku3lig.net/uku/flake/src/branch/main/programs/mcsr/ninjabrain.nix#
+{
+  lib,
+  stdenvNoCC,
+  fetchurl,
+  libx11,
+  libxinerama,
+  libxkbcommon,
+  libxt,
+  makeWrapper,
+  temurin-bin-17,
+}:
+stdenvNoCC.mkDerivation (finalAttrs: {
+  pname = "ninjabrain-bot";
   version = "1.5.1";
-  src = pkgs.fetchFromGitHub {
-    owner = "Ninjabrain1";
-    repo = "Ninjabrain-Bot";
-    rev = version;
-    hash = "sha256-r8TpL3VLf2QHwFS+DdjxgxyuZu167fP6/lN7a8e9opM=";
+
+  src = fetchurl {
+    url = "https://github.com/Ninjabrain1/Ninjabrain-Bot/releases/download/${finalAttrs.version}/Ninjabrain-Bot-${finalAttrs.version}.jar";
+    hash = "sha256-Rxu9A2EiTr69fLBUImRv+RLC2LmosawIDyDPIaRcrdw=";
   };
-  mvnHash = "sha256-zAVPH5a7ut21Ipz5BUY6cnRLT52bM8Yo2r8ClFon1p0=";
 
-  desktopItems = [
-    (pkgs.makeDesktopItem {
-      name = "ninjabrainbot";
-      type = "Application";
-      exec = "ninjabrainbot";
-      comment = "An accurate stronghold calculator for Minecraft speedrunning.";
-      desktopName = "Ninjabrain Bot";
-      genericName = "A Minecraft stronghold calculator";
-      categories = [ "Game" ];
-    })
-  ];
+  nativeBuildInputs = [ makeWrapper ];
 
-  mvnDepsParameters = "assembly:single -DskipTests=true";
-  mvnParameters = "assembly:single -DskipTests=true";
-
-  nativeBuildInputs = [
-    pkgs.copyDesktopItems
-    pkgs.makeWrapper
-  ];
+  dontUnpack = true;
 
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/bin $out/share/ninjabrainbot
-    install -Dm644 target/ninjabrainbot-${version}-jar-with-dependencies.jar $out/share/ninjabrainbot
+    install -Dm644 $src $out/share/ninjabrain-bot/ninjabrain-bot.jar
 
-    makeWrapper ${pkgs.jre}/bin/java $out/bin/ninjabrainbot \
-      --prefix LD_LIBRARY_PATH : "${
-        pkgs.lib.makeLibraryPath (
-          with pkgs;
-          [
+    makeWrapper ${lib.getExe temurin-bin-17} $out/bin/ninjabrain-bot \
+        --add-flags "-Dawt.useSystemAAFontSettings=on -jar $out/share/ninjabrain-bot/ninjabrain-bot.jar" \
+        --prefix LD_LIBRARY_PATH : ${
+          lib.makeLibraryPath [
+            libx11
+            libxinerama
             libxkbcommon
-            xorg.libX11
-            xorg.libxcb
-            xorg.libXt
-            xorg.libXtst
-            xorg.libXi
-            xorg.libXext
-            xorg.libXinerama
-            xorg.libXrender
-            xorg.libXfixes
-            xorg.libXrandr
-            xorg.libXcursor
+            libxt
           ]
-        )
-      }" \
-      --add-flags "-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar $out/share/ninjabrainbot/ninjabrainbot-${version}-jar-with-dependencies.jar"
+        }
 
     runHook postInstall
   '';
 
-  # --add-flags "-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -Dawt.useSystemAAFontSettings=on -jar $out/share/ninjabrainbot/ninjabrainbot-${version}-jar-with-dependencies.jar -Djava.util.prefs.userRoot=$HOME/.config/ninjabrainbot"
-  # --add-flags "-DSwing.aatext=TRUE -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -Dawt.useSystemAAFontSettings=on -jar $out/share/ninjabrainbot/ninjabrainbot-${version}-jar-with-dependencies.jar -Djava.util.prefs.userRoot=$HOME/.config/ninjabrainbot"
-}
+  meta = {
+    description = "Stronghold calculator for Minecraft speedrunning";
+    homepage = "https://github.com/Ninjabrain1/Ninjabrain-Bot";
+    license = lib.licenses.mit;
+    platforms = lib.platforms.linux;
+    mainProgram = "ninjabrain-bot";
+  };
+})

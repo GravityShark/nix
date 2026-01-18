@@ -18,6 +18,19 @@
     home.packages = with pkgs; [
       jre
       (callPackage ./packages/ninjabrainbot.nix { })
+
+      (pkgs.waywall.overrideAttrs (
+        finalAttrs: previousAttrs: {
+          version = "0-unstable-2026-01-18";
+          src = pkgs.fetchFromGitHub {
+            owner = "tesselslate";
+            repo = "waywall";
+            rev = "d0647b422ca93feb0af9d8f9ffae1d0f247baa06";
+            hash = "sha256-R0hclyI5edZRlv2Okqr0M2r0Zdf0k7qWnuX0C1io8fs=";
+          };
+          nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [ gcc15 ];
+        }
+      ))
       lunar-client
 
       (prismlauncher.override (previous: {
