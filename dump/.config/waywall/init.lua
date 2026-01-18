@@ -18,9 +18,9 @@ end
 -- }
 
 waywall.listen('load', function()
-	if not is_process_running('ninjabrainbot') then
-		waywall.exec('ninjabrainbot')
-	end
+	-- if not is_process_running('ninjabrainbot') then
+	-- 	waywall.exec('ninjabrainbot')
+	-- end
 	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
 	-- 	dst = { x = 0, y = 0, w = 823, h = 1080 },
 	-- 	depth = -1,
@@ -29,6 +29,10 @@ waywall.listen('load', function()
 	-- 	dst = { x = 1920 - 823, y = 0, w = 823, h = 1080 },
 	-- 	depth = -1,
 	-- })
+	-- waywall.show_floating(true)
+
+	waywall.exec('ninjabrainbot')
+	waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
 	waywall.show_floating(true)
 end)
 --
@@ -269,7 +273,8 @@ local config = {
 	},
 	theme = {
 		-- background = '#1b0e1fff',
-		background = '#303030ff',
+		-- background = '#303030ff',
+		background = '#00000000',
 		ninb_anchor = 'topright',
 		ninb_opacity = 0.9,
 	},
@@ -285,6 +290,8 @@ local config = {
 				helpers.toggle_floating()
 			end
 			waywall.exec('ninjabrainbot')
+			waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
+			waywall.show_floating(true)
 		end,
 		['return'] = function()
 			if chat_state.enabled then
