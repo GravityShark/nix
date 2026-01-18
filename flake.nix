@@ -3,19 +3,13 @@
 
   inputs = {
     # self.submodules = true;
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixcraft = {
-    #   url = "github:GravityShark/nixcraft";
-    #   # url = "github:loystonpais/nixcraft";
-    #   # url = "github:flammablebunny/nixcraft";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v4.0.0";
+      url = "github:noctalia-dev/noctalia-shell/v4.1.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ppd-dbus-hook = {
@@ -23,11 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:nix-community/stylix/release-25.11";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     wayland-pipewire-idle-inhibit = {
-      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit/";
+      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {

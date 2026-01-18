@@ -21,14 +21,15 @@
 
       (pkgs.waywall.overrideAttrs (
         finalAttrs: previousAttrs: {
-          version = "0-unstable-2026-01-18";
-          src = pkgs.fetchFromGitHub {
+          pname = "waywall";
+          version = "0.2025.12.30";
+
+          src = fetchFromGitHub {
             owner = "tesselslate";
             repo = "waywall";
-            rev = "d0647b422ca93feb0af9d8f9ffae1d0f247baa06";
-            hash = "sha256-R0hclyI5edZRlv2Okqr0M2r0Zdf0k7qWnuX0C1io8fs=";
+            tag = finalAttrs.version;
+            hash = "sha256-idtlOXT3RGjAOMgZ+e5vwZnxd33snc4sIjq0G6TU7HU=";
           };
-          nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [ gcc15 ];
         }
       ))
       lunar-client

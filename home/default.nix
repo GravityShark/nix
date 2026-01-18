@@ -10,14 +10,23 @@
 
   programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "graalvm-oracle"
-      "lunarclient"
-      # "obsidian"
-    ];
+  nixpkgs.config = {
+    allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "graalvm-oracle"
+        "lunarclient"
+        # "obsidian"
+      ];
 
+    # https://www.joseferben.com/posts/installing_only_certain_packages_from_an_unstable_nixos_channel
+    packageOverrides =
+      pkgs: with pkgs; {
+        unstable = import unstableTarball {
+          config = config.nixpkgs.config;
+        };
+      };
+  };
   # Paths doesnt work!!
   # home.sessionPath = [
   #   "$HOME/.local/bin"
