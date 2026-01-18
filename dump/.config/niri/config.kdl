@@ -416,6 +416,11 @@ window-rule {
     default-column-width { proportion 0.66667; }
 }
 
+window-rule {
+    match app-id="waywall"
+    open-fullscreen true
+}
+
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name

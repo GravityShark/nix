@@ -44,7 +44,7 @@ end)
 local counter_src = {
 	x = 0,
 	y = 37,
-	w = 300,
+	w = 50,
 	h = 9,
 }
 local counter_dst_size = {
@@ -66,25 +66,67 @@ local function setup_entity_counter(width, height)
 		},
 	}, width, height)
 end
+
+local pie_height = 320
+local pie_dst_height = (1080 - counter_dst_size.h) / 2
+
+local function setup_pie_chart(width, height)
+	helpers.res_mirror({
+		src = {
+			x = 0,
+			y = height - 420,
+			w = width,
+			h = pie_height,
+		},
+		dst = {
+			x = (1920 + width) / 2,
+			y = (1080 + counter_dst_size.h) / 2,
+			w = (pie_dst_height / pie_height) * width,
+			h = pie_dst_height,
+		},
+	}, width, height)
+end
+
+local function setup_pie_chart(width, height)
+	helpers.res_mirror({
+		src = {
+			x = 0,
+			y = height - 420,
+			w = width,
+			h = pie_height,
+		},
+		dst = {
+			x = (1920 + width) / 2,
+			y = (1080 + counter_dst_size.h) / 2,
+			w = (pie_dst_height / pie_height) * width,
+			h = pie_dst_height,
+		},
+	}, width, height)
+end
 --
 -- -- ##############################################################################################
 -- -- EYE ZOOM
 --
 local eye = {
-	-- sens = 0.74,
+	sens = 0.05526274,
+	-- Size of the instance
 	res = {
-		w = 300,
+		w = 320,
 		h = 16384,
 	},
+
+	-- The size and location of the projector
 	proj = {
 		x = 0,
 		y = 312,
 		w = 810,
 		h = 456,
 	},
+
+	-- How big should you take for the projector
 	src = {
 		w = 60,
-		h = 580,
+		h = 1080,
 	},
 }
 --
@@ -100,33 +142,21 @@ helpers.res_mirror({
 
 helpers.res_image(eye_overlay, { dst = eye.proj }, eye.res.w, eye.res.h)
 
+-- E counter
 setup_entity_counter(eye.res.w, eye.res.h)
+setup_pie_chart(eye.res.w, eye.res.h)
+setup_pie_chart_count(eye.res.w, eye.res.h)
 
-local pie_height = 320
-local dst_height = (1080 - counter_dst_size.h) / 2
-helpers.res_mirror({
-	src = {
-		x = 0,
-		y = eye.res.h - 420,
-		w = eye.res.w,
-		h = pie_height,
-	},
-	dst = {
-		x = (1920 + eye.res.w) / 2,
-		y = (1080 + counter_dst_size.h) / 2,
-		w = (dst_height / pie_height) * eye.res.w,
-		h = dst_height,
-	},
-}, eye.res.w, eye.res.h)
 --
 -- -- ##############################################################################################
 -- -- THIN
 --
 local thin_res = {
-	w = 300,
+	w = 320,
 	h = 1080,
 }
 setup_entity_counter(thin_res.w, thin_res.h)
+setup_pie_chart_count(thin_res.w, thin_res.h)
 
 -- -- when in doubt, do this:
 -- -- execute sudo showkey
@@ -135,10 +165,18 @@ setup_entity_counter(thin_res.w, thin_res.h)
 local game_remaps = {
 	--[[
 	eye  1    2    3    k    +    4    5
-	_    8    o    d    r    t    f    _    _    _    _   _
+	tab  a    o    d    r    t    f    _    _    _    _   _
 	s    e    i    g    n    b    _    _    _    _    _   _
-	_    a    f3   c    w    _    0    _    _    _   _   _
+	_    8    f3   c    w    _    0    _    _    _   _   _
 	_    _    spc   @base    _
+
+	8 = sprint
+	tab = crouch
+	o = forwrad
+	d = left
+	i = back
+	g = right
+	spc = open inv
 	]]
 
 	['4'] = 'k',
@@ -146,7 +184,7 @@ local game_remaps = {
 	['6'] = '4',
 	['7'] = '5',
 
-	['q'] = '8',
+	['q'] = 'a',
 	['w'] = 'o',
 	['e'] = 'd',
 	['y'] = 'f',
@@ -157,10 +195,10 @@ local game_remaps = {
 	['d'] = 'g',
 	['f'] = 'n',
 	['g'] = 'b',
-	['z'] = 'a',
+	['z'] = '8',
 	['x'] = 'f3',
 	['v'] = 'w',
-	['n'] = '0',
+	['grave'] = '0',
 }
 --
 -- -- ##############################################################################################
@@ -184,19 +222,13 @@ end
 
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
-local disabled_in_chat_mode = function(f)
-	if chat_state.enabled then
-		return false
-	end
-	return f
-end
 
 local config = {
 	input = {
 		-- KEYBOARD CONFIG
 		layout = 'us',
-		repeat_rate = 100,
-		repeat_delay = 167,
+		repeat_rate = 50,
+		repeat_delay = 200,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
 		sensitivity = 0.81920004,
@@ -209,50 +241,45 @@ local config = {
 		-- background = '#303030ff',
 		background = '#00000000',
 		ninb_anchor = 'topright',
-		ninb_opacity = 0.9,
+		ninb_opacity = 0.8,
 	},
 	actions = {
-		-- ['backslash'] = disabled_in_chat_mode(function()
-		-- 	helpers.toggle_floating()
-		-- end),
-		['m'] = disabled_in_chat_mode(function()
+		['*-m'] = function()
+			if chat_state.enabled then
+				return false
+			end
+
 			if not is_running(ninb_pid) then
 				waywall.exec(ninb_path)
 				waywall.show_floating(true)
 			else
 				helpers.toggle_floating()
 			end
-		end),
-
-		['ctrl-N'] = function()
-			toggle_chat()
 		end,
-
-		-- ['return'] = function()
-		-- 	if chat_state.enabled then
-		-- 		waywall.press_key('enter')
-		-- 	else
-		-- 		waywall.press_key('slash')
-		-- 		waywall.sleep(50)
-		-- 		waywall.press_key('backspace')
-		-- 	end
-		-- 	toggle_chat()
-		-- end,
 
 		['shift-return'] = function()
 			toggle_chat()
 		end,
 
 		-- RESOLUTION MACROS
-		['*-b'] = disabled_in_chat_mode(function()
+		['*-b'] = function()
+			if chat_state.enabled then
+				return false
+			end
 			(helpers.toggle_res(thin_res.w, thin_res.h))()
-		end),
-		['*-h'] = disabled_in_chat_mode(function()
+		end,
+		['*-h'] = function()
+			if chat_state.enabled then
+				return false
+			end
 			(helpers.toggle_res(1920, 300))()
-		end),
-		['*-grave'] = disabled_in_chat_mode(function()
+		end,
+		['*-n'] = function()
+			if chat_state.enabled then
+				return false
+			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
-		end),
+		end,
 	},
 }
 

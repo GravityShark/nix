@@ -31,6 +31,7 @@ in
       jre
       ninjabrain-bot
       lunar-client
+      waywall
 
       (prismlauncher.override (previous: {
         jdks = [

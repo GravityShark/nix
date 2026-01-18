@@ -26,7 +26,8 @@
 
     systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       enable = true;
-      after = [ "tlp-pd.service" ];
+      # after = [ "tlp-pd.service" ];
+      # after = [ "tuned-ppd.service" ];
       # partOf = [ "tuned-ppd.service" ];
       # requires = [ "tuned-ppd.service" ];
       wantedBy = [ "default.target" ];
