@@ -210,12 +210,15 @@ local config = {
 		ninb_opacity = 0.9,
 	},
 	actions = {
+		['backslash'] = disabled_in_chat_mode(function()
+			helpers.toggle_floating()
+		end),
 		['ctrl-shift-d'] = disabled_in_chat_mode(function()
 			-- if not is_process_running('ninjabrainbot') then
 			-- 	waywall.exec(ninb_path)
 			-- 	waywall.show_floating(true)
 			-- else
-			-- helpers.toggle_floating()
+			helpers.toggle_floating()
 			-- end
 		end),
 
@@ -223,25 +226,31 @@ local config = {
 			toggle_chat()
 		end,
 
-		['return'] = function()
-			if chat_state.enabled then
-				waywall.press_key('enter')
-			else
-				waywall.press_key('slash')
-				waywall.sleep(50)
-				waywall.press_key('backspace')
-			end
-			toggle_chat()
-		end,
+		-- ['return'] = function()
+		-- 	if chat_state.enabled then
+		-- 		waywall.press_key('enter')
+		-- 	else
+		-- 		waywall.press_key('slash')
+		-- 		waywall.sleep(50)
+		-- 		waywall.press_key('backspace')
+		-- 	end
+		-- 	toggle_chat()
+		-- end,
 
 		['shift-return'] = function()
 			toggle_chat()
 		end,
 
 		-- RESOLUTION MACROS
-		['*-b'] = disabled_in_chat_mode((helpers.toggle_res(thin_res.w, thin_res.h))()),
-		['*-h'] = disabled_in_chat_mode((helpers.toggle_res(1920, 300))()),
-		['*-grave'] = disabled_in_chat_mode((helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()),
+		['*-b'] = disabled_in_chat_mode(function()
+			(helpers.toggle_res(thin_res.w, thin_res.h))()
+		end),
+		['*-h'] = disabled_in_chat_mode(function()
+			(helpers.toggle_res(1920, 300))()
+		end),
+		['*-grave'] = disabled_in_chat_mode(function()
+			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
+		end),
 	},
 }
 
