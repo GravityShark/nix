@@ -266,7 +266,7 @@ local config = {
 	input = {
 		-- KEYBOARD CONFIG
 		layout = 'us',
-		repeat_rate = 20,
+		repeat_rate = 100,
 		repeat_delay = 167,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
@@ -302,8 +302,15 @@ local config = {
 
 			-- waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
 			-- waywall.exec('env -u WAYLAND_DISPLAY -u WAYLAND_SOCKET _JAVA_AWT_WM_NONREPARENTING=1 ninjabrainbot')
-			print('ninjabrainbot')
+			print('ninjabrain-bot')
 			waywall.exec('ninjabrain-bot')
+			waywall.exec(
+				'java -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar '
+			)
+			waywall.exec(
+				'java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel '
+			)
+			waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
 		end,
 
 		['ctrl-shift-d'] = function()
