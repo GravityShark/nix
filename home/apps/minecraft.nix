@@ -37,8 +37,8 @@
         jdks = [
           graalvmPackages.graalvm-oracle
           # graalvmPackages.graalvm-oracle_17
-          # javaPackages.compiler.temurin-bin.jre-17
-          # javaPackages.compiler.temurin-bin.jre-21
+          javaPackages.compiler.temurin-bin.jre-17
+          javaPackages.compiler.temurin-bin.jre-21
           # javaPackages.compiler.temurin-bin.jre-25
           # jdk17
           # jdk21
@@ -52,6 +52,19 @@
           xorg.libxcb
           xorg.libXinerama
           libxkbcommon
+
+          libxkbcommon
+          xorg.libX11
+          xorg.libxcb
+          xorg.libXt
+          xorg.libXtst
+          xorg.libXi
+          xorg.libXext
+          xorg.libXinerama
+          xorg.libXrender
+          xorg.libXfixes
+          xorg.libXrandr
+          xorg.libXcursor
         ];
         additionalPrograms = [
           jemalloc
