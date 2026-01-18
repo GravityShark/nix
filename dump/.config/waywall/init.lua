@@ -41,6 +41,10 @@ end)
 -- -- PROJECTOR SETUP
 -- -- ################################################################################################
 -- -- entity counter location and projection size
+
+local upward_offset = 85 -- 3 items
+-- local upward_offset = 92 -- 5 Items
+
 local counter_src = {
 	x = 0,
 	y = 37,
@@ -56,7 +60,7 @@ local function setup_entity_counter(width, height)
 		src = counter_src,
 		dst = {
 			x = (1920 + width) / 2,
-			y = (1080 - counter_dst_size.h) / 2,
+			y = ((1080 - counter_dst_size.h) / 2) - upward_offset,
 			w = counter_dst_size.w,
 			h = counter_dst_size.h,
 		},
@@ -80,26 +84,33 @@ local function setup_pie_chart(width, height)
 		},
 		dst = {
 			x = (1920 + width) / 2,
-			y = (1080 + counter_dst_size.h) / 2,
+			y = ((1080 + counter_dst_size.h) / 2) - upward_offset,
 			w = (pie_dst_height / pie_height) * width,
 			h = pie_dst_height,
 		},
 	}, width, height)
 end
 
+local pie_count_height = 24 -- 3 items
+-- local pie_count_height = 40 -- 5 items
+local pie_count_dst_height = (1080 - counter_dst_size.h) / 2
+local pie_count_width = 93
+-- local pie_count_scale = 0.33 -- 5 items
+local pie_count_scale = 0.25 -- 3 items
+local pie_count_right_padding = 10
 local function setup_pie_chart_count(width, height)
 	helpers.res_mirror({
 		src = {
-			x = width - 120,
-			y = height - 420,
-			w = width - 120,
-			h = pie_height,
+			x = width - pie_count_width,
+			y = height - 220,
+			w = pie_count_width - pie_count_right_padding,
+			h = pie_count_height,
 		},
 		dst = {
 			x = (1920 + width) / 2,
-			y = (1080 + counter_dst_size.h) / 2,
-			w = (pie_dst_height / pie_height) * (width - 120),
-			h = pie_dst_height,
+			y = ((1080 + counter_dst_size.h) / 2) - upward_offset,
+			w = ((pie_count_dst_height / pie_count_height) * (pie_count_width - pie_count_right_padding) * pie_count_scale),
+			h = pie_count_dst_height * pie_count_scale,
 		},
 	}, width, height)
 end
@@ -119,7 +130,7 @@ local eye = {
 	proj = {
 		x = 0,
 		y = 312,
-		w = 810,
+		w = 800,
 		h = 456,
 	},
 
@@ -165,13 +176,10 @@ setup_pie_chart_count(thin_res.w, thin_res.h)
 local game_remaps = {
 	--[[
 	eye  1    2    3    k    +    4    5
-	tab  a    o    s    r    t    f    _    _    _    _   _
-	d    e    i    g    n    b    _    _    _    _    _   _
+	tab  a    o    d    r    t    f    _    _    _    _   _
+	s    e    i    g    n    b    _    _    _    _    _   _
 	_    8    f3   c    w    _    0    _    _    _   _   _
 	_    _    spc   @base    _
-
-ws is uncomfortable pressing shift
-de needs you to press inventory using your indext instead of middle
 
 	8 = sprint
 	tab = crouch
@@ -189,10 +197,10 @@ de needs you to press inventory using your indext instead of middle
 
 	['q'] = 'a',
 	['w'] = 'o',
-	['e'] = 's',
+	['e'] = 'd',
 	['y'] = 'f',
 
-	['insert'] = 'd',
+	['insert'] = 's',
 	['a'] = 'e',
 	['s'] = 'i',
 	['d'] = 'g',
