@@ -17,7 +17,7 @@
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
       # jre
-      (callPackage ./packages/ninjabrainbot.nix { })
+      # (callPackage ./packages/ninjabrainbot.nix { })
       lunar-client
 
       (prismlauncher.override (previous: {
