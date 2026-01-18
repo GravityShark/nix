@@ -28,26 +28,26 @@
       in
       {
         enable = true;
-        timeouts = {
-          brightness = {
+        timeouts = [
+          {
             timeout = 120;
             command = bsav + " && " + (bset "0");
             resumeCommand = bres;
-          };
+          }
           # {
           #   timeout = 180;
           #   command = bset "0";
           #   resumeCommand = bres;
           # }
-          lock = {
+          {
             timeout = 240;
             command = lib.mkIf config.desktop.noctalia.enable "${pkgs.lock}/bin/lock";
-          };
-          suspend = {
+          }
+          {
             timeout = 300;
             command = "${pkgs.systemd}/bin/systemctl suspend";
-          };
-        };
+          }
+        ];
         events = [
           {
             event = "before-sleep";
