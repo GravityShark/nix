@@ -1,3 +1,6 @@
+# Stolen / Inpirations from
+# https://github.com/MarwinKreuzig/nixos-config/tree/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr
+# https://git.uku3lig.net/uku/flake/src/commit/9aa1259d19ae392e0028feaed7b0ce442e6db6d9/programs/mcsr/default.nix
 {
   config,
   lib,
@@ -5,19 +8,28 @@
   ...
 }:
 
-# How to setup
-# 1.
-
-# Copied a bit from here
-# https://github.com/MarwinKreuzig/nixos-config/tree/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr
+let
+  ninjabrain-bot = pkgs.callPackage ./ninjabrain.nix { };
+in
 {
   options = {
-    apps.minecraft.enable = lib.mkEnableOption "enables minecraft";
+    apps.minecraft = {
+      enable = lib.mkEnableOption "enables minecraft";
+      width = lib.mkOption {
+        type = lib.types.int;
+        default = 1920;
+      };
+
+      height = lib.mkOption {
+        type = lib.types.int;
+        default = 1080;
+      };
+    };
   };
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
       jre
-      (callPackage ./packages/ninjabrainbot.nix { })
+      ninjabrain-bot
       lunar-client
 
       (prismlauncher.override (previous: {
@@ -40,7 +52,7 @@
         ];
         additionalPrograms = [
           jemalloc
-          (callPackage ./packages/ninjabrainbot.nix { })
+          ninjabrain-bot
           waywall
         ];
       }))
@@ -61,8 +73,23 @@
 
     systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
 
-    xdg.configFile."waywall/init.lua".source = ../../dump/.config/waywall/init.lua;
-    xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;
+    xdg.configFile."waywall/init.lua".text = ''
+      local ninb_path = "${lib.getExe ninjabrain-bot}"
+      local resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
+
+      local eye_overlay = "${../../dump/.config/waywall/overlay.png}",
+
+      # local images = {
+      #   eye_overlay = "${../../dump/.config/waywall/overlay.png}",
+      #   thin = "${./thin.png}",
+      #   wide = "${./wide.png}",
+      #   tall = "${./tall.png}",
+      # }
+    ''
+
+    + builtins.readFile ../../dump/.config/waywall/init.lua;
+
+    # xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;
     # xdg.configFile."xkb/symbols/mc".source = ../../dump/.config/xkb/symbols/mc;
     # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
     #   ../../dump/.config/java/.java/.userPrefs/ninjabrainbot/prefs.xml;
