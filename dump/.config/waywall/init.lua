@@ -90,7 +90,7 @@ end
 local function setup_pie_chart_count(width, height)
 	helpers.res_mirror({
 		src = {
-			x = 0,
+			x = width - 120,
 			y = height - 420,
 			w = width - 120,
 			h = pie_height,
