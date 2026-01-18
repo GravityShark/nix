@@ -5,12 +5,12 @@ local helpers = require('waywall.helpers')
 local ninb_path = '@ninb_path@'
 local eye_overlay = '@eye_overlay@'
 
-local is_process_running = function(name)
-	local handle = io.popen("pgrep -f '" .. name .. "'")
-	local result = handle:read('*l')
-	handle:close()
-	return result ~= nil
-end
+-- local is_process_running = function(name)
+-- 	local handle = io.popen("pgrep -f '" .. name .. "'")
+-- 	local result = handle:read('*l')
+-- 	handle:close()
+-- 	return result ~= nil
+-- end
 
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
@@ -21,9 +21,9 @@ end
 -- }
 
 waywall.listen('load', function()
-	if not is_process_running('ninjabrainbot') then
-		waywall.exec('ninjabrainbot')
-	end
+	-- if not is_process_running('ninjabrainbot') then
+	waywall.exec(ninb_path)
+	-- end
 	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
 	-- 	dst = { x = 0, y = 0, w = 823, h = 1080 },
 	-- 	depth = -1,
@@ -211,12 +211,12 @@ local config = {
 	},
 	actions = {
 		['ctrl-shift-d'] = disabled_in_chat_mode(function()
-			if not is_process_running('ninjabrainbot') then
-				waywall.exec('ninjabrainbot')
-				waywall.show_floating(true)
-			else
-				helpers.toggle_floating()
-			end
+			-- if not is_process_running('ninjabrainbot') then
+			-- 	waywall.exec(ninb_path)
+			-- 	waywall.show_floating(true)
+			-- else
+			-- helpers.toggle_floating()
+			-- end
 		end),
 
 		['ctrl-N'] = function()
