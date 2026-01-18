@@ -165,10 +165,13 @@ setup_pie_chart_count(thin_res.w, thin_res.h)
 local game_remaps = {
 	--[[
 	eye  1    2    3    k    +    4    5
-	tab  a    o    d    r    t    f    _    _    _    _   _
-	s    e    i    g    n    b    _    _    _    _    _   _
+	tab  a    o    s    r    t    f    _    _    _    _   _
+	d    e    i    g    n    b    _    _    _    _    _   _
 	_    8    f3   c    w    _    0    _    _    _   _   _
 	_    _    spc   @base    _
+
+ws is uncomfortable pressing shift
+de needs you to press inventory using your indext instead of middle
 
 	8 = sprint
 	tab = crouch
@@ -186,10 +189,10 @@ local game_remaps = {
 
 	['q'] = 'a',
 	['w'] = 'o',
-	['e'] = 'd',
+	['e'] = 's',
 	['y'] = 'f',
 
-	['insert'] = 's',
+	['insert'] = 'd',
 	['a'] = 'e',
 	['s'] = 'i',
 	['d'] = 'g',
