@@ -48,16 +48,10 @@
             command = "${pkgs.systemd}/bin/systemctl suspend";
           }
         ];
-        events = [
-          {
-            event = "before-sleep";
-            command = lib.mkIf config.desktop.noctalia.enable "${pkgs.lock}/bin/lock";
-          }
-          {
-            event = "after-resume";
-            command = bres;
-          }
-        ];
+        events = {
+          "before-sleep".command = lib.mkIf config.desktop.noctalia.enable "${pkgs.lock}/bin/lock";
+          "after-resume".command = bres;
+        };
       };
 
   };
