@@ -73,10 +73,11 @@ in
 
     systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
 
+    # local resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
+
     xdg.configFile."waywall/init.lua".text = ''
       local ninb_path = "${lib.getExe ninjabrain-bot}"
-      local resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
-      local eye_overlay = "${../../dump/.config/waywall/overlay.png}",
+      local eye_overlay = "${../../dump/.config/waywall/overlay.png}"
     ''
     + builtins.readFile ../../dump/.config/waywall/init.lua;
 
