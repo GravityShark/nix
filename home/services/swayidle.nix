@@ -49,8 +49,8 @@
           }
         ];
         events = {
-          "before-sleep".command = lib.mkIf config.desktop.noctalia.enable "${pkgs.lock}/bin/lock";
-          "after-resume".command = bres;
+          before-sleep.command = lib.mkIf config.desktop.noctalia.enable "${pkgs.lock}/bin/lock";
+          after-resume.command = bres;
         };
       };
 
