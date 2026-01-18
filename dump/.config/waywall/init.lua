@@ -5,6 +5,7 @@ local helpers = require('waywall.helpers')
 
 local ninb_path = '@ninb_path@'
 local eye_overlay = '@eye_overlay@'
+local ninb_pid = 'ninjabrain.*\\.jar'
 
 local is_running = function(name)
 	local handle = io.popen("pgrep -f '" .. name .. "'")
@@ -22,7 +23,7 @@ end
 -- }
 
 waywall.listen('load', function()
-	if not is_running('ninjabrainbot') then
+	if not is_running(ninb_pid) then
 		waywall.exec(ninb_path)
 	end
 	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
@@ -215,7 +216,7 @@ local config = {
 		-- 	helpers.toggle_floating()
 		-- end),
 		['m'] = disabled_in_chat_mode(function()
-			if not is_running('ninjabrainbot') then
+			if not is_running(ninb_pid) then
 				waywall.exec(ninb_path)
 				waywall.show_floating(true)
 			else
