@@ -34,7 +34,9 @@ waywall.listen('load', function()
 	-- waywall.exec('ninjabrainbot')
 	-- waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
 	-- waywall.show_floating(true)
-	waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
+	-- waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
+
+	-- waywall.exec('env -u WAYLAND_DISPLAY -u WAYLAND_SOCKET _JAVA_AWT_WM_NONREPARENTING=1 ninjabrainbot')
 	waywall.show_floating(true)
 end)
 --
@@ -281,7 +283,11 @@ local config = {
 		-- ninb_opacity = 0.9,
 	},
 	actions = {
-		['backslash'] = function()
+		['shift-backslash'] = function()
+			print('toggled float')
+			helpers.toggle_floating()
+		end,
+		['*-backslash'] = function()
 			-- if chat_state.enabled then
 			-- 	return false
 			-- end
@@ -294,7 +300,10 @@ local config = {
 			-- waywall.exec('ninjabrainbot')
 			-- helpers.toggle_floating()
 
-			waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
+			-- waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
+			-- waywall.exec('env -u WAYLAND_DISPLAY -u WAYLAND_SOCKET _JAVA_AWT_WM_NONREPARENTING=1 ninjabrainbot')
+			print('ninjabrainbot')
+			waywall.exec('ninjabrainbot')
 		end,
 
 		['ctrl-shift-d'] = function()
@@ -317,7 +326,7 @@ local config = {
 				waywall.press_key('enter')
 			else
 				waywall.press_key('slash')
-				waywall.sleep(25)
+				waywall.sleep(50)
 				waywall.press_key('backspace')
 			end
 			toggle_chat()
@@ -328,19 +337,19 @@ local config = {
 		end,
 
 		-- RESOLUTION MACROS
-		['b'] = function()
+		['*-b'] = function()
 			if chat_state.enabled then
 				return false
 			end
 			(helpers.toggle_res(thin_res.w, thin_res.h))()
 		end,
-		['h'] = function()
+		['*-h'] = function()
 			if chat_state.enabled then
 				return false
 			end
 			(helpers.toggle_res(1920, 300))()
 		end,
-		['grave'] = function()
+		['*-grave'] = function()
 			if chat_state.enabled then
 				return false
 			end

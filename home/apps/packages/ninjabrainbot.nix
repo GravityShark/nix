@@ -44,15 +44,24 @@ pkgs.maven.buildMavenPackage rec {
           [
             libxkbcommon
             xorg.libX11
+            xorg.libxcb
             xorg.libXt
             xorg.libXtst
+            xorg.libXi
+            xorg.libXext
             xorg.libXinerama
-            xorg.libxcb
+            xorg.libXrender
+            xorg.libXfixes
+            xorg.libXrandr
+            xorg.libXcursor
           ]
         )
       }" \
-      --add-flags "-DSwing.aatext=TRUE -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -Dawt.useSystemAAFontSettings=on -jar $out/share/ninjabrainbot/ninjabrainbot-${version}-jar-with-dependencies.jar -Djava.util.prefs.userRoot=$HOME/.config/ninjabrainbot"
+      --add-flags "-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar $out/share/ninjabrainbot/ninjabrainbot-${version}-jar-with-dependencies.jar"
 
     runHook postInstall
   '';
+
+  # --add-flags "-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -Dawt.useSystemAAFontSettings=on -jar $out/share/ninjabrainbot/ninjabrainbot-${version}-jar-with-dependencies.jar -Djava.util.prefs.userRoot=$HOME/.config/ninjabrainbot"
+  # --add-flags "-DSwing.aatext=TRUE -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -Dawt.useSystemAAFontSettings=on -jar $out/share/ninjabrainbot/ninjabrainbot-${version}-jar-with-dependencies.jar -Djava.util.prefs.userRoot=$HOME/.config/ninjabrainbot"
 }
