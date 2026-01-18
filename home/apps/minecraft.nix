@@ -16,7 +16,7 @@
   };
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
-      # jre
+      jre
       # (callPackage ./packages/ninjabrainbot.nix { })
       lunar-client
 

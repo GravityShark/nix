@@ -285,7 +285,6 @@ local config = {
 				helpers.toggle_floating()
 			end
 			waywall.exec('ninjabrainbot')
-			waywall.exec('yo')
 		end,
 		['return'] = function()
 			if chat_state.enabled then
