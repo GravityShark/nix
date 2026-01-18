@@ -207,11 +207,11 @@ local config = {
 	theme = {
 		-- background = '#1b0e1fff',
 		background = '#303030ff',
-		ninb_anchor = 'topleft',
+		ninb_anchor = 'topright',
 		ninb_opacity = 0.9,
 	},
 	actions = {
-		['*-N'] = function()
+		['N'] = function()
 			if chat_state.enabled then
 				return false
 			end
@@ -228,13 +228,13 @@ local config = {
 		end,
 
 		-- RESOLUTION MACROS
-		['*-b'] = function()
+		['b'] = function()
 			(helpers.toggle_res(thin_res.w, thin_res.h))()
 		end,
-		['*-h'] = function()
+		['h'] = function()
 			(helpers.toggle_res(1920, 300))()
 		end,
-		['*-grave'] = function()
+		['grave'] = function()
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
 	},
