@@ -26,9 +26,9 @@
 
     systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       enable = true;
-      after = [ "tuned-ppd.service" ];
-      partOf = [ "tuned-ppd.service" ];
-      requires = [ "tuned-ppd.service" ];
+      after = [ "tlp-pd.service" ];
+      # partOf = [ "tuned-ppd.service" ];
+      # requires = [ "tuned-ppd.service" ];
       wantedBy = [ "default.target" ];
       description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";
       serviceConfig = {
