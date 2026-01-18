@@ -16,9 +16,8 @@
   };
   config = lib.mkIf config.apps.minecraft.enable {
     home.packages = with pkgs; [
-      jre
+      # jre
       lunar-client
-      (callPackage ./packages/ninjabrainbot.nix { })
 
       (prismlauncher.override (previous: {
         jdks = [
@@ -42,6 +41,7 @@
         ];
         additionalPrograms = [
           jemalloc
+          (callPackage ./packages/ninjabrainbot.nix { })
           (pkgs.waywall.overrideAttrs (
             finalAttrs: previousAttrs: {
               version = "0-unstable-2026-01-18";

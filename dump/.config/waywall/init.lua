@@ -151,23 +151,86 @@ local game_remaps = {
 	-- ['T'] = 'O', --  Y -> R
 	-- ['Q'] = 'B', --  ; -> X
 	-- ['R'] = 'KP4', --  P -> 4
-	['4'] = 'p',
-	['5'] = 's',
+
+	--[[
+
+	f
+	b
+	c
+	f4
+
++4 - stone sword
++5 - iron sword
+8 - gold pick
++8 - iron axe
+8 - iron pick (pick and iron axe junk)
++8 - stone axe
+_a – fns no junk
+aw – anchors
+ba – iron bars
+be – bed no junk
+bow – bow (bowl)
+br – bread
+de – blaze powder + ender eyes
+ic – sticks + nether brick
+ke – bucket no junk
+ne – bricks + glowstone
+ngo – gold-iron ingots (boots junk)
+oat - boat
+pp - golden apple
+r_ - nether bricks no junk
+ro - any iron
+rr – golden carrots no junk
+tn - tnt
+wo - wool
+ws - glowstone
+
+
+### Alternatives
+4 – all swords
+ie - shield (no junk)
+it – wool no junk
+ka - pickaxes
+ok - tripwire hook
+ow – bed + bow
+_r - fishing rod
+rs – iron bars
+rt – coarse dirt no junk
+w_ / be / ow (can be overlapped with backspace) - blaze bed
+wn – bed + anchor (less junk)
+w – wool + glowstone
+x – all axes/pickaxes
+
+
+	space = open chat
+	]]
+
+	--   eye  1    2    3    k    +    4    5
+	--   _    8    o    d    r    t    f    _    _    _    _   _
+	--   s    e    i    g    n    b    _    _    _    _    _   _
+	--   _    a    f3   c    w    _    0    _    _    _   _   _
+	--   _    _    spc   @base    _
+
+	['4'] = 'k',
+	['5'] = 'KPPLUS',
 	['6'] = '4',
 	['7'] = '5',
-	['q'] = 'o',
-	['insert'] = 'k',
-	['s'] = 'd',
-	['d'] = 'i',
-	['z'] = 'x',
+
+	['q'] = '8',
+	['w'] = 'o',
+	['e'] = 'd',
+	['y'] = 'f',
+
+	['insert'] = 's',
+	['a'] = 'e',
+	['s'] = 'i',
+	['d'] = 'g',
+	['f'] = 'n',
+	['g'] = 'b',
+	['z'] = 'a',
 	['x'] = 'f3',
-	['v'] = 'n',
+	['v'] = 'w',
 	['n'] = '0',
-	--    _   p s 4 5
-	--        o    _    _    _    _    _    _    _    _    _   _
-	--   k    _   d    i    _    _    _    _    _    _    _   _
-	--   _    x    f3    _    n    _    0    _    _    _   _   _
-	--   _    _    _    @base    _
 }
 --
 -- -- ##############################################################################################
@@ -188,15 +251,15 @@ local toggle_chat = function()
 		chat_state.text = nil
 	end
 end
---
+
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
 local config = {
 	input = {
 		-- KEYBOARD CONFIG
 		layout = 'us',
-		repeat_rate = 100,
-		repeat_delay = 200,
+		repeat_rate = 20,
+		repeat_delay = 167,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
 		sensitivity = 0.81920004,
@@ -211,7 +274,7 @@ local config = {
 		ninb_opacity = 0.9,
 	},
 	actions = {
-		['N'] = function()
+		['ctrl-shift-n'] = function()
 			if chat_state.enabled then
 				return false
 			end
@@ -222,19 +285,38 @@ local config = {
 				helpers.toggle_floating()
 			end
 		end,
+		['return'] = function()
+			if chat_state.enabled then
+				waywall.press_key('enter')
+			else
+				waywall.press_key('slash')
+				waywall.sleep(50)
+				waywall.press_key('backspace')
+			end
+			toggle_chat()
+		end,
 
-		['ctrl-N'] = function()
+		['shift-return'] = function()
 			toggle_chat()
 		end,
 
 		-- RESOLUTION MACROS
 		['b'] = function()
+			if chat_state.enabled then
+				return false
+			end
 			(helpers.toggle_res(thin_res.w, thin_res.h))()
 		end,
 		['h'] = function()
+			if chat_state.enabled then
+				return false
+			end
 			(helpers.toggle_res(1920, 300))()
 		end,
 		['grave'] = function()
+			if chat_state.enabled then
+				return false
+			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
 	},
