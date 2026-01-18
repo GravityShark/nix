@@ -1,16 +1,17 @@
 -- https://github.com/MarwinKreuzig/nixos-config/blob/17864a2c8995f2cb84a2454a27e23f158023ce32/modules/gaming/mcsr/home.nix
+-- https://github.com/Esensats/waywork
 local waywall = require('waywall')
 local helpers = require('waywall.helpers')
 
 local ninb_path = '@ninb_path@'
 local eye_overlay = '@eye_overlay@'
 
--- local is_process_running = function(name)
--- 	local handle = io.popen("pgrep -f '" .. name .. "'")
--- 	local result = handle:read('*l')
--- 	handle:close()
--- 	return result ~= nil
--- end
+local is_running = function(name)
+	local handle = io.popen("pgrep -f '" .. name .. "'")
+	local result = handle:read('*l')
+	handle:close()
+	return result ~= nil
+end
 
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
@@ -21,9 +22,9 @@ local eye_overlay = '@eye_overlay@'
 -- }
 
 waywall.listen('load', function()
-	-- if not is_process_running('ninjabrainbot') then
-	waywall.exec(ninb_path)
-	-- end
+	if not is_running('ninjabrainbot') then
+		waywall.exec(ninb_path)
+	end
 	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
 	-- 	dst = { x = 0, y = 0, w = 823, h = 1080 },
 	-- 	depth = -1,
@@ -210,16 +211,16 @@ local config = {
 		ninb_opacity = 0.9,
 	},
 	actions = {
-		['backslash'] = disabled_in_chat_mode(function()
-			helpers.toggle_floating()
-		end),
-		['ctrl-shift-d'] = disabled_in_chat_mode(function()
-			-- if not is_process_running('ninjabrainbot') then
-			-- 	waywall.exec(ninb_path)
-			-- 	waywall.show_floating(true)
-			-- else
-			helpers.toggle_floating()
-			-- end
+		-- ['backslash'] = disabled_in_chat_mode(function()
+		-- 	helpers.toggle_floating()
+		-- end),
+		['m'] = disabled_in_chat_mode(function()
+			if not is_running('ninjabrainbot') then
+				waywall.exec(ninb_path)
+				waywall.show_floating(true)
+			else
+				helpers.toggle_floating()
+			end
 		end),
 
 		['ctrl-N'] = function()
