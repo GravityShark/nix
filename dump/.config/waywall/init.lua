@@ -31,8 +31,10 @@ waywall.listen('load', function()
 	-- })
 	-- waywall.show_floating(true)
 
-	waywall.exec('ninjabrainbot')
-	waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
+	-- waywall.exec('ninjabrainbot')
+	-- waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
+	-- waywall.show_floating(true)
+	waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
 	waywall.show_floating(true)
 end)
 --
@@ -275,11 +277,27 @@ local config = {
 		-- background = '#1b0e1fff',
 		-- background = '#303030ff',
 		background = '#00000000',
-		ninb_anchor = 'topright',
-		ninb_opacity = 0.9,
+		ninb_anchor = 'topleft',
+		-- ninb_opacity = 0.9,
 	},
 	actions = {
-		['ctrl-shift-n'] = function()
+		['backslash'] = function()
+			-- if chat_state.enabled then
+			-- 	return false
+			-- end
+			-- if not is_process_running('ninjabrainbot') then
+			-- 	waywall.exec('ninjabrainbot')
+			-- 	waywall.show_floating(true)
+			-- else
+			-- 	helpers.toggle_floating()
+			-- end
+			-- waywall.exec('ninjabrainbot')
+			-- helpers.toggle_floating()
+
+			waywall.exec('sh -c "java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar >> /home/gravity/nin 2>&1"')
+		end,
+
+		['ctrl-shift-d'] = function()
 			if chat_state.enabled then
 				return false
 			end
@@ -289,16 +307,17 @@ local config = {
 			else
 				helpers.toggle_floating()
 			end
-			waywall.exec('ninjabrainbot')
-			waywall.exec('java -jar /home/gravity/Ninjabrain-Bot-1.5.1.jar')
-			waywall.show_floating(true)
+		end,
+
+		['ctrl-N'] = function()
+			toggle_chat()
 		end,
 		['return'] = function()
 			if chat_state.enabled then
 				waywall.press_key('enter')
 			else
 				waywall.press_key('slash')
-				waywall.sleep(50)
+				waywall.sleep(25)
 				waywall.press_key('backspace')
 			end
 			toggle_chat()
