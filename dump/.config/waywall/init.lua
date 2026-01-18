@@ -98,7 +98,7 @@ local function setup_pie_chart_count(width, height)
 		dst = {
 			x = (1920 + width) / 2,
 			y = (1080 + counter_dst_size.h) / 2,
-			w = (pie_dst_height / pie_height) * width - 120,
+			w = (pie_dst_height / pie_height) * (width - 120),
 			h = pie_dst_height,
 		},
 	}, width, height)
