@@ -92,13 +92,13 @@ local function setup_pie_chart_count(width, height)
 		src = {
 			x = 0,
 			y = height - 420,
-			w = width - 50,
+			w = width - 120,
 			h = pie_height,
 		},
 		dst = {
 			x = (1920 + width) / 2,
 			y = (1080 + counter_dst_size.h) / 2,
-			w = (pie_dst_height / pie_height) * width,
+			w = (pie_dst_height / pie_height) * width - 120,
 			h = pie_dst_height,
 		},
 	}, width, height)
@@ -123,7 +123,7 @@ local eye = {
 		h = 456,
 	},
 
-	-- How big should you take for the projector
+	-- Crop of the projection
 	src = {
 		w = 60,
 		h = 1080,
@@ -144,7 +144,7 @@ helpers.res_image(eye_overlay, { dst = eye.proj }, eye.res.w, eye.res.h)
 
 -- E counter
 setup_entity_counter(eye.res.w, eye.res.h)
-setup_pie_chart(eye.res.w, eye.res.h)
+-- setup_pie_chart(eye.res.w, eye.res.h)
 setup_pie_chart_count(eye.res.w, eye.res.h)
 
 --
