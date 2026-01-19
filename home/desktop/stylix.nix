@@ -77,7 +77,7 @@
     stylix.autoEnable = false;
     stylix.targets = {
       anki.enable = true;
-      fish.enable = true;
+      # fish.enable = true; currently annoying with fish 4.3.0, because a message appears
       fontconfig.enable = true;
       fzf.enable = true;
       ghostty.enable = true;
