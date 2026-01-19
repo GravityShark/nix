@@ -21,7 +21,7 @@
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-auth
       inputs.nixcraft.packages.${stdenv.hostPlatform.system}.nixcraft-skin
       prismlauncher
-      lunar-client
+      # lunar-client
       jemalloc
     ];
     nixcraft = {
