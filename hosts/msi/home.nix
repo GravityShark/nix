@@ -57,6 +57,7 @@
     # vial
     vlc # Videos + Music
     pear-desktop
+    zotero
 
     ## Media
     # audacity
