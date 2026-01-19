@@ -15,7 +15,7 @@
       pkg:
       builtins.elem (lib.getName pkg) [
         "graalvm-oracle"
-        "lunarclient"
+        # "lunarclient"
         # "obsidian"
       ];
 
