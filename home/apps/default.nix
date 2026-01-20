@@ -4,7 +4,6 @@
   imports = [
     ./anki.nix
     ./desktop.nix
-    ./dev.nix
     ./fish.nix
     ./fonts.nix
     ./fzf.nix

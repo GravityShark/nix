@@ -15,7 +15,6 @@
   apps = {
     anki.enable = true;
     desktop.enable = true;
-    dev.enable = true;
     fish.enable = true;
     fonts.enable = true;
     fzf.enable = true;
@@ -93,5 +92,12 @@
       enable = true;
       options.selection-clipboard = "clipboard";
     };
+  };
+
+  home.sessionVariables = {
+    GOPATH = "$HOME/.go";
+    GOPROXY = "https://proxy.golang.org";
+    GOSUMDB = "sum.golang.org";
+    CFLAGS = "-std=c99 -Wall -Werror";
   };
 }
