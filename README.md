@@ -1,9 +1,9 @@
 # im using nixos now
 
 - 2025 - fake monochrome
-  - ![non default nixos niri screenshot i just took](https://github.com/GravityShark/nix/blob/ad6a2d976ac58dda198d5a667b0f21e16ccdca0e/assets/Screenshot%20from%202025-12-30%2015-18-13.png)
+  - ![non default nixos niri screenshot i just took](assets/Screenshot%20from%202025-12-30%2015-18-13.png)
 - 2024 - default gnome light
-  - ![default nixos gnome screenshot i just took](https://github.com/GravityShark/nix/blob/83b2c1b262985569411d3a4c544031521a2099d3/assets/Screenshot%20from%202024-11-22%2018-46-39.png)
+  - ![default nixos gnome screenshot i just took](assets/Screenshot%20from%202024-11-22%2018-46-39.png)
 
 ## resources im using
 
