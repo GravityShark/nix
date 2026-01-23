@@ -22,7 +22,7 @@
       eza
       rip2
     ];
-    home.sessionVariables.RIP_GRAVEYARD = "~/.local/share/Trash";
+    home.sessionVariables.RIP_GRAVEYARD = config.home.homeDirectory + "/.local/share/Trash";
 
     programs.nix-your-shell = {
       enable = true;

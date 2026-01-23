@@ -28,6 +28,7 @@
         shell-integration = "fish";
         theme = lib.mkDefault "Gruvbox Material Light";
         window-decoration = "none";
+        keybind = "ctrl+enter";
       };
       systemd.enable = false;
     };
