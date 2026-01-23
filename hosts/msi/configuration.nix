@@ -13,7 +13,6 @@
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
-    openrazer.enable = true;
     systemd-boot.enable = true;
     vial.enable = true;
   };
@@ -57,18 +56,19 @@
 
   ## WayDroid
   ## waydroid works with either default kernel, or nftables enabled
+  ## You need to manually do everything in waydroid
+  ## https://github.com/casualsnek/waydroid_script
+  ## https://wiki.archlinux.org/title/Waydroid
   virtualisation.waydroid.enable = true;
+  environment.systemPackages = with pkgs; [ waydroid-helper ];
 
-  # Steam
+  ## Steam
+  ## https://github.com/YaLTeR/niri/issues/1034 steam fix
   programs.steam = {
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
-  environment.systemPackages = with pkgs; [
-    steam-tui
-    waydroid-helper
-  ];
   #   # WINE
   #   wine
   #   winetricks
