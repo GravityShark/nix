@@ -13,6 +13,7 @@
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
+    openrazer.enable = true;
     systemd-boot.enable = true;
     vial.enable = true;
   };
@@ -23,7 +24,6 @@
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;
-    openrazer.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
     wayland-pipewire-idle-inhibit.enable = true;
