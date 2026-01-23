@@ -116,11 +116,9 @@ declarative then reboot
    - alternative launcher would either be fuzzel if you want to have icons, or
      tofi to be blazingly fast
      - check out [raffi](https://github.com/chmouel/raffi)
-
 2. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake
    because it's the only working caprine fork for me
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
-
 3. create your own window manager using [dwl](https://codeberg.org/dwl/dwl)
    - dwl is no longer maintanied
    - my ideal setup would probably be something like 1 application per
@@ -136,11 +134,9 @@ declarative then reboot
      you go away and return its gonna be gone - or semi permanently by just m
      oving the windows to the same tag - to reverse there should be another
      shortcut to move the current selected window int oa new workspace
-
    - the most important issues i dont know how to solve are:
      1. how would i be able to switch to tags efficiently
         - lowkey i forgot i have run or raise
-
 4. maybe replace joshuto cause it sucks and doesn't work within tmux, and also
    also its really slow for some reason
    - probably with [yazi](https://github.com/sxyazi/yazi)
@@ -152,14 +148,11 @@ declarative then reboot
        3. [default file manager](http://askubuntu.com/questions/84929/ddg#335911)
           and as
           [file chooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser)
-
 5. remove emacs for obsidian/obsi
    - obsidian sucks for task management, might try super productivity for this
    - i think its working
-
 6. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or
    wait for sesh to update
-
 7. new browser
    - vieb (electron)
    - vimb (webkit2gtk)
@@ -170,9 +163,7 @@ declarative then reboot
    - the main hurdle is that i really like mozilla sync, so i need an
      alternative
    - and also zen browser works really well, ((just need to theme it right))
-
 8. KDE Connect
-
 9. probably the next step down the slippery slope is removing systemd, with like
    guixsd or nixng or notos or six-os
    - nvm guix is so UN supported bruh
@@ -182,37 +173,33 @@ declarative then reboot
      3. distrobox on nixos.
      4. ansible playbook
      5. just good ol bash scripts
-
+     6. chezmoi is interesting, it can do passwords
 10. use [stylix](https://nix-community.github.io/stylix/)
     - [ ] support other applications
       - [ ] youtube-music
       - [ ] super productivity
       - [ ] caprine
-
 11. pls fix this, otherwise we gonna use superproductivity instead
     https://github.com/CCExtractor/taskwarrior-flutter/issues/382
     - superprod got mkdwn plugins
     - maybe get rid of obsidian
-
 12. other window managers
     - hyprland (just for the maximum support, that isn't gnome or kde)
     - mango (maybe second to hyprland, also supports tags like river)
     - river (to make my own wayland compositor)
-
-13. [ ] make ppd-dbus-hook a flake
-    - use tlp 1.9 when it comes out on nixpkgs and use it instead of tuned
-
-14. make a personal setup for gpu-screen-recorder a.
-    https://git.dec05eba.com/gpu-screen-recorder/about/
-
+13. [x] make ppd-dbus-hook a flake
+    - [x] use tlp 1.9 when it comes out on nixpkgs and use it instead of tuned
+14. make a personal setup for gpu-screen-recorder instead of using the noctalia
+    extension https://git.dec05eba.com/gpu-screen-recorder/about/
 15. checkout [gradia](https://github.com/AlexanderVanhee/Gradia) and
     [satty](https://github.com/Satty-org/Satty) for better screensots
-
 16. [supergfxctl](https://gitlab.com/asus-linux/supergfxctl) gpu mode and vfio
-
 17. start reading RSS and use this https://noctalia.dev/plugins/rss-feed/
-
 18. add a search tool in noctalia-shell like this
     https://noctalia.dev/plugins/kagi-quick-search/
-
 19. add duplication of monitors
+20. Use a declarative flatpak on nix instead
+    [declarative-flatpak](https://github.com/in-a-dil-emma/declarative-flatpak)
+    [nix-flatpak](https://github.com/gmodena/nix-flatpak)
+21. Instead of using stylix, use noctalia, with matugen, or create styles to
+    use. but use noctalia templates instead so that it can live reload itself
