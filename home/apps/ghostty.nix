@@ -28,7 +28,7 @@
         shell-integration = "fish";
         theme = lib.mkDefault "Gruvbox Material Light";
         window-decoration = "none";
-        keybind = "unbind:ctrl+enter";
+        keybind = "ctrl+enter=unbind";
       };
       systemd.enable = false;
     };
