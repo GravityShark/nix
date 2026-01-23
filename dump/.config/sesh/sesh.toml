@@ -54,10 +54,10 @@ path = "~/.nix/dump"
 startup_command = "$EDITOR .tmux.conf"
 preview_command = "cat .tmux.conf"
 
-[[session]]
-name = "Little cool website" 
-path = "~/Code/coollittlewebsite"
-startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"
+# [[session]]
+# name = "Little cool website" 
+# path = "~/Code/coollittlewebsite"
+# startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"
 
 [[session]]
 name = "Notes" 
