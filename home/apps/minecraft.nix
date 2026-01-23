@@ -29,11 +29,11 @@ in
   config = lib.mkIf config.apps.minecraft.enable {
 
     # Disable lunar client autostart
-    # systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
+    systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
 
     home.packages = with pkgs; [
       # jre
-      # lunar-client
+      lunar-client
 
       (prismlauncher.override (previous: {
         jdks = [
