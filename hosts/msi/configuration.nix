@@ -8,6 +8,7 @@
   desktop.display-server = "niri";
 
   system = {
+    adb.enable = true;
     doas.enable = true;
     intel.enable = true;
     msi.enable = true;
@@ -54,8 +55,8 @@
   ];
 
   ## WayDroid
+  ## waydroid works with either default kernel, or nftables enabled
   virtualisation.waydroid.enable = true;
-  networking.nftables.enable = true;
 
   # Steam
   programs.steam = {
