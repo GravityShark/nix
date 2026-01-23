@@ -55,6 +55,7 @@
 
   ## WayDroid
   virtualisation.waydroid.enable = true;
+  networking.nftables.enable = true;
 
   # Steam
   programs.steam = {
