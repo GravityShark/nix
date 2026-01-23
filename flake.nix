@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v4.1.1";
+      url = "github:noctalia-dev/noctalia-shell/v4.2.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ppd-dbus-hook = {

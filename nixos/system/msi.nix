@@ -12,10 +12,7 @@
   };
   config = lib.mkIf config.system.msi.enable {
     boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
-    boot.kernelModules = [
-      "msi-ec"
-      "ec_sys"
-    ];
+    boot.kernelModules = [ "msi-ec" ];
     # Sets the msi stats
     systemd.tmpfiles.rules = [
       "w /sys/devices/platform/msi-ec/webcam - - - - off"
