@@ -23,6 +23,7 @@
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;
+    openrazer.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
     wayland-pipewire-idle-inhibit.enable = true;
