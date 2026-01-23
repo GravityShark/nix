@@ -44,7 +44,7 @@ in
           # javaPackages.compiler.temurin-bin.jre-25
           # jdk17
           # jdk21
-          # jre8
+          jre8
         ];
         additionalLibs = [
           # runtime dependencies necessary for mcsr fairplay mod

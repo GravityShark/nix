@@ -53,6 +53,9 @@
     "transparent_hugepage_shmem=advise"
   ];
 
+  ## WayDroid
+  virtualization.waydroid.enable = true;
+
   # Steam
   programs.steam = {
     enable = true;
