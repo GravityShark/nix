@@ -54,7 +54,7 @@
   ];
 
   ## WayDroid
-  virtualization.waydroid.enable = true;
+  virtualisation.waydroid.enable = true;
 
   # Steam
   programs.steam = {
@@ -62,7 +62,10 @@
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
-  environment.systemPackages = with pkgs; [ steam-tui ];
+  environment.systemPackages = with pkgs; [
+    steam-tui
+    waydroid-helper
+  ];
   #   # WINE
   #   wine
   #   winetricks
