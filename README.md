@@ -203,3 +203,6 @@ declarative then reboot
     [nix-flatpak](https://github.com/gmodena/nix-flatpak)
 21. Instead of using stylix, use noctalia, with matugen, or create styles to
     use. but use noctalia templates instead so that it can live reload itself
+22. Use tmpfs on minecraft, or impermanence
+23. Install [impurity.nix](https://github.com/outfoxxed/impurity.nix) to link
+    testing
