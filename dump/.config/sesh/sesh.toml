@@ -47,6 +47,7 @@ preview_command = "cat sesh.toml"
 [[session]]
 name = "ssh"
 startup_command = "ssh gravity@clr"
+preview_command = "ping clr -c 1"
 
 [[session]]
 name = "tmux"
@@ -60,9 +61,9 @@ preview_command = "cat .tmux.conf"
 # startup_command = "~/.config/sesh/scripts/coollittlewebsite.sh"
 
 [[session]]
-name = "Notes" 
+name = "notes" 
 path = "~/Notes"
-startup_command = "$EDITOR index.md"
+startup_command = "nvim +'Obsidian today'"
 
 # [[session]]
 # name = "TOmato 🍅" 
