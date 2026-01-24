@@ -50,13 +50,13 @@
     (callPackage ../../home/apps/packages/caprine-ng-bin.nix { })
     easyeffects
     # obsidian
+    pear-desktop
     # qbittorrent
     # selectdefaultapplication
     super-productivity
     # vial
     vlc # Videos + Music
-    pear-desktop
-    zotero
+    # zotero
 
     ## Media
     # audacity
@@ -76,13 +76,22 @@
     bc
     ffmpeg
     git
+    unrar
     wget
 
     ## Gaming
-    # bubblewrap
-    # dwarfs
-    # fuse-overlayfs
-    # wineWowPackages.staging
+    bottles
+    dolphin-emu
+    flatpak # roblox
+    (heroic.override {
+      extraPkgs = pkgs: [
+        pkgs.gamescope
+      ];
+    })
+    bubblewrap
+    dwarfs
+    fuse-overlayfs
+
   ];
 
   ## Other programss

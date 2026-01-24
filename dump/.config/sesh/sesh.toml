@@ -63,7 +63,7 @@ preview_command = "cat .tmux.conf"
 [[session]]
 name = "notes" 
 path = "~/Notes"
-startup_command = "nvim +'Obsidian today'"
+startup_command = "nvim index.md +'Obsidian today'"
 
 # [[session]]
 # name = "TOmato 🍅" 

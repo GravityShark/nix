@@ -35,9 +35,6 @@
 
   ################################## Extra ###################################
 
-  ## Currently only Roblox works with flatpak
-  services.flatpak.enable = true;
-
   ## Cloudflare Warp for slow downloads
   # services.cloudflare-warp.enable = true;
 
@@ -102,5 +99,5 @@
   # };
 
   # We are so Zen
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 }
