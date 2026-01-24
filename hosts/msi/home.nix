@@ -76,7 +76,7 @@
     bc
     ffmpeg
     git
-    unrar
+    p7zip
     wget
 
     ## Gaming
@@ -88,10 +88,10 @@
         pkgs.gamescope
       ];
     })
+
     bubblewrap
     dwarfs
     fuse-overlayfs
-
   ];
 
   ## Other programss
