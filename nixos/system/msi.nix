@@ -11,8 +11,16 @@
     system.msi.enable = lib.mkEnableOption "enables msi";
   };
   config = lib.mkIf config.system.msi.enable {
-    boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
-    boot.kernelModules = [ "msi-ec" ];
+    boot.extraModulePackages = [
+      config.boot.kernelPackages.msi-ec
+      # config.boot.kernelPackages.acpi_call
+      # config.boot.kernelPackages.system76-acpi
+    ];
+    boot.kernelModules = [
+      "msi-ec"
+      "ec_sys"
+    ];
+    boot.kernelParams = [ "ec_sys.write_support=1" ];
     # Sets the msi stats
     systemd.tmpfiles.rules = [
       "w /sys/devices/platform/msi-ec/webcam - - - - off"
