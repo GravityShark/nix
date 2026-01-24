@@ -76,7 +76,7 @@
     bc
     ffmpeg
     git
-    p7zip
+    p7zip-rar
     wget
 
     ## Gaming

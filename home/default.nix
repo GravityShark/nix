@@ -17,6 +17,7 @@
         "graalvm-oracle"
         "lunarclient"
         # "obsidian"
+        "p7zip"
       ];
 
     # https://www.joseferben.com/posts/installing_only_certain_packages_from_an_unstable_nixos_channel
