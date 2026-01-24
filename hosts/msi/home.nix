@@ -56,7 +56,6 @@
     super-productivity
     # vial
     vlc # Videos + Music
-    # zotero
 
     ## Media
     # audacity
@@ -83,11 +82,7 @@
     bottles
     dolphin-emu
     flatpak # roblox
-    (heroic.override {
-      extraPkgs = pkgs: [
-        pkgs.gamescope
-      ];
-    })
+    rare
 
     bubblewrap
     dwarfs
