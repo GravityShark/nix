@@ -19,8 +19,8 @@
         # command = "${pkgs.fish}/bin/fish --login --interactive";
         confirm-close-surface = false;
         cursor-style = "block";
-        font-family = lib.mkdefault "aporetic sans mono";
-        font-family-italic = lib.mkdefault "victor mono";
+        font-family = lib.mkDefault "Aporetic Sans Mono";
+        font-family-italic = lib.mkDefault "Victor Mono";
         font-size = lib.mkDefault 13;
         gtk-single-instance = true;
         gtk-titlebar = false;
