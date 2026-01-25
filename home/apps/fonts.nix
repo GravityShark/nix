@@ -16,6 +16,7 @@
       inter
       liberation_ttf
       source-sans-pro
+      victor-mono
     ];
 
     # Automatic font cache update
