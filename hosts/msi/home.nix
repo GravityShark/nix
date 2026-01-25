@@ -15,6 +15,7 @@
   apps = {
     anki.enable = true;
     desktop.enable = true;
+    fastfetch.enable = true;
     fish.enable = true;
     fonts.enable = true;
     fzf.enable = true;
@@ -60,7 +61,7 @@
     ## Media
     # audacity
     gnome-sound-recorder
-    # kdePackages.kdenlive # Video editor (I should enable gpu when using this)
+    # kdePackages.kdenlive # Video editor (I should enable gpu when using this) ## uhh this is not in cache yet and it broke
     krita # Drawing
 
     ## School
