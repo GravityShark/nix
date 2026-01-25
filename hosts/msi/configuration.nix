@@ -66,38 +66,7 @@
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
-  #   # WINE
-  #   wine
-  #   winetricks
-  #   protontricks
-  #   vulkan-tools
-  #
-  #   # Lutris
-  #   #lutris-unwrapped  # (not needed)
-  #   lutris
-  #
-  #   # Extra dependencies
-  #   # https://github.com/lutris/docs/
-  #   gnutls
-  #   openldap
-  #   freetype
-  #   sqlite
-  #   libxml2
-  #   xml2
-  #   SDL2
-  # ];
-
-  ## Nix-ld for jc
-  # programs.nix-ld = {
-  #   enable = true;
-  #   libraries = with pkgs; [
-  #     bubblewrap
-  #     dwarfs
-  #     fuse-overlayfs
-  #     wineWowPackages.staging
-  #   ];
-  # };
-
-  # We are so Zen
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  ## We are so Zen
+  ## zen kernel is currently not in the binary cache
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
 }
