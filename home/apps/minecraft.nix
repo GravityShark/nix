@@ -32,7 +32,8 @@ in
     systemd.user.services."app-lunarclient@autostart".Install.WantedBy = [ ];
 
     home.packages = with pkgs; [
-      # jre
+      jemalloc
+      jre
       lunar-client
 
       (prismlauncher.override (previous: {
