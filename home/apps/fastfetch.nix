@@ -11,6 +11,6 @@
   };
   config = lib.mkIf config.apps.fastfetch.enable {
     xdg.configFile."fastfetch".source = ../../dump/.config/fastfetch;
-    home.package = [ pkgs.fastfetch ];
+    home.packages = [ pkgs.fastfetch ];
   };
 }
