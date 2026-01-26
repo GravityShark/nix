@@ -22,7 +22,14 @@
       eza
       rip2
     ];
-    home.sessionVariables.RIP_GRAVEYARD = config.home.homeDirectory + "/.local/share/Trash";
+
+    home.sessionVariables = {
+      CFLAGS = "-std=c99 -Wall -Werror";
+      GOPATH = "$HOME/.go";
+      GOPROXY = "https://proxy.golang.org";
+      GOSUMDB = "sum.golang.org";
+      RIP_GRAVEYARD = config.home.homeDirectory + "/.local/share/Trash";
+    };
 
     programs.nix-your-shell = {
       enable = true;

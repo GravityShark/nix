@@ -98,11 +98,4 @@
       options.selection-clipboard = "clipboard";
     };
   };
-
-  home.sessionVariables = {
-    GOPATH = "$HOME/.go";
-    GOPROXY = "https://proxy.golang.org";
-    GOSUMDB = "sum.golang.org";
-    CFLAGS = "-std=c99 -Wall -Werror";
-  };
 }
