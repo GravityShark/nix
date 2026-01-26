@@ -20,7 +20,7 @@
         confirm-close-surface = false;
         cursor-style = "block";
         font-family = lib.mkDefault "Aporetic Sans Mono";
-        font-family-italic = lib.mkDefault "Victor Mono";
+        font-family-italic = lib.mkDefault "Aporetic Serif Italic";
         font-size = lib.mkDefault 13;
         gtk-single-instance = true;
         gtk-titlebar = false;
