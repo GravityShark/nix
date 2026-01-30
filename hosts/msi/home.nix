@@ -81,6 +81,7 @@
     ## Gaming
     bottles
     # dolphin-emu
+    flatpak # roblox
     rare
 
     bubblewrap
