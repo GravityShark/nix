@@ -36,7 +36,7 @@
   ################################## Extra ###################################
 
   ## Currently only Roblox works with flatpak
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
 
   ## Cloudflare Warp for slow downloads
   # services.cloudflare-warp.enable = true;
