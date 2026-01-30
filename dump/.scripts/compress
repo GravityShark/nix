@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Courtesy of shit gippity
+# https://unix.stackexchange.com/questions/520597/how-to-reduce-the-size-of-a-video-to-a-target-size
 
 # Check if correct number of arguments are passed
 if [ "$#" -ne 2 ]; then
@@ -15,9 +15,10 @@ echo $output_file
 
 # Calculate duration of the input video
 duration=$(ffprobe -i "$input_file" -show_entries format=duration -v quiet -of csv="p=0")
+duration_round_up=$((${duration%.*} + 1))
 
 # Calculate target bitrate
-target_bitrate=$(echo "scale=0; ($target_size_MB * 8 * 1024 * 1024) / $duration" | bc)
+target_bitrate=$(((target_size_MB * 8 * 1000 * 1000) / $duration_round_up))
 
 # Compress video using ffmpeg
 ffmpeg -i "$input_file" -b:v "$target_bitrate" -minrate "$target_bitrate" -maxrate "$target_bitrate" -bufsize "$((target_bitrate / 2))" "$output_file"

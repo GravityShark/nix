@@ -60,7 +60,7 @@
 
     ## Media
     # audacity
-    gnome-sound-recorder
+    # gnome-sound-recorder
     # kdePackages.kdenlive # Video editor (I should enable gpu when using this) ## uhh this is not in cache yet and it broke
     krita # Drawing
 
@@ -73,7 +73,6 @@
 
     ## CLIs
     # aria2
-    bc
     ffmpeg
     git
     p7zip-rar
@@ -81,8 +80,8 @@
 
     ## Gaming
     bottles
-    dolphin-emu
-    flatpak # roblox
+    # dolphin-emu
+    # flatpak # roblox
     rare
 
     bubblewrap
