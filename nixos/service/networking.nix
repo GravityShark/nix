@@ -34,10 +34,10 @@
       networking.nftables.enable = true;
 
       # Open ports in the firewall.
-      # networking.firewall.allowedTCPPorts = [ ... ];
-      # networking.firewall.allowedUDPPorts = [ ... ];
+      networking.firewall.allowedTCPPorts = [ 25565 ];
+      # networking.firewall.allowedUDPPorts = [ 19132 ];
       # Or disable the firewall altogether.
-      networking.firewall.enable = false;
+      # networking.firewall.enable = false;
 
       # networking.timeServers = options.networking.timeServers.default ++ [ "asia.pool.ntp.org" ];
       networking.timeServers = [
