@@ -49,6 +49,7 @@
   home.packages = with pkgs; [
     ## Apps
     (callPackage ../../home/apps/packages/caprine-ng-bin.nix { })
+    chromium
     easyeffects
     # obsidian
     pear-desktop
