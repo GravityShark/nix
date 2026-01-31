@@ -48,6 +48,7 @@
   ## Packages
   home.packages = with pkgs; [
     ## Apps
+    baobab
     (callPackage ../../home/apps/packages/caprine-ng-bin.nix { })
     easyeffects
     # obsidian
