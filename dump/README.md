@@ -38,8 +38,6 @@ https://its-saanvi.github.io/linux-mcsr/minecraft/mmc.html#further-optimizations
 
 The setup goes like
 
-1.
-
 #### Prism Launcher Defaults
 
 Settings
@@ -89,17 +87,22 @@ What I use is by default for all is GraalVM EE 25 with these flags
    - Otherwise consult
      [this](https://github.com/Radk6/MC-Optimization-Guide/blob/main/java-n-stuff/java-things.md)
    - Using non-LTS bulids are stupid cause that is no longer being updated
-2. Java Bulids a. GraalVM EE - recommended, works most of the time b. Adoptium
-   Temurin - it ain't that bad compared to graalvm but it usually has greater
-   compatibility c. Anything else is basically irrelevant
+2. Java Bulids
+   - GraalVM EE - recommended, works most of the time
+   - Adoptium Temurin - it ain't that bad compared to graalvm but it usually has
+     greater compatibility
+   - Anything else is basically irrelevant
+
 3. Java Garbage Collector (shenandoah, zgc + zgenerational (generational is
-   default by v24+), zgc, g1gc) a. 24 `-XX:+UseZGC`, ZGenerational became
-   default b. 21-23 `-XX:+UseZGC -XX:+ZGenerational` c. 11-20 `-XX:+UseZGC` d. 8
-   `-XX:+UseG1GC`
+   default by v24+), zgc, g1gc)
+   - 24 `-XX:+UseZGC`, ZGenerational became default
+   - 21-23 `-XX:+UseZGC -XX:+ZGenerational`
+   - 11-20 `-XX:+UseZGC`
+   - 8 `-XX:+UseG1GC`
    - If you are feeling spicy you can try Shenandoah. YMMV, but it would mostly
-     be just slightly than ZGC.
+     be just slightly less than ZGC.
      - `-XX:+UseShenandoahGC`
-4. Java Flagss
+4. Java Flags
    - In Java 25, `-XX:+UseCompactObjectHeaders` is free optimization
    - `-XX:+AlwaysPreTouch` allocates all memory upfront, useful for like large
      (128GB) heap sizes, but slower startup.
@@ -126,9 +129,7 @@ What I use is by default for all is GraalVM EE 25 with these flags
      [here](https://github.com/Radk6/MC-Optimization-Guide/blob/main/modpack-specific/modpack-instructions.md)
      for them.
 
-> Azul prime sucks balls tbh
-
-#### mcsr (1.16.1)
+#### Minecraft Speedrunning (1.16.1)
 
 For MCSR with SeedQueue I add nmethodsweepactivity and still use GraalVM EE 25
 
@@ -160,9 +161,15 @@ Otherwise (like MCSR Ranked) use the default one.
 6. LWJGL
    - Right click your instance in Prism > Edit > Version > Right click LWJGL 3 >
      Change Version > Select 3.3.3
+7. Install the latest
+   [MCSR Practice Map](https://github.com/Dibedy/The-MCSR-Practice-Map)
+8. Download and use
+   [Mod Check](https://github.com/tildejustin/modcheck/releases) on the instance
+   (make sure fabric is already installed)
+9. Set up MPK
 
-Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
-tmpfs
+10. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
+    tmpfs
 
 #### MCSR Ranked Defaults
 
@@ -186,7 +193,7 @@ Settings > Custom Commands > Wrapper command: = `jemalloc.sh waywall wrap --`
   to add this flag to make it work
   - `-Dfml.earlyprogresswindow=false`
 
-### Razer Mouse
+### Mouse Settings
 
 - Set cho dpi to `2700`
 - Set the left side mouse button to `backspace`
