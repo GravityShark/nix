@@ -97,17 +97,4 @@
       options.selection-clipboard = "clipboard";
     };
   };
-
-  xdg.configFile."MControlCenter.conf".text = ''
-    [MainWindow]
-    Height=480
-    Width=580
-
-    [Settings]
-    fan1SpeedSettings=38|50|69|86|100|130|150
-    fan1TempSettings=40|50|60|70|80|90
-    fan2SpeedSettings=38|50|69|86|100|130|150
-    fan2TempSettings=40|50|60|70|80|90
-    fanModeAdvanced=true
-  '';
 }

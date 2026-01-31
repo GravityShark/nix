@@ -44,7 +44,7 @@
                            inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
                          }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
           '';
-          Restart = "on-failure";
+          Restart = "always";
         };
         Install.WantedBy = [ "noctalia-shell.service" ];
       };
