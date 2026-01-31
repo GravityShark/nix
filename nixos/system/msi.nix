@@ -16,7 +16,8 @@
       "msi-ec"
       "ec_sys"
     ];
-    # boot.kernelParams = [ "ec_sys.write_support=1" ];
+    boot.kernelParams = [ "ec_sys.write_support=1" ];
+
     # Sets the msi stats
     systemd.tmpfiles.rules = [
       "w /sys/class/leds/msiacpi::kbd_backlight/brightness - - - - 0"
