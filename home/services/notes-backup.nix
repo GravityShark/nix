@@ -18,7 +18,7 @@
         Type = "oneshot";
         ExecStart = "%h/Notes/backups/backup.sh";
       };
-      Install.WantedBy = [ "default.target" ];
+      Install.WantedBy = [ "multi-user.target" ];
     };
 
     systemd.user.timers.restic-notes-backup = {

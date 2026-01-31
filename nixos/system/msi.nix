@@ -87,15 +87,16 @@
         "tlp-pd.service"
       ];
       serviceConfig = {
+        Type = "oneshot";
         ExecStart = ''
           ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
             "/bin/sh -c 'echo eco > /sys/devices/platform/msi-ec/shift_mode'" \
             "/bin/sh -c 'echo comfort > /sys/devices/platform/msi-ec/shift_mode'" \
             "/bin/sh -c 'echo turbo > /sys/devices/platform/msi-ec/shift_mode'"
         '';
-        Restart = "always";
+        Restart = "on-failure";
       };
-      wantedBy = [ "default.target" ];
+      wantedBy = [ "multi-user.target" ];
     };
   };
 }
