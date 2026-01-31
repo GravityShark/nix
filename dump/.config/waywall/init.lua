@@ -5,6 +5,7 @@ local helpers = require('waywall.helpers')
 
 local ninb_path = '@ninb_path@'
 local eye_overlay = '@eye_overlay@'
+local oneshot_overlay = '@oneshot_overlay@'
 local ninb_pid = 'ninjabrain.*\\.jar'
 
 local is_running = function(name)
@@ -231,6 +232,7 @@ local toggle_chat = function()
 	end
 end
 
+local oneshot_overlay_state = false
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
 
@@ -290,6 +292,17 @@ local config = {
 				return false
 			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
+		end,
+		['CTRL-h'] = function()
+			oneshot_overlay_state = not oneshot_overlay_state
+			helpers.make_image(oneshot_overlay_state, {
+				dst = {
+					x = 0,
+					y = 0,
+					w = 1920,
+					h = 1080,
+				},
+			})
 		end,
 	},
 }

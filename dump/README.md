@@ -7,17 +7,14 @@ my pumpndump but now im moving it to home manager cause why not
 1. doom emacs
    - _should_ automatically install using `home-manager switch`, you just need
      to invoke `doom env` and check up on `doom doctor` if theres anything wrong
-
      ```bash
      doom env
      ```
-
 2. browsers firefox
    - you gotta reinstall the extension setttings from
      [./home/dump/firefox_extension_settings/]
    - sync the browser using firefox cause i love being tracked (but mainly
      because you really can't beat it)
-
 3. Redownload and setup some wallpapers or something
    - [Distrotube](https://gitlab.com/dwt1/wallpapers)
    - Rosepine ([1](https://github.com/rose-pine/wallpapers),
@@ -28,6 +25,8 @@ my pumpndump but now im moving it to home manager cause why not
    - [Gruvbox](https://gruvbox-wallpapers.pages.dev/)
    - maybe not cause its goonna fetch the wallpaper for you anyway using
      stylix.nix
+4. OBS-studio
+   - https://its-saanvi.github.io/linux-mcsr/post_install/obs.html#splitting-audio
 
 ### Minecraft
 
@@ -158,6 +157,7 @@ Otherwise (like MCSR Ranked) use the default one.
    - Max Generating Seeds (Wall): 9
 5. waywall
    - just add `waywall wrap --` at the end of your thing, keeping `jemalloc.sh`
+     at the start. `jemalloc.sh waywall wrap --`
 6. LWJGL
    - Right click your instance in Prism > Edit > Version > Right click LWJGL 3 >
      Change Version > Select 3.3.3
@@ -166,9 +166,9 @@ Otherwise (like MCSR Ranked) use the default one.
 8. Download and use
    [Mod Check](https://github.com/tildejustin/modcheck/releases) on the instance
    (make sure fabric is already installed)
-9. Set up MPK
-
-10. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
+9. Set up MPK, there is already one in ~/.nix/dump/.config/waywall
+10. Set up Standard Settings and Atum, yet again ~/.nix/dump/.config/waywall
+11. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
     tmpfs
 
 #### MCSR Ranked Defaults
@@ -186,6 +186,7 @@ Settings > Custom Commands > Wrapper command: = `jemalloc.sh waywall wrap --`
 - if you want to make servers use [e4mc](https://modrinth.com/mod/e4mc) or
   [e4mcbiat](https://github.com/DuncanRuns/e4mcbiat/)
   - if you need udp like bedrock edition, use [playit.gg](https://playit.gg/)
+- if you're too lazy to setup an offline server get something like offlinelan
 
 #### Neoforge and Wayland
 

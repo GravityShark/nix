@@ -23,22 +23,6 @@
     # https://www.joseferben.com/posts/installing_only_certain_packages_from_an_unstable_nixos_channel
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      waywall = prev.waywall.overrideAttrs (
-        f: p: {
-          version = "0.2026.01.11";
-          src = prev.fetchFromGitHub {
-            owner = "tesselslate";
-            repo = "waywall";
-            tag = f.version;
-            hash = "sha256-VOtwVFMGgUvsGnD1CnflKtUy5tTKqK2C/qNsWwgbyEU=";
-          };
-        }
-      );
-    })
-
-  ];
   # Paths doesnt work!!
   # home.sessionPath = [
   #   "$HOME/.local/bin"

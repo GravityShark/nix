@@ -77,6 +77,7 @@ in
 
     xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
       eye_overlay = "${../../dump/.config/waywall/overlay.png}";
+      oneshot_overlay = "${../../dump/.config/waywall/oneshot.png}";
       ninb_path = "${lib.getExe ninjabrain-bot}";
       # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
     };
