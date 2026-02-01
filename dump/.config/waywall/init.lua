@@ -176,11 +176,13 @@ setup_pie_chart_count(thin_res.w, thin_res.h)
 -- -- (might be in decimal or in hex)
 local game_remaps = {
 	--[[
-	0  1    2    3    k    +    4    5
-	tab  a    o    d    r    t    8    _    _    _    _   _
-	s    e    i    g    n    b    wide    _    _    _    _   _
-	_    f    f3   c    w    thin    eye    _    _    _   _   _
-	_    _    spc   @base    _
+	0    1    2    3    k    +    4    5
+	tab  a    o    g    r    t    d    _    _    _    _   _
+	c    i    e    s    f    b    eye  _    _    _    _   _
+	_    8    f3   n    w    thn  wde  _    _    _   _   _
+	_    _    spc   @base     _
+
+	-- fns is a kinda bad search craft with this tbh
 
 	8 = sprint
 	tab = crouch
@@ -199,22 +201,24 @@ local game_remaps = {
 
 	['q'] = 'a',
 	['w'] = 'o',
-	['e'] = 'd',
+	['e'] = 'g',
+	['y'] = 'd',
 	['u'] = 'leftbrace',
 	['i'] = 'rightbrace',
 	['o'] = 'apostrophe',
 
-	['insert'] = 's',
-	['a'] = 'e',
-	['s'] = 'i',
-	['d'] = 'g',
-	['f'] = 'n',
+	['insert'] = 'c',
+	['a'] = 'i',
+	['s'] = 'e',
+	['d'] = 's',
+	['f'] = 'f',
 	['g'] = 'b',
 	['j'] = 'comma',
 	['k'] = 'dot',
 
-	['z'] = 'f',
+	['z'] = '8',
 	['x'] = 'f3',
+	['c'] = 'n',
 	['v'] = 'w',
 }
 --
@@ -237,7 +241,7 @@ local toggle_chat = function()
 	end
 end
 
-local oneshot_overlay_state = false
+local oneshot_overlay_state = nil
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
 
@@ -286,28 +290,32 @@ local config = {
 			end
 			(helpers.toggle_res(thin_res.w, thin_res.h))()
 		end,
-		['*-h'] = function()
+		['*-n'] = function()
 			if chat_state.enabled then
 				return false
 			end
 			(helpers.toggle_res(1920, 300))()
 		end,
-		['*-n'] = function()
+		['*-h'] = function()
 			if chat_state.enabled then
 				return false
 			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
 		['control-h'] = function()
-			oneshot_overlay_state = not oneshot_overlay_state
-			helpers.make_image(oneshot_overlay, {
-				dst = {
-					x = 0,
-					y = 0,
-					w = 1920,
-					h = 1080,
-				},
-			})
+			if not oneshot_overlay_state then
+				oneshot_overlay_state = waywall.image(oneshot_overlay, {
+					dst = {
+						x = 0,
+						y = 0,
+						w = 1920,
+						h = 1080,
+					},
+				})
+			else
+				oneshot_overlay_state.close()
+				oneshot_overlay_state = nil
+			end
 		end,
 	},
 }
