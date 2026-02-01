@@ -176,10 +176,10 @@ setup_pie_chart_count(thin_res.w, thin_res.h)
 -- -- (might be in decimal or in hex)
 local game_remaps = {
 	--[[
-	eye  1    2    3    k    +    4    5
-	tab  a    o    d    r    t    f    _    _    _    _   _
-	s    e    i    g    n    b    _    _    _    _    _   _
-	_    8    f3   c    w    _    0    _    _    _   _   _
+	0  1    2    3    k    +    4    5
+	tab  a    o    d    r    t    8    _    _    _    _   _
+	s    e    i    g    n    b    wide    _    _    _    _   _
+	_    f    f3   c    w    thin    eye    _    _    _   _   _
 	_    _    spc   @base    _
 
 	8 = sprint
@@ -191,6 +191,7 @@ local game_remaps = {
 	spc = open inv
 	]]
 
+	['grave'] = '0',
 	['4'] = 'k',
 	['5'] = 'KPPLUS',
 	['6'] = '4',
@@ -199,7 +200,7 @@ local game_remaps = {
 	['q'] = 'a',
 	['w'] = 'o',
 	['e'] = 'd',
-	['y'] = 'f',
+	['y'] = '8',
 
 	['insert'] = 's',
 	['a'] = 'e',
@@ -207,10 +208,10 @@ local game_remaps = {
 	['d'] = 'g',
 	['f'] = 'n',
 	['g'] = 'b',
-	['z'] = '8',
+
+	['z'] = 'f',
 	['x'] = 'f3',
 	['v'] = 'w',
-	['grave'] = '0',
 }
 --
 -- -- ##############################################################################################
@@ -257,7 +258,7 @@ local config = {
 		ninb_opacity = 0.8,
 	},
 	actions = {
-		['*-m'] = function()
+		['control-space'] = function()
 			if chat_state.enabled then
 				return false
 			end
