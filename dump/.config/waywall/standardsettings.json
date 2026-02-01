@@ -45,7 +45,7 @@
   "forceUnicodeFont": false,
   "mouseSensitivity": 0.02291165,
   "invertYMouse": false,
-  "mouseWheelSensitivity": 1.0,
+  "mouseWheelSensitivity": 0.01,
   "discrete_mouse_scroll": false,
   "touchscreen": false,
   "rawMouseInput": false,
