@@ -313,7 +313,7 @@ local config = {
 					},
 				})
 			else
-				oneshot_overlay_state.close()
+				oneshot_overlay_state:close()
 				oneshot_overlay_state = nil
 			end
 		end,
