@@ -244,7 +244,7 @@ local config = {
 		repeat_delay = 200,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
-		sensitivity = 0.81920004,
+		sensitivity = 1,
 		confine_pointer = false,
 
 		remaps = game_remaps,

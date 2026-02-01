@@ -14,18 +14,18 @@
   <entry key="enable_http_server" value="false"/>
   <entry key="hotkey_boat_code" value="-1"/>
   <entry key="hotkey_boat_modifier" value="-1"/>
-  <entry key="hotkey_decrement_code" value="4"/>
+  <entry key="hotkey_decrement_code" value="52"/>
   <entry key="hotkey_decrement_modifier" value="0"/>
-  <entry key="hotkey_increment_code" value="5"/>
+  <entry key="hotkey_increment_code" value="51"/>
   <entry key="hotkey_increment_modifier" value="0"/>
   <entry key="hotkey_mod_360_code" value="-1"/>
   <entry key="hotkey_mod_360_modifier" value="-1"/>
-  <entry key="hotkey_redo_code" value="1"/>
-  <entry key="hotkey_redo_modifier" value="0"/>
-  <entry key="hotkey_reset_code" value="57424"/>
+  <entry key="hotkey_redo_code" value="-1"/>
+  <entry key="hotkey_redo_modifier" value="-1"/>
+  <entry key="hotkey_reset_code" value="40"/>
   <entry key="hotkey_reset_modifier" value="0"/>
-  <entry key="hotkey_undo_code" value="26"/>
-  <entry key="hotkey_undo_modifier" value="0"/>
+  <entry key="hotkey_undo_code" value="-1"/>
+  <entry key="hotkey_undo_modifier" value="-1"/>
   <entry key="language_v2" value="en-US"/>
   <entry key="mismeasure_warning_enabled" value="true"/>
   <entry key="save_state" value="false"/>
