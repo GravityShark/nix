@@ -120,7 +120,7 @@ end
 -- -- EYE ZOOM
 --
 local eye = {
-	sens = 0.05526274,
+	sens = 0.29617377,
 	-- Size of the instance
 	res = {
 		w = 320,
@@ -244,7 +244,7 @@ local config = {
 		repeat_delay = 200,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
-		sensitivity = 1,
+		sensitivity = 4.39040021,
 		confine_pointer = false,
 
 		remaps = game_remaps,
