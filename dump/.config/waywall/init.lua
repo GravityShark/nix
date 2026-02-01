@@ -295,7 +295,7 @@ local config = {
 		end,
 		['CTRL-h'] = function()
 			oneshot_overlay_state = not oneshot_overlay_state
-			helpers.make_image(oneshot_overlay_state, {
+			helpers.make_image(oneshot_overlay, {
 				dst = {
 					x = 0,
 					y = 0,
