@@ -200,8 +200,8 @@ local game_remaps = {
 	['q'] = 'a',
 	['w'] = 'o',
 	['e'] = 'd',
-	['u'] = '[',
-	['i'] = ']',
+	['u'] = 'leftbrace',
+	['i'] = 'rightbrace',
 	['o'] = 'apostrophe',
 
 	['insert'] = 's',
@@ -210,8 +210,8 @@ local game_remaps = {
 	['d'] = 'g',
 	['f'] = 'n',
 	['g'] = 'b',
-	['j'] = ',',
-	['k'] = '.',
+	['j'] = 'comma',
+	['k'] = 'dot',
 
 	['z'] = 'f',
 	['x'] = 'f3',
