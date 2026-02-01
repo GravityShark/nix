@@ -9,23 +9,23 @@
   <entry key="check_for_updates" value="true"/>
   <entry key="custom_themes" value="a818Ob;1&lt;Zc:AH[d9a&lt;We9A&lt;Vf4PXBhbX;&lt;n\T33kW@6Gia7c5j_c[&gt;obG3NlMLa\mc6ibr0&lt;hYqool0po`00.a8BDYb;C8hc=ca2d&lt;cPme:Rhbf8BDYhoooonooook`&lt;30iiNGUjP820oiNGUlMLa\mc6ibr0&lt;hYqool0po`00.a8BDYb;C8hc=ca2d&lt;cPme:Rhbf8BDYhoooonooook`&lt;30iiNGUjP820oiNGUlMLa\mc6ibr0&lt;hYqool0po`00"/>
   <entry key="custom_themes_names" value="meow.New theme.New theme"/>
-  <entry key="default_boat_type" value="1"/>
+  <entry key="default_boat_type" value="2"/>
   <entry key="direction_help_enabled" value="true"/>
   <entry key="enable_http_server" value="false"/>
   <entry key="hotkey_boat_code" value="-1"/>
   <entry key="hotkey_boat_modifier" value="-1"/>
   <entry key="hotkey_decrement_code" value="52"/>
-  <entry key="hotkey_decrement_modifier" value="0"/>
+  <entry key="hotkey_decrement_modifier" value="8"/>
   <entry key="hotkey_increment_code" value="51"/>
-  <entry key="hotkey_increment_modifier" value="0"/>
+  <entry key="hotkey_increment_modifier" value="8"/>
   <entry key="hotkey_mod_360_code" value="-1"/>
   <entry key="hotkey_mod_360_modifier" value="-1"/>
-  <entry key="hotkey_redo_code" value="-1"/>
-  <entry key="hotkey_redo_modifier" value="-1"/>
-  <entry key="hotkey_reset_code" value="40"/>
+  <entry key="hotkey_redo_code" value="23"/>
+  <entry key="hotkey_redo_modifier" value="0"/>
+  <entry key="hotkey_reset_code" value="24"/>
   <entry key="hotkey_reset_modifier" value="0"/>
-  <entry key="hotkey_undo_code" value="-1"/>
-  <entry key="hotkey_undo_modifier" value="-1"/>
+  <entry key="hotkey_undo_code" value="22"/>
+  <entry key="hotkey_undo_modifier" value="0"/>
   <entry key="language_v2" value="en-US"/>
   <entry key="mismeasure_warning_enabled" value="true"/>
   <entry key="save_state" value="false"/>

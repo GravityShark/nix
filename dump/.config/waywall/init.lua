@@ -200,7 +200,9 @@ local game_remaps = {
 	['q'] = 'a',
 	['w'] = 'o',
 	['e'] = 'd',
-	['y'] = '8',
+	['u'] = '[',
+	['i'] = ']',
+	['o'] = "'",
 
 	['insert'] = 's',
 	['a'] = 'e',
@@ -208,6 +210,8 @@ local game_remaps = {
 	['d'] = 'g',
 	['f'] = 'n',
 	['g'] = 'b',
+	['j'] = ',',
+	['k'] = '.',
 
 	['z'] = 'f',
 	['x'] = 'f3',
@@ -254,7 +258,7 @@ local config = {
 		-- background = '#1b0e1fff',
 		-- background = '#303030ff',
 		background = '#00000000',
-		ninb_anchor = 'topright',
+		ninb_anchor = 'right',
 		ninb_opacity = 0.8,
 	},
 	actions = {
@@ -294,7 +298,7 @@ local config = {
 			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
-		['CTRL-h'] = function()
+		['control-h'] = function()
 			oneshot_overlay_state = not oneshot_overlay_state
 			helpers.make_image(oneshot_overlay, {
 				dst = {
