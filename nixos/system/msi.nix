@@ -82,10 +82,7 @@
     systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";
       enable = true;
-      requires = [
-        "tuned-ppd.service"
-        "tlp-pd.service"
-      ];
+      requires = [ "tlp-pd.service" ];
       serviceConfig = {
         ExecStart = ''
           ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
@@ -95,10 +92,7 @@
         '';
         Restart = "on-failure";
       };
-      wantedBy = [
-        "tuned-ppd.service"
-        "tlp-pd.service"
-      ];
+      wantedBy = [ "multi-user.target" ];
     };
   };
 }

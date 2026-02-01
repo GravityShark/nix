@@ -10,9 +10,14 @@
   };
 
   config = lib.mkIf config.service.power-management.enable {
-    services.tlp.enable = true;
-    services.tlp.pd.enable = true;
-    # services.tuned.enable = true; # power-profiles-daemon, sometimes takes up power randomly
+    services.tlp = {
+      enable = true;
+      pd.enable = true;
+      settings = {
+        PLATFORM_PROFILE_ON_AC = "balanced";
+        PLATFORM_PROFILE_ON_BAT = "power-saver";
+      };
+    };
     services.upower.enable = true; # power viewing
   };
 }
