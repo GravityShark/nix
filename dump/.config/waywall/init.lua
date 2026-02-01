@@ -202,7 +202,7 @@ local game_remaps = {
 	['e'] = 'd',
 	['u'] = '[',
 	['i'] = ']',
-	['o'] = 'quote',
+	['o'] = 'apostrophe',
 
 	['insert'] = 's',
 	['a'] = 'e',
