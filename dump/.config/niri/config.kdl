@@ -50,7 +50,7 @@ input {
         // on
         natural-scroll
         // accel-speed -0.67
-        accel-speed -0.8
+        accel-speed -0.95
         accel-profile "flat"
         scroll-method "on-button-down"
     }
