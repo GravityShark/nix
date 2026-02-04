@@ -65,10 +65,11 @@
 
     stylix.cursor = {
       # package = pkgs.bibata-cursors;
-      # package = pkgs.nordzy-cursor-theme;
-      package = pkgs.banana-cursor;
-      name = lib.mkDefault "Banana";
-      size = 128;
+      package = pkgs.nordzy-cursor-theme;
+      # package = pkgs.banana-cursor;
+      # name = lib.mkDefault "Banana";
+      name = lib.mkDefault "Nordzy-cursors";
+      # size = 128;
     };
 
     stylix.icons.enable = true;
