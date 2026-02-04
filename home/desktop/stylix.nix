@@ -64,9 +64,11 @@
     };
 
     stylix.cursor = {
-      package = pkgs.bibata-cursors;
-      name = lib.mkDefault "Bibata-Original-Classic";
-      size = 12;
+      # package = pkgs.bibata-cursors;
+      # package = pkgs.nordzy-cursor-theme;
+      package = pkgs.banana-cursor;
+      name = lib.mkDefault "Banana";
+      size = 128;
     };
 
     stylix.icons.enable = true;

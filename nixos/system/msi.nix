@@ -34,6 +34,9 @@
               "${pkgs.nbfc-linux}/bin/ec_probe write ${builtins.toString addr} ${builtins.toString value}";
           in
           "${pkgs.writers.writeDash "ec_sys_fans" ''
+            if ! lsmod | grep -q ec_sys; then
+              exit 1
+            fi
             ${write cpu_speed 38}
             ${write (cpu_speed + 1) 50}
             ${write (cpu_speed + 2) 69}
@@ -82,8 +85,12 @@
     systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";
       enable = true;
-      requires = [ "tlp-pd.service" ];
+      requires = [
+        "tuned-ppd.service"
+        "tlp-pd.service"
+      ];
       serviceConfig = {
+        Type = "oneshot";
         ExecStart = ''
           ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
             "/bin/sh -c 'echo eco > /sys/devices/platform/msi-ec/shift_mode'" \
@@ -92,7 +99,10 @@
         '';
         Restart = "on-failure";
       };
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = [
+        "tuned-ppd.service"
+        "tlp-pd.service"
+      ];
     };
   };
 }
