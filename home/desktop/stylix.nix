@@ -65,11 +65,11 @@
 
     stylix.cursor = {
       # package = pkgs.bibata-cursors;
-      package = pkgs.nordzy-cursor-theme;
-      # package = pkgs.banana-cursor;
-      # name = lib.mkDefault "Banana";
-      name = lib.mkDefault "Nordzy-cursors";
-      size = 12;
+      # package = pkgs.nordzy-cursor-theme;
+      # name = lib.mkDefault "Nordzy-cursors";
+      package = pkgs.banana-cursor;
+      name = lib.mkDefault "Banana";
+      size = 32;
     };
 
     stylix.icons.enable = true;
@@ -92,10 +92,10 @@
       # mpv.enable = true;
       # neovim.enable = true;
       noctalia-shell.enable = true;
-      obsidian = {
-        enable = true;
-        fonts.override.sizes.desktop = 16;
-      };
+      # obsidian = {
+      #   enable = true;
+      #   fonts.override.sizes.desktop = 16;
+      # };
       qt.enable = true;
       vesktop.enable = true;
       zathura.enable = true;
@@ -133,6 +133,11 @@
 
             insert-hint {
                 color "#98971a80"
+            }
+
+            cursor { 
+               xcursor-theme ${config.stylix.cursor.name}
+               xcursor-size ${builtins.toString config.stylix.cursor.size}
             }
         }
       '';
