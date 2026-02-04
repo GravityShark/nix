@@ -69,7 +69,7 @@
       # package = pkgs.banana-cursor;
       # name = lib.mkDefault "Banana";
       name = lib.mkDefault "Nordzy-cursors";
-      # size = 128;
+      size = 12;
     };
 
     stylix.icons.enable = true;
