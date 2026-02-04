@@ -134,11 +134,11 @@
             insert-hint {
                 color "#98971a80"
             }
+        }
 
-            cursor { 
-               xcursor-theme ${config.stylix.cursor.name}
-               xcursor-size ${builtins.toString config.stylix.cursor.size}
-            }
+        cursor { 
+           xcursor-theme "${config.stylix.cursor.name}"
+           xcursor-size ${builtins.toString config.stylix.cursor.size}
         }
       '';
 
