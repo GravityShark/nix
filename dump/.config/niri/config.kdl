@@ -50,7 +50,7 @@ input {
         // on
         natural-scroll
         // at 2850 dpi
-        accel-speed -0.75
+        accel-speed -0.73
         accel-profile "flat"
         scroll-method "on-button-down"
     }
