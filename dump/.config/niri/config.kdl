@@ -118,7 +118,7 @@ output "eDP-1" {
 // Hide when typing
 cursor {
     hide-when-typing
-    hide-after-inactive-ms cursor 1000
+    hide-after-inactive-ms-cursor 1000
 }
 
 
