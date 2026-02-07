@@ -14,13 +14,15 @@
     allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
-        "electron-37.10.3"
         "graalvm-oracle"
         "lunarclient"
         # "obsidian"
         "p7zip"
       ];
 
+    permittedInsecurePackages = [
+      "electron-37.10.3"
+    ];
     # https://www.joseferben.com/posts/installing_only_certain_packages_from_an_unstable_nixos_channel
   };
 

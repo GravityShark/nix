@@ -115,7 +115,14 @@ output "eDP-1" {
     // backdrop-color "#F2E5BC"
 }
 
-// Put swaybg inside the overview backdrop.
+// Hide when typing
+cursor {
+    hide-when-typing
+    hide-after-inactive-ms cursor 1000
+}
+
+
+// Noctalia overview
 layer-rule {
     match namespace="overview"
     place-within-backdrop true
