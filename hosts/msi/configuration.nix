@@ -39,7 +39,7 @@
   services.flatpak.enable = true;
 
   ## Cloudflare Warp for slow downloads
-  # services.cloudflare-warp.enable = true;
+  services.cloudflare-warp.enable = true;
 
   ## Enable Drag clicking
   environment.etc."libinput/local-overrides.quirks".text = ''
