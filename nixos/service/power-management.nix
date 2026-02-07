@@ -24,7 +24,7 @@
         PLATFORM_PROFILE_ON_BAT = "low-power";
 
         TLP_DEFAULT_MODE = "BAL";
-        TLP_AUTO_SWITCH = 2;
+        TLP_AUTO_SWITCH = 0;
       };
     };
     services.upower.enable = true; # power viewing

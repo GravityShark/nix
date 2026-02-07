@@ -9,13 +9,12 @@
 
     programs.gamemode = {
       enable = true;
-      #   enableRenice = false;
-      #   settings = {
-      #     general = {
-      #       renice = 10;
-      #       softrealtime = "auto";
-      #     };
-      #   };
+      settings = {
+        general = {
+          renice = 10;
+          softrealtime = "auto";
+        };
+      };
     };
 
     # environment.sessionVariables.GAMEMODERUNEXEC = "nvidia-offload";
