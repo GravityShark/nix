@@ -1,2 +1,4 @@
 #!/bin/sh
-sesh connect "$(tmenu)"
+set -e
+select=$(tmenu)
+sesh connect "$select"

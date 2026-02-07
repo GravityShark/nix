@@ -1,9 +1,10 @@
 #!/bin/sh
+set -e
 # t is just this script without the kill-session
 [ ! -n "$TMUX" ] && {
-	t
-	return
+	exec t
 }
+
 prev_session=$(tmux display-message -p '#S')
 out=$(tmenu "sesh relinquish")
 

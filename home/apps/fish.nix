@@ -86,7 +86,7 @@
                 set_color normal
             end
         else if type -q tmux
-            tmux
+            t || tmux
         end
       '';
       plugins = [
