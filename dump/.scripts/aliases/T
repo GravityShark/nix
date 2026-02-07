@@ -1,11 +1,12 @@
 #!/bin/sh
+set -e
 # t is just this script without the kill-session
 [ ! -n "$TMUX" ] && {
 	exec t
 }
 
 prev_session=$(tmux display-message -p '#S')
-out=$(tmenu "sesh relinquish") || exit 2
+out=$(tmenu "sesh relinquish")
 
 sesh connect "$out" || return
 if [ -n "$out" ] && [ "$out" != "$prev_session" ] && [ "$(echo "$out" | cut -c 5-)" != "$prev_session" ]; then

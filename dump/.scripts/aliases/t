@@ -1,3 +1,4 @@
 #!/bin/sh
-out=$(tmenu) || exit 2
+set -e
+select=$(tmenu)
 sesh connect "$select"

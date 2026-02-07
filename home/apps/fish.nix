@@ -86,8 +86,11 @@
                 set_color normal
             end
         else if type -q tmux
-            t || tmux
-        end
+            t 
+            if status --is 130
+                tmux
+            end
+          end
       '';
       plugins = [
         # Enable a plugin (here grc for colorized command output) from nixpkgs
