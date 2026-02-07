@@ -35,6 +35,7 @@
           in
           "${pkgs.writers.writeDash "ec_sys_fans" ''
             if ! lsmod | grep -q ec_sys; then
+              echo "ec_sys not found in `lsmod`"
               exit 1
             fi
             ${write cpu_speed 38}

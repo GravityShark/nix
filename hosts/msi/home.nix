@@ -50,7 +50,6 @@
     ## Apps
     baobab
     caprine
-    # (callPackage ../../home/apps/packages/caprine-ng-bin.nix { })
     easyeffects
     # obsidian
     pear-desktop
