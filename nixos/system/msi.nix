@@ -34,7 +34,7 @@
               "${pkgs.nbfc-linux}/bin/ec_probe write ${builtins.toString addr} ${builtins.toString value}";
           in
           "${pkgs.writers.writeDash "ec_sys_fans" ''
-            while ! lsmod | grep -q ec_sys; then
+            while ! lsmod | grep -q ec_sys; do
               echo "ec_sys not found in `lsmod`"
               echo "sleeping for 5 seconds"
               sleep 5
