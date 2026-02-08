@@ -86,7 +86,7 @@
     ## Gaming
     # dolphin-emu
     # rare
-    # (bottles-unwrapped.override { removeWarningPopup = true; })
+    (bottles-unwrapped.override { removeWarningPopup = true; })
     umu-launcher
     vkbasalt
   ];
