@@ -96,7 +96,7 @@
       enable = true;
       winePackages = with pkgs; [ wineWow64Packages.waylandFull ];
       protonPackages = [ pkgs.proton-ge-bin ];
-      steamPackage = osConfig.programs.steam.package;
+      # steamPackage = osConfig.programs.steam.package;
       extraPackages = with pkgs; [ gamescope ];
     };
     vesktop.enable = true;
