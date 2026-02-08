@@ -87,8 +87,8 @@
             end
         else if type -q tmux
             t 
-            if status --is 130
-                tmux
+            if not status is-success
+              tmux
             end
           end
       '';
