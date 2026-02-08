@@ -87,9 +87,6 @@
             end
         else if type -q tmux
             t 
-            if not status is-success
-              tmux
-            end
           end
       '';
       plugins = [

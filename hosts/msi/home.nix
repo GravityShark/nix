@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  osConfig,
+  ...
+}:
 
 {
   mime.enable = true;
@@ -82,10 +87,18 @@
     ## Gaming
     # dolphin-emu
     # rare
+    bottles-unwrapped
   ];
 
   ## Other programss
   programs = {
+    lutris = {
+      enable = true;
+      winePackages = with pkgs; [ wineWow64Packages.waylandFull ];
+      protonPackages = [ pkgs.proton-ge-bin ];
+      steamPackages = osConfig.programs.steam.package;
+      extraPackages = with pkgs; [ gamescope ];
+    };
     vesktop.enable = true;
     zathura = {
       enable = true;

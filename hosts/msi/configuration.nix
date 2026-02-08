@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -60,10 +60,7 @@
   ## https://github.com/casualsnek/waydroid_script
   ## https://wiki.archlinux.org/title/Waydroid
   virtualisation.waydroid.enable = true;
-  environment.systemPackages = with pkgs; [
-    waydroid-helper
-    bottles
-  ];
+  environment.systemPackages = with pkgs; [ waydroid-helper ];
 
   ## Steam
   ## https://github.com/YaLTeR/niri/issues/1034 steam fix
@@ -74,4 +71,7 @@
 
   ## We are so Zen
   boot.kernelPackages = pkgs.linuxPackages_zen;
+
+  ## NTSYnc
+  boot.kernelModules = [ "ntsync" ];
 }
