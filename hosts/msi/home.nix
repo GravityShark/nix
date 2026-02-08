@@ -84,9 +84,10 @@
     wget
 
     ## Gaming
-    # dolphin-emu
-    # rare
     (bottles-unwrapped.override { removeWarningPopup = true; })
+    # dolphin-emu
+    gamescope
+    # rare
     umu-launcher
     vkbasalt
   ];
