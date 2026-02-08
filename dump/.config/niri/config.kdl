@@ -113,6 +113,8 @@ output "eDP-1" {
         background-color "#000000"
     }
     // backdrop-color "#F2E5BC"
+
+    variable-refresh-rate on-demand=true
 }
 
 // Hide when typing
