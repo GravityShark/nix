@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flatpaks.url = "github:gmodena/nix-flatpak/latest";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v4.4.0";
       inputs.nixpkgs.follows = "nixpkgs";

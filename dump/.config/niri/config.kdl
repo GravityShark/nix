@@ -722,6 +722,7 @@ binds {
 // Disable nvidia dGPU from running Niri so that it could go to D3
 debug {
     ignore-drm-device "/dev/dri/card0"
+    ignore-drm-device "/dev/dri/card1"
     honor-xdg-activation-with-invalid-serial
 }
 include "./base16.kdl"

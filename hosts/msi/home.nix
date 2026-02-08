@@ -1,7 +1,7 @@
 {
   config,
   pkgs,
-  osConfig,
+  inputs,
   ...
 }:
 
@@ -87,22 +87,24 @@
     ## Gaming
     # dolphin-emu
     # rare
-    bottles-unwrapped
+    (bottles.override { removeWarningPopup = true; })
+    umu-launcher
+    vkbasalt
   ];
 
   ## Other programss
   programs = {
-    lutris = {
-      enable = true;
-      winePackages = with pkgs; [ wineWow64Packages.waylandFull ];
-      protonPackages = [ pkgs.proton-ge-bin ];
-      # steamPackage = osConfig.programs.steam.package;
-      extraPackages = with pkgs; [ gamescope ];
-    };
     vesktop.enable = true;
     zathura = {
       enable = true;
       options.selection-clipboard = "clipboard";
     };
+  };
+
+  imports = [ inputs.flatpaks.homeManagerModules.nix-flatpak ];
+  ## Currently only Roblox works with flatpak
+  services.flatpak = {
+    enable = true;
+    packages = [ "org.vinegarhq.Sober" ];
   };
 }

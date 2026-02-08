@@ -34,10 +34,11 @@
               "${pkgs.nbfc-linux}/bin/ec_probe write ${builtins.toString addr} ${builtins.toString value}";
           in
           "${pkgs.writers.writeDash "ec_sys_fans" ''
-            if ! lsmod | grep -q ec_sys; then
+            while ! lsmod | grep -q ec_sys; then
               echo "ec_sys not found in `lsmod`"
-              exit 2
-            fi
+              echo "sleeping for 5 seconds"
+              sleep 5
+            done
             ${write cpu_speed 38}
             ${write (cpu_speed + 1) 50}
             ${write (cpu_speed + 2) 69}
