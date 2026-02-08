@@ -34,10 +34,11 @@
               "${pkgs.nbfc-linux}/bin/ec_probe write ${builtins.toString addr} ${builtins.toString value}";
           in
           "${pkgs.writers.writeDash "ec_sys_fans" ''
-            while ! lsmod | grep -q ec_sys; do
-              echo "ec_sys not found in `lsmod`"
-              echo "sleeping for 5 seconds"
-              sleep 5
+            while ! ${pkgs.kmod}/bin/lsmod | ${pkgs.gnugrep}/bin/grep -q ec_sys; do
+              echo "ec_sys not found in `lsmod`."
+              # echo "sleeping for 5 seconds"
+              # sleep 5
+              exit 1
             done
             ${write cpu_speed 38}
             ${write (cpu_speed + 1) 50}
@@ -66,6 +67,7 @@
             ${write (gpu_temp + 3) 70}
             ${write (gpu_temp + 4) 80}
             ${write (gpu_temp + 5) 90}
+            echo "Successful."
           ''}";
         Restart = "on-failure";
       };

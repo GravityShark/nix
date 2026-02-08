@@ -20,7 +20,6 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    flatpak.enable = true;
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;
