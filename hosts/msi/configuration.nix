@@ -1,12 +1,9 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    inputs.flatpaks.homeManagerModules.nix-flatpak
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   desktop.display-server = "niri";
 
@@ -23,6 +20,7 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
+    flatpak.enable = true;
     kanata.enable = true;
     logind.enable = true;
     networking.enable = true;
@@ -38,14 +36,23 @@
 
   ################################## Extra ###################################
 
-  ## Currently only Roblox works with flatpak
-  services.flatpak = {
-    enable = true;
-    packages = [ "org.vinegarhq.Sober" ];
-  };
-
   ## Cloudflare Warp for slow downloads
-  services.cloudflare-warp.enable = true;
+  # services.cloudflare-warp.enable = true;
+
+  ## WayDroid
+  ## waydroid works with either default kernel, or nftables enabled
+  ## It is not declarative
+  ## https://github.com/casualsnek/waydroid_script
+  ## https://wiki.archlinux.org/title/Waydroid
+  virtualisation.waydroid.enable = true;
+  environment.systemPackages = with pkgs; [ waydroid-helper ];
+
+  ## Steam
+  ## https://github.com/YaLTeR/niri/issues/1034 steam fix
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+  };
 
   ## Enable Drag clicking
   environment.etc."libinput/local-overrides.quirks".text = ''
@@ -59,21 +66,6 @@
     "transparent_hugepage=madvise"
     "transparent_hugepage_shmem=advise"
   ];
-
-  ## WayDroid
-  ## waydroid works with either default kernel, or nftables enabled
-  ## You need to manually do everything in waydroid
-  ## https://github.com/casualsnek/waydroid_script
-  ## https://wiki.archlinux.org/title/Waydroid
-  virtualisation.waydroid.enable = true;
-  environment.systemPackages = with pkgs; [ waydroid-helper ];
-
-  ## Steam
-  ## https://github.com/YaLTeR/niri/issues/1034 steam fix
-  programs.steam = {
-    enable = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
-  };
 
   ## We are so Zen
   boot.kernelPackages = pkgs.linuxPackages_zen;
