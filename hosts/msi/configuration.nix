@@ -1,9 +1,12 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ pkgs, config, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.flatpaks.homeManagerModules.nix-flatpak
+  ];
 
   desktop.display-server = "niri";
 
@@ -34,6 +37,12 @@
   system.stateVersion = "25.11";
 
   ################################## Extra ###################################
+
+  ## Currently only Roblox works with flatpak
+  services.flatpak = {
+    enable = true;
+    packages = [ "org.vinegarhq.Sober" ];
+  };
 
   ## Cloudflare Warp for slow downloads
   services.cloudflare-warp.enable = true;

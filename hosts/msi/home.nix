@@ -87,7 +87,7 @@
     ## Gaming
     # dolphin-emu
     # rare
-    (bottles.override { removeWarningPopup = true; })
+    (bottles-unwrapped.override { removeWarningPopup = true; })
     umu-launcher
     vkbasalt
   ];
@@ -99,12 +99,5 @@
       enable = true;
       options.selection-clipboard = "clipboard";
     };
-  };
-
-  imports = [ inputs.flatpaks.homeManagerModules.nix-flatpak ];
-  ## Currently only Roblox works with flatpak
-  services.flatpak = {
-    enable = true;
-    packages = [ "org.vinegarhq.Sober" ];
   };
 }

@@ -29,7 +29,7 @@
     hardware.nvidia = {
       # Open drivers prevent going into D3
       # https://bbs.archlinux.org/viewtopic.php?pid=2187680#p2187680
-      open = true;
+      open = false;
 
       nvidiaPersistenced = true;
       powerManagement = {
