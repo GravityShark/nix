@@ -60,7 +60,10 @@
   ## https://github.com/casualsnek/waydroid_script
   ## https://wiki.archlinux.org/title/Waydroid
   virtualisation.waydroid.enable = true;
-  environment.systemPackages = with pkgs; [ waydroid-helper ];
+  environment.systemPackages = with pkgs; [
+    waydroid-helper
+    bottles
+  ];
 
   ## Steam
   ## https://github.com/YaLTeR/niri/issues/1034 steam fix

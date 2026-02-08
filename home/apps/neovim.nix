@@ -42,7 +42,6 @@
       ghostscript_headless # only use is making neovim image pdf thumbnails
       imagemagick # making neovim image thumbnails
       ripgrep # neovim
-      unzip # if i need to unzip something, maybe from neovim oil?
     ];
 
     home.file = {
