@@ -6,6 +6,7 @@
     ./bluetooth.nix
     ./disks.nix
     ./distrobox.nix
+    ./flatpak.nix
     ./gamemode.nix
     ./kanata.nix
     ./logind.nix
