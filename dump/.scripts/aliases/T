@@ -6,9 +6,6 @@ fi
 
 prev_session=$(tmux display-message -p '#S')
 out=$(tmenu "sesh relinquish")
-if [ -z $out ]; then
-	exec tmux
-fi
 
 sesh connect "$out" || return
 if [ -n "$out" ] && [ "$out" != "$prev_session" ] && [ "$(echo "$out" | cut -c 5-)" != "$prev_session" ]; then
