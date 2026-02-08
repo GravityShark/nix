@@ -1,0 +1,2 @@
+#!/bin/sh
+gamescope -f -W 1920 -H 1080 --force-grab-cursor --immediate-flips -- "$@"

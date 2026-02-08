@@ -318,6 +318,7 @@ local config = {
 			end
 		end,
 	},
+	experimental = { tearing = true },
 }
 
 return config
