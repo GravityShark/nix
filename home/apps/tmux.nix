@@ -15,6 +15,10 @@
         assertion = config.apps.fzf.enable;
         message = "apps.tmux would not function properly without apps.fzf";
       }
+      {
+        assertion = config.scripts.enable;
+        message = "apps.tmux needs the `tmenu`, `t`, and `T` scrpits from scripts to function";
+      }
     ];
 
     home.packages = with pkgs; [

@@ -30,7 +30,7 @@
     bluetooth.enable = true;
     disks.enable = true;
     distrobox.enable = false;
-    flatpak.enable = true;
+    flatpak.enable = false;
     gamemode.enable = false;
     kanata.enable = true;
     logind.enable = true;

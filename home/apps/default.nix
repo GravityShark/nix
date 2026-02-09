@@ -3,7 +3,6 @@
 {
   imports = [
     ./anki.nix
-    ./desktop.nix
     ./fastfetch.nix
     ./fish.nix
     ./fonts.nix

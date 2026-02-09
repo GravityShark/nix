@@ -7,6 +7,7 @@
 
 {
   mime.enable = true;
+  scripts.enable = true;
 
   desktop = {
     mango.enable = true;
@@ -33,12 +34,12 @@
   };
 
   service = {
-    notes-backup.enable = true;
+    emacs.enable = false;
     keepassxc.enable = true;
+    notes-backup.enable = true;
     swayidle.enable = true;
+    vicinae.enable = false;
   };
-
-  scripts.enable = true;
 
   home.stateVersion = "25.11"; # Read Home Manager release notes when changing.
 
@@ -64,6 +65,18 @@
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
+    # foot
+    # fuzzel
+    gnome-system-monitor
+    # grim
+    # htop
+    # mako
+    nautilus
+    pwvucontrol
+    swayimg
+    wdisplays
+    # wev
+
     ## Work
     onlyoffice-desktopeditors
     pdfarranger
@@ -73,18 +86,16 @@
 
     ## CLIs
     # aria2
-    ffmpeg
-    git
     p7zip-rar
     wget
 
     ## Gaming
-    (bottles-unwrapped.override { removeWarningPopup = true; })
+    # (bottles-unwrapped.override { removeWarningPopup = true; })
     # dolphin-emu
-    gamescope
+    # gamescope
     # rare
-    umu-launcher
-    vkbasalt
+    # umu-launcher
+    # vkbasalt
   ];
 
   ## Other programss
