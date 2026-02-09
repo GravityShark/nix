@@ -20,7 +20,6 @@
 
   apps = {
     anki.enable = true;
-    desktop.enable = true;
     fastfetch.enable = true;
     fish.enable = true;
     fonts.enable = true;
