@@ -7,6 +7,7 @@
 
 {
   imports = [ inputs.flatpaks.nixosModules.nix-flatpak ];
+
   options = {
     service.flatpak.enable = lib.mkEnableOption "enables flatpak";
   };
@@ -16,6 +17,7 @@
     services.flatpak = {
       enable = true;
       packages = [ "org.vinegarhq.Sober" ];
+      update.onActivation = true;
     };
   };
 }

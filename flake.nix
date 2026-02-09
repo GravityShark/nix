@@ -57,6 +57,8 @@
         };
       };
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        useGlobalPkgs = true;
+        useUserPackages = true;
         extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
