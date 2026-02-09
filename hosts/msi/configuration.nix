@@ -5,16 +5,20 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  desktop.display-server = "niri";
+  desktop.display-server = "mango";
+
+  apps = {
+    adb.enable = false;
+    openrazer.enable = false;
+    vial.enable = true;
+  };
 
   system = {
-    adb.enable = true;
     doas.enable = true;
     intel.enable = true;
     msi.enable = true;
     nvidia.enable = true;
     systemd-boot.enable = true;
-    vial.enable = true;
   };
 
   service = {

@@ -10,11 +10,11 @@
     assertions = [
       {
         assertion = !(config.power-management.enable);
-        message = "displayserver as \"gnome\" is incompatible with power-management.enable as true";
+        message = "displayserver \"gnome\" is incompatible with power-management.enable as true";
       }
       {
         assertion = !(config.wayland-pipewire-idle-inhibit.enable);
-        message = "displayserver as \"gnome\" is incompatible with wayland-pipewire-idle-inhibit.enable as true";
+        message = "displayserver \"gnome\" is incompatible with wayland-pipewire-idle-inhibit.enable as true";
       }
     ];
 

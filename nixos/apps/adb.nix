@@ -7,9 +7,9 @@
 
 {
   options = {
-    system.adb.enable = lib.mkEnableOption "enables adb";
+    apps.adb.enable = lib.mkEnableOption "enables adb";
   };
-  config = lib.mkIf config.system.adb.enable {
+  config = lib.mkIf config.apps.adb.enable {
     users.users.${config.username}.extraGroups = [ "adbusers" ];
     environment.systemPackages = with pkgs; [
       android-file-transfer

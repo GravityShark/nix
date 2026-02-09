@@ -7,9 +7,9 @@
 
 {
   options = {
-    system.openrazer.enable = lib.mkEnableOption "enables openrazer";
+    apps.openrazer.enable = lib.mkEnableOption "enables openrazer";
   };
-  config = lib.mkIf config.system.openrazer.enable {
+  config = lib.mkIf config.apps.openrazer.enable {
     hardware.openrazer.enable = true;
     environment.systemPackages = with pkgs; [
       openrazer-daemon

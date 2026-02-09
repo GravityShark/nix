@@ -9,6 +9,7 @@
   options.desktop.display-server = lib.mkOption {
     type = lib.types.nullOr (
       lib.types.enum [
+        "mango"
         "niri"
         "gnome"
       ]

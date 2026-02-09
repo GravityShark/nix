@@ -7,6 +7,7 @@
 
 {
   imports = [
+    ./apps
     ./desktop
     ./service
     ./system
