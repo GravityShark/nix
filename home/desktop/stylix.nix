@@ -84,7 +84,7 @@
       fontconfig.enable = true;
       fzf.enable = true;
       ghostty.enable = true;
-      gnome.enable = true;
+      gnome.enable = lib.mkIf (config.desktop.gnome.enable || config.desktop.niri.enable) true;
       gtk.enable = true;
       gtksourceview.enable = true;
       kde.enable = true;
