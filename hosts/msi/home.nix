@@ -1,5 +1,6 @@
+# man `home-configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
+
 {
-  config,
   pkgs,
   ...
 }:
@@ -8,7 +9,7 @@
   mime.enable = true;
 
   desktop = {
-    niri.enable = true;
+    mango.enable = true;
     noctalia.enable = true;
     stylix = {
       enable = true;
@@ -37,17 +38,11 @@
     swayidle.enable = true;
   };
 
+  scripts.enable = true;
+
   home.stateVersion = "25.11"; # Read Home Manager release notes when changing.
 
   ################################## Extra ###################################
-
-  ## Local scripts that I would prefer to not add to my shell directly
-  home.file.".scripts".source = ../../dump/.scripts;
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.scripts"
-    "${config.home.homeDirectory}/.scripts/aliases"
-    "${config.home.homeDirectory}/.local/bin"
-  ];
 
   ## Packages
   home.packages = with pkgs; [

@@ -15,7 +15,7 @@
     ./power-management.nix
     ./printing.nix
     ./wayland-pipewire-idle-inhibit.nix
-    ./ydotool.nix
+    # ./ydotool.nix
     # ./zerotierone.nix
   ];
 

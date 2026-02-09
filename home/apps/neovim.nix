@@ -86,7 +86,7 @@
         stylua
 
         # Nix
-        nil
+        nixd
         nixfmt
 
         # Python

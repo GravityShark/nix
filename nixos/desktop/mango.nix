@@ -25,20 +25,20 @@
       {
         programs.mango.enable = true;
 
-        environment.systemPackages = [ autologin_on_7 ];
+        # environment.systemPackages = [ pkgs.foot ];
 
-        environment.sessionVariables = {
-          QT_QPA_PLATFORM = "wayland;xcb";
-          # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-
-          GDK_BACKEND = "wayland";
-          SDL_VIDEODRIVER = "wayland";
-          CLUTTER_BACKEND = "wayland";
-
-          ELECTRON_OZONE_PLATFORM_HINT = "wayland";
-          NIXOS_OZONE_WL = "1";
-          MOZ_ENABLE_WAYLAND = 1;
-        };
+        # environment.sessionVariables = {
+        #   QT_QPA_PLATFORM = "wayland;xcb";
+        #   # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+        #
+        #   GDK_BACKEND = "wayland";
+        #   SDL_VIDEODRIVER = "wayland";
+        #   CLUTTER_BACKEND = "wayland";
+        #
+        #   ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+        #   NIXOS_OZONE_WL = "1";
+        #   MOZ_ENABLE_WAYLAND = 1;
+        # };
 
         # xdg.portal = {
         #   enable = true;
