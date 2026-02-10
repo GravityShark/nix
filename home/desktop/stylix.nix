@@ -84,7 +84,7 @@
       fontconfig.enable = true;
       fzf.enable = true;
       ghostty.enable = true;
-      gnome.enable = lib.mkIf (config.desktop.gnome.enable || config.desktop.niri.enable) true;
+      gnome.enable = true;
       gtk.enable = true;
       gtksourceview.enable = true;
       kde.enable = true;
@@ -107,43 +107,43 @@
 
     xdg.configFile = {
       ## Niri
-      # "niri/base16.kdl".text =
-      #   with config.lib.stylix.colors.withHashtag;
-      #   lib.mkIf config.desktop.niri.enable ''
-      #     layout {
-      #         focus-ring {
-      #             active-color   "${base0B}"
-      #             inactive-color "${base00}"
-      #             urgent-color   "${base08}"
-      #         }
-      #
-      #         border {
-      #             active-color   "${base0B}"
-      #             inactive-color "${base00}"
-      #             urgent-color   "${base08}"
-      #         }
-      #
-      #         shadow {
-      #             color "#00000070"
-      #         }
-      #
-      #         tab-indicator {
-      #             active-color   "${base0B}"
-      #             inactive-color "${base00}"
-      #             urgent-color   "${base08}"
-      #         }
-      #
-      #         insert-hint {
-      #             color "#98971a80"
-      #         }
-      #     }
-      #
-      #     cursor {
-      #        xcursor-theme "${config.stylix.cursor.name}"
-      #        xcursor-size ${builtins.toString config.stylix.cursor.size}
-      #     }
-      #   '';
 
+      "niri/base16.kdl" = lib.mkIf config.desktop.niri.enable {
+        text = with config.lib.stylix.colors.withHashtag; ''
+          layout {
+              focus-ring {
+                  active-color   "${base0B}"
+                  inactive-color "${base00}"
+                  urgent-color   "${base08}"
+              }
+
+              border {
+                  active-color   "${base0B}"
+                  inactive-color "${base00}"
+                  urgent-color   "${base08}"
+              }
+
+              shadow {
+                  color "#00000070"
+              }
+
+              tab-indicator {
+                  active-color   "${base0B}"
+                  inactive-color "${base00}"
+                  urgent-color   "${base08}"
+              }
+
+              insert-hint {
+                  color "#98971a80"
+              }
+          }
+
+          cursor {
+             xcursor-theme "${config.stylix.cursor.name}"
+             xcursor-size ${builtins.toString config.stylix.cursor.size}
+          }
+        '';
+      };
       ## Add the mini.base16 colorscheme
       # "nvim/colors/nix.lua".source =
       #   with config.lib.stylix.colors.withHashtag;
