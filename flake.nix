@@ -9,7 +9,7 @@
     };
     flatpaks.url = "github:gmodena/nix-flatpak/latest";
     mangowc = {
-      url = "github:DreamMaoMao/mangowc";
+      url = "github:GravityShark/mangowc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
