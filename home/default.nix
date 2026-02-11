@@ -20,10 +20,8 @@
         "p7zip"
       ];
 
-    permittedInsecurePackages = [
-      "electron-37.10.3"
-    ];
-    # https://www.joseferben.com/posts/installing_only_certain_packages_from_an_unstable_nixos_channel
+    # caprine has outdated version
+    permittedInsecurePackages = [ "electron-37.10.3" ];
   };
 
   # Paths doesnt work!!

@@ -48,6 +48,7 @@
     ## Apps
     baobab
     caprine
+    chromium
     easyeffects
     # obsidian
     pear-desktop

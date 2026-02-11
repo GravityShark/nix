@@ -24,6 +24,7 @@
     nvidia.enable = true;
     systemd-boot.enable = true;
     thp.enable = true;
+    zram.enable = true;
   };
 
   service = {
@@ -50,4 +51,6 @@
 
   ## Cloudflare Warp for slow downloads
   # services.cloudflare-warp.enable = true;
+
+  programs.ssh.startAgent = true;
 }

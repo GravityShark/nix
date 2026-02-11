@@ -10,5 +10,6 @@
     ./nvidia.nix
     ./systemd-boot.nix
     ./thp.nix
+    ./zram.nix
   ];
 }

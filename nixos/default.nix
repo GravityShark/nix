@@ -35,7 +35,7 @@
     ## We are so Zen
     boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
 
-    services.dbus.implementation = lib.mkDefault "broker";
+    services.dbus.implementation = "broker";
 
     time.timeZone = lib.mkDefault "Asia/Manila"; # Set your time zone.
 
