@@ -24,24 +24,21 @@
       programs.mango.enable = true;
 
       # In the proposed mangowc.nix
-      xdg.portal.config.mango.
-
-      xdg.portal =
-        {
-          extraPortals = with pkgs; [
-            xdg-desktop-portal-gnome
-            # xdg-desktop-portal-gtk
-          ];
-          config.mango = {
-            #   common.default = [
-            #     "gnome"
-            #     "gtk"
-            #   ];
-            "org.freedesktop.impl.portal.Inhibit" = lib.mkForce [ "gtk" ];
-            "org.freedesktop.impl.portal.Screencast" = [ "gnome" ];
-            "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
-          };
+      xdg.portal = {
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gnome
+          # xdg-desktop-portal-gtk
+        ];
+        config.mango = {
+          #   common.default = [
+          #     "gnome"
+          #     "gtk"
+          #   ];
+          "org.freedesktop.impl.portal.Inhibit" = lib.mkForce [ "gtk" ];
+          "org.freedesktop.impl.portal.Screencast" = [ "gnome" ];
+          "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
         };
+      };
 
       # In niri.nix
       systemd.packages = [
