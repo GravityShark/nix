@@ -40,8 +40,8 @@
       #   };
       # };
 
-      xdg.portal = {
-        enable = lib.mkDefault true;
+      xdg.portal = lib.mkForce {
+        enable = true;
         extraPortals = with pkgs; [
           xdg-desktop-portal-luminous
           xdg-desktop-portal-gtk
