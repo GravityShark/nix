@@ -24,42 +24,47 @@
       programs.mango.enable = true;
 
       # In the proposed mangowc.nix
-      xdg.portal = {
+      # xdg.portal = {
+      #   extraPortals = with pkgs; [
+      #     xdg-desktop-portal-gnome
+      #     # xdg-desktop-portal-gtk
+      #   ];
+      #   config.mango = {
+      #     #   common.default = [
+      #     #     "gnome"
+      #     #     "gtk"
+      #     #   ];
+      #     "org.freedesktop.impl.portal.Inhibit" = lib.mkForce [ "gtk" ];
+      #     "org.freedesktop.impl.portal.Screencast" = [ "gnome" ];
+      #     "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+      #   };
+      # };
+
+      xdg.portal = lib.mkForce {
+        enable = true;
         extraPortals = with pkgs; [
           xdg-desktop-portal-gnome
-          # xdg-desktop-portal-gtk
+          xdg-desktop-portal-gtk
         ];
-        config.mango = {
-          #   common.default = [
-          #     "gnome"
-          #     "gtk"
-          #   ];
-          "org.freedesktop.impl.portal.Inhibit" = lib.mkForce [ "gtk" ];
-          "org.freedesktop.impl.portal.Screencast" = [ "gnome" ];
-          "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+        config = {
+          common.default = [
+            "gnome"
+            "gtk"
+          ];
         };
       };
 
       # In niri.nix
-      systemd.packages = [
-        inputs.mangowc.packages.${pkgs.stdenv.hostPlatform.system}.default
-      ];
-
-      # environment.systemPackages = [
-      # autologin_on_7
-      # pkgs.mangowc
+      # systemd.packages = [
+      #   inputs.mangowc.packages.${pkgs.stdenv.hostPlatform.system}.default
       # ];
 
-      programs.uwsm = {
-        enable = true;
-        waylandCompositors = {
-          mango = {
-            prettyName = "MangoWC";
-            comment = "wayland compositor base wlroots and scenefx";
-            binPath = "/run/current-system/sw/bin/mango";
-          };
-        };
-      };
+      # Defined in wayland-session.nix
+      programs.dconf.enable = true;
+      services.xserver.desktopManager.runXdgAutostartIfNone = true;
+
+      # Use UWSM
+      programs.uwsm.enable = true;
 
       environment.sessionVariables = {
         QT_QPA_PLATFORM = "wayland;xcb";
@@ -74,10 +79,6 @@
         MOZ_ENABLE_WAYLAND = 1;
       };
 
-      # services.displayManager.enable = true;
-      # services.displayManager.sddm.enable = true;
-      # services.displayManager.sddm.wayland.enable = true;
-
       # Using autologin instead of a display manager
       systemd.services.autologin = {
         enable = true;
@@ -90,9 +91,6 @@
 
         serviceConfig = {
           ExecStart = "${autologin_on_7}/bin/autologin ${config.username} ${pkgs.uwsm}/bin/uwsm start mango.desktop";
-          # ExecStart = "${autologin_on_7}/bin/autologin ${config.username} ${
-          #   inputs.mangowc.packages.${pkgs.stdenv.hostPlatform.system}.default
-          # }/bin/mango";
           Type = "simple";
           IgnoreSIGPIPE = "no";
           SendSIGHUP = "yes";
@@ -114,9 +112,5 @@
         setLoginUid = true;
         updateWtmp = true;
       };
-      # Defined in wayland-session.nix
-      security.pam.services.swaylock = { };
-      programs.dconf.enable = true;
-      services.xserver.desktopManager.runXdgAutostartIfNone = lib.mkDefault true;
     };
 }
