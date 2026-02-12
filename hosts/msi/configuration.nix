@@ -5,7 +5,7 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  desktop.display-server = "mango";
+  desktop.display-server = "niri";
 
   apps = {
     adb.enable = false;

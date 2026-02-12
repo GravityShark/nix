@@ -10,7 +10,7 @@
   scripts.enable = true;
 
   desktop = {
-    mango.enable = true;
+    niri.enable = true;
     noctalia.enable = true;
     stylix = {
       enable = true;

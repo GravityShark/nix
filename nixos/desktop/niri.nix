@@ -7,8 +7,7 @@
 
 {
   config =
-    # autologin
-    # https://superuser.com/a/1904473
+    # autologin https://superuser.com/a/1904473
     let
       autologin_on_7 = pkgs.autologin.overrideAttrs (_: {
         postPatch = ''
@@ -19,41 +18,8 @@
       });
     in
     lib.mkIf (config.desktop.display-server == "niri") {
-
       programs.niri.enable = true;
-      security.polkit.enable = true;
-
-      environment.systemPackages = with pkgs; [
-        autologin_on_7
-        xwayland-satellite
-      ];
-
-      environment.sessionVariables = {
-        QT_QPA_PLATFORM = "wayland;xcb";
-        # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-
-        GDK_BACKEND = "wayland";
-        SDL_VIDEODRIVER = "wayland";
-        CLUTTER_BACKEND = "wayland";
-
-        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
-        NIXOS_OZONE_WL = "1";
-        MOZ_ENABLE_WAYLAND = 1;
-      };
-
-      xdg.portal = {
-        enable = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gnome
-          xdg-desktop-portal-gtk
-        ];
-        config = {
-          common.default = [
-            "gnome"
-            "gtk"
-          ];
-        };
-      };
+      environment.systemPackages = [ pkgs.xwayland-satellite ];
 
       # Using autologin instead of a display manager
       systemd.services.autologin = {

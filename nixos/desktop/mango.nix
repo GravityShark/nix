@@ -23,23 +23,6 @@
     lib.mkIf (config.desktop.display-server == "mango") {
       programs.mango.enable = true;
 
-      # In the proposed mangowc.nix
-      # xdg.portal = {
-      #   extraPortals = with pkgs; [
-      #     xdg-desktop-portal-gnome
-      #     # xdg-desktop-portal-gtk
-      #   ];
-      #   config.mango = {
-      #     #   common.default = [
-      #     #     "gnome"
-      #     #     "gtk"
-      #     #   ];
-      #     "org.freedesktop.impl.portal.Inhibit" = lib.mkForce [ "gtk" ];
-      #     "org.freedesktop.impl.portal.Screencast" = [ "gnome" ];
-      #     "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
-      #   };
-      # };
-
       xdg.portal = lib.mkForce {
         enable = true;
         extraPortals = with pkgs; [
@@ -54,18 +37,14 @@
         };
       };
 
-      # In niri.nix
-      # systemd.packages = [
-      #   inputs.mangowc.packages.${pkgs.stdenv.hostPlatform.system}.default
-      # ];
-
       # Defined in wayland-session.nix
       programs.dconf.enable = true;
-      services.xserver.desktopManager.runXdgAutostartIfNone = true;
+      # services.xserver.desktopManager.runXdgAutostartIfNone = true;
 
       # Use UWSM
       programs.uwsm.enable = true;
 
+      # Wayland environment variables
       environment.sessionVariables = {
         QT_QPA_PLATFORM = "wayland;xcb";
         # QT_AUTO_SCREEN_SCALE_FACTOR = "1";

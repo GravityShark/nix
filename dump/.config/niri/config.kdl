@@ -123,6 +123,15 @@ cursor {
     hide-after-inactive-ms 1000
 }
 
+environment {
+    QT_QPA_PLATFORM "wayland;xcb"
+    GDK_BACKEND "wayland"
+    SDL_VIDEODRIVER "wayland"
+    CLUTTER_BACKEND "wayland"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    NIXOS_OZONE_WL "1"
+    MOZ_ENABLE_WAYLAND 1
+}
 
 // Noctalia overview
 layer-rule {
