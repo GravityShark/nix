@@ -25,8 +25,7 @@
       # xlsclients
     ];
 
-    xdg.configFile."mango/config.conf".source = config.lib.file.mkOutOfStoreSymlink "${
-      ../../dump/.config/mango/config.conf
-    }";
+    xdg.configFile."mango/config.conf".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.homeDirectory}/.nix/dump/.config/mango/config.conf";
   };
 }
