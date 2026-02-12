@@ -19,6 +19,19 @@
       wl-clipboard
       wl-mirror
     ];
+
+    xdg.portal = {
+      enable = true;
+      configPackages = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+      config.wlroots.default = [
+        "wlr"
+        "gtk"
+      ];
+    };
+
     wayland.windowManager.labwc = {
       enable = true;
       systemd.enable = true;
