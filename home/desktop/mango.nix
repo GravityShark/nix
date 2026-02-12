@@ -36,11 +36,14 @@
     wayland.windowManager.mango = {
       enable = true;
       systemd.enable = true;
-      settings = {
-        exec-once="${pkgs.uwsm/bin/uwsm finalize}";
-        exec-once="echo \'yo\'";
+      settings = ''
+        exec-once=~/.config/mango/autostart.sh
+      '';
+      autostart_sh = "echo \"yo\"";
+      # settings = {
+      # exec-once="echo \'yo\'";
       #   exec-once=${pkgs.uwsm}/bin/uwsm finalize
-      }
+      # }
       # settings = ''
       #   # More option see https://github.com/DreamMaoMao/mango/wiki/
       #
@@ -304,7 +307,6 @@
       #   # layer rule
       #   layerrule=animation_type_open:zoom,layer_name:rofi
       #   layerrule=animation_type_close:zoom,layer_name:rofi
-      #   # exec-once=~/.config/mango/autostart.sh
       #   exec-once=${pkgs.uwsm}/bin/uwsm finalize
       # '';
       # autostart_sh = ''
