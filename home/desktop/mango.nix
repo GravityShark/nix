@@ -26,6 +26,6 @@
     ];
 
     xdg.configFile."mango/config.conf".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.homeDirectory}/.nix/dump/.config/mango/config.conf";
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix/dump/.config/mango/config.conf";
   };
 }
