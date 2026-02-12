@@ -89,10 +89,10 @@
         ];
 
         serviceConfig = {
-          # ExecStart = "${autologin_on_7}/bin/autologin ${config.username} ${pkgs.uwsm}/bin/uwsm start mango.desktop";
-          ExecStart = "${autologin_on_7}/bin/autologin ${config.username} ${
-            inputs.mangowc.packages.${pkgs.stdenv.hostPlatform.system}.default
-          }/bin/mango";
+          ExecStart = "${autologin_on_7}/bin/autologin ${config.username} ${pkgs.uwsm}/bin/uwsm start mango.desktop";
+          # ExecStart = "${autologin_on_7}/bin/autologin ${config.username} ${
+          #   inputs.mangowc.packages.${pkgs.stdenv.hostPlatform.system}.default
+          # }/bin/mango";
           Type = "simple";
           IgnoreSIGPIPE = "no";
           SendSIGHUP = "yes";
