@@ -656,7 +656,7 @@
               action = "logout";
               command = "";
               countdownEnabled = true;
-              enabled = true;
+              enabled = false;
             }
           ];
           showHeader = false;
