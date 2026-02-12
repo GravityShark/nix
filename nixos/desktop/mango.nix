@@ -40,15 +40,15 @@
       #   };
       # };
 
-      xdg.portal = lib.mkForce {
-        enable = true;
+      xdg.portal = {
+        enable = lib.mkDefault true;
         extraPortals = with pkgs; [
-          xdg-desktop-portal-gnome
+          xdg-desktop-portal-luminous
           xdg-desktop-portal-gtk
         ];
-        config = {
-          common.default = [
-            "gnome"
+        config.mango = {
+          default = [
+            "luminous"
             "gtk"
           ];
         };
