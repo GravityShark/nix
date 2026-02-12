@@ -15,7 +15,7 @@
           user = config.username;
         };
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet";
+          command = "${pkgs.greetd}/bin/dlm";
           user = config.username;
         };
       };
