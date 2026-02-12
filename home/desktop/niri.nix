@@ -21,13 +21,12 @@
     xdg.configFile."niri/config.kdl".source = ../../dump/.config/niri/config.kdl;
 
     home.packages = with pkgs; [
-      brightnessctl
       nirius
       wl-clipboard
       wl-mirror
     ];
 
-    # services.wl-clip-persist.enable = true;
     services.polkit-gnome.enable = true;
+    services.wl-clip-persist.enable = true;
   };
 }
