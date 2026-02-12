@@ -11,6 +11,7 @@
 
   desktop = {
     niri.enable = true;
+    labwc.enable = true;
     noctalia.enable = true;
     stylix = {
       enable = true;
