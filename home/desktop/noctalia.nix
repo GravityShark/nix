@@ -315,11 +315,11 @@
               }
               {
                 id = "Spacer";
-                width = 5;
+                width = 8;
               }
               {
                 deviceNativePath = "";
-                displayMode = "alwaysShow";
+                displayMode = "icon-always";
                 hideIfIdle = false;
                 hideIfNotDetected = true;
                 id = "Battery";
