@@ -3,7 +3,7 @@
 {
   imports = [
     ./gnome.nix
-    ./mango.nix
+    # ./mango.nix
     ./niri.nix
   ];
 
@@ -11,11 +11,10 @@
     type = lib.types.nullOr (
       lib.types.enum [
         "gnome"
-        "mango"
         "niri"
       ]
     );
-    description = "Type of display server used: gnome, mango, niri";
+    description = "Type of display server used: gnome, niri";
     example = "gnome";
     default = null;
   };

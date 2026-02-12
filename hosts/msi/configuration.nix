@@ -51,6 +51,4 @@
 
   ## Cloudflare Warp for slow downloads
   # services.cloudflare-warp.enable = true;
-
-  programs.ssh.startAgent = true;
 }

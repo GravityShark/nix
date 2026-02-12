@@ -8,10 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flatpaks.url = "github:gmodena/nix-flatpak/latest";
-    mangowc = {
-      url = "github:DreamMaoMao/mangowc";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v4.4.0";
       inputs.nixpkgs.follows = "nixpkgs";

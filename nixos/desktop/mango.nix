@@ -22,6 +22,7 @@
     in
     lib.mkIf (config.desktop.display-server == "mango") {
       programs.mango.enable = true;
+      programs.ssh.startAgent = true; # gnome and niri use the gnome ssh agent by default
 
       xdg.portal = lib.mkForce {
         enable = true;
