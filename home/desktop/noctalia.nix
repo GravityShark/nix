@@ -629,6 +629,12 @@
               enabled = true;
             }
             {
+              action = "logout";
+              command = "";
+              countdownEnabled = true;
+              enabled = true;
+            }
+            {
               action = "suspend";
               command = "";
               countdownEnabled = false;
@@ -648,12 +654,6 @@
             }
             {
               action = "shutdown";
-              command = "";
-              countdownEnabled = true;
-              enabled = true;
-            }
-            {
-              action = "logout";
               command = "";
               countdownEnabled = true;
               enabled = true;
