@@ -10,11 +10,15 @@
     assertions = [
       {
         assertion = !(config.power-management.enable);
-        message = "displayserver \"gnome\" is incompatible with power-management.enable as true";
+        message = "displayserver `gnome` is incompatible with power-management.enable as true";
       }
       {
         assertion = !(config.wayland-pipewire-idle-inhibit.enable);
-        message = "displayserver \"gnome\" is incompatible with wayland-pipewire-idle-inhibit.enable as true";
+        message = "displayserver `gnome` is incompatible with wayland-pipewire-idle-inhibit.enable as true";
+      }
+      {
+        assertion = (config.desktop.login-manager == null);
+        message = "displayserver `gnome` packages its own login manager gdm, please set desktop.login-manager to null";
       }
     ];
 

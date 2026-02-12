@@ -6,6 +6,7 @@
   imports = [ ./hardware-configuration.nix ];
 
   desktop.display-server = "niri";
+  desktop.login-manager = "autostart";
 
   apps = {
     adb.enable = false;
