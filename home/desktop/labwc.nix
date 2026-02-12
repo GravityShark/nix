@@ -15,6 +15,8 @@
       labwc-gtktheme
       labwc-menu-generator
       labwc-tweaks-gtk
+      wl-clipboard
+      wl-mirror
     ];
     wayland.windowManager.labwc = {
       enable = true;

@@ -23,10 +23,8 @@
     home.packages = with pkgs; [
       brightnessctl
       nirius
-      # notify-desktop
       wl-clipboard
       wl-mirror
-      # xlsclients
     ];
 
     # services.wl-clip-persist.enable = true;

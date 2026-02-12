@@ -13,9 +13,9 @@
 
   imports = [ inputs.noctalia.homeModules.default ];
   config = lib.mkIf config.desktop.noctalia.enable {
-
     home.packages = with pkgs; [
       app2unit
+      brightnessctl
       gpu-screen-recorder
       notify-desktop
       (writers.writeDashBin "lock" ''
