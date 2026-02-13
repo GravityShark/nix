@@ -64,12 +64,8 @@
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
-    # foot
-    # fuzzel
     gnome-system-monitor
-    # grim
     # htop
-    # mako
     nautilus
     pwvucontrol
     swayimg

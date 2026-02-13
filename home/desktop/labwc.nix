@@ -11,7 +11,6 @@
   };
   config = lib.mkIf config.desktop.labwc.enable {
     home.packages = with pkgs; [
-      alacritty
       labwc-gtktheme
       labwc-menu-generator
       labwc-tweaks

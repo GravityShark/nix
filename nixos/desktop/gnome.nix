@@ -44,7 +44,6 @@
     environment.systemPackages = with pkgs; [
       ffmpegthumbnailer
       wl-clipboard
-      foot
     ];
 
     environment.sessionVariables = {
