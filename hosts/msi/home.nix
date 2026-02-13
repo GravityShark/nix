@@ -51,7 +51,6 @@
     caprine
     chromium
     easyeffects
-    # obsidian
     pear-desktop
     # qbittorrent
     # selectdefaultapplication
@@ -60,7 +59,7 @@
     vlc # Videos + Music
 
     ## Media
-    # audacity
+    audacity
     gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
@@ -90,7 +89,7 @@
     wget
 
     ## Gaming
-    # (bottles-unwrapped.override { removeWarningPopup = true; })
+    (bottles.override { removeWarningPopup = true; })
     # dolphin-emu
     # gamescope
     # rare
