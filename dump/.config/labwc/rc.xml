@@ -10,7 +10,7 @@
   <core>
     <decoration>server</decoration>
     <gap>0</gap>
-    <adaptiveSync>fullscreen</adaptiveSync>
+    <adaptiveSync>no</adaptiveSync>
     <allowTearing>fullscreenForced</allowTearing>
     <autoEnableOutputs>yes</autoEnableOutputs>
     <reuseOutputMode>no</reuseOutputMode>
@@ -270,8 +270,17 @@
     <keybind key="A-F4">
       <action name="Close" />
     </keybind>
-    <keybind key="W-a">
+    <keybind key="W-w">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-f">
       <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen" />
+    </keybind>
+    <keybind key="W-t">
+      <action name="ToggleTearing" />
     </keybind>
     <keybind key="W-Left">
       <action name="SnapToEdge" direction="left" combine="yes" />
@@ -306,38 +315,47 @@
     <keybind key="XF86_MonBrightnessDown">
       <action name="Execute" command="brightnessctl --class=backlight set 10%-" />
     </keybind>
+    <keybind key="C-Escape">
+      <action name="Execute" command="noctalia-shell ipc call launcher toggle" />
+    </keybind>
   <!-- SnapToRegion via W-Numpad -->
-  <!--
-    <keybind key="W-KP_7">
-      <action name="SnapToRegion" region="top-left" />
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="Game" />
     </keybind>
-    <keybind key="W-KP_8">
-      <action name="SnapToRegion" region="top" />
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="Browser" />
     </keybind>
-    <keybind key="W-KP_9">
-      <action name="SnapToRegion" region="top-right" />
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="Alt" />
     </keybind>
-    <keybind key="W-KP_4">
-      <action name="SnapToRegion" region="left" />
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="Music" />
     </keybind>
-    <keybind key="W-KP_5">
-      <action name="SnapToRegion" region="center" />
+    <keybind key="W-5">
+      <action name="GoToDesktop" to="Chat" />
     </keybind>
-    <keybind key="W-KP_6">
-      <action name="SnapToRegion" region="right" />
+    <keybind key="W-6">
+      <action name="GoToDesktop" to="Extra" />
     </keybind>
-    <keybind key="W-KP_1">
-      <action name="SnapToRegion" region="bottom-left" />
+    <keybind key="W-C-1">
+      <action name="SendToDesktop" to="Game" />
     </keybind>
-    <keybind key="W-KP_2">
-      <action name="SnapToRegion" region="bottom" />
+    <keybind key="W-C-2">
+      <action name="SendToDesktop" to="Browser" />
     </keybind>
-    <keybind key="W-KP_3">
-      <action name="SnapToRegion" region="bottom-right" />
+    <keybind key="W-C-3">
+      <action name="SendToDesktop" to="Alt" />
     </keybind>
-  -->
+    <keybind key="W-C-4">
+      <action name="SendToDesktop" to="Music" />
+    </keybind>
+    <keybind key="W-C-5">
+      <action name="SendToDesktop" to="Chat" />
+    </keybind>
+    <keybind key="W-C-6">
+      <action name="SendToDesktop" to="Extra" />
+    </keybind>
   <!-- keybind for client-list-combined-menu - will center in middle of screen -->
-  <!--
     <keybind key="W-Space">
       <action name="ShowMenu" menu="client-list-combined-menu" />
       <position>
@@ -345,7 +363,6 @@
         <y>center</y>
       </position>
     </keybind>
-  -->
   </keyboard>
 
   <!--

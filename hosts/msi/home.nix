@@ -87,7 +87,7 @@
     ## Gaming
     (bottles.override { removeWarningPopup = true; })
     # dolphin-emu
-    # gamescope
+    gamescope
     # rare
     # umu-launcher
     # vkbasalt
