@@ -31,8 +31,8 @@
       ];
     };
 
-    xdg.configFile."labwc/rc.xml".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix/dump/.config/labwc/rc.xml";
+    xdg.configFile."labwc/rc.xml".source = ../../dump/.config/labwc/rc.xml;
+    # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix/dump/.config/labwc/rc.xml";
 
     wayland.windowManager.labwc = {
       enable = true;
