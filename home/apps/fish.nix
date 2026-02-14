@@ -41,6 +41,8 @@
       enableFishIntegration = true;
     };
 
+    programs.tirith.enable = true;
+
     programs.fish = {
       enable = true;
       functions = {
