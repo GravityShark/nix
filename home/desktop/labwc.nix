@@ -11,10 +11,10 @@
   };
   config = lib.mkIf config.desktop.labwc.enable {
     home.packages = with pkgs; [
-      labwc-gtktheme
-      labwc-menu-generator
-      labwc-tweaks
-      labwc-tweaks-gtk
+      # labwc-gtktheme
+      # labwc-menu-generator
+      # labwc-tweaks
+      # labwc-tweaks-gtk
       wl-clipboard
       wl-mirror
     ];
