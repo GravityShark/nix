@@ -25,6 +25,7 @@
       wl-mirror
     ];
 
+    ## how to fix this?
     # xdg.portal = {
     #   enable = true;
     #   extraPortals = with pkgs; [
