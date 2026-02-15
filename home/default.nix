@@ -24,6 +24,22 @@
     permittedInsecurePackages = [ "electron-37.10.3" ];
   };
 
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     bottles-unwrapped = prev.bottles-unwrapped.overrideAttrs (
+  #       f: p: {
+  #         version = "61.1";
+  #         src = prev.fetchFromGitHub {
+  #           owner = "bottlesdevs";
+  #           repo = "bottles";
+  #           tag = f.version;
+  #           hash = "sha256-LW+os+5DtdUBZWONu2YX4FYMtAYg4BDlKbnVF64T2xI=";
+  #         };
+  #       }
+  #     );
+  #   })
+  # ];
+
   # Paths doesnt work!!
   # home.sessionPath = [
   #   "$HOME/.local/bin"
