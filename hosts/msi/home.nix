@@ -92,7 +92,7 @@
     # umu-launcher
     # vkbasalt
     # wineWow64Packages.staging
-    wineWowPackages.stable
+    wineWow64Packages.stable
   ];
 
   ## Other programss
