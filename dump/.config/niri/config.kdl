@@ -458,7 +458,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "com.mitchellh.ghostty" "ghostty"; }
     Mod+Ctrl+T hotkey-overlay-title="Open a Terminal" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "com.mitchellh.ghostty" "--focus" "ghostty";}
-    Mod+B hotkey-overlay-title="Open a Browser" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "zen" "zen"; }
+    Mod+B hotkey-overlay-title="Open a Browser" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "zen" "zen-beta"; }
     Mod+Ctrl+B hotkey-overlay-title="Open a Browser" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "zen" "--focus" "zen"; }
     Mod+N hotkey-overlay-title="Open a Notes App" repeat=false { spawn "nirius" "focus-or-spawn" "--app-id" "obsidian" "obsidian"; }
     Mod+Ctrl+N hotkey-overlay-title="Open a Notes App" repeat=false { spawn "nirius" "move-to-current-workspace-or-spawn" "--app-id" "obsidian" "--focus" "obsidian"; }
