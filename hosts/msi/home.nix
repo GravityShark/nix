@@ -92,7 +92,14 @@
     # umu-launcher
     # vkbasalt
     # wineWow64Packages.staging
-    wineWow64Packages.stable
+    # wineWow64Packages.stable
+    wineWow64Packages.stagingFull
+
+    gparted
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-base
+    gst_all_1.gstreamer
+    libmpg123
   ];
 
   ## Other programss

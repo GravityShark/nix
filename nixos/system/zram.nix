@@ -6,7 +6,7 @@
 
 {
   options = {
-    system.zram.enable = lib.mkEnableOption "enables zram";
+    system.zram.enable = lib.mkEnableOption "enables zram and disables physical swap";
   };
   config = lib.mkIf config.system.zram.enable {
     zramSwap = {
@@ -14,5 +14,6 @@
       priority = 100;
       algorithm = "lz4";
     };
+    # swapDevices = lib.mkForce [ ];
   };
 }
