@@ -91,8 +91,8 @@
     # rare
     # umu-launcher
     # vkbasalt
-    wineWowPackages.waylandFull
-    # wineWowPackages.staging
+    wineWow64Packages.staging
+    # wineWowPackages.stable
   ];
 
   ## Other programss
