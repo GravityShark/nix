@@ -304,6 +304,9 @@
     <keybind key="C-Escape">
       <action name="Execute" command="noctalia-shell ipc call launcher toggle"/>
     </keybind>
+    <keybind key="Print">
+      <action name="Execute" command="slurp | grim -g - - | tee ~/Pictures/Screenshots/Screenshot from $(date +'%Y-%m-%d %H-%M-%S').png | wl-copy"/>
+    </keybind>
     <!-- SnapToRegion via W-Numpad -->
     <keybind key="W-1">
       <action name="GoToDesktop" to="Game"/>

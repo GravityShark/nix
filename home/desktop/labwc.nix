@@ -10,11 +10,17 @@
     desktop.labwc.enable = lib.mkEnableOption "enables labwc";
   };
   config = lib.mkIf config.desktop.labwc.enable {
+    assertions = [
+      {
+        assertion = config.desktop.noctalia.enable;
+        message = "desktop.labwc.enable currently needs to have desktop.noctalia";
+      }
+    ];
+
     home.packages = with pkgs; [
-      # labwc-gtktheme
-      # labwc-menu-generator
-      # labwc-tweaks
-      # labwc-tweaks-gtk
+      gpu-screen-recorder-gtk
+      grim
+      slurp
       wl-clipboard
       wl-mirror
     ];
