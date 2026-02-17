@@ -202,7 +202,6 @@ local game_remaps = {
 	['q'] = 'a',
 	['w'] = 'o',
 	['e'] = 'g',
-	['y'] = 'd',
 	-- ['u'] = 'leftbrace',
 	-- ['i'] = 'rightbrace',
 	-- ['o'] = 'apostrophe',
@@ -213,6 +212,7 @@ local game_remaps = {
 	['d'] = 's',
 	['f'] = 'f',
 	['g'] = 'b',
+	['h'] = 'd',
 	-- ['j'] = 'comma',
 	-- ['k'] = 'dot',
 
@@ -221,7 +221,7 @@ local game_remaps = {
 	['c'] = 'n',
 	['v'] = 'w',
 
-	['leftmeta'] = 'leftctrl',
+	-- ['LEFTMETA'] = 'LEFTCTRL',
 }
 --
 -- -- ##############################################################################################
@@ -298,13 +298,13 @@ local config = {
 			end
 			(helpers.toggle_res(1920, 300))()
 		end,
-		['*-h'] = function()
+		['*-y'] = function()
 			if chat_state.enabled then
 				return false
 			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
-		['control-h'] = function()
+		['shift-m'] = function()
 			if not oneshot_overlay_state then
 				oneshot_overlay_state = waywall.image(oneshot_overlay, {
 					dst = {
