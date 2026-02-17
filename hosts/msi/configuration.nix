@@ -14,7 +14,7 @@
     openrazer.enable = false;
     steam.enable = true;
     vial.enable = true;
-    waydroid.enable = false;
+    waydroid.enable = true;
   };
 
   system = {

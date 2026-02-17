@@ -220,6 +220,8 @@ local game_remaps = {
 	['x'] = 'f3',
 	['c'] = 'n',
 	['v'] = 'w',
+
+	['super'] = 'ctrl',
 }
 --
 -- -- ##############################################################################################
@@ -266,7 +268,7 @@ local config = {
 		ninb_opacity = 0.8,
 	},
 	actions = {
-		['control-space'] = function()
+		['shift-space'] = function()
 			if chat_state.enabled then
 				return false
 			end
