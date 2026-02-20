@@ -82,8 +82,7 @@ home-manager switch --flake ~/.nix\?submodules=1
 cd ~/.nix
 git config --local include.path ../.gitconfig
 
-# also setup neovim
-
+# also setup the neovim submodule
 cd ~/.nix/dump/.config/nvim/
 git switch master
 git config --local include.path ../../../../../dump/.config/nvim/.gitconfig

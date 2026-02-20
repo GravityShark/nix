@@ -69,11 +69,11 @@
   # ];
   # };
 
-  environment.systemPackages = with pkgs; [
-    gparted
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-base
-    gst_all_1.gstreamer
-    libmpg123
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   gparted
+  #   gst_all_1.gst-plugins-good
+  #   gst_all_1.gst-plugins-base
+  #   gst_all_1.gstreamer
+  #   libmpg123
+  # ];
 }
