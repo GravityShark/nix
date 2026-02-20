@@ -25,7 +25,7 @@
     nvidia.enable = true;
     systemd-boot.enable = true;
     thp.enable = true;
-    zram.enable = true;
+    zram.enable = false;
   };
 
   service = {
