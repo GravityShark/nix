@@ -32,7 +32,7 @@
     bluetooth.enable = true;
     disks.enable = true;
     distrobox.enable = false;
-    flatpak.enable = false;
+    flatpak.enable = true;
     gamemode.enable = false;
     kanata.enable = true;
     logind.enable = true;
@@ -70,7 +70,6 @@
   # };
 
   environment.systemPackages = with pkgs; [
-
     gparted
     gst_all_1.gst-plugins-good
     gst_all_1.gst-plugins-base

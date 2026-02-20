@@ -17,8 +17,9 @@
     };
     stylix.cursor.name = lib.mkForce "Bibata-Original-Ice";
 
-    xdg.configFile."nvim/enabled-plugins.txt".text =
-      lib.mkIf config.apps.neovim.enable "colors/rose-pine";
+    xdg.configFile."nvim/enabled-plugins.txt" = lib.mkIf config.apps.neovim.enable {
+      text = "colors/rose-pine";
+    };
     # lib.mkAfter config.xdg.configFile."nvim/enabled-plugins.txt".text + "colors/rose-pine";
   };
 }

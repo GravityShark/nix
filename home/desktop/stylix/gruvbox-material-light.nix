@@ -15,9 +15,9 @@
     };
 
     # colors/mini.base16
-    xdg.configFile."nvim/enabled-plugins.txt".text = (
-      lib.mkIf config.apps.neovim.enable "colors/gruvbox-material"
-    );
+    xdg.configFile."nvim/enabled-plugins.txt" = lib.mkIf config.apps.neovim.enable {
+      text = "colors/gruvbox-material";
+    };
     # palette:
     # base00: "#fbf1c7"
     # base01: "#f2e5bc"

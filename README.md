@@ -84,7 +84,7 @@ git config --local include.path ../.gitconfig
 
 # also setup neovim
 
-cd ~/.nix/home/dump/.config/nvim/
+cd ~/.nix/dump/.config/nvim/
 git switch master
 git config --local include.path ../../../../../dump/.config/nvim/.gitconfig
 ```
