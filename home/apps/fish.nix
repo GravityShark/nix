@@ -31,16 +31,9 @@
       RIP_GRAVEYARD = config.home.homeDirectory + "/.local/share/Trash";
     };
 
-    programs.nix-your-shell = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
-    programs.zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
+    # home.shell.enableShellIntegration is default
+    programs.nix-your-shell.enable = true;
+    programs.zoxide.enable = true;
     programs.tirith.enable = true;
 
     programs.fish = {
@@ -89,7 +82,7 @@
             end
         else if type -q tmux
             t 
-          end
+        end
       '';
       plugins = [
         # Enable a plugin (here grc for colorized command output) from nixpkgs
