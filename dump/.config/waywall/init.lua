@@ -268,7 +268,7 @@ local config = {
 		ninb_opacity = 0.8,
 	},
 	actions = {
-		['shift-space'] = function()
+		['alt-space'] = function()
 			if chat_state.enabled then
 				return false
 			end
