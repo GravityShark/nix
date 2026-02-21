@@ -18,7 +18,7 @@
       brightnessctl
       gpu-screen-recorder
       notify-desktop
-      (writers.writeDashBin "lock" ''
+      (writers.writeDashBin "noct-lock" ''
         ${
           inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
         }/bin/noctalia-shell ipc call lockScreen lock;
