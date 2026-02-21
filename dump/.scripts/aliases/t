@@ -1,6 +1,6 @@
 #!/bin/sh
 out=$(tmenu)
-if [ -z $out ] && [ ! -n "$TMUX" ]; then
+if [ -z "$out" ] && [ -z "$TMUX" ]; then
         exec tmux
 fi
 sesh connect "$out"
