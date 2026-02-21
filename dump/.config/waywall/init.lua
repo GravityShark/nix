@@ -3,6 +3,8 @@
 local waywall = require('waywall')
 local helpers = require('waywall.helpers')
 
+-- https://whvn.cc/o5ky29
+-- local background = '@background@'
 local ninb_path = '@ninb_path@'
 local eye_overlay = '@eye_overlay@'
 local oneshot_overlay = '@oneshot_overlay@'
@@ -18,21 +20,16 @@ end
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
 -- -- ################################################################################################
--- local deco_objects = {
--- 	thin1 = nil,
--- 	thin2 = nil,
--- }
 
 waywall.listen('load', function()
 	if not is_running(ninb_pid) then
 		waywall.exec(ninb_path)
+		waywall.show_floating(true)
+	else
+		helpers.toggle_floating()
 	end
-	-- deco_objects.thin0 = waywall.image('${../../../assets/mcsr/bg.png}', {
-	-- 	dst = { x = 0, y = 0, w = 823, h = 1080 },
-	-- 	depth = -1,
-	-- })
-	-- deco_objects.thin1 = waywall.image('${../../../assets/mcsr/bg.png}', {
-	-- 	dst = { x = 1920 - 823, y = 0, w = 823, h = 1080 },
+	-- waywall.image(background, {
+	-- 	dst = { x = 0, y = 0, w = 1920, h = 1080 },
 	-- 	depth = -1,
 	-- })
 	waywall.show_floating(true)
@@ -262,12 +259,14 @@ local config = {
 	},
 	theme = {
 		-- background = '#1b0e1fff',
-		-- background = '#303030ff',
-		background = '#00000000',
+		background = '#1d2021ff',
+		-- background = '#00000000',
 		ninb_anchor = 'right',
 		ninb_opacity = 0.8,
 	},
 	actions = {
+		['*-b'] = function() end,
+
 		['alt-space'] = function()
 			if chat_state.enabled then
 				return false

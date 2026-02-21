@@ -79,6 +79,7 @@ in
       eye_overlay = "${../../dump/.config/waywall/overlay.png}";
       oneshot_overlay = "${../../dump/.config/waywall/oneshot.png}";
       ninb_path = "${lib.getExe ninjabrain-bot}";
+      # background = "${../../dump/.config/waywall/background.png}";
       # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
     };
 
