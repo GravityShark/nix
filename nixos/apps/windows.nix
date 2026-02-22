@@ -15,9 +15,7 @@
       enable = true;
 
       # Enable TPM emulation (for Windows 11)
-      qemu = {
-        swtpm.enable = true;
-      };
+      qemu.swtpm.enable = true;
     };
 
     # Enable USB redirection
@@ -29,6 +27,7 @@
 
     # Enable VM networking and file sharing
     environment.systemPackages = with pkgs; [
+      gnome-boxes # VM management
       dnsmasq # VM networking
       phodav # (optional) Share files with guest VMs
     ];
