@@ -85,7 +85,7 @@
     wget
 
     ## Gaming
-    # (bottles.override { removeWarningPopup = true; })
+    (bottles.override { removeWarningPopup = true; })
     # dolphin-emu
     # gamescope
     # rare
