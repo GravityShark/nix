@@ -8,5 +8,6 @@
     ./steam.nix
     ./vial.nix
     ./waydroid.nix
+    ./windows.nix
   ];
 }

@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -15,6 +15,7 @@
     steam.enable = true;
     vial.enable = true;
     waydroid.enable = true;
+    windows.enable = true;
   };
 
   system = {

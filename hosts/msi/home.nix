@@ -51,6 +51,7 @@
     caprine
     chromium
     easyeffects
+    gnome-boxes # Virtualization
     pear-desktop
     # qbittorrent
     # selectdefaultapplication
