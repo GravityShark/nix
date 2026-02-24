@@ -52,7 +52,7 @@
   ################################## Extra ###################################
 
   ## Cloudflare Warp for slow downloads
-  # services.cloudflare-warp.enable = true;
+  services.cloudflare-warp.enable = true;
 
   ## Use labwc instead when we are gaming cause it has tearing support
   ## we gotta wait for this https://github.com/niri-wm/niri/issues/844
