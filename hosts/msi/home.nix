@@ -61,6 +61,7 @@
     gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     # krita # Drawing
+    pinta # Drawing
 
     ## Specific file type
     nautilus
