@@ -20,7 +20,7 @@
   };
 
   apps = {
-    anki.enable = false; # IT IS CURRENTLY BROKEN
+    anki.enable = false; # FIX: Anki doesn't build (26/02/28)
     fastfetch.enable = true;
     fish.enable = true;
     fonts.enable = true;
@@ -60,7 +60,7 @@
     audacity
     gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
-    # krita # Drawing
+    # krita # Drawing, NOTE: Krita does not build (26/02/28)
     pinta # Drawing
 
     ## Specific file type
@@ -70,8 +70,8 @@
     vlc
 
     ## Work
-    onlyoffice-desktopeditors
     caprine
+    onlyoffice-desktopeditors
     # pdfarranger
     # teams-for-linux
     # telegram-desktop
@@ -89,8 +89,8 @@
     # rare
     # umu-launcher
     # vkbasalt
-    # wineWow64Packages.staging
     # wineWow64Packages.stable
+    # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
   ];
 
