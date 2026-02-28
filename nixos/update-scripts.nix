@@ -57,6 +57,9 @@
       (writeDashBin "nrsu" ''
         sudo nixos-rebuild switch --upgrade --flake ~/.nix "$@"
       '')
+      (writeDashBin "nsr" ''
+        doas nix-store --verify --check-contents --repair
+      '')
       (writeDashBin "updatescript" ''
         ng && fu && nrsu && hms
       '')
