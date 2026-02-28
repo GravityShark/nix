@@ -16,7 +16,8 @@
         hideTopBar = true;
         reduceMotion = true;
         spacebarRatesCard = false;
-        profiles."User 1".sync = {
+        # profiles."User 1".sync = {
+        sync = {
           autoSync = true;
           syncMedia = true;
           keyFile = "/home/${config.home.username}/Notes/backups/anki/syncKey.txt";
