@@ -34,7 +34,7 @@
     # home.shell.enableShellIntegration is default
     programs.nix-your-shell.enable = true;
     programs.zoxide.enable = true;
-    programs.tirith.enable = true;
+    # programs.tirith.enable = true;
 
     programs.fish = {
       enable = true;
