@@ -20,7 +20,7 @@
   };
 
   apps = {
-    anki.enable = true;
+    anki.enable = false; # IT IS CURRENTLY BROKEN
     fastfetch.enable = true;
     fish.enable = true;
     fonts.enable = true;
