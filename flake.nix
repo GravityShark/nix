@@ -3,9 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "stable";
     };
     flatpaks.url = "github:gmodena/nix-flatpak/latest";
     noctalia = {
@@ -27,7 +28,7 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "stable";
         home-manager.follows = "home-manager";
       };
     };
