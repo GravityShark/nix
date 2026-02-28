@@ -14,6 +14,7 @@
   config = lib.mkIf config.apps.zen-browser.enable {
     programs.zen-browser = {
       enable = true;
+      # suppressXdgMigrationWarning = true;
       # profiles = {
       #   "Default Profile" = { };
       # };
