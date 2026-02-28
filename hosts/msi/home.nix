@@ -48,15 +48,13 @@
   home.packages = with pkgs; [
     ## Apps
     baobab
-    caprine
-    chromium
-    easyeffects
+    # chromium
+    # easyeffects
+    gnome-system-monitor
     pear-desktop
-    # qbittorrent
     # selectdefaultapplication
     super-productivity
     # vial
-    vlc # Videos + Music
 
     ## Media
     audacity
@@ -64,17 +62,16 @@
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
-    gnome-system-monitor
-    # htop
+    ## Specific file type
     nautilus
-    pwvucontrol
+    # qbittorrent
     swayimg
-    wdisplays
-    # wev
+    vlc
 
     ## Work
     onlyoffice-desktopeditors
-    pdfarranger
+    caprine
+    # pdfarranger
     # teams-for-linux
     # telegram-desktop
     # zoom-us

@@ -18,6 +18,8 @@
       brightnessctl
       gpu-screen-recorder
       notify-desktop
+      wdisplays
+      pwvucontrol
       (writers.writeDashBin "noct-lock" ''
         ${
           inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
