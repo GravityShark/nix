@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +36,6 @@
   outputs =
     {
       nixpkgs,
-      stable,
       home-manager,
       ...
     }@inputs:
@@ -58,7 +56,7 @@
       };
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
-        pkgs = stable.legacyPackages."x86_64-linux";
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./hosts/msi/home.nix
           ./home
