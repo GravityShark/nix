@@ -265,9 +265,7 @@ local config = {
 		ninb_opacity = 0.8,
 	},
 	actions = {
-		['*-b'] = function() end,
-
-		['alt-space'] = function()
+		['alt-insert'] = function()
 			if chat_state.enabled then
 				return false
 			end
