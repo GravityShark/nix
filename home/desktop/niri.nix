@@ -18,7 +18,8 @@
     ];
 
     xdg.configFile."niri/config.kdl".source = ../../dump/.config/niri/config.kdl;
-    xdg.configFile."niri/config.kdl".text = lib.mkIf config.desktop.noctalia.enable ''
+    # xdg.configFile."niri/config.kdl".text = lib.mkIf config.desktop.noctalia.enable ''
+    xdg.configFile."niri/config.kdl".text = ''
       spawn-at-startup "noctalia-shell"
     '';
 
