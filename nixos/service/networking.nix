@@ -40,8 +40,7 @@
         "1.asia.pool.ntp.org"
         "2.asia.pool.ntp.org"
         "3.asia.pool.ntp.org"
-      ]
-      ++ config.networking.timeServers.default;
+      ];
 
       networking.nameservers = [
         "9.9.9.9"
@@ -72,16 +71,18 @@
         #     "www.youtube-nocookie.com"
         #     "www.ytimg.com"
         #   ];
+
       };
-      stevenblack = {
+
+      networking.stevenblack = {
         enable = true;
         block = [
           "gambling"
           "porn"
         ];
       };
-      # ${builtins.readFile discord}
-      # extraHosts = ''
+      # networking.extraHosts = ''
+      #   ${builtins.readFile discord}
       #   ${builtins.readFile instagram}
       # '';
     };
