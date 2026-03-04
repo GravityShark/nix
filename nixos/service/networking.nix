@@ -28,19 +28,18 @@
       # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
       networking.networkmanager.enable = true;
-      # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-      # networking.nftables.enable = true; # Better implementation
-      # networking.firewall.allowedTCPPorts = [ 25565 ];
+      networking.nftables.enable = true; # Better implementation
+      networking.firewall.allowedTCPPorts = [ 25565 ];
       # networking.firewall.allowedUDPPorts = [ 19132 ];
-      networking.firewall.enable = false;
 
       networking.timeServers = [
         "0.asia.pool.ntp.org"
         "1.asia.pool.ntp.org"
         "2.asia.pool.ntp.org"
         "3.asia.pool.ntp.org"
-      ];
+      ]
+      ++ config.networking.timeServers.default;
 
       networking.nameservers = [
         "9.9.9.9"
