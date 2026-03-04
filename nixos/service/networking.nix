@@ -38,8 +38,7 @@
         "1.asia.pool.ntp.org"
         "2.asia.pool.ntp.org"
         "3.asia.pool.ntp.org"
-      ]
-      ++ config.networking.timeServers.default;
+      ];
 
       networking.nameservers = [
         "9.9.9.9"
