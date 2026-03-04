@@ -27,17 +27,17 @@
     ];
 
     ## how to fix this?
-    # xdg.portal = {
-    #   enable = true;
-    #   extraPortals = with pkgs; [
-    #     xdg-desktop-portal-wlr
-    #     xdg-desktop-portal-gtk
-    #   ];
-    #   config.wlroots.default = [
-    #     "wlr"
-    #     "gtk"
-    #   ];
-    # };
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+      config.wlroots.default = [
+        "wlr"
+        "gtk"
+      ];
+    };
 
     xdg.configFile."labwc/rc.xml".source = ../../dump/.config/labwc/rc.xml;
     # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix/dump/.config/labwc/rc.xml";
@@ -48,14 +48,14 @@
       xwayland.enable = true;
       autostart = lib.mkIf config.desktop.noctalia.enable [ "noctalia-shell" ];
       environment = [
-        "QT_QPA_PLATFORM=wayland;xcb"
-        "GDK_BACKEND=wayland"
-        "SDL_VIDEODRIVER=wayland"
         "CLUTTER_BACKEND=wayland"
         "ELECTRON_OZONE_PLATFORM_HINT=wayland"
-        "NIXOS_OZONE_WL=1"
+        "GDK_BACKEND=wayland"
         "MOZ_ENABLE_WAYLAND=1"
-        "WAYLAND_DISPLAY=wayland-0"
+        "NIXOS_OZONE_WL=1"
+        "QT_QPA_PLATFORM=wayland;xcb"
+        "SDL_VIDEODRIVER=wayland"
+        # "WAYLAND_DISPLAY=wayland-0"
       ];
       menu = [
         {
