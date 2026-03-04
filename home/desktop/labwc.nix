@@ -55,6 +55,7 @@
         "ELECTRON_OZONE_PLATFORM_HINT=wayland"
         "NIXOS_OZONE_WL=1"
         "MOZ_ENABLE_WAYLAND=1"
+        "WAYLAND_DISPLAY=wayland-0"
       ];
       menu = [
         {

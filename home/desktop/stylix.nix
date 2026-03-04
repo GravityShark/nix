@@ -109,6 +109,16 @@
     xdg.configFile."niri/base16.kdl".text =
       with config.lib.stylix.colors.withHashtag;
       lib.mkIf config.desktop.niri.enable ''
+        output "eDP-1" {
+            layout {
+                background-color "${base00}"
+            }
+            variable-refresh-rate on-demand=true
+        }
+
+        overview {
+          backdrop-color "${base01}"
+        }
         layout {
             focus-ring {
                 active-color   "${base0B}"

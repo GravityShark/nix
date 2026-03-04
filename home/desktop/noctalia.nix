@@ -31,7 +31,7 @@
       noctalia-performance = {
         Unit = {
           Description = "Noctalia Performance on power-profiles-daemon change";
-          After = [ "graphical.target" ];
+          After = [ "graphical-session.target" ];
         };
         Service = {
           ExecStart = ''
@@ -48,7 +48,7 @@
           '';
           Restart = "always";
         };
-        Install.WantedBy = [ "noctalia-shell.service" ];
+        Install.WantedBy = [ "graphical-session.target" ];
       };
     };
 

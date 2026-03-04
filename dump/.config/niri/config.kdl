@@ -476,8 +476,8 @@ binds {
 
     Ctrl+Escape hotkey-overlay-title="Run an Application" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 
-    Mod+Shift+Q hotkey-overlay-title="Sleep" { spawn "systemctl suspend"; }
     Mod+Q hotkey-overlay-title="Powermenu" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+Shift+Q hotkey-overlay-title="Sleep" { power-off-monitors; }
 
     Mod+P hotkey-overlay-title="Cycle power profiles" { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
     Mod+I hotkey-overlay-title="Inhibit idle" { spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle"; }
@@ -506,7 +506,6 @@ binds {
 
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "--exponent=5" "-n" "set" "+2%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "--exponent=5" "-n" "set" "2%-"; }
-    Mod+XF86MonBrightnessDown { power-off-monitors; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -737,3 +736,5 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 include "./base16.kdl"
+
+spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "100"
