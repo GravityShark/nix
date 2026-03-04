@@ -31,7 +31,7 @@
       # Enable networking
       networking.networkmanager.enable = true;
       # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-      networking.nftables.enable = true;
+      # networking.nftables.enable = true;
 
       # Open ports in the firewall.
       networking.firewall.allowedTCPPorts = [ 25565 ];
