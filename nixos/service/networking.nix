@@ -29,9 +29,10 @@
 
       networking.networkmanager.enable = true;
 
-      networking.nftables.enable = true; # Better implementation
-      networking.firewall.allowedTCPPorts = [ 25565 ];
+      # networking.nftables.enable = true; # Better implementation
+      # networking.firewall.allowedTCPPorts = [ 25565 ];
       # networking.firewall.allowedUDPPorts = [ 19132 ];
+      networking.firewall.enable = false;
 
       networking.timeServers = [
         "0.asia.pool.ntp.org"
