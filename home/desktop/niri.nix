@@ -17,11 +17,10 @@
       }
     ];
 
-    xdg.configFile."niri/config.kdl".source = ../../dump/.config/niri/config.kdl;
-    # xdg.configFile."niri/config.kdl".text = lib.mkIf config.desktop.noctalia.enable ''
-    xdg.configFile."niri/config.kdl".text = ''
-      spawn-at-startup "noctalia-shell"
-    '';
+    xdg.configFile."niri/config.kdl".text =
+      builtins.readFile ../../dump/.config/niri/config.kdl
+      + (if config.desktop.noctalia.enable then ''spawn-at-startup "noctalia-shell"'' else "");
+    # (lib.mkIf config.desktop.noctalia.enable
 
     services.polkit-gnome.enable = true;
     services.wl-clip-persist.enable = true;

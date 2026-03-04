@@ -20,11 +20,11 @@
       notify-desktop
       wdisplays
       pwvucontrol
-      (writers.writeDashBin "noct-lock" ''
-        ${
-          inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
-        }/bin/noctalia-shell ipc call lockScreen lock;
-      '')
+      # (writers.writeDashBin "noct-lock" ''
+      #   ${
+      #     inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
+      #   }/bin/noctalia-shell ipc call lockScreen lock;
+      # '')
     ];
 
     systemd.user.services = {

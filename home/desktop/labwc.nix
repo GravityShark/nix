@@ -46,6 +46,7 @@
       enable = true;
       systemd.enable = true;
       xwayland.enable = true;
+      autostart = lib.mkIf config.desktop.noctalia.enable [ "noctalia-shell" ];
       environment = [
         "QT_QPA_PLATFORM=wayland;xcb"
         "GDK_BACKEND=wayland"
