@@ -20,7 +20,7 @@
   };
 
   apps = {
-    anki.enable = true; # FIX: Anki doesn't build (26/02/28)
+    anki.enable = true;
     fastfetch.enable = true;
     fish.enable = true;
     fonts.enable = true;
@@ -61,7 +61,7 @@
     gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     # krita # Drawing, NOTE: Krita does not build (26/02/28)
-    pinta # Drawing
+    pinta # Drawing instead
 
     ## Specific file type
     nautilus
