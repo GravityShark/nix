@@ -71,7 +71,5 @@
   # ];
   # };
 
-  environment.systemPackages = with pkgs; [
-    nixos-firewall-tool
-  ];
+  environment.systemPackages = with pkgs; [ nixos-firewall-tool ];
 }

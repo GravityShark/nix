@@ -737,4 +737,5 @@ debug {
 }
 include "./base16.kdl"
 
-spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "100"
+// Pass all arguments in the same string.
+spawn-sh-at-startup "niri msg action do-screen-transition --delay-ms 1000"

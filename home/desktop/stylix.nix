@@ -113,7 +113,6 @@
             layout {
                 background-color "${base00}"
             }
-            variable-refresh-rate on-demand=true
         }
 
         overview {
