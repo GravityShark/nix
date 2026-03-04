@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -71,11 +71,7 @@
   # ];
   # };
 
-  # environment.systemPackages = with pkgs; [
-  #   gparted
-  #   gst_all_1.gst-plugins-good
-  #   gst_all_1.gst-plugins-base
-  #   gst_all_1.gstreamer
-  #   libmpg123
-  # ];
+  environment.systemPackages = with pkgs; [
+    nixos-firewall-tool
+  ];
 }
