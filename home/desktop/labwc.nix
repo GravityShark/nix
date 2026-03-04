@@ -23,6 +23,7 @@
       slurp
       wl-clipboard
       wl-mirror
+      wlopm
     ];
 
     ## how to fix this?
