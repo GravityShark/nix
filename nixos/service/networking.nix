@@ -24,65 +24,65 @@
     # in
     lib.mkIf config.service.networking.enable {
       users.users.${config.username}.extraGroups = [ "networkmanager" ];
-
-      # Configure network proxy if necessary
       # networking.proxy.default = "http://user:password@proxy:port/";
       # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-      # Enable networking
+
       networking.networkmanager.enable = true;
       # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-      # networking.nftables.enable = true;
 
-      # Open ports in the firewall.
+      networking.nftables.enable = true; # Better implementation
       networking.firewall.allowedTCPPorts = [ 25565 ];
       # networking.firewall.allowedUDPPorts = [ 19132 ];
-      # Or disable the firewall altogether.
-      # networking.firewall.enable = false;
+      networking.firewall.enable = false;
 
-      # networking.timeServers = options.networking.timeServers.default ++ [ "asia.pool.ntp.org" ];
       networking.timeServers = [
         "0.asia.pool.ntp.org"
         "1.asia.pool.ntp.org"
         "2.asia.pool.ntp.org"
         "3.asia.pool.ntp.org"
+      ]
+      ++ config.networking.timeServers.default;
+
+      networking.nameservers = [
+        "9.9.9.9"
+        "149.112.112.112"
+        "2620:fe::fe"
+        "2620:fe::9"
       ];
 
-      # Hosts file
-      networking = {
-        hosts = {
-          "192.168.0.3" = [ "clr" ];
-          #   "0.0.0.0" = [
-          #     "gdata.youtube.com"
-          #     "googlevideo.com"
-          #     "help.youtube.com"
-          #     "img.youtube.com"
-          #     "kids.youtube.com"
-          #     "m.youtube.com"
-          #     "redirector.googlevideo.com"
-          #     "youtu.be"
-          #     "youtube.com"
-          #     "youtubei.googleapis.com"
-          #     "youtube-nocookie.com"
-          #     "ytimg.com"
-          #     "ytimg-edge-static.l.google.com"
-          #     "ytimg.l.google.com"
-          #     "www.youtube.com"
-          #     "www.googlevideo.com"
-          #     "www.youtube-nocookie.com"
-          #     "www.ytimg.com"
-          #   ];
-        };
-        stevenblack = {
-          enable = true;
-          block = [
-            "gambling"
-            "porn"
-          ];
-        };
-        # ${builtins.readFile discord}
-        # extraHosts = ''
-        #   ${builtins.readFile instagram}
-        # '';
+      networking.hosts = {
+        "192.168.0.3" = [ "clr" ];
+        #   "0.0.0.0" = [
+        #     "gdata.youtube.com"
+        #     "googlevideo.com"
+        #     "help.youtube.com"
+        #     "img.youtube.com"
+        #     "kids.youtube.com"
+        #     "m.youtube.com"
+        #     "redirector.googlevideo.com"
+        #     "youtu.be"
+        #     "youtube.com"
+        #     "youtubei.googleapis.com"
+        #     "youtube-nocookie.com"
+        #     "ytimg.com"
+        #     "ytimg-edge-static.l.google.com"
+        #     "ytimg.l.google.com"
+        #     "www.youtube.com"
+        #     "www.googlevideo.com"
+        #     "www.youtube-nocookie.com"
+        #     "www.ytimg.com"
+        #   ];
       };
+      stevenblack = {
+        enable = true;
+        block = [
+          "gambling"
+          "porn"
+        ];
+      };
+      # ${builtins.readFile discord}
+      # extraHosts = ''
+      #   ${builtins.readFile instagram}
+      # '';
     };
 }

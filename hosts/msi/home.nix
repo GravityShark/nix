@@ -20,7 +20,7 @@
   };
 
   apps = {
-    anki.enable = false; # FIX: Anki doesn't build (26/02/28)
+    anki.enable = true; # FIX: Anki doesn't build (26/02/28)
     fastfetch.enable = true;
     fish.enable = true;
     fonts.enable = true;

@@ -31,7 +31,7 @@
       noctalia-performance = {
         Unit = {
           Description = "Noctalia Performance on power-profiles-daemon change";
-          After = [ "noctalia-shell.service" ];
+          After = [ "graphical.target" ];
         };
         Service = {
           ExecStart = ''
@@ -106,7 +106,6 @@
 
     programs.noctalia-shell = {
       enable = true;
-      systemd.enable = true;
       settings = {
         appLauncher = {
           autoPasteClipboard = false;
