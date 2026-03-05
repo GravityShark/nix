@@ -32,6 +32,7 @@
       networking.nftables.enable = true; # Better implementation
       networking.firewall.allowedTCPPorts = [ 25565 ];
       networking.firewall.allowedUDPPorts = [ 19132 ];
+      networking.firewall.extraNftablesRules = [ "ip filter output accept" ];
       # networking.firewall.enable = false; # FIX: Firewall blocks all connections, incoming and outcoming
 
       networking.timeServers = [
