@@ -29,11 +29,49 @@
 
       networking.networkmanager.enable = true;
 
-      networking.nftables.enable = true; # Better implementation
-      networking.firewall.allowedTCPPorts = [ 25565 ];
-      networking.firewall.allowedUDPPorts = [ 19132 ];
-      networking.firewall.extraNftablesRules = [ "ip filter output accept" ];
-      # networking.firewall.enable = false; # FIX: Firewall blocks all connections, incoming and outcoming
+      # networking.nftables.enable = true; # Better implementation
+      # networking.firewall.allowedTCPPorts = [ 25565 ];
+      # networking.firewall.allowedUDPPorts = [ 19132 ];
+      # networking.nftables.tables = {
+      #   filter = {
+      #     content = ''
+      #       chain input {
+      #               type filter hook input priority filter;
+      #
+      #               # Allow loopback (local connections)
+      #               iifname lo accept
+      #
+      #               # Allow established/related
+      #               ct state established,related accept
+      #
+      #               # Allow incoming pings
+      #               ip protocol icmp limit rate 1/second accept
+      #
+      #               # Allow SSH and HTTP
+      #               # tcp dport {ssh,http} accept
+      #
+      #               tcp dport 25565 accept
+      #               udp dport 19132 accept
+      #
+      #               drop
+      #       }
+      #       chain forward {
+      #               type filter hook forward priority filter;
+      #
+      #               # Disallow forwarding
+      #               drop
+      #       }
+      #       chain output {
+      #               type filter hook output priority filter;
+      #
+      #               # Allow all outgoing traffic
+      #               accept
+      #       }
+      #     '';
+      #     family = "inet";
+      #   };
+      # };
+      networking.firewall.enable = false; # FIX: Firewall blocks all connections, incoming and outcoming
 
       networking.timeServers = [
         "0.asia.pool.ntp.org"
