@@ -307,12 +307,12 @@
     <keybind key="C-Escape">
       <action name="Execute" command="noctalia-shell ipc call launcher toggle"/>
     </keybind>
-    <keybind key="Print">
-      <action name="Execute" command="slurp | grim -g - | tee ~/Pictures/Screenshots/Screenshot from $(date +'%Y-%m-%d %H-%M-%S').png | wl-copy; notify-desktop &quot;Selection saved to clipboard&quot;"/>
-    </keybind>
-    <keybind key="S-Print">
-      <action name="Execute" command="grim - | tee ~/Pictures/Screenshots/Screenshot from $(date +'%Y-%m-%d %H-%M-%S').png | wl-copy; notify-desktop &quot;Fullscreen saved to clipboard&quot;"/>
-    </keybind>
+    <!-- <keybind key="Print"> -->
+    <!--   <action name="Execute" command="slurp | grim -g - | tee ~/Pictures/Screenshots/Screenshot from $(date +'%Y-%m-%d %H-%M-%S').png | wl-copy; notify-desktop &quot;Fullscreen saved to clipboard&quot;"/> -->
+    <!-- </keybind> -->
+    <!-- <keybind key="S-Print"> -->
+    <!--   <action name="Execute" command="grim - | tee ~/Pictures/Screenshots/Screenshot from $(date +'%Y-%m-%d %H-%M-%S').png | wl-copy; notify-desktop &quot;Fullscreen saved to clipboard&quot;"/> -->
+    <!-- </keybind> -->
     <!-- SnapToRegion via W-Numpad -->
     <keybind key="W-1">
       <action name="GoToDesktop" to="Game"/>
