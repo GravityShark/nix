@@ -301,7 +301,7 @@
     <keybind key="XF86_MonBrightnessDown">
       <action name="Execute" command="brightnessctl --class=backlight set 10%-"/>
     </keybind>
-    <keybind key="S-XF86_MonBrightnessDown">
+    <keybind key="W-S-q">
       <action name="Execute" command="wlopm --toggle eDP-1"/>
     </keybind>
     <keybind key="C-Escape">
