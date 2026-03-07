@@ -30,8 +30,8 @@
   </placement>
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
-    <!-- <name>Numix</name> -->
-    <!-- <icon>breeze</icon> -->
+    <name>adw-gtk3</name>
+    <icon>Papirus-Light</icon>
     <fallbackAppIcon>labwc</fallbackAppIcon>
     <titlebar>
       <layout>icon:iconify,max,close</layout>
