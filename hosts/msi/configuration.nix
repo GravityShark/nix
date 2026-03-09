@@ -12,6 +12,7 @@
     adb.enable = false;
     atk.enable = true;
     distrobox.enable = false;
+    gamemode.enable = false;
     openrazer.enable = false;
     steam.enable = true;
     vial.enable = true;
@@ -35,7 +36,6 @@
     bluetooth.enable = true;
     disks.enable = true;
     flatpak.enable = true;
-    gamemode.enable = false;
     kanata.enable = true;
     networking.enable = true;
     pipewire.enable = true;
