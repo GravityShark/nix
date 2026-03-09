@@ -9,7 +9,6 @@
     ./flatpak.nix
     ./gamemode.nix
     ./kanata.nix
-    ./logind.nix
     ./networking.nix
     ./pipewire.nix
     ./power-management.nix

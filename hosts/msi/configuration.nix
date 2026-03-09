@@ -16,7 +16,6 @@
     vial.enable = true;
     waydroid.enable = true;
     winboat.enable = true;
-    windows.enable = false;
   };
 
   system = {
@@ -27,7 +26,8 @@
     nvidia.enable = true;
     systemd-boot.enable = true;
     thp.enable = true;
-    zram.enable = false;
+    zram.enable = true;
+    logind.enable = true;
   };
 
   service = {
@@ -37,7 +37,6 @@
     flatpak.enable = true;
     gamemode.enable = false;
     kanata.enable = true;
-    logind.enable = true;
     networking.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
