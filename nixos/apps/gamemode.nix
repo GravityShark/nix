@@ -2,9 +2,9 @@
 
 {
   options = {
-    service.gamemode.enable = lib.mkEnableOption "enables gamemode";
+    apps.gamemode.enable = lib.mkEnableOption "provides gamemode to your doorstep";
   };
-  config = lib.mkIf config.service.gamemode.enable {
+  config = lib.mkIf config.apps.gamemode.enable {
     users.users.${config.username}.extraGroups = [ "gamemode" ];
 
     programs.gamemode = {

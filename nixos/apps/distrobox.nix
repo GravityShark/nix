@@ -7,9 +7,9 @@
 
 {
   options = {
-    service.distrobox.enable = lib.mkEnableOption "enables distrobox";
+    apps.distrobox.enable = lib.mkEnableOption "enables distrobox";
   };
-  config = lib.mkIf config.service.distrobox.enable {
+  config = lib.mkIf config.apps.distrobox.enable {
     virtualisation.podman = {
       enable = true;
       dockerCompat = true;

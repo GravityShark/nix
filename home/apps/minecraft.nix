@@ -83,7 +83,7 @@ in
       # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
     };
 
-    xdg.configFile."waywall/pvp.lua".source = ../../dump/.config/waywall/pvp.lua;
+    xdg.configFile."waywall/normal.lua".source = ../../dump/.config/waywall/normal.lua;
 
     home.file.".java/.userPrefs/ninjabrainbot/prefs.xml".source =
       ../../dump/.java/.userPrefs/ninjabrainbot/prefs.xml;

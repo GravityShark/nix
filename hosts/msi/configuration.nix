@@ -11,6 +11,7 @@
   apps = {
     adb.enable = false;
     atk.enable = true;
+    distrobox.enable = false;
     openrazer.enable = false;
     steam.enable = true;
     vial.enable = true;
@@ -33,7 +34,6 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    distrobox.enable = false;
     flatpak.enable = true;
     gamemode.enable = false;
     kanata.enable = true;
