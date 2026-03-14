@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  # pkgs,
+  pkgs,
   ...
 }:
 
@@ -29,9 +29,9 @@
 
       networking.networkmanager.enable = true;
 
-      # networking.nftables.enable = true; # Better implementation
-      # networking.firewall.allowedTCPPorts = [ 25565 ];
-      # networking.firewall.allowedUDPPorts = [ 19132 ];
+      networking.nftables.enable = true; # Better implementation
+      networking.firewall.allowedTCPPorts = [ 25565 ];
+      networking.firewall.allowedUDPPorts = [ 19132 ];
       # networking.nftables.tables = {
       #   filter = {
       #     content = ''
@@ -71,7 +71,9 @@
       #     family = "inet";
       #   };
       # };
-      networking.firewall.enable = false; # FIX: Firewall blocks all connections, incoming and outcoming
+
+      environment.systemPackages = with pkgs; [ nixos-firewall-tool ];
+      # networking.firewall.enable = false; # FIX: Firewall blocks all connections, incoming and outcoming
 
       networking.timeServers = [
         "0.asia.pool.ntp.org"

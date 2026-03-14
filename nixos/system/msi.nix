@@ -72,7 +72,8 @@
           ''}";
         Restart = "on-failure";
       };
-      wantedBy = [ "multi-user.target" ];
+      after = [ "graphical.target" ];
+      wantedBy = [ "graphical.target" ];
     };
 
     # Sets the msi stats
