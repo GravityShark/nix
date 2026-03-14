@@ -26,19 +26,6 @@
       wlopm
     ];
 
-    ## how to fix this?
-    # xdg.portal = {
-    #   enable = true;
-    #   extraPortals = with pkgs; [
-    #     xdg-desktop-portal-wlr
-    #     xdg-desktop-portal-gtk
-    #   ];
-    #   config.wlroots.default = [
-    #     "wlr"
-    #     "gtk"
-    #   ];
-    # };
-
     xdg.configFile."labwc/rc.xml".source = ../../dump/.config/labwc/rc.xml;
     # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix/dump/.config/labwc/rc.xml";
 
@@ -55,7 +42,7 @@
         "NIXOS_OZONE_WL=1"
         "QT_QPA_PLATFORM=wayland;xcb"
         "SDL_VIDEODRIVER=wayland"
-        # "WAYLAND_DISPLAY=wayland-0"
+        "WAYLAND_DISPLAY=wayland-0"
       ];
       menu = [
         {
