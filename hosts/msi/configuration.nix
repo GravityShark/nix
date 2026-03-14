@@ -56,7 +56,7 @@
 
   ## Use labwc instead when we are gaming cause it has tearing support
   ## we gotta wait for this https://github.com/niri-wm/niri/issues/844
-  programs.labwc.enable = true;
+  # programs.labwc.enable = true;
 
   # programs.nix-ld = {
   #   enable = true;
