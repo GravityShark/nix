@@ -53,7 +53,7 @@
     gnome-system-monitor
     pear-desktop
     # selectdefaultapplication
-    super-productivity
+    # super-productivity
     # vial
 
     ## Media
