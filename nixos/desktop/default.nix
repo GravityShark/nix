@@ -35,8 +35,9 @@
 
   options.desktop.command = lib.mkOption {
     type = lib.types.str;
-    description = "You should not use this, but this is what is ran by
-                  login-managers. Should only be set by the display server config";
+    description = ''
+      You should not manually change this, but this is what is 
+      ran by login-managers. Should only be set by the display server config'';
     example = "sway";
     default = null;
   };

@@ -42,7 +42,7 @@
         "NIXOS_OZONE_WL=1"
         "QT_QPA_PLATFORM=wayland;xcb"
         "SDL_VIDEODRIVER=wayland"
-        "WAYLAND_DISPLAY=wayland-0"
+        # "WAYLAND_DISPLAY=wayland-0"
       ];
       menu = [
         {
