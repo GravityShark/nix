@@ -105,6 +105,9 @@
       };
     };
 
+    # NOTE: There is some update shenanigans here
+    gtk.gtk4.theme = config.gtk.theme;
+
     ## Niri
     xdg.configFile."niri/base16.kdl".text =
       with config.lib.stylix.colors.withHashtag;
