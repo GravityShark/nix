@@ -17,7 +17,7 @@
     steam.enable = true;
     vial.enable = true;
     waydroid.enable = true;
-    winboat.enable = true;
+    winboat.enable = false;
   };
 
   system = {
