@@ -298,7 +298,7 @@
                 width = 7;
               }
               {
-                displayMode = "alwaysShow";
+                displayMode = "onhover";
                 iconColor = "none";
                 id = "Network";
                 textColor = "none";
