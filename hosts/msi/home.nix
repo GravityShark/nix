@@ -48,8 +48,8 @@
   home.packages = with pkgs; [
     ## Apps
     baobab
-    # chromium
-    # easyeffects
+    chromium
+    easyeffects
     gnome-system-monitor
     pear-desktop
     # selectdefaultapplication
@@ -84,7 +84,7 @@
 
     ## Gaming
     # (bottles.override { removeWarningPopup = true; })
-    # dolphin-emu
+    dolphin-emu
     # gamescope
     # rare
     # umu-launcher
@@ -92,6 +92,9 @@
     # wineWow64Packages.stable
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
+
+    # wl-clipboard
+    # wl-mirror
   ];
 
   ## Other programss

@@ -19,11 +19,15 @@
 
     home.packages = with pkgs; [
       gpu-screen-recorder-gtk
-      grim
-      slurp
-      wl-clipboard
-      wl-mirror
       wlopm
+      (writers.writeDashBin "screenshot" ''
+        name=~/Pictures/Screenshots/Screenshot\ from\ $(date +'%Y-%m-%d %H-%M-%S').png
+        ${slurp}/bin/slurp | ${grim}/bin/grim -g - - | ${coreutils}/bin/tee -a "$name" | ${wl-clipboard}/bin/wl-copy; ${notify-desktop}/bin/notify-desktop -a System -i "$name" "Screenshot copied to clipboard" "Stored in $name"
+      '')
+      (writers.writeDashBin "screenshot-full" ''
+        name=~/Pictures/Screenshots/Screenshot\ from\ $(date +'%Y-%m-%d %H-%M-%S').png
+        ${grim}/bin/grim - | ${coreutils}/bin/tee -a "$name" | ${wl-clipboard}/bin/wl-copy; ${notify-desktop}/bin/notify-desktop -a System -i "$name" "Screenshot copied to clipboard" "Stored in $name"
+      '')
     ];
 
     xdg.configFile."labwc/rc.xml".source = ../../dump/.config/labwc/rc.xml;
