@@ -79,7 +79,12 @@
 
     ## CLIs
     # aria2
-    p7zip-rar
+    # aria2p
+    # atool
+    p7zip
+    # rar
+    # zip
+    # lzop
     wget
 
     ## Gaming
