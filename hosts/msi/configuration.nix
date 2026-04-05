@@ -16,7 +16,7 @@
     openrazer.enable = false;
     steam.enable = true;
     vial.enable = true;
-    waydroid.enable = true;
+    waydroid.enable = false;
     winboat.enable = false; # NOTE: Winboat fails to compile for somereason
   };
 
@@ -58,9 +58,9 @@
   ## we gotta wait for this https://github.com/niri-wm/niri/issues/844
   programs.labwc.enable = true;
 
-  programs.nix-ld = {
-    enable = true;
-  };
+  # programs.nix-ld = {
+  #   enable = true;
+  # };
   # libraries = with pkgs; [
   #   ## Put here any library that is required when running a package
   #   ## ...

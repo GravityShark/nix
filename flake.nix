@@ -9,7 +9,7 @@
     };
     flatpaks.url = "github:gmodena/nix-flatpak/latest";
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v4.7.3";
+      url = "github:noctalia-dev/noctalia-shell/v4.7.5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ppd-dbus-hook = {
