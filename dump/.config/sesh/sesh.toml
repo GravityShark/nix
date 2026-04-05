@@ -51,11 +51,11 @@ name = "ssh"
 startup_command = "ssh gravity@clr"
 preview_command = "ping clr -c 1"
 
-[[session]]
-name = "tmux"
-path = "~/.nix/dump"
-startup_command = "$EDITOR .tmux.conf"
-preview_command = "cat .tmux.conf"
+# [[session]]
+# name = "tmux"
+# path = "~/.nix/dump"
+# startup_command = "$EDITOR .tmux.conf"
+# preview_command = "cat .tmux.conf"
 
 [[session]]
 name = "website" 
