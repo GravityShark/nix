@@ -64,39 +64,39 @@
         # python3
         # arduino-ide
 
-        # C
+        ## C
         clang-tools
         # gdb
         # lldb
 
-        # Go
+        ## Go
         gofumpt
         goimports-reviser
         golangci-lint
         golines
         gopls
 
-        # Java
+        ## Java
         # graalvm-ce
         # javaPackages.compiler.temurin-bin.jre-21
         # javaPackages.compiler.temurin-bin.jre-25
 
-        # Lua
+        ## Lua
         lua-language-server
         stylua
 
-        # Nix
+        ## Nix
         nixd
         nixfmt
 
-        # Python
+        ## Python
         pyright
         ruff
 
-        # Shell
+        ## Shell
         shfmt
 
-        # Web dev
+        ## Web dev
         emmet-language-server
         prettierd
         quick-lint-js
@@ -104,7 +104,7 @@
         typescript-language-server
         vscode-langservers-extracted # contains html-lsp and json-lsp
 
-        # 25 day AOC challenge
+        ## 25 day AOC challenge
 
         # crystal
         # csharp-ls
