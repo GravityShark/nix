@@ -5,4 +5,4 @@ tmux send-keys "nix-shell --command \"cd web/; ./build/tailwindcss.sh --watch\""
 tmux select-pane -t :.+
 tmux send-keys "nix-shell --command \"air\"" Enter
 tmux new-window
-tmux send-keys "v" Enter
+tmux send-keys "nix-shell --command \"v\"" Enter

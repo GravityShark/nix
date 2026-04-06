@@ -60,8 +60,7 @@
     audacity
     gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
-    # krita # Drawing, NOTE: Krita does not build (26/02/28)
-    pinta # Drawing instead
+    krita # Drawing
 
     ## Specific file type
     nautilus

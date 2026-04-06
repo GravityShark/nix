@@ -27,7 +27,7 @@
         vpl-gpu-rt
         # intel-compute-runtime-legacy1
         intel-compute-runtime
-        # NOTE: 'intel-ocl' also exists as a legacy package; not recommended for Arc/Xe.
+        # 'intel-ocl' also exists as a legacy package; not recommended for Arc/Xe.
         # libvdpau-va-gl       # Only if you must run VDPAU-only apps
       ];
     };
