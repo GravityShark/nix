@@ -24,12 +24,13 @@
     doas.enable = true;
     drag-click.enable = true;
     intel.enable = true;
+    lanzaboote = true;
+    logind.enable = true;
     msi.enable = true;
     nvidia.enable = true;
     systemd-boot.enable = true;
     thp.enable = true;
     zram.enable = true;
-    logind.enable = true;
   };
 
   service = {

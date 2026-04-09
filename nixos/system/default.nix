@@ -5,7 +5,7 @@
     ./doas.nix
     ./drag-click.nix
     ./intel.nix
-    # ./lanzaboote.nix
+    ./lanzaboote.nix
     ./logind.nix
     ./msi.nix
     ./nvidia.nix
