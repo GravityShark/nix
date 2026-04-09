@@ -7,7 +7,7 @@
 }:
 
 {
-  imports = [ inputs.lanzaboote.ixosModules.lanzaboote ];
+  imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];
   options = {
     system.lanzaboote.enable = lib.mkEnableOption "enables lanzaboote";
   };
