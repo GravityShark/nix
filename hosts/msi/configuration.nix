@@ -24,7 +24,7 @@
     doas.enable = true;
     drag-click.enable = true;
     intel.enable = true;
-    lanzaboote = true;
+    lanzaboote.enable = true;
     logind.enable = true;
     msi.enable = true;
     nvidia.enable = true;
