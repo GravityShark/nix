@@ -1,11 +1,13 @@
 {
   config,
-  pkgs,
+  inputs,
   lib,
+  pkgs,
   ...
 }:
 
 {
+  imports = [ inputs.nixosModules.lanzaboote ];
   options = {
     system.lanzaboote.enable = lib.mkEnableOption "enables lanzaboote";
   };
