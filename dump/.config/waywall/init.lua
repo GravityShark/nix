@@ -248,7 +248,7 @@ local config = {
 	input = {
 		-- KEYBOARD CONFIG
 		layout = 'us',
-		repeat_rate = 50,
+		repeat_rate = 150,
 		repeat_delay = 200,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/

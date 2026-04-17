@@ -64,7 +64,7 @@
 
     ## Specific file type
     nautilus
-    # qbittorrent
+    qbittorrent
     swayimg
     vlc
 
