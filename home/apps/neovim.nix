@@ -104,6 +104,8 @@
         typescript-language-server
         vscode-langservers-extracted # contains html-lsp and json-lsp
 
+        kdlfmt
+
         ## 25 day AOC challenge
 
         # crystal
