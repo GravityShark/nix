@@ -122,7 +122,7 @@
               _    _    a    _    _    _    _    _    _    _   _ 
               ins    e    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
-              _    _    _    @base    @base
+              lalt    _    _    @base    @base
             )
 
             (deflayer nav

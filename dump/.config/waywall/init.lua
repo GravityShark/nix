@@ -232,10 +232,9 @@ local toggle_chat = function()
 	chat_state.enabled = not chat_state.enabled
 	if chat_state.enabled then
 		waywall.set_remaps({})
-		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 10 })
+		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 6 })
 	else
 		waywall.set_remaps(game_remaps)
-		chat_state.text:close()
 		chat_state.text = nil
 	end
 end
@@ -265,7 +264,7 @@ local config = {
 		ninb_opacity = 0.8,
 	},
 	actions = {
-		['super-insert'] = function()
+		['alt-insert'] = function()
 			if chat_state.enabled then
 				return false
 			end
@@ -301,7 +300,7 @@ local config = {
 			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
-		['super-h'] = function()
+		['alt-h'] = function()
 			if not oneshot_overlay_state then
 				oneshot_overlay_state = waywall.image(oneshot_overlay, {
 					dst = {
