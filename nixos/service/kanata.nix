@@ -47,7 +47,7 @@
                    q    w    e    r    t    y    u    i    o    p   [
               caps a    s    d    f    g    h    j    k    l    ;   '
               lsft z    x    c    v    b    n    m    ,    .    /   rsft
-              lalt spc  <    ralt rctl
+              lmet lalt spc  <    ralt rctl
             )
 
             (defalias
@@ -93,7 +93,7 @@
               _    _    _    _    _    _    _    _    _    _   _ 
               @cm    _    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
-              @nav    _    @sym    @mc    @rblx
+              _ @nav    _    @sym    @mc    @rblx
             )
 
             ;; (deflayer ruckus
@@ -109,12 +109,7 @@
               _    _    _    _    _    _    _    _    _    _   _ 
               ins    _    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
-              lalt    _    _    @base     _    
-              ;; _   p s 4 5
-              ;;      o    _    _    _    _    _    _    _    _    _   _ 
-              ;; k    _   d    i    _    _    _    _    _    _    _   _
-              ;; _    x    f3    _    n    _    0    _    _    _   _   _
-              ;; _    _    _    @base    @base
+              lalt _    _    _    @base     _    
             )
 
             (deflayer rblx
@@ -122,7 +117,7 @@
               _    _    a    _    _    _    _    _    _    _   _ 
               ins    e    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
-              _    _    _    @base    @base
+              _ _    _    _    @base    @base
             )
 
             (deflayer nav
@@ -130,7 +125,7 @@
               voldwn     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
               _ @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
               prtsc  brdown    brup    C-esc   del   XX  grv   bspc  del   menu  Insert _
-              _     ret @num XX XX
+              _ _     ret @num XX XX
             )
 
             (deflayer sym
@@ -138,7 +133,7 @@
               S-grv  S-2   S-3   S-4  S-5      S-7  [     S-[   S-]   ]     _
               _ S-6    S-'   -  ;    S-8      \    @osc  @oss  @osa  @osm  _
               +      S-\   =   /    ,    XX  .    S-9   S-,     S-.    S-0   _
-              @num   S-;   _     XX XX
+              _ @num   S-;   _     XX XX
             )
 
             (deflayer num
@@ -146,7 +141,7 @@
               XX  XX up  XX     XX XX    7    8    9    _    _
               _ @osm @osa @oss @osc @fun XX    4    5    6    0    _
               XX  XX  XX  down XX XX XX    1    2    3    _    _
-              _   XX  XX _   XX
+              _ _   XX  XX _   XX
             )
 
             (deflayer fun
@@ -154,7 +149,7 @@
               XX   XX   XX   XX   XX     _    F7    F8    F9    F12   _    
               _ @osm @osa @oss @osc XX     _    F4    F5    F6    F11   _  
               XX   XX   XX   XX   XX  XX _    F1    F2    F3    F10   _    
-              _   XX  XX _   XX
+              _ _   XX  XX _   XX
             )
           '';
         };
