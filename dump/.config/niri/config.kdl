@@ -437,6 +437,7 @@ window-rule {
 window-rule {
     match app-id="waywall"
     open-fullscreen true
+    allow-tearing true
 }
 
 
@@ -734,7 +735,6 @@ debug {
     ignore-drm-device "/dev/dri/card0"
     ignore-drm-device "/dev/dri/card1"
     honor-xdg-activation-with-invalid-serial
-    force-tearing
 }
 include "./base16.kdl"
 
