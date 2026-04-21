@@ -200,9 +200,6 @@ local game_remaps = {
 	['w'] = 'o',
 	['e'] = 'g',
 	['y'] = 'd',
-	-- ['u'] = 'leftbrace',
-	-- ['i'] = 'rightbrace',
-	-- ['o'] = 'apostrophe',
 
 	['insert'] = 'c',
 	['a'] = 'i',
@@ -210,6 +207,7 @@ local game_remaps = {
 	['d'] = 's',
 	['f'] = 'f',
 	['g'] = 'b',
+	-- NOTE: Wait for the day where scrollwheel is allowed for rebinds
 	-- ['j'] = 'comma',
 	-- ['k'] = 'dot',
 
@@ -217,8 +215,6 @@ local game_remaps = {
 	['x'] = 'f3',
 	['c'] = 'n',
 	['v'] = 'w',
-
-	['LEFTMETA'] = 'LEFTALT',
 }
 --
 -- -- ##############################################################################################
