@@ -339,7 +339,7 @@ workspace "music"
 workspace "chats"
 // spawn-at-startup "niri" "msg" "action" "do-screen-transition" "--delay-ms" "10000"
 spawn-at-startup "niriusd"
- // hopefully i dont need this anymorespawn-at-startup "ghostty"
+// hopefully i dont need this anymorespawn-at-startup "ghostty"
 // spawn-at-startup "zen"
 spawn-at-startup "super-productivity"
 // spawn-at-startup "youtube-music"
@@ -377,7 +377,8 @@ window-rule {
     }
 }
 window-rule {
-    match is-fullscreen="waywall"
+    match is-floating=true
+    match app-id="waywall"
     // open-fullscreen true
     allow-tearing true
 }
