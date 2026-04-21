@@ -200,6 +200,9 @@ local game_remaps = {
 	['w'] = 'o',
 	['e'] = 'g',
 	['y'] = 'd',
+	-- ['u'] = 'leftbrace',
+	-- ['i'] = 'rightbrace',
+	-- ['o'] = 'apostrophe',
 
 	['insert'] = 'c',
 	['a'] = 'i',
@@ -207,7 +210,6 @@ local game_remaps = {
 	['d'] = 's',
 	['f'] = 'f',
 	['g'] = 'b',
-	-- NOTE: Wait for the day where scrollwheel is allowed for rebinds
 	-- ['j'] = 'comma',
 	-- ['k'] = 'dot',
 
@@ -215,6 +217,8 @@ local game_remaps = {
 	['x'] = 'f3',
 	['c'] = 'n',
 	['v'] = 'w',
+
+	['LEFTMETA'] = 'LEFTALT',
 }
 --
 -- -- ##############################################################################################
@@ -231,6 +235,7 @@ local toggle_chat = function()
 		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 6 })
 	else
 		waywall.set_remaps(game_remaps)
+		chat_state.text:close()
 		chat_state.text = nil
 	end
 end
@@ -296,7 +301,7 @@ local config = {
 			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
-		['alt-h'] = function()
+		['control-h'] = function()
 			if not oneshot_overlay_state then
 				oneshot_overlay_state = waywall.image(oneshot_overlay, {
 					dst = {
