@@ -20,8 +20,8 @@
 
     home.packages = with pkgs; [
       ffmpeg
-      sesh
       git
+      sesh
     ];
   };
 }

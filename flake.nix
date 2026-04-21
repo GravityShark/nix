@@ -12,8 +12,17 @@
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-package = {
+      url = "github:urayde/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.niri-unstable.follows = "niri-package";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v4.7.5";
+      url = "github:noctalia-dev/noctalia-shell/v4.7.6";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ppd-dbus-hook = {

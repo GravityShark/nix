@@ -85,6 +85,7 @@
     # zip
     # lzop
     wget
+    yt-dlp
 
     ## Gaming
     # (bottles.override { removeWarningPopup = true; })
