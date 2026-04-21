@@ -218,7 +218,7 @@ local game_remaps = {
 	['c'] = 'n',
 	['v'] = 'w',
 
-	-- ['LEFTMETA'] = 'LEFTCTRL',
+	['LEFTMETA'] = 'LEFTALT',
 }
 --
 -- -- ##############################################################################################
@@ -265,7 +265,7 @@ local config = {
 		ninb_opacity = 0.8,
 	},
 	actions = {
-		['alt-insert'] = function()
+		['super-insert'] = function()
 			if chat_state.enabled then
 				return false
 			end
@@ -301,7 +301,7 @@ local config = {
 			end
 			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
 		end,
-		['control-h'] = function()
+		['super-h'] = function()
 			if not oneshot_overlay_state then
 				oneshot_overlay_state = waywall.image(oneshot_overlay, {
 					dst = {
