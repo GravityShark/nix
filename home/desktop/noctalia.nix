@@ -36,15 +36,15 @@
         Service = {
           ExecStart = ''
             ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
-                         "${
-                           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-                         }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \ 
-                         "${
-                           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-                         }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
-                         "${
-                           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-                         }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
+              "${
+                inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
+              "${
+                inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
+              "${
+                inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+              }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
           '';
           Restart = "on-failure";
           Type = "oneshot";
