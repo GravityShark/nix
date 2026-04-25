@@ -92,7 +92,6 @@
       enable = true;
       requires = [ "tlp-pd.service" ];
       serviceConfig = {
-        Type = "oneshot";
         ExecStart = ''
           ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
             "/bin/sh -c 'echo eco > /sys/devices/platform/msi-ec/shift_mode'" \

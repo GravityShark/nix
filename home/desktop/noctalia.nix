@@ -47,7 +47,6 @@
               }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
           '';
           Restart = "on-failure";
-          Type = "oneshot";
         };
         Install.WantedBy = [ "graphical-session.target" ];
       };
