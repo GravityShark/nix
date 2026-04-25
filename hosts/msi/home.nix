@@ -48,7 +48,7 @@
   home.packages = with pkgs; [
     ## Apps
     # baobab
-    # chromium
+    chromium
     # easyeffects
     gnome-system-monitor
     pear-desktop
