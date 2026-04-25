@@ -17,7 +17,7 @@
         "graalvm-oracle"
         "lunarclient"
         # "obsidian"
-        "p7zip"
+        "p7zip-rar"
       ];
 
     # caprine has outdated version
