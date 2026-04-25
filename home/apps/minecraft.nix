@@ -62,19 +62,6 @@ in
       }))
     ];
 
-    programs.obs-studio = {
-      enable = true;
-      # package = (
-      #   pkgs.obs-studio.override {
-      #     cudaSupport = true;
-      #   }
-      # );
-      plugins = with pkgs.obs-studio-plugins; [
-        obs-pipewire-audio-capture
-        input-overlay
-      ];
-    };
-
     xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
       eye_overlay = "${../../dump/.config/waywall/overlay.png}";
       oneshot_overlay = "${../../dump/.config/waywall/oneshot.png}";

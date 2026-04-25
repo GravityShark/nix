@@ -27,6 +27,7 @@
     ghostty.enable = true;
     minecraft.enable = true;
     neovim.enable = true;
+    obs.enable = false;
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;
@@ -46,9 +47,9 @@
   ## Packages
   home.packages = with pkgs; [
     ## Apps
-    baobab
-    chromium
-    easyeffects
+    # baobab
+    # chromium
+    # easyeffects
     gnome-system-monitor
     pear-desktop
     # selectdefaultapplication
@@ -56,14 +57,14 @@
     # vial
 
     ## Media
-    audacity
-    gnome-sound-recorder
+    # audacity
+    # gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
 
     ## Specific file type
     nautilus
-    qbittorrent
+    # qbittorrent
     swayimg
     vlc
 
@@ -79,16 +80,16 @@
     # aria2
     # aria2p
     # atool
+    # lzop
     p7zip
     # rar
-    # zip
-    # lzop
-    wget
+    # wget
     yt-dlp
+    # zip
 
     ## Gaming
     # (bottles.override { removeWarningPopup = true; })
-    dolphin-emu
+    # dolphin-emu
     # gamescope
     # rare
     # umu-launcher
@@ -97,6 +98,7 @@
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
 
+    # TODO: make wl-mirror work and seamlessly
     # wl-clipboard
     # wl-mirror
   ];

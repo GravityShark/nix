@@ -381,7 +381,6 @@ window-rule {
     match app-id="waywall"
     // open-fullscreen true
     allow-tearing true
-    baba-is-float true
 }
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name

@@ -7,7 +7,6 @@
   config = lib.mkIf config.service.printing.enable {
     # TODO: Printing lowkey doesn't work
     users.users.${config.username}.extraGroups = [
-
       "lp"
       "scanner"
     ];
