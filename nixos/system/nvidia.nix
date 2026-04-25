@@ -23,15 +23,16 @@
     # https://wiki.archlinux.org/title/PRIME#NVIDIA
     # https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend
     boot.extraModprobeConfig = ''
-      options nvidia "NVreg_EnableGpuFirmware=0"
+      options nvidia NVreg_EnableGpuFirmware=0 NVreg_UseKernelSuspendNotifiers=1 NVreg_TemporaryFilePath=/var/tmp
     '';
 
     hardware.nvidia = {
       # Open drivers prevent going into D3
       # https://bbs.archlinux.org/viewtopic.php?pid=2187680#p2187680
-      open = false;
+      open = true;
 
       nvidiaPersistenced = true;
+      dynamicBoost.enable = true;
       powerManagement = {
         enable = true;
         finegrained = true;
