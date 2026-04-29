@@ -4,6 +4,7 @@
 tmux send-keys "nix-shell --command \"v\"" Enter
 
 tmux new-window
+tmux send-keys "nix-shell" Enter
 
 tmux new-window
 tmux split-window -h
