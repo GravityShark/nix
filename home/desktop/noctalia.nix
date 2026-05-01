@@ -232,20 +232,26 @@
               }
               {
                 defaultSettings = {
-                  audioCodec = "opus";
-                  audioSource = "default_output";
-                  colorRange = "limited";
-                  copyToClipboard = false;
-                  directory = "";
-                  filenamePattern = "recording_yyyyMMdd_HHmmss";
-                  frameRate = "60";
                   hideInactive = false;
                   iconColor = "none";
-                  quality = "very_high";
-                  resolution = "original";
+                  directory = "~/Videos/Screencasts/";
+                  filenamePattern = "yyyyMMdd_HHmmss";
+                  frameRate = 60;
+                  audioCodec = "opus";
+                  videoCodec = "av1";
+                  quality = "medium";
+                  colorRange = "limited";
                   showCursor = true;
-                  videoCodec = "h264";
+                  copyToClipboard = true;
+                  audioSource = "default_output";
                   videoSource = "portal";
+                  resolution = "original";
+                  replayEnabled = true;
+                  replayDuration = 300;
+                  customReplayDuration = 30;
+                  replayStorage = "ram";
+                  restorePortalSession = false;
+                  customFrameRate = 60;
                 };
                 id = "plugin:screen-recorder";
               }
