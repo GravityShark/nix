@@ -358,6 +358,7 @@ window-rule {
 window-rule {
     match app-id="obsidian"
     match app-id="superProductivity"
+    match title="Super Productivity"
     open-maximized true
     open-on-workspace "notes"
 }
