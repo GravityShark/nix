@@ -29,9 +29,7 @@
             cpu_temp = 106;
             gpu_speed = 138;
             gpu_temp = 130;
-            write =
-              addr: value:
-              "${pkgs.nbfc-linux}/bin/ec_probe write ${builtins.toString addr} ${builtins.toString value}";
+            write = addr: value: "${pkgs.nbfc-linux}/bin/ec_probe write ${toString addr} ${toString value}";
           in
           "${pkgs.writers.writeDash "ec_sys_fans" ''
             if ! ${pkgs.kmod}/bin/lsmod | ${pkgs.gnugrep}/bin/grep -q ec_sys; then

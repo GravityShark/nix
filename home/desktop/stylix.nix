@@ -106,7 +106,7 @@
     };
 
     # NOTE: There is some update shenanigans here
-    gtk.gtk4.theme = config.gtk.theme;
+    # gtk.gtk4.theme = config.gtk.theme;
 
     ## Niri
     xdg.configFile."niri/base16.kdl".text =
@@ -151,7 +151,7 @@
 
         cursor {
            xcursor-theme "${config.stylix.cursor.name}"
-           xcursor-size ${builtins.toString config.stylix.cursor.size}
+           xcursor-size ${toString config.stylix.cursor.size}
         }
       '';
 
@@ -182,7 +182,7 @@
     ## Labwc
     wayland.windowManager.labwc.environment = lib.mkIf config.wayland.windowManager.labwc.enable [
       "XCURSOR_THEME=${config.stylix.cursor.name}"
-      "XCURSOR_SIZE=${builtins.toString config.stylix.cursor.size}"
+      "XCURSOR_SIZE=${toString config.stylix.cursor.size}"
     ];
 
     ## Noctalia-shell
