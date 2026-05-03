@@ -97,10 +97,6 @@
     # wineWow64Packages.stable
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
-
-    # TODO: make wl-mirror work and seamlessly
-    # wl-clipboard
-    # wl-mirror
   ];
 
   ## Other programss
