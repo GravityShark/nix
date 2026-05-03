@@ -294,10 +294,10 @@
             ];
             right = [
               {
-                id = "plugin:usb-drive-manager";
+                id = "plugin:privacy-indicator";
               }
               {
-                id = "plugin:privacy-indicator";
+                id = "plugin:usb-drive-manager";
               }
               {
                 compactMode = true;
