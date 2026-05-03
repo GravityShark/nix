@@ -97,6 +97,16 @@
       };
 
       pluginSettings = {
+        privacy-indicator = {
+          hideInactive = true;
+          enableToast = true;
+          removeMargins = false;
+          iconSpacing = 4;
+          activeColor = "primary";
+          inactiveColor = "none";
+          micFilterRegex = "";
+          camFilterRegex = "";
+        };
         screen-recorder = {
           hideInactive = false;
           iconColor = "none";
@@ -119,15 +129,20 @@
           restorePortalSession = false;
           customFrameRate = 60;
         };
-        privacy-indicator = {
-          hideInactive = true;
-          enableToast = true;
-          removeMargins = false;
-          iconSpacing = 4;
-          activeColor = "primary";
-          inactiveColor = "none";
-          micFilterRegex = "";
-          camFilterRegex = "";
+        usb-drive-manager = {
+          autoMount = false;
+          fileBrowser = "xdg-open";
+          terminalCommand = "ghostty";
+          showNotifications = true;
+          hideWhenEmpty = true;
+          showBadge = true;
+          iconColor = "none";
+        };
+        web-search = {
+          search_engine = "DuckDuckGo";
+          direct_url = true;
+          show_suggestions = true;
+          max_results = 5;
         };
       };
       settings = {
@@ -278,6 +293,9 @@
               }
             ];
             right = [
+              {
+                id = "plugin:usb-drive-manager";
+              }
               {
                 id = "plugin:privacy-indicator";
               }
@@ -451,7 +469,7 @@
                 stateChecksJson = "[]";
               }
               {
-                id = "WallpaperSelector";
+                id = "plugin:mirror-mirror";
               }
               {
                 id = "plugin:screen-recorder";
