@@ -24,7 +24,7 @@
       pkg:
       builtins.elem (lib.getName pkg) [
         "cloudflare-warp"
-        "nvidia-persistenced"
+        "nvidia-kernel-modules"
         "nvidia-settings"
         "nvidia-x11"
         "steam"
