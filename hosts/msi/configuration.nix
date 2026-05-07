@@ -9,7 +9,7 @@
   desktop.login-manager = "greetd";
 
   apps = {
-    adb.enable = false;
+    adb.enable = true;
     atk.enable = true;
     distrobox.enable = false;
     gamemode.enable = false;
