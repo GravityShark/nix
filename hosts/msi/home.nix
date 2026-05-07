@@ -52,6 +52,7 @@
     # easyeffects
     gnome-system-monitor
     pear-desktop
+    racket
     # selectdefaultapplication
     super-productivity
     # vial
