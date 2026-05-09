@@ -64,8 +64,8 @@
     };
 
     stylix.cursor = {
-      package = pkgs.callPackage ../packages/hand-of-evil.nix { };
-      name = lib.mkDefault "hand-of-evil";
+      package = pkgs.callPackage ../packages/geared-cursor.nix;
+      name = lib.mkDefault "Geared";
       size = 60;
     };
 

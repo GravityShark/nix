@@ -6,7 +6,7 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "hand-of-evil";
-  version = "1.2";
+  version = "1.1";
 
   sourceRoot = ".";
   srcs = fetchzip {
