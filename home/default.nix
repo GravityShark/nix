@@ -14,10 +14,9 @@
     allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
+        "_7zz-rar"
         "graalvm-oracle"
         "lunarclient"
-        # "obsidian"
-        "p7zip"
       ];
 
     # caprine has outdated version

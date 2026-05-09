@@ -64,7 +64,7 @@
     };
 
     stylix.cursor = {
-      package = pkgs.callPackage ../packages/geared-cursor.nix;
+      package = pkgs.callPackage ../packages/geared-cursor.nix { };
       name = lib.mkDefault "Geared";
       size = 60;
     };

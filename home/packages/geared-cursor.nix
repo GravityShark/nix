@@ -10,14 +10,14 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   sourceRoot = ".";
   srcs = fetchzip {
-    url = "https://github.com/piraker-grinor/geared-cursor/releases/download/v${finalAttrs.version}/Geared-${finalAttrs.version}.7z";
+    url = "https://github.com/piraker-grinor/geared-cursor/archive/refs/tags/v${finalAttrs.version}.tar.gz";
     name = "Geared";
-    hash = "";
+    hash = "sha256-zfucSMU3gQwIgySvdh4LYvMMIcSFwOcc13ETb2/Ndao=";
   };
 
-  installPhase = ''
-    install -dm 0755 $out/share/icons
-    cp -r * $out/share/icons
+  postInstall = ''
+    mkdir -p $out/share/icons
+    cp -r Geared/Geared $out/share/icons
   '';
 
   meta = {

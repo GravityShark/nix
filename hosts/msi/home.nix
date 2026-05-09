@@ -82,7 +82,7 @@
     # aria2p
     # atool
     # lzop
-    p7zip-rar
+    _7zz-rar
     # rar
     # wget
     yt-dlp
