@@ -10,7 +10,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   sourceRoot = ".";
   srcs = fetchzip {
-
     url = "https://github.com/piraker-grinor/geared-cursor/releases/download/v${finalAttrs.version}/Geared-${finalAttrs.version}.7z";
     name = "Geared";
     hash = "";
@@ -22,10 +21,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   '';
 
   meta = {
-    description = "Xcursor theme based on Dungeon Keeper II in-game cursors.";
-    homepage = "https://github.com/Grief/hand-of-evil";
+    description = "Custom pre-rendered 3D cursor for Linux ";
+    homepage = "https://github.com/piraker-grinor/geared-cursor";
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.all;
-    maintainers = with lib.maintainers; [ Grief ];
+    maintainers = with lib.maintainers; [ piraker-grinor ];
   };
 })
