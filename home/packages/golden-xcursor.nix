@@ -28,6 +28,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     homepage = "https://www.gnome-look.org/p/2348466";
     license = lib.licenses.lgpl21Only;
     platforms = lib.platforms.all;
-    maintainers = with lib.maintainers; [ piraker-grinor ];
+    maintainers = with lib.maintainers; [
+      XIUM
+      EZTEBAN
+    ];
   };
 })
