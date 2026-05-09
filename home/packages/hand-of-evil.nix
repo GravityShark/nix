@@ -12,7 +12,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   srcs = fetchzip {
     url = "https://github.com/Grief/hand-of-evil/releases/download/v${finalAttrs.version}/hand-of-evil.tar.gz";
     name = "hand-of-evil";
-    hash = "sha256-K0P6EqlJEPke6IMi2viVDzdzHG4zoRv87u5dL5dMem0=";
+    hash = "sha256-tZn+GCKOQqM+EYSzxF2qKHPHa1xgewAnedG/jaoDoVE=";
   };
 
   installPhase = ''
