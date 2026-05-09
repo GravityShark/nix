@@ -16,7 +16,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     hash = "sha256-muDO6hNyArC1v4eKryzoE1HIu5WyOsPX+NlR0S+oXk4=";
   };
 
-  phases = [ "installPhase" ];
+  unpackPhase = ":";
   installPhase = ''
     mkdir -p $out/share/icons
     ${_7zz}/bin/7zz x Geared-${finalAttrs.version}.7z -oGeared
