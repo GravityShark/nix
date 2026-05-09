@@ -17,7 +17,7 @@
     steam.enable = true;
     vial.enable = true;
     waydroid.enable = false;
-    winboat.enable = false; # NOTE: Winboat fails to compile for somereason
+    winboat.enable = false; # FIX: Winboat fails to compile for somereason
   };
 
   system = {

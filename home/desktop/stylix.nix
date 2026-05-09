@@ -65,8 +65,10 @@
 
     stylix.cursor = {
       package = pkgs.callPackage ../packages/geared-cursor.nix { };
-      name = lib.mkDefault "Geared";
-      size = 60;
+      name = "Geared";
+      # package = pkgs.callPackage ../packages/hand-of-evil.nix { };
+      # name = "hand-of-evil";
+      size = 128;
     };
 
     stylix.icons.enable = true;
@@ -102,8 +104,8 @@
       };
     };
 
-    # NOTE: There is some update shenanigans here
-    # gtk.gtk4.theme = config.gtk.theme;
+    # FIX: 26.05 default behavior, when updated remove.
+    gtk.gtk4.theme = config.gtk.theme;
 
     ## Niri
     xdg.configFile."niri/base16.kdl".text =

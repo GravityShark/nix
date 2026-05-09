@@ -5,7 +5,8 @@
 # dir_length = 2
 
 [default_session]
-startup_command = "l"
+# FIX: sesh v2.26.1 breaks startup_command for like echoing things, so wait for it to update
+# startup_command = "l"
 preview_command = "eza --all --git --icons --color=always {}"
 # preview_command = "l"
 #
@@ -24,7 +25,7 @@ path = "~/Code"
 [[session]]
 name = "neovim"
 path = "~/.nix/dump/.config/nvim"
-startup_command = "git status"
+# startup_command = "git status"
 
 # [[session]]
 # name = "POrtage config 🧴"
@@ -34,7 +35,7 @@ startup_command = "git status"
 name = "nix"
 # name = "nix 󱄅"
 path = "~/.nix"
-startup_command = "git status"
+# startup_command = "git status"
 
 [[session]]
 name = "scripts"

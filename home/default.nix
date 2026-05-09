@@ -14,7 +14,8 @@
     allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
-        "_7zz-rar"
+        "7zz"
+        "uasm"
         "graalvm-oracle"
         "lunarclient"
       ];

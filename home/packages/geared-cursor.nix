@@ -1,7 +1,8 @@
 {
-  fetchzip,
+  fetchurl,
   lib,
   stdenvNoCC,
+  _7zz,
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
@@ -9,15 +10,17 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   version = "1.1";
 
   sourceRoot = ".";
-  srcs = fetchzip {
-    url = "https://github.com/piraker-grinor/geared-cursor/archive/refs/tags/v${finalAttrs.version}.tar.gz";
-    name = "Geared";
-    hash = "sha256-zfucSMU3gQwIgySvdh4LYvMMIcSFwOcc13ETb2/Ndao=";
+  src = fetchurl {
+    url = "https://github.com/piraker-grinor/geared-cursor/releases/download/v${finalAttrs.version}/Geared-${finalAttrs.version}.7z";
+    name = "Geared-${finalAttrs.version}.7z";
+    hash = "sha256-muDO6hNyArC1v4eKryzoE1HIu5WyOsPX+NlR0S+oXk4=";
   };
 
-  postInstall = ''
+  phases = [ "installPhase" ];
+  installPhase = ''
     mkdir -p $out/share/icons
-    cp -r Geared/Geared $out/share/icons
+    ${_7zz}/bin/7zz x Geared-${finalAttrs.version}.7z -oGeared
+    cp -r Geared $out/share/icons
   '';
 
   meta = {

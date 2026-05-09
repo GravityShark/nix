@@ -528,7 +528,7 @@
           animationDisabled = false;
           animationSpeed = 2;
           autoStartAuth = false;
-          avatarImage = "/home/gravity/Notes/assets/gravityshark.png";
+          avatarImage = "";
           boxRadiusRatio = 1;
           clockFormat = "hh\\nmm";
           clockStyle = "custom";
@@ -741,7 +741,7 @@
         };
         wallpaper = {
           automationEnabled = false;
-          directory = "/home/gravity/Pictures/Wallpapers";
+          directory = "/home/${config.home.username}/Pictures/Wallpapers";
           enableMultiMonitorDirectories = false;
           enabled = true;
           fillColor = "#000000";
