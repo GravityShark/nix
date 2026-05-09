@@ -18,14 +18,16 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [ _7zz ];
   unpackPhase = "
-    runHook preUnpacck 
+    runHook preUnpack 
     7zz x $src -oGeared
     runHook postUnpack
   ";
 
   installPhase = ''
+    runHook preInstall
     mkdir -p $out/share/icons
     cp -r Geared $out/share/icons
+    runHook postInstall
   '';
 
   meta = {

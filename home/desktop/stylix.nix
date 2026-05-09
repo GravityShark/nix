@@ -68,7 +68,7 @@
       name = "Geared";
       # package = pkgs.callPackage ../packages/hand-of-evil.nix { };
       # name = "hand-of-evil";
-      size = 128;
+      size = 256;
     };
 
     stylix.icons.enable = true;
