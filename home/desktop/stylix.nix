@@ -66,7 +66,7 @@
     stylix.cursor = {
       package = pkgs.callPackage ../packages/hand-of-evil.nix { };
       name = lib.mkDefault "hand-of-evil";
-      size = 38;
+      size = 60;
     };
 
     stylix.icons.enable = true;
