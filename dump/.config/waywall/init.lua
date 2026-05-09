@@ -261,7 +261,6 @@ local config = {
 		background = '#1d2021ff',
 		ninb_anchor = 'right',
 		ninb_opacity = 0.8,
-		cursor_size = 48,
 	},
 	actions = {
 		['alt-insert'] = function()
