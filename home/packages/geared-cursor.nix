@@ -5,7 +5,7 @@
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "hand-of-evil";
+  pname = "geared-cursor";
   version = "1.1";
 
   sourceRoot = ".";
