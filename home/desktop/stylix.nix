@@ -66,7 +66,7 @@
     stylix.cursor = {
       package = pkgs.callPackage ../packages/golden-xcursor.nix { };
       name = "GoldenXMod";
-      size = 64;
+      size = 48;
     };
 
     stylix.icons.enable = true;
