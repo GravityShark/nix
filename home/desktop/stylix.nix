@@ -64,8 +64,8 @@
     };
 
     stylix.cursor = {
-      package = pkgs.callPackage ../packages/geared-cursor.nix { };
-      name = "Geared";
+      package = pkgs.callPackage ../packages/GoldenXMod.tar.gz { };
+      name = "GoldenXMod";
       # package = pkgs.callPackage ../packages/hand-of-evil.nix { };
       # name = "hand-of-evil";
       size = 156;
