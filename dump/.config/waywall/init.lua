@@ -258,11 +258,10 @@ local config = {
 		remaps = game_remaps,
 	},
 	theme = {
-		-- background = '#1b0e1fff',
 		background = '#1d2021ff',
-		-- background = '#00000000',
 		ninb_anchor = 'right',
 		ninb_opacity = 0.8,
+		cursor_size = 48,
 	},
 	actions = {
 		['alt-insert'] = function()
