@@ -9,7 +9,7 @@
 }:
 
 let
-  ninjabrain-bot = pkgs.callPackage ./packages/ninjabrainbot.nix { };
+  ninjabrain-bot = pkgs.callPackage ../packages/ninjabrainbot.nix { };
 in
 {
   options = {

@@ -64,11 +64,8 @@
     };
 
     stylix.cursor = {
-      # package = pkgs.bibata-cursors;
-      # package = pkgs.nordzy-cursor-theme;
-      # name = lib.mkDefault "Nordzy-cursors";
-      package = pkgs.banana-cursor;
-      name = lib.mkDefault "Banana";
+      package = pkgs.callPackage ../packages/hand-of-evil.nix { };
+      name = lib.mkDefault "hand-of-evil";
       size = 38;
     };
 
