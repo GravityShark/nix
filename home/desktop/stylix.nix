@@ -64,11 +64,9 @@
     };
 
     stylix.cursor = {
-      package = pkgs.callPackage ../packages/GoldenXMod.tar.gz { };
+      package = pkgs.callPackage ../packages/golden-xcursor.nix { };
       name = "GoldenXMod";
-      # package = pkgs.callPackage ../packages/hand-of-evil.nix { };
-      # name = "hand-of-evil";
-      size = 156;
+      size = 64;
     };
 
     stylix.icons.enable = true;
