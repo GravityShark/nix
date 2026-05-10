@@ -26,32 +26,45 @@
       #     inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
       #   }/bin/noctalia-shell ipc call lockScreen lock;
       # '')
+
+      (writers.writeDashBin "noctalia-performance" ''
+        ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
+          "${
+            inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
+          "${
+            inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
+          "${
+            inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
+      '')
     ];
 
-    systemd.user.services = {
-      noctalia-performance = {
-        Unit = {
-          Description = "Noctalia Performance on power-profiles-daemon change";
-          After = [ "graphical-session.target" ];
-        };
-        Service = {
-          ExecStart = ''
-            ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
-              "${
-                inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-              }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
-              "${
-                inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-              }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
-              "${
-                inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-              }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
-          '';
-          Restart = "on-failure";
-        };
-        Install.WantedBy = [ "graphical-session.target" ];
-      };
-    };
+    # systemd.user.services = {
+    #   noctalia-performance = {
+    #     Unit = {
+    #       Description = "Noctalia Performance on power-profiles-daemon change";
+    #       After = [ "graphical.target" ];
+    #     };
+    #     Service = {
+    #       ExecStart = ''
+    #         ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
+    #           "${
+    #             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #           }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance" \
+    #           "${
+    #             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #           }/bin/noctalia-shell ipc call powerProfile disableNoctaliaPerformance" \
+    #           "${
+    #             inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #           }/bin/noctalia-shell ipc call powerProfile enableNoctaliaPerformance"
+    #       '';
+    #       Restart = "on-failure";
+    #     };
+    #     Install.WantedBy = [ "graphical.target" ];
+    #   };
+    # };
 
     programs.noctalia-shell = {
       enable = true;

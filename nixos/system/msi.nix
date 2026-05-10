@@ -22,6 +22,7 @@
       description = "Sets the ec_sys fan curve based on the mcontrollcenter address";
       enable = true;
       serviceConfig = {
+        Type = "oneshot";
         ExecStart =
           let
             # https://github.com/dmitry-s93/MControlCenter/blob/3dc28209cbbee9fffa0400ed82e6bc8aa40883bf/src/operate.cpp#L59-L63
@@ -70,8 +71,8 @@
           ''}";
         Restart = "on-failure";
       };
-      after = [ "graphical.target" ];
-      wantedBy = [ "graphical.target" ];
+      after = [ "multi-user.target" ];
+      wantedBy = [ "multi-user.target" ];
     };
 
     # Sets the msi stats
@@ -83,7 +84,7 @@
       "w /sys/devices/platform/msi-ec/webcam - - - - off"
     ];
 
-    environment.systemPackages = with pkgs; [ mcontrolcenter ];
+    # environment.systemPackages = with pkgs; [ mcontrolcenter ];
 
     systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";
