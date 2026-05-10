@@ -441,15 +441,18 @@
                 id = "KeepAwake";
               }
               {
-                enableOnStateLogic = false;
-                generalTooltipText = "Camera";
-                icon = "camera";
-                id = "CustomButton";
-                onClicked = "notify-desktop \"yo make this into an actual button that enables and disables camera 🙏\"";
-                onMiddleClicked = "";
-                onRightClicked = "";
-                stateChecksJson = "[]";
+                id = "WallpaperSelector";
               }
+              # {
+              #   enableOnStateLogic = false;
+              #   generalTooltipText = "Camera";
+              #   icon = "camera";
+              #   id = "CustomButton";
+              #   onClicked = "notify-desktop \"yo make this into an actual button that enables and disables camera 🙏\"";
+              #   onMiddleClicked = "";
+              #   onRightClicked = "";
+              #   stateChecksJson = "[]";
+              # }
             ];
             right = [
               {

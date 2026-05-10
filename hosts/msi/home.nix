@@ -49,7 +49,7 @@
     ## Apps
     # baobab
     chromium
-    # easyeffects
+    easyeffects
     gnome-system-monitor
     pear-desktop
     racket
