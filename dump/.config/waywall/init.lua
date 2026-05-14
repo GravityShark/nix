@@ -62,10 +62,10 @@ local function setup_entity_counter(width, height)
 			w = counter_dst_size.w,
 			h = counter_dst_size.h,
 		},
-		color_key = {
-			input = '#dddddd',
-			output = '#ffffff',
-		},
+		-- color_key = { these are now BANNED
+		-- 	input = '#dddddd',
+		-- 	output = '#ffffff',
+		-- },
 	}, width, height)
 end
 

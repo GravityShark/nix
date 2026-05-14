@@ -58,7 +58,7 @@
     # vial
 
     ## Media
-    # audacity
+    audacity
     # gnome-sound-recorder
     kdePackages.kdenlive # Video editor (I should enable gpu when using this)
     krita # Drawing
@@ -78,11 +78,12 @@
     # zoom-us
 
     ## CLIs
+    _7zz-rar
     # aria2
     # aria2p
     # atool
     # lzop
-    _7zz-rar
+    ntfs3g
     # rar
     # wget
     yt-dlp
