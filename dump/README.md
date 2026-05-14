@@ -201,7 +201,7 @@ Settings > Custom Commands > Wrapper command: = `jemalloc.sh waywall wrap --`
 - Set the right side mouse button to `home`
 - Set the middle dpi button to as low as it can be
 
-## links
+### links
 
 - https://exa.y2k.diy/garden/jvm-args/ <--- really reccommend to read
   - https://notes.highlysuspect.agency/blog/managing_java/
