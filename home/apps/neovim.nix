@@ -59,7 +59,6 @@
       withRuby = false;
       extraPackages = with pkgs; [
         tree-sitter
-
         clang
         # gnumake
         # go
