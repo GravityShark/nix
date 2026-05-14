@@ -98,7 +98,54 @@ declarative then reboot
 3. if you want te explore go into flake.nix and just use `gf` on any file you
    can see
 
-## future ventures
+## todo ventures
+
+1. maybe replace joshuto cause it sucks and doesn't work within tmux, and also
+   also its really slow for some reason
+   - probably with [yazi](https://github.com/sxyazi/yazi)
+   - im gonna try using oil.nvim
+     - oil really works tbh
+     - the only 3 things that is missing oil for me
+       1. follow tree view (fyler could work but buggy rn)
+       2. exit cd, but its all good
+       3. [default file manager](http://askubuntu.com/questions/84929/ddg#335911)
+          and as
+          [file chooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser)
+2. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or
+   wait for sesh to update
+3. new browser
+   - vieb (electron)
+   - vimb (webkit2gtk)
+   - wyeb (webkit2gtk, 2months ago, ment to be used like suckless' surf)
+   - with tabbed
+   - qutebrowser (qtwebengine)
+   - luakit (webkit2gtk, 10 months ago, broke last time i used it)
+   - the main hurdle is that i really like mozilla sync, so i need an
+     alternative
+   - and also zen browser works really well, ((just need to theme it right))
+4. KDE Connect
+5. probably the next step down the slippery slope is removing systemd, with like
+   guixsd or nixng or notos or six-os
+   - nvm guix is so UN supported bruh
+   - alternatives to nixos reproducibility/repeatability
+     1. https://github.com/numtide/system-manager uses nix, works on any distro
+     2. https://gitlab.com/Oglo12/rebos does NOT use nix, works on any distro
+     3. distrobox on nixos.
+     4. ansible playbook
+     5. just good ol bash scripts
+     6. chezmoi is interesting, it can do passwords
+6. use [stylix](https://nix-community.github.io/stylix/)
+   - [ ] support other applications
+     - [ ] youtube-music
+     - [ ] super productivity
+     - [ ] caprine
+7. make a personal setup for gpu-screen-recorder instead of using the noctalia
+   extension https://git.dec05eba.com/gpu-screen-recorder/about/
+8. checkout [gradia](https://github.com/AlexanderVanhee/Gradia) and
+   [satty](https://github.com/Satty-org/Satty) for better screensots
+9. start reading RSS and use this https://noctalia.dev/plugins/rss-feed/
+
+## Finished ventures
 
 1. [quickshell](https://quickshell.outfoxxed.me/) seems to be goated, if added
    with like a very minimal window manager
@@ -115,9 +162,13 @@ declarative then reboot
    - alternative launcher would either be fuzzel if you want to have icons, or
      tofi to be blazingly fast
      - check out [raffi](https://github.com/chmouel/raffi)
+   - i ended with noctalia shell. its decently performant but it has everything
+     i need. i just dislike how massive of a scope it took with the theming
 2. turn [caprine-ng](https://github.com/Alex313031/caprine-ng) into a flake
    because it's the only working caprine fork for me
    - [this could be a good base](https://github.com/NixOS/nixpkgs/blob/fe51d34885f7b5e3e7b59572796e1bcb427eccb1/pkgs/by-name/ca/caprine-bin/package.nix#L10)
+   - i did it and it was more buggy than regular. caprine is gonna get shut down
+     anyway
 3. create your own window manager using [dwl](https://codeberg.org/dwl/dwl)
    - dwl is no longer maintanied
    - my ideal setup would probably be something like 1 application per
@@ -136,72 +187,44 @@ declarative then reboot
    - the most important issues i dont know how to solve are:
      1. how would i be able to switch to tags efficiently
         - lowkey i forgot i have run or raise
-4. maybe replace joshuto cause it sucks and doesn't work within tmux, and also
-   also its really slow for some reason
-   - probably with [yazi](https://github.com/sxyazi/yazi)
-   - im gonna try using oil.nvim
-     - oil really works tbh
-     - the only 3 things that is missing oil for me
-       1. follow tree view (fyler could work but buggy rn)
-       2. exit cd, but its all good
-       3. [default file manager](http://askubuntu.com/questions/84929/ddg#335911)
-          and as
-          [file chooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser)
+   - dwl was geniuely so bad. but i got my best workflow rn tbh in niri. and it
+     also just fucking works. my best workflow is either keyboard solo or mouse
+     solo. i like the run to raise, i like named workspaces for each, i like the
+     dynamic workspaces. its all muwah
+4. other window managers
+   - hyprland (just for the maximum support, that isn't gnome or kde)
+   - mango (maybe second to hyprland, also supports tags like river)
+   - river (to make my own wayland compositor)
+   - i think its not at all worth if they just miss certain features
 5. remove emacs for obsidian/obsi
    - obsidian sucks for task management, might try super productivity for this
    - i think its working
-6. add [ tmuxifier ](https://github.com/jimeh/tmuxifier) for tmux layouts, or
-   wait for sesh to update
-7. new browser
-   - vieb (electron)
-   - vimb (webkit2gtk)
-   - wyeb (webkit2gtk, 2months ago, ment to be used like suckless' surf)
-   - with tabbed
-   - qutebrowser (qtwebengine)
-   - luakit (webkit2gtk, 10 months ago, broke last time i used it)
-   - the main hurdle is that i really like mozilla sync, so i need an
-     alternative
-   - and also zen browser works really well, ((just need to theme it right))
-8. KDE Connect
-9. probably the next step down the slippery slope is removing systemd, with like
-   guixsd or nixng or notos or six-os
-   - nvm guix is so UN supported bruh
-   - alternatives to nixos reproducibility/repeatability
-     1. https://github.com/numtide/system-manager uses nix, works on any distro
-     2. https://gitlab.com/Oglo12/rebos does NOT use nix, works on any distro
-     3. distrobox on nixos.
-     4. ansible playbook
-     5. just good ol bash scripts
-     6. chezmoi is interesting, it can do passwords
-10. use [stylix](https://nix-community.github.io/stylix/)
-    - [ ] support other applications
-      - [ ] youtube-music
-      - [ ] super productivity
-      - [ ] caprine
-11. pls fix this, otherwise we gonna use superproductivity instead
-    https://github.com/CCExtractor/taskwarrior-flutter/issues/382
-    - superprod got mkdwn plugins
-    - maybe get rid of obsidian
-12. other window managers
-    - hyprland (just for the maximum support, that isn't gnome or kde)
-    - mango (maybe second to hyprland, also supports tags like river)
-    - river (to make my own wayland compositor)
-13. [x] make ppd-dbus-hook a flake
-    - [x] use tlp 1.9 when it comes out on nixpkgs and use it instead of tuned
-14. make a personal setup for gpu-screen-recorder instead of using the noctalia
-    extension https://git.dec05eba.com/gpu-screen-recorder/about/
-15. checkout [gradia](https://github.com/AlexanderVanhee/Gradia) and
-    [satty](https://github.com/Satty-org/Satty) for better screensots
-16. [supergfxctl](https://gitlab.com/asus-linux/supergfxctl) gpu mode and vfio
-17. start reading RSS and use this https://noctalia.dev/plugins/rss-feed/
-18. add a search tool in noctalia-shell like this
+   - im now using super prod for organizing, for just notes i use obsidian +
+     obsidian.nvim
+6. pls fix this, otherwise we gonna use superproductivity instead
+   https://github.com/CCExtractor/taskwarrior-flutter/issues/382
+   - superprod got mkdwn plugins
+   - maybe get rid of obsidian
+   - super prod is pretty good
+7. [supergfxctl](https://gitlab.com/asus-linux/supergfxctl) gpu mode and vfio
+   - made for specific gpus, for msi you use mcontrol
+8. add duplication of monitors
+   - I added the mirror noctalia extension so that sshould work
+9. Use a declarative flatpak on nix instead
+   [declarative-flatpak](https://github.com/in-a-dil-emma/declarative-flatpak)
+   [nix-flatpak](https://github.com/gmodena/nix-flatpak)
+   - Work pretty well
+10. Use tmpfs on minecraft, or impermanence
+    - the problem is that this is just more setup when you could just delete
+      worlds using 'clear-worlds' script
+11. add a search tool in noctalia-shell like this
     https://noctalia.dev/plugins/kagi-quick-search/
-19. add duplication of monitors
-20. Use a declarative flatpak on nix instead
-    [declarative-flatpak](https://github.com/in-a-dil-emma/declarative-flatpak)
-    [nix-flatpak](https://github.com/gmodena/nix-flatpak)
-21. Instead of using stylix, use noctalia, with matugen, or create styles to
+    - someone else already made it
+12. Instead of using stylix, use noctalia, with matugen, or create styles to
     use. but use noctalia templates instead so that it can live reload itself
-22. Use tmpfs on minecraft, or impermanence
-23. Install [impurity.nix](https://github.com/outfoxxed/impurity.nix) to link
+    - i actually dont like this idea
+13. Install [impurity.nix](https://github.com/outfoxxed/impurity.nix) to link
     testing
+    - too much work
+14. [x] make ppd-dbus-hook a flake
+    - [x] use tlp 1.9 when it comes out on nixpkgs and use it instead of tuned
