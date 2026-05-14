@@ -41,7 +41,7 @@ in
           # graalvmPackages.graalvm-oracle
           # graalvmPackages.graalvm-oracle_17
           # javaPackages.compiler.temurin-bin.jre-17
-          javaPackages.compiler.temurin-bin.jre-21
+          javaPackages.compiler.temurin-bin.jdk-21
           # javaPackages.compiler.temurin-bin.jre-25
           # jdk17
           # jdk21
@@ -79,4 +79,4 @@ in
     # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
     #
   };
-
+}
