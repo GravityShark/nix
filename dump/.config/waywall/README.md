@@ -36,6 +36,7 @@ Use Lunar Client, just use the saved options
 ### Setup a MCSR RSG or Ranked Instance
 
 - Based on [This vid by draconix](https://www.youtube.com/watch?v=l-q-_4R8_6M)
+- I've named the instances MCSR 1.16.1 and MCSR Ranked respectively
 
 1. Add Instance > Modrinth and search for
    [SpeedrunPack](https://modrinth.com/modpack/speedrun)
@@ -63,6 +64,8 @@ Use Lunar Client, just use the saved options
      resourcepacks/. Then apply the resource pack in-game.
 8. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
    tmpfs
+9. To fully turn it into ranked just add the **Project: MCSR Ranked** Mod and it
+   should work
 
 ### PVP Instane
 
