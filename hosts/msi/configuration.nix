@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -55,4 +55,15 @@
 
   ## Cloudflare Warp for slow downloads
   services.cloudflare-warp.enable = true;
+
+  users.users.${config.username}.extraGroups = [ "tc" ];
+
+  security.doas.extraRules = [
+    {
+      groups = [ "tc" ];
+      cmd = "${pkgs.iproute2}/bin/tc";
+      noPass = true;
+    }
+  ];
+
 }
