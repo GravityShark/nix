@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+IFACE="enp4s0"
+
+if tc qdisc show dev "$IFACE" | grep -q "loss 100%"; then
+    echo "RESTORE"
+    sudo tc qdisc del dev "$IFACE" root
+else
+    echo "DROP ALL UPLOAD PACKETS"
+    sudo tc qdisc add dev "$IFACE" root netem loss 100%
+fi

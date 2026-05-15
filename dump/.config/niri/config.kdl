@@ -456,6 +456,12 @@ binds {
     Mod+Q hotkey-overlay-title="Powermenu" {
         spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
     }
+    // Alt+Shift+Q {
+    //     spawn "~/.scripts/lagtoggle"
+    // }
+    // Alt+Q {
+    // spawn "~/.scripts/lagspike"
+    // }
     Mod+Shift+Q hotkey-overlay-title="Sleep" {
         power-off-monitors
     }

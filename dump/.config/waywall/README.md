@@ -9,6 +9,14 @@ The setup goes like
 
 ## Tutorial
 
+### Lunar Client 1.8
+
+Use Lunar Client, just use the saved options
+
+- Set Java Arguments to `-XX:+UseG1GC`
+- Wrapper Command `nvidia-offload jemalloc.sh`
+- Environment Variables `__GL_THREADED_OPTIMIZATIONS` = `0`
+
 ### Prism Launcher Defaults
 
 - Settings
@@ -17,75 +25,102 @@ The setup goes like
   installation of GLFW ✅
 - Settings > Minecraft > Tweaks > Performance > Use discrete GPU ✅
 - Settings > Java > Memory > Minimum & Maximum memory allocation = 6144MiB
-- Settings > Java > Java Runtime > Java path: = Select Temurin 25
+- Settings > Java > Java Runtime > Java path: = Select Temurin 21
 - Settings > Java > Java Runtime > Skip Java compatibility checks ✅
 - Settings > Java > Java Runtime > JVM arguments: =
-  `-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -Djdk.graal.TuneInlinerExploration=1`
-- Settings > Custom Commands > Wrapper command: =
-  `waywall wrap --profile clean -- jemalloc.sh`
+  `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:+ZGenerational`
+- Settings > Custom Commands > Wrapper command: = `jemalloc.sh`
 - Settings > Environment Variables > Name: `__GL_THREADED_OPTIMIZATIONS` Value:
   `0`
 
-### Minecraft Speedrunning (1.16.1)
+### Setup a MCSR RSG or Ranked Instance
 
-For MCSR with SeedQueue I add nmethodsweepactivity and still use GraalVM EE 25
+- Based on [This vid by draconix](https://www.youtube.com/watch?v=l-q-_4R8_6M)
 
-`-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:NmethodSweepActivity=1 -XX:+UseTransparentHugePages -Djdk.graal.TuneInlinerExploration=1`
+1. Add Instance > Modrinth and search for
+   [SpeedrunPack](https://modrinth.com/modpack/speedrun)
+   - This is so you can update using the Modrinth section
+2. Edit > Settings > Java > Java Installation & Java Arguments
+   - **No SeedQueue** (Ranked): Adoptium 21
+     `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:NmethodSweepActivity=1`
+   - **SeedQueue** (RSG): GraalVM EE 17
+     `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:NmethodSweepActivity=1 -Djdk.graal.TuneInlinerExploration=1 `
+3. Edit > Settings > Java > Memory > Minimum & Maximum
+   - **No SeedQueue** (Ranked): 2048MiB, **3072MiB** or 4096MiB
+   - **SeedQueue** (RSG): **7500MiB**
+     - You might need slightly more or less depending on the category, i.e. less
+       for SSG and more for AA.
+4. Edit > Settings > Custom Commands > Wrapper Command:
+   `jemalloc.sh waywall wrap --`
+5. Edit > Version > Right click LWJGL 3 > Change Version > Select 3.3.3
+6. Install [MCSR Practice Map](https://github.com/Dibedy/The-MCSR-Practice-Map)
+   and Add it to worlds
+7. Configs
+   - Copy the folder [config/mcsr](./config/mcsr/) to config/
+   - Copy the folder [config/speedrunigt](./config/speedrunigt/) to root
+   - Copy the file [hotbar.nbt](./config/hotbar.nbt) to root
+   - Copy the folder [config/Chloe Wall](<./config/Chloe\ Wall/>) to
+     resourcepacks/. Then apply the resource pack in-game.
+8. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
+   tmpfs
 
-Otherwise (like MCSR Ranked) use the default one.
+### PVP Instane
+
+## Ideas
+
+### MCSR Ranked Defaults
+
+- Settings > Java > Java Arguments = ``
+- Settings > Java > Memory > Minimum & Maximum memory allocation = **3072MiB**
+- Settings > Custom Commands > Wrapper command: = `jemalloc.sh waywall wrap --`
+
+### Minecraft Speedrunning RSG (1.16.1)
+
+- For MCSR with SeedQueue use GraalVMEE 17 because 21 isnt updated
+  - `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:NmethodSweepActivity=1 -Djdk.graal.TuneInlinerExploration=1 `
+- For Ranked use Adoptium 21
+  - `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:NmethodSweepActivity=1`
 
 1. People recommend to only use java 17-22
    - Specifically GraalVM EE 21, because using Java 22 is stupid cause the
      software isn't updated anymore
-   - **BUT** I personally find good or even _better_ to still use Java 25 (I've
-     only tested for MCSR Ranked tbh)
+   - ZGenerational was known to be slower for seedqueue
 2. Memory Allocation
    - **SEEDQUEUE**: 7500 MB
      - You might need slightly more or less depending on the category, i.e. less
        for SSG and more for AA.
-   - **NO SEEDQUE**: 3200-6400 MB
+   - **NO SEEDQUEUE**: 3200-6400 MB
      - **FOR RANKED**: use 2048MiB, **3072MiB** or 4096MiB
-3. `-XX:+UseZGC -XX:+AlwaysPreTouch -Djdk.graal.TuneInlinerExploration=1 -XX:NmethodSweepActivity=1`
-   by recommendation of others
-   - ZGenerational was known to be slower for seedqueue
-4. Recommended SeedQueue settings:
+3. Recommended SeedQueue settings:
    - Max Queued Seeds: 22
    - Max Generating Seeds: 2 You can try a higher value, and if you start
      consistently lagging after tabbing into a world, lower it back.
    - Max Generating Seeds (Wall): 9
-5. waywall
+4. waywall
    - just add `waywall wrap --` at the end of your thing, keeping `jemalloc.sh`
      at the start. `jemalloc.sh waywall wrap --`
-6. LWJGL
+5. LWJGL
    - Right click your instance in Prism > Edit > Version > Right click LWJGL 3 >
      Change Version > Select 3.3.3
-7. Install the latest
+6. Install the latest
    [MCSR Practice Map](https://github.com/Dibedy/The-MCSR-Practice-Map)
-8. Download and use
-   [Mod Check](https://github.com/tildejustin/modcheck/releases) on the instance
-   (make sure fabric is already installed)
-9. Set up MPK, there is already one in ~/.nix/dump/.config/waywall
-10. Set up Standard Settings and Atum, yet again ~/.nix/dump/.config/waywall
-11. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
-    tmpfs
-
-### MCSR Ranked Defaults
-
-Keep everything default from prism launcher
-
-Settings > Java > Memory > Minimum & Maximum memory allocation = 3072MiB
-
-Sett#ings > Custom Commands > Wrapper command: = `jemalloc.sh waywall wrap --`
-
-## Ideas
+7. Set up MPK, there is already one in ~/.nix/dump/.config/waywall
+8. Set up Standard Settings and Atum, yet again ~/.nix/dump/.config/waywall
+9. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
+   tmpfs
 
 ### Choosing a Java Version
 
-I dont want to use GraalVM because its not built for it, use Adoptium
+TLDR:
 
-What I use is by default for all is GraalVM EE 25 with these flags
-
-`-XX:+UseZGC -XX:+UseCompactObjectHeaders -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -Djdk.graal.TuneInlinerExploration=1`
+- Adoptium 25 (26.1)
+  `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:+UseCompactObjectHeaders `
+- Adoptium 21 (Default)
+  `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:+ZGenerational`
+- Adoptium 21 (Ranked)
+  `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:NmethodSweepActivity=1`
+- GraalVM EE 17 (RSG)
+  `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:NmethodSweepActivity=1 -Djdk.graal.TuneInlinerExploration=1 `
 
 1. Java Version (25,21,17,8)
    - You mainly want to pick the highest version that won't crash the game
@@ -93,14 +128,14 @@ What I use is by default for all is GraalVM EE 25 with these flags
      [this](https://github.com/Radk6/MC-Optimization-Guide/blob/main/java-n-stuff/java-things.md)
    - Using non-LTS bulids are stupid cause that is no longer being updated
 2. Java Bulids
-   - GraalVM EE - recommended, works most of the time
-   - Adoptium Temurin - it ain't that bad compared to graalvm but it usually has
-     greater compatibility
+   - GraalVM EE - starts slow, then gets faster. Should ONLY be used for RSG
+     (SeedQueue)
+   - Adoptium Temurin - Always use instead
    - Anything else is basically irrelevant
 
 3. Java Garbage Collector (shenandoah, zgc + zgenerational (generational is
    default by v24+), zgc, g1gc)
-   - 24 `-XX:+UseZGC`, ZGenerational became default
+   - 24+ `-XX:+UseZGC`, ZGenerational became default
    - 21-23 `-XX:+UseZGC -XX:+ZGenerational`
    - 11-20 `-XX:+UseZGC`
    - 8 `-XX:+UseG1GC`
@@ -108,11 +143,14 @@ What I use is by default for all is GraalVM EE 25 with these flags
      be just slightly less than ZGC.
      - `-XX:+UseShenandoahGC`
 4. Java Flags
-   - In Java 25, `-XX:+UseCompactObjectHeaders` is free optimization
+   - Only in Java 25, `-XX:+UseCompactObjectHeaders` is free optimization
    - `-XX:+AlwaysPreTouch` allocates all memory upfront, useful for like large
      (128GB) heap sizes, but slower startup.
    - `-XX:+UseTransparentHugePages` **if** transparent huge pages are enabled in
      linux.
+   - `-XX:NmethodSweepActivity=1` This option controls the aggressiveness of the
+     nmethod sweeping activity in the JVM. It affects the frequency and
+     intensity of sweeping unused compiled code.
    - `-Djdk.graal.TuneInlinerExploration=1` GraalVM exclusive, exerpt from the
      docs:
      > To tune for better peak performance or faster warmup. It automatically

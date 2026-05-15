@@ -20,9 +20,14 @@
         enable = true;
         extraRules = [
           {
-            users = [ config.username ];
+            groups = [ "wheel" ];
             keepEnv = true;
             persist = true;
+          }
+          {
+            groups = [ "tc" ];
+            cmd = [ "${pkgs.iproute2}/bin/tc" ];
+            noPass = true;
           }
         ];
       };

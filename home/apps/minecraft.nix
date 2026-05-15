@@ -38,14 +38,10 @@ in
 
       (prismlauncher.override (previous: {
         jdks = [
-          # graalvmPackages.graalvm-oracle
-          # graalvmPackages.graalvm-oracle_17
-          # javaPackages.compiler.temurin-bin.jre-17
+          graalvmPackages.graalvm-oracle_17
+          graalvmPackages.graalvm-oracle
           javaPackages.compiler.temurin-bin.jdk-21
-          javaPackages.compiler.temurin-bin.jdk-25
-          # jdk17
-          # jdk21
-          # jre8
+          # javaPackages.compiler.temurin-bin.jdk-25
         ];
         additionalLibs = [
           # runtime dependencies necessary for mcsr fairplay mod
