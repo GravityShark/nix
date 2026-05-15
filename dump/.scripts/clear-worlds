@@ -7,4 +7,5 @@ for inst in "${instances[@]}"; do
     rm -r "$launcher_prefix/$inst/minecraft/saves"/Random*
     rm -r "$launcher_prefix/$inst/minecraft/saves"/New*
     rm -r "$launcher_prefix/$inst/minecraft/saves"/mcsrranked*
+    rm -r "$launcher_prefix/$inst/minecraft/saves"/Benchmark*
 done

@@ -41,6 +41,7 @@ Use Lunar Client, just use the saved options
 1. Add Instance > Modrinth and search for
    [SpeedrunPack](https://modrinth.com/modpack/speedrun)
    - This is so you can update using the Modrinth section
+   - **ON WAYWALL**: Deselect the mod "SleepBackground" as it could cause issues
 2. Edit > Settings > Java > Java Installation & Java Arguments
    - **No SeedQueue** (Ranked): Adoptium 21
      `-XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:NmethodSweepActivity=1`
@@ -67,7 +68,47 @@ Use Lunar Client, just use the saved options
 9. To fully turn it into ranked just add the **Project: MCSR Ranked** Mod and it
    should work
 
-### PVP Instane
+### PVP Instance
+
+1. Find the "Optimization" modpack and add
+2. Edit > Settings > Custom Commands > Wrapper Command:
+   `jemalloc.sh waywall wrap --`
+3. Download these mods
+   - Anchor Optimizer
+   - AppleSkin
+   - BetterPing Display
+   - Bobby
+   - Centered Crosshair
+   - Cloth Config
+   - Combat Hitboxes (might remove)
+   - Compact Chat
+   - Consumable Optimizer
+   - Cookey Mod
+   - Crosshair Addons
+   - gatekeep
+   - HeroBot
+   - In_Game Account Switcher
+   - Inventory Hud +
+   - Ixeris (?)
+   - Kind's Crystal Optimizer
+   - Mod Menu
+   - More Chat History
+   - No Chat Reports
+   - Noisisium
+   - Nvidium
+   - OfflineLAN
+   - Optimized Fullbright
+   - Packet fixer
+   - Scalable Lux
+   - Scoreboard Tweaks
+   - SettingsManagerLib
+   - Shielf Fixes
+   - Shulker Box Tooltips
+   - Smooth Skies
+   - Status Effect Timer
+   - Title Tweaks
+   - Toggle Sprint Display (find a better one)
+   - Very Many Players
 
 ## Ideas
 
