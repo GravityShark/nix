@@ -26,7 +26,7 @@
           }
           {
             groups = [ "tc" ];
-            cmd = [ "${pkgs.iproute2}/bin/tc" ];
+            cmd = "${pkgs.iproute2}/bin/tc";
             noPass = true;
           }
         ];
