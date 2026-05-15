@@ -56,14 +56,12 @@
   ## Cloudflare Warp for slow downloads
   services.cloudflare-warp.enable = true;
 
-  users.users.${config.username}.extraGroups = [ "tc" ];
-
-  security.doas.extraRules = [
-    {
-      groups = [ "tc" ];
-      cmd = "${pkgs.iproute2}/bin/tc";
-      noPass = true;
-    }
-  ];
+  # security.doas.extraRules = [
+  #   {
+  #     groups = [ "wheel" ];
+  #     cmd = "${pkgs.iproute2}/bin/tc";
+  #     noPass = true;
+  #   }
+  # ];
 
 }

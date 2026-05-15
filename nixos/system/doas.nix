@@ -24,11 +24,6 @@
             keepEnv = true;
             persist = true;
           }
-          {
-            groups = [ "tc" ];
-            cmd = "${pkgs.iproute2}/bin/tc";
-            noPass = true;
-          }
         ];
       };
     };

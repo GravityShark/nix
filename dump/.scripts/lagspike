@@ -2,6 +2,6 @@
 
 IFACE="enp4s0"
 
-tc qdisc add dev "$IFACE" root netem loss 100%
+doas tc qdisc add dev "$IFACE" root netem loss 100%
 sleep 0.5
-tc qdisc del dev "$IFACE" root
+doas tc qdisc del dev "$IFACE" root

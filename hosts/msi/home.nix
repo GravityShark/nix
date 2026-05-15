@@ -83,7 +83,7 @@
     # aria2p
     # atool
     # lzop
-    ntfs3g
+    # ntfs3g
     # rar
     # wget
     yt-dlp
