@@ -42,7 +42,7 @@ in
           # graalvmPackages.graalvm-oracle_17
           # javaPackages.compiler.temurin-bin.jre-17
           javaPackages.compiler.temurin-bin.jdk-21
-          # javaPackages.compiler.temurin-bin.jre-25
+          javaPackages.compiler.temurin-bin.jdk-25
           # jdk17
           # jdk21
           # jre8
@@ -63,10 +63,10 @@ in
     ];
 
     xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
-      eye_overlay = "${../../dump/.config/waywall/overlay.png}";
-      oneshot_overlay = "${../../dump/.config/waywall/oneshot.png}";
+      eye_overlay = "${../../dump/.config/waywall/assets/overlay.png}";
+      oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot.png}";
       ninb_path = "${lib.getExe ninjabrain-bot}";
-      background = "${../../dump/.config/waywall/background.png}";
+      background = "${../../dump/.config/waywall/assets/background.png}";
       # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
     };
 
