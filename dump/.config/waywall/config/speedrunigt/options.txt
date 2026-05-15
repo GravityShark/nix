@@ -46,8 +46,8 @@ mcsrranked:gui_background_type:VANILLA
 mcsrranked:hide_opponent_profile_v2:NEVER
 mcsrranked:replay_ghost_invisible:6
 mcsrranked:anger_enderman_vol:0.50238717
-speedrunigt:timer_rta_pos_x:0.49604085
-speedrunigt:timer_rta_pos_y:0.10625
+speedrunigt:timer_rta_pos_x:0.49941
+speedrunigt:timer_rta_pos_y:0.10539605
 mcsrranked:show_hud_status_icon:true
 mcsrranked:gui_scale:0.6
 speedrunigt:toggle_timer:true

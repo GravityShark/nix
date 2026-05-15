@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-instances=("MCSR 1.16.1" "MCSR Ranked")
+instances=("MCSR\ 1.16.1" "MCSR\ Ranked")
 
 # DO NOT add a '/' at the end of launcher_prefix's value
 launcher_prefix=~/.local/share/PrismLauncher/instances

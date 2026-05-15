@@ -43,7 +43,7 @@
   "keyBindings": {
     "seedqueue.key.play": "key.keyboard.unknown",
     "seedqueue.key.focusReset": "key.keyboard.unknown",
-    "seedqueue.key.reset": "key.keyboard.unknown",
+    "seedqueue.key.reset": "key.keyboard.s",
     "seedqueue.key.lock": "key.keyboard.g",
     "seedqueue.key.resetAll": "key.keyboard.f",
     "seedqueue.key.resetColumn": "key.keyboard.unknown",
