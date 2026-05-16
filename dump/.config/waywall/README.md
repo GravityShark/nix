@@ -71,6 +71,7 @@ Use Lunar Client, just use the saved options
 
 - For **RANKED**: just add the **Project: MCSR Ranked** Mod and it should work
 - For **Bastion Practice**: watch [this video](https://youtu.be/Xj_CPo5HwWM)
+  (use graalvm but with noseedqueue mem)
   - Then add [Llama's Bastion Practice](https://github.com/LlamaPag/bastion)
     with [Full Lava Fix](https://github.com/WilbyWillBe/bastion/releases) and
 

@@ -39,7 +39,6 @@ in
       (prismlauncher.override (previous: {
         jdks = [
           graalvmPackages.graalvm-oracle_17
-          graalvmPackages.graalvm-oracle
           javaPackages.compiler.temurin-bin.jdk-21
           # javaPackages.compiler.temurin-bin.jdk-25 # for newer versions that i dont play rn, i should probably use lunar for this instead
         ];

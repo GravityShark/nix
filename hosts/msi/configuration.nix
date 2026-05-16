@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ pkgs, config, ... }:
+{ ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -54,7 +54,7 @@
   ################################## Extra ###################################
 
   ## Cloudflare Warp for slow downloads
-  services.cloudflare-warp.enable = true;
+  services.cloudflare-warp.enable = false;
 
   # security.doas.extraRules = [
   #   {
