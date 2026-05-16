@@ -9,7 +9,7 @@
   "graphicsMode": 1,
   "renderDistance": 18.0,
   "ao": 0,
-  "maxFps": 120.0,
+  "maxFps": 70.0,
   "enableVsync": false,
   "bobView": false,
   "guiScale": 4,
@@ -126,3 +126,4 @@
   "firstAutoF3EscDelay": 22,
   "triggerOnResize": false
 }
+

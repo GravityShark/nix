@@ -41,7 +41,7 @@ in
           graalvmPackages.graalvm-oracle_17
           graalvmPackages.graalvm-oracle
           javaPackages.compiler.temurin-bin.jdk-21
-          # javaPackages.compiler.temurin-bin.jdk-25
+          # javaPackages.compiler.temurin-bin.jdk-25 # for newer versions that i dont play rn, i should probably use lunar for this instead
         ];
         additionalLibs = [
           # runtime dependencies necessary for mcsr fairplay mod
@@ -54,7 +54,6 @@ in
           jemalloc
           ninjabrain-bot
           waywall
-          # mangohud
         ];
       }))
     ];
@@ -69,16 +68,5 @@ in
       # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
     };
     xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
-    # xdg.configFile."MangoHud/MangoHud.conf".source = ../../dump/.config/MangoHud/MangoHud.conf;
-    programs.mangohud = {
-      enable = true;
-
-      settings = {
-        fps_limit = 70;
-        # no_display = true;
-        gl_version = "2.1";
-        opengl_core_context = false;
-      };
-    };
   };
 }
