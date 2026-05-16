@@ -54,7 +54,7 @@ in
           jemalloc
           ninjabrain-bot
           waywall
-          mangohud
+          # mangohud
         ];
       }))
     ];
@@ -69,6 +69,16 @@ in
       # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
     };
     xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
-    xdg.configFile."MangoHud/MangoHud.conf".source = ../../dump/.config/MangoHud/MangoHud.conf;
+    # xdg.configFile."MangoHud/MangoHud.conf".source = ../../dump/.config/MangoHud/MangoHud.conf;
+    programs.mangohud = {
+      enable = true;
+
+      settings = {
+        fps_limit = 70;
+        # no_display = true;
+        gl_version = "2.1";
+        opengl_core_context = false;
+      };
+    };
   };
 }
