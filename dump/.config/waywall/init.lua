@@ -4,7 +4,7 @@ local waywall = require('waywall')
 local helpers = require('waywall.helpers')
 
 -- https://whvn.cc/o5ky29
--- local background = '@background@'
+local background = '@background@'
 local ninb_path = '@ninb_path@'
 local eye_overlay = '@eye_overlay@'
 local oneshot_overlay = '@oneshot_overlay@'
@@ -28,10 +28,10 @@ waywall.listen('load', function()
 	else
 		helpers.toggle_floating()
 	end
-	-- waywall.image(background, {
-	-- 	dst = { x = 0, y = 0, w = 1920, h = 1080 },
-	-- 	depth = -1,
-	-- })
+	waywall.image(background, {
+		dst = { x = 0, y = 0, w = 1920, h = 1080 },
+		depth = -1,
+	})
 	waywall.show_floating(true)
 end)
 --

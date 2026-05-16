@@ -55,8 +55,10 @@ Use Lunar Client, just use the saved options
 4. Edit > Settings > Custom Commands > Wrapper Command:
    `jemalloc.sh waywall wrap --`
 5. Edit > Version > Right click LWJGL 3 > Change Version > Select 3.3.3
-6. Install [MCSR Practice Map](https://github.com/Dibedy/The-MCSR-Practice-Map)
-   and Add it to worlds
+6. Install these maps
+   - [The MCSR Practice Map](https://github.com/Dibedy/The-MCSR-Practice-Map)
+   - [Lama's Practice Map](https://www.mediafire.com/file/lzbecct99g8p22i/Lama%2527s_Practice_Map.zip/file)
+     to worlds
 7. Configs
    - Copy the folder [config/mcsr](./config/mcsr/) to config/
    - Copy the folder [config/speedrunigt](./config/speedrunigt/) to root
@@ -65,8 +67,18 @@ Use Lunar Client, just use the saved options
      resourcepacks/. Then apply the resource pack in-game.
 8. Edit and run `clear-world` script from ~/.scripts to clear worlds, or setup
    tmpfs
-9. To fully turn it into ranked just add the **Project: MCSR Ranked** Mod and it
-   should work
+9. Optionally find your preemptive spikes in the Lama's Practice map (175%)
+
+- For **RANKED**: just add the **Project: MCSR Ranked** Mod and it should work
+- For **Bastion Practice**: watch [this video](https://youtu.be/Xj_CPo5HwWM)
+  - Then add [Llama's Bastion Practice](https://github.com/LlamaPag/bastion)
+    with [Full Lava Fix](https://github.com/WilbyWillBe/bastion/releases) and
+
+- Extra things you can do
+  1.  Download the Addlama map to find your spikes
+      - https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTJNTU5JRU5RZ1ZobkdINGpqcFBNODEtNHdjd3xBQ3Jtc0ttOVVRRDVBRjZnUnQ0WmlZaFBqU0RSNTdlVXVsTWlBbzlDZnU1VHNHZUd2eHhnTXFSX0JjdU5zb09sTUlUZzRPZW5KSmlyM3EzZG5ObGVrbXJyajFiM2lkRzZMZkR4eTItTGRQLTFLbEMyNHFSSFVHTQ&q=https%3A%2F%2Fwww.mediafire.com%2Ffile%2Flzbecct99g8p22i%2FLama%252527s_Practice_Map.zip%2Ffile&v=LtouvpxyDGY
+      - https://www.mediafire.com/file/lzbecct99g8p22i/Lama%2527s_Practice_Map.zip/file
+      - Use 175%
 
 ### PVP Instance
 

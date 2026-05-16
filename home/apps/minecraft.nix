@@ -33,7 +33,7 @@ in
 
     home.packages = with pkgs; [
       jemalloc
-      jre
+      jdk
       lunar-client
 
       (prismlauncher.override (previous: {
@@ -54,25 +54,21 @@ in
           jemalloc
           ninjabrain-bot
           waywall
+          mangohud
         ];
       }))
     ];
 
-    xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
-      eye_overlay = "${../../dump/.config/waywall/assets/overlay.png}";
-      oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot.png}";
-      ninb_path = "${lib.getExe ninjabrain-bot}";
-      background = "${../../dump/.config/waywall/assets/background.png}";
-      # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
-    };
-
-    xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
-
     home.file.".java/.userPrefs/ninjabrainbot/prefs.xml".source =
       ../../dump/.java/.userPrefs/ninjabrainbot/prefs.xml;
-    # xdg.configFile."waywall/overlay.png".source = ../../dump/.config/waywall/overlay.png;
-    # xdg.configFile."xkb/symbols/mc".source = ../../dump/.config/xkb/symbols/mc;
-    # xdg.configFile."java/.java/.userPrefs/ninjabrainbot/prefs.xml".source =
-    #
+    xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
+      background = "${../../dump/.config/waywall/assets/background.png}";
+      eye_overlay = "${../../dump/.config/waywall/assets/overlay.png}";
+      ninb_path = "${lib.getExe ninjabrain-bot}";
+      oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot.png}";
+      # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
+    };
+    xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
+    xdg.configFile."MangoHud/MangoHud.conf".source = ../../dump/.config/MangoHud/MangoHud.conf;
   };
 }
