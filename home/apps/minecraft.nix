@@ -66,6 +66,6 @@ in
       oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot.png}";
       # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
     };
-    xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
+    # xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
   };
 }

@@ -22,100 +22,124 @@ end
 -- -- ################################################################################################
 
 waywall.listen('load', function()
-	if not is_running(ninb_pid) then
-		waywall.exec(ninb_path)
-		waywall.show_floating(true)
-	else
-		helpers.toggle_floating()
-	end
 	waywall.image(background, {
 		dst = { x = 0, y = 0, w = 1920, h = 1080 },
 		depth = -1,
 	})
-	waywall.show_floating(true)
 end)
---
+
 -- -- ################################################################################################
 -- -- PROJECTOR SETUP
 -- -- ################################################################################################
--- -- entity counter location and projection size
 
-local upward_offset = 85 -- 3 items
--- local upward_offset = 92 -- 5 Items
-
-local counter_src = {
-	x = 0,
-	y = 37,
-	w = 50,
-	h = 9,
-}
-local counter_dst_size = {
-	w = counter_src.w * (40 / counter_src.h),
-	h = 40,
-}
 local function setup_entity_counter(width, height)
+	local e_count_src = {
+		x = 14,
+		y = 38,
+		w = 35,
+		h = 7,
+	}
+	local e_count_scale = 5.5
+	local e_counter_dst = {
+		w = e_count_src.w * e_count_scale,
+		h = e_count_src.h * e_count_scale,
+	}
 	return helpers.res_mirror({
-		src = counter_src,
+		src = e_count_src,
 		dst = {
-			x = (1920 + width) / 2,
-			y = ((1080 - counter_dst_size.h) / 2) - upward_offset,
-			w = counter_dst_size.w,
-			h = counter_dst_size.h,
-		},
-		-- color_key = { these are now BANNED
-		-- 	input = '#dddddd',
-		-- 	output = '#ffffff',
-		-- },
-	}, width, height)
-end
-
-local pie_height = 320
-local pie_dst_height = (1080 - counter_dst_size.h) / 2
-
-local function setup_pie_chart(width, height)
-	helpers.res_mirror({
-		src = {
-			x = 0,
-			y = height - 420,
-			w = width,
-			h = pie_height,
-		},
-		dst = {
-			x = (1920 + width) / 2,
-			y = ((1080 + counter_dst_size.h) / 2) - upward_offset,
-			w = (pie_dst_height / pie_height) * width,
-			h = pie_dst_height,
+			x = (1920 - e_counter_dst.w) / 2,
+			y = 1080 / 6,
+			w = e_counter_dst.w,
+			h = e_counter_dst.h,
 		},
 	}, width, height)
 end
 
-local pie_count_height = 24 -- 3 items
--- local pie_count_height = 40 -- 5 items
-local pie_count_dst_height = (1080 - counter_dst_size.h) / 2
-local pie_count_width = 93
--- local pie_count_scale = 0.33 -- 5 items
-local pie_count_scale = 0.25 -- 3 items
-local pie_count_right_padding = 10
-local function setup_pie_chart_count(width, height)
+local function setup_preemptive_count(width, height)
+	local preemptive_height = 24 -- 3 items
+	local preemptive_width = 26
+	local preemptive_right_padding = 92 - preemptive_width
+
+	local preemptive_scale = 5.5
+	local preemptive_dst_height = preemptive_height * preemptive_scale
+	local preemptive_dst_width = preemptive_width * preemptive_scale
 	helpers.res_mirror({
 		src = {
-			x = width - pie_count_width,
+			x = width - (preemptive_width + preemptive_right_padding),
 			y = height - 220,
-			w = pie_count_width - pie_count_right_padding,
-			h = pie_count_height,
+			w = preemptive_width,
+			h = preemptive_height,
 		},
 		dst = {
-			x = (1920 + width) / 2,
-			y = ((1080 + counter_dst_size.h) / 2) - upward_offset,
-			w = ((pie_count_dst_height / pie_count_height) * (pie_count_width - pie_count_right_padding) * pie_count_scale),
-			h = pie_count_dst_height * pie_count_scale,
+			x = (1920 - preemptive_dst_width) / 2,
+			y = 1080 * 4 / 5,
+			w = preemptive_dst_width,
+			h = preemptive_dst_height,
 		},
 	}, width, height)
 end
---
+
+-- -- ##############################################################################################
+-- -- REGULAR RESOLUTION PIE MIRROR
+-- -- ##############################################################################################
+
+local pie_height = 40 -- 5 items
+local pie_scale = 2.5
+local pie_width = 26
+
+local pie_right_padding = 92 - pie_width
+local pie_dst_height = pie_height * pie_scale
+local pie_dst_width = pie_width * pie_scale
+
+local num_width = 80
+
+local num_right_padding = 330 - num_width
+local num_dst_width = num_width * pie_scale
+
+-- TODO: Find a way to figure out if its ingame and then apply res_mirror
+helpers.res_mirror({
+	src = {
+		x = 1920 - (pie_width + pie_right_padding),
+		y = 1080 - 220,
+		w = pie_width,
+		h = pie_height,
+	},
+	dst = {
+		x = 1920 - pie_dst_width,
+		y = 1080 - pie_dst_height,
+		w = pie_dst_width,
+		h = pie_dst_height,
+	},
+}, 0, 0)
+
+helpers.res_mirror({
+	src = {
+		x = 1920 - (num_width + num_right_padding),
+		y = 1080 - 220,
+		w = num_width,
+		h = pie_height,
+	},
+	dst = {
+		x = 1920 - (num_dst_width + pie_dst_width),
+		y = 1080 - pie_dst_height,
+		w = num_dst_width,
+		h = pie_dst_height,
+	},
+}, 0, 0)
+
+-- -- ##############################################################################################
+-- -- THIN
+-- -- ##############################################################################################
+local thin_res = {
+	w = 320,
+	h = 1080,
+}
+setup_entity_counter(thin_res.w, thin_res.h)
+setup_preemptive_count(thin_res.w, thin_res.h)
+
 -- -- ##############################################################################################
 -- -- EYE ZOOM
---
+-- -- ##############################################################################################
 local eye = {
 	sens = 0.20778952,
 	-- Size of the instance
@@ -150,23 +174,12 @@ helpers.res_mirror({
 }, eye.res.w, eye.res.h)
 
 helpers.res_image(eye_overlay, { dst = eye.proj }, eye.res.w, eye.res.h)
-
--- E counter
 setup_entity_counter(eye.res.w, eye.res.h)
--- setup_pie_chart(eye.res.w, eye.res.h)
-setup_pie_chart_count(eye.res.w, eye.res.h)
+setup_preemptive_count(eye.res.w, eye.res.h)
 
---
 -- -- ##############################################################################################
--- -- THIN
---
-local thin_res = {
-	w = 320,
-	h = 1080,
-}
-setup_entity_counter(thin_res.w, thin_res.h)
-setup_pie_chart_count(thin_res.w, thin_res.h)
-
+-- -- REMAPS
+-- -- ##############################################################################################
 -- -- when in doubt, do this:
 -- -- execute sudo showkey
 -- -- find keycode in https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
@@ -220,9 +233,10 @@ local game_remaps = {
 
 	['LEFTMETA'] = 'LEFTALT',
 }
---
+
 -- -- ##############################################################################################
 -- -- CHAT MODE
+-- -- ##############################################################################################
 local chat_state = {
 	enabled = false,
 	text = nil,
@@ -240,9 +254,26 @@ local toggle_chat = function()
 	end
 end
 
-local oneshot_overlay_state = nil
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
+-- -- ##############################################################################################
+
+local oneshot_overlay_state = nil
+local oneshot_toggle = function()
+	if not oneshot_overlay_state then
+		oneshot_overlay_state = waywall.image(oneshot_overlay, {
+			dst = {
+				x = 0,
+				y = 0,
+				w = 1920,
+				h = 1080,
+			},
+		})
+	else
+		oneshot_overlay_state:close()
+		oneshot_overlay_state = nil
+	end
+end
 
 local config = {
 	input = {
@@ -258,11 +289,12 @@ local config = {
 		remaps = game_remaps,
 	},
 	theme = {
-		-- background = '#1d2021ff',
+		background = '#241f31',
 		ninb_anchor = 'right',
 		ninb_opacity = 0.8,
 	},
 	actions = {
+		-- NBB
 		['alt-insert'] = function()
 			if chat_state.enabled then
 				return false
@@ -276,8 +308,14 @@ local config = {
 			end
 		end,
 
+		-- Chat Mode Toggle
 		['shift-return'] = function()
 			toggle_chat()
+		end,
+
+		-- One Shot Overlay Toggle
+		['control-h'] = function()
+			oneshot_toggle()
 		end,
 
 		-- RESOLUTION MACROS
@@ -285,34 +323,19 @@ local config = {
 			if chat_state.enabled then
 				return false
 			end
-			(helpers.toggle_res(thin_res.w, thin_res.h))()
+			helpers.toggle_res(thin_res.w, thin_res.h)()
 		end,
 		['*-n'] = function()
 			if chat_state.enabled then
 				return false
 			end
-			(helpers.toggle_res(1920, 300))()
+			helpers.toggle_res(1920, 300)()
 		end,
 		['*-h'] = function()
 			if chat_state.enabled then
 				return false
 			end
-			(helpers.toggle_res(eye.res.w, eye.res.h, eye.sens))()
-		end,
-		['control-h'] = function()
-			if not oneshot_overlay_state then
-				oneshot_overlay_state = waywall.image(oneshot_overlay, {
-					dst = {
-						x = 0,
-						y = 0,
-						w = 1920,
-						h = 1080,
-					},
-				})
-			else
-				oneshot_overlay_state:close()
-				oneshot_overlay_state = nil
-			end
+			helpers.toggle_res(eye.res.w, eye.res.h, eye.sens)()
 		end,
 	},
 	experimental = { tearing = true },

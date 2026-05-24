@@ -125,7 +125,7 @@
           iconColor = "none";
           directory = "~/Videos/Screencasts/";
           filenamePattern = "yyyyMMdd_HHmmss";
-          frameRate = 120;
+          frameRate = 60;
           audioCodec = "opus";
           videoCodec = "av1";
           quality = "medium";
