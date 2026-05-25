@@ -47,12 +47,12 @@
   ## Packages
   home.packages = with pkgs; [
     ## Apps
-    # baobab
-    chromium
-    easyeffects
+    baobab
+    # chromium
+    # easyeffects
     gnome-system-monitor
     pear-desktop
-    racket
+    # racket
     # selectdefaultapplication
     super-productivity
     # vial
