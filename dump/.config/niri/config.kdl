@@ -343,6 +343,7 @@ spawn-at-startup "niriusd"
 // spawn-at-startup "zen"
 spawn-at-startup "super-productivity"
 // spawn-at-startup "youtube-music"
+// use `niri msg pick-window` to get info about windows
 window-rule {
     match app-id="com.mitchellh.ghostty"
     open-on-workspace "terminal"
@@ -378,10 +379,19 @@ window-rule {
     }
 }
 window-rule {
-    match is-floating=true
     match app-id="waywall"
-    // open-fullscreen true
+    open-fullscreen true
     allow-tearing true
+}
+window-rule {
+    match is-floating=true
+    match app-id="Nautilus"
+    default-column-width {
+        proportion 0.6
+    }
+    default-window-height {
+        proportion 0.7
+    }
 }
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -723,6 +733,9 @@ binds {
     Mod+9 {
         focus-workspace 9
     }
+    Mod+0 {
+        focus-workspace 10
+    }
     Mod+Ctrl+1 {
         move-column-to-workspace 1
     }
@@ -749,6 +762,9 @@ binds {
     }
     Mod+Ctrl+9 {
         move-column-to-workspace 9
+    }
+    Mod+Ctrl+0 {
+        move-column-to-workspace 0
     }
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }

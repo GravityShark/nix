@@ -217,7 +217,7 @@ local game_remaps = {
 	-- ['i'] = 'rightbrace',
 	-- ['o'] = 'apostrophe',
 
-	['insert'] = 'c',
+	['capslock'] = 'c',
 	['a'] = 'i',
 	['s'] = 'e',
 	['d'] = 's',
@@ -284,7 +284,7 @@ local config = {
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
 		sensitivity = 3.0802158,
-		confine_pointer = false,
+		confine_pointer = true,
 
 		remaps = game_remaps,
 	},
