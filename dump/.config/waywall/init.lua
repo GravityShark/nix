@@ -231,7 +231,7 @@ local game_remaps = {
 	['c'] = 'n',
 	['v'] = 'w',
 
-	['leftctrl'] = 'leftalt',
+	['leftmeta'] = 'leftalt',
 }
 
 -- -- ##############################################################################################
@@ -295,7 +295,7 @@ local config = {
 	},
 	actions = {
 		-- NBB
-		['alt-insert'] = function()
+		['control-insert'] = function()
 			if chat_state.enabled then
 				return false
 			end
