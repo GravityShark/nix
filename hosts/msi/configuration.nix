@@ -13,6 +13,7 @@
     atk.enable = true;
     distrobox.enable = false;
     gamemode.enable = false;
+    gpu-screen-recorder.enable = true;
     openrazer.enable = false;
     steam.enable = true;
     vial.enable = true;
@@ -24,7 +25,7 @@
     doas.enable = true;
     drag-click.enable = true;
     intel.enable = true;
-    lanzaboote.enable = true;
+    # lanzaboote.enable = true;
     logind.enable = true;
     msi.enable = true;
     nvidia.enable = true;

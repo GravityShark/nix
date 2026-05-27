@@ -6,6 +6,7 @@
     ./atk.nix
     ./distrobox.nix
     ./gamemode.nix
+    ./gpu-screen-recorder.nix
     ./openrazer.nix
     ./steam.nix
     ./vial.nix

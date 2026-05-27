@@ -8,10 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flatpaks.url = "github:gmodena/nix-flatpak/latest";
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lanzaboote = {
+    #   url = "github:nix-community/lanzaboote/v1.0.0";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     ## we are NOT waiting for this https://github.com/niri-wm/niri/issues/844
     niri-package = {
       url = "github:urayde/niri";
