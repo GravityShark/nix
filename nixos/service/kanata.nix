@@ -62,7 +62,6 @@
               oss (one-shot 5000 lsft)
               osrs (one-shot 5000 rsft)
               osc (one-shot 5000 lctl)
-              osc (one-shot 5000 lctl)
               osm (one-shot 5000 lmet)
               osa (one-shot 5000 lalt)
             )
