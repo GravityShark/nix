@@ -86,9 +86,9 @@
             (deflayer base
               _ _ _ _ _
               _    _    _    _    _    _    _    _    _    _   _ 
-              lctl    _    _    _    _    _    _    _    _    _   _   _
+              rctl    _    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
-              rctl _ @nav    _    @sym    @rblx   _
+              _ _ @nav    _    @sym    @rblx   _
             )
 
             ;; (deflayer ruckus

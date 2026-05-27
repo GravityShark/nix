@@ -217,7 +217,7 @@ local game_remaps = {
 	-- ['i'] = 'rightbrace',
 	-- ['o'] = 'apostrophe',
 
-	['capslock'] = 'c',
+	['rightctrl'] = 'c',
 	['a'] = 'i',
 	['s'] = 'e',
 	['d'] = 's',
@@ -231,7 +231,7 @@ local game_remaps = {
 	['c'] = 'n',
 	['v'] = 'w',
 
-	['LEFTMETA'] = 'LEFTALT',
+	['leftmeta'] = 'leftalt',
 }
 
 -- -- ##############################################################################################
