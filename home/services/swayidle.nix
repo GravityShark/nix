@@ -39,7 +39,7 @@
         timeouts = [
           {
 
-            timeout = 120;
+            timeout = 10;
             command = (
               if config.desktop.niri.enable then
                 "${pkgs.niri}/bin/niri msg action power-off-monitors"
