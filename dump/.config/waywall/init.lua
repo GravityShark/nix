@@ -295,7 +295,7 @@ local config = {
 	},
 	actions = {
 		-- NBB
-		['control-insert'] = function()
+		['control-control_r'] = function()
 			if chat_state.enabled then
 				return false
 			end

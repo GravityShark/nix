@@ -20,8 +20,7 @@
 
     services.swayidle =
       let
-        # https://github.com/YaLTeR/niri/pull/3077 wait for this to get implemented
-        # display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors"; -- doesn't work rn
+        # https://github.com/niri-wm/niri/pull/3192 wait for this to get implemented
         bright = "${pkgs.brightnessctl}/bin/brightnessctl";
         bsav = "${bright} --save";
         bset = level: "${bright} set ${level}";
@@ -39,15 +38,18 @@
         enable = true;
         timeouts = [
           {
+
             timeout = 120;
-            command = bsav + " && " + (bset "0");
-            resumeCommand = bres;
+            command = (
+              if config.desktop.niri.enable then
+                "${pkgs.niri}/bin/niri msg action power-off-monitors"
+              else
+                (bsav + " && " + (bset "0"))
+            );
+            resumeCommand = (
+              if config.desktop.niri.enable then "${pkgs.niri}/bin/niri msg action power-on-monitors" else bres
+            );
           }
-          # {
-          #   timeout = 180;
-          #   command = bset "0";
-          #   resumeCommand = bres;
-          # }
           {
             timeout = 240;
             command = "${lock}/bin/lock";
@@ -59,7 +61,9 @@
         ];
         events = {
           before-sleep = "${lock}/bin/lock";
-          after-resume = bres;
+          after-resume = (
+            if config.desktop.niri.enable then "${pkgs.niri}/bin/niri msg action power-on-monitors" else bres
+          );
         };
       };
 

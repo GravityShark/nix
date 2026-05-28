@@ -379,7 +379,7 @@ window-rule {
     }
 }
 window-rule {
-    match app-id="waywall"
+    match app-id="waywall" is-focused=true
     open-fullscreen true
     allow-tearing true
 }
