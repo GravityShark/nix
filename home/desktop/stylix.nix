@@ -102,9 +102,6 @@
       };
     };
 
-    # FIX: 26.05 default behavior, when updated remove.
-    gtk.gtk4.theme = config.gtk.theme;
-
     ## Niri
     xdg.configFile."niri/base16.kdl".text =
       with config.lib.stylix.colors.withHashtag;

@@ -54,9 +54,6 @@
 
     programs.neovim = {
       enable = true;
-      # FIX: 26.05 default behavior, when updated remove.
-      withPython3 = false;
-      withRuby = false;
       extraPackages = with pkgs; [
         tree-sitter
         clang
