@@ -92,10 +92,6 @@
             enabled = true;
             sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
           };
-          screen-recorder = {
-            enabled = true;
-            sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-          };
           usb-drive-manager = {
             enabled = true;
             sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
@@ -118,28 +114,6 @@
           inactiveColor = "none";
           micFilterRegex = "";
           camFilterRegex = "";
-        };
-        screen-recorder = {
-          hideInactive = false;
-          iconColor = "none";
-          directory = "~/Videos/Screencasts/";
-          filenamePattern = "yyyyMMdd_HHmmss";
-          frameRate = 60;
-          audioCodec = "opus";
-          videoCodec = "av1";
-          quality = "medium";
-          colorRange = "limited";
-          showCursor = true;
-          copyToClipboard = true;
-          audioSource = "default_output";
-          videoSource = "portal";
-          resolution = "original";
-          replayEnabled = true;
-          replayDuration = 300;
-          customReplayDuration = 30;
-          replayStorage = "ram";
-          restorePortalSession = false;
-          customFrameRate = 60;
         };
         usb-drive-manager = {
           autoMount = false;
@@ -280,9 +254,6 @@
               {
                 id = "Spacer";
                 width = 1;
-              }
-              {
-                id = "plugin:screen-recorder";
               }
               {
                 compactMode = false;
@@ -485,9 +456,6 @@
               }
               {
                 id = "plugin:mirror-mirror";
-              }
-              {
-                id = "plugin:screen-recorder";
               }
             ];
           };

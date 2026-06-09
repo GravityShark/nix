@@ -289,7 +289,7 @@ local config = {
 		remaps = game_remaps,
 	},
 	theme = {
-		background = '#241f31',
+		-- background = '#241f31',
 		ninb_anchor = 'right',
 		ninb_opacity = 0.8,
 	},
