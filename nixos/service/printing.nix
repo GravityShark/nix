@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -11,7 +16,16 @@
       "scanner"
     ];
     # https://nixos.wiki/wiki/Printing
-    services.printing.enable = true;
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+        brlaser
+        brgenml1lpr
+        brgenml1cupswrapper
+      ];
+    };
 
     services.avahi = {
       enable = true;
@@ -19,6 +33,6 @@
       openFirewall = true;
     };
 
-    hardware.sane.enable = true;
+    services.ipp-usb.enable = true;
   };
 }
