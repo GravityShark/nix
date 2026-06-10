@@ -27,8 +27,7 @@
     };
     environment.systemPackages = with pkgs; [
       system-config-printer
-      sane-frontends
-      scanservjs
+      sane-frontends # for `xscanimage`
     ];
 
     services.avahi = {

@@ -23,7 +23,6 @@
     nixpkgs.config.allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
-        "brgenml1lpr"
         "cloudflare-warp"
         "nvidia-kernel-modules"
         "nvidia-settings"
