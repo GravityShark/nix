@@ -9,29 +9,15 @@ local ninb_path = '@ninb_path@'
 local eye_overlay = '@eye_overlay@'
 local oneshot_overlay = '@oneshot_overlay@'
 local ninb_pid = 'ninjabrain.*\\.jar'
-
-local is_running = function(name)
-	local handle = io.popen("pgrep -f '" .. name .. "'")
-	local result = handle:read('*l')
-	handle:close()
-	return result ~= nil
-end
-
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
 -- -- ################################################################################################
-
-waywall.listen('load', function()
-	waywall.image(background, {
-		dst = { x = 0, y = 0, w = 1920, h = 1080 },
-		depth = -1,
-	})
-end)
-
+-- waywall.listen('load', function()
+-- 	ninb_toggle()
+-- end)
 -- -- ################################################################################################
 -- -- PROJECTOR SETUP
 -- -- ################################################################################################
-
 local function setup_entity_counter(width, height)
 	local e_count_src = {
 		x = 14,
@@ -54,7 +40,6 @@ local function setup_entity_counter(width, height)
 		},
 	}, width, height)
 end
-
 local function setup_preemptive_count(width, height)
 	local preemptive_height = 24 -- 3 items
 	local preemptive_width = 26
@@ -78,11 +63,9 @@ local function setup_preemptive_count(width, height)
 		},
 	}, width, height)
 end
-
 -- -- ##############################################################################################
--- -- REGULAR RESOLUTION PIE MIRROR
+-- -- PIE MIRRORS
 -- -- ##############################################################################################
-
 local pie_height = 40 -- 5 items
 local pie_scale = 2.5
 local pie_width = 26
@@ -96,39 +79,60 @@ local num_width = 80
 local num_right_padding = 330 - num_width
 local num_dst_width = num_width * pie_scale
 
--- TODO: Find a way to figure out if its ingame and then apply res_mirror
-helpers.res_mirror({
-	src = {
-		x = 1920 - (pie_width + pie_right_padding),
-		y = 1080 - 220,
-		w = pie_width,
-		h = pie_height,
-	},
-	dst = {
-		x = 1920 - pie_dst_width,
-		y = 1080 - pie_dst_height,
-		w = pie_dst_width,
-		h = pie_dst_height,
-	},
-}, 0, 0)
+local pie_list = nil
+local pie_numbers = nil
+local toggle_pie_mirrors = function()
+	local width, height = waywall.active_res()
+	local state = waywall.state()
 
-helpers.res_mirror({
-	src = {
-		x = 1920 - (num_width + num_right_padding),
-		y = 1080 - 220,
-		w = num_width,
-		h = pie_height,
-	},
-	dst = {
-		x = 1920 - (num_dst_width + pie_dst_width),
-		y = 1080 - pie_dst_height,
-		w = num_dst_width,
-		h = pie_dst_height,
-	},
-}, 0, 0)
+	if width == 0 and height == 0 and state.screen == 'inworld' then
+		if pie_list and pie_numbers then
+			return
+		end
 
+		pie_list = waywall.mirror({
+			src = {
+				x = 1920 - (pie_width + pie_right_padding),
+				y = 1080 - 220,
+				w = pie_width,
+				h = pie_height,
+			},
+			dst = {
+				x = 1920 - pie_dst_width,
+				y = 1080 - pie_dst_height,
+				w = pie_dst_width,
+				h = pie_dst_height,
+			},
+		})
+		pie_numbers = waywall.mirror({
+			src = {
+				x = 1920 - (num_width + num_right_padding),
+				y = 1080 - 220,
+				w = num_width,
+				h = pie_height,
+			},
+			dst = {
+				x = 1920 - (num_dst_width + pie_dst_width),
+				y = 1080 - pie_dst_height,
+				w = num_dst_width,
+				h = pie_dst_height,
+			},
+		})
+	else
+		if not pie_list and not pie_numbers then
+			return
+		end
+		pie_list:close()
+		pie_list = nil
+		pie_numbers:close()
+		pie_numbers = nil
+	end
+end
+
+waywall.listen('resolution', toggle_pie_mirrors)
+waywall.listen('state', toggle_pie_mirrors)
 -- -- ##############################################################################################
--- -- THIN
+-- -- THIN MIRROS
 -- -- ##############################################################################################
 local thin_res = {
 	w = 320,
@@ -136,9 +140,8 @@ local thin_res = {
 }
 setup_entity_counter(thin_res.w, thin_res.h)
 setup_preemptive_count(thin_res.w, thin_res.h)
-
 -- -- ##############################################################################################
--- -- EYE ZOOM
+-- -- EYE ZOOM MIRRORS
 -- -- ##############################################################################################
 local eye = {
 	sens = 0.20778952,
@@ -162,7 +165,7 @@ local eye = {
 		h = 1080,
 	},
 }
---
+
 helpers.res_mirror({
 	dst = eye.proj,
 	src = {
@@ -172,18 +175,15 @@ helpers.res_mirror({
 		h = eye.src.h,
 	},
 }, eye.res.w, eye.res.h)
-
 helpers.res_image(eye_overlay, { dst = eye.proj }, eye.res.w, eye.res.h)
+
 setup_entity_counter(eye.res.w, eye.res.h)
 setup_preemptive_count(eye.res.w, eye.res.h)
-
 -- -- ##############################################################################################
 -- -- REMAPS
 -- -- ##############################################################################################
--- -- when in doubt, do this:
--- -- execute sudo showkey
--- -- find keycode in https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
--- -- (might be in decimal or in hex)
+-- -- https://github.com/tesselslate/waywall/blob/main/include/util/keycodes.h
+-- -- https://github.com/tesselslate/waywall/blob/main/waywall/config/config.c
 local game_remaps = {
 	--[[
 	0    1    2    3    k    +    4    5
@@ -233,7 +233,6 @@ local game_remaps = {
 
 	['leftmeta'] = 'leftalt',
 }
-
 -- -- ##############################################################################################
 -- -- CHAT MODE
 -- -- ##############################################################################################
@@ -241,7 +240,6 @@ local chat_state = {
 	enabled = false,
 	text = nil,
 }
-
 local toggle_chat = function()
 	chat_state.enabled = not chat_state.enabled
 	if chat_state.enabled then
@@ -253,11 +251,9 @@ local toggle_chat = function()
 		chat_state.text = nil
 	end
 end
-
 -- -- ##############################################################################################
 -- -- CONFIG OBJECT
 -- -- ##############################################################################################
-
 local oneshot_overlay_state = nil
 local oneshot_toggle = function()
 	if not oneshot_overlay_state then
@@ -274,50 +270,54 @@ local oneshot_toggle = function()
 		oneshot_overlay_state = nil
 	end
 end
-
+local is_running = function(name)
+	local handle = io.popen("pgrep -f '" .. name .. "'")
+	local result = handle:read('*l')
+	handle:close()
+	return result ~= nil
+end
+local ninb_toggle = function()
+	if not is_running(ninb_pid) then
+		waywall.exec(ninb_path)
+		waywall.show_floating(true)
+	else
+		helpers.toggle_floating()
+	end
+end
 local config = {
 	input = {
 		-- KEYBOARD CONFIG
 		layout = 'us',
 		repeat_rate = 150,
-		repeat_delay = 200,
+		repeat_delay = 189,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
 		sensitivity = 3.0802158,
-		confine_pointer = true,
-
+		-- confine_pointer = true,
 		remaps = game_remaps,
 	},
 	theme = {
 		-- background = '#241f31',
+		background_png = background,
 		ninb_anchor = 'right',
 		ninb_opacity = 0.8,
 	},
 	actions = {
-		-- NBB
+		-- Ninb Toggle
 		['control-control_r'] = function()
 			if chat_state.enabled then
 				return false
 			end
-
-			if not is_running(ninb_pid) then
-				waywall.exec(ninb_path)
-				waywall.show_floating(true)
-			else
-				helpers.toggle_floating()
-			end
+			ninb_toggle()
 		end,
-
 		-- Chat Mode Toggle
 		['shift-return'] = function()
 			toggle_chat()
 		end,
-
 		-- One Shot Overlay Toggle
 		['control-h'] = function()
 			oneshot_toggle()
 		end,
-
 		-- RESOLUTION MACROS
 		['*-b'] = function()
 			if chat_state.enabled then
@@ -340,5 +340,4 @@ local config = {
 	},
 	experimental = { tearing = true },
 }
-
 return config
