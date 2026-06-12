@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -28,6 +28,7 @@
     # lanzaboote.enable = true;
     logind.enable = true;
     msi.enable = true;
+    nix-ld.enable = false;
     nvidia.enable = true;
     systemd-boot.enable = true;
     thp.enable = true;
@@ -42,7 +43,7 @@
     networking.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
-    printing.enable = true;
+    printing.enable = false;
     wayland-pipewire-idle-inhibit.enable = true;
   };
 
@@ -64,5 +65,4 @@
   #     noPass = true;
   #   }
   # ];
-
 }

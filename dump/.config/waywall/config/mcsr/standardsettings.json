@@ -5,8 +5,8 @@
   "fov": 95.0,
   "realmsNotifications": false,
   "fullscreenResolution": null,
-  "biomeBlendRadius": 2.0,
-  "graphicsMode": 1,
+  "biomeBlendRadius": 0.0,
+  "graphicsMode": 0,
   "renderDistance": 18.0,
   "ao": 0,
   "maxFps": 70.0,
@@ -17,9 +17,9 @@
   "gamma": 5.0,
   "renderClouds": 0,
   "fullscreen": true,
-  "particles": 0,
+  "particles": 2,
   "mipmapLevels": 4.0,
-  "entityShadows": true,
+  "entityShadows": false,
   "entityDistanceScaling": 5.0,
   "entityCulling": false,
   "modelPart_cape": true,
@@ -33,17 +33,50 @@
     "value": false
   },
   "mainHand": 1,
-  "soundCategory_master": 1.0,
-  "soundCategory_music": 0.0,
-  "soundCategory_record": 1.0,
-  "soundCategory_weather": 1.0,
-  "soundCategory_block": 1.0,
-  "soundCategory_hostile": 1.0,
-  "soundCategory_neutral": 1.0,
-  "soundCategory_player": 0.5030692,
-  "soundCategory_ambient": 1.0,
-  "soundCategory_voice": 1.0,
-  "showSubtitles": true,
+  "soundCategory_master": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "soundCategory_music": {
+    "enabled": false,
+    "value": 0.0
+  },
+  "soundCategory_record": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "soundCategory_weather": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "soundCategory_block": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "soundCategory_hostile": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "soundCategory_neutral": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "soundCategory_player": {
+    "enabled": false,
+    "value": 0.5030692
+  },
+  "soundCategory_ambient": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "soundCategory_voice": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "showSubtitles": {
+    "enabled": false,
+    "value": true
+  },
   "language": "en_us",
   "forceUnicodeFont": false,
   "mouseSensitivity": 0.02291165,
@@ -126,4 +159,3 @@
   "firstAutoF3EscDelay": 22,
   "triggerOnResize": false
 }
-

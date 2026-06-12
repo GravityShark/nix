@@ -18,6 +18,7 @@
         "uasm"
         "graalvm-oracle"
         "lunarclient"
+        "zoom"
       ];
 
     # caprine has outdated version
