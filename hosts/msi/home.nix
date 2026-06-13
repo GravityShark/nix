@@ -28,6 +28,7 @@
     minecraft.enable = true;
     neovim.enable = true;
     obs.enable = false;
+    ocr.enable = true;
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;

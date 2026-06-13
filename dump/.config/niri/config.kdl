@@ -864,7 +864,10 @@ binds {
         screenshot-screen
     }
     Alt+Print {
-        spawn "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"
+        spawn "ocr"
+    }
+    Ctrl+Print {
+        spawn "woomer"
     }
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

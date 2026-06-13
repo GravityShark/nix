@@ -18,7 +18,10 @@
       }
     ];
 
-    home.packages = [ pkgs.nirius ];
+    home.packages = with pkgs; [
+      nirius
+      woomer
+    ];
 
     xdg.configFile."niri/config.kdl".text =
       builtins.readFile ../../dump/.config/niri/config.kdl
