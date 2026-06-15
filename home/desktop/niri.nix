@@ -70,10 +70,10 @@
       };
 
       layer-rules = [
-        # (lib.mkIf config.desktop.noctalia.enable {
-        #   matches = [ { namespaces = "^noctalia-wallpaper*"; } ];
-        #   place-within-backdrop = true;
-        # })
+        (lib.mkIf config.desktop.noctalia.enable {
+          matches = [ { namespace = "^noctalia-wallpaper*"; } ];
+          place-within-backdrop = true;
+        })
         {
           matches = [ { namespace = "^notifications$"; } ];
           block-out-from = "screen-capture";
@@ -89,13 +89,9 @@
           { proportion = 1. / 3.; }
         ];
         default-column-width.proportion = 0.5;
-        # focus-ring = {
-        #   enable = true;
-        #   width = 3;
-        # };
         border = {
-          width = 3;
           enable = true;
+          width = 3;
         };
       };
       # hotkey-overlay.skip-at-startup = true;
@@ -107,15 +103,17 @@
       };
 
       workspaces = {
-        "terminal" = { };
-        "browser" = { };
-        "notes" = { };
-        "music" = { };
-        "chats" = { };
+        "1".name = "terminal";
+        "2".name = "browser";
+        "3".name = "notes";
+        "4".name = "music";
+        "5".name = "chats";
       };
       spawn-at-startup = [
         { argv = [ "niriusd" ]; }
         { argv = [ "super-productivity" ]; }
+        (lib.mkIf config.desktop.noctalia.enable { argv = [ "noctalia-shell" ]; })
+        (lib.mkIf config.desktop.noctalia.enable { argv = [ "noctalia-performance" ]; })
       ];
       window-rules = [
         {
@@ -159,7 +157,7 @@
         }
         {
           matches = [
-            { app-id = "^zen.*"; }
+            { app-id = "^zen.*$"; }
           ];
           open-on-workspace = "browser";
           open-maximized = true;
@@ -361,49 +359,6 @@
             "toggle"
           ];
         };
-        "Mod+Q" = lib.mkIf config.desktop.noctalia.enable {
-          hotkey-overlay.title = "Open the session menu";
-          repeat = false;
-          action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "sessionMenu"
-            "toggle"
-          ];
-        };
-        "Mod+Shift+Q" = {
-          hotkey-overlay.title = "Power off monitors";
-          action.power-off-monitors = [ ];
-        };
-        "Mod+Ctrl+Q" = {
-          hotkey-overlay.title = "Exit niri";
-          repeat = false;
-          action.quit = [
-          ];
-        };
-        "Mod+P" = lib.mkIf config.desktop.noctalia.enable {
-          hotkey-overlay.title = "Cycle power profiles";
-          repeat = false;
-          action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "powerProfile"
-            "toggle"
-          ];
-        };
-        "Mod+I" = lib.mkIf config.desktop.noctalia.enable {
-          hotkey-overlay.title = "Inhibit idle";
-          repeat = false;
-          action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "idleInhibitor"
-            "toggle"
-          ];
-        };
         "XF86AudioRaiseVolume" = {
           allow-when-locked = true;
           action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.5";
@@ -462,20 +417,158 @@
             "2%-"
           ];
         };
+        "Mod+Q" = lib.mkIf config.desktop.noctalia.enable {
+          hotkey-overlay.title = "Open the session menu";
+          repeat = false;
+          action.spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "sessionMenu"
+            "toggle"
+          ];
+        };
+        "Mod+Shift+Q" = {
+          hotkey-overlay.title = "Power off monitors";
+          action.power-off-monitors = [ ];
+        };
+        "Mod+Ctrl+Q" = {
+          hotkey-overlay.title = "Exit niri";
+          repeat = false;
+          action.quit = [
+          ];
+        };
+        "Mod+I" = lib.mkIf config.desktop.noctalia.enable {
+          hotkey-overlay.title = "Inhibit idle";
+          repeat = false;
+          action.spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "idleInhibitor"
+            "toggle"
+          ];
+        };
+        "Mod+O" = {
+          hotkey-overlay.title = "Toggle overview";
+          repeat = false;
+          action.toggle-overview = [ ];
+        };
+        "Mod+P" = lib.mkIf config.desktop.noctalia.enable {
+          hotkey-overlay.title = "Cycle power profiles";
+          repeat = false;
+          action.spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "powerProfile"
+            "toggle"
+          ];
+        };
+        "Mod+W" = {
+          repeat = false;
+          action.close-window = [ ];
+        };
+        "Alt+Tab".action.focus-workspace-previous = [ ];
+
+        "Mod+Left".action.focus-column-left = [ ];
+        "Mod+Down".action.focus-window-down = [ ];
+        "Mod+Up".action.focus-window-up = [ ];
+        "Mod+Right".action.focus-column-right = [ ];
+        "Mod+Ctrl+Left".action.move-column-left = [ ];
+        "Mod+Ctrl+Down".action.move-window-down = [ ];
+        "Mod+Ctrl+Up".action.move-window-up = [ ];
+        "Mod+Ctrl+Right".action.move-column-right = [ ];
+
+        "Mod+Home".action.focus-column-first = [ ];
+        "Mod+End".action.focus-column-last = [ ];
+        "Mod+Ctrl+Home".action.move-column-to-first = [ ];
+        "Mod+Ctrl+End".action.move-column-to-last = [ ];
+
+        "Mod+Shift+Left".action.focus-monitor-left = [ ];
+        "Mod+Shift+Down".action.focus-monitor-down = [ ];
+        "Mod+Shift+Up".action.focus-monitor-up = [ ];
+        "Mod+Shift+Right".action.focus-monitor-right = [ ];
+        "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = [ ];
+        "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = [ ];
+        "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = [ ];
+        "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = [ ];
+
+        "Mod+Page_Down".action.focus-workspace-down = [ ];
+        "Mod+Page_Up".action.focus-workspace-up = [ ];
+        "Mod+Ctrl+Page_Down".action.move-column-to-workspace-down = [ ];
+        "Mod+Ctrl+Page_Up".action.move-column-to-workspace-up = [ ];
+        "Mod+Shift+Page_Down".action.move-workspace-down = [ ];
+        "Mod+Shift+Page_Up".action.move-workspace-up = [ ];
+
+        # "Mod+WheelScrollRight".action.focus-column-right = [ ];
+        # "Mod+WheelScrollLeft".action.focus-column-left = [ ];
+        # "Mod+Ctrl+WheelScrollRight".action.move-column-right = [ ];
+        # "Mod+Ctrl+WheelScrollLeft".action.move-column-left = [ ];
+        "Mod+WheelScrollDown".action.focus-column-right = [ ];
+        "Mod+WheelScrollUp".action.focus-column-left = [ ];
+        "Mod+Ctrl+WheelScrollDown".action.move-column-right = [ ];
+        "Mod+Ctrl+WheelScrollUp".action.move-column-left = [ ];
+        "Mod+Shift+WheelScrollDown".action.focus-workspace-down = [ ];
+        "Mod+Shift+WheelScrollUp".action.focus-workspace-up = [ ];
+        "Mod+Shift+Ctrl+WheelScrollDown".action.move-column-to-workspace-down = [ ];
+        "Mod+Shift+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = [ ];
+
+        "Mod+1".action.focus-workspace = [ 1 ];
+        "Mod+2".action.focus-workspace = [ 2 ];
+        "Mod+3".action.focus-workspace = [ 3 ];
+        "Mod+4".action.focus-workspace = [ 4 ];
+        "Mod+5".action.focus-workspace = [ 5 ];
+        "Mod+6".action.focus-workspace = [ 6 ];
+        "Mod+7".action.focus-workspace = [ 7 ];
+        "Mod+8".action.focus-workspace = [ 8 ];
+        "Mod+9".action.focus-workspace = [ 9 ];
+        "Mod+0".action.focus-workspace = [ 10 ];
+        "Mod+Ctrl+1".action.move-column-to-workspace = [ 1 ];
+        "Mod+Ctrl+2".action.move-column-to-workspace = [ 2 ];
+        "Mod+Ctrl+3".action.move-column-to-workspace = [ 3 ];
+        "Mod+Ctrl+4".action.move-column-to-workspace = [ 4 ];
+        "Mod+Ctrl+5".action.move-column-to-workspace = [ 5 ];
+        "Mod+Ctrl+6".action.move-column-to-workspace = [ 6 ];
+        "Mod+Ctrl+7".action.move-column-to-workspace = [ 7 ];
+        "Mod+Ctrl+8".action.move-column-to-workspace = [ 8 ];
+        "Mod+Ctrl+9".action.move-column-to-workspace = [ 9 ];
+        "Mod+Ctrl+0".action.move-column-to-workspace = [ 10 ];
+
+        "Mod+Alt+Left".action.consume-or-expel-window-left = [ ];
+        "Mod+Alt+Right".action.consume-or-expel-window-right = [ ];
+        "Mod+Comma".action.consume-window-into-column = [ ];
+        "Mod+Period".action.expel-window-from-column = [ ];
+
+        "Mod+R".action.switch-preset-column-width = [ ];
+        "Mod+Shift+R".action.switch-preset-window-height = [ ];
+        "Mod+Ctrl+R".action.reset-window-height = [ ];
+        "Mod+Ctrl+F".action.maximize-window-to-edges = [ ];
+        "Mod+F".action.maximize-column = [ ];
+        "Mod+Shift+F".action.fullscreen-window = [ ];
+
+        "Mod+C".action.center-column = [ ];
+        "Mod+Ctrl+C".action.center-visible-columns = [ ];
+
+        "Mod+Minus".action.set-column-width = [ "-10%" ];
+        "Mod+Equal".action.set-column-width = [ "+10%" ];
+        "Mod+Shift+Minus".action.set-window-height = [ "-10%" ];
+        "Mod+Shift+Equal".action.set-window-height = [ "+10%" ];
+
+        "Mod+V".action.toggle-window-floating = [ ];
+        "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
+
+        "Print".action.screenshot = [ ];
+        "Shift+Print".action.screenshot-screen = [ ];
+        "Alt+Print".action.spawn = [ "ocr" ];
+        "Ctrl+Print".action.spawn = [ "${pkgs.woomer}/bin/woomer" ];
+
+        "Mod+Escape" = {
+          allow-inhibiting = false;
+          action.toggle-keyboard-shortcuts-inhibit = [ ];
+        };
       };
     };
-
-    # xdg.configFile."niri/config.kdl".text =
-    #   builtins.readFile ../../dump/.config/niri/config.kdl
-    #   + (
-    #     if config.desktop.noctalia.enable then
-    #       ''
-    #         spawn-at-startup "noctalia-shell"
-    #         spawn-at-startup "noctalia-performance"
-    #       ''
-    #     else
-    #       ""
-    #   );
 
     ## Niri
     # xdg.configFile."niri/base16.kdl".text =

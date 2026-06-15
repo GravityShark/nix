@@ -85,7 +85,6 @@
     stylix.autoEnable = false;
     stylix.targets = {
       anki.enable = config.apps.anki.enable;
-      fish.enable = config.apps.fish.enable;
       fontconfig.enable = true;
       ghostty.enable = config.apps.ghostty.enable;
       gnome.enable = true;

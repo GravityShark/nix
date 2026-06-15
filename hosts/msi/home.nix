@@ -14,7 +14,7 @@
     noctalia.enable = true;
     stylix = {
       enable = true;
-      theme = "rose-pine";
+      theme = "gruvbox-material-light";
     };
   };
 
@@ -66,7 +66,6 @@
     # racket
     # selectdefaultapplication
     super-productivity
-    woomer
 
     ## Media
     audacity
