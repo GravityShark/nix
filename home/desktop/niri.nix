@@ -27,48 +27,7 @@
     # https://niri-wm.github.io/niri/Configuration
     # https://github.com/sodiboo/niri-flake/blob/main/docs.md
     programs.niri.settings = {
-      input = {
-        keyboard = {
-          repeat-rate = 0;
-        };
-        touchpad = {
-          click-method = "clickfinger";
-          natural-scroll = true;
-          accel-speed = 0.67;
-          accel-profile = "flat";
-          scroll-method = "two-finger";
-        };
-        mouse = {
-          natural-scroll = true;
-          accel-speed = -0.73;
-          accel-profile = "flat";
-          scroll-method = "on-button-down";
-        };
-        focus-follows-mouse.max-scroll-amount = "0%";
-      };
-
-      outputs = {
-        "eDP-1" = {
-          enable = true;
-          # background-color = "#000000";
-        };
-      };
-
-      cursor = {
-        hide-when-typing = true;
-        hide-after-inactive-ms = 1000;
-      };
-
-      environment = {
-        QT_QPA_PLATFORM = "wayland;xcb";
-        GDK_BACKEND = "wayland";
-        SDL_VIDEODRIVER = "wayland";
-        CLUTTER_BACKEND = "wayland";
-        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
-        NIXOS_OZONE_WL = "1";
-        MOZ_ENABLE_WAYLAND = "1";
-      };
-
+      outputs."eDP-1".enable = true;
       layer-rules = [
         (lib.mkIf config.desktop.noctalia.enable {
           matches = [ { namespace = "^noctalia-wallpaper*"; } ];
@@ -94,10 +53,21 @@
           enable = true;
           width = 3;
         };
+        tab-indicator = with config.lib.stylix.colors.withHashtag; {
+          width = 10;
+          corner-radius = 2;
+          active.color = lib.mkIf config.desktop.stylix.enable base0B;
+          inactive.color = lib.mkIf config.desktop.stylix.enable base00;
+          urgent.color = lib.mkIf config.desktop.stylix.enable base08;
+        };
       };
-      # hotkey-overlay.skip-at-startup = true;
+      hotkey-overlay.skip-at-startup = true;
       prefer-no-csd = true;
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
+      overview = {
+        backdrop-color = lib.mkIf config.desktop.stylix.enable config.lib.stylix.colors.withHashtag.base01;
+        workspace-shadow.enable = false;
+      };
       animations = {
         workspace-switch.enable = false;
         slowdown = 0.5;
@@ -196,10 +166,48 @@
           default-column-width.proportion = 0.6;
           default-window-height.proportion = 0.7;
         }
+        {
+          matches = [ { title = "woomer"; } ];
+          open-floating = true;
+        }
       ];
       debug = {
         ignore-drm-device = "/dev/dri/card1";
         honor-xdg-activation-with-invalid-serial = lib.mkIf config.desktop.noctalia.enable [ ];
+      };
+      input = {
+        keyboard = {
+          repeat-rate = 0;
+        };
+        touchpad = {
+          click-method = "clickfinger";
+          natural-scroll = true;
+          accel-speed = 0.67;
+          accel-profile = "flat";
+          scroll-method = "two-finger";
+        };
+        mouse = {
+          natural-scroll = true;
+          accel-speed = -0.73;
+          accel-profile = "flat";
+          scroll-method = "on-button-down";
+        };
+        focus-follows-mouse.max-scroll-amount = "0%";
+      };
+
+      cursor = {
+        hide-when-typing = true;
+        hide-after-inactive-ms = 1000;
+      };
+
+      environment = {
+        QT_QPA_PLATFORM = "wayland;xcb";
+        GDK_BACKEND = "wayland";
+        SDL_VIDEODRIVER = "wayland";
+        CLUTTER_BACKEND = "wayland";
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+        NIXOS_OZONE_WL = "1";
+        MOZ_ENABLE_WAYLAND = "1";
       };
       binds = {
         "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
@@ -557,12 +565,13 @@
         "Mod+Shift+Equal".action.set-window-height = [ "+10%" ];
 
         "Mod+V".action.toggle-window-floating = [ ];
-        "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
+        "Mod+Ctrl+V".action.switch-focus-between-floating-and-tiling = [ ];
+        "Mod+Shift+V".action.toggle-column-tabbed-display = [ ];
 
         "Print".action.screenshot = [ ];
         "Shift+Print".action.screenshot-screen = [ ];
-        "Alt+Print".action.spawn = [ "ocr" ];
-        "Ctrl+Print".action.spawn = [ "${pkgs.woomer}/bin/woomer" ];
+        "Ctrl+Print".action.spawn = [ "ocr" ];
+        "Mod+Z".action.spawn = [ "${pkgs.woomer}/bin/woomer" ];
 
         "Mod+Escape" = {
           allow-inhibiting = false;
@@ -570,52 +579,5 @@
         };
       };
     };
-
-    ## Niri
-    # xdg.configFile."niri/base16.kdl".text =
-    #   with config.lib.stylix.colors.withHashtag;
-    #   lib.mkIf config.desktop.niri.enable ''
-    #     output "eDP-1" {
-    #         layout {
-    #             background-color "${base00}"
-    #         }
-    #     }
-    #
-    #     overview {
-    #       backdrop-color "${base01}"
-    #     }
-    #     layout {
-    #         focus-ring {
-    #             active-color   "${base0B}"
-    #             inactive-color "${base00}"
-    #             urgent-color   "${base08}"
-    #         }
-    #
-    #         border {
-    #             active-color   "${base0B}"
-    #             inactive-color "${base00}"
-    #             urgent-color   "${base08}"
-    #         }
-    #
-    #         shadow {
-    #             color "#00000070"
-    #         }
-    #
-    #         tab-indicator {
-    #             active-color   "${base0B}"
-    #             inactive-color "${base00}"
-    #             urgent-color   "${base08}"
-    #         }
-    #
-    #         insert-hint {
-    #             color "#98971a80"
-    #         }
-    #     }
-    #
-    #     cursor {
-    #        xcursor-theme "${config.stylix.cursor.name}"
-    #        xcursor-size ${toString config.stylix.cursor.size}
-    #     }
-    #   '';
   };
 }

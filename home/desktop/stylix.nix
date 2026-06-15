@@ -86,6 +86,7 @@
     stylix.targets = {
       anki.enable = config.apps.anki.enable;
       fontconfig.enable = true;
+      fzf.enable = config.apps.fzf.enable;
       ghostty.enable = config.apps.ghostty.enable;
       gnome.enable = true;
       gtk.enable = true;

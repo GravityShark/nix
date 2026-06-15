@@ -15,9 +15,11 @@
         with pkgs;
         (writers.writeDashBin "ocr" ''
           text=$(${grim}/bin/grim -g "$(${slurp}/bin/slurp)" - | ${tesseract}/bin/tesseract stdin stdout 2>/dev/null)
-          echo $text
-          printf '%s' "$text" | ${wl-clipboard}/bin/wl-copy
-          ${notify-desktop}/bin/notify-desktop -a System -i "$text" "Screenshot copied to clipboard" "$text"
+          if [ "$text" = "" ]; then
+                  return 1
+          fi
+          ${wl-clipboard}/bin/wl-copy "$text"
+          ${notify-desktop}/bin/notify-desktop -a System -i "$text" "Text copied to clipboard" "$text"
         '');
     in
     lib.mkIf config.apps.ocr.enable {
