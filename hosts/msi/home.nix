@@ -47,6 +47,7 @@
 
   ## Other programss
   programs = {
+    mpv.enable = true;
     vesktop.enable = true;
     zathura = {
       enable = true;
@@ -65,6 +66,7 @@
     # racket
     # selectdefaultapplication
     super-productivity
+    woomer
 
     ## Media
     audacity
@@ -73,7 +75,6 @@
     krita # Drawing
 
     ## Specific file type
-    mpv
     nautilus
     qbittorrent
     swayimg
@@ -105,5 +106,6 @@
     # wineWow64Packages.stable
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
+    wineWow64Packages.waylandFull
   ];
 }

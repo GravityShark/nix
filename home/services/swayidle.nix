@@ -26,13 +26,9 @@
         bset = level: "${bright} set ${level}";
         bres = "${bright} --restore";
 
-        lock = (
-          pkgs.writers.writeDashBin "lock" ''
-            ${
-              inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-            }/bin/noctalia-shell ipc call lockScreen lock;
-          ''
-        );
+        lock = "${
+          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+        }/bin/noctalia-shell ipc call lockScreen lock;";
       in
       {
         enable = true;
@@ -52,7 +48,7 @@
           }
           {
             timeout = 240;
-            command = "${lock}/bin/lock";
+            command = lock;
           }
           {
             timeout = 300;
@@ -60,7 +56,7 @@
           }
         ];
         events = {
-          before-sleep = "${lock}/bin/lock";
+          before-sleep = lock;
           after-resume = (
             if config.desktop.niri.enable then "${pkgs.niri}/bin/niri msg action power-on-monitors" else bres
           );

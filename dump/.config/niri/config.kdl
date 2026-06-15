@@ -317,9 +317,7 @@ window-rule {
 window-rule {
     match app-id="^org\\.keepassxc\\.KeePassXC$"
     match app-id="^org\\.gnome\\.World\\.Secrets$"
-    // block-out-from "screen-capture"
-    // Use this instead if you want them visible on third-party screenshot tools.
-    block-out-from "screencast"
+    block-out-from "screen-capture"
 }
 // Black out notifications
 layer-rule {
@@ -357,6 +355,7 @@ window-rule {
     open-on-workspace "browser"
 }
 window-rule {
+    superproductivity
     match app-id="obsidian"
     match app-id="superProductivity"
     match title="Super Productivity"
@@ -364,7 +363,7 @@ window-rule {
     open-on-workspace "notes"
 }
 window-rule {
-    match app-id="com.github.th_ch.youtube_music"
+    match app-id="^com\\.github\\.th_ch\\.youtube_music$"
     open-on-workspace "music"
     default-column-width {
         proportion 0.66667
@@ -372,7 +371,7 @@ window-rule {
 }
 window-rule {
     match app-id="vesktop"
-    match app-id="Caprine"
+    match app-id="caprine"
     open-on-workspace "chats"
     default-column-width {
         proportion 0.66667

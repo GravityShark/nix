@@ -84,73 +84,24 @@
 
     stylix.autoEnable = false;
     stylix.targets = {
-      anki.enable = true;
-      fish.enable = true; # NOTE: currently annoying with fish 4.3.0, because a message appears
+      anki.enable = config.apps.anki.enable;
+      fish.enable = config.apps.fish.enable;
       fontconfig.enable = true;
-      fzf.enable = true;
-      ghostty.enable = true;
+      ghostty.enable = config.apps.ghostty.enable;
       gnome.enable = true;
       gtk.enable = true;
       gtksourceview.enable = true;
       kde.enable = true;
-      # mangohud.enable = true;
-      mpv.enable = true;
-      noctalia-shell.enable = true;
+      mpv.enable = config.programs.mpv.enable;
+      noctalia-shell.enable = config.desktop.noctalia.enable;
       qt.enable = true;
-      vesktop.enable = true;
-      zathura.enable = true;
+      vesktop.enable = config.programs.vesktop.enable;
+      zathura.enable = config.programs.zathura.enable;
       zen-browser = {
-        enable = true;
+        enable = config.apps.zen-browser.enable;
         profileNames = [ "Default Profile" ];
       };
     };
-
-    ## Niri
-    xdg.configFile."niri/base16.kdl".text =
-      with config.lib.stylix.colors.withHashtag;
-      lib.mkIf config.desktop.niri.enable ''
-        output "eDP-1" {
-            layout {
-                background-color "${base00}"
-            }
-        }
-
-        overview {
-          backdrop-color "${base01}"
-        }
-        layout {
-            focus-ring {
-                active-color   "${base0B}"
-                inactive-color "${base00}"
-                urgent-color   "${base08}"
-            }
-
-            border {
-                active-color   "${base0B}"
-                inactive-color "${base00}"
-                urgent-color   "${base08}"
-            }
-
-            shadow {
-                color "#00000070"
-            }
-
-            tab-indicator {
-                active-color   "${base0B}"
-                inactive-color "${base00}"
-                urgent-color   "${base08}"
-            }
-
-            insert-hint {
-                color "#98971a80"
-            }
-        }
-
-        cursor {
-           xcursor-theme "${config.stylix.cursor.name}"
-           xcursor-size ${toString config.stylix.cursor.size}
-        }
-      '';
 
     ## Labwc
     wayland.windowManager.labwc.environment = lib.mkIf config.wayland.windowManager.labwc.enable [
@@ -161,12 +112,14 @@
     ## Noctalia-shell
     programs.noctalia-shell.settings = lib.mkIf config.stylix.targets.noctalia-shell.enable {
       bar.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-      bar.capsuleOpacity = config.stylix.opacity.desktop;
-      ui.panelBackgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-      dock.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-      osd.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
-      notifications.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
+      bar.capsuleOpacity = lib.mkForce config.stylix.opacity.desktop;
       colorSchemes.darkMode = lib.mkForce (config.stylix.polarity != "light");
+      dock.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
+      notifications.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
+      osd.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
+      ui.panelBackgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
+      wallpaper.directory = lib.mkForce "/home/${config.home.username}/Pictures/Wallpapers";
+      wallpaper.fillColor = lib.mkForce "${config.lib.stylix.colors.withHashtag.base00}";
     };
   };
 }
