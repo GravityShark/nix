@@ -14,7 +14,7 @@
     noctalia.enable = true;
     stylix = {
       enable = true;
-      theme = "gruvbox-material-light";
+      theme = "rose-pine";
     };
   };
 
@@ -45,6 +45,15 @@
 
   ################################## Extra ###################################
 
+  ## Other programss
+  programs = {
+    vesktop.enable = true;
+    zathura = {
+      enable = true;
+      options.selection-clipboard = "clipboard";
+    };
+  };
+
   ## Packages
   home.packages = with pkgs; [
     ## Apps
@@ -56,7 +65,6 @@
     # racket
     # selectdefaultapplication
     super-productivity
-    # vial
 
     ## Media
     audacity
@@ -65,10 +73,10 @@
     krita # Drawing
 
     ## Specific file type
+    mpv
     nautilus
     qbittorrent
     swayimg
-    vlc
 
     ## Work
     caprine
@@ -76,19 +84,16 @@
     # pdfarranger
     # teams-for-linux
     # telegram-desktop
-    zoom-us
+    # zoom-us
 
     ## CLIs
     _7zz-rar
     # aria2
     # aria2p
-    # atool
-    # lzop
     # ntfs3g
-    # rar
     # wget
     yt-dlp
-    # zip
+    ytfzf
 
     ## Gaming
     # (bottles.override { removeWarningPopup = true; })
@@ -101,13 +106,4 @@
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
   ];
-
-  ## Other programss
-  programs = {
-    vesktop.enable = true;
-    zathura = {
-      enable = true;
-      options.selection-clipboard = "clipboard";
-    };
-  };
 }

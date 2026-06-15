@@ -15,7 +15,6 @@
       url = "https://w.wallhaven.cc/full/o5/wallhaven-o5zo2l.png";
       hash = "sha256-U5RPYzUaPafyAr2QBGqGCh8tCNvfl8wH5av3oIUadws=";
     };
-    stylix.cursor.name = lib.mkForce "Bibata-Original-Ice";
 
     xdg.configFile."nvim/enabled-plugins.txt" = lib.mkIf config.apps.neovim.enable {
       text = "colors/rose-pine";

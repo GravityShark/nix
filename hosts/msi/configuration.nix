@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];

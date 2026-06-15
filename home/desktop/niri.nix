@@ -23,6 +23,7 @@
       woomer
     ];
 
+    # NOTE: I should really just change my niri config into a sodiboo config
     xdg.configFile."niri/config.kdl".text =
       builtins.readFile ../../dump/.config/niri/config.kdl
       + (

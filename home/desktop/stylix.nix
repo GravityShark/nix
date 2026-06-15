@@ -63,11 +63,19 @@
       };
     };
 
-    stylix.cursor = {
-      package = pkgs.callPackage ../packages/golden-xcursor.nix { };
-      name = "GoldenXMod";
-      size = 48;
-    };
+    stylix.cursor =
+      if (config.stylix.polarity == "light") then
+        {
+          package = pkgs.callPackage ../packages/golden-xcursor.nix { };
+          name = "GoldenXMod";
+          size = 48;
+        }
+      else
+        {
+          package = pkgs.callPackage ../packages/silver-xcursor.nix { };
+          name = "SilverXMod";
+          size = 48;
+        };
 
     stylix.icons.enable = true;
     stylix.icons.package = pkgs.papirus-icon-theme;
@@ -77,7 +85,7 @@
     stylix.autoEnable = false;
     stylix.targets = {
       anki.enable = true;
-      # fish.enable = true; currently annoying with fish 4.3.0, because a message appears
+      fish.enable = true; # NOTE: currently annoying with fish 4.3.0, because a message appears
       fontconfig.enable = true;
       fzf.enable = true;
       ghostty.enable = true;
@@ -86,13 +94,8 @@
       gtksourceview.enable = true;
       kde.enable = true;
       # mangohud.enable = true;
-      # mpv.enable = true;
-      # neovim.enable = true;
+      mpv.enable = true;
       noctalia-shell.enable = true;
-      # obsidian = {
-      #   enable = true;
-      #   fonts.override.sizes.desktop = 16;
-      # };
       qt.enable = true;
       vesktop.enable = true;
       zathura.enable = true;
@@ -148,30 +151,6 @@
            xcursor-size ${toString config.stylix.cursor.size}
         }
       '';
-
-    ## Add the mini.base16 colorscheme
-    # xdg.configFile."nvim/colors/nix.lua".source =
-    #   with config.lib.stylix.colors.withHashtag;
-    #   lib.mkIf config.apps.neovim.enable (
-    #     pkgs.replaceVars ../../dump/.config/nvim/colors/nix.lua {
-    #       base00 = "${base00}";
-    #       base01 = "${base01}";
-    #       base02 = "${base02}";
-    #       base03 = "${base03}";
-    #       base04 = "${base04}";
-    #       base05 = "${base05}";
-    #       base06 = "${base06}";
-    #       base07 = "${base07}";
-    #       base08 = "${base08}";
-    #       base09 = "${base09}";
-    #       base0A = "${base0A}";
-    #       base0B = "${base0B}";
-    #       base0C = "${base0C}";
-    #       base0D = "${base0D}";
-    #       base0E = "${base0E}";
-    #       base0F = "${base0F}";
-    #     }
-    #   );
 
     ## Labwc
     wayland.windowManager.labwc.environment = lib.mkIf config.wayland.windowManager.labwc.enable [

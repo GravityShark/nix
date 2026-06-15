@@ -15,10 +15,11 @@
       pkg:
       builtins.elem (lib.getName pkg) [
         "7zz"
-        "uasm"
+        "discord-canary"
         "graalvm-oracle"
         "lunarclient"
-        "zoom"
+        "uasm"
+        # "zoom"
       ];
 
     # caprine has outdated version
