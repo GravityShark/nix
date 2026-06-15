@@ -851,7 +851,7 @@
 
           ];
           overviewBlur = 0.4;
-          overviewEnabled = true;
+          overviewEnabled = false;
           overviewTint = 0.6;
           panelPosition = "follow_bar";
           randomIntervalSec = 300;

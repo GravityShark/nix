@@ -82,6 +82,7 @@
 
       layout = {
         gaps = 5;
+        background-color = "transparent";
         always-center-single-column = true;
         preset-column-widths = [
           { proportion = 0.5; }
