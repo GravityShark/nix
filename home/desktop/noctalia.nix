@@ -451,14 +451,6 @@
               {
                 id = "WallpaperSelector";
               }
-              {
-                enableOnStateLogic = true;
-                generalTooltipText = "Syncthing";
-                icon = "affiliate";
-                id = "CustomButton";
-                onClicked = "toggle-syncthing";
-                stateChecksJson = "[{\"command\":\"systemctl is-active --quiet --user syncthing.service\",\"icon\":\"\"}]";
-              }
             ];
             right = [
               {
