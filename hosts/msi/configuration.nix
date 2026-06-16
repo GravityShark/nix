@@ -9,7 +9,7 @@
   desktop.login-manager = "greetd";
 
   apps = {
-    adb.enable = true;
+    adb.enable = false;
     atk.enable = true;
     distrobox.enable = false;
     gamemode.enable = false;
@@ -26,9 +26,7 @@
     drag-click.enable = true;
     intel.enable = true;
     # lanzaboote.enable = true;
-    logind.enable = true;
     msi.enable = true;
-    nix-ld.enable = false;
     nvidia.enable = true;
     systemd-boot.enable = true;
     thp.enable = true;
@@ -57,12 +55,4 @@
 
   ## Cloudflare Warp for slow downloads
   services.cloudflare-warp.enable = false;
-
-  # security.doas.extraRules = [
-  #   {
-  #     groups = [ "wheel" ];
-  #     cmd = "${pkgs.iproute2}/bin/tc";
-  #     noPass = true;
-  #   }
-  # ];
 }

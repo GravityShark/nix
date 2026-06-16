@@ -8,7 +8,6 @@
     # ./lanzaboote.nix
     ./logind.nix
     ./msi.nix
-    ./nix-ld.nix
     ./nvidia.nix
     ./systemd-boot.nix
     ./thp.nix
