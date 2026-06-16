@@ -12,7 +12,7 @@
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
-        "inode/directory" = [ "nvim.desktop" ];
+        "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
 
         "application/vnd.oasis.opendocument.text-master" = [ "onlyoffice-desktopeditors.desktop" ];
         "application/vnd.oasis.opendocument.text-web" = [ "onlyoffice-desktopeditors.desktop" ];

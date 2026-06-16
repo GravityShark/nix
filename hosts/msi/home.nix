@@ -105,6 +105,6 @@
     # wineWow64Packages.stable
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
-    wineWow64Packages.waylandFull
+    # wineWow64Packages.waylandFull
   ];
 }
