@@ -175,7 +175,7 @@
         # }
       ];
       debug = {
-        ignore-drm-device = "/dev/dri/card1";
+        ignore-drm-device = "/dev/dri/card0";
         honor-xdg-activation-with-invalid-serial = lib.mkIf config.desktop.noctalia.enable [ ];
       };
       input = {
