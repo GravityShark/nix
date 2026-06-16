@@ -106,5 +106,6 @@
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
     # wineWow64Packages.waylandFull
+    faugus-launcher
   ];
 }
