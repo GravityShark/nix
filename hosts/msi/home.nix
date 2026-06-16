@@ -47,6 +47,7 @@
 
   ## Other programss
   programs = {
+    mangohud.enable = true;
     mpv.enable = true;
     vesktop.enable = true;
     zathura = {

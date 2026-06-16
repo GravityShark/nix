@@ -92,6 +92,7 @@
       gtk.enable = true;
       gtksourceview.enable = true;
       kde.enable = true;
+      mangohud.enable = config.programs.mangohud.enable;
       mpv.enable = config.programs.mpv.enable;
       noctalia-shell.enable = config.desktop.noctalia.enable;
       qt.enable = true;
