@@ -17,7 +17,7 @@
       }
       {
         assertion = config.scripts.enable;
-        message = "apps.tmux needs the `tmenu`, `t`, and `T` scrpits from scripts to function";
+        message = "apps.tmux needs the `tmenu`, `t`, and `T` scripts from scripts to function";
       }
     ];
 

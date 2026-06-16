@@ -88,6 +88,13 @@
       ];
       window-rules = [
         {
+          matches = [
+            { app-id = "^waywall$"; }
+          ];
+          open-fullscreen = true;
+          # allow-tearing = true;
+        }
+        {
           geometry-corner-radius = {
             bottom-left = 2.;
             bottom-right = 2.;
@@ -96,12 +103,6 @@
           };
           clip-to-geometry = true;
           open-focused = true;
-        }
-        # NOTE: This is where you put all the video games you want tearing in
-        {
-          matches = [
-            { app-id = "^waywall$"; }
-          ];
         }
         {
           matches = [
@@ -159,17 +160,19 @@
           matches = [
             {
               app-id = "^org\\.gnome\\.Nautilus$";
-              is-floating = true;
+              # is-floating = true;
             }
-            { app-id = "^caprine$"; }
           ];
+          open-floating = true;
           default-column-width.proportion = 0.6;
           default-window-height.proportion = 0.7;
         }
-        {
-          matches = [ { title = "woomer"; } ];
-          open-floating = true;
-        }
+        # {
+        #   matches = [ { title = "^woomer$"; } ];
+        #   open-floating = true;
+        #   open-fullscreen = true;
+        #   open-focused = true;
+        # }
       ];
       debug = {
         ignore-drm-device = "/dev/dri/card1";
