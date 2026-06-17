@@ -92,7 +92,7 @@
             { app-id = "^waywall$"; }
           ];
           open-fullscreen = true;
-          # allow-tearing = true;
+          # "allow-tearing" = true;
         }
         {
           geometry-corner-radius = {
@@ -176,6 +176,7 @@
       ];
       debug = {
         ignore-drm-device = "/dev/dri/card0";
+        force-tearing = [ ];
         honor-xdg-activation-with-invalid-serial = lib.mkIf config.desktop.noctalia.enable [ ];
       };
       input = {
