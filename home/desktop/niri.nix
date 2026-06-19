@@ -482,7 +482,7 @@
           repeat = false;
           action.close-window = [ ];
         };
-        "Alt+Tab".action.focus-workspace-previous = [ ];
+        "Alt+Tab".action.next-window = [ ];
 
         "Mod+Left".action.focus-column-left = [ ];
         "Mod+Down".action.focus-window-down = [ ];
