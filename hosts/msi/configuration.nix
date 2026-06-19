@@ -41,7 +41,7 @@
     networking.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
-    printing.enable = false;
+    printing.enable = true;
     wayland-pipewire-idle-inhibit.enable = true;
   };
 
