@@ -27,7 +27,7 @@
     ghostty.enable = true;
     minecraft.enable = true;
     neovim.enable = true;
-    obs.enable = false;
+    obs.enable = true;
     ocr.enable = true;
     syncthing.enable = true;
     tmux.enable = true;
