@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ config, ... }:
+{ ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -56,9 +56,9 @@
   ## Cloudflare Warp for slow downloads
   services.cloudflare-warp.enable = false;
 
-  programs.weylus = {
-    enable = true;
-    openFirewall = true;
-    users = [ config.username ];
-  };
+  # programs.weylus = {
+  #   enable = true;
+  #   openFirewall = true;
+  #   users = [ config.username ];
+  # };
 }
