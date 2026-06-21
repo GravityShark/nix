@@ -51,11 +51,6 @@
     mangohud.enable = true;
     mpv.enable = true;
     vesktop.enable = true;
-    weylus = {
-      enable = true;
-      openFirewall = true;
-      users = [ config.home.username ];
-    };
     zathura = {
       enable = true;
       options.selection-clipboard = "clipboard";
