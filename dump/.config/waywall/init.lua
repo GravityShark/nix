@@ -144,7 +144,7 @@ setup_preemptive_count(thin_res.w, thin_res.h)
 -- -- EYE ZOOM MIRRORS
 -- -- ##############################################################################################
 local eye = {
-	sens = 0.20778952,
+	sens = 0.3684183,
 	-- Size of the instance
 	res = {
 		w = 320,
@@ -292,7 +292,7 @@ local config = {
 		repeat_delay = 189,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
-		sensitivity = 3.0802158,
+		sensitivity = 5.46133359,
 		-- confine_pointer = true,
 		remaps = game_remaps,
 	},
