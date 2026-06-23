@@ -192,7 +192,7 @@
         };
         mouse = {
           natural-scroll = true;
-          accel-speed = -0.85;
+          accel-speed = -0.90;
           accel-profile = "flat";
           scroll-method = "on-button-down";
         };
