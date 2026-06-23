@@ -21,7 +21,7 @@
     ];
 
     hardware.nvidia = {
-      hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
+      package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
 
       # Open drivers prevent going into D3
       # https://bbs.archlinux.org/viewtopic.php?pid=2187680#p2187680
