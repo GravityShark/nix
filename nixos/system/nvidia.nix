@@ -10,6 +10,8 @@
     system.nvidia.enable = lib.mkEnableOption "enables nvidia";
   };
   config = lib.mkIf config.system.nvidia.enable {
+    environment.systemPackages = [ pkgs.nvibrant ];
+
     hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [ nvidia-vaapi-driver ];
@@ -35,18 +37,17 @@
         nvidia = {
           NVreg_EnableGpuFirmware = 0;
           NVreg_TemporaryFilePath = "/var/tmp";
-          NVreg_PreserveVideoMemoryAllocations = lib.mkForce 0;
+          # NVreg_PreserveVideoMemoryAllocations = lib.mkForce 0;
         };
       };
 
       # dynamicBoost.enable = true;
 
       powerManagement = {
-        # nvidia.NVreg_UseKernelSuspendNotifiers = 1;
-        #   }
-        #   ++ lib.optional cfg.powerManagement.enable { nvidia.NVreg_PreserveVideoMemoryAllocations = 1; }
+        # nvidia.NVreg_UseKernelSuspendNotifiers = 1
+        # nvidia.NVreg_PreserveVideoMemoryAllocations = 1
         enable = true;
-        # cfg.powerManagement.finegrained { nvidia.NVreg_DynamicPowerManagement = "0x02"; }
+        # nvidia.NVreg_DynamicPowerManagement = "0x02"
         # feingrained also adds the udev rule
         finegrained = true;
       };
