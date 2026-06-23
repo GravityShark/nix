@@ -35,7 +35,7 @@
         nvidia = {
           NVreg_EnableGpuFirmware = 0;
           NVreg_TemporaryFilePath = "/var/tmp";
-          NVreg_PreserveVideoMemoryAllocations = 0;
+          NVreg_PreserveVideoMemoryAllocations = lib.mkForce 0;
         };
       };
 
