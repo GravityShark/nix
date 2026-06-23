@@ -45,12 +45,12 @@
             ${write (cpu_speed + 4) 105}
             ${write (cpu_speed + 5) 126}
             ${write (cpu_speed + 6) 150}
-            ${write cpu_temp 45}
-            ${write (cpu_temp + 1) 50}
-            ${write (cpu_temp + 2) 55}
-            ${write (cpu_temp + 3) 60}
-            ${write (cpu_temp + 4) 65}
-            ${write (cpu_temp + 5) 70}
+            ${write cpu_temp 40}
+            ${write (cpu_temp + 1) 45}
+            ${write (cpu_temp + 2) 50}
+            ${write (cpu_temp + 3) 55}
+            ${write (cpu_temp + 4) 60}
+            ${write (cpu_temp + 5) 65}
 
             ${write gpu_speed 38}
             ${write (gpu_speed + 1) 52}
@@ -59,12 +59,12 @@
             ${write (gpu_speed + 4) 105}
             ${write (gpu_speed + 5) 126}
             ${write (gpu_speed + 6) 150}
-            ${write gpu_temp 45}
-            ${write (gpu_temp + 1) 50}
-            ${write (gpu_temp + 2) 55}
-            ${write (gpu_temp + 3) 60}
-            ${write (gpu_temp + 4) 65}
-            ${write (gpu_temp + 5) 70}
+            ${write gpu_temp 40}
+            ${write (gpu_temp + 1) 45}
+            ${write (gpu_temp + 2) 50}
+            ${write (gpu_temp + 3) 55}
+            ${write (gpu_temp + 4) 60}
+            ${write (gpu_temp + 5) 65}
 
             echo advanced > /sys/devices/platform/msi-ec/fan_mode
             echo "Successful."
