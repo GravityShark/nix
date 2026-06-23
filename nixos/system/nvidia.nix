@@ -10,8 +10,6 @@
     system.nvidia.enable = lib.mkEnableOption "enables nvidia";
   };
   config = lib.mkIf config.system.nvidia.enable {
-    environment.systemPackages = [ pkgs.nvibrant ];
-
     hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [ nvidia-vaapi-driver ];
@@ -24,9 +22,6 @@
 
     hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
-
-      # Open drivers prevent going into D3
-      # https://bbs.archlinux.org/viewtopic.php?pid=2187680#p2187680
       open = true;
 
       modesetting.enable = true;
@@ -37,7 +32,6 @@
         nvidia = {
           NVreg_EnableGpuFirmware = 0;
           NVreg_TemporaryFilePath = "/var/tmp";
-          # NVreg_PreserveVideoMemoryAllocations = lib.mkForce 0;
         };
       };
 

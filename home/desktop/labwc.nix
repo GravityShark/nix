@@ -18,7 +18,6 @@
     ];
 
     home.packages = with pkgs; [
-      gpu-screen-recorder-gtk
       wlopm
       (writers.writeDashBin "screenshot" ''
         name=~/Pictures/Screenshots/Screenshot\ from\ $(date +'%Y-%m-%d %H-%M-%S').png
