@@ -9,21 +9,13 @@
 }:
 
 let
-  ninjabrain-bot = pkgs.callPackage ../packages/ninjabrainbot.nix { };
+  ninjabrain-bot = pkgs.callPackage ../packages/ninjabrainbot-legal.nix { };
+  graalvm-oracle-21 = pkgs.callPackage ../packages/graalvm-oracle-21.nix { };
 in
 {
   options = {
     apps.minecraft = {
       enable = lib.mkEnableOption "enables minecraft";
-      #   width = lib.mkOption {
-      #     type = lib.types.int;
-      #     default = 1920;
-      #   };
-      #
-      #   height = lib.mkOption {
-      #     type = lib.types.int;
-      #     default = 1080;
-      #   };
     };
   };
   config = lib.mkIf config.apps.minecraft.enable {
@@ -38,16 +30,18 @@ in
 
       (prismlauncher.override (previous: {
         jdks = [
-          graalvmPackages.graalvm-oracle_17
-          javaPackages.compiler.temurin-bin.jdk-21
-          # javaPackages.compiler.temurin-bin.jdk-25 # for newer versions that i dont play rn, i should probably use lunar for this instead
+          graalvm-oracle-21
+          temurin-bin-21
+          # for newer versions that i dont play rn, i should probably use lunar for this instead
+          # graalvmPackages.graalvm-oracle_25
+          # temurin-bin-25
         ];
         additionalLibs = [
           # runtime dependencies necessary for mcsr fairplay mod
-          libxtst
+          libxinerama
           libxkbcommon
           libxt
-          libxinerama
+          libxtst
         ];
         additionalPrograms = [
           jemalloc
@@ -63,8 +57,7 @@ in
       background = "${../../dump/.config/waywall/assets/background.png}";
       eye_overlay = "${../../dump/.config/waywall/assets/overlay.png}";
       ninb_path = "${lib.getExe ninjabrain-bot}";
-      oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot.png}";
-      # resolution = { w = ${toString config.apps.minecraft.width}, h = ${toString config.apps.minecraft.height} }
+      oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot-cropped-81x81.png}";
     };
     # xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
   };

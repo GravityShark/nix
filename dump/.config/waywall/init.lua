@@ -2,30 +2,48 @@
 -- https://github.com/Esensats/waywork
 local waywall = require('waywall')
 local helpers = require('waywall.helpers')
+local round = function(x)
+	return math.floor(x + 0.5)
+end
 
 -- https://whvn.cc/o5ky29
-local background = '@background@'
-local ninb_path = '@ninb_path@'
-local eye_overlay = '@eye_overlay@'
-local oneshot_overlay = '@oneshot_overlay@'
-local ninb_pid = 'ninjabrain.*\\.jar'
+local cfg = {
+	background = '@background@',
+	ninb_path = '@ninb_path@',
+	eye_overlay = '@eye_overlay@',
+	oneshot_overlay = '@oneshot_overlay@',
+	oneshot_overlay_res = { 81, 81 },
+	resolution = { 1366, 768 },
+	-- resolution = {1920, 1080},
+	fattening = 1.4,
+	e_count_scale = 4,
+	preemptive_scale = 5,
+	pie_scale = 2.5,
+}
+local resize = {
+	thin = { round((cfg.resolution[1] / 6) * cfg.fattening), round(cfg.resolution[2]) },
+	wide = { cfg.resolution[1], round(cfg.resolution[2] / 4) },
+	eye = { round((cfg.resolution[1] / 6) * cfg.fattening), 16380 },
+}
+
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
 -- -- ################################################################################################
--- waywall.listen('load', function()
--- 	ninb_toggle()
--- end)
+waywall.listen('load', function()
+	waywall.exec(cfg.ninb_path)
+	waywall.show_floating(true)
+end)
 -- -- ################################################################################################
 -- -- PROJECTOR SETUP
 -- -- ################################################################################################
 local function setup_entity_counter(width, height)
 	local e_count_src = {
-		x = 14,
-		y = 38,
-		w = 35,
-		h = 7,
+		x = 13,
+		y = 37,
+		w = 43,
+		h = 9,
 	}
-	local e_count_scale = 5.5
+	local e_count_scale = cfg.e_count_scale
 	local e_counter_dst = {
 		w = e_count_src.w * e_count_scale,
 		h = e_count_src.h * e_count_scale,
@@ -33,8 +51,8 @@ local function setup_entity_counter(width, height)
 	return helpers.res_mirror({
 		src = e_count_src,
 		dst = {
-			x = (1920 - e_counter_dst.w) / 2,
-			y = 1080 / 6,
+			x = round((cfg.resolution[1] - e_counter_dst.w) / 2),
+			y = round(cfg.resolution[2] / 6),
 			w = e_counter_dst.w,
 			h = e_counter_dst.h,
 		},
@@ -45,7 +63,7 @@ local function setup_preemptive_count(width, height)
 	local preemptive_width = 26
 	local preemptive_right_padding = 92 - preemptive_width
 
-	local preemptive_scale = 5.5
+	local preemptive_scale = cfg.preemptive_scale
 	local preemptive_dst_height = preemptive_height * preemptive_scale
 	local preemptive_dst_width = preemptive_width * preemptive_scale
 	helpers.res_mirror({
@@ -56,8 +74,8 @@ local function setup_preemptive_count(width, height)
 			h = preemptive_height,
 		},
 		dst = {
-			x = (1920 - preemptive_dst_width) / 2,
-			y = 1080 * 4 / 5,
+			x = round((cfg.resolution[1] - preemptive_dst_width) / 2),
+			y = round(cfg.resolution[2] * 4 / 5),
 			w = preemptive_dst_width,
 			h = preemptive_dst_height,
 		},
@@ -67,7 +85,7 @@ end
 -- -- PIE MIRRORS
 -- -- ##############################################################################################
 local pie_height = 40 -- 5 items
-local pie_scale = 2.5
+local pie_scale = cfg.pie_scale
 local pie_width = 26
 
 local pie_right_padding = 92 - pie_width
@@ -92,28 +110,28 @@ local toggle_pie_mirrors = function()
 
 		pie_list = waywall.mirror({
 			src = {
-				x = 1920 - (pie_width + pie_right_padding),
-				y = 1080 - 220,
+				x = cfg.resolution[1] - (pie_width + pie_right_padding),
+				y = cfg.resolution[2] - 220,
 				w = pie_width,
 				h = pie_height,
 			},
 			dst = {
-				x = 1920 - pie_dst_width,
-				y = 1080 - pie_dst_height,
+				x = cfg.resolution[1] - pie_dst_width,
+				y = cfg.resolution[2] - pie_dst_height,
 				w = pie_dst_width,
 				h = pie_dst_height,
 			},
 		})
 		pie_numbers = waywall.mirror({
 			src = {
-				x = 1920 - (num_width + num_right_padding),
-				y = 1080 - 220,
+				x = cfg.resolution[1] - (num_width + num_right_padding),
+				y = cfg.resolution[2] - 220,
 				w = num_width,
 				h = pie_height,
 			},
 			dst = {
-				x = 1920 - (num_dst_width + pie_dst_width),
-				y = 1080 - pie_dst_height,
+				x = cfg.resolution[1] - (num_dst_width + pie_dst_width),
+				y = cfg.resolution[2] - pie_dst_height,
 				w = num_dst_width,
 				h = pie_dst_height,
 			},
@@ -134,51 +152,62 @@ waywall.listen('state', toggle_pie_mirrors)
 -- -- ##############################################################################################
 -- -- THIN MIRROS
 -- -- ##############################################################################################
-local thin_res = {
-	w = 320,
-	h = 1080,
-}
-setup_entity_counter(thin_res.w, thin_res.h)
-setup_preemptive_count(thin_res.w, thin_res.h)
+setup_entity_counter(resize.thin[1], resize.thin[2])
+setup_preemptive_count(resize.thin[1], resize.thin[2])
 -- -- ##############################################################################################
 -- -- EYE ZOOM MIRRORS
 -- -- ##############################################################################################
 local eye = {
 	sens = 0.50238859,
 	-- Size of the instance
-	res = {
-		w = 320,
-		h = 16384,
-	},
+	res = { w = resize.eye[1], h = resize.eye[2] },
 
 	-- The size and location of the projector
 	proj = {
 		x = 0,
-		y = 312,
-		w = 800,
-		h = 456,
+		y = round(cfg.resolution[2] / 2),
+		w = round((cfg.resolution[1] - resize.eye[1]) / 2),
+		h = round((((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16))),
 	},
 
 	-- Crop of the projection
 	src = {
 		w = 60,
-		h = 1080,
+		h = cfg.resolution[2],
 	},
 }
 
 helpers.res_mirror({
 	dst = eye.proj,
 	src = {
-		x = (eye.res.w - eye.src.w) / 2,
-		y = (eye.res.h - eye.src.h) / 2,
+		x = round((eye.res.w - eye.src.w) / 2),
+		y = round((eye.res.h - eye.src.h) / 2),
 		w = eye.src.w,
 		h = eye.src.h,
 	},
 }, eye.res.w, eye.res.h)
-helpers.res_image(eye_overlay, { dst = eye.proj }, eye.res.w, eye.res.h)
+helpers.res_image(cfg.eye_overlay, { dst = eye.proj }, eye.res.w, eye.res.h)
 
 setup_entity_counter(eye.res.w, eye.res.h)
 setup_preemptive_count(eye.res.w, eye.res.h)
+-- -- ##############################################################################################
+-- -- CHAT MODE
+-- -- ##############################################################################################
+local chat_state = {
+	enabled = false,
+	text = nil,
+}
+local toggle_chat = function()
+	chat_state.enabled = not chat_state.enabled
+	if chat_state.enabled then
+		waywall.set_remaps({})
+		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 6 })
+	else
+		waywall.set_remaps(game_remaps)
+		chat_state.text:close()
+		chat_state.text = nil
+	end
+end
 -- -- ##############################################################################################
 -- -- REMAPS
 -- -- ##############################################################################################
@@ -234,35 +263,17 @@ local game_remaps = {
 	['leftmeta'] = 'leftalt',
 }
 -- -- ##############################################################################################
--- -- CHAT MODE
--- -- ##############################################################################################
-local chat_state = {
-	enabled = false,
-	text = nil,
-}
-local toggle_chat = function()
-	chat_state.enabled = not chat_state.enabled
-	if chat_state.enabled then
-		waywall.set_remaps({})
-		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 6 })
-	else
-		waywall.set_remaps(game_remaps)
-		chat_state.text:close()
-		chat_state.text = nil
-	end
-end
--- -- ##############################################################################################
 -- -- CONFIG OBJECT
 -- -- ##############################################################################################
 local oneshot_overlay_state = nil
 local oneshot_toggle = function()
 	if not oneshot_overlay_state then
-		oneshot_overlay_state = waywall.image(oneshot_overlay, {
+		oneshot_overlay_state = waywall.image(cfg.oneshot_overlay, {
 			dst = {
-				x = 0,
-				y = 0,
-				w = 1920,
-				h = 1080,
+				x = round((cfg.resolution[1] - cfg.oneshot_overlay_res[1]) / 2),
+				y = round((cfg.resolution[2] - cfg.oneshot_overlay_res[2]) / 2),
+				w = cfg.oneshot_overlay_res[1],
+				h = cfg.oneshot_overlay_res[2],
 			},
 		})
 	else
@@ -270,6 +281,7 @@ local oneshot_toggle = function()
 		oneshot_overlay_state = nil
 	end
 end
+
 local is_running = function(name)
 	local handle = io.popen("pgrep -f '" .. name .. "'")
 	local result = handle:read('*l')
@@ -277,8 +289,8 @@ local is_running = function(name)
 	return result ~= nil
 end
 local ninb_toggle = function()
-	if not is_running(ninb_pid) then
-		waywall.exec(ninb_path)
+	if not is_running('ninjabrain.*\\.jar') then
+		waywall.exec(cfg.ninb_path)
 		waywall.show_floating(true)
 	else
 		helpers.toggle_floating()
@@ -288,23 +300,22 @@ local config = {
 	input = {
 		-- KEYBOARD CONFIG
 		layout = 'us',
-		repeat_rate = 150,
-		repeat_delay = 189,
+		repeat_rate = 100,
+		repeat_delay = 200,
 
 		-- https://arjuncgore.github.io/waywall-boat-eye-calc/
 		sensitivity = 7.44727308,
-		-- confine_pointer = true,
 		remaps = game_remaps,
 	},
 	theme = {
 		-- background = '#241f31',
-		background_png = background,
-		ninb_anchor = 'right',
+		background_png = cfg.background,
+		ninb_anchor = 'topleft',
 		ninb_opacity = 0.8,
 	},
 	actions = {
 		-- Ninb Toggle
-		['control-control_r'] = function()
+		['super-control_r'] = function()
 			if chat_state.enabled then
 				return false
 			end
@@ -323,19 +334,25 @@ local config = {
 			if chat_state.enabled then
 				return false
 			end
-			helpers.toggle_res(thin_res.w, thin_res.h)()
+			helpers.toggle_res(resize.thin[1], resize.thin[2])()
 		end,
 		['*-n'] = function()
 			if chat_state.enabled then
 				return false
 			end
-			helpers.toggle_res(1920, 300)()
+			helpers.toggle_res(resize.wide[1], resize.wide[2])()
 		end,
 		['*-h'] = function()
 			if chat_state.enabled then
 				return false
 			end
 			helpers.toggle_res(eye.res.w, eye.res.h, eye.sens)()
+		end,
+		['shift-h'] = function()
+			if chat_state.enabled then
+				return false
+			end
+			helpers.toggle_res(eye.res.w, eye.res.h)()
 		end,
 	},
 	experimental = { tearing = true },

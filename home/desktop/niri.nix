@@ -17,6 +17,32 @@
 
   config = lib.mkIf config.desktop.niri.enable {
     home.packages = [ pkgs.nirius ];
+    services.kanshi = {
+      enable = true;
+      settings = [
+        {
+          profile.name = "docked";
+          profile.outputs = [
+
+            {
+              criteria = "eDP-1";
+              status = "disable";
+            }
+            {
+              criteria = "HDMI-A-2";
+            }
+          ];
+        }
+        {
+          profile.name = "undocked";
+          profile.outputs = [
+            {
+              criteria = "eDP-1";
+            }
+          ];
+        }
+      ];
+    };
     services.polkit-gnome.enable = true;
     services.wl-clip-persist.enable = true;
 
@@ -28,6 +54,7 @@
     # https://github.com/sodiboo/niri-flake/blob/main/docs.md
     programs.niri.settings = {
       outputs."eDP-1".enable = true;
+      outputs."HDMI-A-2".enable = true;
       layer-rules = [
         (lib.mkIf config.desktop.noctalia.enable {
           matches = [ { namespace = "^noctalia-wallpaper*"; } ];
@@ -197,11 +224,6 @@
           scroll-method = "on-button-down";
         };
         focus-follows-mouse.max-scroll-amount = "0%";
-      };
-
-      cursor = {
-        hide-when-typing = true;
-        hide-after-inactive-ms = 1000;
       };
 
       environment = {
