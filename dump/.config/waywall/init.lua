@@ -33,7 +33,7 @@ waywall.listen('load', function()
 	waywall.exec(cfg.ninb_path)
 	waywall.show_floating(true)
 	while true do
-		local nbb = waywall.image('/tmp/nb-overlay.png', {})
+		local nbb = waywall.image('/tmp/nb-overlay.png')
 		waywall.sleep(100)
 		nbb:close()
 	end
