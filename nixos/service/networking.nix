@@ -76,7 +76,7 @@
         enable = true;
         block = [
           "gambling"
-          "porn"
+          # "porn"
         ];
       };
       # networking.extraHosts = ''

@@ -15,6 +15,5 @@
       timeout = 1;
     };
     time.hardwareClockInLocalTime = false; # allow it to work with windows time tbh
-
   };
 }

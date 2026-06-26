@@ -19,7 +19,7 @@
     };
     niri = {
       url = "github:epireyn/niri-flake";
-      # NOTE: sodiboo hasnt updated blur options yet
+      # FIX: sodiboo hasnt updated blur options yet
       # url = "github:sodiboo/niri-flake";
       inputs.niri-unstable.follows = "niri-package";
       inputs.nixpkgs.follows = "nixpkgs";
