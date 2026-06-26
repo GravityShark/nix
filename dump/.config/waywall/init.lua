@@ -29,15 +29,15 @@ local resize = {
 -- -- ################################################################################################
 -- -- WAYWALL STARTUP
 -- -- ################################################################################################
-waywall.listen('load', function()
-	waywall.exec(cfg.ninb_path)
-	waywall.show_floating(true)
-	while true do
-		local nbb = waywall.image('/tmp/nb-overlay.png')
-		waywall.sleep(100)
-		nbb:close()
-	end
-end)
+-- waywall.listen('load', function()
+-- 	waywall.exec(cfg.ninb_path)
+-- 	waywall.show_floating(true)
+-- 	while true do
+-- 		local nbb = waywall.image('/tmp/nb-overlay.png')
+-- 		waywall.sleep(1000)
+-- 		nbb:close()
+-- 	end
+-- end)
 -- -- ################################################################################################
 -- -- PROJECTOR SETUP
 -- -- ################################################################################################
@@ -170,9 +170,9 @@ local eye = {
 	-- The size and location of the projector
 	proj = {
 		x = 0,
-		y = round(cfg.resolution[2] / 2) - round((((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16))),
+		y = round((cfg.resolution[2] / 2) - (((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16))),
 		w = round((cfg.resolution[1] - resize.eye[1]) / 2),
-		h = round((((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16))),
+		h = round(((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16)),
 	},
 
 	-- Crop of the projection
