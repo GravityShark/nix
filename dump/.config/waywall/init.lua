@@ -196,24 +196,6 @@ helpers.res_image(cfg.eye_overlay, { dst = eye.proj }, eye.res.w, eye.res.h)
 setup_entity_counter(eye.res.w, eye.res.h)
 setup_preemptive_count(eye.res.w, eye.res.h)
 -- -- ##############################################################################################
--- -- CHAT MODE
--- -- ##############################################################################################
-local chat_state = {
-	enabled = false,
-	text = nil,
-}
-local toggle_chat = function()
-	chat_state.enabled = not chat_state.enabled
-	if chat_state.enabled then
-		waywall.set_remaps({})
-		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 6 })
-	else
-		waywall.set_remaps(game_remaps)
-		chat_state.text:close()
-		chat_state.text = nil
-	end
-end
--- -- ##############################################################################################
 -- -- REMAPS
 -- -- ##############################################################################################
 -- -- https://github.com/tesselslate/waywall/blob/main/include/util/keycodes.h
@@ -268,6 +250,24 @@ local game_remaps = {
 	['leftmeta'] = 'leftalt',
 }
 -- -- ##############################################################################################
+-- -- CHAT MODE
+-- -- ##############################################################################################
+local chat_state = {
+	enabled = false,
+	text = nil,
+}
+local toggle_chat = function()
+	chat_state.enabled = not chat_state.enabled
+	if chat_state.enabled then
+		waywall.set_remaps({})
+		chat_state.text = waywall.text('CHAT MODE ENABLED', { x = 0, y = 0, color = '#ff0000', size = 6 })
+	else
+		waywall.set_remaps(game_remaps)
+		chat_state.text:close()
+		chat_state.text = nil
+	end
+end
+-- -- ##############################################################################################
 -- -- CONFIG OBJECT
 -- -- ##############################################################################################
 local oneshot_overlay_state = nil
@@ -277,8 +277,8 @@ local oneshot_toggle = function()
 			dst = {
 				x = round((cfg.resolution[1] - cfg.oneshot_overlay_res[1]) / 2),
 				y = round((cfg.resolution[2] - cfg.oneshot_overlay_res[2]) / 2),
-				-- w = cfg.oneshot_overlay_res[1],
-				-- h = cfg.oneshot_overlay_res[2],
+				w = cfg.oneshot_overlay_res[1],
+				h = cfg.oneshot_overlay_res[2],
 			},
 		})
 	else
@@ -315,7 +315,7 @@ local config = {
 	theme = {
 		-- background = '#241f31',
 		background_png = cfg.background,
-		ninb_anchor = 'topleft',
+		ninb_anchor = 'bottomright',
 		ninb_opacity = 0.8,
 	},
 	actions = {
