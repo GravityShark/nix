@@ -170,7 +170,7 @@ local eye = {
 	-- The size and location of the projector
 	proj = {
 		x = 0,
-		y = round((cfg.resolution[2] / 2) - (((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16))),
+		y = round((cfg.resolution[2] / 2) - ((((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16)) / 2)),
 		w = round((cfg.resolution[1] - resize.eye[1]) / 2),
 		h = round(((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16)),
 	},
