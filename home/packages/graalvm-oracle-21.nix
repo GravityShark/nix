@@ -11,7 +11,7 @@ let
   hashes = {
     "x86_64-linux" = {
       url = "https://download.oracle.com/graalvm/21/latest/graalvm-jdk-21_linux-x64_bin.tar.gz";
-      hash = "";
+      hash = "sha256-Iw5TdqnDINwy9dnqSCEN4ztfzhbHWdRufPoiY8FzIRg=";
     };
     "aarch64-linux" = {
       url = "https://download.oracle.com/graalvm/21/latest/graalvm-jdk-21_linux-aarch64_bin.tar.gz";

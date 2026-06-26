@@ -64,6 +64,11 @@
           matches = [ { namespace = "^notifications$"; } ];
           block-out-from = "screen-capture";
         }
+        {
+          background-effect = {
+            xray = true;
+          };
+        }
       ];
 
       layout = {
@@ -194,6 +199,19 @@
           default-column-width.proportion = 0.6;
           default-window-height.proportion = 0.7;
         }
+        # {
+        #   matches = [
+        #     {
+        #       app-id = "^NBTrackr-imgpin\\.py$";
+        #       # is-floating = true;
+        #     }
+        #   ];
+        #   open-floating = true;
+        #   default-floating-position = {
+        #     relative-to = "top-right";
+        #   };
+        # }
+
         # {
         #   matches = [ { title = "^woomer$"; } ];
         #   open-floating = true;

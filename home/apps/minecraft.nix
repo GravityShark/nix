@@ -9,7 +9,7 @@
 }:
 
 let
-  ninjabrain-bot = pkgs.callPackage ../packages/ninjabrainbot-legal.nix { };
+  ninjabrain-bot = pkgs.callPackage ../packages/ninjabrainbot.nix { };
   graalvm-oracle-21 = pkgs.callPackage ../packages/graalvm-oracle-21.nix { };
 in
 {
