@@ -32,6 +32,11 @@ local resize = {
 waywall.listen('load', function()
 	waywall.exec(cfg.ninb_path)
 	waywall.show_floating(true)
+	while true do
+		local nbb = waywall.image('/tmp/nb-overlay.png', {})
+		waywall.sleep(100)
+		nbb:close()
+	end
 end)
 -- -- ################################################################################################
 -- -- PROJECTOR SETUP
@@ -165,7 +170,7 @@ local eye = {
 	-- The size and location of the projector
 	proj = {
 		x = 0,
-		y = round(cfg.resolution[2] / 2),
+		y = round(cfg.resolution[2] / 2) - round((((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16))),
 		w = round((cfg.resolution[1] - resize.eye[1]) / 2),
 		h = round((((cfg.resolution[1] - resize.eye[1]) / 2) * (9 / 16))),
 	},
@@ -272,8 +277,8 @@ local oneshot_toggle = function()
 			dst = {
 				x = round((cfg.resolution[1] - cfg.oneshot_overlay_res[1]) / 2),
 				y = round((cfg.resolution[2] - cfg.oneshot_overlay_res[2]) / 2),
-				w = cfg.oneshot_overlay_res[1],
-				h = cfg.oneshot_overlay_res[2],
+				-- w = cfg.oneshot_overlay_res[1],
+				-- h = cfg.oneshot_overlay_res[2],
 			},
 		})
 	else

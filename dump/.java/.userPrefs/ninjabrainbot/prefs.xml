@@ -12,7 +12,7 @@
   <entry key="custom_themes_names" value="meow.New theme.New theme"/>
   <entry key="default_boat_type" value="2"/>
   <entry key="direction_help_enabled" value="true"/>
-  <entry key="enable_http_server" value="true"/>
+  <entry key="enable_http_server" value="false"/>
   <entry key="hotkey_boat_code" value="-1"/>
   <entry key="hotkey_boat_modifier" value="-1"/>
   <entry key="hotkey_decrement_code" value="65587"/>
@@ -29,6 +29,7 @@
   <entry key="hotkey_undo_modifier" value="0"/>
   <entry key="language_v2" value="en-US"/>
   <entry key="mismeasure_warning_enabled" value="true"/>
+  <entry key="overlay_auto_hide" value="false"/>
   <entry key="save_state" value="false"/>
   <entry key="sensitivity" value="0.02291165"/>
   <entry key="settings_version" value="3"/>
@@ -38,8 +39,9 @@
   <entry key="size" value="0"/>
   <entry key="theme" value="-1"/>
   <entry key="translucent" value="true"/>
+  <entry key="use_obs_overlay" value="true"/>
   <entry key="use_precise_angle" value="true"/>
-  <entry key="view" value="0"/>
+  <entry key="view" value="1"/>
   <entry key="window_x" value="0"/>
   <entry key="window_y" value="0"/>
 </map>

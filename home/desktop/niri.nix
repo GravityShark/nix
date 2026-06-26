@@ -130,10 +130,6 @@
           };
           clip-to-geometry = true;
           open-focused = true;
-
-          background-effect = {
-            xray = true;
-          };
         }
         {
           matches = [
@@ -212,8 +208,8 @@
         }
         {
           matches = [ { title = "^woomer$"; } ];
-          open-fullscreen = true;
-          open-focused = true;
+          open-floating = true;
+          open-fullscreen = false;
         }
       ];
       debug = {

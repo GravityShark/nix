@@ -51,8 +51,10 @@ in
       }))
     ];
 
-    home.file.".java/.userPrefs/ninjabrainbot/prefs.xml".source =
-      ../../dump/.java/.userPrefs/ninjabrainbot/prefs.xml;
+    home.file.".java/.userPrefs/ninjabrainbot/prefs.xml" = {
+      source = ../../dump/.java/.userPrefs/ninjabrainbot/prefs.xml;
+      force = true;
+    };
     xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
       background = "${../../dump/.config/waywall/assets/background.png}";
       eye_overlay = "${../../dump/.config/waywall/assets/overlay.png}";
