@@ -201,11 +201,14 @@
         {
           matches = [ { app-id = "^NBTrackr-imgpin\\.py$"; } ];
           open-floating = true;
+          open-focused = false;
+          tiled-state = true;
           default-floating-position = {
             x = 0;
             y = 0;
-            relative-to = "top-right";
+            relative-to = "top-left";
           };
+          border.enable = false;
         }
         {
           matches = [ { title = "^woomer$"; } ];
