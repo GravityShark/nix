@@ -316,6 +316,7 @@ local config = {
 		-- background = '#241f31',
 		background_png = cfg.background,
 		ninb_anchor = 'bottomright',
+		-- NOTE: opacity doesn't exist in niri https://github.com/niri-wm/niri/issues/619
 		ninb_opacity = 0.8,
 	},
 	actions = {
