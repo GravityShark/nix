@@ -64,11 +64,6 @@
           matches = [ { namespace = "^notifications$"; } ];
           block-out-from = "screen-capture";
         }
-        {
-          background-effect = {
-            xray = true;
-          };
-        }
       ];
 
       layout = {
@@ -135,6 +130,10 @@
           };
           clip-to-geometry = true;
           open-focused = true;
+
+          background-effect = {
+            xray = true;
+          };
         }
         {
           matches = [
@@ -199,25 +198,20 @@
           default-column-width.proportion = 0.6;
           default-window-height.proportion = 0.7;
         }
-        # {
-        #   matches = [
-        #     {
-        #       app-id = "^NBTrackr-imgpin\\.py$";
-        #       # is-floating = true;
-        #     }
-        #   ];
-        #   open-floating = true;
-        #   default-floating-position = {
-        #     relative-to = "top-right";
-        #   };
-        # }
-
-        # {
-        #   matches = [ { title = "^woomer$"; } ];
-        #   open-floating = true;
-        #   open-fullscreen = true;
-        #   open-focused = true;
-        # }
+        {
+          matches = [ { app-id = "^NBTrackr-imgpin\\.py$"; } ];
+          open-floating = true;
+          default-floating-position = {
+            x = 0;
+            y = 0;
+            relative-to = "top-right";
+          };
+        }
+        {
+          matches = [ { title = "^woomer$"; } ];
+          open-fullscreen = true;
+          open-focused = true;
+        }
       ];
       debug = {
         ignore-drm-device = "/dev/dri/card0";

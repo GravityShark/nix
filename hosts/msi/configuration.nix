@@ -5,8 +5,10 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  desktop.display-server = "niri";
-  desktop.login-manager = "greetd";
+  desktop = {
+    display-server = "niri";
+    login-manager = "greetd";
+  };
 
   apps = {
     adb.enable = false;
@@ -55,17 +57,4 @@
 
   ## Cloudflare Warp for slow downloads
   services.cloudflare-warp.enable = false;
-
-  # programs.weylus = {
-  #   enable = true;
-  #   openFirewall = true;
-  #   users = [ config.username ];
-  # };
-
-  # services.sunshine = {
-  #   enable = true;
-  #   autoStart = true;
-  #   capSysAdmin = true; # only needed for Wayland -- omit this when using with Xorg
-  #   openFirewall = true;
-  # };
 }
