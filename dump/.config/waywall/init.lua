@@ -6,7 +6,6 @@ local round = function(x)
 	return math.floor(x + 0.5)
 end
 
--- https://whvn.cc/o5ky29
 local cfg = {
 	background = '@background@',
 	ninb_path = '@ninb_path@',
@@ -313,7 +312,7 @@ local config = {
 		remaps = game_remaps,
 	},
 	theme = {
-		-- background = '#241f31',
+		background = '#241f31',
 		background_png = cfg.background,
 		ninb_anchor = 'bottomright',
 		-- NOTE: opacity doesn't exist in niri https://github.com/niri-wm/niri/issues/619
