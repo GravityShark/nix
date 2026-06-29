@@ -7,6 +7,7 @@
 }:
 
 {
+  # lowkey now irrelevant cause noctalia shell has idle things now
   options = {
     service.swayidle.enable = lib.mkEnableOption "enables swayidle";
   };

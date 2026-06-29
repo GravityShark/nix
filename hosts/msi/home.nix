@@ -35,7 +35,7 @@
     emacs.enable = false;
     keepassxc.enable = true;
     notes-backup.enable = true;
-    swayidle.enable = true;
+    swayidle.enable = false;
   };
 
   home.stateVersion = "25.11"; # Read Home Manager release notes when changing.

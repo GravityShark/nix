@@ -612,15 +612,15 @@
         };
         idle = {
           customCommands = "[]";
-          enabled = false;
-          fadeDuration = 5;
+          enabled = true;
+          fadeDuration = 10;
           lockCommand = "";
-          lockTimeout = 240;
+          lockTimeout = 180;
           resumeLockCommand = "";
           resumeScreenOffCommand = "";
           resumeSuspendCommand = "";
-          screenOffCommand = "notify-desktop \"yo\"";
-          screenOffTimeout = 3;
+          screenOffCommand = "";
+          screenOffTimeout = 120;
           suspendCommand = "";
           suspendTimeout = 300;
         };
