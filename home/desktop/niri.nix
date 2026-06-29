@@ -16,40 +16,47 @@
   };
 
   config = lib.mkIf config.desktop.niri.enable {
-    home.packages = [ pkgs.nirius ];
-    services.kanshi = {
-      enable = true;
-      settings = [
-        {
-          profile.name = "docked";
-          profile.outputs = [
+    services = {
+      kanshi = {
+        enable = true;
+        settings = [
+          {
+            profile.name = "docked";
+            profile.outputs = [
 
-            {
-              criteria = "eDP-1";
-              status = "disable";
-            }
-            {
-              criteria = "HDMI-A-2";
-            }
-          ];
-        }
-        {
-          profile.name = "undocked";
-          profile.outputs = [
-            {
-              criteria = "eDP-1";
-            }
-          ];
-        }
-      ];
+              {
+                criteria = "eDP-1";
+                status = "disable";
+              }
+              {
+                criteria = "HDMI-A-2";
+              }
+            ];
+          }
+          {
+            profile.name = "undocked";
+            profile.outputs = [
+              {
+                criteria = "eDP-1";
+              }
+            ];
+          }
+        ];
+      };
+      polkit-gnome.enable = true;
+      wl-clip-persist = {
+        enable = true;
+        clipboardType = "both";
+      };
     };
-    services.polkit-gnome.enable = true;
-    services.wl-clip-persist.enable = true;
 
     stylix.targets.niri.enable = config.desktop.stylix.enable;
-
     nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     programs.niri.package = pkgs.niri-unstable;
+
+    # NOTE: I kinda want to remove nirius at some point, replace it with a much more minimal version that doesn't require a server
+    home.packages = [ pkgs.nirius ];
+
     # https://niri-wm.github.io/niri/Configuration
     # https://github.com/sodiboo/niri-flake/blob/main/docs.md
     programs.niri.settings = {
