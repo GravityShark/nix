@@ -44,7 +44,7 @@ in
           libxtst
         ];
         additionalPrograms = [
-          jemalloc
+          # jemalloc
           ninjabrain-bot
           waywall
         ];
