@@ -47,7 +47,8 @@
   programs = {
     mangohud.enable = true;
     mpv.enable = true;
-    vesktop.enable = true;
+    # FIXME: Currently vesktop is compromised because pnpm is compromised
+    # vesktop.enable = true;
     zathura = {
       enable = true;
       options.selection-clipboard = "clipboard";
