@@ -78,7 +78,7 @@
     swayimg
 
     ## Work
-    caprine
+    # caprine
     onlyoffice-desktopeditors
     # pdfarranger
     # teams-for-linux
