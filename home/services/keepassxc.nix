@@ -27,7 +27,6 @@
           MinimizeToTray = true;
           ShowTrayIcon = true;
           ToolButtonStyle = 0;
-          # TrayIconAppearance = "monochrome-dark";
         };
 
         Security = {

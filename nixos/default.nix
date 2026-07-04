@@ -34,7 +34,7 @@
 
     ## We are so Zen
     ## FIX: Currently we are NOT so zen
-    # boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
+    boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
 
     services.dbus.implementation = "broker";
 
