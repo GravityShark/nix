@@ -32,6 +32,11 @@
             allowedNetwork = "192.168.0.0/24";
             id = "C32X25B-EOZRWWL-WA5677F-WVVFLRU-YZIKIXX-ZXMCNNA-U5G27XH-SM55MAA";
           };
+          newbrick = {
+            name = "newbrick";
+            allowedNetwork = "192.168.0.0/24";
+            id = "6UE3EDG-CCZ7QDS-EKNYJLJ-C6KMM5L-TVXEY7R-Y45E2VF-6MN2IKB-QUFDIQJ";
+          };
           clear = {
             name = "clear";
             allowedNetwork = "192.168.0.0/24";
@@ -43,7 +48,7 @@
             id = "i2ekx-2lgrg";
             devices = [
               "clear"
-              "brick2ah"
+              "newbrick"
             ];
             label = "Notes";
             versioning.type = "trashcan";
