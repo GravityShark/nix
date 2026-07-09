@@ -63,19 +63,23 @@
       };
     };
 
-    stylix.cursor =
-      if (config.stylix.polarity == "light") then
-        {
-          package = pkgs.callPackage ../packages/golden-xcursor.nix { };
-          name = "GoldenXMod";
-          size = 48;
-        }
-      else
-        {
-          package = pkgs.callPackage ../packages/silver-xcursor.nix { };
-          name = "SilverXMod";
-          size = 48;
-        };
+    stylix.cursor = {
+      package = pkgs.google-cursor;
+      name = "GoogleDot Black";
+      size = 64;
+    };
+    # if (config.stylix.polarity == "light") then
+    #   {
+    #     package = pkgs.callPackage ../packages/golden-xcursor.nix { };
+    #     name = "GoldenXMod";
+    #     size = 48;
+    #   }
+    # else
+    #   {
+    #     package = pkgs.callPackage ../packages/silver-xcursor.nix { };
+    #     name = "SilverXMod";
+    #     size = 48;
+    #   };
 
     stylix.icons.enable = true;
     stylix.icons.package = pkgs.papirus-icon-theme;
