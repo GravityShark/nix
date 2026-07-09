@@ -63,6 +63,9 @@
       };
     };
 
+    # BUG: Wait for this to merge to remove this line https://github.com/nix-community/stylix/pull/2407
+    home.pointerCursor.enable = true;
+
     stylix.cursor = {
       package = pkgs.google-cursor;
       name = "GoogleDot Black";
