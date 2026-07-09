@@ -70,6 +70,7 @@
             icon = "affiliate";
             id = "CustomButton";
             onClicked = "toggle-syncthing";
+            onRightClicked = "syncthing browser";
             stateChecksJson = "[{\"command\":\"systemctl is-active --quiet --user syncthing.service\",\"icon\":\"\"}]";
           }
         ];
