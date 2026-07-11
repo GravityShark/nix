@@ -59,7 +59,8 @@
     ## Apps
     baobab
     # chromium
-    # easyeffects
+    easyeffects
+    noisetorch
     gnome-system-monitor
     pear-desktop
     # racket

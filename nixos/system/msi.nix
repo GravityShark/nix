@@ -84,7 +84,7 @@
       "w /sys/devices/platform/msi-ec/webcam - - - - off"
     ];
 
-    # environment.systemPackages = with pkgs; [ mcontrolcenter ];
+    environment.systemPackages = with pkgs; [ mcontrolcenter ];
 
     systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";

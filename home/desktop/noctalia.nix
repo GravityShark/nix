@@ -652,12 +652,12 @@
         };
         nightLight = {
           autoSchedule = false;
-          dayTemp = "1000";
-          enabled = false;
-          forced = true;
-          manualSunrise = "06:30";
-          manualSunset = "18:30";
-          nightTemp = "1000";
+          dayTemp = 1000;
+          enabled = true;
+          forced = false;
+          manualSunrise = "05:30";
+          manualSunset = "22:00";
+          nightTemp = 500;
         };
         noctaliaPerformance = {
           disableDesktopWidgets = true;
