@@ -141,7 +141,8 @@
         typescript-language-server
         vscode-langservers-extracted # contains html-lsp and json-lsp
 
-        kdlfmt
+        ## Java
+        jdt-language-server
 
         ## 25 day AOC challenge
 
