@@ -56,6 +56,6 @@
   ################################## Extra ###################################
 
   ## Cloudflare Warp for slow downloads
-  services.cloudflare-warp.enable = false;
+  services.cloudflare-warp.enable = true;
   # programs.kdeconnect.enable = true;
 }

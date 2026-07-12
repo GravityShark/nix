@@ -60,7 +60,6 @@
     baobab
     # chromium
     easyeffects
-    noisetorch
     gnome-system-monitor
     pear-desktop
     # racket
