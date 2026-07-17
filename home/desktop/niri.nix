@@ -176,7 +176,7 @@
         }
         {
           matches = [
-            { app-id = "^com\\.github\\.th_ch\\.youtube_music$"; }
+            { app-id = "^com\\.github\\.th-ch\\.youtube-music$"; }
           ];
           open-on-workspace = "music";
           default-column-width.proportion = 2. / 3.;

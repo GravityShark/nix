@@ -68,8 +68,8 @@
 
     stylix.cursor = {
       package = pkgs.google-cursor;
-      name = "GoogleDot Black";
-      size = 64;
+      name = "GoogleDot-White";
+      size = 40;
     };
     # if (config.stylix.polarity == "light") then
     #   {
