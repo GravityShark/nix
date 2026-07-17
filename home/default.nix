@@ -23,7 +23,7 @@
       ];
 
     # caprine has outdated version
-    permittedInsecurePackages = [ "electron-37.10.3" ];
+    permittedInsecurePackages = [ "electron-40.10.5" ];
   };
 
   # nixpkgs.overlays = [
