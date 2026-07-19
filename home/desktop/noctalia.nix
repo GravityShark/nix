@@ -655,8 +655,8 @@
           dayTemp = 1000;
           enabled = true;
           forced = false;
-          manualSunrise = "05:30";
-          manualSunset = "22:00";
+          manualSunrise = "05:00";
+          manualSunset = "21:00";
           nightTemp = 500;
         };
         noctaliaPerformance = {

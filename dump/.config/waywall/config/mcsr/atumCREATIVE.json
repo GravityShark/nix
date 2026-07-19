@@ -20,9 +20,8 @@
     "disabled": []
   },
   "demoMode": false,
-  "hotkeyOnly": false,
+  "hotkeyOnly": true,
   "safeHotkey": true,
   "illegalSettingsWarning": true,
   "hasLegalSettings": true
 }
-
