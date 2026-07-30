@@ -34,7 +34,7 @@ in
           temurin-bin-21
           # for newer versions that i dont play rn, i should probably use lunar for this instead
           # graalvmPackages.graalvm-oracle_25
-          # temurin-bin-25
+          temurin-bin-25
         ];
         additionalLibs = [
           # runtime dependencies necessary for mcsr fairplay mod
@@ -61,6 +61,6 @@ in
       ninb_path = "${lib.getExe ninjabrain-bot}";
       oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot-cropped-81x81.png}";
     };
-    # xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
+    xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
   };
 }
