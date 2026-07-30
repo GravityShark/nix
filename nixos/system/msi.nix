@@ -71,7 +71,13 @@
           ''}";
         Restart = "on-failure";
       };
-      after = [ "multi-user.target" ];
+      after = [
+        "multi-user.target"
+        "suspend.target"
+        "hibernate.target"
+        "hybrid-sleep.target"
+        "suspend-then-hibernate.target"
+      ];
       wantedBy = [ "multi-user.target" ];
     };
 
