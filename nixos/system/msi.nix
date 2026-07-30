@@ -91,14 +91,6 @@
     ];
 
     environment.systemPackages = with pkgs; [ mcontrolcenter ];
-MControlCenter.conf
-[Settings]
-UserMode=balanced_mode
-fan1SpeedSettings=38|52|67|85|105|126|150
-fan1TempSettings=40|45|50|55|60|65
-fan2SpeedSettings=38|52|67|85|105|126|150
-fan2TempSettings=40|45|50|55|60|65
-fanModeAdvanced=true
 
     systemd.services.ppd-dbus-hook = lib.mkIf config.service.power-management.enable {
       description = "Set /msi-ec/shift_mode depending on power-profiles-daemon";
