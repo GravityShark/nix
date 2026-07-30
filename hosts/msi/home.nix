@@ -43,6 +43,8 @@
   ################################## Extra ###################################
 
   xdg.configFile."MangoHud/MangoHud.conf".source = ../../dump/.config/MangoHud/MangoHud.conf;
+  xdg.configFile."MControlCenter.conf".source = ../../dump/.config/MControlCenter.conf;
+
   ## Other programss
   programs = {
     mangohud.enable = true;
