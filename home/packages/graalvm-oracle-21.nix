@@ -11,12 +11,12 @@ let
   hashes = {
     "x86_64-linux" = {
       url = "https://download.oracle.com/graalvm/21/latest/graalvm-jdk-21_linux-x64_bin.tar.gz";
-      hash = "sha256-Iw5TdqnDINwy9dnqSCEN4ztfzhbHWdRufPoiY8FzIRg=";
+      hash = "sha256-sAf/ZMQl+Fu+DmhhBwRPumylBUp+iScaRzdn9Uaq3cE=";
     };
-    "aarch64-linux" = {
-      url = "https://download.oracle.com/graalvm/21/latest/graalvm-jdk-21_linux-aarch64_bin.tar.gz";
-      hash = "";
-    };
+    # "aarch64-linux" = {
+    #   url = "https://download.oracle.com/graalvm/21/latest/graalvm-jdk-21_linux-aarch64_bin.tar.gz";
+    #   hash = "";
+    # };
   };
 in
 graalvmPackages.buildGraalvm {
