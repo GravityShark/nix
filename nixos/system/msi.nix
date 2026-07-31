@@ -78,7 +78,13 @@
         "hybrid-sleep.target"
         "suspend-then-hibernate.target"
       ];
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = [
+        "multi-user.target"
+        "suspend.target"
+        "hibernate.target"
+        "hybrid-sleep.target"
+        "suspend-then-hibernate.target"
+      ];
     };
 
     # Sets the msi stats
