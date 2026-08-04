@@ -30,6 +30,7 @@
         "steam"
         "steamcmd"
         "steam-unwrapped"
+        "cuda_cccl"
       ];
 
     ## We are so Zen
