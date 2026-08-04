@@ -24,14 +24,15 @@
       pkg:
       builtins.elem (lib.getName pkg) [
         "cloudflare-warp"
+        "cuda_cccl"
+        "cuda_cudart"
+        "cuda_nvcc"
         "nvidia-kernel-modules"
         "nvidia-settings"
         "nvidia-x11"
         "steam"
         "steamcmd"
         "steam-unwrapped"
-        "cuda_cccl"
-        "cuda_cudart"
       ];
 
     ## We are so Zen
