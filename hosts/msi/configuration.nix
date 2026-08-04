@@ -59,7 +59,7 @@
   services.cloudflare-warp.enable = true;
   # programs.kdeconnect.enable = true;
 
-  environment.systemPackages = [
-    (pkgs.llama-cpp.override { cudaSupport = true; })
+  environment.systemPackages = with pkgs; [
+    llama-cpp-vulkan
   ];
 }
