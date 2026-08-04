@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -58,4 +58,8 @@
   ## Cloudflare Warp for slow downloads
   services.cloudflare-warp.enable = true;
   # programs.kdeconnect.enable = true;
+
+  environment.systemPackages = [
+    (pkgs.llama-cpp.override { cudaSupport = true; })
+  ];
 }
