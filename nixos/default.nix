@@ -25,6 +25,7 @@
       builtins.elem (lib.getName pkg) [
         "cloudflare-warp"
         "cuda_cccl"
+        "libcublas"
         "cuda_cudart"
         "cuda_nvcc"
         "nvidia-kernel-modules"

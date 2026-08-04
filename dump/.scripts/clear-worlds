@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-instances=("MCSR 1.16.1" "MCSR Ranked")
+instances=("MCSR 1.16.1" "MCSR Ranked" "FSG 1.16.1")
 
 # DO NOT add a '/' at the end of launcher_prefix's value
 launcher_prefix=~/.local/share/PrismLauncher/instances
@@ -8,4 +8,5 @@ for inst in "${instances[@]}"; do
     rm -r "$launcher_prefix/$inst/minecraft/saves"/New*
     rm -r "$launcher_prefix/$inst/minecraft/saves"/mcsrranked*
     rm -r "$launcher_prefix/$inst/minecraft/saves"/Benchmark*
+    rm -r "$launcher_prefix/$inst/minecraft/saves"/Set*
 done
