@@ -61,5 +61,6 @@
 
   environment.systemPackages = with pkgs; [
     llama-cpp-vulkan
+    sillytavern
   ];
 }
