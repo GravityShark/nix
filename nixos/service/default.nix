@@ -7,6 +7,7 @@
     ./disks.nix
     ./flatpak.nix
     ./kanata.nix
+    ./llama-cpp.nix
     ./networking.nix
     ./pipewire.nix
     ./power-management.nix

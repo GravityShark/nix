@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -40,6 +40,7 @@
     disks.enable = true;
     flatpak.enable = true;
     kanata.enable = true;
+    llama-cpp.enable = true;
     networking.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
@@ -59,8 +60,5 @@
   services.cloudflare-warp.enable = true;
   # programs.kdeconnect.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    llama-cpp-vulkan
-    sillytavern
-  ];
+  programs.nix-ld.enable = true;
 }

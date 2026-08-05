@@ -92,6 +92,7 @@
     # aria2
     # aria2p
     # ntfs3g
+    pi-coding-agent
     # wget
     yt-dlp
     ytfzf
