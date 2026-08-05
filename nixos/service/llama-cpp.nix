@@ -19,7 +19,7 @@
       # package = (pkgs.llama-cpp.override { cudaSupport = true; });
       settings = {
         api-key = "bingo";
-        ctx-size = 32768;
+        ctx-size = 16384;
         # BUG: I think mcp servers are broken  https://github.com/ggml-org/llama.cpp/issues/26497
         # mcp-servers-config = (pkgs.formats.json { }).generate "mcp.json" {
         #   mcpServers = {
@@ -46,6 +46,11 @@
           "unsloth/gemma-4-E4B-it-qat-GGUF" = {
             hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF";
             hf-file = "gemma-4-E4B-it-qat-UD-Q4_K_XL.gguf";
+            n-gpu-layers = -1;
+          };
+          "unsloth/gemma-4-E4B-it-GGUF" = {
+            hf-repo = "unsloth/gemma-4-E4B-it-GGUF";
+            hf-file = "gemma-4-E4B-it-UD-Q8_K_XL.gguf";
             n-gpu-layers = -1;
           };
         };
