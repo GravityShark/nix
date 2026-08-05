@@ -43,12 +43,12 @@
         models-autoload = "";
         models-max = 1;
         models-preset = (pkgs.formats.ini { }).generate "models-preset.ini" {
-          "unsloth/gemma-4-E4B-it-qat-GGUF" = {
+          "unsloth/gemma-4-E4B-it-qat-UD-Q4_K_XL" = {
             hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF";
             hf-file = "gemma-4-E4B-it-qat-UD-Q4_K_XL.gguf";
             n-gpu-layers = -1;
           };
-          "unsloth/gemma-4-E4B-it-GGUF" = {
+          "unsloth/gemma-4-E4B-it-UD-Q8_K_XL" = {
             hf-repo = "unsloth/gemma-4-E4B-it-GGUF";
             hf-file = "gemma-4-E4B-it-UD-Q8_K_XL.gguf";
             n-gpu-layers = -1;
