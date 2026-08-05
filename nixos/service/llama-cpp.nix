@@ -30,12 +30,9 @@
               ];
             };
             nixos = {
-              type = "stdio";
-              command = "nix";
+              command = "${pkgs.uv}/bin/uvx";
               args = [
-                "run"
-                "github:utensils/mcp-nixos"
-                "--"
+                "mcp-nixos"
               ];
             };
           };
@@ -71,7 +68,7 @@
           };
         };
 
-        n-gpu-layers = -1;
+        n-gpu-layers = "all";
         # some models crash if you dont disable this
         no-mmproj = "";
         parallel = 1;
@@ -89,7 +86,7 @@
       environment = {
         MESA_SHADER_CACHE_DIR = "/var/cache/llama-cpp";
         XDG_CACHE_HOME = "/var/cache/llama-cpp";
-        XDG_DATA_HOME = "/var/cache/llama-cpp";
+        XDG_DATA_HOME = "/var/cache/llama-cpp/shareddata";
       };
     };
   };
