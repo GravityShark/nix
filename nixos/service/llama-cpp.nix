@@ -19,8 +19,7 @@
       # package = (pkgs.llama-cpp.override { cudaSupport = true; });
       settings = {
         api-key = "bingo";
-        models-autoload = "";
-        tools = "all";
+        ctx-size = 32768;
         # BUG: I think mcp servers are broken  https://github.com/ggml-org/llama.cpp/issues/26497
         # mcp-servers-config = (pkgs.formats.json { }).generate "mcp.json" {
         #   mcpServers = {
@@ -41,28 +40,28 @@
         #     };
         #   };
         # };
+        models-autoload = "";
+        models-max = 1;
         models-preset = (pkgs.formats.ini { }).generate "models-preset.ini" {
-          "*" = {
-            ctx-size = 12000;
-            parallel = 1;
-          };
           "unsloth/gemma-4-E4B-it-qat-GGUF" = {
             hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF";
             hf-file = "gemma-4-E4B-it-qat-UD-Q4_K_XL.gguf";
             n-gpu-layers = -1;
           };
         };
-        models-max = 1;
-        # no-mmproj = "";
+        # some models crash if you dont disable the other stuff
+        no-mmproj = "";
+        parallel = 1;
         sleep-idle-seconds = 900;
+        tools = "all";
         ui-mcp-proxy = "";
         verbosity = 5;
       };
     };
     systemd.services.llama-cpp = {
       environment = {
-        XDG_CACHE_HOME = "/var/cache/llama-cpp";
         MESA_SHADER_CACHE_DIR = "/var/cache/llama-cpp";
+        XDG_CACHE_HOME = "/var/cache/llama-cpp";
       };
     };
   };
