@@ -89,6 +89,7 @@
       environment = {
         MESA_SHADER_CACHE_DIR = "/var/cache/llama-cpp";
         XDG_CACHE_HOME = "/var/cache/llama-cpp";
+        XDG_DATA_HOME = "/var/cache/llama-cpp";
       };
     };
   };
