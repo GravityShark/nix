@@ -30,10 +30,7 @@
     };
     pi-flake = {
       url = "github:lukasl-dev/pi.nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     ppd-dbus-hook = {
       url = "github:GravityShark/ppd-dbus-hook";
