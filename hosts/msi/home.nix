@@ -26,7 +26,7 @@
     neovim.enable = true;
     obs.enable = true;
     ocr.enable = true;
-    # pi-agent.enable = true;
+    pi-agent.enable = true;
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;

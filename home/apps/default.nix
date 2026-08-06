@@ -13,6 +13,7 @@
     # ./nixcraft.nix
     ./obs.nix
     ./ocr.nix
+    ./pi-agent.nix
     ./syncthing.nix
     ./tmux.nix
     ./zen-browser.nix

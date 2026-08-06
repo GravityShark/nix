@@ -92,18 +92,19 @@
               spec-draft-n-max = 2;
               spec-type = "draft-mtp";
             };
-            # "unsloth/gemma-4-12B-it-qat-Q4_K_XL" = {
-            #   alias = "Gemma 4 12B";
-            #   hf-repo = "unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL";
-            #   spec-type = "none";
-            #   ctx-size = 32768;
-            # };
-            "Main/gemma-4-26B-A4B-it-qat-Q4_K_XL" = {
-              alias = "Gemma 4 26B A4B";
-              hf-repo = "unsloth/gemma-4-26B-A4B-it-qat-GGUF:UD-Q4_K_XL";
-              n-gpu-layers = "auto";
+            "unsloth/gemma-4-12B-it-qat-Q4_K_XL" = {
+              alias = "Gemma 4 12B";
+              hf-repo = "unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL";
+              ctx-size = 32768;
+              spec-draft-n-max = 2;
+              spec-type = "draft-mtp";
             };
-
+            # "Main/gemma-4-26B-A4B-it-qat-Q4_K_XL" = {
+            #   alias = "Gemma 4 26B A4B";
+            #   hf-repo = "unsloth/gemma-4-26B-A4B-it-qat-GGUF:UD-Q4_K_XL";
+            #   n-gpu-layers = "auto";
+            # };
+            #
             "Main/Qwen3.5-2B-MTP-Q4_K_XL" = {
               alias = "Qwen 3.5 2B";
               hf-repo = "unsloth/Qwen3.5-2B-MTP-GGUF:UD-Q4_K_XL";
@@ -156,10 +157,10 @@
           XDG_CACHE_HOME = "/var/cache/llama-cpp";
           XDG_DATA_HOME = "/var/cache/llama-cpp";
         };
-        serviceConfig = {
-          WorkingDirectory = lib.mkForce "/var/empty";
-          Environment = lib.mkForce [ "LLAMA_CACHE=/var/lib/llama-cpp" ];
-        };
+        # serviceConfig = {
+        #   WorkingDirectory = lib.mkForce "/var/empty";
+        #   Environment = lib.mkForce [ "LLAMA_CACHE=/var/lib/llama-cpp" ];
+        # };
       };
     }
   );

@@ -30,7 +30,10 @@
     };
     pi-flake = {
       url = "github:ChauDucToan/pi-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
     };
     ppd-dbus-hook = {
       url = "github:GravityShark/ppd-dbus-hook";

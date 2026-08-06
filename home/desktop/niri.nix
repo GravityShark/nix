@@ -615,6 +615,18 @@
         "Ctrl+Print".action.spawn = [ "ocr" ];
         "Mod+Z".action.spawn = [ "${pkgs.woomer}/bin/woomer" ];
 
+        "Mod+N" = lib.mkIf config.desktop.noctalia.enable {
+          hotkey-overlay.title = "Night light toggle";
+          repeat = false;
+          action.spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "nightLight"
+            "toggle"
+          ];
+        };
+
         "Mod+Escape" = {
           allow-inhibiting = false;
           action.toggle-keyboard-shortcuts-inhibit = [ ];
