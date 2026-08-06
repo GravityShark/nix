@@ -79,19 +79,5 @@
       LC_TELEPHONE = "en_US.UTF-8";
       LC_TIME = "en_US.UTF-8";
     };
-
-    nix.settings.download-buffer-size = 500000000;
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    nix.settings.extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://llama-cpp.cachix.org"
-    ];
-    nix.settings.extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "llama-cpp.cachix.org-1:H75X+w83wUKTIPSO1KWy9ADUrzThyGs8P5tmAbkWhQc="
-    ];
   };
 }
