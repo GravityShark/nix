@@ -1,6 +1,6 @@
 # man `configuration.nix(5)` or `nixos-help` or https://nixos.org/nixos/options.html).
 
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -38,7 +38,7 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    flatpak.enable = true;
+    flatpak.enable = false;
     kanata.enable = true;
     llama-cpp.enable = true;
     networking.enable = true;
