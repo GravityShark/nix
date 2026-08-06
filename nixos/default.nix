@@ -91,7 +91,6 @@
     "https://nix-community.cachix.org"
     "https://pi.cachix.org"
   ];
-
   nix.settings.extra-trusted-public-keys = [
     "llama-cpp.cachix.org-1:H75X+w83wUKTIPSO1KWy9ADUrzThyGs8P5tmAbkWhQc="
     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
