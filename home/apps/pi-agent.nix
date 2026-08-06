@@ -26,6 +26,33 @@
         "npm:pi-web-access"
         "npm:pi-token-speed"
       ];
+
+      models = {
+        providers = {
+          llama-cpp = {
+            baseUrl = "http://localhost:8080";
+            api = "openai-completions";
+            apiKey = "bingo";
+            # models = [
+            #   {
+            #     id = "llama3.1:8b";
+            #   }
+            #   {
+            #     id = "qwen2.5-coder:7b";
+            #   }
+            # ];
+          };
+        };
+      };
+
+      # keybindings = {
+      #   "mode:main:key:ctrl-p" = [ "goto:chat" ];
+      # };
+      #
+      #
+      # extraEnv = {
+      #   OPENAI_API_KEY = "sk-...";
+      # };
     };
   };
 }
