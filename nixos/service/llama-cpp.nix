@@ -36,6 +36,9 @@
           models-max = 1;
           ui-mcp-proxy = "";
           models-preset-only = "";
+          tools = "all";
+          no-models-autoload = "";
+          models-dir = "caching";
           # verbosity = 5;
           # mcp-servers-config = (pkgs.formats.json { }).generate "mcp.json" {
           #   mcpServers = {
@@ -68,7 +71,6 @@
               parallel = 1;
               sleep-idle-seconds = 900;
               temp = 1.0;
-              tools = "all";
               top-k = 64;
               top-p = 0.95;
             };
