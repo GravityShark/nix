@@ -35,6 +35,7 @@
           api-key = "bingo";
           models-max = 1;
           ui-mcp-proxy = "";
+          models-preset-only = "";
           # verbosity = 5;
           # mcp-servers-config = (pkgs.formats.json { }).generate "mcp.json" {
           #   mcpServers = {
