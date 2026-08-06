@@ -27,13 +27,13 @@
         "npm:pi-token-speed"
       ];
 
-      # models = {
-      #   default = {
-      #     provider = "llama-cpp";
-      #     model = "Main/Qwen3.5-2B-MTP-Q4_K_X";
-      #     baseUrl = "http://127.0.0.1:8080";
-      #   };
-      # };
+      models = {
+        local = {
+          provider = "llama-cpp";
+          model = "Main/Qwen3.5-2B-MTP-Q4_K_X";
+          baseUrl = "http://127.0.0.1:8080";
+        };
+      };
 
       # keybindings = {
       #   "mode:main:key:ctrl-p" = [ "goto:chat" ];
