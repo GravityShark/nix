@@ -33,7 +33,7 @@
         openFirewall = true;
         settings = {
           api-key = "bingo";
-          models-dir = "caching";
+          models-dir = "/dev/null";
           models-max = 1;
           no-mmproj-offload = "";
           no-models-autoload = "";
