@@ -13,6 +13,7 @@
       enable = true;
       defaultApplications = {
         "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+        "application/vnd.excalidraw+json" = [ "Excalidraw.desktop" ];
 
         "application/vnd.oasis.opendocument.text-master" = [ "onlyoffice-desktopeditors.desktop" ];
         "application/vnd.oasis.opendocument.text-web" = [ "onlyoffice-desktopeditors.desktop" ];
