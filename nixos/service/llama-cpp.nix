@@ -35,7 +35,6 @@
           api-key = "bingo";
           models-dir = "caching";
           models-max = 1;
-          models-preset-only = "";
           no-mmproj-offload = "";
           no-models-autoload = "";
           tools = "all";
