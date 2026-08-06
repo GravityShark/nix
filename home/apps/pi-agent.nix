@@ -22,7 +22,10 @@
       package = pkgs.pi;
       enable = true;
       mutableDir = true;
-      extensions = [ "npm:pi-web-access" ];
+      extensions = [
+        "npm:pi-web-access"
+        "npm:pi-token-speed"
+      ];
 
       # models = {
       #   default = {
