@@ -70,27 +70,7 @@
           modules = [
             ./hosts/msi/configuration.nix
             ./nixos
-            {
-              config.username = username;
-
-              nix.settings.download-buffer-size = 500000000;
-              nix.settings.experimental-features = [
-                "nix-command"
-                "flakes"
-              ];
-              nix.settings.extra-substituters = [
-                "https://llama-cpp.cachix.org"
-                "https://nix-community.cachix.org"
-                "https://pi.cachix.org"
-              ];
-
-              nix.settings.extra-trusted-public-keys = [
-                "llama-cpp.cachix.org-1:H75X+w83wUKTIPSO1KWy9ADUrzThyGs8P5tmAbkWhQc="
-                "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-                "pi.cachix.org-1:lGeoGJaZ5ZDabuRzkcD5EBTNnDM4HJ1vqeOxlWk1Flk="
-              ];
-            }
-
+            { config.username = username; }
           ];
         };
       };
