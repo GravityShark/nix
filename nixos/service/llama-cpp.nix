@@ -35,7 +35,8 @@
           api-key = "bingo";
           models-max = 1;
           no-mmproj-offload = "";
-          tools = "all";
+          port = 9931;
+          # tools = "all";
           ui-mcp-proxy = "";
           verbosity = 5;
           # mcp-servers-config = (pkgs.formats.json { }).generate "mcp.json" {
