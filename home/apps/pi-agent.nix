@@ -14,7 +14,8 @@
   };
 
   config = lib.mkIf config.apps.pi-agent.enable {
-    home.packages = with pkgs; [ openshell ];
+    # needs docker
+    # home.packages = with pkgs; [ openshell ];
 
     nixpkgs.overlays = [ inputs.pi-flake.overlays.default ];
     programs.pi-coding-agent = {
