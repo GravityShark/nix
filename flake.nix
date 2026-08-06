@@ -29,7 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pi-flake = {
-      url = "github:ChauDucToan/pi-flake";
+      url = "github:lukasl-dev/pi-flake";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
