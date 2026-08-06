@@ -33,12 +33,13 @@
         openFirewall = true;
         settings = {
           api-key = "bingo";
-          models-max = 1;
-          ui-mcp-proxy = "";
-          models-preset-only = "";
-          tools = "all";
-          no-models-autoload = "";
           models-dir = "caching";
+          models-max = 1;
+          models-preset-only = "";
+          no-mmproj-offload = "";
+          no-models-autoload = "";
+          tools = "all";
+          ui-mcp-proxy = "";
           # verbosity = 5;
           # mcp-servers-config = (pkgs.formats.json { }).generate "mcp.json" {
           #   mcpServers = {
@@ -67,7 +68,6 @@
               # n-gpu-layers = "auto";
               # some models crash if you dont use this. which disables like audio stuff
               # no-mmproj = "true";
-              no-mmproj-offload = "true";
               parallel = 1;
               sleep-idle-seconds = 900;
               temp = 1.0;
