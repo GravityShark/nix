@@ -63,11 +63,12 @@
               fit-target = "1024,0";
               main-gpu = 1;
               n-gpu-layers = "all";
-              parallel = 1;
+              # parallel = 1;
               sleep-idle-seconds = 900;
               temp = 1.0;
               top-k = 64;
               top-p = 0.95;
+
             };
             "Main/gemma-4-E2B-it-qat-Q4_K_XL" = {
               alias = "Gemma 4 E2B";
