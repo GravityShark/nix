@@ -37,14 +37,14 @@
           models-preset = (pkgs.formats.ini { }).generate "models-preset.ini" {
             "*" = {
               # fit-ctx = 16384;
-              # fit-ctx = 32768;
+              fit-ctx = 32768;
               # fit-ctx = 65536;
               # ctx-size = 32768;
-              ctx-size = 65536;
+              # ctx-size = 65536;
               # ctx-size = 131072;
 
-              # batch-size = 512;
-              # ubatch-size = 512;
+              batch-size = 512;
+              ubatch-size = 512;
 
               device = "CUDA0";
               fit-target = "0";
@@ -85,6 +85,7 @@
               repeat-penalty = 1.0;
               temperature = 0.6;
               top-k = 20;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
             "Main/Qwen3.5-2B-Q4_K_XL-GeneralInstruct" = {
               hf-repo = "unsloth/Qwen3.5-2B-GGUF:UD-Q4_K_XL";
@@ -96,6 +97,7 @@
               temperature = 0.8;
               top-k = 20;
               top-p = 0.8;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
 
             "Main/Qwen3.5-4B-Q4_K_XL" = {
@@ -106,6 +108,8 @@
               presence-penalty = 1.5;
               repeat-penalty = 1.0;
               top-k = 20;
+              ctx-size = 32768;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
             "Main/Qwen3.5-4B-Q4_K_XL-Coding" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:UD-Q4_K_XL";
@@ -116,6 +120,8 @@
               presence-penalty = 1.5;
               repeat-penalty = 1.0;
               top-k = 20;
+              ctx-size = 32768;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
             "Main/Qwen3.5-4B-Q4_K_XL-GeneralInstruct" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:UD-Q4_K_XL";
@@ -127,6 +133,8 @@
               temperature = 0.8;
               top-k = 20;
               top-p = 0.8;
+              ctx-size = 32768;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
 
             "Main/Qwen3.5-4B-IQ4_XS" = {
@@ -137,6 +145,7 @@
               presence-penalty = 1.5;
               repeat-penalty = 1.0;
               top-k = 20;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
             "Main/Qwen3.5-4B-IQ4_XS-Coding" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:IQ4_XS";
@@ -147,6 +156,7 @@
               presence-penalty = 1.5;
               repeat-penalty = 1.0;
               top-k = 20;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
             "Main/Qwen3.5-4B-IQ4_XS-GeneralInstruct" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:IQ4_XS";
@@ -158,6 +168,7 @@
               temperature = 0.8;
               top-k = 20;
               top-p = 0.8;
+              chat-template-kwargs = "{\"enable_thinking\":true}";
             };
 
             "Main/Qwen3.6-35B-A3B-IQ4_XS" = {

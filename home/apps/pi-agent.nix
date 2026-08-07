@@ -28,10 +28,11 @@
 
           # Add custom tools and their runtime closures to the jailed PATH.
           (add-pkg-deps [
-            pkgs.gnused
+            pkgs.busybox
             pkgs.jq
             pkgs.gnumake
             pkgs.python3
+            pkgs.nodejs
           ])
 
           # Expose additional host files explicitly.
