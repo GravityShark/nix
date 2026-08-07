@@ -30,7 +30,6 @@
         settings = {
           api-key = "bingo";
           models-max = 1;
-          no-kv-offload = "";
           no-mmproj-offload = "";
           port = 9931;
           # ui-mcp-proxy = "";
@@ -41,16 +40,14 @@
               # fit-ctx = 32768;
               # fit-ctx = 65536;
               # ctx-size = 32768;
-              # ctx-size = 65536;
+              ctx-size = 65536;
               # ctx-size = 131072;
 
-              no-kv-offload = "true";
-              batch-size = 2048;
-              ubatch-size = 2048;
+              device = "CUDA0";
               fit-target = "0";
+              flash-attn = "on";
               n-gpu-layers = "all";
               parallel = 1;
-              device = "CUDA0";
               sleep-idle-seconds = 300;
               temp = 1.0;
               top-k = 64;
@@ -59,94 +56,62 @@
             "Main/gemma-4-E2B-it-qat-Q4_K_XL" = {
               hf-repo = "unsloth/gemma-4-E2B-it-qat-GGUF:UD-Q4_K_XL";
             };
-            "Main/gemma-4-E2B-it-MTP-qat-Q4_K_XL" = {
-              hf-repo = "unsloth/gemma-4-E2B-it-qat-GGUF:UD-Q4_K_XL";
-              spec-draft-n-max = 2;
-              spec-type = "draft-mtp";
-            };
             "Main/gemma-4-E4B-it-qat-Q4_K_XL" = {
               hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF:UD-Q4_K_XL";
             };
-            "Main/gemma-4-E4B-it-MTP-qat-Q4_K_XL" = {
-              hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF:UD-Q4_K_XL";
-              spec-draft-n-max = 2;
-              spec-type = "draft-mtp";
+            "Main/fun" = {
+              hf-repo = "huihui-ai/Huihui-gemma-4-E4B-it-qat-q4_0-unquantized-abliterated-GGUF";
             };
-            # "Main/fun" = {
-            #   alias = "fun";
-            #   hf-repo = "huihui-ai/Huihui-gemma-4-E4B-it-qat-q4_0-unquantized-abliterated-GGUF";
-            # };
-            # "Main/gemma-4-12B-it-qat-Q4_K_XL" = {
-            #   alias = "Gemma 4 12B";
-            #   hf-repo = "unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL";
-            #   spec-draft-n-max = 2;
-            #   spec-type = "draft-mtp";
-            # };
             "Main/gemma-4-26B-A4B-it-qat-Q4_K_XL" = {
-              alias = "Gemma 4 26B A4B";
               hf-repo = "unsloth/gemma-4-26B-A4B-it-qat-GGUF:UD-Q4_K_XL";
               n-gpu-layers = "auto";
-              kv-offload = "true";
             };
+
+            # QWENN
             "Main/Qwen3.5-2B-Q4_K_XL" = {
               hf-repo = "unsloth/Qwen3.5-2B-GGUF:UD-Q4_K_XL";
-              min-p = 0.00;
-              top-k = 20;
               cache-type-k = "q8_0";
               cache-type-v = "q8_0";
-            };
-            "Main/Qwen3.5-2B-MTP-Q4_K_XL" = {
-              hf-repo = "unsloth/Qwen3.5-2B-MTP-GGUF:UD-Q4_K_XL";
               min-p = 0.00;
               top-k = 20;
+            };
+            "Main/Qwen3.5-2B-Q4_K_XL-Coding" = {
+              hf-repo = "unsloth/Qwen3.5-2B-GGUF:UD-Q4_K_XL";
               cache-type-k = "q8_0";
               cache-type-v = "q8_0";
-              spec-draft-n-max = 2;
-              spec-type = "draft-mtp";
+              min-p = 0.00;
+              temperature = 0.6;
+              top-k = 20;
             };
+
             "Main/Qwen3.5-4B-Q4_K_XL" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:UD-Q4_K_XL";
-              min-p = 0.00;
-              top-k = 20;
               cache-type-k = "q8_0";
               cache-type-v = "q8_0";
-              # load-on-startup = "true";
-            };
-            "Main/Qwen3.5-4B-MTP-Q4_K_XL" = {
-              hf-repo = "unsloth/Qwen3.5-4B-MTP-GGUF:UD-Q4_K_XL";
               min-p = 0.00;
+              temperature = 0.6;
               top-k = 20;
+            };
+            "Main/Qwen3.5-4B-Q4_K_XL-Coding" = {
+              hf-repo = "unsloth/Qwen3.5-4B-GGUF:UD-Q4_K_XL";
               cache-type-k = "q8_0";
               cache-type-v = "q8_0";
-              spec-draft-n-max = 2;
-              spec-type = "draft-mtp";
+              min-p = 0.00;
+              top-k = 20;
             };
-            # "Main/Qwen3.5-9B-MTP-Q4_K_XL" = {
-            #   alias = "Qwen 3.5 9B";
-            #   hf-repo = "unsloth/Qwen3.5-9B-MTP-GGUF:UD-Q4_K_XL";
-            #   min-p = 0.00;
-            #   top-k = 20;
-            #   cache-type-k = "q4_0";
-            #   cache-type-v = "q4_0";
-            #   n-gpu-layers = 15;
-            #   spec-draft-n-max = 2;
-            #   spec-type = "draft-mtp";
-            # };
-            # "unsloth/Qwen3.6-27B-Q4_K_XL" = {
-            #   alias = "Qwen 3.6 27B";
-            #   hf-repo = "unsloth/Qwen3.6-27B-GGUF:UD-Q4_K_XL";
-            #   min-p = 0.00;
-            #   top-k = 20;
-            #   cache-type-k = "q8_0";
-            #   cache-type-v = "q8_0";
-            # };
+            "Main/Qwen3.5-4B-IQ4_XS" = {
+              hf-repo = "unsloth/Qwen3.5-4B-GGUF:IQ4_XS";
+              cache-type-k = "q8_0";
+              cache-type-v = "q8_0";
+              min-p = 0.00;
+              top-k = 20;
+            };
+
             "Main/Qwen3.6-35B-A3B-IQ4_XS" = {
-              alias = "Qwen 3.6 35B A3B";
               hf-repo = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_XS";
               min-p = 0.00;
-              top-k = 20;
               n-gpu-layers = "auto";
-              kv-offload = "true";
+              top-k = 20;
             };
           };
         };
@@ -165,3 +130,57 @@
     }
   );
 }
+
+# "Main/gemma-4-E2B-it-MTP-qat-Q4_K_XL" = {
+#   hf-repo = "unsloth/gemma-4-E2B-it-qat-GGUF:UD-Q4_K_XL";
+#   spec-draft-n-max = 2;
+#   spec-type = "draft-mtp";
+# };
+# "Main/gemma-4-E4B-it-MTP-qat-Q4_K_XL" = {
+#   hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF:UD-Q4_K_XL";
+#   spec-draft-n-max = 2;
+#   spec-type = "draft-mtp";
+# };
+# "Main/gemma-4-12B-it-qat-Q4_K_XL" = {
+#   alias = "Gemma 4 12B";
+#   hf-repo = "unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL";
+#   spec-draft-n-max = 2;
+#   spec-type = "draft-mtp";
+# };
+# "Main/Qwen3.5-2B-MTP-Q4_K_XL" = {
+#   hf-repo = "unsloth/Qwen3.5-2B-MTP-GGUF:UD-Q4_K_XL";
+#   min-p = 0.00;
+#   top-k = 20;
+#   cache-type-k = "q8_0";
+#   cache-type-v = "q8_0";
+#   spec-draft-n-max = 2;
+#   spec-type = "draft-mtp";
+# };
+# "Main/Qwen3.5-4B-MTP-Q4_K_XL" = {
+#   hf-repo = "unsloth/Qwen3.5-4B-MTP-GGUF:UD-Q4_K_XL";
+#   min-p = 0.00;
+#   top-k = 20;
+#   cache-type-k = "q8_0";
+#   cache-type-v = "q8_0";
+#   spec-draft-n-max = 2;
+#   spec-type = "draft-mtp";
+# };
+# "Main/Qwen3.5-9B-MTP-Q4_K_XL" = {
+#   alias = "Qwen 3.5 9B";
+#   hf-repo = "unsloth/Qwen3.5-9B-MTP-GGUF:UD-Q4_K_XL";
+#   min-p = 0.00;
+#   top-k = 20;
+#   cache-type-k = "q4_0";
+#   cache-type-v = "q4_0";
+#   n-gpu-layers = 15;
+#   spec-draft-n-max = 2;
+#   spec-type = "draft-mtp";
+# };
+# "unsloth/Qwen3.6-27B-Q4_K_XL" = {
+#   alias = "Qwen 3.6 27B";
+#   hf-repo = "unsloth/Qwen3.6-27B-GGUF:UD-Q4_K_XL";
+#   min-p = 0.00;
+#   top-k = 20;
+#   cache-type-k = "q8_0";
+#   cache-type-v = "q8_0";
+# };

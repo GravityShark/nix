@@ -438,11 +438,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1786082006,
-        "narHash": "sha256-4LRiV70Eslo9BFFakrk9+U/sIk+ltoBbA1Yc4ZJv2Vw=",
+        "lastModified": 1786119064,
+        "narHash": "sha256-QN7TErhknSfZB8jYGUhW0zMHKw34dL/eiymb3NHT8wc=",
         "owner": "lukasl-dev",
         "repo": "pi.nix",
-        "rev": "65a0682322ca1c49a43c156534e4c1af4959cae1",
+        "rev": "ac1b7c6e11fc011e14545acd9617f21d3370ff7f",
         "type": "github"
       },
       "original": {
@@ -775,11 +775,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786047438,
-        "narHash": "sha256-+8p8XryJaRpgxaJf1/YqGFs8RBOiYYx1YiwxEDDH+bs=",
+        "lastModified": 1786118193,
+        "narHash": "sha256-RhkiElXANPrHOXTncgUmKHVw8FHuRZjAXmtUPQfB91c=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "5ce465e63be9166bff1d7282d6908ca1043b6b86",
+        "rev": "43272965c62be2c512630bc80deeb6792b2f285b",
         "type": "github"
       },
       "original": {
