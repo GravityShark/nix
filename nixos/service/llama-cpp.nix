@@ -43,6 +43,9 @@
               ctx-size = 65536;
               # ctx-size = 131072;
 
+              # batch-size = 512;
+              # ubatch-size = 512;
+
               device = "CUDA0";
               fit-target = "0";
               flash-attn = "on";
@@ -69,6 +72,8 @@
               cache-type-k = "q8_0";
               cache-type-v = "q8_0";
               min-p = 0.00;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
               top-k = 20;
             };
             "Main/Qwen3.5-2B-Q4_K_XL-Coding" = {
@@ -76,8 +81,21 @@
               cache-type-k = "q8_0";
               cache-type-v = "q8_0";
               min-p = 0.00;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
               temperature = 0.6;
               top-k = 20;
+            };
+            "Main/Qwen3.5-2B-Q4_K_XL-GeneralInstruct" = {
+              hf-repo = "unsloth/Qwen3.5-2B-GGUF:UD-Q4_K_XL";
+              cache-type-k = "q8_0";
+              cache-type-v = "q8_0";
+              min-p = 0.00;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
+              temperature = 0.8;
+              top-k = 20;
+              top-p = 0.8;
             };
 
             "Main/Qwen3.5-4B-Q4_K_XL" = {
@@ -85,7 +103,8 @@
               cache-type-k = "q4_0";
               cache-type-v = "q4_0";
               min-p = 0.00;
-              temperature = 0.6;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
               top-k = 20;
             };
             "Main/Qwen3.5-4B-Q4_K_XL-Coding" = {
@@ -93,20 +112,60 @@
               cache-type-k = "q4_0";
               cache-type-v = "q4_0";
               min-p = 0.00;
+              temperature = 0.6;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
               top-k = 20;
             };
+            "Main/Qwen3.5-4B-Q4_K_XL-GeneralInstruct" = {
+              hf-repo = "unsloth/Qwen3.5-4B-GGUF:UD-Q4_K_XL";
+              cache-type-k = "q4_0";
+              cache-type-v = "q4_0";
+              min-p = 0.00;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
+              temperature = 0.8;
+              top-k = 20;
+              top-p = 0.8;
+            };
+
             "Main/Qwen3.5-4B-IQ4_XS" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:IQ4_XS";
               cache-type-k = "q4_0";
               cache-type-v = "q4_0";
               min-p = 0.00;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
               top-k = 20;
+            };
+            "Main/Qwen3.5-4B-IQ4_XS-Coding" = {
+              hf-repo = "unsloth/Qwen3.5-4B-GGUF:IQ4_XS";
+              cache-type-k = "q4_0";
+              cache-type-v = "q4_0";
+              min-p = 0.00;
+              temperature = 0.6;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
+              top-k = 20;
+            };
+            "Main/Qwen3.5-4B-IQ4_XS-GeneralInstruct" = {
+              hf-repo = "unsloth/Qwen3.5-4B-GGUF:IQ4_XS";
+              cache-type-k = "q4_0";
+              cache-type-v = "q4_0";
+              min-p = 0.00;
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
+              temperature = 0.8;
+              top-k = 20;
+              top-p = 0.8;
             };
 
             "Main/Qwen3.6-35B-A3B-IQ4_XS" = {
               hf-repo = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_XS";
               min-p = 0.00;
               n-gpu-layers = "auto";
+              presence-penalty = 1.5;
+              repeat-penalty = 1.0;
               top-k = 20;
             };
           };
@@ -127,9 +186,6 @@
   );
 }
 
-# "Main/gemma-4-E4B-it-qat-Q4_K_XL" = {
-#   hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF:UD-Q4_K_XL";
-# };
 # "Main/fun" = {
 #   hf-repo = "huihui-ai/Huihui-gemma-4-E4B-it-qat-q4_0-unquantized-abliterated-GGUF";
 # };
