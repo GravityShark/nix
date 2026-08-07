@@ -37,8 +37,8 @@
           models-preset = (pkgs.formats.ini { }).generate "models-preset.ini" {
             "*" = {
               # fit-ctx = 16384;
-              fit-ctx = 32768;
-              # fit-ctx = 65536;
+              # fit-ctx = 32768;
+              fit-ctx = 65536;
               # ctx-size = 32768;
               # ctx-size = 65536;
               # ctx-size = 131072;
