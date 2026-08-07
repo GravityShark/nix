@@ -55,12 +55,8 @@
             };
             "Main/gemma-4-E2B-it-qat-Q4_K_XL" = {
               hf-repo = "unsloth/gemma-4-E2B-it-qat-GGUF:UD-Q4_K_XL";
-            };
-            "Main/gemma-4-E4B-it-qat-Q4_K_XL" = {
-              hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF:UD-Q4_K_XL";
-            };
-            "Main/fun" = {
-              hf-repo = "huihui-ai/Huihui-gemma-4-E4B-it-qat-q4_0-unquantized-abliterated-GGUF";
+              cache-type-k = "q8_0";
+              cache-type-v = "q8_0";
             };
             "Main/gemma-4-26B-A4B-it-qat-Q4_K_XL" = {
               hf-repo = "unsloth/gemma-4-26B-A4B-it-qat-GGUF:UD-Q4_K_XL";
@@ -86,23 +82,23 @@
 
             "Main/Qwen3.5-4B-Q4_K_XL" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:UD-Q4_K_XL";
-              cache-type-k = "q8_0";
-              cache-type-v = "q8_0";
+              cache-type-k = "q4_0";
+              cache-type-v = "q4_0";
               min-p = 0.00;
               temperature = 0.6;
               top-k = 20;
             };
             "Main/Qwen3.5-4B-Q4_K_XL-Coding" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:UD-Q4_K_XL";
-              cache-type-k = "q8_0";
-              cache-type-v = "q8_0";
+              cache-type-k = "q4_0";
+              cache-type-v = "q4_0";
               min-p = 0.00;
               top-k = 20;
             };
             "Main/Qwen3.5-4B-IQ4_XS" = {
               hf-repo = "unsloth/Qwen3.5-4B-GGUF:IQ4_XS";
-              cache-type-k = "q8_0";
-              cache-type-v = "q8_0";
+              cache-type-k = "q4_0";
+              cache-type-v = "q4_0";
               min-p = 0.00;
               top-k = 20;
             };
@@ -131,6 +127,12 @@
   );
 }
 
+# "Main/gemma-4-E4B-it-qat-Q4_K_XL" = {
+#   hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF:UD-Q4_K_XL";
+# };
+# "Main/fun" = {
+#   hf-repo = "huihui-ai/Huihui-gemma-4-E4B-it-qat-q4_0-unquantized-abliterated-GGUF";
+# };
 # "Main/gemma-4-E2B-it-MTP-qat-Q4_K_XL" = {
 #   hf-repo = "unsloth/gemma-4-E2B-it-qat-GGUF:UD-Q4_K_XL";
 #   spec-draft-n-max = 2;
