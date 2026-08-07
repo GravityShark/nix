@@ -11,21 +11,17 @@
   };
   config = lib.mkIf config.service.llama-cpp.enable (
     let
-      llama-cpp = pkgs.llama-cpp-vulkan;
-      # llama-cpp = (
-      #   pkgs.llama-cpp.override {
-      #     cudaSupport = true;
-      #     vulkanSupport = true;
-      #     blasSupport = true;
-      #   }
-      # );
+      # llama-cpp = pkgs.llama-cpp-vulkan;
+      llama-cpp = (
+        pkgs.llama-cpp.override {
+          cudaSupport = true;
+          vulkanSupport = true;
+          blasSupport = true;
+        }
+      );
     in
     {
-      programs.nix-ld.enable = true;
-      environment.systemPackages = with pkgs; [
-        uv
-        llama-cpp
-      ];
+      environment.systemPackages = [ llama-cpp ];
 
       services.llama-cpp = {
         enable = true;
@@ -36,68 +32,48 @@
           models-max = 1;
           no-mmproj-offload = "";
           port = 9931;
-          # tools = "all";
           ui-mcp-proxy = "";
           verbosity = 5;
-          # mcp-servers-config = (pkgs.formats.json { }).generate "mcp.json" {
-          #   mcpServers = {
-          #     # free-search-mcp = {
-          #     #   command = "${pkgs.uv}/bin/uvx";
-          #     #   args = [
-          #     #     "free-search-mcp"
-          #     #   ];
-          #     # };
-          #     nixos = {
-          #
-          #       command = "${pkgs.uv}/bin/uvx";
-          #       args = [
-          #         "mcp-nixos"
-          #       ];
-          #     };
-          #   };
-          # };
           models-preset = (pkgs.formats.ini { }).generate "models-preset.ini" {
             "*" = {
+              fit-ctx = 16384;
+              # fit-ctx = 32768;
+              # fit-ctx = 65536;
               # ctx-size = 32768;
-              ctx-size = 65536;
+              # ctx-size = 65536;
               # ctx-size = 131072;
-              fit-target = "1024,0";
-              main-gpu = 1;
+              # ubatch-size = 2048;
+              # fit-target = "1024,0";
+              fit-target = "512";
               n-gpu-layers = "all";
-              # parallel = 1;
+              parallel = 1;
+              # device = "none";
               sleep-idle-seconds = 900;
               temp = 1.0;
               top-k = 64;
               top-p = 0.95;
-
             };
             "Main/gemma-4-E2B-it-qat-Q4_K_XL" = {
               alias = "Gemma 4 E2B";
               hf-repo = "unsloth/gemma-4-E2B-it-qat-GGUF:UD-Q4_K_XL";
               spec-draft-n-max = 2;
               spec-type = "draft-mtp";
-              n-gpu-layers = "auto";
             };
             "Main/gemma-4-E4B-it-qat-Q4_K_XL" = {
               alias = "Gemma 4 E4B";
               hf-repo = "unsloth/gemma-4-E4B-it-qat-GGUF:UD-Q4_K_XL";
-              ctx-size = 32768;
               spec-draft-n-max = 2;
               spec-type = "draft-mtp";
             };
             "Main/fun" = {
               alias = "fun";
               hf-repo = "huihui-ai/Huihui-gemma-4-E4B-it-qat-q4_0-unquantized-abliterated-GGUF";
-              # ctx-size = 131072;
-              # n-gpu-layers = "auto";
-              ctx-size = 16000;
               spec-draft-n-max = 2;
               spec-type = "draft-mtp";
             };
             "Main/gemma-4-12B-it-qat-Q4_K_XL" = {
               alias = "Gemma 4 12B";
               hf-repo = "unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL";
-              ctx-size = 32768;
               spec-draft-n-max = 2;
               spec-type = "draft-mtp";
             };
