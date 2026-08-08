@@ -63,6 +63,6 @@ in
       ninb_path = "${lib.getExe mcsrPkgs.ninjabrain-bot}";
       oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot-cropped-81x81.png}";
     };
-    xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
+    # xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
   };
 }
