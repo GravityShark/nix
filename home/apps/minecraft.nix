@@ -28,6 +28,7 @@ in
       jemalloc
       jdk
       lunar-client
+      mcsrPkgs.ninjabrain-bot
 
       (prismlauncher.override (previous: {
         jdks = [
