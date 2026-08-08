@@ -40,7 +40,7 @@
     disks.enable = true;
     flatpak.enable = false;
     kanata.enable = true;
-    llama-cpp.enable = true;
+    llama-cpp.enable = false;
     networking.enable = true;
     pipewire.enable = true;
     power-management.enable = true;
