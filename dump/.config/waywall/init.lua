@@ -240,8 +240,6 @@ local game_remaps = {
 	['x'] = 'f3',
 	['c'] = 'n',
 	['v'] = 'w',
-
-	['leftmeta'] = 'leftalt',
 }
 -- -- ##############################################################################################
 -- -- CHAT MODE
@@ -315,13 +313,7 @@ local config = {
 	},
 	actions = {
 		-- Ninb Toggle
-		['alt-control_r'] = function()
-			if chat_state.enabled then
-				return false
-			end
-			ninb_toggle()
-		end,
-		['*-p'] = function()
+		['super-control_r'] = function()
 			if chat_state.enabled then
 				return false
 			end
