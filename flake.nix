@@ -44,6 +44,10 @@
       url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mcsr-nixos = {
+      url = "https://git.uku3lig.net/uku/mcsr-nixos/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {

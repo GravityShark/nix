@@ -314,9 +314,9 @@ local config = {
 	theme = {
 		background = '#241f31',
 		background_png = cfg.background,
-		ninb_anchor = 'bottomright',
+		ninb_anchor = 'topleft',
 		-- NOTE: opacity doesn't exist in niri https://github.com/niri-wm/niri/issues/619
-		ninb_opacity = 0.8,
+		-- ninb_opacity = 0.8,
 	},
 	actions = {
 		-- Ninb Toggle

@@ -5,12 +5,12 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
 let
-  ninjabrain-bot = pkgs.callPackage ../packages/ninjabrainbot.nix { };
-  graalvm-oracle-21 = pkgs.callPackage ../packages/graalvm-oracle-21.nix { };
+  mcsrPkgs = inputs.mcsr-nixos.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   options = {
@@ -18,6 +18,7 @@ in
       enable = lib.mkEnableOption "enables minecraft";
     };
   };
+  # NOTE: try to figure out using this https://github.com/vaylinaut/PrismLauncherManager
   config = lib.mkIf config.apps.minecraft.enable {
 
     # Disable lunar client autostart
@@ -30,7 +31,7 @@ in
 
       (prismlauncher.override (previous: {
         jdks = [
-          graalvm-oracle-21
+          mcsrPkgs.graalvm-21
           temurin-bin-21
           # for newer versions that i dont play rn, i should probably use lunar for this instead
           # graalvmPackages.graalvm-oracle_25
@@ -45,7 +46,7 @@ in
         ];
         additionalPrograms = [
           # jemalloc
-          ninjabrain-bot
+          mcsrPkgs.ninjabrain-bot
           waywall
         ];
       }))
@@ -58,7 +59,7 @@ in
     xdg.configFile."waywall/init.lua".source = pkgs.replaceVars ../../dump/.config/waywall/init.lua {
       background = "${../../dump/.config/waywall/assets/background.png}";
       eye_overlay = "${../../dump/.config/waywall/assets/overlay.png}";
-      ninb_path = "${lib.getExe ninjabrain-bot}";
+      ninb_path = "${lib.getExe mcsrPkgs.ninjabrain-bot}";
       oneshot_overlay = "${../../dump/.config/waywall/assets/oneshot-cropped-81x81.png}";
     };
     xdg.configFile."waywall/clean.lua".source = ../../dump/.config/waywall/clean.lua;
