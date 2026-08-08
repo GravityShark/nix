@@ -315,7 +315,7 @@ local config = {
 	},
 	actions = {
 		-- Ninb Toggle
-		['super-control_r'] = function()
+		['alt-control_r'] = function()
 			if chat_state.enabled then
 				return false
 			end
