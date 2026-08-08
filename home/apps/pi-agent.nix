@@ -35,6 +35,7 @@
             pkgs.nodejs
           ])
 
+          (try-readonly (noescape pkgs.pi-coding-agent))
           # Expose additional host files explicitly.
           # (try-readonly (noescape "~/.gitconfig"))
         ];
