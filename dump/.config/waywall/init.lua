@@ -313,7 +313,7 @@ local config = {
 	},
 	actions = {
 		-- Ninb Toggle
-		['super-control_r'] = function()
+		['shift-mmb'] = function()
 			if chat_state.enabled then
 				return false
 			end
