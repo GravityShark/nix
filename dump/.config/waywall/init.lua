@@ -309,13 +309,19 @@ local config = {
 	theme = {
 		background = '#241f31',
 		background_png = cfg.background,
-		ninb_anchor = 'topleft',
+		ninb_anchor = 'bottomright',
 		-- NOTE: opacity doesn't exist in niri https://github.com/niri-wm/niri/issues/619
 		-- ninb_opacity = 0.8,
 	},
 	actions = {
 		-- Ninb Toggle
 		['super-control_r'] = function()
+			if chat_state.enabled then
+				return false
+			end
+			ninb_toggle()
+		end,
+		['*-p'] = function()
 			if chat_state.enabled then
 				return false
 			end

@@ -61,10 +61,10 @@
               cache-type-k = "q8_0";
               cache-type-v = "q8_0";
             };
-            "Main/gemma-4-26B-A4B-it-qat-Q4_K_XL" = {
-              hf-repo = "unsloth/gemma-4-26B-A4B-it-qat-GGUF:UD-Q4_K_XL";
-              n-gpu-layers = "auto";
-            };
+            # "Main/gemma-4-26B-A4B-it-qat-Q4_K_XL" = {
+            #   hf-repo = "unsloth/gemma-4-26B-A4B-it-qat-GGUF:UD-Q4_K_XL";
+            #   n-gpu-layers = "auto";
+            # };
 
             # QWENN
             "Main/Qwen3.5-2B-Q4_K_XL" = {
