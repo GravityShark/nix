@@ -313,7 +313,7 @@ local config = {
 	},
 	actions = {
 		-- Ninb Toggle
-		['shift-mmb'] = function()
+		['control-grave'] = function()
 			if chat_state.enabled then
 				return false
 			end
