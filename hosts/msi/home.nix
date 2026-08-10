@@ -26,7 +26,6 @@
     neovim.enable = true;
     obs.enable = true;
     ocr.enable = true;
-    pi-agent.enable = false;
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;
@@ -93,7 +92,6 @@
     # aria2
     # aria2p
     # ntfs3g
-    # pi-coding-agent
     # wget
     yt-dlp
     ytfzf
