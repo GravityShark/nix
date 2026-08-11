@@ -18,12 +18,13 @@
         "discord-canary"
         "graalvm-oracle"
         "lunarclient"
+        "sublimetext4"
         "uasm"
         # "zoom"
       ];
-
-    # caprine has outdated version
-    # permittedInsecurePackages = [ "electron-40.10.5" ];
+    problems.handlers = {
+      sublimetext4.broken = "warn"; # or "ignore"
+    };
   };
 
   # nixpkgs.overlays = [

@@ -83,6 +83,8 @@
     # caprine #doesnt work anymore
     onlyoffice-desktopeditors
     # pdfarranger
+    sublime4
+    python313
     # teams-for-linux
     # telegram-desktop
     # zoom-us
