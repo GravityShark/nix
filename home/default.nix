@@ -20,7 +20,7 @@
         "lunarclient"
         "sublimetext4"
         "uasm"
-        # "zoom"
+        "zoom"
       ];
     problems.handlers = {
       sublimetext4.broken = "warn"; # or "ignore"
