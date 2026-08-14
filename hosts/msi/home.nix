@@ -87,7 +87,7 @@
     # sublime4
     # teams-for-linux
     # telegram-desktop
-    # zoom-us
+    zoom-us
 
     ## CLIs
     _7zz-rar
