@@ -88,7 +88,7 @@
               _    _    _    _    _    _    _    _    _    _   _ 
               rctl    _    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
-              _ _ @nav    _    @sym    @rblx   _
+              _ _ @nav    _    @sym    @sym   @rblx
             )
 
             ;; (deflayer ruckus
@@ -112,7 +112,7 @@
               voldwn     ret   esc   A-tab  volu       home  pgdn  pgup  end   caps   _
               _ @osm   @osa  @oss  @osc   C-tab      left  down  up    rght  tab    _
               prtsc  brdown    brup    C-esc   del   XX  grv   bspc  del   menu  Insert _
-              _ _ _     ret @num XX XX
+              _ _ _     ret @num @num XX
             )
 
             (deflayer sym
@@ -120,7 +120,7 @@
               S-grv  S-2   S-3   S-4  S-5      S-7  [     S-[   S-]   ]     _
               _ S-6    S-'   -  ;    S-8      \    @osc  @oss  @osa  @osm  _
               +      S-\   =   /    ,    XX  .    S-9   S-,     S-.    S-0   _
-              _ _ @num   S-;   _     XX XX
+              _ _ @num   S-;   _     _ XX
             )
 
             (deflayer num
@@ -128,7 +128,7 @@
               XX  XX up  XX     XX XX    7    8    9    _    _
               _ @osm @osa @oss @osc @fun XX    4    5    6    0    _
               XX  XX  XX  down XX XX XX    1    2    3    _    _
-              _ _ _   XX  XX _   XX
+              _ _ _   XX  _ _   XX
             )
 
             (deflayer fun

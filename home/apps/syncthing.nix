@@ -51,7 +51,10 @@
               "newbrick"
             ];
             label = "Notes";
-            versioning.type = "trashcan";
+            versioning = {
+              type = "simple";
+              params.cleanoutDays = "14";
+            };
           };
         };
         gui = {

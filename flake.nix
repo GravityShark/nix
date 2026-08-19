@@ -65,24 +65,47 @@
     }@inputs:
     let
       username = "gravity";
+      system = "x86_64-linux";
+      mkNixOSConfig =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          inherit system;
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+            ./nixos
+            {
+              config.username = username;
+              config.networking.hostName = hostname;
+            }
+          ];
+        };
+      mkHomeManagerConfig =
+        hostname:
+        home-manager.lib.homeManagerConfiguration {
+          extraSpecialArgs = { inherit inputs; };
+          pkgs = nixpkgs.legacyPackages."${system}";
+          modules = [
+            ./hosts/${hostname}/home.nix
+            ./home
+            {
+              home.username = username;
+              home.homeDirectory = "/home/${username}";
+            }
+          ];
+        };
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/msi/configuration.nix
-            ./nixos
-            { config.username = username; }
-          ];
-        };
+        msi = mkNixOSConfig "msi";
+        acer = mkNixOSConfig "acer";
       };
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      # homeConfigurations."gravity@acer" = mkHomeManagerConfig "acer";
+      homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        pkgs = nixpkgs.legacyPackages."${system}";
         modules = [
-          ./hosts/msi/home.nix
+          ./hosts/acer/home.nix
           ./home
           {
             home.username = username;
