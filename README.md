@@ -45,11 +45,10 @@ nix
 1. install nixos from the gui setting up the partitions (preferably swap
    partition) n reboot
 
-2. now when you're in, enable flake capabilities and set your hostname
+2. now when you're in, enable flake capabilities
 
 ```nix
 #/etc/nixos/configuration.nix
-networking.hostName = <YOUR_HOST>;
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
@@ -68,8 +67,9 @@ git clone --recurse-submodules --shallow-submodules https://github.com/GravitySh
 
 - Might wanna copy the hardware config over
   (`cp /etc/nixos/hardware-configuration.nix ~/.nix/hosts/<YOUR_HOST>/hardware-configuration.nix`)
+  - and then set your hostname using `sudo hostname <YOUR_HOST>`
 
-4. then update
+4. then set your hostname and update
 
 ```bash
 nix flake update --flake ~/.nix
