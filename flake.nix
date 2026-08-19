@@ -100,18 +100,9 @@
         msi = mkNixOSConfig "msi";
         acer = mkNixOSConfig "acer";
       };
-      # homeConfigurations."gravity@acer" = mkHomeManagerConfig "acer";
-      homeConfigurations."gravity@acer" = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages."${system}";
-        modules = [
-          ./hosts/acer/home.nix
-          ./home
-          {
-            home.username = username;
-            home.homeDirectory = "/home/${username}";
-          }
-        ];
+      homeConfigurations = {
+        "${username}@msi" = mkHomeManagerConfig "msi";
+        "${username}@acer" = mkHomeManagerConfig "acer";
       };
     };
 }
