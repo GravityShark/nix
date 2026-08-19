@@ -101,7 +101,7 @@
         acer = mkNixOSConfig "acer";
       };
       # homeConfigurations."gravity@acer" = mkHomeManagerConfig "acer";
-      homeConfigurations."gravity" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."gravity@acer" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."${system}";
         modules = [
