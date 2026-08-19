@@ -45,10 +45,11 @@ nix
 1. install nixos from the gui setting up the partitions (preferably swap
    partition) n reboot
 
-2. now when you're in, enable flake capabilities
+2. now when you're in, enable flake capabilities and set your hostname
 
 ```nix
 #/etc/nixos/configuration.nix
+networking.hostName = <YOUR_HOST>;
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
