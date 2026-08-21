@@ -607,8 +607,8 @@
         "Mod+Shift+Equal".action.set-window-height = [ "+10%" ];
 
         "Mod+V".action.toggle-window-floating = [ ];
-        "Mod+Ctrl+V".action.switch-focus-between-floating-and-tiling = [ ];
-        "Mod+Shift+V".action.toggle-column-tabbed-display = [ ];
+        "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
+        "Mod+Ctrl+V".action.toggle-column-tabbed-display = [ ];
 
         "Print".action.screenshot = [ ];
         "Shift+Print".action.screenshot-screen = [ ];
