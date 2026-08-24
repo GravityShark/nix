@@ -17,8 +17,8 @@
         "7zz"
         "discord-canary"
         "graalvm-oracle"
-        "lunarclient"
-        "sublimetext4"
+        # "lunarclient"
+        # "sublimetext4"
         "uasm"
         "zoom"
       ];

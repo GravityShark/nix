@@ -67,6 +67,7 @@
     # racket
     # selectdefaultapplication
     super-productivity
+    zeal
 
     ## Media
     audacity
