@@ -48,17 +48,17 @@
             sourceRoot = "${finalAttrs.src.name}/src/ankitty";
           }))
           # Anki note linker needs file accesss which you need to patch it to make it work
-          # (anki-utils.buildAnkiAddon (finalAttrs: {
-          #   pname = "anki-note-linker";
-          #   version = "0-unstable-2026-8-10";
-          #   src = pkgs.fetchFromGitHub {
-          #     owner = "gugutu";
-          #     repo = "Anki-Note-Linker";
-          #     rev = "958ddef4ec1538326db63f637ac2587187a6ec19";
-          #     hash = "sha256-mEdxvwpva/6q4cYa4Tfv9yxaaU2xa5toaEUcXbrXvbI=";
-          #   };
-          #   sourceRoot = "${finalAttrs.src.name}/src/addon";
-          # }))
+          (anki-utils.buildAnkiAddon (finalAttrs: {
+            pname = "anki-note-linker";
+            version = "0-unstable-2026-8-10";
+            src = pkgs.fetchFromGitHub {
+              owner = "gugutu";
+              repo = "Anki-Note-Linker";
+              rev = "958ddef4ec1538326db63f637ac2587187a6ec19";
+              hash = "";
+            };
+            sourceRoot = "${finalAttrs.src.name}/src/addon";
+          }))
           #
           # (anki-utils.buildAnkiAddon (finalAttrs: {
           #   pname = "automatic-note-linker";
@@ -77,7 +77,7 @@
             src = pkgs.fetchFromGitHub {
               owner = "Yutsuten";
               repo = "anki-lifedrain";
-              rev = "0b85b9407b01a15cdf437fba02d37222abf4704a";
+              rev = "v${finalAttrs.version}";
               hash = "sha256-p8fDZJkOtLeLymfzpSy+JQ0elDf/ZTqFtxqQKTtKYH0=";
             };
             sourceRoot = "${finalAttrs.src.name}/src";
