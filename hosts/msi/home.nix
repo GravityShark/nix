@@ -62,8 +62,8 @@
     baobab
     chromium
     easyeffects
-    foliate
     gnome-system-monitor
+    koreader
     pear-desktop
     # racket
     # selectdefaultapplication
