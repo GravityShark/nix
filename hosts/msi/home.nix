@@ -60,8 +60,9 @@
   home.packages = with pkgs; [
     ## Apps
     baobab
-    # chromium
+    chromium
     easyeffects
+    foliate
     gnome-system-monitor
     pear-desktop
     # racket
@@ -84,7 +85,7 @@
     # caprine #doesnt work anymore
     onlyoffice-desktopeditors
     # pdfarranger
-    python312
+    python314
     # sublime4
     # teams-for-linux
     # telegram-desktop
