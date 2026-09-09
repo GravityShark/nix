@@ -48,28 +48,27 @@
             sourceRoot = "${finalAttrs.src.name}/src/ankitty";
           }))
           # Anki note linker needs file accesss which you need to patch it to make it work
-          (anki-utils.buildAnkiAddon (finalAttrs: {
-            pname = "anki-note-linker";
-            version = "0-unstable-2026-8-10";
-            src = pkgs.fetchFromGitHub {
-              owner = "gugutu";
-              repo = "Anki-Note-Linker";
-              rev = "958ddef4ec1538326db63f637ac2587187a6ec19";
-              hash = "sha256-8ZjxHTolBjM/vC4I10zAvSt19DsAV2sGxAuhVc4Chh4=";
-            };
-            sourceRoot = "${finalAttrs.src.name}/src/addon";
-          }))
-          #
-          (anki-utils.buildAnkiAddon (finalAttrs: {
-            pname = "automatic-note-linker";
-            version = "0-unstable-2024-9-16";
-            src = pkgs.fetchFromGitHub {
-              owner = "rrzhang139";
-              repo = "automatic_note_linker";
-              rev = "114ae3593e338a95d6524aa5e3163746b36fbe56";
-              hash = "sha256-Xy5kZPOqVnLoPK/YzFGNE5iLBJbZ06b1nMUdtkhr27M=";
-            };
-          }))
+          # (anki-utils.buildAnkiAddon (finalAttrs: {
+          #   pname = "anki-note-linker";
+          #   version = "0-unstable-2026-8-10";
+          #   src = pkgs.fetchFromGitHub {
+          #     owner = "gugutu";
+          #     repo = "Anki-Note-Linker";
+          #     rev = "958ddef4ec1538326db63f637ac2587187a6ec19";
+          #     hash = "sha256-8ZjxHTolBjM/vC4I10zAvSt19DsAV2sGxAuhVc4Chh4=";
+          #   };
+          #   sourceRoot = "${finalAttrs.src.name}/src/addon";
+          # }))
+          # (anki-utils.buildAnkiAddon (finalAttrs: {
+          #   pname = "automatic-note-linker";
+          #   version = "0-unstable-2024-9-16";
+          #   src = pkgs.fetchFromGitHub {
+          #     owner = "rrzhang139";
+          #     repo = "automatic_note_linker";
+          #     rev = "114ae3593e338a95d6524aa5e3163746b36fbe56";
+          #     hash = "sha256-Xy5kZPOqVnLoPK/YzFGNE5iLBJbZ06b1nMUdtkhr27M=";
+          #   };
+          # }))
 
           (anki-utils.buildAnkiAddon (finalAttrs: {
             pname = "lifedrain";
@@ -83,17 +82,17 @@
             sourceRoot = "${finalAttrs.src.name}/src";
           }))
 
-          (anki-utils.buildAnkiAddon (finalAttrs: {
-            pname = "ankimon";
-            version = "0-unstable-2026-9-07";
-            src = pkgs.fetchFromGitHub {
-              owner = "Unlucky-Life";
-              repo = "ankimon";
-              rev = "197a86923b2cbfea81d8ab897c56965d92f9c64b";
-              hash = "sha256-mEdxvwpva/6q4cYa4Tfv9yxaaU2xa5toaEUcXbrXvbI=";
-            };
-            sourceRoot = "${finalAttrs.src.name}/src/Ankimon";
-          }))
+          # (anki-utils.buildAnkiAddon (finalAttrs: {
+          #   pname = "ankimon";
+          #   version = "0-unstable-2026-9-07";
+          #   src = pkgs.fetchFromGitHub {
+          #     owner = "Unlucky-Life";
+          #     repo = "ankimon";
+          #     rev = "197a86923b2cbfea81d8ab897c56965d92f9c64b";
+          #     hash = "sha256-mEdxvwpva/6q4cYa4Tfv9yxaaU2xa5toaEUcXbrXvbI=";
+          #   };
+          #   sourceRoot = "${finalAttrs.src.name}/src/Ankimon";
+          # }))
         ];
       };
     };
