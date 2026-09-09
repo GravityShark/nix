@@ -57,7 +57,6 @@
               rev = "958ddef4ec1538326db63f637ac2587187a6ec19";
               hash = "sha256-mEdxvwpva/6q4cYa4Tfv9yxaaU2xa5toaEUcXbrXvbI=";
             };
-
             sourceRoot = "${finalAttrs.src.name}/src/addon";
           }))
           #
