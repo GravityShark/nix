@@ -49,16 +49,16 @@
           }))
 
           # Anki note linker needs file accesss which you need to patch it to make it work
-          # (anki-utils.buildAnkiAddon (finalAttrs: {
-          #   pname = "anki-note-linker";
-          #   version = "0-unstable-2025-9-20";
-          #   src = pkgs.fetchFromGitHub {
-          #     owner = "gugutu";
-          #     repo = "Anki-Note-Linker";
-          #     rev = "cfd51d17cfd3b40d21a7670d8c79728c8e8e4488";
-          #     hash = "sha256-sB7SoblB8lXxiSftTAK101CdeEmqImpr862BIN/5SAY=";
-          #   };
-          # }))
+          (anki-utils.buildAnkiAddon (finalAttrs: {
+            pname = "anki-note-linker";
+            version = "0-unstable-2026-8-10";
+            src = pkgs.fetchFromGitHub {
+              owner = "gugutu";
+              repo = "Anki-Note-Linker";
+              rev = "958ddef4ec1538326db63f637ac2587187a6ec19";
+              hash = "sha256-mEdxvwpva/6q4cYa4Tfv9yxaaU2xa5toaEUcXbrXvbI=";
+            };
+          }))
           #
           # (anki-utils.buildAnkiAddon (finalAttrs: {
           #   pname = "automatic-note-linker";
@@ -73,12 +73,23 @@
 
           (anki-utils.buildAnkiAddon (finalAttrs: {
             pname = "lifedrain";
-            version = "0-unstable-2025-5-5";
+            version = "2.9.0";
             src = pkgs.fetchFromGitHub {
               owner = "Yutsuten";
               repo = "anki-lifedrain";
-              rev = "c80d5f2d0aff80324a1ecbec8260efb2b26dbdaf";
-              hash = "sha256-AbVw0Yncfl/iC3c2UZPvAFH4n2SlcpEYM2OuEXh7ix8=";
+              rev = "0b85b9407b01a15cdf437fba02d37222abf4704a";
+              hash = "sha256-p8fDZJkOtLeLymfzpSy+JQ0elDf/ZTqFtxqQKTtKYH0=";
+            };
+          }))
+
+          (anki-utils.buildAnkiAddon (finalAttrs: {
+            pname = "ankimon";
+            version = "0-unstable-2026-9-07";
+            src = pkgs.fetchFromGitHub {
+              owner = "Unlucky-Life";
+              repo = "ankimon";
+              rev = "197a86923b2cbfea81d8ab897c56965d92f9c64b";
+              hash = "sha256-mEdxvwpva/6q4cYa4Tfv9yxaaU2xa5toaEUcXbrXvbI=";
             };
           }))
         ];
