@@ -95,7 +95,9 @@
     _7zz-rar
     # aria2
     # aria2p
+    net-tools
     # ntfs3g
+    traceroute
     # wget
     yt-dlp
     ytfzf
