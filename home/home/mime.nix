@@ -247,7 +247,7 @@
         "application/xhtml+xml" = [ "zen-beta.desktop" ];
         "application/xspf+xml" = [ "zen-beta.desktop" ];
         "application/vnd.sun.xml.writer" = [ "org.pwmt.zathura.desktop" ];
-        "application/epub+zip" = [ "koreader.desktop" ];
+        "application/epub+zip" = [ "rocks.koreader.KOReader.desktop" ];
         "application/vnd.sun.xml.writer.template" = [ "org.pwmt.zathura.desktop" ];
         "application/vnd.openxmlformats-officedocument.wordprocessingml.template" = [
           "onlyoffice-desktopeditors.desktop"
@@ -261,7 +261,7 @@
         "application/vnd.oasis.opendocument.spreadsheet-template" = [ "onlyoffice-desktopeditors.desktop" ];
         # "application/x-tar" = [ "org.pwmt.zathura.desktop" ];
         # "application/x-7z-compressed" = [ "org.pwmt.zathura.desktop" ];
-        "application/pdf" = [ "koreader.desktop" ];
+        "application/pdf" = [ "rocks.koreader.KOReader.desktop" ];
         "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
           "onlyoffice-desktopeditors.desktop"
         ];
