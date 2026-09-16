@@ -59,6 +59,7 @@
 
   outputs =
     {
+      lib,
       nixpkgs,
       home-manager,
       ...
@@ -94,15 +95,24 @@
             }
           ];
         };
+
+      # NOTE: if you want to define new hosts, you just have to create a new
+      # folder in the ./hosts and then just add the appropriate
+      # configuration.nix, hardware-configuration.nix and home.nix
+      hostsDir = ./hosts;
+
+      hosts = builtins.attrNames (
+        lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir)
+      );
     in
     {
-      nixosConfigurations = {
-        msi = mkNixOSConfig "msi";
-        acer = mkNixOSConfig "acer";
-      };
-      homeConfigurations = {
-        "${username}@msi" = mkHomeManagerConfig "msi";
-        "${username}@acer" = mkHomeManagerConfig "acer";
-      };
+      nixosConfigurations = lib.genAttrs hosts mkNixOSConfig;
+
+      homeConfigurations = lib.listToAttrs (
+        map (host: {
+          name = "${username}@${host}";
+          value = mkHomeManagerConfig host;
+        }) hosts
+      );
     };
 }
