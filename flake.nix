@@ -97,7 +97,7 @@
 
       # NOTE: if you want to define new hosts, you just have to create a new
       # folder in the ./hosts and then just add the appropriate
-      # configuration.nix, hardware-configuration.nix and home.nix
+      # `configuration.nix`, `hardware-configuration.nix` and `home.nix`
       hostsDir = ./hosts;
 
       hosts = builtins.attrNames (
