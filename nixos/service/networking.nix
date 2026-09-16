@@ -31,8 +31,6 @@
       # networking.proxy.default = "http://user:password@proxy:port/";
       # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-      security.pki.certificateFiles = [ ../../dump/upd_dilnet.pem ];
-
       networking.nftables.enable = true; # Better implementation
       networking.firewall.allowedTCPPorts = [ 25565 ];
       networking.firewall.allowedUDPPorts = [ 19132 ];
