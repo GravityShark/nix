@@ -23,7 +23,7 @@
         PLATFORM_PROFILE_ON_AC = "balanced";
         PLATFORM_PROFILE_ON_BAT = "low-power";
 
-        TLP_DEFAULT_MODE = "BAL";
+        TLP_DEFAULT_MODE = "SAV";
         # setting your own preferences for auto switch is not allowed yet https://github.com/linrunner/TLP/issues/844
         TLP_AUTO_SWITCH = 0;
       };

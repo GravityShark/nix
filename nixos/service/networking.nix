@@ -11,23 +11,27 @@
   };
   config =
     # let
-    #   discord = pkgs.fetchurl {
-    #     name = "discord";
-    #     url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
-    #     sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
-    #   };
-    #   instagram = pkgs.fetchurl {
-    #     name = "instagram";
-    #     url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/instagramhosts.txt";
-    #     sha256 = "21a7ffd6e67f2baf9da7221b4bf8e3374436a09a0603e678b8c0ae11845d26c8";
-    #   };
+    # discord = pkgs.fetchurl {
+    #   name = "discord";
+    #   url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/discordhosts.txt";
+    #   sha256 = "8xvg3pie/0c9qrsdW0ezmARnmfyOM5+fGiwjzMpiRRQ=";
+    # };
+    # instagram = pkgs.fetchurl {
+    #   name = "instagram";
+    #   url = "https://raw.githubusercontent.com/cyb3rko/social-media-hosts-blocklists/refs/heads/main/instagramhosts.txt";
+    #   sha256 = "21a7ffd6e67f2baf9da7221b4bf8e3374436a09a0603e678b8c0ae11845d26c8";
+    # };
     # in
+
     lib.mkIf config.service.networking.enable {
+
       networking.networkmanager.enable = true;
       users.users.${config.username}.extraGroups = [ "networkmanager" ];
 
       # networking.proxy.default = "http://user:password@proxy:port/";
       # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+      security.pki.certificateFiles = [ ../../dump/upd_dilnet.pem ];
 
       networking.nftables.enable = true; # Better implementation
       networking.firewall.allowedTCPPorts = [ 25565 ];
