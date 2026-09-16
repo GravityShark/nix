@@ -59,7 +59,6 @@
 
   outputs =
     {
-      lib,
       nixpkgs,
       home-manager,
       ...
@@ -102,13 +101,13 @@
       hostsDir = ./hosts;
 
       hosts = builtins.attrNames (
-        lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir)
+        nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir)
       );
     in
     {
-      nixosConfigurations = lib.genAttrs hosts mkNixOSConfig;
+      nixosConfigurations = nixpkgs.lib.genAttrs hosts mkNixOSConfig;
 
-      homeConfigurations = lib.listToAttrs (
+      homeConfigurations = nixpkgs.lib.listToAttrs (
         map (host: {
           name = "${username}@${host}";
           value = mkHomeManagerConfig host;
