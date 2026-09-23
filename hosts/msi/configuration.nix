@@ -38,7 +38,7 @@
   service = {
     bluetooth.enable = true;
     disks.enable = true;
-    flatpak.enable = false;
+    flatpak.enable = true;
     kanata.enable = true;
     llama-cpp.enable = false;
     networking.enable = true;
