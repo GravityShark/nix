@@ -95,6 +95,7 @@
     _7zz-rar
     # aria2
     # aria2p
+    go-mtpfs
     net-tools
     # ntfs3g
     traceroute
@@ -105,7 +106,9 @@
     ## Gaming
     # (bottles.override { removeWarningPopup = true; })
     # dolphin-emu
+    faugus-launcher
     # gamescope
+    osu-lazer-bin
     # rare
     # umu-launcher
     # vkbasalt
@@ -113,6 +116,5 @@
     # wineWow64Packages.staging
     # wineWow64Packages.stagingFull
     # wineWow64Packages.waylandFull
-    faugus-launcher
   ];
 }
