@@ -99,6 +99,7 @@
     net-tools
     # ntfs3g
     traceroute
+    uv
     # wget
     yt-dlp
     ytfzf
