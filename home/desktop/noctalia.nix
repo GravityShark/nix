@@ -65,7 +65,7 @@
     #   };
     # };
 
-    programs.noctalia-shell = {
+    programs.noctalia = {
 
       enable = true;
       #   systemd.enable = true;
