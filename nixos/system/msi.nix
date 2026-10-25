@@ -93,6 +93,7 @@
       "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 100"
       "w /sys/class/power_supply/BAT1/charge_control_start_threshold - - - - 90"
       "w /sys/devices/platform/msi-ec/fan_mode - - - - advanced"
+      "w /sys/devices/platform/msi-ec/cooler_boost - - - - off"
       "w /sys/devices/platform/msi-ec/webcam - - - - off"
       "w /sys/devices/platform/msi-ec/shift_mode - - - - eco"
     ];
@@ -106,9 +107,9 @@
       serviceConfig = {
         ExecStart = ''
           ${inputs.ppd-dbus-hook.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/ppd-dbus-hook \
-            "/bin/sh -c 'echo eco > /sys/devices/platform/msi-ec/shift_mode'" \
-            "/bin/sh -c 'echo comfort > /sys/devices/platform/msi-ec/shift_mode'" \
-            "/bin/sh -c 'echo turbo > /sys/devices/platform/msi-ec/shift_mode'"
+            "/bin/sh -c 'echo eco > /sys/devices/platform/msi-ec/shift_mode; echo off > /sys/devices/platform/msi-ec/cooler_boost'" \
+            "/bin/sh -c 'echo comfort > /sys/devices/platform/msi-ec/shift_mode; echo off > /sys/devices/platform/msi-ec/cooler_boost'" \
+            "/bin/sh -c 'echo turbo > /sys/devices/platform/msi-ec/shift_mode; echo on > /sys/devices/platform/msi-ec/cooler_boost'"
         '';
         Restart = "on-failure";
       };

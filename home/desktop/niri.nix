@@ -404,11 +404,10 @@
           hotkey-overlay.title = "Open launcher";
           repeat = false;
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
+            "noctalia"
+            "msg"
+            "panel-toggle"
             "launcher"
-            "toggle"
           ];
         };
         "XF86AudioRaiseVolume" = {
@@ -430,19 +429,26 @@
         "XF86AudioPlay" = lib.mkIf config.desktop.noctalia.enable {
           allow-when-locked = true;
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
+            "noctalia"
+            "msg"
             "media"
-            "playPause"
+            "toggle"
+          ];
+        };
+        "XF86AudioPrevious" = lib.mkIf config.desktop.noctalia.enable {
+          allow-when-locked = true;
+          action.spawn = [
+            "noctalia"
+            "msg"
+            "media"
+            "previous"
           ];
         };
         "XF86AudioNext" = lib.mkIf config.desktop.noctalia.enable {
           allow-when-locked = true;
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
+            "noctalia"
+            "msg"
             "media"
             "next"
           ];
@@ -473,11 +479,10 @@
           hotkey-overlay.title = "Open the session menu";
           repeat = false;
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "sessionMenu"
-            "toggle"
+            "noctalia"
+            "msg"
+            "panel-toggle"
+            "session"
           ];
         };
         "Mod+Shift+Q" = {
@@ -494,11 +499,9 @@
           hotkey-overlay.title = "Inhibit idle";
           repeat = false;
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "idleInhibitor"
-            "toggle"
+            "noctalia"
+            "msg"
+            "caffeine-toggle"
           ];
         };
         "Mod+O" = {
@@ -510,11 +513,9 @@
           hotkey-overlay.title = "Cycle power profiles";
           repeat = false;
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "powerProfile"
-            "toggle"
+            "noctalia"
+            "msg"
+            "power-cycle"
           ];
         };
         "Mod+W" = {
@@ -619,11 +620,9 @@
           hotkey-overlay.title = "Night light toggle";
           repeat = false;
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "nightLight"
-            "toggle"
+            "noctalia"
+            "msg"
+            "nightlight-toggle"
           ];
         };
 
