@@ -435,7 +435,7 @@
             "toggle"
           ];
         };
-        "XF86AudioPrevious" = lib.mkIf config.desktop.noctalia.enable {
+        "XF86AudioPrev" = lib.mkIf config.desktop.noctalia.enable {
           allow-when-locked = true;
           action.spawn = [
             "noctalia"
