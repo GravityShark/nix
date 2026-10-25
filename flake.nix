@@ -18,9 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
+      # Sodiboo is outdated
       url = "github:epireyn/niri-flake";
-      # FIX: sodiboo hasnt updated blur options yet
-      # url = "github:sodiboo/niri-flake";
+      # this has tearing
+      # url = "https://github.com/ItsLiyua/niri-flake"
       inputs.niri-unstable.follows = "niri-package";
       inputs.nixpkgs.follows = "nixpkgs";
     };
