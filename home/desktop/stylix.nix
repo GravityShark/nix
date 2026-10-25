@@ -118,16 +118,16 @@
     ];
 
     ## Noctalia-shell
-    programs.noctalia-shell.settings = lib.mkIf config.stylix.targets.noctalia-shell.enable {
-      bar.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-      bar.capsuleOpacity = lib.mkForce config.stylix.opacity.desktop;
-      colorSchemes.darkMode = lib.mkForce (config.stylix.polarity != "light");
-      dock.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-      notifications.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
-      osd.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
-      ui.panelBackgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-      wallpaper.directory = lib.mkForce "/home/${config.home.username}/Pictures/Wallpapers";
-      wallpaper.fillColor = lib.mkForce "${config.lib.stylix.colors.withHashtag.base00}";
-    };
+    # programs.noctalia-shell.settings = lib.mkIf config.stylix.targets.noctalia-shell.enable {
+    #   bar.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
+    #   bar.capsuleOpacity = lib.mkForce config.stylix.opacity.desktop;
+    #   colorSchemes.darkMode = lib.mkForce (config.stylix.polarity != "light");
+    #   dock.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
+    #   notifications.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
+    #   osd.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
+    #   ui.panelBackgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
+    #   wallpaper.directory = lib.mkForce "/home/${config.home.username}/Pictures/Wallpapers";
+    #   wallpaper.fillColor = lib.mkForce "${config.lib.stylix.colors.withHashtag.base00}";
+    # };
   };
 }
