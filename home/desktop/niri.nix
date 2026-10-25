@@ -116,7 +116,7 @@
       spawn-at-startup = [
         { argv = [ "niriusd" ]; }
         { argv = [ "super-productivity" ]; }
-        (lib.mkIf config.desktop.noctalia.enable { argv = [ "noctalia-shell" ]; })
+        (lib.mkIf config.desktop.noctalia.enable { argv = [ "noctalia" ]; })
         (lib.mkIf config.desktop.noctalia.enable { argv = [ "noctalia-performance" ]; })
       ];
       window-rules = [
