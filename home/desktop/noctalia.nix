@@ -144,14 +144,10 @@
               type = "label";
               settings = {
                 background = false;
-                opacity = 1.0;
                 title = "You can keep going.";
               };
             };
           };
-        };
-        dock = {
-          background_opacity = 1.0;
         };
         idle = {
           behavior_order = [
@@ -227,12 +223,6 @@
         nightlight = {
           enabled = true;
           temperature_night = 1000;
-        };
-        notification = {
-          background_opacity = 1.0;
-        };
-        osd = {
-          background_opacity = 1.0;
         };
         plugin_settings = {
           "notfinaldev/web-search" = {
