@@ -273,7 +273,7 @@
           clock = {
             anchor = true;
             font_scale = 1.2;
-            format = "{:%I:%M:%p::%b%d}";
+            format = "{:%I:%M:%p\n:%d:%b}";
           };
           media = {
             hide_when_no_media = true;
