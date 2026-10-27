@@ -78,6 +78,10 @@
 
       layout = {
         gaps = 5;
+        struts = {
+          left = 64;
+          right = 64;
+        };
         background-color = "transparent";
         always-center-single-column = true;
         preset-column-widths = [
@@ -125,13 +129,6 @@
       ];
       window-rules = [
         {
-          matches = [
-            { app-id = "^waywall$"; }
-          ];
-          open-fullscreen = true;
-          # "allow-tearing" = true;
-        }
-        {
           geometry-corner-radius = {
             bottom-left = 2.;
             bottom-right = 2.;
@@ -140,6 +137,12 @@
           };
           clip-to-geometry = true;
           open-focused = true;
+        }
+        {
+          matches = [
+            { app-id = "^waywall$"; }
+          ];
+          open-fullscreen = true;
         }
         {
           matches = [
