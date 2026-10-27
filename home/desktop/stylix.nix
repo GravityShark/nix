@@ -122,5 +122,21 @@
       "XCURSOR_THEME=${config.stylix.cursor.name}"
       "XCURSOR_SIZE=${toString config.stylix.cursor.size}"
     ];
+
+    programs.noctalia.settings = lib.mkIf config.stylix.targets.noctalia.enable {
+      wallpaper = {
+        default = {
+          path = config.stylix.image;
+        };
+        last = {
+          path = config.stylix.image;
+        };
+        monitors = {
+          eDP-1 = {
+            path = config.stylix.image;
+          };
+        };
+      };
+    };
   };
 }

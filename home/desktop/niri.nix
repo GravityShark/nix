@@ -79,8 +79,7 @@
       layout = {
         gaps = 5;
         struts = {
-          left = 16;
-          right = 16;
+          right = 26;
         };
         background-color = "transparent";
         always-center-single-column = true;
