@@ -36,6 +36,7 @@
       enable = true;
       # https://github.com/erooke/toml2nix
       # nix run github:erooke/toml2nix
+
       settings = {
         audio = {
           enable_overdrive = true;
