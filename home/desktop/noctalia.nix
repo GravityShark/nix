@@ -271,25 +271,9 @@
             cpu_temp_critical_threshold = 90;
           };
         };
-        theme = {
-          custom_palette = "stylix";
-          mode = "auto";
-          source = "custom";
-        };
         wallpaper = {
           directory = "/home/gravity/Pictures/Wallpapers";
           transition_on_startup = true;
-          default = {
-            path = "/home/gravity/Pictures/Wallpapers/Tranquility.png";
-          };
-          last = {
-            path = "/home/gravity/Pictures/Wallpapers/Tranquility.png";
-          };
-          monitors = {
-            eDP-1 = {
-              path = "/home/gravity/Pictures/Wallpapers/Tranquility.png";
-            };
-          };
         };
         weather = {
           enabled = false;
