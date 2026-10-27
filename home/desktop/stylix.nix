@@ -101,7 +101,7 @@
       kde.enable = true;
       mangohud.enable = config.programs.mangohud.enable;
       mpv.enable = config.programs.mpv.enable;
-      noctalia-shell.enable = config.desktop.noctalia.enable;
+      noctalia.enable = config.desktop.noctalia.enable;
       qt.enable = true;
       vesktop.enable = config.programs.vesktop.enable;
       zathura.enable = config.programs.zathura.enable;
