@@ -42,8 +42,8 @@
           }
         ];
       };
-      polkit-gnome.enable = true;
-      wl-clip-persist = {
+      polkit-gnome.enable = lib.mkIf (!config.desktop.noctalia.enable) true;
+      wl-clip-persist = lib.mkIf (!config.desktop.noctalia.enable) {
         enable = true;
         clipboardType = "both";
       };
@@ -54,7 +54,11 @@
     programs.niri.package = pkgs.niri-unstable;
 
     # NOTE: I kinda want to remove nirius at some point, replace it with a much more minimal version that doesn't require a server
-    home.packages = [ pkgs.nirius ];
+    home.packages = with pkgs; [
+      nirius
+
+      brightnessctl
+    ];
 
     # https://niri-wm.github.io/niri/Configuration
     # https://github.com/sodiboo/niri-flake/blob/main/docs.md
@@ -63,7 +67,7 @@
       outputs."HDMI-A-2".enable = true;
       layer-rules = [
         (lib.mkIf config.desktop.noctalia.enable {
-          matches = [ { namespace = "^noctalia-wallpaper*"; } ];
+          matches = [ { namespace = "^noctalia-backdrop"; } ];
           place-within-backdrop = true;
         })
         {
@@ -202,7 +206,7 @@
         }
         {
           matches = [ { app-id = "^NBTrackr-imgpin\\.py$"; } ];
-          open-floating = true;
+
           open-focused = false;
           tiled-state = true;
           default-floating-position = {
@@ -215,8 +219,18 @@
         {
           matches = [ { title = "^woomer$"; } ];
           open-floating = true;
-          open-fullscreen = false;
+          # open-fullscreen = true;
         }
+        (lib.mkIf config.desktop.noctalia.enable {
+          matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
+          open-floating = true;
+          default-column-width = {
+            fixed = 1080;
+          };
+          default-window-height = {
+            fixed = 920;
+          };
+        })
       ];
       debug = {
         ignore-drm-device = "/dev/dri/card0";
@@ -614,6 +628,15 @@
         "Print".action.screenshot = [ ];
         "Shift+Print".action.screenshot-screen = [ ];
         "Ctrl+Print".action.spawn = [ "ocr" ];
+        "Alt+Print" = lib.mkIf config.desktop.noctalia.enable {
+          hotkey-overlay.title = "Night light toggle";
+          repeat = false;
+          action.spawn = [
+            "noctalia"
+            "msg"
+            "screenshot-annotate"
+          ];
+        };
         "Mod+Z".action.spawn = [ "${pkgs.woomer}/bin/woomer" ];
 
         "Mod+N" = lib.mkIf config.desktop.noctalia.enable {

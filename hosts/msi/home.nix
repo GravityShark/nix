@@ -101,6 +101,7 @@
     traceroute
     uv
     # wget
+    wl-clipboard
     yt-dlp
     ytfzf
 

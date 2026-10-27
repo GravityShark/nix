@@ -63,14 +63,20 @@
       };
     };
 
-    # BUG: Wait for this to merge to remove this line https://github.com/nix-community/stylix/pull/2407
-    home.pointerCursor.enable = true;
+    stylix.cursor =
+      if (config.stylix.polarity == "light") then
+        {
+          package = pkgs.google-cursor;
+          name = "GoogleDot-Black";
+          size = 40;
+        }
+      else
+        {
+          package = pkgs.google-cursor;
+          name = "GoogleDot-White";
+          size = 40;
+        };
 
-    stylix.cursor = {
-      package = pkgs.google-cursor;
-      name = "GoogleDot-White";
-      size = 40;
-    };
     # if (config.stylix.polarity == "light") then
     #   {
     #     package = pkgs.callPackage ../packages/golden-xcursor.nix { };
@@ -116,18 +122,5 @@
       "XCURSOR_THEME=${config.stylix.cursor.name}"
       "XCURSOR_SIZE=${toString config.stylix.cursor.size}"
     ];
-
-    ## Noctalia-shell
-    # programs.noctalia-shell.settings = lib.mkIf config.stylix.targets.noctalia-shell.enable {
-    #   bar.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-    #   bar.capsuleOpacity = lib.mkForce config.stylix.opacity.desktop;
-    #   colorSchemes.darkMode = lib.mkForce (config.stylix.polarity != "light");
-    #   dock.backgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-    #   notifications.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
-    #   osd.backgroundOpacity = lib.mkForce config.stylix.opacity.popups;
-    #   ui.panelBackgroundOpacity = lib.mkForce config.stylix.opacity.desktop;
-    #   wallpaper.directory = lib.mkForce "/home/${config.home.username}/Pictures/Wallpapers";
-    #   wallpaper.fillColor = lib.mkForce "${config.lib.stylix.colors.withHashtag.base00}";
-    # };
   };
 }
