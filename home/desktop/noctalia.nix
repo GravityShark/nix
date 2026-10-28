@@ -55,6 +55,7 @@
             enabled = true;
             end = [
               "privacy"
+              "tray"
               "sysmon"
               "network"
               "volume"
@@ -67,7 +68,6 @@
               "control-center"
               "launcher"
               "workspaces"
-              "tray"
               "status"
             ];
             thickness = 42;
