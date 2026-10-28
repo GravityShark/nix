@@ -1,9 +1,13 @@
 # im using nixos now
 
+- 2026 - chill by the rosy pines
+  - Screenshot from 2026-10-28 17-14-53.png
+  - ![screen shot i took of this undubitable](assets/Screenshot%20from%202026-10-28%2017-14-53.png)
+  -
 - 2025 - fake monochrome
   - ![non default nixos niri screenshot i just took](assets/Screenshot%20from%202025-12-30%2015-18-13.png)
 - 2024 - default gnome light
-  - ![default nixos gnome screenshot i just took](assets/Screenshot%20from%202024-11-22%2018-46-39.png)
+  - ![default nixs gnome screenshot i just took](assets/Screenshot%20from%202024-11-22%2018-46-39.png)
 
 ## resources im using
 

@@ -77,7 +77,7 @@
           warning_threshold = 20;
         };
         brightness = {
-          minimum_brightness = 0.009999999776482582;
+          minimum_brightness = 0.01;
           sync_all_monitors = true;
         };
         control_center = {
@@ -109,6 +109,8 @@
           widget_order = [
             "desktop-widget-0000000000000001"
             "desktop-widget-0000000000000002"
+            "desktop-widget-0000000000000003"
+            "desktop-widget-0000000000000004"
           ];
           grid = {
             cell_size = 16;
@@ -145,10 +147,47 @@
               type = "label";
               settings = {
                 background = false;
+                opacity = 1.0;
                 title = "You can keep going.";
               };
             };
+            desktop-widget-0000000000000003 = {
+              box_height = 112.0;
+              box_width = 192.0;
+              cx = 155.0;
+              cy = 696.0;
+              output = "HDMI-A-2";
+              placement_height = 768.0;
+              placement_width = 1366.0;
+              rotation = 0.0;
+              type = "audio_visualizer";
+              settings = {
+                background = false;
+                bands = 32;
+                mirrored = false;
+                show_when_idle = true;
+              };
+            };
+            desktop-widget-0000000000000004 = {
+              box_height = 0.0;
+              box_width = 0.0;
+              cx = 1249.5;
+              cy = 706.5;
+              output = "HDMI-A-2";
+              placement_height = 768.0;
+              placement_width = 1366.0;
+              rotation = 0.0;
+              type = "label";
+              settings = {
+                background = false;
+                opacity = 1.0;
+                title = "I know we can.";
+              };
+            };
           };
+        };
+        dock = {
+          background_opacity = 1.0;
         };
         idle = {
           behavior_order = [
@@ -184,13 +223,44 @@
         lockscreen_widgets = {
           enabled = false;
           schema_version = 2;
-          widget_order = [ "lockscreen-login-box@eDP-1" ];
+          widget_order = [
+            "lockscreen-login-box@eDP-1"
+            "lockscreen-login-box@HDMI-A-2"
+          ];
           grid = {
             cell_size = 16;
             major_interval = 4;
             visible = true;
           };
           widget = {
+            "lockscreen-login-box@HDMI-A-2" = {
+              box_height = 196.0;
+              box_width = 810.0;
+              cx = 683.0;
+              cy = 586.0;
+              output = "HDMI-A-2";
+              placement_height = 768.0;
+              placement_width = 1366.0;
+              rotation = 0.0;
+              type = "login_box";
+              settings = {
+                background_color = "surface_container";
+                background_opacity = 0.88;
+                background_radius = 12.0;
+                center_password_text = false;
+                input_opacity = 1.0;
+                input_radius = 6.0;
+                layout = "regular";
+                show_caps_lock = true;
+                show_keyboard_layout = true;
+                show_login_button = true;
+                show_media = true;
+                show_password_reveal = true;
+                show_session_buttons = true;
+                show_unlock_hint = true;
+                show_weather = true;
+              };
+            };
             "lockscreen-login-box@eDP-1" = {
               box_height = 196.0;
               box_width = 810.0;
@@ -202,7 +272,7 @@
               rotation = 0.0;
               type = "login_box";
               settings = {
-                background_color = "surface_variant";
+                background_color = "surface_container";
                 background_opacity = 0.88;
                 background_radius = 12.0;
                 center_password_text = false;
@@ -225,31 +295,39 @@
           enabled = true;
           temperature_night = 1000;
         };
+        notification = {
+          background_opacity = 1.0;
+          follow_focused_output = true;
+        };
+        osd = {
+          background_opacity = 1.0;
+          follow_focused_output = true;
+        };
         plugin_settings = {
-          "notfinaldev/web-search" = {
-            provider = "duckduckgo";
-          };
           "detluck/performance-plus" = {
             set_power_profile = false;
+          };
+          "notfinaldev/web-search" = {
+            provider = "duckduckgo";
           };
         };
         plugins = {
           enabled = [
-            "aristides/udiskie"
-            "detluck/performance-plus"
-            "elijaharch/wl-screen-mirror"
             "nightwatch75/file-search"
+            "aristides/udiskie"
+            "elijaharch/wl-screen-mirror"
             "notfinaldev/web-search"
           ];
         };
         shell = {
           app_icon_color = "on_surface";
-          corner_radius_scale = 0.4000000059604645;
+          corner_radius_scale = 0.4;
           font_family = "Aporetic Sans";
           launch_apps_as_systemd_services = true;
           niri_overview_close_on_launch_enabled = true;
           niri_overview_type_to_launch_enabled = true;
           polkit_agent = true;
+          telemetry_enabled = true;
           panel = {
             open_near_click_control_center = true;
             session_placement = "floating";
@@ -262,9 +340,25 @@
             cpu_temp_critical_threshold = 90;
           };
         };
+        theme = {
+          custom_palette = "stylix";
+          mode = "dark";
+          source = "custom";
+        };
         wallpaper = {
           directory = "/home/gravity/Pictures/Wallpapers";
           transition_on_startup = true;
+          default = {
+            path = "/home/gravity/Pictures/Wallpapers/zhyiasfdg665xgqpmp7j046ga44wqzk4-wallhaven-o5zo2l.png";
+          };
+          last = {
+            path = "/home/gravity/Pictures/Wallpapers/zhyiasfdg665xgqpmp7j046ga44wqzk4-wallhaven-o5zo2l.png";
+          };
+          monitors = {
+            eDP-1 = {
+              path = "/home/gravity/Pictures/Wallpapers/zhyiasfdg665xgqpmp7j046ga44wqzk4-wallhaven-o5zo2l.png";
+            };
+          };
         };
         weather = {
           enabled = false;
