@@ -348,17 +348,6 @@
         wallpaper = {
           directory = "/home/gravity/Pictures/Wallpapers";
           transition_on_startup = true;
-          default = {
-            path = "/home/gravity/Pictures/Wallpapers/zhyiasfdg665xgqpmp7j046ga44wqzk4-wallhaven-o5zo2l.png";
-          };
-          last = {
-            path = "/home/gravity/Pictures/Wallpapers/zhyiasfdg665xgqpmp7j046ga44wqzk4-wallhaven-o5zo2l.png";
-          };
-          monitors = {
-            eDP-1 = {
-              path = "/home/gravity/Pictures/Wallpapers/zhyiasfdg665xgqpmp7j046ga44wqzk4-wallhaven-o5zo2l.png";
-            };
-          };
         };
         weather = {
           enabled = false;
