@@ -21,7 +21,7 @@
 
   config = {
     # FIX: Whatever this is remove it at some time
-    problems.handlers = {
+    handlers = {
       "gtk+".broken = "warn"; # or "ignore"
     };
 
