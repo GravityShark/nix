@@ -50,10 +50,6 @@
     mangohud.enable = true;
     mpv.enable = true;
     vesktop.enable = true;
-    zathura = {
-      enable = true;
-      options.selection-clipboard = "clipboard";
-    };
   };
 
   ## Packages
@@ -86,7 +82,7 @@
     onlyoffice-desktopeditors
     # pdfarranger
     python314
-    sublime4
+    # sublime4
     # teams-for-linux
     # telegram-desktop
     zoom-us
