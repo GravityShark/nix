@@ -86,7 +86,7 @@
     onlyoffice-desktopeditors
     # pdfarranger
     python314
-    # sublime4
+    sublime4
     # teams-for-linux
     # telegram-desktop
     zoom-us

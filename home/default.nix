@@ -19,12 +19,12 @@
         "graalvm-oracle"
         "lunarclient"
         "osu-lazer-bin"
-        # "sublimetext4"
+        "sublimetext4"
         "uasm"
         "zoom"
       ];
     problems.handlers = {
-      sublimetext4.broken = "warn"; # or "ignore"
+      "gtk+".broken = "warn"; # or "ignore"
     };
   };
 
