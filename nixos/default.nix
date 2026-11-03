@@ -21,7 +21,7 @@
 
   config = {
     # FIX: Whatever this is remove it at some time
-    handlers = {
+    nixpkgs.config.problems.handlers = {
       "gtk+".broken = "warn"; # or "ignore"
     };
 
