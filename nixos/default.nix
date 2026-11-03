@@ -20,6 +20,11 @@
   };
 
   config = {
+    # FIX: Whatever this is remove it at some time
+    problems.handlers = {
+      "gtk+".broken = "warn"; # or "ignore"
+    };
+
     nixpkgs.config.allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
@@ -37,7 +42,6 @@
       ];
 
     ## We are so Zen
-    ## FIX: Currently we are NOT so zen
     boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
 
     services.dbus.implementation = "broker";
