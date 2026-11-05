@@ -29,6 +29,7 @@
               }
               {
                 criteria = "HDMI-A-2";
+                mode = "--custom 1366x768@84.602Hz";
               }
             ];
           }
@@ -37,6 +38,7 @@
             profile.outputs = [
               {
                 criteria = "eDP-1";
+                status = "enable";
               }
             ];
           }
@@ -50,7 +52,7 @@
     };
 
     stylix.targets.niri.enable = config.desktop.stylix.enable;
-    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+    # nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     programs.niri.package = pkgs.niri-unstable;
 
     # NOTE: I kinda want to remove nirius at some point, replace it with a much more minimal version that doesn't require a server
@@ -65,6 +67,12 @@
     programs.niri.settings = {
       outputs."eDP-1".enable = true;
       outputs."HDMI-A-2".enable = true;
+      # mode = {
+      #   width = 1366;
+      #   height = 768;
+      #   refresh = 84.602;
+      #   custom = true;
+      # };;
       layer-rules = [
         (lib.mkIf config.desktop.noctalia.enable {
           matches = [ { namespace = "^noctalia-backdrop"; } ];
@@ -236,7 +244,7 @@
       ];
       debug = {
         ignore-drm-device = "/dev/dri/card0";
-        force-tearing = [ ];
+        # force-tearing = [ ];
         honor-xdg-activation-with-invalid-serial = lib.mkIf config.desktop.noctalia.enable [ ];
       };
       input = {

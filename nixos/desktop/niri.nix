@@ -2,14 +2,14 @@
   config,
   lib,
   pkgs,
-  inputs,
+  # inputs,
   ...
 }:
 
 {
   config = lib.mkIf (config.desktop.display-server == "niri") {
     # Niri screen tearing
-    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+    # nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     programs.niri.package = pkgs.niri-unstable;
 
     programs.niri.enable = true;

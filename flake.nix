@@ -22,7 +22,7 @@
       url = "github:epireyn/niri-flake";
       # this has tearing
       # url = "https://github.com/ItsLiyua/niri-flake"
-      inputs.niri-unstable.follows = "niri-package";
+      # inputs.niri-unstable.follows = "niri-package";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
