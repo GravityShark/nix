@@ -13,10 +13,10 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     ## we are NOT waiting for this https://github.com/niri-wm/niri/issues/844
-    niri-package = {
-      url = "github:urayde/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri-package = {
+    #   url = "github:urayde/niri";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     niri = {
       # Sodiboo is outdated
       url = "github:epireyn/niri-flake";
