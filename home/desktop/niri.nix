@@ -85,15 +85,16 @@
 
       layout = {
         gaps = 5;
-        struts = {
-          right = 11;
-        };
+        # struts = {
+        #   right = 11;
+        # };
         background-color = "transparent";
         always-center-single-column = true;
         preset-column-widths = [
           { proportion = 0.5; }
           { proportion = 2. / 3.; }
-          { proportion = 1. / 3.; }
+          { proportion = 0.9; }
+          # { proportion = 1. / 3.; }
         ];
         default-column-width.proportion = 0.5;
         border = {
