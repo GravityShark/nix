@@ -52,8 +52,8 @@
     };
 
     stylix.targets.niri.enable = config.desktop.stylix.enable;
-    # nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-    # programs.niri.package = pkgs.niri-unstable;
+    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+    programs.niri.package = pkgs.niri-unstable;
 
     # NOTE: I kinda want to remove nirius at some point, replace it with a much more minimal version that doesn't require a server
     home.packages = with pkgs; [
