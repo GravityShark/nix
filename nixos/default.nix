@@ -88,27 +88,9 @@
       "nix-command"
       "flakes"
     ];
-
-    nix.settings.extra-substituters = [
-      # "https://llama-cpp.cachix.org"
-      "https://nix-community.cachix.org"
-      # "https://pi.cachix.org"
-      "https://noctalia.cachix.org"
-      "https://niri-epireyn.cachix.org"
-      "https://cache.nixos.org"
-      "https://cache.nixos.org/"
-      "https://niri-epireyn.cachix.org"
-    ];
-    nix.settings.extra-trusted-public-keys = [
-      # "llama-cpp.cachix.org-1:H75X+w83wUKTIPSO1KWy9ADUrzThyGs8P5tmAbkWhQc="
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      # "pi.cachix.org-1:lGeoGJaZ5ZDabuRzkcD5EBTNnDM4HJ1vqeOxlWk1Flk="
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-      "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
-
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
-
+    nix.settings.trusted-users = [
+      "root"
+      config.username
     ];
   };
 }
