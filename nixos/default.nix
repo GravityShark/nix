@@ -89,7 +89,6 @@
       "flakes"
     ];
 
-    niri-flake.cache.enable = true;
     nix.settings.extra-substituters = [
       # "https://llama-cpp.cachix.org"
       "https://nix-community.cachix.org"
