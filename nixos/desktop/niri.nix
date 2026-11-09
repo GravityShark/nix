@@ -14,7 +14,7 @@
       package = pkgs.niri-unstable;
     };
     environment.systemPackages = with pkgs; [
-      # git # FIX: I have no clue why sodiboo/niri needs git like this
+      git # FIX: I have no clue why sodiboo/niri needs git like this
       xwayland-satellite
     ];
     desktop.command = "${pkgs.niri}/bin/niri-session";
