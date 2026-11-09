@@ -95,6 +95,9 @@
       # "https://pi.cachix.org"
       "https://noctalia.cachix.org"
       "https://niri-epireyn.cachix.org"
+      "https://cache.nixos.org"
+      "https://cache.nixos.org/"
+      "https://niri-epireyn.cachix.org"
     ];
     nix.settings.extra-trusted-public-keys = [
       # "llama-cpp.cachix.org-1:H75X+w83wUKTIPSO1KWy9ADUrzThyGs8P5tmAbkWhQc="
@@ -102,6 +105,10 @@
       # "pi.cachix.org-1:lGeoGJaZ5ZDabuRzkcD5EBTNnDM4HJ1vqeOxlWk1Flk="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
+
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
+
     ];
   };
 }
