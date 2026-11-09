@@ -23,7 +23,7 @@
       # this has tearing
       # url = "https://github.com/ItsLiyua/niri-flake"
       # inputs.niri-unstable.follows = "niri-package";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
