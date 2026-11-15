@@ -18,7 +18,7 @@
   apps = {
     # FIX: Right now the anki derivation is broken
     # https://github.com/NixOS/nixpkgs/issues/580301
-    anki.enable = false;
+    anki.enable = true;
     fastfetch.enable = true;
     fish.enable = true;
     fonts.enable = true;
