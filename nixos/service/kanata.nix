@@ -103,9 +103,9 @@
             (deflayer rblx
               _ _ _ _ _
               _    _    a    _    _    _    _    _    _    _   _ 
-              rctl    e    _    _    _    _    _    _    _    _   _   _
+              _    e    _    _    _    _    _    _    _    _   _   _
               _    _    _    _    _    _    _    _    _    _   _   _
-              _ lalt _    _    _    @base    @base
+              _ _ lalt    _    _    @base    @base
             )
 
             (deflayer nav
