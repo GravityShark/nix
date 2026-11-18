@@ -35,7 +35,7 @@ in
           mcsrPkgs.graalvm-21
           temurin-bin-21
           # for newer versions that i dont play rn, i should probably use lunar for this instead
-          # graalvmPackages.graalvm-oracle_25
+          graalvmPackages.graalvm-oracle_25
           temurin-bin-25
         ];
         additionalLibs = [

@@ -35,6 +35,7 @@
             "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
             "/dev/input/by-id/usb-LIZHI_Flash_IC_USB_Keyboard-event-kbd"
             "/dev/input/by-id/usb-LIZHI_Flash_IC_USB_Keyboard-if01-event-kbd"
+            "/dev/input/by-id/usb-Evision_RGB_Keyboard-event-kbd"
           ];
           # https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
           extraDefCfg = ''
