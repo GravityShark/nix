@@ -314,7 +314,7 @@ local config = {
 	},
 	actions = {
 		-- Ninb Toggle
-		['shift-escape'] = function()
+		['alt-tab'] = function()
 			if chat_state.enabled then
 				return false
 			end
