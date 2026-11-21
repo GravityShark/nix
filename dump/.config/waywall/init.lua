@@ -213,7 +213,7 @@ local game_remaps = {
 	spc = open inv
 	]]
 
-	['grave'] = '0',
+	-- ['grave'] = '0',
 	['4'] = 'k',
 	['5'] = 'KPPLUS',
 	['6'] = '4',
@@ -227,6 +227,7 @@ local game_remaps = {
 	-- ['i'] = 'rightbrace',
 	-- ['o'] = 'apostrophe',
 
+	['leftalt'] = '0',
 	['rightctrl'] = 'c',
 	['a'] = 'i',
 	['s'] = 'e',
@@ -313,7 +314,7 @@ local config = {
 	},
 	actions = {
 		-- Ninb Toggle
-		['control-grave'] = function()
+		['shift-escape'] = function()
 			if chat_state.enabled then
 				return false
 			end
