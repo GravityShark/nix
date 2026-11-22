@@ -36,6 +36,10 @@
       url = "github:GravityShark/ppd-dbus-hook";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rustfava = {
+      url = "github:rustledger/rustfava";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";

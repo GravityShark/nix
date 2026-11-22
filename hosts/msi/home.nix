@@ -16,8 +16,6 @@
   };
 
   apps = {
-    # FIX: Right now the anki derivation is broken
-    # https://github.com/NixOS/nixpkgs/issues/580301
     anki.enable = true;
     fastfetch.enable = true;
     fish.enable = true;
@@ -26,8 +24,9 @@
     ghostty.enable = true;
     minecraft.enable = true;
     neovim.enable = true;
-    obs.enable = true;
+    obs.enable = false;
     ocr.enable = true;
+    rustfava.enable = true;
     syncthing.enable = true;
     tmux.enable = true;
     zen-browser.enable = true;
@@ -59,10 +58,10 @@
     ## Apps
     baobab
     chromium
-    easyeffects
+    # easyeffects
     gnome-system-monitor
     koreader
-    pear-desktop
+    # pear-desktop
     # racket
     # selectdefaultapplication
     super-productivity
@@ -76,7 +75,7 @@
 
     ## Specific file type
     nautilus
-    qbittorrent
+    # qbittorrent
     swayimg
 
     ## Work
@@ -94,9 +93,9 @@
     # aria2
     # aria2p
     go-mtpfs
-    net-tools
+    # net-tools
     # ntfs3g
-    traceroute
+    # traceroute
     uv
     # wget
     wl-clipboard
@@ -106,9 +105,9 @@
     ## Gaming
     # (bottles.override { removeWarningPopup = true; })
     # dolphin-emu
-    faugus-launcher
+    # faugus-launcher
     # gamescope
-    osu-lazer-bin
+    # osu-lazer-bin
     # rare
     # umu-launcher
     # vkbasalt
