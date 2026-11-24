@@ -22,7 +22,7 @@
     fonts.enable = true;
     fzf.enable = true;
     ghostty.enable = true;
-    minecraft.enable = true;
+    minecraft.enable = false;
     neovim.enable = true;
     obs.enable = false;
     ocr.enable = true;
@@ -43,21 +43,21 @@
 
   ################################## Extra ###################################
 
-  xdg.configFile."MangoHud/MangoHud.conf".source = ../../dump/.config/MangoHud/MangoHud.conf;
+  # xdg.configFile."MangoHud/MangoHud.conf".source = ../../dump/.config/MangoHud/MangoHud.conf;
   xdg.configFile."MControlCenter.conf".source = ../../dump/.config/MControlCenter.conf;
 
   ## Other programss
   programs = {
-    mangohud.enable = true;
+    mangohud.enable = false;
     mpv.enable = true;
-    vesktop.enable = true;
+    vesktop.enable = false;
   };
 
   ## Packages
   home.packages = with pkgs; [
     ## Apps
     baobab
-    chromium
+    # chromium
     # easyeffects
     gnome-system-monitor
     koreader

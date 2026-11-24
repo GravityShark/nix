@@ -218,7 +218,7 @@
         location = {
           custom_schedule = true;
           sunrise = "06:00";
-          sunset = "21:00";
+          sunset = "20:00";
         };
         lockscreen_widgets = {
           enabled = false;
