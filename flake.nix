@@ -12,6 +12,9 @@
     #   url = "github:nix-community/lanzaboote/v1.0.0";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    # luciole = {
+    #   url = "github:noctalia-dev/noctalia/luciole";
+    # };
     ## we are NOT waiting for this https://github.com/niri-wm/niri/issues/844
     # niri-package = {
     #   url = "github:urayde/niri";
