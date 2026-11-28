@@ -22,7 +22,7 @@
     fonts.enable = true;
     fzf.enable = true;
     ghostty.enable = true;
-    minecraft.enable = false;
+    minecraft.enable = true;
     neovim.enable = true;
     obs.enable = false;
     ocr.enable = true;
